@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sean O'Connell GFL Franchise Guide</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1/dist/chart.umd.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        display: ['Oswald', 'sans-serif'],
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        navy: {
+                            900: '#0a1628',
+                            800: '#0f1e35',
+                            700: '#142842',
+                            600: '#1a3355',
+                        },
+                        electric: {
+                            400: '#60a5fa',
+                            500: '#3B82F6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                        },
+                        silver: {
+                            300: '#CBD5E1',
+                            400: '#94a3b8',
+                            500: '#64748b',
+                        },
+                        copper: {
+                            400: '#d4915a',
+                            500: '#C2763A',
+                            600: '#a5632e',
+                            700: '#8a5226',
+                        },
+                        gold: {
+                            400: '#FFD700',
+                            500: '#d4b200',
+                        },
+                    },
+                },
+            },
+        };
+    </script>
+    <style>
+        :root {
+            --navy-base: #0a1628;
+            --navy-card: #0f1e35;
+            --navy-lighter: #142842;
+            --electric-blue: #3B82F6;
+            --silver: #CBD5E1;
+            --copper: #C2763A;
+            --gold: #FFD700;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--navy-base);
+            color: var(--silver);
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        .font-display { font-family: 'Oswald', sans-serif; }
+
+        .glow-blue { box-shadow: 0 0 20px rgba(59, 130, 246, 0.25); }
+        .glow-blue-strong { box-shadow: 0 0 40px rgba(59, 130, 246, 0.35); }
+        .glow-copper { box-shadow: 0 0 20px rgba(194, 118, 58, 0.3); }
+        .glow-copper-strong { box-shadow: 0 0 35px rgba(194, 118, 58, 0.4); }
+
+        .card {
+            background: var(--navy-card);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            border-radius: 12px;
+        }
+
+        .card-copper {
+            background: var(--navy-card);
+            border: 1px solid rgba(194, 118, 58, 0.4);
+            border-radius: 12px;
+        }
+
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.4), transparent);
+            margin: 0 auto;
+            max-width: 80%;
+        }
+
+        .hero-glow {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.12) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .stat-pill {
+            background: rgba(59, 130, 246, 0.1);
+            border: 1px solid rgba(59, 130, 246, 0.25);
+            border-radius: 9999px;
+            padding: 8px 16px;
+            font-size: 0.8rem;
+            color: #CBD5E1;
+            white-space: nowrap;
+        }
+
+        .text-gradient-blue {
+            background: linear-gradient(135deg, #60a5fa, #3B82F6, #2563eb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .text-gradient-copper {
+            background: linear-gradient(135deg, #d4915a, #C2763A, #a5632e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .star-filled { color: #FFD700; }
+        .star-empty { color: #1a3355; }
+
+        .did-you-know-scroll {
+            display: flex;
+            gap: 1rem;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            padding-bottom: 1rem;
+        }
+
+        .did-you-know-scroll::-webkit-scrollbar {
+            height: 6px;
+        }
+
+        .did-you-know-scroll::-webkit-scrollbar-track {
+            background: var(--navy-card);
+            border-radius: 3px;
+        }
+
+        .did-you-know-scroll::-webkit-scrollbar-thumb {
+            background: rgba(59, 130, 246, 0.4);
+            border-radius: 3px;
+        }
+
+        .dyk-card {
+            min-width: 300px;
+            max-width: 320px;
+            flex-shrink: 0;
+            scroll-snap-align: start;
+        }
+
+        .timeline-card {
+            flex: 1;
+            min-width: 280px;
+        }
+
+        .pulse-ring {
+            animation: pulseRing 3s ease-in-out infinite;
+        }
+
+        @keyframes pulseRing {
+            0%, 100% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.15); }
+            50% { box-shadow: 0 0 40px rgba(59, 130, 246, 0.35); }
+        }
+
+        .duel-card-sean {
+            background: linear-gradient(135deg, var(--navy-card) 0%, rgba(194, 118, 58, 0.08) 100%);
+            border: 1px solid rgba(194, 118, 58, 0.4);
+        }
+
+        .duel-card-owen {
+            background: linear-gradient(135deg, var(--navy-card) 0%, rgba(255, 215, 0, 0.06) 100%);
+            border: 1px solid rgba(255, 215, 0, 0.35);
+        }
+
+        .nav-link {
+            position: relative;
+            color: var(--silver);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-link:hover { color: #3B82F6; }
+
+        .mobile-menu-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(10, 22, 40, 0.97);
+            z-index: 50;
+            display: flex;
+            flex-direction: column;
+            padding: 1.5rem;
+        }
+
+        .banner-copper {
+            background: linear-gradient(135deg, rgba(194, 118, 58, 0.12) 0%, rgba(194, 118, 58, 0.04) 100%);
+            border: 1px solid rgba(194, 118, 58, 0.3);
+        }
+
+        .banner-blue {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(59, 130, 246, 0.03) 100%);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+        }
+    </style>
+</head>
+<body data-id="0">
+    <app-icon data-id="1" hidden data-icon="trophy" data-palette="Blue"></app-icon>
+
+    <!-- NAVIGATION -->
+    <nav data-id="2" class="fixed top-0 left-0 right-0 z-40 bg-navy-900/95 backdrop-blur-md border-b border-electric-500/20">
+        <div data-id="3" class="max-w-7xl mx-auto px-4 md:px-6 py-3 flex items-center justify-between">
+            <div data-id="4" class="flex items-center gap-2">
+                <i data-id="5" data-lucide="shield" class="w-5 h-5 text-electric-500"></i>
+                <span data-id="6" class="font-display text-white text-lg tracking-wide uppercase">GFL Franchise Guide</span>
+            </div>
+            <div data-id="7" class="hidden md:flex items-center gap-6">
+                <a data-id="8" href="#hero" class="nav-link">Home</a>
+                <a data-id="9" href="#backstory" class="nav-link">Origin</a>
+                <a data-id="10" href="#chart" class="nav-link">Stats</a>
+                <a data-id="11" href="#heartbreak" class="nav-link">2024</a>
+                <a data-id="12" href="#rivalry" class="nav-link">O'Connell Bowl</a>
+                <a data-id="13" href="#arc" class="nav-link">The Arc</a>
+                <a data-id="14" href="#trivia" class="nav-link">Did You Know</a>
+                <a data-id="15" href="#legacy" class="nav-link">Legacy</a>
+            </div>
+            <button data-id="16" id="mobile-menu-btn" class="md:hidden p-2 text-silver-300">
+                <i data-id="17" data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- MOBILE MENU -->
+    <div data-id="18" id="mobile-menu" class="hidden mobile-menu-overlay">
+        <button data-id="19" id="mobile-menu-close" class="self-end p-2 text-silver-300 mb-6">
+            <i data-id="20" data-lucide="x" class="w-7 h-7"></i>
+        </button>
+        <div data-id="21" class="flex flex-col gap-5 pl-2">
+            <a data-id="22" href="#hero" class="font-display text-2xl text-silver-300 uppercase tracking-wide mobile-nav-link">Home</a>
+            <a data-id="23" href="#backstory" class="font-display text-2xl text-silver-300 uppercase tracking-wide mobile-nav-link">Origin</a>
+            <a data-id="24" href="#chart" class="font-display text-2xl text-silver-300 uppercase tracking-wide mobile-nav-link">Stats</a>
+            <a data-id="25" href="#heartbreak" class="font-display text-2xl text-silver-300 uppercase tracking-wide mobile-nav-link">2024</a>
+            <a data-id="26" href="#rivalry" class="font-display text-2xl text-silver-300 uppercase tracking-wide mobile-nav-link">O'Connell Bowl</a>
+            <a data-id="27" href="#arc" class="font-display text-2xl text-silver-300 uppercase tracking-wide mobile-nav-link">The Arc</a>
+            <a data-id="28" href="#trivia" class="font-display text-2xl text-silver-300 uppercase tracking-wide mobile-nav-link">Did You Know</a>
+            <a data-id="29" href="#legacy" class="font-display text-2xl text-silver-300 uppercase tracking-wide mobile-nav-link">Legacy</a>
+        </div>
+    </div>
+
+    <main data-id="30">
+        <!-- ===== SECTION 1: HERO ===== -->
+        <section data-id="31" id="hero" class="relative min-h-screen flex flex-col items-center justify-center text-center px-4 pt-24 pb-12 overflow-hidden">
+            <div data-id="32" class="hero-glow" style="top: -200px; left: 50%; transform: translateX(-50%);"></div>
+            <div data-id="33" class="hero-glow" style="bottom: -100px; right: -100px; width: 400px; height: 400px; opacity: 0.6;"></div>
+
+            <div data-id="34" class="relative z-10 max-w-4xl mx-auto">
+                <p data-id="35" class="font-display text-sm uppercase tracking-[0.3em] text-electric-500 mb-4">Gandorf National Football League</p>
+
+                <h1 data-id="36" class="font-display text-5xl sm:text-6xl md:text-8xl font-bold uppercase tracking-tight mb-3">
+                    <span data-id="37" class="text-gradient-blue">Sean O'Connell</span>
+                </h1>
+
+                <p data-id="38" class="text-lg md:text-xl text-silver-400 italic max-w-2xl mx-auto mb-8">
+                    "The Older Brother. The Highest Scorer. The Almost."
+                </p>
+
+                <div data-id="39" class="inline-flex items-center gap-2 card px-4 py-2 mb-10">
+                    <i data-id="40" data-lucide="flag" class="w-4 h-4 text-electric-500"></i>
+                    <span data-id="41" class="text-sm font-medium text-white">Eskimo Brothers</span>
+                    <span data-id="42" class="text-xs text-silver-500">(2023–present)</span>
+                </div>
+
+                <div data-id="43" class="flex flex-wrap justify-center gap-3 mb-12">
+                    <div data-id="44" class="stat-pill"><span data-id="45" class="mr-1">🆕</span> 3 Seasons in the GFL (Joined 2023)</div>
+                    <div data-id="46" class="stat-pill"><span data-id="47" class="mr-1">📊</span> 1,702 PF — League-High Single Season (2024)</div>
+                    <div data-id="48" class="stat-pill"><span data-id="49" class="mr-1">🥈</span> 2nd Place — 2024 (11-3 Record)</div>
+                    <div data-id="50" class="stat-pill"><span data-id="51" class="mr-1">👨‍👦</span> Kyle O'Connell's Older Brother</div>
+                </div>
+
+                <!-- Heartbreak Banner -->
+                <div data-id="52" class="banner-copper rounded-xl px-6 py-5 max-w-3xl mx-auto mb-6 glow-copper">
+                    <p data-id="53" class="font-display text-xl md:text-2xl uppercase tracking-wide text-copper-400 font-bold mb-2">
+                        "The Most Points in the League. Still No Ring."
+                    </p>
+                    <p data-id="54" class="text-sm text-silver-400 italic">
+                        2024 was supposed to be Sean's year. The scoreboard said so. The trophy did not.
+                    </p>
+                </div>
+
+                <!-- Unfinished Banner -->
+                <div data-id="55" class="banner-blue rounded-xl px-6 py-4 max-w-2xl mx-auto glow-blue">
+                    <p data-id="56" class="font-display text-lg md:text-xl uppercase tracking-wide text-electric-500 font-bold">
+                        "3 Seasons In. The Story Isn't Over."
+                    </p>
+                </div>
+            </div>
+
+            <div data-id="57" class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+                <i data-id="58" data-lucide="chevrons-down" class="w-6 h-6 text-electric-500/50"></i>
+            </div>
+        </section>
+
+        <div data-id="59" class="section-divider"></div>
+
+        <!-- ===== SECTION 2: THE BACKSTORY ===== -->
+        <section data-id="60" id="backstory" class="py-16 md:py-24 px-4">
+            <div data-id="61" class="max-w-5xl mx-auto">
+                <p data-id="62" class="font-display text-xs uppercase tracking-[0.25em] text-electric-500 mb-2">Chapter I</p>
+                <h2 data-id="63" class="font-display text-3xl md:text-4xl font-bold text-white uppercase tracking-wide mb-10">
+                    "The Older Brother Arrives"
+                </h2>
+
+                <div data-id="64" class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                    <div data-id="65" class="lg:col-span-2 card p-6 md:p-8">
+                        <p data-id="66" class="text-silver-300 leading-relaxed mb-5">
+                            Most GFL managers join the league because they love football, hate money, or both. Sean O'Connell joined in 2023 for a third reason: his younger brother Kyle was already there. That's right — Sean didn't found a dynasty from scratch. He walked into a league his little brother had been running in for years, slapped the name <span data-id="67" class="text-white font-semibold">"Eskimo Brothers"</span> on his franchise, and got to work.
+                        </p>
+                        <p data-id="68" class="text-silver-300 leading-relaxed mb-5">
+                            Year 1 was rough. <span data-id="69" class="text-white font-semibold">5-9, 9th place</span>, gave up 1,551 points. The league noticed — another newcomer, another slow start. Kyle probably said something about it. But Sean had seen enough. He came back in 2024 and proceeded to put up numbers that the GFL had genuinely never seen before.
+                        </p>
+                        <p data-id="70" class="text-silver-400 text-sm italic">
+                            The older brother entered the younger brother's house. The house was not prepared for what came next.
+                        </p>
+                    </div>
+
+                    <div data-id="71" class="card p-6 flex flex-col justify-center glow-blue" style="background: linear-gradient(135deg, #0f1e35 0%, rgba(59, 130, 246, 0.06) 100%);">
+                        <div data-id="72" class="flex items-center gap-2 mb-3">
+                            <i data-id="73" data-lucide="users" class="w-5 h-5 text-electric-500"></i>
+                            <span data-id="74" class="font-display text-sm uppercase tracking-wider text-electric-500">Sibling Intel</span>
+                        </div>
+                        <p data-id="75" class="text-silver-300 text-sm leading-relaxed">
+                            <span data-id="76" class="text-white font-semibold">Kyle O'Connell (Off Boys)</span> has been in the GFL since before Sean arrived. The younger brother had a head start. In 2025, Kyle finished 6th. Sean finished 7th. One spot apart. The sibling war is very much alive.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div data-id="77" class="section-divider"></div>
+
+        <!-- ===== SECTION 3: THE CHART ===== -->
+        <section data-id="78" id="chart" class="py-16 md:py-24 px-4">
+            <div data-id="79" class="max-w-4xl mx-auto">
+                <p data-id="80" class="font-display text-xs uppercase tracking-[0.25em] text-electric-500 mb-2">By the Numbers</p>
+                <h2 data-id="81" class="font-display text-3xl md:text-4xl font-bold text-white uppercase tracking-wide mb-3">
+                    "Sean's 3 Seasons — A Study in Extremes"
+                </h2>
+                <p data-id="82" class="text-silver-400 text-sm mb-10 max-w-xl">Points For vs. Points Against across three seasons — with the 2024 GFL average as a baseline.</p>
+
+                <div data-id="83" class="card p-4 md:p-6 glow-blue">
+                    <div data-id="84" class="relative" style="height: 380px;">
+                        <canvas data-id="85" id="seasonChart"></canvas>
+                    </div>
+                </div>
+
+                <div data-id="86" class="grid grid-cols-3 gap-4 mt-6">
+                    <div data-id="87" class="card p-4 text-center">
+                        <p data-id="88" class="font-display text-2xl text-silver-400">1,353</p>
+                        <p data-id="89" class="text-xs text-silver-500 uppercase tracking-wide mt-1">2023 PF</p>
+                        <p data-id="90" class="text-xs text-silver-500 mt-1">📉 Rough Start</p>
+                    </div>
+                    <div data-id="91" class="card-copper p-4 text-center glow-copper">
+                        <p data-id="92" class="font-display text-2xl text-copper-400">1,702</p>
+                        <p data-id="93" class="text-xs text-copper-500 uppercase tracking-wide mt-1">2024 PF</p>
+                        <p data-id="94" class="text-xs text-copper-400 mt-1">🔥 League-High</p>
+                    </div>
+                    <div data-id="95" class="card p-4 text-center">
+                        <p data-id="96" class="font-display text-2xl text-silver-400">1,381</p>
+                        <p data-id="97" class="text-xs text-silver-500 uppercase tracking-wide mt-1">2025 PF</p>
+                        <p data-id="98" class="text-xs text-silver-500 mt-1">🤔 Finding the Floor</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div data-id="99" class="section-divider" style="background: linear-gradient(90deg, transparent, rgba(194, 118, 58, 0.5), transparent);"></div>
+
+        <!-- ===== SECTION 4: THE 2024 HEARTBREAK ===== -->
+        <section data-id="100" id="heartbreak" class="py-16 md:py-24 px-4">
+            <div data-id="101" class="max-w-5xl mx-auto">
+                <p data-id="102" class="font-display text-xs uppercase tracking-[0.25em] text-copper-500 mb-2">The Centerpiece</p>
+                <h2 data-id="103" class="font-display text-3xl sm:text-4xl md:text-5xl font-bold uppercase tracking-wide mb-3">
+                    <span data-id="104" class="text-gradient-copper">2024: The Best Season Nobody Won</span>
+                </h2>
+                <p data-id="105" class="text-silver-400 text-sm italic mb-12 max-w-xl">The most dominant regular season in the GFL that year — and a playoff exit that still stings.</p>
+
+                <!-- What He Did / What Happened -->
+                <div data-id="106" class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+                    <div data-id="107" class="card-copper p-6 md:p-8 glow-copper">
+                        <div data-id="108" class="flex items-center gap-2 mb-4">
+                            <i data-id="109" data-lucide="flame" class="w-5 h-5 text-copper-400"></i>
+                            <h3 data-id="110" class="font-display text-lg uppercase tracking-wider text-copper-400">What He Did</h3>
+                        </div>
+                        <p data-id="111" class="text-silver-300 leading-relaxed">
+                            Sean O'Connell put up <span data-id="112" class="text-white font-bold">1,702.32 points</span> in 2024. That's not just a career high — it's the single-season points record for the entire GFL that year. He went <span data-id="113" class="text-white font-bold">11-3</span>. His point differential was dominant. By every measurable stat, he was the best team in the league during the regular season. Nobody in the GFL scored more. <span data-id="114" class="text-copper-400 font-semibold">Nobody.</span>
+                        </p>
+                    </div>
+
+                    <div data-id="115" class="card-copper p-6 md:p-8 glow-copper">
+                        <div data-id="116" class="flex items-center gap-2 mb-4">
+                            <i data-id="117" data-lucide="heart-crack" class="w-5 h-5 text-copper-400"></i>
+                            <h3 data-id="118" class="font-display text-lg uppercase tracking-wider text-copper-400">What Happened</h3>
+                        </div>
+                        <p data-id="119" class="text-silver-300 leading-relaxed">
+                            Owen Garritt also went 11-3. Owen scored <span data-id="120" class="text-silver-400">1,655.96 points</span> — 46 points fewer than Sean across 14 weeks. And Owen won the championship. Sean lost in the playoffs. The guy with fewer regular season points, the same record, won the ring. Sean went home with a 2nd-place finish and a lot of feelings.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- THE DUEL CARD -->
+                <h3 data-id="121" class="font-display text-xl uppercase tracking-wider text-center text-silver-300 mb-6">The Brutality, Visualized</h3>
+                <div data-id="122" class="grid grid-cols-1 md:grid-cols-2 gap-0 md:gap-0 max-w-3xl mx-auto mb-10 rounded-xl overflow-hidden" style="box-shadow: 0 0 40px rgba(194, 118, 58, 0.15), 0 0 40px rgba(255, 215, 0, 0.1);">
+                    <!-- Sean's Side -->
+                    <div data-id="123" class="duel-card-sean p-6 md:p-8 rounded-t-xl md:rounded-l-xl md:rounded-tr-none">
+                        <div data-id="124" class="flex items-center gap-2 mb-5">
+                            <i data-id="125" data-lucide="shield" class="w-5 h-5 text-copper-400"></i>
+                            <span data-id="126" class="font-display text-lg uppercase tracking-wider text-copper-400">Sean O'Connell</span>
+                        </div>
+                        <div data-id="127" class="space-y-4">
+                            <div data-id="128" class="flex justify-between items-baseline border-b border-copper-600/20 pb-2">
+                                <span data-id="129" class="text-xs uppercase tracking-wider text-silver-500">Record</span>
+                                <span data-id="130" class="font-display text-xl text-white">11-3</span>
+                            </div>
+                            <div data-id="131" class="flex justify-between items-baseline border-b border-copper-600/20 pb-2">
+                                <span data-id="132" class="text-xs uppercase tracking-wider text-silver-500">Points For</span>
+                                <span data-id="133" class="font-display text-xl text-copper-400">1,702.32 <span data-id="134" class="text-xs">🔝</span></span>
+                            </div>
+                            <div data-id="135" class="flex justify-between items-baseline border-b border-copper-600/20 pb-2">
+                                <span data-id="136" class="text-xs uppercase tracking-wider text-silver-500">Points Against</span>
+                                <span data-id="137" class="font-display text-lg text-silver-400">1,405.34</span>
+                            </div>
+                            <div data-id="138" class="flex justify-between items-baseline">
+                                <span data-id="139" class="text-xs uppercase tracking-wider text-silver-500">Finish</span>
+                                <span data-id="140" class="font-display text-2xl text-copper-400">🥈 2nd</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Owen's Side -->
+                    <div data-id="141" class="duel-card-owen p-6 md:p-8 rounded-b-xl md:rounded-r-xl md:rounded-bl-none">
+                        <div data-id="142" class="flex items-center gap-2 mb-5">
+                            <i data-id="143" data-lucide="trophy" class="w-5 h-5 text-gold-400"></i>
+                            <span data-id="144" class="font-display text-lg uppercase tracking-wider text-gold-400">Owen Garritt <span data-id="145" class="text-xs text-gold-500">(Champion)</span></span>
+                        </div>
+                        <div data-id="146" class="space-y-4">
+                            <div data-id="147" class="flex justify-between items-baseline border-b border-gold-400/15 pb-2">
+                                <span data-id="148" class="text-xs uppercase tracking-wider text-silver-500">Record</span>
+                                <span data-id="149" class="font-display text-xl text-white">11-3</span>
+                            </div>
+                            <div data-id="150" class="flex justify-between items-baseline border-b border-gold-400/15 pb-2">
+                                <span data-id="151" class="text-xs uppercase tracking-wider text-silver-500">Points For</span>
+                                <span data-id="152" class="font-display text-xl text-silver-400">1,655.96</span>
+                            </div>
+                            <div data-id="153" class="flex justify-between items-baseline border-b border-gold-400/15 pb-2">
+                                <span data-id="154" class="text-xs uppercase tracking-wider text-silver-500">Points Against</span>
+                                <span data-id="155" class="font-display text-lg text-silver-400">1,361.42</span>
+                            </div>
+                            <div data-id="156" class="flex justify-between items-baseline">
+                                <span data-id="157" class="text-xs uppercase tracking-wider text-silver-500">Finish</span>
+                                <span data-id="158" class="font-display text-2xl text-gold-400">🏆 Champion</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Callouts -->
+                <div data-id="159" class="max-w-3xl mx-auto space-y-4">
+                    <div data-id="160" class="banner-copper rounded-xl px-6 py-5 text-center glow-copper">
+                        <p data-id="161" class="font-display text-lg md:text-xl uppercase tracking-wide text-copper-400 font-bold">
+                            "46 points separated them over 14 weeks. Owen got the ring. Sean got the lesson."
+                        </p>
+                    </div>
+                    <div data-id="162" class="text-center px-4">
+                        <p data-id="163" class="text-sm text-silver-400 italic leading-relaxed">
+                            For context: 46 points is roughly one bad week for a running back. One injury, one bust — and this entire story flips. That's fantasy football.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div data-id="164" class="section-divider"></div>
+
+        <!-- ===== SECTION 5: SIBLING RIVALRY ===== -->
+        <section data-id="165" id="rivalry" class="py-16 md:py-24 px-4">
+            <div data-id="166" class="max-w-5xl mx-auto">
+                <p data-id="167" class="font-display text-xs uppercase tracking-[0.25em] text-electric-500 mb-2">Family Feud</p>
+                <h2 data-id="168" class="font-display text-3xl md:text-4xl font-bold text-white uppercase tracking-wide mb-3">
+                    "The O'Connell Bowl — Older vs. Younger"
+                </h2>
+                <p data-id="169" class="text-silver-400 text-sm italic mb-10 max-w-xl">Two brothers. One league. No mercy.</p>
+
+                <p data-id="170" class="text-silver-300 leading-relaxed max-w-3xl mb-10">
+                    When Sean joined the GFL in 2023, he entered a league his younger brother Kyle had already established himself in. The O'Connell Bowl is an annual family subplot nobody asked for and everyone secretly loves. Two brothers. One league. <span data-id="171" class="text-white font-semibold">No mercy.</span>
+                </p>
+
+                <!-- Head to Head Cards -->
+                <div data-id="172" class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+                    <!-- Sean Card -->
+                    <div data-id="173" class="card p-6 md:p-8 glow-blue">
+                        <div data-id="174" class="flex items-center gap-3 mb-6">
+                            <div data-id="175" class="w-10 h-10 rounded-full bg-electric-500/20 flex items-center justify-center">
+                                <i data-id="176" data-lucide="user" class="w-5 h-5 text-electric-500"></i>
+                            </div>
+                            <div data-id="177">
+                                <h3 data-id="178" class="font-display text-lg uppercase tracking-wider text-white">Sean O'Connell</h3>
+                                <p data-id="179" class="text-xs text-electric-500">Eskimo Brothers</p>
+                            </div>
+                        </div>
+                        <div data-id="180" class="space-y-3 text-sm">
+                            <div data-id="181" class="flex justify-between"><span data-id="182" class="text-silver-500">Joined</span><span data-id="183" class="text-white">2023 (3 seasons)</span></div>
+                            <div data-id="184" class="flex justify-between"><span data-id="185" class="text-silver-500">Career Record</span><span data-id="186" class="text-white">23-25 | 47.9% Win Rate</span></div>
+                            <div data-id="187" class="flex justify-between"><span data-id="188" class="text-silver-500">Best Season</span><span data-id="189" class="text-copper-400">2024 (11-3, 1,702 PF)</span></div>
+                            <div data-id="190" class="flex justify-between"><span data-id="191" class="text-silver-500">Best Finish</span><span data-id="192" class="text-white">2nd Place (2024)</span></div>
+                            <div data-id="193" class="flex justify-between"><span data-id="194" class="text-silver-500">Championships</span><span data-id="195" class="text-silver-400">0 🙁</span></div>
+                            <div data-id="196" class="flex justify-between"><span data-id="197" class="text-silver-500">Identity</span><span data-id="198" class="text-electric-400 text-right text-xs max-w-[60%]">High-octane scorer, playoff heartbreak king</span></div>
+                        </div>
+                    </div>
+
+                    <!-- Kyle Card -->
+                    <div data-id="199" class="card p-6 md:p-8" style="border-color: rgba(148, 163, 184, 0.25);">
+                        <div data-id="200" class="flex items-center gap-3 mb-6">
+                            <div data-id="201" class="w-10 h-10 rounded-full bg-silver-400/10 flex items-center justify-center">
+                                <i data-id="202" data-lucide="user" class="w-5 h-5 text-silver-400"></i>
+                            </div>
+                            <div data-id="203">
+                                <h3 data-id="204" class="font-display text-lg uppercase tracking-wider text-white">Kyle O'Connell</h3>
+                                <p data-id="205" class="text-xs text-silver-400">Off Boys</p>
+                            </div>
+                        </div>
+                        <div data-id="206" class="space-y-3 text-sm">
+                            <div data-id="207" class="flex justify-between"><span data-id="208" class="text-silver-500">Joined</span><span data-id="209" class="text-white">Before Sean (more experience)</span></div>
+                            <div data-id="210" class="flex justify-between"><span data-id="211" class="text-silver-500">2025 Finish</span><span data-id="212" class="text-white">6th Place (7-7, 1,544 PF)</span></div>
+                            <div data-id="213" class="flex justify-between"><span data-id="214" class="text-silver-500">Championships</span><span data-id="215" class="text-silver-400">TBD — check his page</span></div>
+                            <div data-id="216" class="flex justify-between"><span data-id="217" class="text-silver-500">Identity</span><span data-id="218" class="text-silver-300 text-right text-xs max-w-[60%]">The younger brother with the head start</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2025 comparison -->
+                <div data-id="219" class="card p-6 max-w-2xl mx-auto mb-6">
+                    <h4 data-id="220" class="font-display text-sm uppercase tracking-wider text-electric-500 mb-4 text-center">2025 Side-by-Side</h4>
+                    <div data-id="221" class="grid grid-cols-3 text-center text-sm gap-y-3">
+                        <div data-id="222" class="text-electric-400 font-semibold">Sean</div>
+                        <div data-id="223" class="text-silver-500 text-xs uppercase tracking-wider self-center">vs</div>
+                        <div data-id="224" class="text-silver-300 font-semibold">Kyle</div>
+
+                        <div data-id="225" class="text-white">7-7</div>
+                        <div data-id="226" class="text-silver-500 text-xs">Record</div>
+                        <div data-id="227" class="text-white">7-7</div>
+
+                        <div data-id="228" class="text-white">7th</div>
+                        <div data-id="229" class="text-silver-500 text-xs">Finish</div>
+                        <div data-id="230" class="text-white">6th</div>
+
+                        <div data-id="231" class="text-white tabular-nums">1,380.76</div>
+                        <div data-id="232" class="text-silver-500 text-xs">PF</div>
+                        <div data-id="233" class="text-white tabular-nums">1,544.54</div>
+                    </div>
+                    <p data-id="234" class="text-center text-sm text-silver-400 italic mt-4">"Same record. Kyle finished one spot ahead. Brothers gonna brother."</p>
+                </div>
+
+                <div data-id="235" class="banner-blue rounded-xl px-6 py-4 max-w-2xl mx-auto text-center glow-blue">
+                    <p data-id="236" class="text-sm text-silver-300 leading-relaxed">
+                        <span data-id="237" class="text-electric-400 font-semibold">The older brother has more points in a single season than Kyle has ever scored</span> (1,702 in 2024). The younger brother has more experience. The scoreboard is the only referee that matters.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <div data-id="238" class="section-divider"></div>
+
+        <!-- ===== SECTION 6: THE ARC ===== -->
+        <section data-id="239" id="arc" class="py-16 md:py-24 px-4">
+            <div data-id="240" class="max-w-6xl mx-auto">
+                <p data-id="241" class="font-display text-xs uppercase tracking-[0.25em] text-electric-500 mb-2">The Journey</p>
+                <h2 data-id="242" class="font-display text-3xl md:text-4xl font-bold text-white uppercase tracking-wide mb-3">
+                    "A Story in Three Acts (With More to Come)"
+                </h2>
+                <p data-id="243" class="text-silver-400 text-sm italic mb-12">Every franchise has an arc. Sean's isn't finished — and that's what makes it compelling.</p>
+
+                <div data-id="244" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- ACT I -->
+                    <div data-id="245" class="timeline-card card p-6 relative overflow-hidden">
+                        <div data-id="246" class="absolute top-0 left-0 w-full h-1 bg-electric-500/40"></div>
+                        <p data-id="247" class="font-display text-xs uppercase tracking-[0.2em] text-electric-500 mb-1">Act I</p>
+                        <h3 data-id="248" class="font-display text-xl uppercase text-white mb-1">2023: The Newcomer</h3>
+                        <div data-id="249" class="flex gap-3 text-xs text-silver-500 mb-4 flex-wrap">
+                            <span data-id="250">5-9</span><span data-id="251">9th Place</span><span data-id="252">PF: 1,353.50</span><span data-id="253">PA: 1,551.70</span>
+                        </div>
+                        <p data-id="254" class="text-sm text-silver-300 italic mb-4">"Walked into his brother's league. The league won that round."</p>
+                        <p data-id="255" class="text-sm text-silver-400 leading-relaxed mb-4">
+                            Gave up 1,551 points — nearly the most in the GFL that year. Scored fewer points than 7 other teams. The floor was being established.
+                        </p>
+                        <div data-id="256" class="bg-navy-900/50 rounded-lg px-4 py-3">
+                            <p data-id="257" class="text-xs text-silver-400 italic">"Everyone has a rough debut. Sean's wasn't catastrophic. It was just... bad."</p>
+                        </div>
+                    </div>
+
+                    <!-- ACT II -->
+                    <div data-id="258" class="timeline-card card-copper p-6 relative overflow-hidden glow-copper">
+                        <div data-id="259" class="absolute top-0 left-0 w-full h-1 bg-copper-500"></div>
+                        <p data-id="260" class="font-display text-xs uppercase tracking-[0.2em] text-copper-500 mb-1">Act II</p>
+                        <h3 data-id="261" class="font-display text-xl uppercase text-white mb-1">2024: The Eruption</h3>
+                        <div data-id="262" class="flex gap-3 text-xs text-copper-400 mb-4 flex-wrap">
+                            <span data-id="263">11-3</span><span data-id="264">2nd Place</span><span data-id="265">PF: 1,702.32</span><span data-id="266">PA: 1,405.34</span>
+                        </div>
+                        <p data-id="267" class="text-sm text-silver-300 italic mb-4">"The best regular season in the GFL that year. The runner-up trophy says the rest."</p>
+                        <p data-id="268" class="text-sm text-silver-400 leading-relaxed mb-4">
+                            His 1,702 PF was <span data-id="269" class="text-copper-400 font-semibold">+349 points</span> higher than his 2023 total. That's not development. That's a different team.
+                        </p>
+                        <div data-id="270" class="bg-navy-900/50 rounded-lg px-4 py-3">
+                            <p data-id="271" class="text-xs text-copper-400 italic">"He showed the GFL exactly what he was capable of. Then the playoffs happened."</p>
+                        </div>
+                    </div>
+
+                    <!-- ACT III -->
+                    <div data-id="272" class="timeline-card card p-6 relative overflow-hidden">
+                        <div data-id="273" class="absolute top-0 left-0 w-full h-1 bg-electric-500/60"></div>
+                        <p data-id="274" class="font-display text-xs uppercase tracking-[0.2em] text-electric-500 mb-1">Act III</p>
+                        <h3 data-id="275" class="font-display text-xl uppercase text-white mb-1">2025: The Reset</h3>
+                        <div data-id="276" class="flex gap-3 text-xs text-silver-500 mb-4 flex-wrap">
+                            <span data-id="277">7-7</span><span data-id="278">7th Place</span><span data-id="279">PF: 1,380.76</span><span data-id="280">PA: 1,418.06</span>
+                        </div>
+                        <p data-id="281" class="text-sm text-silver-300 italic mb-4">"After 2024's highs, 2025 was a recalibration. Not a collapse — just a reminder."</p>
+                        <p data-id="282" class="text-sm text-silver-400 leading-relaxed mb-4">
+                            Allowed 1,418 points — <span data-id="283" class="text-electric-400">13 more than he scored</span>. Negative point differential for the first time since 2023.
+                        </p>
+                        <div data-id="284" class="bg-navy-900/50 rounded-lg px-4 py-3">
+                            <p data-id="285" class="text-xs text-silver-400 italic">"Act III ended without a bow. The story clearly isn't finished."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div data-id="286" class="section-divider"></div>
+
+        <!-- ===== SECTION 7: DID YOU KNOW? ===== -->
+        <section data-id="287" id="trivia" class="py-16 md:py-24 px-4">
+            <div data-id="288" class="max-w-6xl mx-auto">
+                <p data-id="289" class="font-display text-xs uppercase tracking-[0.25em] text-electric-500 mb-2">Footnotes</p>
+                <h2 data-id="290" class="font-display text-3xl md:text-4xl font-bold text-white uppercase tracking-wide mb-10">
+                    Did You Know?
+                </h2>
+
+                <div data-id="291" class="did-you-know-scroll">
+                    <div data-id="292" class="dyk-card card p-5">
+                        <p data-id="293" class="text-2xl mb-2">📊</p>
+                        <p data-id="294" class="text-sm text-silver-300 leading-relaxed">Sean's 2024 PF of <span data-id="295" class="text-white font-bold">1,702.32</span> is one of the highest single-season totals in GFL history — and he STILL didn't win. That's actually kind of impressive in the worst way.</p>
+                    </div>
+                    <div data-id="296" class="dyk-card card p-5">
+                        <p data-id="297" class="text-2xl mb-2">🥊</p>
+                        <p data-id="298" class="text-sm text-silver-300 leading-relaxed">He entered the GFL in 2023 as Kyle O'Connell's older brother. In 2024, he outscored Kyle by a massive margin. <span data-id="299" class="text-electric-400 font-semibold">Older brother privileges: activated.</span></p>
+                    </div>
+                    <div data-id="300" class="dyk-card card p-5">
+                        <p data-id="301" class="text-2xl mb-2">😤</p>
+                        <p data-id="302" class="text-sm text-silver-300 leading-relaxed">The <span data-id="303" class="text-copper-400 font-semibold">46-point gap</span> between Sean and Owen in 2024 is the most painful "what if" in recent GFL memory. That's one good quarterback week from a completely different story.</p>
+                    </div>
+                    <div data-id="304" class="dyk-card card p-5">
+                        <p data-id="305" class="text-2xl mb-2">📈</p>
+                        <p data-id="306" class="text-sm text-silver-300 leading-relaxed">Sean's single-season point jump from 2023 to 2024 was <span data-id="307" class="text-white font-bold">+349 points</span> — nearly 25 points more per game. The GFL didn't see that coming.</p>
+                    </div>
+                    <div data-id="308" class="dyk-card card p-5">
+                        <p data-id="309" class="text-2xl mb-2">🎯</p>
+                        <p data-id="310" class="text-sm text-silver-300 leading-relaxed">Despite only 3 seasons, Sean's 2024 record (11-3) is tied for the best single-season record in his era — matching Tyler Shaver's best years and Owen's championship season.</p>
+                    </div>
+                    <div data-id="311" class="dyk-card card p-5">
+                        <p data-id="312" class="text-2xl mb-2">👀</p>
+                        <p data-id="313" class="text-sm text-silver-300 leading-relaxed">In 2025, Sean and Kyle both went <span data-id="314" class="text-white font-bold">7-7</span>. Kyle finished 6th. Sean finished 7th. <span data-id="315" class="text-electric-400 font-semibold">One. Spot.</span> The O'Connell Bowl has never been closer.</p>
+                    </div>
+                    <div data-id="316" class="dyk-card card p-5">
+                        <p data-id="317" class="text-2xl mb-2">🔮</p>
+                        <p data-id="318" class="text-sm text-silver-300 leading-relaxed">With 3 seasons done, Sean's PF average in his peak year (1,702) is higher than most GFL champions have ever scored. He knows how to build a winning team. He just needs the bracket to cooperate.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div data-id="319" class="section-divider"></div>
+
+        <!-- ===== SECTION 8: LEGACY SCORE ===== -->
+        <section data-id="320" id="legacy" class="py-16 md:py-24 px-4">
+            <div data-id="321" class="max-w-4xl mx-auto">
+                <p data-id="322" class="font-display text-xs uppercase tracking-[0.25em] text-electric-500 mb-2">The Verdict</p>
+                <h2 data-id="323" class="font-display text-3xl md:text-4xl font-bold text-white uppercase tracking-wide mb-2">
+                    "The Incomplete Masterpiece"
+                </h2>
+                <p data-id="324" class="text-silver-400 text-sm italic mb-12">Unfinished business. Undeniable talent. Zero rings.</p>
+
+                <div data-id="325" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-12">
+                    <!-- Scoring Power -->
+                    <div data-id="326" class="card p-5">
+                        <div data-id="327" class="flex items-center gap-2 mb-2">
+                            <i data-id="328" data-lucide="zap" class="w-4 h-4 text-electric-500"></i>
+                            <span data-id="329" class="font-display text-sm uppercase tracking-wider text-white">Scoring Power</span>
+                        </div>
+                        <div data-id="330" class="flex gap-1 mb-2" id="stars-scoring">
+                            <span data-id="331" class="star-filled">★</span><span data-id="332" class="star-filled">★</span><span data-id="333" class="star-filled">★</span><span data-id="334" class="star-filled">★</span><span data-id="335" class="star-filled">★</span>
+                        </div>
+                        <p data-id="336" class="text-xs text-silver-400">1,702 PF in a single season. The ceiling is elite.</p>
+                    </div>
+
+                    <!-- Championship Pedigree -->
+                    <div data-id="337" class="card p-5">
+                        <div data-id="338" class="flex items-center gap-2 mb-2">
+                            <i data-id="339" data-lucide="trophy" class="w-4 h-4 text-copper-500"></i>
+                            <span data-id="340" class="font-display text-sm uppercase tracking-wider text-white">Championship Pedigree</span>
+                        </div>
+                        <div data-id="341" class="flex gap-1 mb-2">
+                            <span data-id="342" class="star-filled">★</span><span data-id="343" class="star-filled">★</span><span data-id="344" class="star-empty">★</span><span data-id="345" class="star-empty">★</span><span data-id="346" class="star-empty">★</span>
+                        </div>
+                        <p data-id="347" class="text-xs text-silver-400">One runner-up. No ring. The hardware doesn't match the talent yet.</p>
+                    </div>
+
+                    <!-- Consistency -->
+                    <div data-id="348" class="card p-5">
+                        <div data-id="349" class="flex items-center gap-2 mb-2">
+                            <i data-id="350" data-lucide="activity" class="w-4 h-4 text-electric-500"></i>
+                            <span data-id="351" class="font-display text-sm uppercase tracking-wider text-white">Consistency</span>
+                        </div>
+                        <div data-id="352" class="flex gap-1 mb-2">
+                            <span data-id="353" class="star-filled">★</span><span data-id="354" class="star-filled">★</span><span data-id="355" class="star-filled">★</span><span data-id="356" class="star-empty">★</span><span data-id="357" class="star-empty">★</span>
+                        </div>
+                        <p data-id="358" class="text-xs text-silver-400">Wild swings (9th → 2nd → 7th) show a high ceiling and an inconsistent floor.</p>
+                    </div>
+
+                    <!-- Playoff Execution -->
+                    <div data-id="359" class="card p-5">
+                        <div data-id="360" class="flex items-center gap-2 mb-2">
+                            <i data-id="361" data-lucide="target" class="w-4 h-4 text-copper-500"></i>
+                            <span data-id="362" class="font-display text-sm uppercase tracking-wider text-white">Playoff Execution</span>
+                        </div>
+                        <div data-id="363" class="flex gap-1 mb-2">
+                            <span data-id="364" class="star-filled">★</span><span data-id="365" class="star-filled">★</span><span data-id="366" class="star-empty">★</span><span data-id="367" class="star-empty">★</span><span data-id="368" class="star-empty">★</span>
+                        </div>
+                        <p data-id="369" class="text-xs text-silver-400">Best regular season in the league in 2024. Didn't win. The bracket has been unkind.</p>
+                    </div>
+
+                    <!-- Sibling Rivalry -->
+                    <div data-id="370" class="card p-5 sm:col-span-2 lg:col-span-1">
+                        <div data-id="371" class="flex items-center gap-2 mb-2">
+                            <i data-id="372" data-lucide="swords" class="w-4 h-4 text-electric-500"></i>
+                            <span data-id="373" class="font-display text-sm uppercase tracking-wider text-white">Sibling Rivalry</span>
+                        </div>
+                        <div data-id="374" class="flex gap-1 mb-2">
+                            <span data-id="375" class="star-filled">★</span><span data-id="376" class="star-filled">★</span><span data-id="377" class="star-filled">★</span><span data-id="378" class="star-empty">★</span><span data-id="379" class="star-empty">★</span>
+                        </div>
+                        <p data-id="380" class="text-xs text-silver-400">Kyle edges him on longevity. Sean edges him on peak performance. TBD who gets the last laugh.</p>
+                    </div>
+                </div>
+
+                <!-- Final Callout -->
+                <div data-id="381" class="card p-6 md:p-8 glow-blue pulse-ring max-w-3xl mx-auto mb-8 text-center">
+                    <p data-id="382" class="text-2xl mb-4">🔮</p>
+                    <p data-id="383" class="font-display text-lg md:text-xl uppercase tracking-wide text-white font-bold mb-4">
+                        "The GFL doesn't know what to make of Sean O'Connell yet — and that's the most interesting thing about him."
+                    </p>
+                    <p data-id="384" class="text-sm text-silver-300 leading-relaxed italic">
+                        Three seasons. One league-high scoring year. One runner-up heartbreak. One reset. The arc is nowhere near complete. The only guarantee is that when Sean O'Connell peaks, the whole GFL knows about it. The question is whether he can time that peak for February.
+                    </p>
+                </div>
+
+                <!-- Closing Banner -->
+                <div data-id="385" class="banner-blue rounded-xl px-6 py-5 max-w-2xl mx-auto text-center glow-blue">
+                    <p data-id="386" class="font-display text-xl md:text-2xl uppercase tracking-wide text-electric-500 font-bold">
+                        "The Eskimo Brothers Aren't Done. Not Even Close."
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer data-id="387" class="py-10 text-center border-t border-electric-500/10">
+        <div data-id="388" class="flex items-center justify-center gap-2 mb-2">
+            <i data-id="389" data-lucide="shield" class="w-4 h-4 text-electric-500/40"></i>
+            <span data-id="390" class="font-display text-sm uppercase tracking-wider text-silver-500">GFL Franchise Guide</span>
+        </div>
+        <p data-id="391" class="text-xs text-silver-500">Sean O'Connell — Eskimo Brothers — Est. 2023</p>
+        <p data-id="392" class="text-xs text-silver-500 mt-3">Made by Copilot</p>
+    </footer>
+
+    <script>
+        // Guard Lucide icons
+        if (typeof lucide !== "undefined" && typeof lucide.createIcons === "function") {
+            lucide.createIcons();
+        }
+
+        // Mobile menu
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuClose = document.getElementById('mobile-menu-close');
+
+        if (mobileMenuBtn && mobileMenu && mobileMenuClose) {
+            mobileMenuBtn.addEventListener('click', function () {
+                mobileMenu.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            });
+
+            mobileMenuClose.addEventListener('click', function () {
+                mobileMenu.classList.add('hidden');
+                document.body.style.overflow = '';
+            });
+
+            document.querySelectorAll('.mobile-nav-link').forEach(function (link) {
+                link.addEventListener('click', function () {
+                    mobileMenu.classList.add('hidden');
+                    document.body.style.overflow = '';
+                });
+            });
+        }
+
+        // Smooth scroll for nav links
+        document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                var target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Chart.js — Season Chart
+        var chartCanvas = document.getElementById('seasonChart');
+        if (chartCanvas && typeof Chart !== 'undefined') {
+            var ctx = chartCanvas.getContext('2d');
+
+            // Custom plugin to draw annotations
+            var annotationPlugin = {
+                id: 'customAnnotation',
+                afterDraw: function (chart) {
+                    var yScale = chart.scales.y;
+                    var xScale = chart.scales.x;
+                    var ctxDraw = chart.ctx;
+
+                    // Draw GFL Average line at 1480
+                    var yPos = yScale.getPixelForValue(1480);
+                    ctxDraw.save();
+                    ctxDraw.beginPath();
+                    ctxDraw.setLineDash([6, 4]);
+                    ctxDraw.strokeStyle = 'rgba(203, 213, 225, 0.35)';
+                    ctxDraw.lineWidth = 1.5;
+                    ctxDraw.moveTo(xScale.left, yPos);
+                    ctxDraw.lineTo(xScale.right, yPos);
+                    ctxDraw.stroke();
+                    ctxDraw.restore();
+
+                    // Label for GFL Average
+                    ctxDraw.save();
+                    ctxDraw.fillStyle = 'rgba(203, 213, 225, 0.5)';
+                    ctxDraw.font = '10px Inter, sans-serif';
+                    ctxDraw.textAlign = 'right';
+                    ctxDraw.fillText('2024 GFL Avg ~1,480', xScale.right - 4, yPos - 6);
+                    ctxDraw.restore();
+                }
+            };
+
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['2023', '2024', '2025'],
+                    datasets: [
+                        {
+                            label: 'Points For (PF)',
+                            data: [1353.5, 1702.32, 1380.76],
+                            backgroundColor: [
+                                'rgba(59, 130, 246, 0.7)',
+                                'rgba(194, 118, 58, 0.85)',
+                                'rgba(59, 130, 246, 0.7)'
+                            ],
+                            borderColor: [
+                                'rgba(59, 130, 246, 1)',
+                                'rgba(194, 118, 58, 1)',
+                                'rgba(59, 130, 246, 1)'
+                            ],
+                            borderWidth: 2,
+                            borderRadius: 4,
+                            order: 2
+                        },
+                        {
+                            label: 'Points Against (PA)',
+                            data: [1551.7, 1405.34, 1418.06],
+                            type: 'line',
+                            borderColor: 'rgba(203, 213, 225, 0.5)',
+                            borderDash: [5, 5],
+                            backgroundColor: 'transparent',
+                            pointBackgroundColor: 'rgba(203, 213, 225, 0.8)',
+                            pointBorderColor: 'rgba(203, 213, 225, 0.8)',
+                            pointRadius: 5,
+                            pointHoverRadius: 7,
+                            tension: 0.3,
+                            borderWidth: 2,
+                            order: 1
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: true,
+                            position: 'top',
+                            labels: {
+                                color: '#94a3b8',
+                                font: { family: 'Inter', size: 11 },
+                                boxWidth: 14,
+                                padding: 20,
+                                usePointStyle: true
+                            }
+                        },
+                        tooltip: {
+                            backgroundColor: '#0f1e35',
+                            titleColor: '#ffffff',
+                            bodyColor: '#CBD5E1',
+                            borderColor: 'rgba(59, 130, 246, 0.3)',
+                            borderWidth: 1,
+                            cornerRadius: 8,
+                            padding: 12,
+                            titleFont: { family: 'Oswald', size: 14 },
+                            bodyFont: { family: 'Inter', size: 12 },
+                            callbacks: {
+                                label: function (context) {
+                                    var label = context.dataset.label || '';
+                                    var val = context.parsed.y.toLocaleString();
+                                    if (context.dataIndex === 1 && context.datasetIndex === 0) {
+                                        return label + ': ' + val + ' 🔥 League-High';
+                                    }
+                                    return label + ': ' + val;
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            ticks: {
+                                color: '#94a3b8',
+                                font: { family: 'Oswald', size: 14, weight: '500' }
+                            },
+                            grid: {
+                                color: 'rgba(59, 130, 246, 0.06)',
+                                drawBorder: false
+                            }
+                        },
+                        y: {
+                            min: 1100,
+                            max: 1850,
+                            ticks: {
+                                color: '#64748b',
+                                font: { family: 'Inter', size: 11 },
+                                callback: function (value) {
+                                    return value.toLocaleString();
+                                }
+                            },
+                            grid: {
+                                color: 'rgba(59, 130, 246, 0.08)',
+                                drawBorder: false
+                            }
+                        }
+                    }
+                },
+                plugins: [annotationPlugin]
+            });
+        }
+
+        // Scroll-triggered animation for cards
+        var observerOptions = { threshold: 0.15, rootMargin: '0px 0px -40px 0px' };
+        var fadeObserver = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.card, .card-copper, .banner-copper, .banner-blue, .duel-card-sean, .duel-card-owen, .dyk-card').forEach(function (el) {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(24px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            fadeObserver.observe(el);
+        });
+
+        // Active nav highlighting on scroll
+        var sections = document.querySelectorAll('section[id]');
+        var navLinks = document.querySelectorAll('.nav-link');
+
+        window.addEventListener('scroll', function () {
+            var scrollY = window.pageYOffset;
+            sections.forEach(function (section) {
+                var sectionTop = section.offsetTop - 120;
+                var sectionHeight = section.offsetHeight;
+                var id = section.getAttribute('id');
+
+                if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+                    navLinks.forEach(function (link) {
+                        link.style.color = '';
+                        if (link.getAttribute('href') === '#' + id) {
+                            link.style.color = '#3B82F6';
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

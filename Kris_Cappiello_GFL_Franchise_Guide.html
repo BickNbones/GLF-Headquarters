@@ -1,0 +1,1171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kris Cappiello GFL Franchise Guide</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1/dist/chart.umd.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest" defer></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              display: ['Orbitron', 'sans-serif'],
+              sans: ['Inter', 'sans-serif'],
+            },
+            colors: {
+              space: '#0a0a0a',
+              'red-primary': '#DC2626',
+              'red-deep': '#991B1B',
+              'red-bright': '#EF4444',
+              'off-white': '#F5F5F5',
+              'muted-gray': '#9CA3AF',
+              'card-dark': '#111111',
+            }
+          }
+        }
+      };
+    </script>
+    <style>
+      :root {
+        --bg: #0a0a0a;
+        --red: #DC2626;
+        --red-deep: #991B1B;
+        --red-bright: #EF4444;
+        --text: #F5F5F5;
+        --muted: #9CA3AF;
+        --card: #111111;
+      }
+
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+
+      body {
+        background-color: var(--bg);
+        color: var(--text);
+        font-family: 'Inter', sans-serif;
+        overflow-x: hidden;
+      }
+
+      /* Starfield */
+      body::before {
+        content: '';
+        position: fixed;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        pointer-events: none;
+        z-index: 0;
+        background:
+          radial-gradient(1px 1px at 10% 15%, rgba(255,255,255,0.7), transparent),
+          radial-gradient(1px 1px at 20% 35%, rgba(255,255,255,0.5), transparent),
+          radial-gradient(1.5px 1.5px at 35% 8%, rgba(255,255,255,0.8), transparent),
+          radial-gradient(1px 1px at 50% 42%, rgba(255,255,255,0.4), transparent),
+          radial-gradient(1px 1px at 65% 18%, rgba(255,255,255,0.6), transparent),
+          radial-gradient(1.5px 1.5px at 78% 55%, rgba(255,255,255,0.5), transparent),
+          radial-gradient(1px 1px at 88% 12%, rgba(255,255,255,0.7), transparent),
+          radial-gradient(1px 1px at 5% 68%, rgba(255,255,255,0.3), transparent),
+          radial-gradient(1px 1px at 42% 72%, rgba(255,255,255,0.5), transparent),
+          radial-gradient(1.5px 1.5px at 92% 38%, rgba(255,255,255,0.6), transparent),
+          radial-gradient(1px 1px at 15% 88%, rgba(255,255,255,0.4), transparent),
+          radial-gradient(1px 1px at 30% 55%, rgba(255,255,255,0.3), transparent),
+          radial-gradient(1px 1px at 55% 85%, rgba(255,255,255,0.5), transparent),
+          radial-gradient(1px 1px at 70% 75%, rgba(255,255,255,0.4), transparent),
+          radial-gradient(1.5px 1.5px at 82% 92%, rgba(255,255,255,0.6), transparent),
+          radial-gradient(1px 1px at 25% 95%, rgba(255,255,255,0.3), transparent),
+          radial-gradient(1px 1px at 48% 28%, rgba(255,255,255,0.5), transparent),
+          radial-gradient(1px 1px at 60% 62%, rgba(255,255,255,0.4), transparent),
+          radial-gradient(1.5px 1.5px at 8% 45%, rgba(255,255,255,0.7), transparent),
+          radial-gradient(1px 1px at 95% 70%, rgba(255,255,255,0.5), transparent),
+          radial-gradient(1px 1px at 38% 92%, rgba(255,255,255,0.3), transparent),
+          radial-gradient(1px 1px at 72% 5%, rgba(255,255,255,0.6), transparent),
+          radial-gradient(1px 1px at 18% 52%, rgba(255,255,255,0.4), transparent),
+          radial-gradient(1.5px 1.5px at 85% 25%, rgba(255,255,255,0.5), transparent),
+          radial-gradient(1px 1px at 45% 15%, rgba(255,255,255,0.6), transparent),
+          radial-gradient(1px 1px at 62% 48%, rgba(255,255,255,0.3), transparent),
+          radial-gradient(1px 1px at 3% 82%, rgba(255,255,255,0.5), transparent),
+          radial-gradient(1px 1px at 52% 58%, rgba(255,255,255,0.4), transparent),
+          radial-gradient(1.5px 1.5px at 28% 78%, rgba(255,255,255,0.6), transparent),
+          radial-gradient(1px 1px at 75% 42%, rgba(255,255,255,0.5), transparent);
+      }
+
+      .content-wrap { position: relative; z-index: 1; }
+
+      /* Scanline effect */
+      .scanline-overlay {
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        pointer-events: none;
+        z-index: 2;
+        background: repeating-linear-gradient(
+          0deg,
+          transparent,
+          transparent 2px,
+          rgba(255,255,255,0.015) 2px,
+          rgba(255,255,255,0.015) 4px
+        );
+        animation: scanmove 8s linear infinite;
+      }
+
+      @keyframes scanmove {
+        0% { transform: translateY(-100%); }
+        100% { transform: translateY(100%); }
+      }
+
+      /* Red glow */
+      .red-glow {
+        box-shadow: 0 0 20px rgba(220,38,38,0.3);
+      }
+      .red-glow-lg {
+        box-shadow: 0 0 40px rgba(220,38,38,0.4), 0 0 80px rgba(220,38,38,0.15);
+      }
+      .red-glow-hover {
+        transition: box-shadow 0.3s ease, border-color 0.3s ease;
+      }
+      .red-glow-hover:hover {
+        box-shadow: 0 0 25px rgba(220,38,38,0.5);
+        border-color: #EF4444;
+      }
+
+      /* Section title style */
+      .section-title {
+        font-family: 'Orbitron', sans-serif;
+        font-weight: 700;
+        color: var(--red);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+
+      /* Section divider */
+      .section-divider {
+        position: relative;
+        height: 1px;
+        background: var(--red);
+        opacity: 0.4;
+      }
+      .section-divider::after {
+        content: '🚀';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: var(--bg);
+        padding: 0 12px;
+        font-size: 16px;
+      }
+
+      /* Card style */
+      .gfl-card {
+        background: var(--card);
+        border: 1px solid var(--red);
+        border-radius: 12px;
+        padding: 24px;
+      }
+
+      /* Timeline scroll */
+      .timeline-scroll {
+        display: flex;
+        gap: 20px;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 16px;
+      }
+      .timeline-scroll::-webkit-scrollbar {
+        height: 6px;
+      }
+      .timeline-scroll::-webkit-scrollbar-track {
+        background: #1a1a1a;
+        border-radius: 3px;
+      }
+      .timeline-scroll::-webkit-scrollbar-thumb {
+        background: var(--red);
+        border-radius: 3px;
+      }
+      .timeline-card {
+        scroll-snap-align: start;
+        min-width: 300px;
+        max-width: 340px;
+        flex-shrink: 0;
+      }
+
+      /* Fill bar animation */
+      .fill-bar {
+        height: 16px;
+        background: #1a1a1a;
+        border-radius: 8px;
+        overflow: hidden;
+        position: relative;
+      }
+      .fill-bar-inner {
+        height: 100%;
+        background: linear-gradient(90deg, var(--red-deep), var(--red), var(--red-bright));
+        border-radius: 8px;
+        width: 0;
+        transition: width 1.5s cubic-bezier(0.25,0.46,0.45,0.94);
+      }
+      .fill-bar-inner.animated {
+        /* width set by JS */
+      }
+
+      /* Stat pill */
+      .stat-pill {
+        background: var(--card);
+        border: 1px solid var(--red);
+        border-radius: 9999px;
+        padding: 8px 18px;
+        font-family: 'Inter', sans-serif;
+        font-size: 0.8rem;
+        color: var(--text);
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      /* Blink cursor */
+      .blink-cursor::after {
+        content: '█';
+        animation: blink 1s step-end infinite;
+        color: var(--red);
+        margin-left: 4px;
+      }
+      @keyframes blink {
+        50% { opacity: 0; }
+      }
+
+      /* Nav */
+      .nav-link {
+        color: var(--muted);
+        font-family: 'Orbitron', sans-serif;
+        font-size: 0.65rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        padding: 8px 12px;
+        border-radius: 6px;
+        transition: color 0.2s, background 0.2s;
+        cursor: pointer;
+        white-space: nowrap;
+      }
+      .nav-link:hover {
+        color: var(--red);
+        background: rgba(220,38,38,0.1);
+      }
+
+      /* Mobile menu */
+      #mobile-menu {
+        transition: transform 0.3s ease;
+      }
+      #mobile-menu.menu-hidden {
+        transform: translateX(100%);
+      }
+
+      /* Callout */
+      .callout-box {
+        background: linear-gradient(135deg, rgba(153,27,27,0.2), rgba(220,38,38,0.1));
+        border: 1px solid var(--red);
+        border-left: 4px solid var(--red);
+        border-radius: 8px;
+        padding: 20px 24px;
+      }
+
+      /* Big banner */
+      .big-banner {
+        background: linear-gradient(135deg, rgba(153,27,27,0.3), rgba(220,38,38,0.15));
+        border: 2px solid var(--red);
+        border-radius: 12px;
+        padding: 28px 32px;
+        text-align: center;
+        box-shadow: 0 0 40px rgba(220,38,38,0.3), 0 0 80px rgba(220,38,38,0.1);
+      }
+
+      /* Did-you-know cards */
+      .dyk-scroll {
+        display: flex;
+        gap: 16px;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 12px;
+      }
+      .dyk-scroll::-webkit-scrollbar { height: 5px; }
+      .dyk-scroll::-webkit-scrollbar-track { background: #1a1a1a; border-radius: 3px; }
+      .dyk-scroll::-webkit-scrollbar-thumb { background: var(--red); border-radius: 3px; }
+      .dyk-card {
+        scroll-snap-align: start;
+        min-width: 280px;
+        max-width: 320px;
+        flex-shrink: 0;
+      }
+
+      /* Hero red center glow */
+      .hero-glow {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 500px;
+        height: 500px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(220,38,38,0.15) 0%, transparent 70%);
+        pointer-events: none;
+      }
+
+      @media (max-width: 767px) {
+        .stat-pill { font-size: 0.7rem; padding: 6px 12px; }
+        .timeline-card { min-width: 260px; }
+        .dyk-card { min-width: 250px; }
+      }
+    </style>
+</head>
+<body data-id="0">
+    <app-icon data-id="1" hidden data-icon="rocket" data-palette="Red"></app-icon>
+    <div data-id="2" class="content-wrap">
+
+    <!-- NAV -->
+    <nav data-id="3" class="fixed top-0 left-0 right-0 z-50 bg-space/90 backdrop-blur-md border-b border-red-primary/30">
+        <div data-id="4" class="max-w-7xl mx-auto px-4 md:px-6 py-3 flex items-center justify-between">
+            <div data-id="5" class="flex items-center gap-3">
+                <div data-id="6" class="w-8 h-8 rounded-full bg-red-primary/20 border border-red-primary flex items-center justify-center">
+                    <i data-id="7" data-lucide="rocket" class="w-4 h-4 text-red-primary"></i>
+                </div>
+                <span data-id="8" class="font-display text-xs md:text-sm font-bold text-red-primary tracking-wider">GFL COMMAND</span>
+            </div>
+            <div data-id="9" class="hidden md:flex items-center gap-1">
+                <a data-id="10" class="nav-link" data-nav="hero">HOME</a>
+                <a data-id="11" class="nav-link" data-nav="origin">ORIGIN</a>
+                <a data-id="12" class="nav-link" data-nav="drafting">DRAFTING</a>
+                <a data-id="13" class="nav-link" data-nav="chart">DATA</a>
+                <a data-id="14" class="nav-link" data-nav="timeline">LOGS</a>
+                <a data-id="15" class="nav-link" data-nav="dyk">INTEL</a>
+                <a data-id="16" class="nav-link" data-nav="retirement">DECOM</a>
+                <a data-id="17" class="nav-link" data-nav="scorecard">DEBRIEF</a>
+            </div>
+            <button data-id="18" id="mobile-menu-btn" class="md:hidden p-2 text-muted-gray hover:text-red-primary transition-colors">
+                <i data-id="19" data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- MOBILE MENU -->
+    <div data-id="20" id="mobile-menu" class="menu-hidden fixed inset-0 bg-space z-50 flex flex-col p-6 md:hidden overflow-y-auto">
+        <div data-id="21" class="flex justify-between items-center mb-8">
+            <span data-id="22" class="font-display text-sm font-bold text-red-primary tracking-wider">GFL COMMAND</span>
+            <button data-id="23" id="mobile-menu-close" class="p-2 text-muted-gray hover:text-red-primary">
+                <i data-id="24" data-lucide="x" class="w-6 h-6"></i>
+            </button>
+        </div>
+        <div data-id="25" class="flex flex-col gap-2">
+            <a data-id="26" class="nav-link mobile-nav-link text-base" data-nav="hero">🚀 HOME BASE</a>
+            <a data-id="27" class="nav-link mobile-nav-link text-base" data-nav="origin">📡 ORIGIN STORY</a>
+            <a data-id="28" class="nav-link mobile-nav-link text-base" data-nav="drafting">🎯 DRAFTING DOCTRINE</a>
+            <a data-id="29" class="nav-link mobile-nav-link text-base" data-nav="chart">📊 MISSION DATA</a>
+            <a data-id="30" class="nav-link mobile-nav-link text-base" data-nav="timeline">📋 MISSION LOGS</a>
+            <a data-id="31" class="nav-link mobile-nav-link text-base" data-nav="dyk">⭐ DECLASSIFIED INTEL</a>
+            <a data-id="32" class="nav-link mobile-nav-link text-base" data-nav="retirement">🛸 DECOMMISSIONED</a>
+            <a data-id="33" class="nav-link mobile-nav-link text-base" data-nav="scorecard">📝 FINAL DEBRIEF</a>
+        </div>
+    </div>
+
+    <!-- =================== HERO =================== -->
+    <section data-id="34" id="hero" class="relative min-h-screen flex flex-col items-center justify-center px-4 md:px-6 pt-20 pb-12 overflow-hidden">
+        <div data-id="35" class="scanline-overlay"></div>
+        <div data-id="36" class="hero-glow"></div>
+
+        <!-- SVG MASCOT -->
+        <div data-id="37" class="relative z-10 mb-6">
+            <svg data-id="38" width="200" height="210" viewBox="0 0 200 210" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Floating stars -->
+                <circle data-id="39" cx="20" cy="30" r="1.5" fill="#F5F5F5" opacity="0.6"/>
+                <circle data-id="40" cx="175" cy="25" r="1" fill="#F5F5F5" opacity="0.5"/>
+                <circle data-id="41" cx="15" cy="140" r="1" fill="#F5F5F5" opacity="0.4"/>
+                <circle data-id="42" cx="185" cy="160" r="1.5" fill="#F5F5F5" opacity="0.5"/>
+                <circle data-id="43" cx="40" cy="190" r="1" fill="#F5F5F5" opacity="0.3"/>
+
+                <!-- Jetpack flames -->
+                <ellipse data-id="44" cx="85" cy="195" rx="8" ry="12" fill="#EF4444" opacity="0.7"/>
+                <ellipse data-id="45" cx="85" cy="198" rx="5" ry="8" fill="#FCA5A5" opacity="0.5"/>
+                <ellipse data-id="46" cx="115" cy="195" rx="8" ry="12" fill="#EF4444" opacity="0.7"/>
+                <ellipse data-id="47" cx="115" cy="198" rx="5" ry="8" fill="#FCA5A5" opacity="0.5"/>
+
+                <!-- Body / Spacesuit -->
+                <rect data-id="48" x="72" y="90" width="56" height="70" rx="16" fill="#DC2626"/>
+                <rect data-id="49" x="76" y="94" width="48" height="62" rx="12" fill="#991B1B"/>
+
+                <!-- Jetpack -->
+                <rect data-id="50" x="78" y="140" width="16" height="42" rx="8" fill="#333"/>
+                <rect data-id="51" x="106" y="140" width="16" height="42" rx="8" fill="#333"/>
+                <rect data-id="52" x="80" y="142" width="12" height="10" rx="4" fill="#555"/>
+                <rect data-id="53" x="108" y="142" width="12" height="10" rx="4" fill="#555"/>
+
+                <!-- Belt -->
+                <rect data-id="54" x="72" y="125" width="56" height="8" rx="4" fill="#222"/>
+                <rect data-id="55" x="94" y="124" width="12" height="10" rx="3" fill="#DC2626" stroke="#EF4444" stroke-width="1"/>
+
+                <!-- Left arm (holding football helmet) -->
+                <rect data-id="56" x="36" y="100" width="40" height="14" rx="7" fill="#DC2626" transform="rotate(-15 56 107)"/>
+                <!-- Football helmet in left hand -->
+                <ellipse data-id="57" cx="38" cy="92" rx="16" ry="14" fill="#333" stroke="#555" stroke-width="1.5"/>
+                <path data-id="58" d="M28 86 Q38 82 48 86" stroke="#DC2626" stroke-width="2" fill="none"/>
+                <rect data-id="59" x="24" y="88" width="28" height="3" rx="1.5" fill="#555" opacity="0.8"/>
+                <!-- Facemask lines -->
+                <line data-id="60" x1="30" y1="92" x2="30" y2="98" stroke="#777" stroke-width="1.5" stroke-linecap="round"/>
+                <line data-id="61" x1="35" y1="93" x2="35" y2="99" stroke="#777" stroke-width="1.5" stroke-linecap="round"/>
+                <line data-id="62" x1="29" y1="95" x2="36" y2="95" stroke="#777" stroke-width="1.5" stroke-linecap="round"/>
+
+                <!-- Right arm (holding Patriots jersey) -->
+                <rect data-id="63" x="124" y="98" width="40" height="14" rx="7" fill="#DC2626" transform="rotate(10 144 105)"/>
+                <!-- Patriots jersey in right hand -->
+                <rect data-id="64" x="148" y="82" width="28" height="34" rx="4" fill="#1a3a6b"/>
+                <rect data-id="65" x="148" y="82" width="28" height="8" rx="4" fill="#0d2240"/>
+                <!-- Sleeves -->
+                <rect data-id="66" x="143" y="86" width="8" height="14" rx="3" fill="#1a3a6b"/>
+                <rect data-id="67" x="173" y="86" width="8" height="14" rx="3" fill="#1a3a6b"/>
+                <!-- "P" on jersey -->
+                <text data-id="68" x="162" y="107" font-family="Orbitron, sans-serif" font-size="16" font-weight="900" fill="#F5F5F5" text-anchor="middle">P</text>
+                <!-- Red stripe on jersey -->
+                <line data-id="69" x1="148" y1="90" x2="176" y2="90" stroke="#DC2626" stroke-width="1.5"/>
+
+                <!-- Legs -->
+                <rect data-id="70" x="80" y="155" width="14" height="28" rx="7" fill="#DC2626"/>
+                <rect data-id="71" x="106" y="155" width="14" height="28" rx="7" fill="#DC2626"/>
+                <!-- Boots -->
+                <rect data-id="72" x="78" y="178" width="18" height="10" rx="5" fill="#222"/>
+                <rect data-id="73" x="104" y="178" width="18" height="10" rx="5" fill="#222"/>
+
+                <!-- Helmet -->
+                <ellipse data-id="74" cx="100" cy="72" rx="28" ry="26" fill="#DC2626"/>
+                <ellipse data-id="75" cx="100" cy="72" rx="24" ry="22" fill="#991B1B"/>
+                <!-- Visor (black, reflective) -->
+                <ellipse data-id="76" cx="100" cy="74" rx="19" ry="13" fill="#111"/>
+                <ellipse data-id="77" cx="100" cy="74" rx="17" ry="11" fill="#1a1a1a"/>
+                <!-- Visor shine -->
+                <ellipse data-id="78" cx="93" cy="70" rx="8" ry="4" fill="rgba(255,255,255,0.08)" transform="rotate(-10 93 70)"/>
+                <!-- Antenna -->
+                <line data-id="79" x1="100" y1="48" x2="100" y2="38" stroke="#DC2626" stroke-width="2.5" stroke-linecap="round"/>
+                <circle data-id="80" cx="100" cy="35" r="4" fill="#EF4444"/>
+                <circle data-id="81" cx="100" cy="35" r="2" fill="#FCA5A5" opacity="0.8">
+                    <animate data-id="82" attributeName="opacity" values="0.8;0.3;0.8" dur="2s" repeatCount="indefinite"/>
+                </circle>
+
+                <!-- Confused expression marks -->
+                <text data-id="83" x="130" y="58" font-size="14" fill="#9CA3AF" opacity="0.7">?</text>
+                <text data-id="84" x="66" y="62" font-size="10" fill="#9CA3AF" opacity="0.5">?</text>
+
+                <!-- Gloves -->
+                <circle data-id="85" cx="38" cy="100" r="6" fill="#222"/>
+                <circle data-id="86" cx="162" cy="100" r="6" fill="#222"/>
+            </svg>
+        </div>
+
+        <div data-id="87" class="relative z-10 text-center max-w-4xl mx-auto">
+            <p data-id="88" class="font-display text-xs md:text-sm tracking-[0.3em] text-muted-gray mb-3 uppercase">GFL Command Center — Status: Retired</p>
+
+            <h1 data-id="89" class="font-display text-4xl md:text-6xl lg:text-7xl font-black text-red-primary mb-4 leading-tight" style="text-shadow: 0 0 30px rgba(220,38,38,0.4);">
+                KRIS CAPPIELLO
+            </h1>
+
+            <p data-id="90" class="text-muted-gray text-sm md:text-base italic max-w-2xl mx-auto mb-3">
+                "Space Cadet Commander. GFL Veteran. Did Not Draft a Single Player He Could Name."
+            </p>
+
+            <p data-id="91" class="font-display text-sm md:text-base font-bold text-off-white tracking-widest mb-8">
+                SPACE CADETS — 2013–2020 &nbsp;|&nbsp; <span data-id="92" class="text-red-primary">RETIRED</span>
+            </p>
+
+            <!-- Stat pills -->
+            <div data-id="93" class="flex flex-wrap justify-center gap-3 mb-10 max-w-3xl mx-auto">
+                <span data-id="94" class="stat-pill red-glow-hover">🚀 8 Seasons&nbsp;&nbsp;|&nbsp;&nbsp;43-61 Career&nbsp;&nbsp;|&nbsp;&nbsp;41.3% Win Rate</span>
+                <span data-id="95" class="stat-pill red-glow-hover">🏈 0 Championships <span data-id="96" class="text-muted-gray text-xs ml-1">(Space Cadets. Not Space Champions.)</span></span>
+                <span data-id="97" class="stat-pill red-glow-hover">🔴 Best Finish: 4th (×2, 2015 &amp; 2018)</span>
+                <span data-id="98" class="stat-pill red-glow-hover">☠️ Worst Season: 1-12, Dead Last (2014)</span>
+                <span data-id="99" class="stat-pill red-glow-hover">🏟️ Joined: Out of Obligation. Left: Also Out of Obligation.</span>
+            </div>
+
+            <!-- Big banner -->
+            <div data-id="100" class="big-banner max-w-2xl mx-auto">
+                <p data-id="101" class="font-display text-base md:text-xl font-bold text-red-primary mb-2" style="text-shadow: 0 0 15px rgba(220,38,38,0.5);">
+                    "8 YEARS. ZERO RINGS. COUNTLESS PATRIOTS DRAFTED."
+                </p>
+                <p data-id="102" class="text-muted-gray text-sm italic">The GFL's most dedicated accidental participant.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- DIVIDER -->
+    <div data-id="103" class="section-divider max-w-5xl mx-auto my-2"></div>
+
+    <!-- =================== ORIGIN STORY =================== -->
+    <section data-id="104" id="origin" class="px-4 md:px-6 py-16 md:py-24 max-w-4xl mx-auto">
+        <h2 data-id="105" class="section-title text-lg md:text-2xl mb-2">
+            <span data-id="106" class="text-red-bright mr-2">▶</span>MISSION LOG: HOW KRIS CAPPIELLO ENDED UP IN A FANTASY FOOTBALL LEAGUE
+        </h2>
+        <p data-id="107" class="text-muted-gray text-xs font-display tracking-widest mb-8">CLASSIFICATION: UNCLASSIFIED — ORIGIN DOSSIER</p>
+
+        <div data-id="108" class="gfl-card red-glow-hover mb-8">
+            <p data-id="109" class="text-off-white leading-relaxed mb-5">
+                There is a specific type of fantasy football manager that every league has. The guy who joined because someone in the group asked "hey you wanna do fantasy?" and he said yes before he knew what he was agreeing to. Kris Cappiello is that guy, except elevated to an art form. He showed up in 2013, named his team "Space Cadets" — which tells you everything you need to know about how seriously he was taking this — and proceeded to participate in the GFL for eight consecutive years without ever appearing to care deeply about football as a sport.
+            </p>
+            <p data-id="110" class="text-off-white leading-relaxed">
+                This is not a criticism. This is a tribute. It takes a special kind of loyalty to show up to something you're indifferent about, every single year, for nearly a decade.
+            </p>
+        </div>
+
+        <div data-id="111" class="callout-box">
+            <p data-id="112" class="text-off-white font-semibold text-sm md:text-base leading-relaxed">
+                "He didn't join the GFL because he loved fantasy football. He joined because someone asked him. He stayed because... honestly, unclear. But he stayed."
+            </p>
+        </div>
+    </section>
+
+    <div data-id="113" class="section-divider max-w-5xl mx-auto my-2"></div>
+
+    <!-- =================== DRAFTING PHILOSOPHY =================== -->
+    <section data-id="114" id="drafting" class="px-4 md:px-6 py-16 md:py-24 max-w-4xl mx-auto">
+        <h2 data-id="115" class="section-title text-lg md:text-2xl mb-2">
+            <span data-id="116" class="text-red-bright mr-2">▶</span>SCOUTING REPORT: THE CAPPIELLO DRAFTING SYSTEM
+        </h2>
+        <p data-id="117" class="text-muted-gray text-xs font-display tracking-widest mb-8">CLASSIFICATION: TOP SECRET — SPACE CADETS FRONT OFFICE</p>
+
+        <div data-id="118" class="gfl-card red-glow-hover mb-6" style="border-color: #991B1B; background: linear-gradient(180deg, #111111 0%, #0d0d0d 100%);">
+            <p data-id="119" class="font-display text-xs text-red-primary tracking-widest mb-1">CLASSIFIED DRAFT INTEL — SPACE CADETS FRONT OFFICE</p>
+            <p data-id="120" class="text-muted-gray text-xs italic mb-6 blink-cursor">DECRYPTING DRAFT PROTOCOLS</p>
+
+            <div data-id="121" class="space-y-6">
+                <div data-id="122">
+                    <h3 data-id="123" class="font-display text-sm font-bold text-red-bright mb-2">RULE 1: IF HE PLAYS FOR NEW ENGLAND, HE PLAYS FOR SPACE CADETS.</h3>
+                    <p data-id="124" class="text-off-white text-sm leading-relaxed">
+                        Tom Brady? Pick 1. Julian Edelman? Pick 2. Rob Gronkowski? The man is a Patriot, get him on the board. Danny Amendola? Sure. James White? Absolutely. Stephen Gostkowski, kicker for the New England Patriots? First round consideration.
+                    </p>
+                </div>
+
+                <div data-id="125" class="h-px bg-red-primary/20"></div>
+
+                <div data-id="126">
+                    <h3 data-id="127" class="font-display text-sm font-bold text-red-bright mb-2">RULE 2: BIG NAMES ONLY. WHAT IS A "SLEEPER?"</h3>
+                    <p data-id="128" class="text-off-white text-sm leading-relaxed">
+                        Kris Cappiello did not do research. He did not study depth charts. He did not read injury reports from Wednesday practice. He drafted names he recognized from watching football highlights, which is the correct approach for someone who joined a fantasy league out of social obligation.
+                    </p>
+                </div>
+
+                <div data-id="129" class="h-px bg-red-primary/20"></div>
+
+                <div data-id="130">
+                    <h3 data-id="131" class="font-display text-sm font-bold text-red-bright mb-2">RULE 3: KICKER VALUE IS UNDERRATED BY THIS LEAGUE.</h3>
+                    <p data-id="132" class="text-off-white text-sm leading-relaxed">
+                        The GFL has long dismissed kickers as afterthoughts. Kris Cappiello was ahead of his time. Or behind it. One of those.
+                    </p>
+                </div>
+
+                <div data-id="133" class="h-px bg-red-primary/20"></div>
+
+                <div data-id="134">
+                    <h3 data-id="135" class="font-display text-sm font-bold text-red-bright mb-2">RULE 4: THE WAIVER WIRE IS OPTIONAL.</h3>
+                    <p data-id="136" class="text-off-white text-sm leading-relaxed">
+                        Why would you need the waiver wire when you already have Tom Brady?
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div data-id="137" class="callout-box">
+            <p data-id="138" class="text-off-white font-semibold text-sm md:text-base leading-relaxed">
+                "The Space Cadets draft board was essentially: (1) Patriots, (2) Famous people, (3) More Patriots, (4) Whoever was left. It worked fine until it didn't."
+            </p>
+        </div>
+    </section>
+
+    <div data-id="139" class="section-divider max-w-5xl mx-auto my-2"></div>
+
+    <!-- =================== CHART =================== -->
+    <section data-id="140" id="chart" class="px-4 md:px-6 py-16 md:py-24 max-w-5xl mx-auto">
+        <h2 data-id="141" class="section-title text-lg md:text-2xl mb-2">
+            <span data-id="142" class="text-red-bright mr-2">▶</span>8 YEARS OF SPACE CADET OPERATIONS — MISSION PERFORMANCE DATA
+        </h2>
+        <p data-id="143" class="text-muted-gray text-xs font-display tracking-widest mb-8">TELEMETRY ANALYSIS — POINTS FOR vs. POINTS AGAINST</p>
+
+        <div data-id="144" class="gfl-card red-glow p-4 md:p-6">
+            <div data-id="145" class="relative" style="height: 350px;">
+                <canvas data-id="146" id="performance-chart"></canvas>
+            </div>
+            <div data-id="147" class="flex flex-wrap gap-4 mt-4 justify-center text-xs text-muted-gray">
+                <span data-id="148" class="flex items-center gap-2"><span data-id="149" class="w-3 h-3 rounded-full bg-red-primary inline-block"></span> Points For (PF)</span>
+                <span data-id="150" class="flex items-center gap-2"><span data-id="151" class="w-3 h-3 rounded-full inline-block" style="background:#555;"></span> Points Against (PA)</span>
+                <span data-id="152">☠️ Dead Last</span>
+                <span data-id="153">🏅 4th Place Peak</span>
+                <span data-id="154">👋 Final Mission</span>
+            </div>
+        </div>
+    </section>
+
+    <div data-id="155" class="section-divider max-w-5xl mx-auto my-2"></div>
+
+    <!-- =================== TIMELINE =================== -->
+    <section data-id="156" id="timeline" class="px-4 md:px-6 py-16 md:py-24 max-w-6xl mx-auto">
+        <h2 data-id="157" class="section-title text-lg md:text-2xl mb-2">
+            <span data-id="158" class="text-red-bright mr-2">▶</span>MISSION LOGS: 2013–2020
+        </h2>
+        <p data-id="159" class="text-muted-gray text-xs font-display tracking-widest mb-8">CHRONOLOGICAL FIELD REPORTS — SPACE CADETS OPERATIONS</p>
+
+        <div data-id="160" class="timeline-scroll">
+            <!-- 2013 -->
+            <div data-id="161" class="timeline-card gfl-card red-glow-hover">
+                <div data-id="162" class="flex items-center justify-between mb-3">
+                    <span data-id="163" class="font-display text-xs text-muted-gray">MISSION YEAR 1</span>
+                    <span data-id="164" class="font-display text-lg font-bold text-red-primary">2013</span>
+                </div>
+                <div data-id="165" class="flex items-center gap-2 mb-3">
+                    <span data-id="166" class="w-3 h-3 rounded-full bg-yellow-500"></span>
+                    <span data-id="167" class="font-semibold text-sm">7-6 &nbsp;|&nbsp; 7th Place</span>
+                </div>
+                <p data-id="168" class="text-off-white text-sm mb-3">"Promising debut. Managed to finish above half the league. The Patriots were good this year, which helped."</p>
+                <div data-id="169" class="text-xs text-muted-gray mb-3">PF: 1,233.5 &nbsp;|&nbsp; PA: 1,243.5</div>
+                <p data-id="170" class="text-xs text-muted-gray italic border-t border-red-primary/20 pt-3">"Showed up. Drafted. Left. Repeated for 7 more years."</p>
+            </div>
+
+            <!-- 2014 -->
+            <div data-id="171" class="timeline-card gfl-card red-glow-hover" style="border-color: #EF4444; box-shadow: 0 0 15px rgba(239,68,68,0.3);">
+                <div data-id="172" class="flex items-center justify-between mb-3">
+                    <span data-id="173" class="font-display text-xs text-muted-gray">MISSION YEAR 2</span>
+                    <span data-id="174" class="font-display text-lg font-bold text-red-bright">2014</span>
+                </div>
+                <div data-id="175" class="flex items-center gap-2 mb-3">
+                    <span data-id="176" class="w-3 h-3 rounded-full bg-red-primary"></span>
+                    <span data-id="177" class="font-semibold text-sm">☠️ 1-12 &nbsp;|&nbsp; 12th — DEAD LAST</span>
+                </div>
+                <p data-id="178" class="text-red-bright text-sm font-semibold mb-2">MISSION FAILED. CATASTROPHIC SYSTEMS FAILURE.</p>
+                <p data-id="179" class="text-off-white text-sm mb-3">"The one year the Patriots strategy truly abandoned him. Brady had a fine season. The rest of the roster did not."</p>
+                <div data-id="180" class="text-xs text-muted-gray mb-3">PF: 1,147.5 &nbsp;|&nbsp; PA: 1,448.0</div>
+                <p data-id="181" class="text-xs text-red-bright italic border-t border-red-primary/20 pt-3">"1-12. The GFL has seen worse starts. Actually no it hasn't."</p>
+            </div>
+
+            <!-- 2015 -->
+            <div data-id="182" class="timeline-card gfl-card red-glow-hover" style="border-color: #22c55e;">
+                <div data-id="183" class="flex items-center justify-between mb-3">
+                    <span data-id="184" class="font-display text-xs text-muted-gray">MISSION YEAR 3</span>
+                    <span data-id="185" class="font-display text-lg font-bold text-green-500">2015</span>
+                </div>
+                <div data-id="186" class="flex items-center gap-2 mb-3">
+                    <span data-id="187" class="w-3 h-3 rounded-full bg-green-500"></span>
+                    <span data-id="188" class="font-semibold text-sm">🏅 7-6 &nbsp;|&nbsp; 4th Place — BEST FINISH</span>
+                </div>
+                <p data-id="189" class="text-green-400 text-sm font-semibold mb-2">PEAK PERFORMANCE ACHIEVED. SPACE CADETS ALMOST RELEVANT.</p>
+                <p data-id="190" class="text-off-white text-sm mb-3">"His best scoring season. 1,476 points. Nobody expected it. Least of all Kris."</p>
+                <div data-id="191" class="text-xs text-muted-gray mb-3">PF: 1,476.0 &nbsp;|&nbsp; PA: 1,373.5</div>
+                <p data-id="192" class="text-xs text-muted-gray italic border-t border-green-500/20 pt-3">"Lightning in a bottle. The bottle was mostly empty, but the lightning was real."</p>
+            </div>
+
+            <!-- 2016 -->
+            <div data-id="193" class="timeline-card gfl-card red-glow-hover">
+                <div data-id="194" class="flex items-center justify-between mb-3">
+                    <span data-id="195" class="font-display text-xs text-muted-gray">MISSION YEAR 4</span>
+                    <span data-id="196" class="font-display text-lg font-bold text-red-primary">2016</span>
+                </div>
+                <div data-id="197" class="flex items-center gap-2 mb-3">
+                    <span data-id="198" class="w-3 h-3 rounded-full bg-yellow-500"></span>
+                    <span data-id="199" class="font-semibold text-sm">4-9 &nbsp;|&nbsp; 6th Place</span>
+                </div>
+                <p data-id="200" class="text-off-white text-sm mb-3">"Mid. Comfortable mid."</p>
+                <div data-id="201" class="text-xs text-muted-gray mb-3">PF: 1,156.0 &nbsp;|&nbsp; PA: 1,354.5</div>
+                <p data-id="202" class="text-xs text-muted-gray italic border-t border-red-primary/20 pt-3">"Gave up 1,354 points. Scored 1,156. The math has always been Kris's least favorite part."</p>
+            </div>
+
+            <!-- 2017 -->
+            <div data-id="203" class="timeline-card gfl-card red-glow-hover">
+                <div data-id="204" class="flex items-center justify-between mb-3">
+                    <span data-id="205" class="font-display text-xs text-muted-gray">MISSION YEAR 5</span>
+                    <span data-id="206" class="font-display text-lg font-bold text-red-primary">2017</span>
+                </div>
+                <div data-id="207" class="flex items-center gap-2 mb-3">
+                    <span data-id="208" class="w-3 h-3 rounded-full bg-yellow-500"></span>
+                    <span data-id="209" class="font-semibold text-sm">6-7 &nbsp;|&nbsp; 6th Place</span>
+                </div>
+                <p data-id="210" class="text-off-white text-sm mb-3">"Returned to his natural habitat: 6th place."</p>
+                <div data-id="211" class="text-xs text-muted-gray mb-3">PF: 1,266.5 &nbsp;|&nbsp; PA: 1,210.5</div>
+                <p data-id="212" class="text-xs text-muted-gray italic border-t border-red-primary/20 pt-3">"First positive point differential since 2015. Celebrated by not noticing."</p>
+            </div>
+
+            <!-- 2018 -->
+            <div data-id="213" class="timeline-card gfl-card red-glow-hover" style="border-color: #22c55e;">
+                <div data-id="214" class="flex items-center justify-between mb-3">
+                    <span data-id="215" class="font-display text-xs text-muted-gray">MISSION YEAR 6</span>
+                    <span data-id="216" class="font-display text-lg font-bold text-green-500">2018</span>
+                </div>
+                <div data-id="217" class="flex items-center gap-2 mb-3">
+                    <span data-id="218" class="w-3 h-3 rounded-full bg-green-500"></span>
+                    <span data-id="219" class="font-semibold text-sm">🏅 7-6 &nbsp;|&nbsp; 4th Place — BEST FINISH (AGAIN)</span>
+                </div>
+                <p data-id="220" class="text-green-400 text-sm font-semibold mb-2">SECOND CAREER PEAK. LIGHTNING STRIKES TWICE.</p>
+                <p data-id="221" class="text-off-white text-sm mb-3">"Back to 4th. His ceiling was real, just inconsistently accessed. The Patriots were fine this year."</p>
+                <div data-id="222" class="text-xs text-muted-gray mb-3">PF: 1,438.5 &nbsp;|&nbsp; PA: 1,340.0</div>
+                <p data-id="223" class="text-xs text-muted-gray italic border-t border-green-500/20 pt-3">"Two 4th-place finishes. Two almost-championships. Two near-misses that were never near."</p>
+            </div>
+
+            <!-- 2019 -->
+            <div data-id="224" class="timeline-card gfl-card red-glow-hover">
+                <div data-id="225" class="flex items-center justify-between mb-3">
+                    <span data-id="226" class="font-display text-xs text-muted-gray">MISSION YEAR 7</span>
+                    <span data-id="227" class="font-display text-lg font-bold text-red-primary">2019</span>
+                </div>
+                <div data-id="228" class="flex items-center gap-2 mb-3">
+                    <span data-id="229" class="w-3 h-3 rounded-full bg-yellow-500"></span>
+                    <span data-id="230" class="font-semibold text-sm">6-7 &nbsp;|&nbsp; 6th Place</span>
+                </div>
+                <p data-id="231" class="text-off-white text-sm mb-3">"The 6th place energy was becoming a lifestyle."</p>
+                <div data-id="232" class="text-xs text-muted-gray mb-3">PF: 1,319.0 &nbsp;|&nbsp; PA: 1,337.0</div>
+                <p data-id="233" class="text-xs text-muted-gray italic border-t border-red-primary/20 pt-3">"Negative point differential. By 18 points. Kris did not notice."</p>
+            </div>
+
+            <!-- 2020 -->
+            <div data-id="234" class="timeline-card gfl-card red-glow-hover" style="border-color: #EF4444;">
+                <div data-id="235" class="flex items-center justify-between mb-3">
+                    <span data-id="236" class="font-display text-xs text-muted-gray">MISSION YEAR 8 — FINAL</span>
+                    <span data-id="237" class="font-display text-lg font-bold text-red-bright">2020</span>
+                </div>
+                <div data-id="238" class="flex items-center gap-2 mb-3">
+                    <span data-id="239" class="w-3 h-3 rounded-full bg-red-primary"></span>
+                    <span data-id="240" class="font-semibold text-sm">👋 5-8 &nbsp;|&nbsp; 11th Place — The Farewell Tour</span>
+                </div>
+                <p data-id="241" class="text-red-bright text-sm font-semibold mb-2">FINAL MISSION. SYSTEMS POWERING DOWN.</p>
+                <p data-id="242" class="text-off-white text-sm mb-3">"Went out quietly, the way he came in. 11th place in his final season. The GFL was never the same."</p>
+                <div data-id="243" class="text-xs text-muted-gray mb-3">PF: 1,187.5 &nbsp;|&nbsp; PA: 1,320.5</div>
+                <p data-id="244" class="text-xs text-muted-gray italic border-t border-red-primary/20 pt-3">"(It was basically the same.)"</p>
+            </div>
+        </div>
+        <p data-id="245" class="text-center text-xs text-muted-gray mt-3 font-display tracking-wider">← SCROLL TO VIEW ALL MISSION LOGS →</p>
+    </section>
+
+    <div data-id="246" class="section-divider max-w-5xl mx-auto my-2"></div>
+
+    <!-- =================== DID YOU KNOW =================== -->
+    <section data-id="247" id="dyk" class="px-4 md:px-6 py-16 md:py-24 max-w-6xl mx-auto">
+        <h2 data-id="248" class="section-title text-lg md:text-2xl mb-2">
+            <span data-id="249" class="text-red-bright mr-2">▶</span>DECLASSIFIED INTEL
+        </h2>
+        <p data-id="250" class="text-muted-gray text-xs font-display tracking-widest mb-8">PREVIOUSLY CLASSIFIED SPACE CADETS INTELLIGENCE FILES</p>
+
+        <div data-id="251" class="dyk-scroll">
+            <div data-id="252" class="dyk-card gfl-card red-glow-hover">
+                <p data-id="253" class="text-red-primary text-lg mb-2">⭐</p>
+                <p data-id="254" class="text-off-white text-sm leading-relaxed">The Space Cadets never changed their name. Not once. 8 years, one name. Kris either loved it or forgot he could change it. Both are valid.</p>
+            </div>
+            <div data-id="255" class="dyk-card gfl-card red-glow-hover">
+                <p data-id="256" class="text-red-primary text-lg mb-2">⭐</p>
+                <p data-id="257" class="text-off-white text-sm leading-relaxed">Kris Cappiello holds the distinction of finishing <strong data-id="258" class="text-red-bright">4th place twice</strong> — his absolute ceiling — and somehow never breaking through. The 4th-place glass ceiling is real and it has his name on it.</p>
+            </div>
+            <div data-id="259" class="dyk-card gfl-card red-glow-hover">
+                <p data-id="260" class="text-red-primary text-lg mb-2">⭐</p>
+                <p data-id="261" class="text-off-white text-sm leading-relaxed">In 2014, Kris went <strong data-id="262" class="text-red-bright">1-12</strong>. His lone win that year was likely a scheduling miracle. The GFL does not have official records of how it happened but it did happen.</p>
+            </div>
+            <div data-id="263" class="dyk-card gfl-card red-glow-hover">
+                <p data-id="264" class="text-red-primary text-lg mb-2">⭐</p>
+                <p data-id="265" class="text-off-white text-sm leading-relaxed">Kris's career win rate of <strong data-id="266" class="text-red-bright">41.3%</strong> is not great. But he showed up 8 straight years without caring about football. That takes a different kind of commitment.</p>
+            </div>
+            <div data-id="267" class="dyk-card gfl-card red-glow-hover">
+                <p data-id="268" class="text-red-primary text-lg mb-2">⭐</p>
+                <p data-id="269" class="text-off-white text-sm leading-relaxed">The <strong data-id="270" class="text-red-bright">New England Patriots won Super Bowls in 2014, 2016, 2017, and 2018</strong> — four of Kris's eight seasons. The strategy was chronologically sound. The execution was a work in progress.</p>
+            </div>
+            <div data-id="271" class="dyk-card gfl-card red-glow-hover">
+                <p data-id="272" class="text-red-primary text-lg mb-2">⭐</p>
+                <p data-id="273" class="text-off-white text-sm leading-relaxed">No other GFL manager kept the same team name for <strong data-id="274" class="text-red-bright">8 consecutive seasons</strong>. "Space Cadets" is the most consistent thing Kris ever did in fantasy football. Respect.</p>
+            </div>
+            <div data-id="275" class="dyk-card gfl-card red-glow-hover">
+                <p data-id="276" class="text-red-primary text-lg mb-2">⭐</p>
+                <p data-id="277" class="text-off-white text-sm leading-relaxed">Kris never won a championship. He also never pretended he was going to. That level of honest self-awareness is genuinely rare in the GFL.</p>
+            </div>
+        </div>
+        <p data-id="278" class="text-center text-xs text-muted-gray mt-3 font-display tracking-wider">← SCROLL FOR MORE INTEL →</p>
+    </section>
+
+    <div data-id="279" class="section-divider max-w-5xl mx-auto my-2"></div>
+
+    <!-- =================== RETIREMENT =================== -->
+    <section data-id="280" id="retirement" class="px-4 md:px-6 py-16 md:py-24 max-w-4xl mx-auto">
+        <h2 data-id="281" class="section-title text-lg md:text-2xl mb-2">
+            <span data-id="282" class="text-red-bright mr-2">▶</span>DECOMMISSIONED: 2020
+        </h2>
+        <p data-id="283" class="text-muted-gray text-xs font-display tracking-widest mb-8">END OF MISSION — SPACE CADETS COMMAND RETIRED</p>
+
+        <div data-id="284" class="gfl-card red-glow-hover mb-8">
+            <p data-id="285" class="text-off-white leading-relaxed mb-5">
+                After eight years, Kris Cappiello hung up the Space Cadets jersey following the 2020 season. He finished 11th. That's very Kris. He came in 7th, briefly hit 4th twice, spent most of his career in the comfortable numbness of 6th place, and departed with an 11th-place farewell wave. The arc is complete. The story is told.
+            </p>
+            <p data-id="286" class="text-off-white leading-relaxed">
+                The GFL without Kris is missing something specific — not a dominant manager, not a championship contender, but something arguably more valuable: a guy who showed up because his friends asked him to, every single year, for eight years straight. He drafted kickers in rounds they had no business being drafted in. He picked Patriots until the Patriots stopped being good enough to pick. He called his team "Space Cadets" from day one, which makes it either brilliant or accidental, and it doesn't matter which.
+            </p>
+        </div>
+
+        <p data-id="287" class="text-off-white text-center text-lg font-semibold mb-8">
+            The GFL is better for having him. The Space Cadets flew their flag for eight years.
+        </p>
+
+        <div data-id="288" class="big-banner">
+            <p data-id="289" class="text-2xl md:text-3xl mb-2">🚀</p>
+            <p data-id="290" class="font-display text-base md:text-xl font-bold text-red-primary mb-3" style="text-shadow: 0 0 15px rgba(220,38,38,0.5);">
+                "8 SEASONS. 43 WINS. ZERO CHAMPIONSHIPS. ONE LEGEND."
+            </p>
+            <p data-id="291" class="text-muted-gray text-sm italic">
+                "He joined out of obligation. He stayed out of something more. The GFL salutes Commander Cappiello."
+            </p>
+        </div>
+    </section>
+
+    <div data-id="292" class="section-divider max-w-5xl mx-auto my-2"></div>
+
+    <!-- =================== SCORECARD =================== -->
+    <section data-id="293" id="scorecard" class="px-4 md:px-6 py-16 md:py-24 max-w-4xl mx-auto">
+        <h2 data-id="294" class="section-title text-lg md:text-2xl mb-2">
+            <span data-id="295" class="text-red-bright mr-2">▶</span>FINAL MISSION DEBRIEF
+        </h2>
+        <p data-id="296" class="text-muted-gray text-xs font-display tracking-widest mb-8">PERFORMANCE EVALUATION — SPACE CADETS FRANCHISE ASSESSMENT</p>
+
+        <div data-id="297" class="gfl-card red-glow p-5 md:p-8 mb-8">
+            <div data-id="298" class="space-y-6" id="scorecard-bars">
+                <!-- Football Knowledge -->
+                <div data-id="299">
+                    <div data-id="300" class="flex items-center justify-between mb-1">
+                        <span data-id="301" class="font-display text-xs md:text-sm font-bold text-red-primary">FOOTBALL KNOWLEDGE</span>
+                        <span data-id="302" class="font-display text-xs text-muted-gray">20%</span>
+                    </div>
+                    <div data-id="303" class="fill-bar">
+                        <div data-id="304" class="fill-bar-inner" data-width="20"></div>
+                    </div>
+                    <p data-id="305" class="text-xs text-muted-gray italic mt-1">"He knew Brady. He knew Gronk. He was fine."</p>
+                </div>
+
+                <!-- Draft Strategy -->
+                <div data-id="306">
+                    <div data-id="307" class="flex items-center justify-between mb-1">
+                        <span data-id="308" class="font-display text-xs md:text-sm font-bold text-red-primary">DRAFT STRATEGY</span>
+                        <span data-id="309" class="font-display text-xs text-muted-gray">30%</span>
+                    </div>
+                    <div data-id="310" class="fill-bar">
+                        <div data-id="311" class="fill-bar-inner" data-width="30"></div>
+                    </div>
+                    <p data-id="312" class="text-xs text-muted-gray italic mt-1">"Patriots-first is a strategy. A bad one, but a strategy."</p>
+                </div>
+
+                <!-- Championship Hunger -->
+                <div data-id="313">
+                    <div data-id="314" class="flex items-center justify-between mb-1">
+                        <span data-id="315" class="font-display text-xs md:text-sm font-bold text-red-primary">CHAMPIONSHIP HUNGER</span>
+                        <span data-id="316" class="font-display text-xs text-muted-gray">20%</span>
+                    </div>
+                    <div data-id="317" class="fill-bar">
+                        <div data-id="318" class="fill-bar-inner" data-width="20"></div>
+                    </div>
+                    <p data-id="319" class="text-xs text-muted-gray italic mt-1">"Not the point. Never was the point."</p>
+                </div>
+
+                <!-- Consistency -->
+                <div data-id="320">
+                    <div data-id="321" class="flex items-center justify-between mb-1">
+                        <span data-id="322" class="font-display text-xs md:text-sm font-bold text-red-primary">CONSISTENCY</span>
+                        <span data-id="323" class="font-display text-xs text-muted-gray">80%</span>
+                    </div>
+                    <div data-id="324" class="fill-bar">
+                        <div data-id="325" class="fill-bar-inner" data-width="80"></div>
+                    </div>
+                    <p data-id="326" class="text-xs text-muted-gray italic mt-1">"8 years. Same team name. Never missed a season. Unimpeachable."</p>
+                </div>
+
+                <!-- Loyalty -->
+                <div data-id="327">
+                    <div data-id="328" class="flex items-center justify-between mb-1">
+                        <span data-id="329" class="font-display text-xs md:text-sm font-bold text-red-primary">LOYALTY TO THE LEAGUE</span>
+                        <span data-id="330" class="font-display text-xs text-muted-gray">90%</span>
+                    </div>
+                    <div data-id="331" class="fill-bar">
+                        <div data-id="332" class="fill-bar-inner" data-width="90"></div>
+                    </div>
+                    <p data-id="333" class="text-xs text-muted-gray italic mt-1">"He was there. Every year. That counts."</p>
+                </div>
+
+                <!-- Vibes -->
+                <div data-id="334">
+                    <div data-id="335" class="flex items-center justify-between mb-1">
+                        <span data-id="336" class="font-display text-xs md:text-sm font-bold text-red-primary">VIBES</span>
+                        <span data-id="337" class="font-display text-xs text-muted-gray">100%</span>
+                    </div>
+                    <div data-id="338" class="fill-bar">
+                        <div data-id="339" class="fill-bar-inner" data-width="100"></div>
+                    </div>
+                    <p data-id="340" class="text-xs text-muted-gray italic mt-1">"Space Cadets. A kicker in round 3. 8 years of showing up. Immaculate vibes."</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Overall Verdict -->
+        <div data-id="341" class="big-banner">
+            <p data-id="342" class="text-2xl mb-3">🚀</p>
+            <p data-id="343" class="font-display text-sm md:text-lg font-bold text-red-primary mb-4" style="text-shadow: 0 0 15px rgba(220,38,38,0.5);">
+                "THE SPACE CADETS: A FRANCHISE BUILT ON OBLIGATION, PATRIOTS, AND SOMETHING THAT FELT A LOT LIKE LOYALTY."
+            </p>
+            <p data-id="344" class="text-off-white text-sm leading-relaxed max-w-2xl mx-auto">
+                "Kris Cappiello was never going to win the GFL championship. He may not have known that was the objective. But he played all 8 seasons, and that's more than a lot of people who actually care about football can say."
+            </p>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer data-id="345" class="py-10 mt-8 text-center border-t border-red-primary/20">
+        <div data-id="346" class="flex items-center justify-center gap-2 mb-2">
+            <i data-id="347" data-lucide="rocket" class="w-4 h-4 text-red-primary"></i>
+            <span data-id="348" class="font-display text-xs text-red-primary tracking-widest">SPACE CADETS — 2013–2020</span>
+            <i data-id="349" data-lucide="rocket" class="w-4 h-4 text-red-primary"></i>
+        </div>
+        <p data-id="350" class="text-xs text-muted-gray">GFL Franchise Archive &nbsp;•&nbsp; Gandorf National Football League</p>
+        <p data-id="351" class="text-xs text-muted-gray mt-3">Made by Copilot</p>
+    </footer>
+
+    </div><!-- end content-wrap -->
+
+    <script>
+    // === Icons ===
+    if (typeof lucide !== "undefined" && typeof lucide.createIcons === "function") {
+        lucide.createIcons();
+    }
+
+    // === Mobile menu ===
+    var mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    var mobileMenuClose = document.getElementById('mobile-menu-close');
+    var mobileMenu = document.getElementById('mobile-menu');
+
+    if (mobileMenuBtn) {
+        mobileMenuBtn.addEventListener('click', function() {
+            mobileMenu.classList.remove('menu-hidden');
+        });
+    }
+    if (mobileMenuClose) {
+        mobileMenuClose.addEventListener('click', function() {
+            mobileMenu.classList.add('menu-hidden');
+        });
+    }
+
+    // === Nav scrolling ===
+    document.querySelectorAll('[data-nav]').forEach(function(link) {
+        link.addEventListener('click', function() {
+            var target = document.getElementById(link.dataset.nav);
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                // Close mobile menu if open
+                mobileMenu.classList.add('menu-hidden');
+            }
+        });
+    });
+
+    // === Chart.js ===
+    (function() {
+        var ctx = document.getElementById('performance-chart');
+        if (!ctx || typeof Chart === 'undefined') return;
+
+        var years = ['2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020'];
+        var pf = [1233.5, 1147.5, 1476, 1156, 1266.5, 1438.5, 1319, 1187.5];
+        var pa = [1243.5, 1448, 1373.5, 1354.5, 1210.5, 1340, 1337, 1320.5];
+
+        var pfColors = pf.map(function(v, i) {
+            if (i === 1) return '#EF4444'; // dead last
+            if (i === 2 || i === 5) return '#22c55e'; // peaks
+            if (i === 7) return '#F59E0B'; // farewell
+            return '#DC2626';
+        });
+
+        var pfPointRadius = pf.map(function(v, i) {
+            if (i === 1 || i === 2 || i === 5 || i === 7) return 8;
+            return 5;
+        });
+
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: years,
+                datasets: [
+                    {
+                        label: 'Points For (PF)',
+                        data: pf,
+                        borderColor: '#DC2626',
+                        backgroundColor: 'rgba(220,38,38,0.1)',
+                        borderWidth: 3,
+                        pointBackgroundColor: pfColors,
+                        pointBorderColor: pfColors,
+                        pointRadius: pfPointRadius,
+                        pointHoverRadius: 10,
+                        fill: true,
+                        tension: 0.3,
+                    },
+                    {
+                        label: 'Points Against (PA)',
+                        data: pa,
+                        borderColor: '#555555',
+                        backgroundColor: 'rgba(85,85,85,0.05)',
+                        borderWidth: 2,
+                        borderDash: [6, 4],
+                        pointBackgroundColor: '#555',
+                        pointBorderColor: '#555',
+                        pointRadius: 4,
+                        pointHoverRadius: 7,
+                        fill: false,
+                        tension: 0.3,
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                interaction: {
+                    intersect: false,
+                    mode: 'index'
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        backgroundColor: '#111111',
+                        titleColor: '#DC2626',
+                        bodyColor: '#F5F5F5',
+                        borderColor: '#DC2626',
+                        borderWidth: 1,
+                        titleFont: { family: 'Orbitron', size: 12, weight: '700' },
+                        bodyFont: { family: 'Inter', size: 12 },
+                        padding: 12,
+                        cornerRadius: 8,
+                        callbacks: {
+                            afterBody: function(context) {
+                                var idx = context[0].dataIndex;
+                                var labels = {
+                                    0: '7-6 | 7th Place',
+                                    1: '☠️ 1-12 | DEAD LAST',
+                                    2: '🏅 7-6 | 4th Place — PEAK',
+                                    3: '4-9 | 6th Place',
+                                    4: '6-7 | 6th Place',
+                                    5: '🏅 7-6 | 4th Place — PEAK',
+                                    6: '6-7 | 6th Place',
+                                    7: '👋 5-8 | 11th — FAREWELL'
+                                };
+                                return labels[idx] || '';
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        grid: {
+                            color: 'rgba(220,38,38,0.1)',
+                            drawBorder: false
+                        },
+                        ticks: {
+                            color: '#9CA3AF',
+                            font: { family: 'Orbitron', size: 11, weight: '700' }
+                        }
+                    },
+                    y: {
+                        grid: {
+                            color: 'rgba(220,38,38,0.08)',
+                            drawBorder: false
+                        },
+                        ticks: {
+                            color: '#9CA3AF',
+                            font: { family: 'Inter', size: 11 },
+                            callback: function(value) {
+                                return value.toLocaleString();
+                            }
+                        },
+                        min: 1000,
+                        max: 1550
+                    }
+                }
+            },
+            plugins: [{
+                id: 'annotations',
+                afterDatasetsDraw: function(chart) {
+                    var ctx2 = chart.ctx;
+                    var meta = chart.getDatasetMeta(0);
+
+                    // 2014 - skull
+                    var p2014 = meta.data[1];
+                    ctx2.save();
+                    ctx2.font = '14px sans-serif';
+                    ctx2.textAlign = 'center';
+                    ctx2.fillText('☠️', p2014.x, p2014.y - 18);
+                    ctx2.font = '9px Orbitron';
+                    ctx2.fillStyle = '#EF4444';
+                    ctx2.fillText('DEAD LAST', p2014.x, p2014.y - 30);
+                    ctx2.restore();
+
+                    // 2015 - gold star
+                    var p2015 = meta.data[2];
+                    ctx2.save();
+                    ctx2.font = '14px sans-serif';
+                    ctx2.textAlign = 'center';
+                    ctx2.fillText('🏅', p2015.x, p2015.y - 18);
+                    ctx2.font = '8px Orbitron';
+                    ctx2.fillStyle = '#22c55e';
+                    ctx2.fillText('PEAK', p2015.x, p2015.y - 30);
+                    ctx2.restore();
+
+                    // 2018 - gold star
+                    var p2018 = meta.data[5];
+                    ctx2.save();
+                    ctx2.font = '14px sans-serif';
+                    ctx2.textAlign = 'center';
+                    ctx2.fillText('🏅', p2018.x, p2018.y - 18);
+                    ctx2.font = '8px Orbitron';
+                    ctx2.fillStyle = '#22c55e';
+                    ctx2.fillText('PEAK', p2018.x, p2018.y - 30);
+                    ctx2.restore();
+
+                    // 2020 - farewell
+                    var p2020 = meta.data[7];
+                    ctx2.save();
+                    ctx2.font = '14px sans-serif';
+                    ctx2.textAlign = 'center';
+                    ctx2.fillText('👋', p2020.x, p2020.y - 18);
+                    ctx2.font = '8px Orbitron';
+                    ctx2.fillStyle = '#F59E0B';
+                    ctx2.fillText('FAREWELL', p2020.x, p2020.y - 30);
+                    ctx2.restore();
+                }
+            }]
+        });
+    })();
+
+    // === Animated fill bars (on scroll) ===
+    (function() {
+        var bars = document.querySelectorAll('.fill-bar-inner');
+        var observed = false;
+
+        function animateBars() {
+            if (observed) return;
+            bars.forEach(function(bar) {
+                var w = bar.getAttribute('data-width');
+                bar.style.width = w + '%';
+            });
+            observed = true;
+        }
+
+        if ('IntersectionObserver' in window) {
+            var scorecardEl = document.getElementById('scorecard-bars');
+            if (scorecardEl) {
+                var observer = new IntersectionObserver(function(entries) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            // Small delay for dramatic effect
+                            setTimeout(animateBars, 300);
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.3 });
+                observer.observe(scorecardEl);
+            }
+        } else {
+            // Fallback
+            setTimeout(animateBars, 1000);
+        }
+    })();
+    </script>
+</body>
+</html>

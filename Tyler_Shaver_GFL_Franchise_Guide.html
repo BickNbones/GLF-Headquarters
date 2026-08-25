@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark" />
+    <title>Tyler Shaver GFL Franchise Guide</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              gfl: {
+                black: '#0a0a0f',
+                deep: '#0d0d18',
+                card: '#111122',
+                elevated: '#16162a',
+                gold: '#F5A623',
+                amber: '#FFD700',
+                'gold-dark': '#C8890A',
+                'gold-light': '#FFDF6F',
+                silver: '#C0C0C0',
+                'silver-dim': '#8a8a9a',
+                'silver-bright': '#e0e0e8',
+                red: '#e53e3e',
+                'red-dim': '#4a1a1a',
+                white: '#f0f0f5',
+                'text-primary': '#e8e8f0',
+                'text-secondary': '#a0a0b8',
+              }
+            },
+            fontFamily: {
+              display: ['Oswald', 'sans-serif'],
+              sans: ['Inter', 'sans-serif'],
+            },
+          },
+        },
+      };
+    </script>
+    <script src="https://unpkg.com/lucide@latest" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1/dist/chart.umd.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <style>
+      :root {
+        --gfl-black: #0a0a0f;
+        --gfl-deep: #0d0d18;
+        --gfl-card: #111122;
+        --gfl-gold: #F5A623;
+        --gfl-amber: #FFD700;
+        --gfl-silver: #C0C0C0;
+        --gfl-red: #e53e3e;
+        --gfl-glow: 0 0 30px rgba(245, 166, 35, 0.25);
+        --gfl-glow-strong: 0 0 50px rgba(255, 215, 0, 0.35);
+      }
+
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      html { scroll-behavior: smooth; }
+      body {
+        background-color: var(--gfl-black);
+        color: #e8e8f0;
+        font-family: 'Inter', sans-serif;
+      }
+
+      .gold-gradient-text {
+        background: linear-gradient(135deg, #F5A623, #FFD700, #F5A623);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .gold-glow-border {
+        box-shadow: 0 0 20px rgba(245, 166, 35, 0.15), inset 0 0 20px rgba(245, 166, 35, 0.03);
+        border: 1px solid rgba(245, 166, 35, 0.25);
+      }
+
+      .gold-glow-strong {
+        box-shadow: 0 0 35px rgba(255, 215, 0, 0.25), 0 0 15px rgba(245, 166, 35, 0.2);
+        border: 1px solid rgba(255, 215, 0, 0.4);
+      }
+
+      .hero-glow {
+        background: radial-gradient(ellipse at center, rgba(245, 166, 35, 0.08) 0%, rgba(10, 10, 15, 0) 65%);
+      }
+
+      .champion-row {
+        border-left: 4px solid #FFD700;
+        background: rgba(245, 166, 35, 0.04);
+      }
+
+      .down-row {
+        background: rgba(229, 62, 62, 0.06);
+      }
+
+      .badge-champion {
+        background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(245, 166, 35, 0.15));
+        border: 1px solid rgba(255, 215, 0, 0.35);
+        color: #FFD700;
+      }
+
+      .badge-history {
+        background: linear-gradient(135deg, rgba(255, 215, 0, 0.3), rgba(245, 166, 35, 0.25));
+        border: 1px solid rgba(255, 215, 0, 0.5);
+        color: #FFD700;
+        animation: pulse-gold 2s ease-in-out infinite;
+      }
+
+      @keyframes pulse-gold {
+        0%, 100% { box-shadow: 0 0 8px rgba(255, 215, 0, 0.2); }
+        50% { box-shadow: 0 0 20px rgba(255, 215, 0, 0.4); }
+      }
+
+      .badge-red {
+        background: rgba(229, 62, 62, 0.15);
+        border: 1px solid rgba(229, 62, 62, 0.3);
+        color: #e53e3e;
+      }
+
+      .star-filled { color: #FFD700; }
+      .star-empty { color: #333348; }
+
+      .facts-scroll {
+        scrollbar-width: thin;
+        scrollbar-color: rgba(245, 166, 35, 0.3) transparent;
+      }
+      .facts-scroll::-webkit-scrollbar { height: 6px; }
+      .facts-scroll::-webkit-scrollbar-track { background: transparent; }
+      .facts-scroll::-webkit-scrollbar-thumb { background: rgba(245, 166, 35, 0.3); border-radius: 3px; }
+
+      .era-badge-tigers {
+        background: rgba(245, 166, 35, 0.12);
+        border: 1px solid rgba(245, 166, 35, 0.25);
+        color: #F5A623;
+      }
+
+      .era-badge-tickle {
+        background: rgba(192, 192, 192, 0.1);
+        border: 1px solid rgba(192, 192, 192, 0.25);
+        color: #C0C0C0;
+      }
+
+      .section-divider {
+        height: 1px;
+        background: linear-gradient(90deg, transparent, rgba(245, 166, 35, 0.2), transparent);
+      }
+
+      .nav-link {
+        transition: color 0.2s ease, border-color 0.2s ease;
+        border-bottom: 2px solid transparent;
+      }
+      .nav-link:hover {
+        color: #F5A623;
+        border-bottom-color: #F5A623;
+      }
+
+      .dynasty-card {
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+      .dynasty-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 0 25px rgba(245, 166, 35, 0.15);
+      }
+    </style>
+</head>
+<body data-id="0" class="min-h-screen">
+    <app-icon data-id="1" hidden data-icon="trophy" data-palette="Yellow"></app-icon>
+
+    <!-- NAVIGATION -->
+    <nav data-id="2" id="navbar-gfl1" class="fixed top-0 left-0 right-0 z-50 bg-gfl-black/90 backdrop-blur-md border-b border-gfl-gold/10">
+        <div data-id="3" class="max-w-7xl mx-auto px-4 md:px-6 py-3 flex items-center justify-between">
+            <a data-id="4" href="#hero" class="flex items-center gap-2">
+                <i data-id="5" data-lucide="trophy" class="w-5 h-5 text-gfl-gold"></i>
+                <span data-id="6" class="font-display text-lg font-semibold text-gfl-gold tracking-wide">GFL FRANCHISE GUIDE</span>
+            </a>
+            <div data-id="7" class="hidden md:flex items-center gap-6">
+                <a data-id="8" href="#overview" class="nav-link text-sm font-medium text-gfl-silver pb-1">Overview</a>
+                <a data-id="9" href="#dynasty" class="nav-link text-sm font-medium text-gfl-silver pb-1">Dynasty</a>
+                <a data-id="10" href="#seasons" class="nav-link text-sm font-medium text-gfl-silver pb-1">Seasons</a>
+                <a data-id="11" href="#efficiency" class="nav-link text-sm font-medium text-gfl-silver pb-1">Playoffs</a>
+                <a data-id="12" href="#eras" class="nav-link text-sm font-medium text-gfl-silver pb-1">Eras</a>
+                <a data-id="13" href="#facts" class="nav-link text-sm font-medium text-gfl-silver pb-1">Facts</a>
+                <a data-id="14" href="#legacy" class="nav-link text-sm font-medium text-gfl-silver pb-1">Legacy</a>
+            </div>
+            <button data-id="15" id="mobile-menu-btn-abc1" class="md:hidden p-2 text-gfl-silver">
+                <i data-id="16" data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- MOBILE MENU -->
+    <nav data-id="17" id="mobile-menu-abc1" class="hidden fixed inset-0 bg-gfl-black/98 z-50 flex flex-col items-center justify-center gap-6 p-6">
+        <button data-id="18" id="mobile-menu-close-abc1" class="absolute top-4 right-4 p-2 text-gfl-silver">
+            <i data-id="19" data-lucide="x" class="w-6 h-6"></i>
+        </button>
+        <a data-id="20" href="#hero" class="mobile-nav-link text-xl font-display text-gfl-gold tracking-wide">Home</a>
+        <a data-id="21" href="#overview" class="mobile-nav-link text-xl font-display text-gfl-silver tracking-wide">Overview</a>
+        <a data-id="22" href="#dynasty" class="mobile-nav-link text-xl font-display text-gfl-silver tracking-wide">Dynasty</a>
+        <a data-id="23" href="#seasons" class="mobile-nav-link text-xl font-display text-gfl-silver tracking-wide">Seasons</a>
+        <a data-id="24" href="#efficiency" class="mobile-nav-link text-xl font-display text-gfl-silver tracking-wide">Playoffs</a>
+        <a data-id="25" href="#eras" class="mobile-nav-link text-xl font-display text-gfl-silver tracking-wide">Eras</a>
+        <a data-id="26" href="#facts" class="mobile-nav-link text-xl font-display text-gfl-silver tracking-wide">Facts</a>
+        <a data-id="27" href="#legacy" class="mobile-nav-link text-xl font-display text-gfl-silver tracking-wide">Legacy</a>
+    </nav>
+
+    <main data-id="28">
+        <!-- ═══════════════════════════════════════ -->
+        <!-- SECTION 1: HERO -->
+        <!-- ═══════════════════════════════════════ -->
+        <section data-id="29" id="hero" class="relative min-h-screen flex items-center justify-center pt-16 overflow-hidden">
+            <div data-id="30" class="hero-glow absolute inset-0"></div>
+            <div data-id="31" class="absolute inset-0 opacity-5" style="background-image: radial-gradient(rgba(245,166,35,0.15) 1px, transparent 1px); background-size: 40px 40px;"></div>
+            <div data-id="32" class="relative z-10 text-center px-4 md:px-6 max-w-5xl mx-auto py-16 md:py-24">
+                <p data-id="33" id="hero-subtitle-1a2b" class="font-sans text-sm md:text-base uppercase tracking-[0.3em] text-gfl-silver mb-4">Gandorf National Football League</p>
+
+                <h1 data-id="34" id="hero-title-3c4d" class="font-display text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-bold gold-gradient-text leading-none mb-4">
+                    TYLER<br data-id="35">SHAVER
+                </h1>
+
+                <p data-id="36" id="hero-tagline-5e6f" class="font-display text-xl md:text-2xl italic text-gfl-gold/80 mb-3">"The Conqueror"</p>
+                <p data-id="37" id="hero-desc-7g8h" class="text-sm md:text-base text-gfl-silver mb-8">GFL's Most Decorated Champion</p>
+
+                <div data-id="38" id="hero-eras-9i0j" class="flex flex-wrap justify-center gap-2 md:gap-4 mb-10">
+                    <span data-id="39" class="era-badge-tigers px-3 py-1.5 rounded-full text-xs md:text-sm font-medium">Northern BTH Tigers <span data-id="40" class="opacity-60">(2019–2022)</span></span>
+                    <span data-id="41" class="era-badge-tickle px-3 py-1.5 rounded-full text-xs md:text-sm font-medium">Turbulent Ticklesh!ts <span data-id="42" class="opacity-60">(2023–2025)</span></span>
+                </div>
+
+                <div data-id="43" id="hero-pills-k1l2" class="flex flex-wrap justify-center gap-3 md:gap-4 mb-10">
+                    <span data-id="44" class="bg-gfl-deep border border-gfl-gold/20 text-gfl-amber px-4 py-2 rounded-full text-xs md:text-sm font-semibold">🏆 3x Champion</span>
+                    <span data-id="45" class="bg-gfl-deep border border-gfl-gold/20 text-gfl-silver-bright px-4 py-2 rounded-full text-xs md:text-sm font-semibold">7 Seasons</span>
+                    <span data-id="46" class="bg-gfl-deep border border-gfl-gold/20 text-gfl-silver-bright px-4 py-2 rounded-full text-xs md:text-sm font-semibold">54-42</span>
+                    <span data-id="47" class="bg-gfl-deep border border-gfl-gold/20 text-gfl-silver-bright px-4 py-2 rounded-full text-xs md:text-sm font-semibold">9,919 Career PF</span>
+                </div>
+
+                <!-- CROWN JEWEL BADGE -->
+                <div data-id="48" id="hero-b2b-m3n4" class="mb-4">
+                    <div data-id="49" class="inline-block gold-glow-strong rounded-xl px-6 md:px-10 py-4 md:py-5 bg-gradient-to-r from-gfl-amber/10 via-gfl-gold/15 to-gfl-amber/10">
+                        <p data-id="50" class="font-display text-base md:text-xl lg:text-2xl font-bold text-gfl-amber tracking-wide">
+                            ⭐ THE ONLY BACK-TO-BACK CHAMPION IN GFL HISTORY ⭐
+                        </p>
+                    </div>
+                </div>
+
+                <!-- SECOND BADGE -->
+                <div data-id="51" id="hero-3x-o5p6">
+                    <div data-id="52" class="inline-block gold-glow-border rounded-lg px-5 md:px-8 py-3 bg-gfl-gold/5">
+                        <p data-id="53" class="font-display text-sm md:text-lg font-semibold text-gfl-gold tracking-wide">
+                            👑 ONLY 3x CHAMPION IN GFL HISTORY 👑
+                        </p>
+                    </div>
+                </div>
+
+                <div data-id="54" class="mt-12">
+                    <a data-id="55" href="#overview" class="inline-flex items-center gap-2 text-gfl-silver/60 text-sm hover:text-gfl-gold transition-colors">
+                        <span data-id="56">Explore the Legacy</span>
+                        <i data-id="57" data-lucide="chevron-down" class="w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <div data-id="58" class="section-divider max-w-5xl mx-auto"></div>
+
+        <!-- ═══════════════════════════════════════ -->
+        <!-- SECTION 2: CAREER OVERVIEW CARDS -->
+        <!-- ═══════════════════════════════════════ -->
+        <section data-id="59" id="overview" class="py-16 md:py-24 px-4 md:px-6">
+            <div data-id="60" class="max-w-6xl mx-auto">
+                <p data-id="61" id="overview-label-q7r8" class="text-xs uppercase tracking-[0.25em] text-gfl-gold/60 font-semibold mb-2 text-center">Career At A Glance</p>
+                <h2 data-id="62" id="overview-title-s9t0" class="font-display text-3xl md:text-4xl font-bold text-center gold-gradient-text mb-12">THE NUMBERS</h2>
+
+                <div data-id="63" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+                    <!-- Card 1: Championships -->
+                    <div data-id="64" id="card-champ-u1v2" class="bg-gfl-deep rounded-2xl p-6 gold-glow-border text-center">
+                        <div data-id="65" class="flex justify-center gap-1 mb-3">
+                            <span data-id="66" class="text-2xl">🏆</span><span data-id="67" class="text-2xl">🏆</span><span data-id="68" class="text-2xl">🏆</span>
+                        </div>
+                        <p data-id="69" class="font-display text-4xl font-bold text-gfl-amber mb-1">3</p>
+                        <p data-id="70" class="text-xs uppercase tracking-wider text-gfl-silver font-semibold">Championships</p>
+                        <p data-id="71" class="text-xs text-gfl-silver-dim mt-2">2019, 2020 & 2023</p>
+                    </div>
+
+                    <!-- Card 2: Win Rate -->
+                    <div data-id="72" id="card-winrate-w3x4" class="bg-gfl-deep rounded-2xl p-6 gold-glow-border text-center">
+                        <div data-id="73" class="mb-3">
+                            <i data-id="74" data-lucide="trending-up" class="w-8 h-8 text-gfl-gold mx-auto"></i>
+                        </div>
+                        <p data-id="75" class="font-display text-4xl font-bold text-gfl-amber mb-1">56.3%</p>
+                        <p data-id="76" class="text-xs uppercase tracking-wider text-gfl-silver font-semibold">Win Rate</p>
+                        <p data-id="77" class="text-xs text-gfl-silver-dim mt-2">54W – 42L Career</p>
+                    </div>
+
+                    <!-- Card 3: Best Season -->
+                    <div data-id="78" id="card-best-y5z6" class="bg-gfl-deep rounded-2xl p-6 gold-glow-border text-center">
+                        <div data-id="79" class="mb-3">
+                            <i data-id="80" data-lucide="flame" class="w-8 h-8 text-gfl-red mx-auto"></i>
+                        </div>
+                        <p data-id="81" class="font-display text-4xl font-bold text-gfl-amber mb-1">10-4</p>
+                        <p data-id="82" class="text-xs uppercase tracking-wider text-gfl-silver font-semibold">Best Regular Season</p>
+                        <p data-id="83" class="text-xs text-gfl-silver-dim mt-2">2022 — 1,539.28 PF (4th 😤)</p>
+                    </div>
+
+                    <!-- Card 4: Longest Drought -->
+                    <div data-id="84" id="card-drought-a7b8" class="bg-gfl-deep rounded-2xl p-6 gold-glow-border text-center">
+                        <div data-id="85" class="mb-3">
+                            <i data-id="86" data-lucide="hourglass" class="w-8 h-8 text-gfl-silver mx-auto"></i>
+                        </div>
+                        <p data-id="87" class="font-display text-4xl font-bold text-gfl-silver mb-1">3</p>
+                        <p data-id="88" class="text-xs uppercase tracking-wider text-gfl-silver font-semibold">Longest Title Drought</p>
+                        <p data-id="89" class="text-xs text-gfl-silver-dim mt-2">2021–22, 2024– and counting</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div data-id="90" class="section-divider max-w-5xl mx-auto"></div>
+
+        <!-- ═══════════════════════════════════════ -->
+        <!-- SECTION 3: THE DYNASTY CHAPTER -->
+        <!-- ═══════════════════════════════════════ -->
+        <section data-id="91" id="dynasty" class="py-16 md:py-24 px-4 md:px-6 relative">
+            <div data-id="92" class="absolute inset-0 bg-gradient-to-b from-gfl-gold/[0.03] via-gfl-gold/[0.06] to-gfl-gold/[0.03]"></div>
+            <div data-id="93" class="relative max-w-6xl mx-auto">
+                <p data-id="94" id="dynasty-label-c9d0" class="text-xs uppercase tracking-[0.25em] text-gfl-gold/60 font-semibold mb-2 text-center">The Dynasty Chapter</p>
+                <h2 data-id="95" id="dynasty-title-e1f2" class="font-display text-3xl md:text-4xl font-bold text-center gold-gradient-text mb-3">"Rookie. Winner. Legend."</h2>
+                <p data-id="96" id="dynasty-subtitle-g3h4" class="font-display text-lg md:text-xl text-center text-gfl-gold/70 italic mb-10">Arrived in 2019. Left No Doubt.</p>
+
+                <div data-id="97" id="dynasty-narrative-i5j6" class="max-w-3xl mx-auto text-center mb-14">
+                    <p data-id="98" class="text-gfl-text-secondary leading-relaxed text-sm md:text-base">
+                        Tyler Shaver didn't come to the GFL to find his footing — he came to win. In his very first season, he claimed the championship. Then he did something no one in GFL history had ever done: he came back and won it again. <span data-id="99" class="text-gfl-amber font-semibold">Back-to-back.</span> The only manager in league history to accomplish the feat. By the time he claimed Ring #3 in 2023, the debate was settled — <span data-id="100" class="text-gfl-gold font-semibold">Tyler Shaver is the greatest champion the GFL has ever seen.</span>
+                    </p>
+                </div>
+
+                <div data-id="101" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
+                    <!-- 2019 -->
+                    <div data-id="102" id="dynasty-2019-k7l8" class="dynasty-card bg-gfl-deep rounded-2xl p-5 gold-glow-strong text-center">
+                        <p data-id="103" class="font-display text-3xl font-bold text-gfl-amber mb-1">2019</p>
+                        <p data-id="104" class="text-2xl mb-2">🏆</p>
+                        <p data-id="105" class="font-display text-lg font-semibold text-gfl-gold mb-1">9-4</p>
+                        <p data-id="106" class="text-xs text-gfl-silver font-medium uppercase tracking-wider">Ring #1 — Rookie Arrival</p>
+                    </div>
+
+                    <!-- 2020 -->
+                    <div data-id="107" id="dynasty-2020-m9n0" class="dynasty-card bg-gfl-deep rounded-2xl p-5 gold-glow-strong text-center relative overflow-hidden">
+                        <div data-id="108" class="absolute top-0 left-0 right-0 bg-gradient-to-r from-gfl-amber/20 via-gfl-gold/30 to-gfl-amber/20 py-1">
+                            <p data-id="109" class="text-[10px] font-bold uppercase tracking-widest text-gfl-amber">History Made</p>
+                        </div>
+                        <p data-id="110" class="font-display text-3xl font-bold text-gfl-amber mb-1 mt-4">2020</p>
+                        <p data-id="111" class="text-2xl mb-2">🏆</p>
+                        <p data-id="112" class="font-display text-lg font-semibold text-gfl-gold mb-1">9-4</p>
+                        <p data-id="113" class="text-xs text-gfl-silver font-medium uppercase tracking-wider">Ring #2 — History Made</p>
+                    </div>
+
+                    <!-- 2021 -->
+                    <div data-id="114" id="dynasty-2021-o1p2" class="dynasty-card bg-gfl-deep rounded-2xl p-5 border border-gfl-red/15 text-center">
+                        <p data-id="115" class="font-display text-3xl font-bold text-gfl-silver-dim mb-1">2021</p>
+                        <p data-id="116" class="text-2xl mb-2">😬</p>
+                        <p data-id="117" class="font-display text-lg font-semibold text-gfl-silver mb-1">5-9</p>
+                        <p data-id="118" class="text-xs text-gfl-silver-dim font-medium uppercase tracking-wider">The Only Stumble</p>
+                    </div>
+
+                    <!-- 2022 -->
+                    <div data-id="119" id="dynasty-2022-q3r4" class="dynasty-card bg-gfl-deep rounded-2xl p-5 border border-gfl-red/20 text-center">
+                        <p data-id="120" class="font-display text-3xl font-bold text-gfl-silver mb-1">2022</p>
+                        <p data-id="121" class="text-2xl mb-2">😤</p>
+                        <p data-id="122" class="font-display text-lg font-semibold text-gfl-silver mb-1">10-4 <span data-id="123" class="text-sm text-gfl-silver-dim">4th</span></p>
+                        <p data-id="124" class="text-xs text-gfl-red font-medium uppercase tracking-wider">10-4 and No Ring</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div data-id="125" class="section-divider max-w-5xl mx-auto"></div>
+
+        <!-- ═══════════════════════════════════════ -->
+        <!-- SECTION 4: SEASON-BY-SEASON -->
+        <!-- ═══════════════════════════════════════ -->
+        <section data-id="126" id="seasons" class="py-16 md:py-24 px-4 md:px-6">
+            <div data-id="127" class="max-w-6xl mx-auto">
+                <p data-id="128" id="seasons-label-s5t6" class="text-xs uppercase tracking-[0.25em] text-gfl-gold/60 font-semibold mb-2 text-center">Season-by-Season</p>
+                <h2 data-id="129" id="seasons-title-u7v8" class="font-display text-3xl md:text-4xl font-bold text-center gold-gradient-text mb-12">THE COMPLETE RECORD</h2>
+
+                <!-- Chart -->
+                <div data-id="130" id="chart-container-w9x0" class="bg-gfl-deep rounded-2xl p-4 md:p-6 gold-glow-border mb-10">
+                    <div data-id="131" class="relative h-64 md:h-80">
+                        <canvas data-id="132" id="pf-pa-chart-y1z2"></canvas>
+                    </div>
+                </div>
+
+                <!-- Table -->
+                <div data-id="133" id="table-container-a3b4" class="overflow-x-auto rounded-2xl bg-gfl-deep gold-glow-border">
+                    <table data-id="134" class="w-full text-sm">
+                        <thead data-id="135">
+                            <tr data-id="136" class="border-b border-gfl-gold/10">
+                                <th data-id="137" class="px-4 py-4 text-left font-display text-xs uppercase tracking-wider text-gfl-gold">Year</th>
+                                <th data-id="138" class="px-4 py-4 text-left font-display text-xs uppercase tracking-wider text-gfl-gold">Team</th>
+                                <th data-id="139" class="px-4 py-4 text-center font-display text-xs uppercase tracking-wider text-gfl-gold">W-L</th>
+                                <th data-id="140" class="px-4 py-4 text-right font-display text-xs uppercase tracking-wider text-gfl-gold">PF</th>
+                                <th data-id="141" class="px-4 py-4 text-right font-display text-xs uppercase tracking-wider text-gfl-gold">PA</th>
+                                <th data-id="142" class="px-4 py-4 text-center font-display text-xs uppercase tracking-wider text-gfl-gold">Finish</th>
+                                <th data-id="143" class="px-4 py-4 text-left font-display text-xs uppercase tracking-wider text-gfl-gold">Notes</th>
+                            </tr>
+                        </thead>
+                        <tbody data-id="144" id="season-tbody-c5d6">
+                            <!-- 2019 -->
+                            <tr data-id="145" class="champion-row border-b border-gfl-gold/5">
+                                <td data-id="146" class="px-4 py-3 font-semibold text-gfl-amber tabular-nums">2019</td>
+                                <td data-id="147" class="px-4 py-3"><span data-id="148" class="era-badge-tigers text-xs px-2 py-0.5 rounded-full whitespace-nowrap">Northern BTH Tigers</span></td>
+                                <td data-id="149" class="px-4 py-3 text-center font-semibold tabular-nums text-gfl-text-primary">9-4</td>
+                                <td data-id="150" class="px-4 py-3 text-right tabular-nums text-gfl-text-primary">1,427.00</td>
+                                <td data-id="151" class="px-4 py-3 text-right tabular-nums text-gfl-text-secondary">1,314.00</td>
+                                <td data-id="152" class="px-4 py-3 text-center"><span data-id="153" class="badge-champion text-xs px-2 py-0.5 rounded-full">🏆 1st</span></td>
+                                <td data-id="154" class="px-4 py-3 text-xs text-gfl-amber">Ring #1 — Rookie Champion</td>
+                            </tr>
+                            <!-- 2020 -->
+                            <tr data-id="155" class="champion-row border-b border-gfl-gold/5">
+                                <td data-id="156" class="px-4 py-3 font-semibold text-gfl-amber tabular-nums">2020</td>
+                                <td data-id="157" class="px-4 py-3"><span data-id="158" class="era-badge-tigers text-xs px-2 py-0.5 rounded-full whitespace-nowrap">Northern BTH Tigers</span></td>
+                                <td data-id="159" class="px-4 py-3 text-center font-semibold tabular-nums text-gfl-text-primary">9-4</td>
+                                <td data-id="160" class="px-4 py-3 text-right tabular-nums text-gfl-text-primary">1,303.50</td>
+                                <td data-id="161" class="px-4 py-3 text-right tabular-nums text-gfl-text-secondary">1,278.50</td>
+                                <td data-id="162" class="px-4 py-3 text-center"><span data-id="163" class="badge-champion text-xs px-2 py-0.5 rounded-full">🏆 1st</span></td>
+                                <td data-id="164" class="px-4 py-3"><span data-id="165" class="badge-history text-xs px-2 py-0.5 rounded-full">⭐ HISTORY — Back-to-Back</span></td>
+                            </tr>
+                            <!-- 2021 -->
+                            <tr data-id="166" class="down-row border-b border-gfl-gold/5">
+                                <td data-id="167" class="px-4 py-3 font-semibold tabular-nums text-gfl-silver-dim">2021</td>
+                                <td data-id="168" class="px-4 py-3"><span data-id="169" class="era-badge-tigers text-xs px-2 py-0.5 rounded-full whitespace-nowrap">Northern BTH Tigers</span></td>
+                                <td data-id="170" class="px-4 py-3 text-center font-semibold tabular-nums text-gfl-text-secondary">5-9</td>
+                                <td data-id="171" class="px-4 py-3 text-right tabular-nums text-gfl-text-secondary">1,271.00</td>
+                                <td data-id="172" class="px-4 py-3 text-right tabular-nums text-gfl-text-secondary">1,443.50</td>
+                                <td data-id="173" class="px-4 py-3 text-center text-gfl-silver-dim text-xs">10th</td>
+                                <td data-id="174" class="px-4 py-3 text-xs text-gfl-red/70">Down year — 10th place</td>
+                            </tr>
+                            <!-- 2022 -->
+                            <tr data-id="175" class="border-b border-gfl-gold/5">
+                                <td data-id="176" class="px-4 py-3 font-semibold tabular-nums text-gfl-text-primary">2022</td>
+                                <td data-id="177" class="px-4 py-3"><span data-id="178" class="era-badge-tigers text-xs px-2 py-0.5 rounded-full whitespace-nowrap">Northern BTH Tigers</span></td>
+                                <td data-id="179" class="px-4 py-3 text-center font-semibold tabular-nums text-gfl-text-primary">10-4</td>
+                                <td data-id="180" class="px-4 py-3 text-right tabular-nums text-gfl-gold font-semibold">1,539.28</td>
+                                <td data-id="181" class="px-4 py-3 text-right tabular-nums text-gfl-text-secondary">1,406.78</td>
+                                <td data-id="182" class="px-4 py-3 text-center text-gfl-text-primary text-xs">4th</td>
+                                <td data-id="183" class="px-4 py-3"><span data-id="184" class="badge-red text-xs px-2 py-0.5 rounded-full">10-4, Playoff Exit 😤</span></td>
+                            </tr>
+                            <!-- 2023 -->
+                            <tr data-id="185" class="champion-row border-b border-gfl-gold/5">
+                                <td data-id="186" class="px-4 py-3 font-semibold text-gfl-amber tabular-nums">2023</td>
+                                <td data-id="187" class="px-4 py-3"><span data-id="188" class="era-badge-tickle text-xs px-2 py-0.5 rounded-full whitespace-nowrap">Turbulent Ticklesh!ts</span></td>
+                                <td data-id="189" class="px-4 py-3 text-center font-semibold tabular-nums text-gfl-text-primary">8-6</td>
+                                <td data-id="190" class="px-4 py-3 text-right tabular-nums text-gfl-text-primary">1,467.74</td>
+                                <td data-id="191" class="px-4 py-3 text-right tabular-nums text-gfl-text-secondary">1,372.72</td>
+                                <td data-id="192" class="px-4 py-3 text-center"><span data-id="193" class="badge-champion text-xs px-2 py-0.5 rounded-full">🏆 1st</span></td>
+                                <td data-id="194" class="px-4 py-3 text-xs text-gfl-amber">Ring #3 — Only 3x Champion</td>
+                            </tr>
+                            <!-- 2024 -->
+                            <tr data-id="195" class="down-row border-b border-gfl-gold/5">
+                                <td data-id="196" class="px-4 py-3 font-semibold tabular-nums text-gfl-silver-dim">2024</td>
+                                <td data-id="197" class="px-4 py-3"><span data-id="198" class="era-badge-tickle text-xs px-2 py-0.5 rounded-full whitespace-nowrap">Turbulent Ticklesh!ts</span></td>
+                                <td data-id="199" class="px-4 py-3 text-center font-semibold tabular-nums text-gfl-text-secondary">5-9</td>
+                                <td data-id="200" class="px-4 py-3 text-right tabular-nums text-gfl-text-secondary">1,447.04</td>
+                                <td data-id="201" class="px-4 py-3 text-right tabular-nums text-gfl-text-secondary">1,612.46</td>
+                                <td data-id="202" class="px-4 py-3 text-center text-gfl-silver-dim text-xs">8th</td>
+                                <td data-id="203" class="px-4 py-3 text-xs text-gfl-red/70">Down year</td>
+                            </tr>
+                            <!-- 2025 -->
+                            <tr data-id="204">
+                                <td data-id="205" class="px-4 py-3 font-semibold tabular-nums text-gfl-text-primary">2025</td>
+                                <td data-id="206" class="px-4 py-3"><span data-id="207" class="era-badge-tickle text-xs px-2 py-0.5 rounded-full whitespace-nowrap">Turbulent Ticklesh!ts</span></td>
+                                <td data-id="208" class="px-4 py-3 text-center font-semibold tabular-nums text-gfl-text-primary">8-6</td>
+                                <td data-id="209" class="px-4 py-3 text-right tabular-nums text-gfl-text-primary">1,462.88</td>
+                                <td data-id="210" class="px-4 py-3 text-right tabular-nums text-gfl-text-secondary">1,339.90</td>
+                                <td data-id="211" class="px-4 py-3 text-center text-gfl-text-primary text-xs">4th</td>
+                                <td data-id="212" class="px-4 py-3 text-xs text-gfl-gold">Bounce-back season ⚡</td>
+                            </tr>
+                        </tbody>
+                        <tfoot data-id="213">
+                            <tr data-id="214" class="border-t border-gfl-gold/20 bg-gfl-gold/[0.04]">
+                                <td data-id="215" class="px-4 py-3 font-display font-bold text-gfl-gold text-xs uppercase tracking-wider" colspan="2">Career Totals</td>
+                                <td data-id="216" class="px-4 py-3 text-center font-bold text-gfl-amber tabular-nums">54-42</td>
+                                <td data-id="217" class="px-4 py-3 text-right font-bold text-gfl-amber tabular-nums">9,919.44</td>
+                                <td data-id="218" class="px-4 py-3 text-right font-bold text-gfl-silver tabular-nums">9,767.94</td>
+                                <td data-id="219" class="px-4 py-3 text-center font-bold text-gfl-amber" colspan="2">56.3% Win Rate</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <div data-id="220" class="section-divider max-w-5xl mx-auto"></div>
+
+        <!-- ═══════════════════════════════════════ -->
+        <!-- SECTION 5: PLAYOFF EFFICIENCY -->
+        <!-- ═══════════════════════════════════════ -->
+        <section data-id="221" id="efficiency" class="py-16 md:py-24 px-4 md:px-6">
+            <div data-id="222" class="max-w-5xl mx-auto">
+                <p data-id="223" id="eff-label-e7f8" class="text-xs uppercase tracking-[0.25em] text-gfl-gold/60 font-semibold mb-2 text-center">Postseason Analysis</p>
+                <h2 data-id="224" id="eff-title-g9h0" class="font-display text-3xl md:text-4xl font-bold text-center gold-gradient-text mb-3">REGULAR SEASON KING, PLAYOFF PUZZLE</h2>
+                <div data-id="225" class="w-16 h-0.5 bg-gfl-gold/30 mx-auto mb-10"></div>
+
+                <div data-id="226" id="eff-narrative-i1j2" class="max-w-3xl mx-auto text-center mb-14">
+                    <p data-id="227" class="text-gfl-text-secondary leading-relaxed text-sm md:text-base mb-4">
+                        The numbers don't lie — Tyler Shaver's floor is elite. But the gap between his regular season dominance and playoff results reveals an interesting pattern. In 2022, he went <span data-id="228" class="text-gfl-gold font-semibold">10-4</span> — the best regular season record of his career — and walked away with nothing.
+                    </p>
+                    <p data-id="229" class="text-gfl-text-secondary leading-relaxed text-sm md:text-base">
+                        His 3 championships came in seasons with records of 9-4, 9-4, and 8-6 — proving he peaks when it matters most, but doesn't always survive the bracket. <span data-id="230" class="text-gfl-amber font-semibold">Three rings</span> say he's figured out the playoffs when it counts. One 10-4 season with a 4th-place finish says the bracket is never guaranteed.
+                    </p>
+                </div>
+
+                <div data-id="231" class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+                    <div data-id="232" id="eff-stat1-k3l4" class="bg-gfl-deep rounded-2xl p-6 gold-glow-border text-center">
+                        <p data-id="233" class="font-display text-4xl font-bold text-gfl-amber mb-2">3</p>
+                        <p data-id="234" class="text-xs uppercase tracking-wider text-gfl-silver font-semibold">Championship Seasons</p>
+                        <p data-id="235" class="text-xs text-gfl-silver-dim mt-1">2019 · 2020 · 2023</p>
+                    </div>
+                    <div data-id="236" id="eff-stat2-m5n6" class="bg-gfl-deep rounded-2xl p-6 border border-gfl-red/20 text-center">
+                        <p data-id="237" class="font-display text-4xl font-bold text-gfl-red mb-2">1</p>
+                        <p data-id="238" class="text-xs uppercase tracking-wider text-gfl-silver font-semibold">10-4 Season with No Ring</p>
+                        <p data-id="239" class="text-xs text-gfl-silver-dim mt-1">2022 — Playoff Exit</p>
+                    </div>
+                    <div data-id="240" id="eff-stat3-o7p8" class="bg-gfl-deep rounded-2xl p-6 gold-glow-border text-center">
+                        <p data-id="241" class="font-display text-4xl font-bold text-gfl-gold mb-2">1,399.4</p>
+                        <p data-id="242" class="text-xs uppercase tracking-wider text-gfl-silver font-semibold">Avg PF in Championship Years</p>
+                        <p data-id="243" class="text-xs text-gfl-silver-dim mt-1">Wins when it matters</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div data-id="244" class="section-divider max-w-5xl mx-auto"></div>
+
+        <!-- ═══════════════════════════════════════ -->
+        <!-- SECTION 6: ERA COMPARISON -->
+        <!-- ═══════════════════════════════════════ -->
+        <section data-id="245" id="eras" class="py-16 md:py-24 px-4 md:px-6">
+            <div data-id="246" class="max-w-6xl mx-auto">
+                <p data-id="247" id="eras-label-q9r0" class="text-xs uppercase tracking-[0.25em] text-gfl-gold/60 font-semibold mb-2 text-center">Era Comparison</p>
+                <h2 data-id="248" id="eras-title-s1t2" class="font-display text-3xl md:text-4xl font-bold text-center gold-gradient-text mb-12">TWO ERAS. ONE LEGACY.</h2>
+
+                <div data-id="249" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Tigers Era -->
+                    <div data-id="250" id="era-tigers-u3v4" class="bg-gfl-deep rounded-2xl p-6 md:p-8 border border-gfl-gold/20 relative overflow-hidden">
+                        <div data-id="251" class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-gfl-gold via-gfl-amber to-gfl-gold"></div>
+                        <div data-id="252" class="flex items-center gap-3 mb-6">
+                            <i data-id="253" data-lucide="shield" class="w-6 h-6 text-gfl-gold"></i>
+                            <div data-id="254">
+                                <h3 data-id="255" class="font-display text-xl font-bold text-gfl-gold">Northern BTH Tigers</h3>
+                                <p data-id="256" class="text-xs text-gfl-silver-dim">2019–2022 · 4 Seasons</p>
+                            </div>
+                        </div>
+
+                        <div data-id="257" class="grid grid-cols-2 gap-4 mb-6">
+                            <div data-id="258" class="text-center">
+                                <p data-id="259" class="font-display text-2xl font-bold text-gfl-amber tabular-nums">33-21</p>
+                                <p data-id="260" class="text-xs text-gfl-silver-dim uppercase tracking-wider">Record</p>
+                            </div>
+                            <div data-id="261" class="text-center">
+                                <p data-id="262" class="font-display text-2xl font-bold text-gfl-amber tabular-nums">61.1%</p>
+                                <p data-id="263" class="text-xs text-gfl-silver-dim uppercase tracking-wider">Win Rate</p>
+                            </div>
+                            <div data-id="264" class="text-center">
+                                <p data-id="265" class="font-display text-2xl font-bold text-gfl-gold tabular-nums">1,385.2</p>
+                                <p data-id="266" class="text-xs text-gfl-silver-dim uppercase tracking-wider">Avg PF</p>
+                            </div>
+                            <div data-id="267" class="text-center">
+                                <p data-id="268" class="font-display text-2xl font-bold text-gfl-amber">2</p>
+                                <p data-id="269" class="text-xs text-gfl-silver-dim uppercase tracking-wider">Championships</p>
+                            </div>
+                        </div>
+
+                        <ul data-id="270" class="space-y-2 text-sm text-gfl-text-secondary">
+                            <li data-id="271" class="flex items-start gap-2"><i data-id="272" data-lucide="trophy" class="w-4 h-4 text-gfl-amber mt-0.5 flex-shrink-0"></i>Ring #1 (2019 rookie year) + Ring #2 (2020 back-to-back)</li>
+                            <li data-id="273" class="flex items-start gap-2"><i data-id="274" data-lucide="star" class="w-4 h-4 text-gfl-gold mt-0.5 flex-shrink-0"></i>Only back-to-back in GFL history</li>
+                            <li data-id="275" class="flex items-start gap-2"><i data-id="276" data-lucide="x-circle" class="w-4 h-4 text-gfl-red mt-0.5 flex-shrink-0"></i>2022: 10-4, best record — no championship</li>
+                        </ul>
+                    </div>
+
+                    <!-- Ticklesh!ts Era -->
+                    <div data-id="277" id="era-tickle-w5x6" class="bg-gfl-deep rounded-2xl p-6 md:p-8 border border-gfl-silver/15 relative overflow-hidden">
+                        <div data-id="278" class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-gfl-silver/50 via-gfl-silver to-gfl-silver/50"></div>
+                        <div data-id="279" class="flex items-center gap-3 mb-6">
+                            <i data-id="280" data-lucide="zap" class="w-6 h-6 text-gfl-silver"></i>
+                            <div data-id="281">
+                                <h3 data-id="282" class="font-display text-xl font-bold text-gfl-silver-bright">Turbulent Ticklesh!ts</h3>
+                                <p data-id="283" class="text-xs text-gfl-silver-dim">2023–2025 · 3 Seasons</p>
+                            </div>
+                        </div>
+
+                        <div data-id="284" class="grid grid-cols-2 gap-4 mb-6">
+                            <div data-id="285" class="text-center">
+                                <p data-id="286" class="font-display text-2xl font-bold text-gfl-silver-bright tabular-nums">21-21</p>
+                                <p data-id="287" class="text-xs text-gfl-silver-dim uppercase tracking-wider">Record</p>
+                            </div>
+                            <div data-id="288" class="text-center">
+                                <p data-id="289" class="font-display text-2xl font-bold text-gfl-silver-bright tabular-nums">50.0%</p>
+                                <p data-id="290" class="text-xs text-gfl-silver-dim uppercase tracking-wider">Win Rate</p>
+                            </div>
+                            <div data-id="291" class="text-center">
+                                <p data-id="292" class="font-display text-2xl font-bold text-gfl-silver-bright tabular-nums">1,459.2</p>
+                                <p data-id="293" class="text-xs text-gfl-silver-dim uppercase tracking-wider">Avg PF</p>
+                            </div>
+                            <div data-id="294" class="text-center">
+                                <p data-id="295" class="font-display text-2xl font-bold text-gfl-amber">1</p>
+                                <p data-id="296" class="text-xs text-gfl-silver-dim uppercase tracking-wider">Championship</p>
+                            </div>
+                        </div>
+
+                        <ul data-id="297" class="space-y-2 text-sm text-gfl-text-secondary">
+                            <li data-id="298" class="flex items-start gap-2"><i data-id="299" data-lucide="trophy" class="w-4 h-4 text-gfl-amber mt-0.5 flex-shrink-0"></i>Ring #3 in 2023 — GFL's first and only 3x champion</li>
+                            <li data-id="300" class="flex items-start gap-2"><i data-id="301" data-lucide="trending-down" class="w-4 h-4 text-gfl-red mt-0.5 flex-shrink-0"></i>2024: down year (5-9, 8th)</li>
+                            <li data-id="302" class="flex items-start gap-2"><i data-id="303" data-lucide="trending-up" class="w-4 h-4 text-gfl-gold mt-0.5 flex-shrink-0"></i>2025: bounce-back (8-6, 4th) — higher avg PF but more volatile</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div data-id="304" class="section-divider max-w-5xl mx-auto"></div>
+
+        <!-- ═══════════════════════════════════════ -->
+        <!-- SECTION 7: DID YOU KNOW? FACTS -->
+        <!-- ═══════════════════════════════════════ -->
+        <section data-id="305" id="facts" class="py-16 md:py-24 px-4 md:px-6">
+            <div data-id="306" class="max-w-6xl mx-auto">
+                <p data-id="307" id="facts-label-y7z8" class="text-xs uppercase tracking-[0.25em] text-gfl-gold/60 font-semibold mb-2 text-center">Deep Cuts</p>
+                <h2 data-id="308" id="facts-title-a9b0" class="font-display text-3xl md:text-4xl font-bold text-center gold-gradient-text mb-10">DID YOU KNOW?</h2>
+
+                <div data-id="309" class="flex gap-4 overflow-x-auto pb-4 facts-scroll snap-x snap-mandatory -mx-4 px-4">
+                    <!-- Fact 1 -->
+                    <div data-id="310" class="flex-shrink-0 w-72 md:w-80 bg-gfl-deep rounded-2xl p-6 gold-glow-border snap-start">
+                        <p data-id="311" class="text-2xl mb-3">🏆</p>
+                        <p data-id="312" class="text-sm text-gfl-text-secondary leading-relaxed">Tyler won the GFL Championship in his <span data-id="313" class="text-gfl-amber font-semibold">rookie season</span> (2019) — one of the rarest feats in league history.</p>
+                    </div>
+                    <!-- Fact 2 -->
+                    <div data-id="314" class="flex-shrink-0 w-72 md:w-80 bg-gfl-deep rounded-2xl p-6 gold-glow-strong snap-start">
+                        <p data-id="315" class="text-2xl mb-3">🔁</p>
+                        <p data-id="316" class="text-sm text-gfl-text-secondary leading-relaxed">The 2019–2020 back-to-back is the <span data-id="317" class="text-gfl-amber font-semibold">ONLY</span> back-to-back championship in GFL history — no one else has come close.</p>
+                    </div>
+                    <!-- Fact 3 -->
+                    <div data-id="318" class="flex-shrink-0 w-72 md:w-80 bg-gfl-deep rounded-2xl p-6 gold-glow-strong snap-start">
+                        <p data-id="319" class="text-2xl mb-3">👑</p>
+                        <p data-id="320" class="text-sm text-gfl-text-secondary leading-relaxed">With 3 total championships, Tyler is the <span data-id="321" class="text-gfl-amber font-semibold">ONLY</span> 3x GFL champion — the next closest have 2.</p>
+                    </div>
+                    <!-- Fact 4 -->
+                    <div data-id="322" class="flex-shrink-0 w-72 md:w-80 bg-gfl-deep rounded-2xl p-6 border border-gfl-red/20 snap-start">
+                        <p data-id="323" class="text-2xl mb-3">😤</p>
+                        <p data-id="324" class="text-sm text-gfl-text-secondary leading-relaxed">In 2022, Tyler went <span data-id="325" class="text-gfl-gold font-semibold">10-4</span> — the best regular season record of his career — and still didn't win a ring.</p>
+                    </div>
+                    <!-- Fact 5 -->
+                    <div data-id="326" class="flex-shrink-0 w-72 md:w-80 bg-gfl-deep rounded-2xl p-6 gold-glow-border snap-start">
+                        <p data-id="327" class="text-2xl mb-3">📉</p>
+                        <p data-id="328" class="text-sm text-gfl-text-secondary leading-relaxed">2024 was his only real down year: <span data-id="329" class="text-gfl-red font-semibold">5-9, 8th place</span> — the first time he finished below 5th since 2021.</p>
+                    </div>
+                    <!-- Fact 6 -->
+                    <div data-id="330" class="flex-shrink-0 w-72 md:w-80 bg-gfl-deep rounded-2xl p-6 gold-glow-border snap-start">
+                        <p data-id="331" class="text-2xl mb-3">⚡</p>
+                        <p data-id="332" class="text-sm text-gfl-text-secondary leading-relaxed">2025 bounce-back: <span data-id="333" class="text-gfl-gold font-semibold">8-6, 4th place</span> — the Turbulent Ticklesh!ts are still very much alive.</p>
+                    </div>
+                    <!-- Fact 7 -->
+                    <div data-id="334" class="flex-shrink-0 w-72 md:w-80 bg-gfl-deep rounded-2xl p-6 gold-glow-border snap-start">
+                        <p data-id="335" class="text-2xl mb-3">💪</p>
+                        <p data-id="336" class="text-sm text-gfl-text-secondary leading-relaxed">Tyler's career win percentage (<span data-id="337" class="text-gfl-amber font-semibold">56.3%</span>) is among the highest of any multi-season GFL manager.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div data-id="338" class="section-divider max-w-5xl mx-auto"></div>
+
+        <!-- ═══════════════════════════════════════ -->
+        <!-- SECTION 8: LEGACY SCORE -->
+        <!-- ═══════════════════════════════════════ -->
+        <section data-id="339" id="legacy" class="py-16 md:py-24 px-4 md:px-6">
+            <div data-id="340" class="max-w-4xl mx-auto">
+                <p data-id="341" id="legacy-label-c1d2" class="text-xs uppercase tracking-[0.25em] text-gfl-gold/60 font-semibold mb-2 text-center">Franchise Rating</p>
+                <h2 data-id="342" id="legacy-title-e3f4" class="font-display text-3xl md:text-4xl font-bold text-center gold-gradient-text mb-4">LEGACY SCORE</h2>
+
+                <div data-id="343" class="text-center mb-10">
+                    <p data-id="344" class="text-6xl mb-2">🏆</p>
+                    <p data-id="345" class="font-display text-lg md:text-xl font-bold text-gfl-amber italic">"The Standard. The Benchmark. The GOAT."</p>
+                </div>
+
+                <div data-id="346" id="legacy-card-g5h6" class="bg-gfl-deep rounded-2xl p-6 md:p-8 gold-glow-strong">
+                    <div data-id="347" class="space-y-5">
+                        <!-- Championship Pedigree -->
+                        <div data-id="348" class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-4 border-b border-gfl-gold/10">
+                            <div data-id="349">
+                                <p data-id="350" class="font-display text-sm md:text-base font-semibold text-gfl-text-primary">Championship Pedigree</p>
+                                <p data-id="351" class="text-xs text-gfl-silver-dim">3 rings, only back-to-back, only 3x — undisputed</p>
+                            </div>
+                            <div data-id="352" class="flex gap-0.5 flex-shrink-0">
+                                <span data-id="353" class="star-filled text-lg">★</span><span data-id="354" class="star-filled text-lg">★</span><span data-id="355" class="star-filled text-lg">★</span><span data-id="356" class="star-filled text-lg">★</span><span data-id="357" class="star-filled text-lg">★</span>
+                            </div>
+                        </div>
+
+                        <!-- Playoff Efficiency -->
+                        <div data-id="358" class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-4 border-b border-gfl-gold/10">
+                            <div data-id="359">
+                                <p data-id="360" class="font-display text-sm md:text-base font-semibold text-gfl-text-primary">Playoff Efficiency</p>
+                                <p data-id="361" class="text-xs text-gfl-silver-dim">3 rings prove he can win it; 2022 leaves a small question</p>
+                            </div>
+                            <div data-id="362" class="flex gap-0.5 flex-shrink-0">
+                                <span data-id="363" class="star-filled text-lg">★</span><span data-id="364" class="star-filled text-lg">★</span><span data-id="365" class="star-filled text-lg">★</span><span data-id="366" class="star-filled text-lg">★</span><span data-id="367" class="star-empty text-lg">★</span>
+                            </div>
+                        </div>
+
+                        <!-- Regular Season Dominance -->
+                        <div data-id="368" class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-4 border-b border-gfl-gold/10">
+                            <div data-id="369">
+                                <p data-id="370" class="font-display text-sm md:text-base font-semibold text-gfl-text-primary">Regular Season Dominance</p>
+                                <p data-id="371" class="text-xs text-gfl-silver-dim">56.3% career win rate</p>
+                            </div>
+                            <div data-id="372" class="flex gap-0.5 flex-shrink-0">
+                                <span data-id="373" class="star-filled text-lg">★</span><span data-id="374" class="star-filled text-lg">★</span><span data-id="375" class="star-filled text-lg">★</span><span data-id="376" class="star-filled text-lg">★</span><span data-id="377" class="star-filled text-lg">★</span>
+                            </div>
+                        </div>
+
+                        <!-- Longevity -->
+                        <div data-id="378" class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-4 border-b border-gfl-gold/10">
+                            <div data-id="379">
+                                <p data-id="380" class="font-display text-sm md:text-base font-semibold text-gfl-text-primary">Longevity</p>
+                                <p data-id="381" class="text-xs text-gfl-silver-dim">7 seasons, still competitive</p>
+                            </div>
+                            <div data-id="382" class="flex gap-0.5 flex-shrink-0">
+                                <span data-id="383" class="star-filled text-lg">★</span><span data-id="384" class="star-filled text-lg">★</span><span data-id="385" class="star-filled text-lg">★</span><span data-id="386" class="star-filled text-lg">★</span><span data-id="387" class="star-empty text-lg">★</span>
+                            </div>
+                        </div>
+
+                        <!-- Recent Form -->
+                        <div data-id="388" class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-4 border-b border-gfl-gold/10">
+                            <div data-id="389">
+                                <p data-id="390" class="font-display text-sm md:text-base font-semibold text-gfl-text-primary">Recent Form</p>
+                                <p data-id="391" class="text-xs text-gfl-silver-dim">2024 dip, 2025 bounce-back — watching closely</p>
+                            </div>
+                            <div data-id="392" class="flex gap-0.5 flex-shrink-0">
+                                <span data-id="393" class="star-filled text-lg">★</span><span data-id="394" class="star-filled text-lg">★</span><span data-id="395" class="star-filled text-lg">★</span><span data-id="396" class="star-empty text-lg">★</span><span data-id="397" class="star-empty text-lg">★</span>
+                            </div>
+                        </div>
+
+                        <!-- Overall -->
+                        <div data-id="398" class="bg-gradient-to-r from-gfl-gold/10 via-gfl-amber/15 to-gfl-gold/10 rounded-xl p-5 mt-2">
+                            <div data-id="399" class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                                <div data-id="400">
+                                    <p data-id="401" class="font-display text-lg md:text-xl font-bold text-gfl-amber">Overall Legacy</p>
+                                </div>
+                                <div data-id="402" class="flex gap-0.5 flex-shrink-0">
+                                    <span data-id="403" class="star-filled text-xl">★</span><span data-id="404" class="star-filled text-xl">★</span><span data-id="405" class="star-filled text-xl">★</span><span data-id="406" class="star-filled text-xl">★</span><span data-id="407" class="star-filled text-xl">★</span>
+                                </div>
+                            </div>
+                            <p data-id="408" class="text-sm text-gfl-gold mt-3 leading-relaxed">
+                                The GFL's Greatest Champion. Three rings. The only back-to-back. The only 3x. The conversation begins and ends here.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Final Quote -->
+                <div data-id="409" id="legacy-final-i7j8" class="mt-12 text-center">
+                    <div data-id="410" class="inline-block bg-gfl-deep rounded-2xl px-8 py-6 gold-glow-border max-w-2xl">
+                        <i data-id="411" data-lucide="crown" class="w-8 h-8 text-gfl-amber mx-auto mb-3"></i>
+                        <p data-id="412" class="font-display text-lg md:text-xl font-bold text-gfl-amber leading-relaxed">
+                            Three Rings. Two Eras. One King.
+                        </p>
+                        <p data-id="413" class="text-sm text-gfl-silver mt-2">Tyler Shaver — GFL GOAT</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer data-id="414" id="footer-k9l0" class="py-8 mt-auto text-center border-t border-gfl-gold/5">
+        <p data-id="415" class="text-xs text-gfl-silver-dim">Made by Copilot</p>
+    </footer>
+
+    <script>
+        // === LUCIDE ICONS ===
+        if (typeof lucide !== "undefined" && typeof lucide.createIcons === "function") {
+            lucide.createIcons();
+        }
+
+        // === MOBILE MENU ===
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn-abc1');
+        const mobileMenu = document.getElementById('mobile-menu-abc1');
+        const mobileMenuClose = document.getElementById('mobile-menu-close-abc1');
+
+        if (mobileMenuBtn && mobileMenu && mobileMenuClose) {
+            mobileMenuBtn.addEventListener('click', function() {
+                mobileMenu.classList.remove('hidden');
+            });
+            mobileMenuClose.addEventListener('click', function() {
+                mobileMenu.classList.add('hidden');
+            });
+            document.querySelectorAll('.mobile-nav-link').forEach(function(link) {
+                link.addEventListener('click', function() {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+        }
+
+        // === CHART.JS — PF vs PA ===
+        (function() {
+            const ctx = document.getElementById('pf-pa-chart-y1z2');
+            if (!ctx || typeof Chart === 'undefined') return;
+
+            const years = ['2019', '2020', '2021', '2022', '2023', '2024', '2025'];
+            const pf = [1427.00, 1303.50, 1271.00, 1539.28, 1467.74, 1447.04, 1462.88];
+            const pa = [1314.00, 1278.50, 1443.50, 1406.78, 1372.72, 1612.46, 1339.90];
+            const champYears = [0, 1, 4]; // indices for 2019, 2020, 2023
+
+            const pfPointColors = years.map(function(_, i) {
+                return champYears.includes(i) ? '#FFD700' : '#F5A623';
+            });
+            const pfPointRadius = years.map(function(_, i) {
+                return champYears.includes(i) ? 8 : 4;
+            });
+            const pfPointStyles = years.map(function(_, i) {
+                return champYears.includes(i) ? 'star' : 'circle';
+            });
+
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: years,
+                    datasets: [
+                        {
+                            label: 'Points For (PF)',
+                            data: pf,
+                            borderColor: '#F5A623',
+                            backgroundColor: 'rgba(245, 166, 35, 0.08)',
+                            fill: true,
+                            tension: 0.3,
+                            borderWidth: 3,
+                            pointBackgroundColor: pfPointColors,
+                            pointBorderColor: pfPointColors,
+                            pointRadius: pfPointRadius,
+                            pointHoverRadius: 10,
+                            pointStyle: pfPointStyles,
+                        },
+                        {
+                            label: 'Points Against (PA)',
+                            data: pa,
+                            borderColor: '#C0C0C0',
+                            backgroundColor: 'transparent',
+                            borderDash: [6, 4],
+                            tension: 0.3,
+                            borderWidth: 2,
+                            pointBackgroundColor: '#C0C0C0',
+                            pointBorderColor: '#C0C0C0',
+                            pointRadius: 3,
+                            pointHoverRadius: 6,
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    interaction: {
+                        mode: 'index',
+                        intersect: false,
+                    },
+                    plugins: {
+                        legend: {
+                            labels: {
+                                color: '#C0C0C0',
+                                font: { family: 'Inter', size: 11 },
+                                usePointStyle: true,
+                                pointStyle: 'circle',
+                            }
+                        },
+                        tooltip: {
+                            backgroundColor: '#111122',
+                            titleColor: '#FFD700',
+                            bodyColor: '#e8e8f0',
+                            borderColor: 'rgba(245, 166, 35, 0.3)',
+                            borderWidth: 1,
+                            titleFont: { family: 'Oswald', size: 14 },
+                            bodyFont: { family: 'Inter', size: 12 },
+                            padding: 12,
+                            cornerRadius: 10,
+                            callbacks: {
+                                afterTitle: function(context) {
+                                    var idx = context[0].dataIndex;
+                                    if (idx === 0) return '🏆 CHAMPION — Ring #1';
+                                    if (idx === 1) return '🏆 CHAMPION — Back-to-Back!';
+                                    if (idx === 3) return '😤 10-4 — Playoff Exit';
+                                    if (idx === 4) return '🏆 CHAMPION — Ring #3';
+                                    return '';
+                                },
+                                label: function(context) {
+                                    return context.dataset.label + ': ' + context.parsed.y.toLocaleString();
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            ticks: {
+                                color: '#8a8a9a',
+                                font: { family: 'Oswald', size: 12 }
+                            },
+                            grid: { color: 'rgba(245, 166, 35, 0.05)' },
+                            border: { color: 'rgba(245, 166, 35, 0.1)' },
+                            title: {
+                                display: true,
+                                text: 'Season',
+                                color: '#8a8a9a',
+                                font: { family: 'Inter', size: 11, weight: '600' }
+                            }
+                        },
+                        y: {
+                            ticks: {
+                                color: '#8a8a9a',
+                                font: { family: 'Inter', size: 11 },
+                                callback: function(value) { return value.toLocaleString(); }
+                            },
+                            grid: { color: 'rgba(245, 166, 35, 0.05)' },
+                            border: { color: 'rgba(245, 166, 35, 0.1)' },
+                            title: {
+                                display: true,
+                                text: 'Points',
+                                color: '#8a8a9a',
+                                font: { family: 'Inter', size: 11, weight: '600' }
+                            },
+                            min: 1150,
+                        }
+                    }
+                }
+            });
+        })();
+
+        // === NAVBAR SCROLL SHADOW ===
+        (function() {
+            var navbar = document.getElementById('navbar-gfl1');
+            if (!navbar) return;
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 50) {
+                    navbar.style.boxShadow = '0 4px 20px rgba(245, 166, 35, 0.08)';
+                } else {
+                    navbar.style.boxShadow = 'none';
+                }
+            });
+        })();
+    </script>
+</body>
+</html>

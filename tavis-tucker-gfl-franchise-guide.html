@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark" />
+    <title>Tavis Tucker GFL Franchise Guide</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1/dist/chart.umd.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest" defer></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              base: { 900: '#0d1117', 800: '#161b22', 700: '#1c2333', 600: '#21293d', 500: '#2d333b' },
+              gold: { 100: '#fdf8e8', 200: '#fcefc2', 300: '#f7dc6f', 400: '#f0b429', 500: '#d4a017', 600: '#b8860b', 700: '#8b6914' },
+              fire: { 100: '#fee2e2', 200: '#fca5a5', 300: '#f87171', 400: '#e53e3e', 500: '#c53030', 600: '#9b2c2c' },
+              ice: { 100: '#dbeafe', 200: '#93c5fd', 300: '#60a5fa', 400: '#3b82f6', 500: '#2563eb' },
+              silver: { 100: '#f0f0f0', 200: '#d1d5db', 300: '#9ca3af', 400: '#6b7280', 500: '#4b5563' },
+              vag: { 400: '#a78bfa', 500: '#8b5cf6', 600: '#7c3aed' }
+            },
+            fontFamily: {
+              display: ['Oswald', 'sans-serif'],
+              sans: ['Inter', 'sans-serif']
+            }
+          }
+        }
+      };
+    </script>
+    <style>
+      * { box-sizing: border-box; }
+      body {
+        background-color: #0d1117;
+        color: #d1d5db;
+        font-family: 'Inter', sans-serif;
+      }
+      .text-gradient-gold {
+        background: linear-gradient(135deg, #f0b429, #f7dc6f, #f0b429);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+      .text-gradient-fire {
+        background: linear-gradient(135deg, #e53e3e, #f87171, #e53e3e);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+      .glow-gold {
+        text-shadow: 0 0 40px rgba(240,180,41,0.3), 0 0 80px rgba(240,180,41,0.1);
+      }
+      .card-glow-gold {
+        box-shadow: 0 0 30px rgba(240,180,41,0.08), inset 0 1px 0 rgba(240,180,41,0.1);
+      }
+      .card-glow-red {
+        box-shadow: 0 0 30px rgba(229,62,62,0.08), inset 0 1px 0 rgba(229,62,62,0.1);
+      }
+      .card-glow-blue {
+        box-shadow: 0 0 30px rgba(59,130,246,0.08), inset 0 1px 0 rgba(59,130,246,0.1);
+      }
+      .hero-gradient {
+        background: radial-gradient(ellipse at 50% 0%, rgba(240,180,41,0.12) 0%, transparent 60%),
+                    linear-gradient(180deg, #0d1117 0%, #161b22 100%);
+      }
+      .shine-bar {
+        background: linear-gradient(90deg, transparent 0%, rgba(240,180,41,0.15) 50%, transparent 100%);
+        animation: shine 3s ease-in-out infinite;
+      }
+      @keyframes shine {
+        0%, 100% { opacity: 0; transform: translateX(-100%); }
+        50% { opacity: 1; transform: translateX(100%); }
+      }
+      @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(30px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      @keyframes gradeReveal {
+        0% { transform: scale(0.3) rotate(-10deg); opacity: 0; }
+        60% { transform: scale(1.15) rotate(2deg); opacity: 1; }
+        100% { transform: scale(1) rotate(0deg); opacity: 1; }
+      }
+      @keyframes countUp {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      .animate-fade-in { animation: fadeInUp 0.8s ease-out forwards; }
+      .animate-grade { animation: gradeReveal 1s cubic-bezier(0.34, 1.56, 0.64, 1) forwards; }
+      .animate-count { animation: countUp 0.6s ease-out forwards; }
+      .era-card {
+        border: 1px solid rgba(240,180,41,0.15);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .era-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+      }
+      .season-row-champion { background: rgba(240,180,41,0.12) !important; }
+      .season-row-robbery { background: rgba(229,62,62,0.1) !important; }
+      .season-row-heartbreak { background: rgba(247,127,113,0.08) !important; }
+      .season-row-current { background: rgba(59,130,246,0.1) !important; }
+      .stat-divider {
+        width: 1px;
+        background: linear-gradient(180deg, transparent, rgba(240,180,41,0.3), transparent);
+      }
+      @keyframes pulse-glow {
+        0%, 100% { box-shadow: 0 0 20px rgba(240,180,41,0.2); }
+        50% { box-shadow: 0 0 40px rgba(240,180,41,0.4); }
+      }
+      .trophy-pulse { animation: pulse-glow 2s ease-in-out infinite; }
+      .nav-link {
+        position: relative;
+        transition: color 0.2s ease;
+      }
+      .nav-link::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: #f0b429;
+        transition: width 0.3s ease;
+      }
+      .nav-link:hover::after { width: 100%; }
+      .nav-link:hover { color: #f0b429; }
+      .scroll-mt { scroll-margin-top: 80px; }
+      ::-webkit-scrollbar { width: 8px; }
+      ::-webkit-scrollbar-track { background: #0d1117; }
+      ::-webkit-scrollbar-thumb { background: #2d333b; border-radius: 4px; }
+      ::-webkit-scrollbar-thumb:hover { background: #3d444d; }
+      .record-badge {
+        background: linear-gradient(135deg, rgba(240,180,41,0.15), rgba(247,220,111,0.1));
+        border: 1px solid rgba(240,180,41,0.35);
+        animation: pulse-glow 3s ease-in-out infinite;
+      }
+      @keyframes record-shimmer {
+        0%, 100% { background-position: -200% center; }
+        50% { background-position: 200% center; }
+      }
+      .record-shimmer {
+        background: linear-gradient(90deg, transparent 0%, rgba(240,180,41,0.08) 25%, rgba(247,220,111,0.15) 50%, rgba(240,180,41,0.08) 75%, transparent 100%);
+        background-size: 200% 100%;
+        animation: record-shimmer 4s ease-in-out infinite;
+      }
+    </style>
+  </head>
+  <body data-id="0" class="min-h-screen">
+    <app-icon data-id="1" hidden data-icon="trophy" data-palette="Dark"></app-icon>
+
+    <!-- Navigation -->
+    <nav data-id="2" id="nav-bar-a1b2" class="fixed top-0 left-0 right-0 z-50 bg-base-900/90 backdrop-blur-md border-b border-gold-400/10">
+      <div data-id="3" class="max-w-7xl mx-auto px-4 md:px-6 py-3 flex items-center justify-between">
+        <div data-id="4" class="flex items-center gap-3">
+          <span data-id="5" class="text-gold-400 text-2xl">🏈</span>
+          <div data-id="6">
+            <span data-id="7" class="font-display text-gold-400 text-sm md:text-base font-bold tracking-wider uppercase">GFL</span>
+            <span data-id="8" class="text-silver-300 text-xs md:text-sm ml-1 hidden sm:inline">Franchise Guide</span>
+          </div>
+        </div>
+        <div data-id="9" class="hidden md:flex items-center gap-6">
+          <a data-id="10" href="#overview" class="nav-link text-sm text-silver-300 font-medium cursor-pointer">Overview</a>
+          <a data-id="11" href="#eras" class="nav-link text-sm text-silver-300 font-medium cursor-pointer">Name Eras</a>
+          <a data-id="12" href="#seasons" class="nav-link text-sm text-silver-300 font-medium cursor-pointer">Seasons</a>
+          <a data-id="13" href="#championships" class="nav-link text-sm text-silver-300 font-medium cursor-pointer">Championships</a>
+          <a data-id="14" href="#stats" class="nav-link text-sm text-silver-300 font-medium cursor-pointer">Stats</a>
+          <a data-id="15" href="#legacy" class="nav-link text-sm text-silver-300 font-medium cursor-pointer">Legacy</a>
+        </div>
+        <button data-id="16" id="mobile-menu-btn-c3d4" class="md:hidden p-2 text-silver-300">
+          <i data-id="17" data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div data-id="18" id="mobile-menu-e5f6" class="hidden fixed inset-0 bg-base-900/98 z-[60] flex flex-col items-center justify-center gap-6">
+      <button data-id="19" id="mobile-menu-close-g7h8" class="absolute top-4 right-4 p-3 text-silver-300">
+        <i data-id="20" data-lucide="x" class="w-7 h-7"></i>
+      </button>
+      <a data-id="21" href="#overview" class="mobile-nav-link text-xl font-display text-silver-200 uppercase tracking-wider cursor-pointer">Overview</a>
+      <a data-id="22" href="#eras" class="mobile-nav-link text-xl font-display text-silver-200 uppercase tracking-wider cursor-pointer">Name Eras</a>
+      <a data-id="23" href="#seasons" class="mobile-nav-link text-xl font-display text-silver-200 uppercase tracking-wider cursor-pointer">Seasons</a>
+      <a data-id="24" href="#championships" class="mobile-nav-link text-xl font-display text-silver-200 uppercase tracking-wider cursor-pointer">Championships</a>
+      <a data-id="25" href="#stats" class="mobile-nav-link text-xl font-display text-silver-200 uppercase tracking-wider cursor-pointer">Stats</a>
+      <a data-id="26" href="#legacy" class="mobile-nav-link text-xl font-display text-silver-200 uppercase tracking-wider cursor-pointer">Legacy</a>
+    </div>
+
+    <main data-id="27">
+
+      <!-- Hero Section -->
+      <section data-id="28" id="hero-i9j0" class="hero-gradient pt-28 pb-16 md:pt-36 md:pb-24 text-center relative overflow-hidden">
+        <div data-id="29" class="absolute inset-0 overflow-hidden pointer-events-none">
+          <div data-id="30" class="shine-bar absolute inset-0"></div>
+        </div>
+        <div data-id="31" class="max-w-5xl mx-auto px-4 relative z-10">
+          <p data-id="32" class="text-silver-400 text-xs md:text-sm font-medium uppercase tracking-[0.3em] mb-4 animate-fade-in">Gandorf National Football League</p>
+          <h1 data-id="33" class="font-display text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold text-silver-100 tracking-wider uppercase leading-none mb-3 animate-fade-in" style="animation-delay:0.15s">
+            California<br data-id="34">Un-Named Team
+          </h1>
+          <div data-id="35" class="my-6 animate-fade-in" style="animation-delay:0.3s">
+            <span data-id="36" class="font-display text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-bold text-gradient-gold glow-gold tracking-[0.15em]">CUNT</span>
+          </div>
+          <p data-id="37" class="text-silver-400 text-sm md:text-base font-medium tracking-wide mb-8 animate-fade-in" style="animation-delay:0.45s">
+            Est. 2014 &nbsp;·&nbsp; 12 Seasons of Audacity &nbsp;·&nbsp; Owner: <span data-id="38" class="text-gold-400">Tavis Tucker</span>
+          </p>
+          <p data-id="39" class="text-gold-400/70 text-xs md:text-sm italic font-medium animate-fade-in" style="animation-delay:0.6s">
+            "The CUNT, the VaG, and the Robbery"
+          </p>
+
+          <!-- Hero Stats Row -->
+          <div data-id="40" class="flex flex-wrap items-center justify-center gap-6 md:gap-0 mt-12 animate-fade-in" style="animation-delay:0.75s">
+            <div data-id="41" class="px-6 md:px-10 text-center">
+              <p data-id="42" class="font-display text-3xl md:text-4xl font-bold text-gold-400 tabular-nums">98-63</p>
+              <p data-id="43" class="text-xs text-silver-400 uppercase tracking-wider mt-1">Career Record</p>
+            </div>
+            <div data-id="44" class="stat-divider h-12 hidden md:block"></div>
+            <div data-id="45" class="px-6 md:px-10 text-center">
+              <p data-id="46" class="font-display text-3xl md:text-4xl font-bold text-gold-400 tabular-nums">.609</p>
+              <p data-id="47" class="text-xs text-silver-400 uppercase tracking-wider mt-1">Win Rate</p>
+            </div>
+            <div data-id="48" class="stat-divider h-12 hidden md:block"></div>
+            <div data-id="49" class="px-6 md:px-10 text-center">
+              <p data-id="50" class="font-display text-3xl md:text-4xl font-bold text-gold-400">🏆 2</p>
+              <p data-id="51" class="text-xs text-silver-400 uppercase tracking-wider mt-1">Championships</p>
+            </div>
+            <div data-id="52" class="stat-divider h-12 hidden md:block"></div>
+            <div data-id="53" class="px-6 md:px-10 text-center">
+              <p data-id="54" class="font-display text-3xl md:text-4xl font-bold text-gold-400 tabular-nums">12</p>
+              <p data-id="55" class="text-xs text-silver-400 uppercase tracking-wider mt-1">Seasons</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Franchise Overview -->
+      <section data-id="56" id="overview" class="scroll-mt py-16 md:py-20">
+        <div data-id="57" class="max-w-6xl mx-auto px-4 md:px-6">
+          <div data-id="58" class="text-center mb-12">
+            <p data-id="59" class="text-gold-400 text-xs font-semibold uppercase tracking-[0.25em] mb-3">Franchise Dossier</p>
+            <h2 data-id="60" class="font-display text-3xl md:text-4xl font-bold text-silver-100 uppercase tracking-wider">Franchise Overview</h2>
+          </div>
+          <div data-id="61" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+            <div data-id="62" class="bg-base-800 rounded-2xl p-6 border border-gold-400/10 text-center">
+              <div data-id="63" class="text-3xl mb-2">👤</div>
+              <p data-id="64" class="text-xs text-silver-400 uppercase tracking-wider mb-1">Owner</p>
+              <p data-id="65" class="font-display text-lg font-bold text-gold-400">Tavis Tucker</p>
+            </div>
+            <div data-id="66" class="bg-base-800 rounded-2xl p-6 border border-gold-400/10 text-center">
+              <div data-id="67" class="text-3xl mb-2">📅</div>
+              <p data-id="68" class="text-xs text-silver-400 uppercase tracking-wider mb-1">Active Seasons</p>
+              <p data-id="69" class="font-display text-lg font-bold text-silver-100">2014 – 2025</p>
+            </div>
+            <div data-id="70" class="bg-base-800 rounded-2xl p-6 border border-gold-400/10 text-center">
+              <div data-id="71" class="text-3xl mb-2">🏆</div>
+              <p data-id="72" class="text-xs text-silver-400 uppercase tracking-wider mb-1">Championships</p>
+              <p data-id="73" class="font-display text-lg font-bold text-gold-400">2 Won <span data-id="74" class="text-silver-300 text-sm">(2014, 2024)</span> <span data-id="75" class="text-fire-300 text-sm">· 1 Lost <span data-id="76" class="text-fire-400 text-xs">(2019 — THE ROBBERY)</span></span></p>
+            </div>
+            <div data-id="77" class="bg-base-800 rounded-2xl p-6 border border-gold-400/10 text-center">
+              <div data-id="78" class="text-3xl mb-2">⚡</div>
+              <p data-id="79" class="text-xs text-silver-400 uppercase tracking-wider mb-1">League</p>
+              <p data-id="80" class="font-display text-lg font-bold text-silver-100">GFL <span data-id="81" class="text-silver-400 text-sm">· Since 2012</span></p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Name Eras Section -->
+      <section data-id="82" id="eras" class="scroll-mt py-16 md:py-20 bg-base-800/40">
+        <div data-id="83" class="max-w-6xl mx-auto px-4 md:px-6">
+          <div data-id="84" class="text-center mb-4">
+            <p data-id="85" class="text-gold-400 text-xs font-semibold uppercase tracking-[0.25em] mb-3">The Legend of the Name</p>
+            <h2 data-id="86" class="font-display text-3xl md:text-4xl font-bold text-silver-100 uppercase tracking-wider">Name Eras</h2>
+            <p data-id="87" class="text-silver-400 text-sm mt-3 max-w-xl mx-auto">Three names. Two abbreviations. Zero subtlety. A journey through the most audacious franchise naming in GFL history.</p>
+          </div>
+
+          <div data-id="88" class="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-10">
+            <!-- Era 1: CUNT (2014-2018) -->
+            <div data-id="89" class="era-card bg-base-800 rounded-2xl overflow-hidden card-glow-gold">
+              <div data-id="90" class="h-2 bg-gradient-to-r from-gold-400 to-gold-600"></div>
+              <div data-id="91" class="p-6 md:p-8">
+                <div data-id="92" class="flex items-center justify-between mb-4">
+                  <span data-id="93" class="bg-gold-400/10 text-gold-400 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Era 1</span>
+                  <span data-id="94" class="text-silver-400 text-sm font-medium tabular-nums">2014–2018</span>
+                </div>
+                <h3 data-id="95" class="font-display text-2xl md:text-3xl font-bold text-gold-400 uppercase tracking-wider mb-1">The CUNT Years</h3>
+                <p data-id="96" class="text-silver-300 text-sm mb-4">California Un-Named Team</p>
+                <div data-id="97" class="bg-base-900/60 rounded-xl p-4 mb-5">
+                  <p data-id="98" class="text-xs text-silver-400 uppercase tracking-wider mb-1">ESPN Abbreviation</p>
+                  <p data-id="99" class="font-display text-4xl font-bold text-gradient-gold tracking-[0.2em]">CUNT</p>
+                </div>
+                <p data-id="100" class="text-silver-300 text-sm leading-relaxed">
+                  Debuted with this bold name, dominated in Year 1 with a championship, then entered a sustained mediocre stretch through 2018. The name was… not subtle. ESPN dutifully printed it everywhere. On scoreboards. In push notifications. In emails to your grandmother. <span data-id="101" class="text-gold-400">Beautiful.</span>
+                </p>
+                <div data-id="102" class="mt-5 flex items-center gap-2 text-gold-400">
+                  <span data-id="103" class="text-lg">🏆</span>
+                  <span data-id="104" class="text-xs font-semibold uppercase tracking-wider">Championship in Year 1</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Era 2: VaG (2019-2020) -->
+            <div data-id="105" class="era-card bg-base-800 rounded-2xl overflow-hidden" style="box-shadow: 0 0 30px rgba(167,139,250,0.08), inset 0 1px 0 rgba(167,139,250,0.1);">
+              <div data-id="106" class="h-2 bg-gradient-to-r from-vag-400 to-vag-600"></div>
+              <div data-id="107" class="p-6 md:p-8">
+                <div data-id="108" class="flex items-center justify-between mb-4">
+                  <span data-id="109" class="bg-vag-400/10 text-vag-400 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Era 2</span>
+                  <span data-id="110" class="text-silver-400 text-sm font-medium tabular-nums">2019–2020</span>
+                </div>
+                <h3 data-id="111" class="font-display text-2xl md:text-3xl font-bold text-vag-400 uppercase tracking-wider mb-1">The VaG Interlude</h3>
+                <p data-id="112" class="text-silver-300 text-sm mb-4">Virginia Gentiles</p>
+                <div data-id="113" class="bg-base-900/60 rounded-xl p-4 mb-5">
+                  <p data-id="114" class="text-xs text-silver-400 uppercase tracking-wider mb-1">ESPN Abbreviation</p>
+                  <p data-id="115" class="font-display text-4xl font-bold tracking-[0.2em]" style="background: linear-gradient(135deg, #a78bfa, #c4b5fd, #a78bfa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">VaG</p>
+                </div>
+                <p data-id="116" class="text-silver-300 text-sm leading-relaxed">
+                  A brief rebrand, but no less suggestive. 2019 was VaG's best season — <span data-id="117" class="text-vag-400">11-2</span>, made the championship — only to be robbed in historic fashion. VaG then flopped in 2020 and was quietly retired. The experiment, like VaG itself, was <span data-id="118" class="text-vag-400">short but memorable.</span>
+                </p>
+                <div data-id="119" class="mt-5 flex items-center gap-2 text-fire-400">
+                  <span data-id="120" class="text-lg">🚨</span>
+                  <span data-id="121" class="text-xs font-semibold uppercase tracking-wider">The Robbery of 2019</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Era 3: CUNT Returns (2021-2025) -->
+            <div data-id="122" class="era-card bg-base-800 rounded-2xl overflow-hidden card-glow-gold">
+              <div data-id="123" class="h-2 bg-gradient-to-r from-gold-400 via-gold-300 to-gold-400"></div>
+              <div data-id="124" class="p-6 md:p-8">
+                <div data-id="125" class="flex items-center justify-between mb-4">
+                  <span data-id="126" class="bg-gold-400/10 text-gold-400 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Era 3</span>
+                  <span data-id="127" class="text-silver-400 text-sm font-medium tabular-nums">2021–2025</span>
+                </div>
+                <h3 data-id="128" class="font-display text-2xl md:text-3xl font-bold text-gold-400 uppercase tracking-wider mb-1">CUNT Returns</h3>
+                <p data-id="129" class="text-silver-300 text-sm mb-4">California Un-Named Team</p>
+                <div data-id="130" class="bg-base-900/60 rounded-xl p-4 mb-5">
+                  <p data-id="131" class="text-xs text-silver-400 uppercase tracking-wider mb-1">ESPN Abbreviation</p>
+                  <p data-id="132" class="font-display text-4xl font-bold text-gradient-gold tracking-[0.2em]">CUNT</p>
+                </div>
+                <p data-id="133" class="text-silver-300 text-sm leading-relaxed">
+                  He came back. <span data-id="134" class="text-gold-400">Of course he came back.</span> The prodigal name returned and vindicated itself with a 2nd championship in 2024 — a decade after the first. You can take the CUNT out of the league, but you can't take the league out of the CUNT. <span data-id="135" class="text-gold-400">It's a dynasty.</span>
+                </p>
+                <div data-id="136" class="mt-5 flex flex-col gap-2">
+                  <div data-id="137" class="flex items-center gap-2 text-gold-400">
+                    <span data-id="138" class="text-lg">🏆</span>
+                    <span data-id="139" class="text-xs font-semibold uppercase tracking-wider">2024 Champion — Ring #2</span>
+                  </div>
+                  <div data-id="140" class="flex items-center gap-2 text-ice-400">
+                    <span data-id="141" class="text-lg">🔥</span>
+                    <span data-id="142" class="text-xs font-semibold uppercase tracking-wider">2025 Regular Season Champ</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Season-by-Season Table -->
+      <section data-id="143" id="seasons" class="scroll-mt py-16 md:py-20">
+        <div data-id="144" class="max-w-6xl mx-auto px-4 md:px-6">
+          <div data-id="145" class="text-center mb-12">
+            <p data-id="146" class="text-gold-400 text-xs font-semibold uppercase tracking-[0.25em] mb-3">Year by Year</p>
+            <h2 data-id="147" class="font-display text-3xl md:text-4xl font-bold text-silver-100 uppercase tracking-wider">Season-by-Season</h2>
+          </div>
+          <div data-id="148" class="bg-base-800 rounded-2xl border border-gold-400/10 overflow-hidden">
+            <div data-id="149" class="overflow-x-auto">
+              <table data-id="150" class="w-full text-sm" id="season-table-k1l2">
+                <thead data-id="151">
+                  <tr data-id="152" class="bg-base-700 text-left">
+                    <th data-id="153" class="px-4 py-3 text-xs font-semibold text-gold-400 uppercase tracking-wider">Year</th>
+                    <th data-id="154" class="px-4 py-3 text-xs font-semibold text-gold-400 uppercase tracking-wider">Team</th>
+                    <th data-id="155" class="px-4 py-3 text-xs font-semibold text-gold-400 uppercase tracking-wider text-center">Abbr</th>
+                    <th data-id="156" class="px-4 py-3 text-xs font-semibold text-gold-400 uppercase tracking-wider text-center">Record</th>
+                    <th data-id="157" class="px-4 py-3 text-xs font-semibold text-gold-400 uppercase tracking-wider text-right whitespace-nowrap">PF</th>
+                    <th data-id="158" class="px-4 py-3 text-xs font-semibold text-gold-400 uppercase tracking-wider text-right whitespace-nowrap">PA</th>
+                    <th data-id="159" class="px-4 py-3 text-xs font-semibold text-gold-400 uppercase tracking-wider text-center">Finish</th>
+                    <th data-id="160" class="px-4 py-3 text-xs font-semibold text-gold-400 uppercase tracking-wider hidden md:table-cell">Notes</th>
+                  </tr>
+                </thead>
+                <tbody data-id="161" id="season-tbody-m3n4">
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <!-- 2014 Record Book Callout -->
+          <div data-id="162" class="mt-6 record-badge rounded-2xl p-5 md:p-6 flex items-start gap-4">
+            <div data-id="163" class="flex-shrink-0 text-4xl">⭐</div>
+            <div data-id="164">
+              <h4 data-id="165" class="font-display text-lg md:text-xl font-bold text-gold-400 uppercase tracking-wider mb-1">📖 GFL Record Book — 2014 Season</h4>
+              <p data-id="166" class="text-silver-200 text-sm leading-relaxed">
+                <strong data-id="167" class="text-gold-300">1,590.5 Points For</strong> — believed to be the <strong data-id="168" class="text-gold-400">highest single-season point total in GFL history</strong> (per 13-game regular seasons). The CUNT didn't just win the championship in Year 1 — they set the all-time scoring standard while doing it. A record-book moment that still stands over a decade later. 🏆⭐
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Points For Chart -->
+      <section data-id="169" id="stats" class="scroll-mt py-16 md:py-20 bg-base-800/40">
+        <div data-id="170" class="max-w-6xl mx-auto px-4 md:px-6">
+          <div data-id="171" class="text-center mb-12">
+            <p data-id="172" class="text-gold-400 text-xs font-semibold uppercase tracking-[0.25em] mb-3">Offensive Output</p>
+            <h2 data-id="173" class="font-display text-3xl md:text-4xl font-bold text-silver-100 uppercase tracking-wider">Points Scored by Season</h2>
+          </div>
+          <div data-id="174" class="bg-base-800 rounded-2xl border border-gold-400/10 p-4 md:p-6">
+            <div data-id="175" class="relative h-64 md:h-80">
+              <canvas data-id="176" id="pf-chart-o5p6"></canvas>
+            </div>
+          </div>
+
+          <!-- Did You Know? -->
+          <div data-id="177" class="mt-10 bg-base-800 rounded-2xl border border-gold-400/10 p-6 md:p-8">
+            <div data-id="178" class="flex items-center gap-3 mb-6">
+              <span data-id="179" class="text-2xl">💡</span>
+              <h3 data-id="180" class="font-display text-xl md:text-2xl font-bold text-gold-400 uppercase tracking-wider">Did You Know?</h3>
+            </div>
+            <div data-id="181" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              <div data-id="182" class="bg-base-900/50 rounded-xl p-4 border border-gold-400/25 record-shimmer">
+                <p data-id="183" class="text-gold-400 font-display text-lg font-bold">⭐ 1,590.5 — ALL-TIME RECORD</p>
+                <p data-id="184" class="text-silver-300 text-xs mt-1"><strong data-id="185" class="text-gold-300">Possible GFL all-time record!</strong> The 2014 CUNT's PF of 1,590.5 is believed to be the highest single-season scoring output in league history (13-game seasons). A record-book debut. 🏆</p>
+              </div>
+              <div data-id="186" class="bg-base-900/50 rounded-xl p-4">
+                <p data-id="187" class="text-vag-400 font-display text-lg font-bold">2 Seasons</p>
+                <p data-id="188" class="text-silver-400 text-xs mt-1">The VaG era lasted just 2 seasons before CUNT returned from the grave</p>
+              </div>
+              <div data-id="189" class="bg-base-900/50 rounded-xl p-4">
+                <p data-id="190" class="text-fire-400 font-display text-lg font-bold">Stat Correction</p>
+                <p data-id="191" class="text-silver-400 text-xs mt-1">The 2019 championship was literally decided by a post-game spreadsheet edit</p>
+              </div>
+              <div data-id="192" class="bg-base-900/50 rounded-xl p-4">
+                <p data-id="193" class="text-gold-400 font-display text-lg font-bold">3 Appearances, 2 Rings</p>
+                <p data-id="194" class="text-silver-400 text-xs mt-1">Three championship game trips in 12 seasons with a 2-1 record — elite consistency and clutch wins</p>
+              </div>
+              <div data-id="195" class="bg-base-900/50 rounded-xl p-4">
+                <p data-id="196" class="text-ice-400 font-display text-lg font-bold">1st Place 2025</p>
+                <p data-id="197" class="text-silver-400 text-xs mt-1">CUNT claimed the regular season crown in the most recent campaign</p>
+              </div>
+              <div data-id="198" class="bg-base-900/50 rounded-xl p-4">
+                <p data-id="199" class="text-gold-400 font-display text-lg font-bold">2x Champion</p>
+                <p data-id="200" class="text-silver-400 text-xs mt-1">Titles in 2014 and 2024 — a decade apart. Could have been a 3-peat of rings if not for the 2019 robbery.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Championships Section -->
+      <section data-id="201" id="championships" class="scroll-mt py-16 md:py-20">
+        <div data-id="202" class="max-w-6xl mx-auto px-4 md:px-6">
+          <div data-id="203" class="text-center mb-12">
+            <p data-id="204" class="text-gold-400 text-xs font-semibold uppercase tracking-[0.25em] mb-3">The Big Ones</p>
+            <h2 data-id="205" class="font-display text-3xl md:text-4xl font-bold text-silver-100 uppercase tracking-wider">Three Shots, Two Rings — One Robbery</h2>
+            <p data-id="206" class="text-silver-400 text-sm mt-3 max-w-lg mx-auto">Three championship appearances. Two crowns. One soul-crushing robbery. This is the story of a franchise that wins big — and got cheated out of winning bigger.</p>
+          </div>
+
+          <div data-id="207" class="space-y-6 md:space-y-8">
+            <!-- 2014 Championship -->
+            <div data-id="208" class="bg-base-800 rounded-2xl border border-gold-400/20 overflow-hidden card-glow-gold">
+              <div data-id="209" class="h-1.5 bg-gradient-to-r from-gold-400 via-gold-300 to-gold-400"></div>
+              <div data-id="210" class="p-6 md:p-8 flex flex-col md:flex-row gap-6 items-start">
+                <div data-id="211" class="flex-shrink-0 w-20 h-20 md:w-24 md:h-24 rounded-2xl bg-gold-400/10 flex items-center justify-center trophy-pulse">
+                  <span data-id="212" class="text-4xl md:text-5xl">👑</span>
+                </div>
+                <div data-id="213" class="flex-1">
+                  <div data-id="214" class="flex flex-wrap items-center gap-3 mb-3">
+                    <h3 data-id="215" class="font-display text-2xl md:text-3xl font-bold text-gold-400 uppercase">2014 — The Crown</h3>
+                    <span data-id="216" class="bg-gold-400 text-base-900 text-xs font-bold px-3 py-1 rounded-full uppercase">Champion</span>
+                    <span data-id="217" class="bg-gold-400/15 text-gold-300 text-xs font-bold px-3 py-1 rounded-full uppercase border border-gold-400/30">⭐ All-Time PF Record</span>
+                  </div>
+                  <p data-id="218" class="text-silver-200 text-sm mb-2"><strong data-id="219" class="text-gold-400">Record:</strong> 11-2 &nbsp;·&nbsp; <strong data-id="220" class="text-gold-400">PF:</strong> 1,590.5 ⭐ &nbsp;·&nbsp; <strong data-id="221" class="text-gold-400">Team:</strong> CUNT</p>
+                  <p data-id="222" class="text-silver-300 text-sm leading-relaxed">
+                    Won the GFL Championship in Year 1. CUNT was untouchable. The debut was historic — not just for the title, but for setting what may be the <strong data-id="223" class="text-gold-400">all-time GFL single-season scoring record</strong> at 1,590.5 points. The kind of first season that makes people suspicious — did Tavis sell his soul? Did he have insider information from the fantasy gods? Nobody knows. What we know is that CUNT walked in, slapped the league around, and walked out with the trophy and the record book. <span data-id="224" class="text-gold-400 font-semibold">Peak audacity.</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- 2019 Championship -->
+            <div data-id="225" class="bg-base-800 rounded-2xl border border-fire-400/20 overflow-hidden card-glow-red">
+              <div data-id="226" class="h-1.5 bg-gradient-to-r from-fire-400 via-fire-300 to-fire-400"></div>
+              <div data-id="227" class="p-6 md:p-8 flex flex-col md:flex-row gap-6 items-start">
+                <div data-id="228" class="flex-shrink-0 w-20 h-20 md:w-24 md:h-24 rounded-2xl bg-fire-400/10 flex items-center justify-center">
+                  <span data-id="229" class="text-4xl md:text-5xl">🚨</span>
+                </div>
+                <div data-id="230" class="flex-1">
+                  <div data-id="231" class="flex flex-wrap items-center gap-3 mb-3">
+                    <h3 data-id="232" class="font-display text-2xl md:text-3xl font-bold text-gradient-fire uppercase">2019 — The Robbery</h3>
+                    <span data-id="233" class="bg-fire-400 text-white text-xs font-bold px-3 py-1 rounded-full uppercase">Runner-Up</span>
+                  </div>
+                  <p data-id="234" class="text-silver-200 text-sm mb-2"><strong data-id="235" class="text-fire-400">Record:</strong> 11-2 &nbsp;·&nbsp; <strong data-id="236" class="text-fire-400">PF:</strong> 1,534.5 &nbsp;·&nbsp; <strong data-id="237" class="text-fire-400">Team:</strong> VaG</p>
+                  <p data-id="238" class="text-silver-300 text-sm leading-relaxed mb-3">
+                    Made the championship. The game <span data-id="239" class="text-fire-300 font-semibold">ended in a tie.</span> Both teams celebrated. Both teams panicked. Then a post-game stat correction handed the trophy to the Tigers. VaG had done everything right. Everything. The stat gods intervened with the cold, indifferent hand of a spreadsheet formula. This was the robbery that kept CUNT from being a 3x champion.
+                  </p>
+                  <div data-id="240" class="bg-fire-400/5 border border-fire-400/15 rounded-xl p-4">
+                    <p data-id="241" class="text-fire-300 text-sm italic font-medium">"Robbed by a spreadsheet."</p>
+                    <p data-id="242" class="text-silver-500 text-xs mt-1">— Everyone who witnessed this atrocity, 2019</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 2024 Championship -->
+            <div data-id="243" class="bg-base-800 rounded-2xl border border-gold-400/20 overflow-hidden card-glow-gold">
+              <div data-id="244" class="h-1.5 bg-gradient-to-r from-gold-400 via-gold-300 to-gold-400"></div>
+              <div data-id="245" class="p-6 md:p-8 flex flex-col md:flex-row gap-6 items-start">
+                <div data-id="246" class="flex-shrink-0 w-20 h-20 md:w-24 md:h-24 rounded-2xl bg-gold-400/10 flex items-center justify-center trophy-pulse">
+                  <span data-id="247" class="text-4xl md:text-5xl">👑</span>
+                </div>
+                <div data-id="248" class="flex-1">
+                  <div data-id="249" class="flex flex-wrap items-center gap-3 mb-3">
+                    <h3 data-id="250" class="font-display text-2xl md:text-3xl font-bold text-gold-400 uppercase">2024 — Redemption</h3>
+                    <span data-id="251" class="bg-gold-400 text-base-900 text-xs font-bold px-3 py-1 rounded-full uppercase">Champion</span>
+                  </div>
+                  <p data-id="252" class="text-silver-200 text-sm mb-2"><strong data-id="253" class="text-gold-400">Record:</strong> 9-5 &nbsp;·&nbsp; <strong data-id="254" class="text-gold-400">PF:</strong> 1,557.7 &nbsp;·&nbsp; <strong data-id="255" class="text-gold-400">Team:</strong> CUNT</p>
+                  <p data-id="256" class="text-silver-300 text-sm leading-relaxed">
+                    Made the championship for the 3rd time — and this time, <span data-id="257" class="text-gold-400 font-semibold">finished the job.</span> A decade after his first ring, Tavis Tucker claimed Ring #2. The comeback arc was complete. Three championship appearances. Two rings. One robbery that kept him from the three-peat. At this point, the CUNT's championship résumé reads like a Hollywood script — fall from grace, get robbed, rise again, and take the crown. <span data-id="258" class="text-gold-400 font-semibold">2x Champion. Undeniable.</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Championships Visual Timeline -->
+          <div data-id="259" class="mt-12 bg-base-800 rounded-2xl border border-gold-400/10 p-6 md:p-8">
+            <h3 data-id="260" class="font-display text-lg font-bold text-gold-400 uppercase tracking-wider mb-6 text-center">Championship Timeline</h3>
+            <div data-id="261" class="relative">
+              <div data-id="262" class="absolute left-1/2 transform -translate-x-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-gold-400/40 via-fire-400/40 to-gold-400/40 hidden md:block"></div>
+              <div data-id="263" class="space-y-8 md:space-y-0 md:grid md:grid-cols-3 md:gap-8 relative">
+                <div data-id="264" class="text-center">
+                  <div data-id="265" class="w-16 h-16 rounded-full bg-gold-400/20 border-2 border-gold-400 flex items-center justify-center mx-auto mb-3">
+                    <span data-id="266" class="text-2xl">🏆</span>
+                  </div>
+                  <p data-id="267" class="font-display text-2xl font-bold text-gold-400">2014</p>
+                  <p data-id="268" class="text-xs text-silver-400 uppercase tracking-wider mt-1">Champion — Ring #1</p>
+                  <p data-id="269" class="text-sm text-silver-300 mt-2">11-2 · CUNT</p>
+                </div>
+                <div data-id="270" class="text-center">
+                  <div data-id="271" class="w-16 h-16 rounded-full bg-fire-400/20 border-2 border-fire-400 flex items-center justify-center mx-auto mb-3">
+                    <span data-id="272" class="text-2xl">🚨</span>
+                  </div>
+                  <p data-id="273" class="font-display text-2xl font-bold text-fire-400">2019</p>
+                  <p data-id="274" class="text-xs text-silver-400 uppercase tracking-wider mt-1">The Robbery</p>
+                  <p data-id="275" class="text-sm text-silver-300 mt-2">11-2 · VaG</p>
+                </div>
+                <div data-id="276" class="text-center">
+                  <div data-id="277" class="w-16 h-16 rounded-full bg-gold-400/20 border-2 border-gold-400 flex items-center justify-center mx-auto mb-3">
+                    <span data-id="278" class="text-2xl">🏆</span>
+                  </div>
+                  <p data-id="279" class="font-display text-2xl font-bold text-gold-400">2024</p>
+                  <p data-id="280" class="text-xs text-silver-400 uppercase tracking-wider mt-1">Champion — Ring #2</p>
+                  <p data-id="281" class="text-sm text-silver-300 mt-2">9-5 · CUNT</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Hall of Injustice -->
+      <section data-id="282" id="injustice-q7r8" class="py-12 md:py-16 bg-base-800/40">
+        <div data-id="283" class="max-w-4xl mx-auto px-4 md:px-6">
+          <div data-id="284" class="bg-gradient-to-br from-fire-400/5 to-base-800 rounded-2xl border border-fire-400/15 p-6 md:p-8 text-center">
+            <span data-id="285" class="text-4xl mb-4 block">⚖️</span>
+            <h3 data-id="286" class="font-display text-2xl md:text-3xl font-bold text-fire-400 uppercase tracking-wider mb-2">Hall of Injustice</h3>
+            <p data-id="287" class="text-xs text-silver-400 uppercase tracking-[0.2em] mb-6">Inductee: The 2019 Stat Correction</p>
+            <div data-id="288" class="bg-base-900/60 rounded-xl p-5 max-w-xl mx-auto mb-4">
+              <p data-id="289" class="text-silver-200 text-sm leading-relaxed">
+                On the final day of the 2019 GFL Championship, VaG and the Tigers were <span data-id="290" class="text-fire-300 font-bold">tied</span>. The game was over. Celebrations were premature. Then, in the cold light of a Tuesday stat correction, the Tigers were awarded fractional points that swung the result. The title changed hands not on the field of competition, but in a database query. Somewhere, a spreadsheet cell updated. Somewhere, Tavis Tucker screamed into the void. Without this robbery, he'd be a <span data-id="291" class="text-gold-400 font-bold">3x champion</span>.
+              </p>
+            </div>
+            <p data-id="292" class="text-fire-300/60 text-xs italic">This robbery has been formally recognized by the GFL Franchise Guide Historical Committee.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Legacy Score -->
+      <section data-id="293" id="legacy" class="scroll-mt py-16 md:py-24">
+        <div data-id="294" class="max-w-5xl mx-auto px-4 md:px-6">
+          <div data-id="295" class="text-center mb-12">
+            <p data-id="296" class="text-gold-400 text-xs font-semibold uppercase tracking-[0.25em] mb-3">The Verdict</p>
+            <h2 data-id="297" class="font-display text-3xl md:text-4xl font-bold text-silver-100 uppercase tracking-wider">Legacy Score</h2>
+          </div>
+
+          <div data-id="298" class="bg-base-800 rounded-2xl border border-gold-400/15 overflow-hidden">
+            <!-- Grade Header -->
+            <div data-id="299" class="bg-gradient-to-r from-gold-400/10 via-gold-400/5 to-gold-400/10 p-8 md:p-12 text-center border-b border-gold-400/10">
+              <div data-id="300" id="grade-container-s9t0" class="inline-block">
+                <div data-id="301" class="w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-gold-400 flex items-center justify-center mx-auto bg-gold-400/5 animate-grade">
+                  <span data-id="302" class="font-display text-5xl md:text-6xl font-bold text-gold-400">A-</span>
+                </div>
+              </div>
+              <p data-id="303" class="text-silver-300 text-sm mt-4 max-w-md mx-auto">A 2x champion built on audacity, consistency, and the unshakable belief that the name makes the man.</p>
+            </div>
+
+            <!-- Breakdown -->
+            <div data-id="304" class="p-6 md:p-8">
+              <h4 data-id="305" class="font-display text-lg font-bold text-gold-400 uppercase tracking-wider mb-6">Detailed Breakdown</h4>
+              <div data-id="306" class="space-y-5">
+                <!-- Win Rate -->
+                <div data-id="307">
+                  <div data-id="308" class="flex justify-between items-center mb-2">
+                    <span data-id="309" class="text-silver-200 text-sm font-medium">Win Rate (.609 over 12 seasons)</span>
+                    <span data-id="310" class="text-gold-400 font-display font-bold text-sm">A-</span>
+                  </div>
+                  <div data-id="311" class="h-2.5 bg-base-900/60 rounded-full overflow-hidden">
+                    <div data-id="312" class="h-full rounded-full bg-gradient-to-r from-gold-400 to-gold-300" style="width: 85%"></div>
+                  </div>
+                  <p data-id="313" class="text-silver-500 text-xs mt-1">Very strong. Consistently above .500 in every era. Never a true tank year.</p>
+                </div>
+                <!-- Championship Hardware -->
+                <div data-id="314">
+                  <div data-id="315" class="flex justify-between items-center mb-2">
+                    <span data-id="316" class="text-silver-200 text-sm font-medium">Championship Hardware (2 Rings in 3 Appearances)</span>
+                    <span data-id="317" class="text-gold-400 font-display font-bold text-sm">A</span>
+                  </div>
+                  <div data-id="318" class="h-2.5 bg-base-900/60 rounded-full overflow-hidden">
+                    <div data-id="319" class="h-full rounded-full bg-gradient-to-r from-gold-400 to-gold-300" style="width: 90%"></div>
+                  </div>
+                  <p data-id="320" class="text-silver-500 text-xs mt-1">2 rings, could/should have 3. The 2019 robbery is the only blemish — and that wasn't his fault. A 2-1 championship record is elite.</p>
+                </div>
+                <!-- Playoff Contention -->
+                <div data-id="321">
+                  <div data-id="322" class="flex justify-between items-center mb-2">
+                    <span data-id="323" class="text-silver-200 text-sm font-medium">Consistent Playoff Contention</span>
+                    <span data-id="324" class="text-gold-400 font-display font-bold text-sm">A</span>
+                  </div>
+                  <div data-id="325" class="h-2.5 bg-base-900/60 rounded-full overflow-hidden">
+                    <div data-id="326" class="h-full rounded-full bg-gradient-to-r from-gold-400 to-gold-300" style="width: 90%"></div>
+                  </div>
+                  <p data-id="327" class="text-silver-500 text-xs mt-1">Always in the conversation. Never irrelevant. The franchise doesn't rebuild — it reloads.</p>
+                </div>
+                <!-- Name Game -->
+                <div data-id="328">
+                  <div data-id="329" class="flex justify-between items-center mb-2">
+                    <span data-id="330" class="text-silver-200 text-sm font-medium">The Name Game — Creative Vision</span>
+                    <span data-id="331" class="text-gold-400 font-display font-bold text-sm">A+</span>
+                  </div>
+                  <div data-id="332" class="h-2.5 bg-base-900/60 rounded-full overflow-hidden">
+                    <div data-id="333" class="h-full rounded-full bg-gradient-to-r from-gold-400 via-gold-300 to-vag-400" style="width: 100%"></div>
+                  </div>
+                  <p data-id="334" class="text-silver-500 text-xs mt-1">Legendary. CUNT. VaG. No notes. This is the Sistine Chapel of team naming.</p>
+                </div>
+                <!-- Recent Resurgence -->
+                <div data-id="335">
+                  <div data-id="336" class="flex justify-between items-center mb-2">
+                    <span data-id="337" class="text-silver-200 text-sm font-medium">Recent Resurgence (2024–2025)</span>
+                    <span data-id="338" class="text-ice-400 font-display font-bold text-sm">A</span>
+                  </div>
+                  <div data-id="339" class="h-2.5 bg-base-900/60 rounded-full overflow-hidden">
+                    <div data-id="340" class="h-full rounded-full bg-gradient-to-r from-ice-400 to-ice-300" style="width: 90%"></div>
+                  </div>
+                  <p data-id="341" class="text-silver-500 text-xs mt-1">Championship in 2024, regular season crown in 2025. Back-to-back dominance. The franchise isn't done.</p>
+                </div>
+                <!-- Hall of Injustice -->
+                <div data-id="342">
+                  <div data-id="343" class="flex justify-between items-center mb-2">
+                    <span data-id="344" class="text-silver-200 text-sm font-medium">Hall of Injustice Bonus</span>
+                    <span data-id="345" class="text-fire-400 font-display font-bold text-sm">🚨</span>
+                  </div>
+                  <div data-id="346" class="h-2.5 bg-base-900/60 rounded-full overflow-hidden">
+                    <div data-id="347" class="h-full rounded-full bg-gradient-to-r from-fire-400 to-fire-300" style="width: 100%"></div>
+                  </div>
+                  <p data-id="348" class="text-silver-500 text-xs mt-1">The 2019 stat correction robbery earns permanent recognition. Without it, he'd be a 3x champion. Justice was not served.</p>
+                </div>
+              </div>
+
+              <!-- Summary -->
+              <div data-id="349" class="mt-8 bg-base-900/50 rounded-xl p-5 border border-gold-400/10">
+                <p data-id="350" class="text-silver-200 text-sm leading-relaxed">
+                  <span data-id="351" class="text-gold-400 font-bold">Final Assessment:</span> Tavis Tucker's franchise is the rare blend of competitive excellence and legendary branding. A .609 career win rate over 12 seasons places CUNT firmly in the upper echelon of GFL history. Two championships — 2014 and 2024 — anchor the résumé with a decade-spanning arc of dominance. The 2014 debut didn't just produce Ring #1 — it set what may be the all-time GFL single-season scoring record at 1,590.5 points. The 2024 title sealed Ring #2 and cemented the legacy. The only stain is the 2019 robbery that denied him a potential three-peat of championships — a spreadsheet injustice that will echo forever. The CUNT is a 2x champion, a possible all-time scoring record holder, and still very much alive. The story isn't over.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer data-id="352" class="py-10 border-t border-gold-400/10 bg-base-900">
+      <div data-id="353" class="max-w-6xl mx-auto px-4 md:px-6 text-center">
+        <p data-id="354" class="font-display text-gold-400 text-sm uppercase tracking-[0.2em] mb-2">Part of the GFL Franchise Guide Series</p>
+        <p data-id="355" class="text-silver-500 text-xs">Gandorf National Football League &nbsp;·&nbsp; Est. 2012</p>
+        <p data-id="356" class="text-silver-500 text-xs mt-4">Made by Copilot</p>
+      </div>
+    </footer>
+
+    <script>
+      // Guard for Lucide icons
+      if (typeof lucide !== "undefined" && typeof lucide.createIcons === "function") {
+        lucide.createIcons();
+      }
+
+      // Mobile Menu
+      const menuBtn = document.getElementById('mobile-menu-btn-c3d4');
+      const mobileMenu = document.getElementById('mobile-menu-e5f6');
+      const closeBtn = document.getElementById('mobile-menu-close-g7h8');
+
+      if (menuBtn && mobileMenu && closeBtn) {
+        menuBtn.addEventListener('click', function() {
+          mobileMenu.classList.remove('hidden');
+        });
+        closeBtn.addEventListener('click', function() {
+          mobileMenu.classList.add('hidden');
+        });
+        document.querySelectorAll('.mobile-nav-link').forEach(function(link) {
+          link.addEventListener('click', function() {
+            mobileMenu.classList.add('hidden');
+          });
+        });
+      }
+
+      // Season Data
+      const seasons = [
+        { year: 2014, team: 'California Un-Named Team', abbr: 'CUNT', record: '11-2-0', pf: 1590.5, pa: 1296.0, finish: '🏆 1st', notes: 'CHAMPION — dominant debut ⭐ ALL-TIME PF RECORD', row: 'champion' },
+        { year: 2015, team: 'California Un-Named Team', abbr: 'CUNT', record: '7-6-0', pf: 1343.0, pa: 1234.0, finish: '5th', notes: '', row: '' },
+        { year: 2016, team: 'California Un-Named Team', abbr: 'CUNT', record: '7-6-0', pf: 1433.0, pa: 1283.0, finish: '5th', notes: '', row: '' },
+        { year: 2017, team: 'California Un-Named Team', abbr: 'CUNT', record: '9-4-0', pf: 1297.0, pa: 1268.5, finish: '4th', notes: '', row: '' },
+        { year: 2018, team: 'California Un-Named Team', abbr: 'CUNT', record: '8-5-0', pf: 1331.5, pa: 1228.5, finish: '5th', notes: '', row: '' },
+        { year: 2019, team: 'Virginia Gentiles', abbr: 'VaG', record: '11-2-0', pf: 1534.5, pa: 1324.0, finish: '2nd', notes: '🚨 THE ROBBERY', row: 'robbery' },
+        { year: 2020, team: 'Virginia Gentiles', abbr: 'VaG', record: '7-6-0', pf: 1216.5, pa: 1175.5, finish: '7th', notes: "VaG's last stand", row: '' },
+        { year: 2021, team: 'California Un-Named Team', abbr: 'CUNT', record: '8-6-0', pf: 1400.0, pa: 1392.5, finish: '5th', notes: 'CUNT returns', row: '' },
+        { year: 2022, team: 'California Un-Named Team', abbr: 'CUNT', record: '6-8-0', pf: 1436.76, pa: 1474.94, finish: '7th', notes: '', row: '' },
+        { year: 2023, team: 'California Un-Named Team', abbr: 'CUNT', record: '7-7-0', pf: 1471.62, pa: 1483.78, finish: '8th', notes: 'Career-worst finish', row: '' },
+        { year: 2024, team: 'California Un-Named Team', abbr: 'CUNT', record: '9-5-0', pf: 1557.7, pa: 1478.18, finish: '🏆 1st', notes: 'CHAMPION — Ring #2 🏆', row: 'champion' },
+        { year: 2025, team: 'California Un-Named Team', abbr: 'CUNT', record: '8-6-0', pf: 1558.82, pa: 1588.46, finish: '1st', notes: 'Regular season 1st place', row: 'current' }
+      ];
+
+      // Populate Table
+      const tbody = document.getElementById('season-tbody-m3n4');
+      if (tbody) {
+        seasons.forEach(function(s, i) {
+          const tr = document.createElement('tr');
+          let rowClass = i % 2 === 0 ? 'bg-base-900/30' : 'bg-base-800/50';
+          if (s.row === 'champion') rowClass = 'season-row-champion';
+          else if (s.row === 'robbery') rowClass = 'season-row-robbery';
+          else if (s.row === 'heartbreak') rowClass = 'season-row-heartbreak';
+          else if (s.row === 'current') rowClass = 'season-row-current';
+          tr.className = rowClass + ' transition-colors hover:bg-gold-400/5';
+
+          const abbrColor = s.abbr === 'VaG' ? 'text-vag-400' : 'text-gold-400';
+          const finishColor = s.finish.includes('🏆') ? 'text-gold-400 font-bold' : (s.finish === '2nd' ? 'text-fire-400 font-semibold' : (s.finish === '3rd' ? 'text-fire-300 font-semibold' : (s.finish === '1st' ? 'text-ice-400 font-semibold' : 'text-silver-300')));
+
+          // Special PF display for 2014 record
+          var pfDisplay = s.pf.toLocaleString(undefined, {minimumFractionDigits: 1, maximumFractionDigits: 2});
+          if (s.year === 2014) {
+            pfDisplay = '<span class="text-gold-400 font-bold">' + pfDisplay + ' ⭐</span>';
+          }
+
+          tr.innerHTML =
+            '<td class="px-4 py-3 font-display font-bold text-silver-100 tabular-nums">' + s.year + '</td>' +
+            '<td class="px-4 py-3 text-silver-300 text-xs md:text-sm whitespace-nowrap">' + s.team + '</td>' +
+            '<td class="px-4 py-3 text-center font-display font-bold ' + abbrColor + ' tracking-wider">' + s.abbr + '</td>' +
+            '<td class="px-4 py-3 text-center font-medium text-silver-200 tabular-nums">' + s.record + '</td>' +
+            '<td class="px-4 py-3 text-right tabular-nums text-silver-200">' + pfDisplay + '</td>' +
+            '<td class="px-4 py-3 text-right tabular-nums text-silver-400">' + s.pa.toLocaleString(undefined, {minimumFractionDigits: 1, maximumFractionDigits: 2}) + '</td>' +
+            '<td class="px-4 py-3 text-center ' + finishColor + '">' + s.finish + '</td>' +
+            '<td class="px-4 py-3 text-silver-400 text-xs hidden md:table-cell">' + s.notes + '</td>';
+          tbody.appendChild(tr);
+        });
+      }
+
+      // Chart.js - Points For by Year
+      var pfCtx = document.getElementById('pf-chart-o5p6');
+      if (pfCtx && typeof Chart !== 'undefined') {
+        var chartCtx = pfCtx.getContext('2d');
+        var barColors = seasons.map(function(s) {
+          if (s.row === 'champion') return '#f0b429';
+          if (s.row === 'robbery') return '#e53e3e';
+          if (s.row === 'heartbreak') return '#f87171';
+          if (s.row === 'current') return '#3b82f6';
+          if (s.abbr === 'VaG') return '#a78bfa';
+          return '#d4a017';
+        });
+        var borderColors = barColors.map(function(c) { return c; });
+
+        new Chart(chartCtx, {
+          type: 'bar',
+          data: {
+            labels: seasons.map(function(s) { return s.year.toString(); }),
+            datasets: [{
+              label: 'Points For',
+              data: seasons.map(function(s) { return s.pf; }),
+              backgroundColor: barColors.map(function(c) { return c + 'CC'; }),
+              borderColor: borderColors,
+              borderWidth: 2,
+              borderRadius: 4,
+              hoverBackgroundColor: barColors
+            }]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: { display: false },
+              tooltip: {
+                backgroundColor: '#161b22',
+                titleColor: '#f0b429',
+                bodyColor: '#d1d5db',
+                borderColor: 'rgba(240,180,41,0.2)',
+                borderWidth: 1,
+                cornerRadius: 12,
+                padding: 12,
+                titleFont: { family: 'Oswald', size: 14, weight: 'bold' },
+                bodyFont: { family: 'Inter', size: 12 },
+                callbacks: {
+                  label: function(ctx) {
+                    var label = 'PF: ' + ctx.parsed.y.toLocaleString(undefined, {minimumFractionDigits: 1, maximumFractionDigits: 2});
+                    if (ctx.dataIndex === 0) label += ' ⭐ ALL-TIME RECORD';
+                    return label;
+                  },
+                  afterLabel: function(ctx) {
+                    var s = seasons[ctx.dataIndex];
+                    return s.abbr + ' · ' + s.record;
+                  }
+                }
+              }
+            },
+            scales: {
+              x: {
+                grid: { color: 'rgba(240,180,41,0.06)' },
+                ticks: {
+                  color: '#9ca3af',
+                  font: { family: 'Oswald', size: 12, weight: '500' }
+                },
+                border: { color: 'rgba(240,180,41,0.15)' }
+              },
+              y: {
+                grid: { color: 'rgba(240,180,41,0.06)' },
+                ticks: {
+                  color: '#6b7280',
+                  font: { family: 'Inter', size: 11 },
+                  callback: function(v) { return v.toLocaleString(); }
+                },
+                border: { color: 'rgba(240,180,41,0.15)' },
+                beginAtZero: false,
+                suggestedMin: 1100
+              }
+            },
+            animation: {
+              duration: 1200,
+              easing: 'easeOutQuart'
+            }
+          }
+        });
+      }
+
+      // Smooth scroll for nav links
+      document.querySelectorAll('a[href^="#"]').forEach(function(link) {
+        link.addEventListener('click', function(e) {
+          var target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth' });
+          }
+        });
+      });
+
+      // Animate elements on scroll
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+          }
+        });
+      }, { threshold: 0.1 });
+
+      document.querySelectorAll('.era-card, .bg-base-800').forEach(function(el) {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(20px)';
+        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(el);
+      });
+    </script>
+  </body>
+</html>

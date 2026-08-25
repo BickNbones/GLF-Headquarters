@@ -1,0 +1,1214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark" />
+    <title>David Wilson — GFL Memorial Franchise Guide</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1/dist/chart.umd.min.js"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'system-ui', 'sans-serif'],
+            },
+            colors: {
+              gfl: {
+                bg: '#1a0a00',
+                card: '#2d1200',
+                cardLight: '#3d1a00',
+                primary: '#311D00',
+                bright: '#FF3C00',
+                accent: '#FF6B35',
+                light: '#FF8C5A',
+                gold: '#facc15',
+                amber: '#f59e0b',
+                text: '#fff8f0',
+                muted: '#ffb899',
+                dim: '#5a3520',
+                border: '#3d1a00',
+                darkest: '#0d0500',
+              }
+            }
+          }
+        }
+      };
+    </script>
+    <style>
+      :root {
+        --bg: #1a0a00;
+        --card: #2d1200;
+        --card-light: #3d1a00;
+        --primary: #311D00;
+        --bright: #FF3C00;
+        --accent: #FF6B35;
+        --light: #FF8C5A;
+        --gold: #facc15;
+        --amber: #f59e0b;
+        --text: #fff8f0;
+        --muted: #ffb899;
+        --dim: #5a3520;
+        --border: #3d1a00;
+        --glow-orange: rgba(255, 60, 0, 0.3);
+        --glow-gold: rgba(250, 204, 21, 0.25);
+      }
+
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+
+      body {
+        background-color: var(--bg);
+        color: var(--text);
+        font-family: 'Inter', system-ui, sans-serif;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+      }
+
+      @keyframes heroGlow {
+        0%, 100% { box-shadow: 0 0 30px var(--glow-orange), inset 0 0 30px rgba(255,60,0,0.05); border-color: rgba(255,60,0,0.4); }
+        50% { box-shadow: 0 0 60px var(--glow-orange), 0 0 100px rgba(255,60,0,0.15), inset 0 0 50px rgba(255,60,0,0.08); border-color: rgba(255,60,0,0.7); }
+      }
+
+      .hero-glow {
+        animation: heroGlow 3s ease-in-out infinite;
+        border: 2px solid rgba(255,60,0,0.4);
+      }
+
+      @keyframes lightningPulse {
+        0%, 100% { opacity: 0.07; text-shadow: 0 0 40px rgba(250,204,21,0.2); }
+        50% { opacity: 0.13; text-shadow: 0 0 80px rgba(250,204,21,0.4); }
+      }
+
+      .lightning-bg { animation: lightningPulse 4s ease-in-out infinite; }
+
+      .card-glow {
+        box-shadow: 0 0 20px var(--glow-orange);
+        border: 1px solid rgba(255,60,0,0.2);
+        transition: box-shadow 0.3s ease, border-color 0.3s ease;
+      }
+      .card-glow:hover {
+        box-shadow: 0 0 35px var(--glow-orange);
+        border-color: rgba(255,60,0,0.4);
+      }
+
+      .gold-glow {
+        box-shadow: 0 0 30px var(--glow-gold), 0 0 60px rgba(250,204,21,0.1);
+        border: 2px solid rgba(250,204,21,0.4);
+      }
+
+      .timeline-line {
+        position: absolute;
+        left: 20px;
+        top: 0;
+        bottom: 0;
+        width: 3px;
+        background: linear-gradient(to bottom, var(--bright), var(--accent), var(--bright));
+        box-shadow: 0 0 10px var(--glow-orange);
+      }
+      @media (min-width: 768px) { .timeline-line { left: 28px; } }
+
+      .timeline-node {
+        position: absolute;
+        left: 10px;
+        width: 24px;
+        height: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+        z-index: 2;
+      }
+      @media (min-width: 768px) { .timeline-node { left: 18px; } }
+
+      .fade-in {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.7s ease, transform 0.7s ease;
+      }
+      .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .section-header {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      .section-header .bolt {
+        color: var(--gold);
+        font-size: 1.5rem;
+        line-height: 1;
+      }
+
+      .chip-dad {
+        background: rgba(255,60,0,0.15);
+        border: 1px solid rgba(255,60,0,0.3);
+        color: var(--accent);
+      }
+      .chip-son {
+        background: rgba(250,204,21,0.15);
+        border: 1px solid rgba(250,204,21,0.3);
+        color: var(--gold);
+      }
+
+      .finish-gold { background: linear-gradient(135deg, rgba(250,204,21,0.2), rgba(245,158,11,0.2)); border: 1px solid rgba(250,204,21,0.4); color: var(--gold); }
+      .finish-green { background: rgba(255,60,0,0.15); border: 1px solid rgba(255,60,0,0.3); color: var(--accent); }
+      .finish-muted { background: rgba(255,184,153,0.08); border: 1px solid rgba(255,184,153,0.15); color: var(--muted); }
+      .finish-red { background: rgba(239,68,68,0.12); border: 1px solid rgba(239,68,68,0.25); color: #fca5a5; }
+
+      .gold-top-border { border-top: 3px solid var(--gold); }
+
+      ::-webkit-scrollbar { width: 8px; }
+      ::-webkit-scrollbar-track { background: var(--bg); }
+      ::-webkit-scrollbar-thumb { background: var(--dim); border-radius: 4px; }
+      ::-webkit-scrollbar-thumb:hover { background: var(--bright); }
+
+      .memorial-quote {
+        background: linear-gradient(135deg, var(--card), rgba(45,18,0,0.8));
+        border: 2px solid rgba(255,60,0,0.3);
+        box-shadow: 0 0 40px var(--glow-orange);
+        position: relative;
+      }
+      .memorial-quote::before {
+        content: '';
+        position: absolute;
+        inset: -2px;
+        border-radius: inherit;
+        padding: 2px;
+        background: linear-gradient(135deg, var(--bright), var(--gold), var(--bright));
+        -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        opacity: 0.4;
+        pointer-events: none;
+      }
+
+      .rivalry-chip {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.15rem;
+        padding: 0.35rem 0.5rem;
+        border-radius: 0.5rem;
+        font-size: 0.6rem;
+        font-weight: 700;
+        min-width: 44px;
+        transition: transform 0.2s ease;
+      }
+      .rivalry-chip:hover { transform: scale(1.1); }
+      .rivalry-chip .year {
+        font-size: 0.55rem;
+        font-weight: 600;
+        opacity: 0.8;
+      }
+
+      /* F-S pill in timeline cards */
+      .fs-pill {
+        position: absolute;
+        top: 0.75rem;
+        right: 0.75rem;
+        z-index: 5;
+      }
+
+      /* Sortable table */
+      .sort-table th { cursor: pointer; user-select: none; }
+      .sort-table th:hover { color: var(--accent); }
+      .sort-table tbody tr { transition: background 0.15s; }
+      .sort-table tbody tr:hover { background: rgba(255,60,0,0.06); }
+      .sort-table .goat-row { background: rgba(255,60,0,0.08) !important; border-left: 3px solid var(--bright); }
+      .sort-arrow { display: inline-block; width: 10px; margin-left: 2px; font-size: 10px; opacity: 0.5; }
+      .sort-arrow.active { opacity: 1; color: var(--gold); }
+
+      /* Era cards */
+      .era-card { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+      .era-card:hover { transform: translateY(-2px); }
+
+      /* Info banner */
+      .info-banner {
+        border-left: 4px solid var(--accent);
+        background: var(--card);
+      }
+    </style>
+</head>
+<body data-id="0">
+    <app-icon data-id="1" hidden data-icon="zap" data-palette="Orange"></app-icon>
+
+    <!-- NAVIGATION -->
+    <nav data-id="2" class="fixed top-0 left-0 right-0 z-50 backdrop-blur-md border-b" style="background: rgba(26,10,0,0.9); border-color: var(--border);">
+        <div data-id="3" class="max-w-6xl mx-auto px-4 md:px-6 py-3 flex items-center justify-between">
+            <div data-id="4" class="flex items-center gap-2">
+                <span data-id="5" class="text-lg" style="color: var(--gold);">⚡</span>
+                <span data-id="6" class="text-sm md:text-base font-bold tracking-wide" style="color: var(--text);">GFL MEMORIAL</span>
+            </div>
+            <div data-id="7" class="hidden md:flex items-center gap-6 text-xs font-medium uppercase tracking-widest" style="color: var(--muted);">
+                <a data-id="8" href="#hero" class="nav-link hover:text-gfl-accent transition-colors cursor-pointer">Home</a>
+                <a data-id="9" href="#stats" class="nav-link hover:text-gfl-accent transition-colors cursor-pointer">Stats</a>
+                <a data-id="10" href="#scoring" class="nav-link hover:text-gfl-accent transition-colors cursor-pointer">Scoring</a>
+                <a data-id="11" href="#timeline" class="nav-link hover:text-gfl-accent transition-colors cursor-pointer">Seasons</a>
+                <a data-id="12" href="#rankings" class="nav-link hover:text-gfl-accent transition-colors cursor-pointer">Rankings</a>
+                <a data-id="13" href="#eras" class="nav-link hover:text-gfl-accent transition-colors cursor-pointer">Eras</a>
+                <a data-id="14" href="#rivalry" class="nav-link hover:text-gfl-accent transition-colors cursor-pointer">Rivalry</a>
+                <a data-id="15" href="#legacy" class="nav-link hover:text-gfl-accent transition-colors cursor-pointer">Legacy</a>
+            </div>
+            <button data-id="16" id="mobile-menu-btn" class="md:hidden p-2 transition-colors" style="color: var(--muted);">
+                <i data-id="17" data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile menu overlay -->
+    <nav data-id="18" id="mobile-menu" class="hidden fixed inset-0 z-[60] flex flex-col items-center justify-center gap-6" style="background: rgba(26,10,0,0.98);">
+        <button data-id="19" id="mobile-menu-close" class="absolute top-4 right-4 p-2 transition-colors" style="color: var(--muted);">
+            <i data-id="20" data-lucide="x" class="w-7 h-7"></i>
+        </button>
+        <a data-id="21" href="#hero" class="mobile-nav-link text-2xl font-bold hover:text-gfl-accent transition-colors cursor-pointer" style="color: var(--muted);">Home</a>
+        <a data-id="22" href="#stats" class="mobile-nav-link text-2xl font-bold hover:text-gfl-accent transition-colors cursor-pointer" style="color: var(--muted);">Stats</a>
+        <a data-id="23" href="#scoring" class="mobile-nav-link text-2xl font-bold hover:text-gfl-accent transition-colors cursor-pointer" style="color: var(--muted);">Scoring</a>
+        <a data-id="24" href="#timeline" class="mobile-nav-link text-2xl font-bold hover:text-gfl-accent transition-colors cursor-pointer" style="color: var(--muted);">Seasons</a>
+        <a data-id="25" href="#rankings" class="mobile-nav-link text-2xl font-bold hover:text-gfl-accent transition-colors cursor-pointer" style="color: var(--muted);">Rankings</a>
+        <a data-id="26" href="#eras" class="mobile-nav-link text-2xl font-bold hover:text-gfl-accent transition-colors cursor-pointer" style="color: var(--muted);">Eras</a>
+        <a data-id="27" href="#rivalry" class="mobile-nav-link text-2xl font-bold hover:text-gfl-accent transition-colors cursor-pointer" style="color: var(--muted);">Rivalry</a>
+        <a data-id="28" href="#legacy" class="mobile-nav-link text-2xl font-bold hover:text-gfl-accent transition-colors cursor-pointer" style="color: var(--muted);">Legacy</a>
+    </nav>
+
+    <main data-id="29">
+
+        <!-- ========== SECTION 1: HERO BANNER ========== -->
+        <section data-id="30" id="hero" class="pt-20 md:pt-24 pb-12 md:pb-16 px-4 md:px-6">
+            <div data-id="31" class="max-w-5xl mx-auto">
+                <div data-id="32" class="hero-glow rounded-3xl p-6 md:p-12 lg:p-16 relative overflow-hidden" style="background: linear-gradient(145deg, #2d1200 0%, #1a0a00 50%, #2d1200 100%);">
+                    <div data-id="33" class="lightning-bg absolute inset-0 flex items-center justify-center pointer-events-none select-none" aria-hidden="true">
+                        <span data-id="34" style="color: var(--gold); font-size: clamp(200px, 40vw, 450px); line-height: 1;">⚡</span>
+                    </div>
+                    <div data-id="35" class="relative z-10 text-center">
+                        <div data-id="36" class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-[0.2em] mb-6 md:mb-8" style="background: rgba(255,60,0,0.12); border: 1px solid rgba(255,60,0,0.25); color: var(--muted);">
+                            GFL &bull; 2013–2022 &bull; IN MEMORIAM
+                        </div>
+                        <h1 data-id="37" class="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-black leading-[1.05] mb-3 md:mb-4 tracking-tight" style="color: var(--text);">
+                            CLEVELAND<br data-id="38" />DAWGS OF WAR <span data-id="39" class="inline-block" style="font-size: 0.7em;">🐾</span>
+                        </h1>
+                        <div data-id="40" class="inline-flex items-center gap-2 px-5 py-2 rounded-full text-xs md:text-sm font-bold uppercase tracking-wider mb-4" style="background: linear-gradient(135deg, rgba(255,60,0,0.2), rgba(49,29,0,0.4)); border: 1px solid rgba(255,60,0,0.4); color: var(--accent);">
+                            🐾 Lifelong Cleveland Browns Superfan 🏈
+                        </div>
+                        <p data-id="41" class="text-lg md:text-2xl font-bold mb-2" style="color: var(--bright);">The David Wilson Legacy</p>
+                        <p data-id="42" class="text-sm md:text-base italic mb-8 md:mb-10" style="color: rgba(255,184,153,0.8);">
+                            A father. A competitor. A GFL original.
+                        </p>
+                        <div data-id="43" class="flex flex-wrap items-center justify-center gap-3 md:gap-4">
+                            <div data-id="44" class="px-4 py-2 rounded-full text-xs md:text-sm font-bold" style="background: rgba(255,60,0,0.1); border: 1px solid rgba(255,60,0,0.25); color: var(--accent);">10 SEASONS</div>
+                            <div data-id="45" class="px-4 py-2 rounded-full text-xs md:text-sm font-bold" style="background: rgba(255,60,0,0.1); border: 1px solid rgba(255,60,0,0.25); color: var(--accent);">69-62-1</div>
+                            <div data-id="46" class="px-4 py-2 rounded-full text-xs md:text-sm font-bold" style="background: rgba(255,60,0,0.1); border: 1px solid rgba(255,60,0,0.25); color: var(--accent);">13,438.8 PTS SCORED</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== SECTION 2: CAREER AT A GLANCE ========== -->
+        <section data-id="47" id="stats" class="py-12 md:py-20 px-4 md:px-6">
+            <div data-id="48" class="max-w-5xl mx-auto">
+                <div data-id="49" class="text-center mb-10 md:mb-14 fade-in">
+                    <div data-id="50" class="section-header justify-center mb-3">
+                        <span data-id="51" class="bolt">⚡</span>
+                        <h2 data-id="52" class="text-2xl md:text-3xl font-black tracking-tight" style="color: var(--text);">CAREER AT A GLANCE</h2>
+                        <span data-id="53" class="bolt">⚡</span>
+                    </div>
+                    <p data-id="54" class="text-sm uppercase tracking-widest font-medium" style="color: rgba(255,184,153,0.7);">10 Seasons of Dawgs Football</p>
+                </div>
+                <div data-id="55" class="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+                    <div data-id="56" class="card-glow rounded-2xl p-5 md:p-7 relative overflow-hidden" style="background: var(--card);">
+                        <span data-id="57" class="absolute top-3 right-3 text-2xl" style="color: rgba(250,204,21,0.2);">⚡</span>
+                        <p data-id="58" class="text-4xl md:text-5xl font-black tabular-nums" style="color: var(--text);">69</p>
+                        <p data-id="59" class="text-xs md:text-sm font-semibold uppercase tracking-wider mt-1" style="color: var(--muted);">Wins</p>
+                    </div>
+                    <div data-id="60" class="card-glow rounded-2xl p-5 md:p-7 relative overflow-hidden" style="background: var(--card);">
+                        <span data-id="61" class="absolute top-3 right-3 text-2xl" style="color: rgba(250,204,21,0.2);">⚡</span>
+                        <p data-id="62" class="text-4xl md:text-5xl font-black tabular-nums" style="color: var(--text);">62</p>
+                        <p data-id="63" class="text-xs md:text-sm font-semibold uppercase tracking-wider mt-1" style="color: var(--muted);">Losses</p>
+                    </div>
+                    <div data-id="64" class="card-glow rounded-2xl p-5 md:p-7 relative overflow-hidden" style="background: var(--card);">
+                        <span data-id="65" class="absolute top-3 right-3 text-2xl" style="color: rgba(250,204,21,0.2);">⚡</span>
+                        <p data-id="66" class="text-4xl md:text-5xl font-black tabular-nums" style="color: var(--text);">52.7<span data-id="67" class="text-2xl md:text-3xl" style="color: var(--muted);">%</span></p>
+                        <p data-id="68" class="text-xs md:text-sm font-semibold uppercase tracking-wider mt-1" style="color: var(--muted);">Win Rate</p>
+                    </div>
+                    <div data-id="69" class="card-glow rounded-2xl p-5 md:p-7 relative overflow-hidden" style="background: var(--card);">
+                        <span data-id="70" class="absolute top-3 right-3 text-2xl" style="color: rgba(250,204,21,0.2);">⚡</span>
+                        <p data-id="71" class="text-3xl md:text-4xl font-black tabular-nums" style="color: var(--text);">13,438.8</p>
+                        <p data-id="72" class="text-xs md:text-sm font-semibold uppercase tracking-wider mt-1" style="color: var(--muted);">Career Points For</p>
+                    </div>
+                    <div data-id="73" class="card-glow rounded-2xl p-5 md:p-7 relative overflow-hidden" style="background: var(--card);">
+                        <span data-id="74" class="absolute top-3 right-3 text-2xl" style="color: rgba(250,204,21,0.2);">⚡</span>
+                        <p data-id="75" class="text-3xl md:text-4xl font-black tabular-nums" style="color: var(--bright);">+274.8</p>
+                        <p data-id="76" class="text-xs md:text-sm font-semibold uppercase tracking-wider mt-1" style="color: var(--muted);">Career Point Diff</p>
+                    </div>
+                    <div data-id="77" class="card-glow rounded-2xl p-5 md:p-7 relative overflow-hidden" style="background: var(--card);">
+                        <span data-id="78" class="absolute top-3 right-3 text-2xl" style="color: rgba(250,204,21,0.2);">⚡</span>
+                        <p data-id="79" class="text-4xl md:text-5xl font-black tabular-nums" style="color: var(--gold);">2nd</p>
+                        <p data-id="80" class="text-xs md:text-sm font-semibold uppercase tracking-wider mt-1" style="color: var(--muted);">Best Finish <span data-id="81" style="color: rgba(255,184,153,0.5);">(twice)</span></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== SCORING COMMAND CENTER ========== -->
+        <section data-id="82" id="scoring" class="py-12 md:py-20 px-4 md:px-6" style="background: linear-gradient(180deg, var(--bg) 0%, rgba(45,18,0,0.3) 50%, var(--bg) 100%);">
+            <div data-id="83" class="max-w-5xl mx-auto">
+                <div data-id="84" class="text-center mb-10 md:mb-14 fade-in">
+                    <div data-id="85" class="section-header justify-center mb-3">
+                        <span data-id="86" class="bolt">⚡</span>
+                        <h2 data-id="87" class="text-2xl md:text-3xl font-black tracking-tight" style="color: var(--text);">SCORING COMMAND CENTER</h2>
+                        <span data-id="88" class="bolt">⚡</span>
+                    </div>
+                    <p data-id="89" class="text-sm uppercase tracking-widest font-medium" style="color: rgba(255,184,153,0.7);">A decade of points, peaks, and persistence.</p>
+                </div>
+
+                <!-- Chart 1: Points For vs Points Against -->
+                <div data-id="90" class="card-glow rounded-2xl p-4 md:p-7 mb-6 fade-in" style="background: var(--card);">
+                    <h3 data-id="91" class="text-sm md:text-base font-bold uppercase tracking-wider mb-4" style="color: var(--muted);">Points For vs. Points Against — All 10 Seasons</h3>
+                    <div data-id="92" class="relative" style="height: 320px;">
+                        <canvas data-id="93" id="chart-pf-pa"></canvas>
+                    </div>
+                </div>
+
+                <!-- Chart 2: Point Differential Line -->
+                <div data-id="94" class="card-glow rounded-2xl p-4 md:p-7 mb-8 fade-in" style="background: var(--card);">
+                    <h3 data-id="95" class="text-sm md:text-base font-bold uppercase tracking-wider mb-4" style="color: var(--muted);">Season Point Differential</h3>
+                    <div data-id="96" class="relative" style="height: 280px;">
+                        <canvas data-id="97" id="chart-diff"></canvas>
+                    </div>
+                </div>
+
+                <!-- Stat pills -->
+                <div data-id="98" class="flex flex-wrap justify-center gap-3 md:gap-4 fade-in">
+                    <div data-id="99" class="px-4 py-2.5 rounded-xl text-xs md:text-sm font-bold" style="background: rgba(255,60,0,0.1); border: 1px solid rgba(255,60,0,0.25); color: var(--accent);">
+                        📈 Avg PF/Season: 1,343.9
+                    </div>
+                    <div data-id="100" class="px-4 py-2.5 rounded-xl text-xs md:text-sm font-bold" style="background: rgba(255,60,0,0.1); border: 1px solid rgba(255,60,0,0.25); color: var(--accent);">
+                        📉 Avg PA/Season: 1,316.4
+                    </div>
+                    <div data-id="101" class="px-4 py-2.5 rounded-xl text-xs md:text-sm font-bold" style="background: rgba(255,60,0,0.1); border: 1px solid rgba(255,60,0,0.25); color: var(--accent);">
+                        🎯 Avg PF/Game: 101.7
+                    </div>
+                    <div data-id="102" class="px-4 py-2.5 rounded-xl text-xs md:text-sm font-bold" style="background: rgba(255,60,0,0.1); border: 1px solid rgba(255,60,0,0.25); color: var(--accent);">
+                        📊 Positive Diff Seasons: 6 of 10
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== SECTION 3: SEASON-BY-SEASON TIMELINE ========== -->
+        <section data-id="103" id="timeline" class="py-12 md:py-20 px-4 md:px-6">
+            <div data-id="104" class="max-w-4xl mx-auto">
+                <div data-id="105" class="text-center mb-10 md:mb-14 fade-in">
+                    <div data-id="106" class="section-header justify-center mb-3">
+                        <span data-id="107" class="bolt">⚡</span>
+                        <h2 data-id="108" class="text-2xl md:text-3xl font-black tracking-tight" style="color: var(--text);">SEASON BY SEASON</h2>
+                        <span data-id="109" class="bolt">⚡</span>
+                    </div>
+                    <p data-id="110" class="text-sm uppercase tracking-widest font-medium" style="color: rgba(255,184,153,0.7);">A Decade of Dawgs Football</p>
+                </div>
+
+                <div data-id="111" class="relative pl-12 md:pl-16">
+                    <div data-id="112" class="timeline-line" aria-hidden="true"></div>
+
+                    <!-- 2013 -->
+                    <div data-id="113" class="relative mb-8 md:mb-10 fade-in">
+                        <div data-id="114" class="timeline-node top-6" aria-hidden="true"><span data-id="115" style="color: var(--gold);">⚡</span></div>
+                        <div data-id="116" class="card-glow rounded-2xl p-5 md:p-7 relative" style="background: var(--card);">
+                            <span data-id="117" class="fs-pill px-2 py-0.5 rounded-full text-[9px] font-bold uppercase tracking-wider chip-dad">D 2nd · C ~10th</span>
+                            <div data-id="118" class="flex flex-wrap items-center gap-2 md:gap-3 mb-3">
+                                <span data-id="119" class="text-2xl md:text-3xl font-black tabular-nums" style="color: var(--gold);">2013</span>
+                                <span data-id="120" class="px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider finish-gold">2nd Place</span>
+                                <span data-id="121" class="px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider chip-dad">⚡ DAD WINS</span>
+                            </div>
+                            <p data-id="122" class="text-xs font-bold uppercase tracking-widest mb-2" style="color: var(--bright);">THE ARRIVAL</p>
+                            <div data-id="123" class="flex flex-wrap gap-3 md:gap-5 text-xs mb-3 tabular-nums" style="color: var(--muted);">
+                                <span data-id="124"><strong data-id="125" style="color: var(--text);">9-4-0</strong></span>
+                                <span data-id="126">PF: <strong data-id="127" style="color: var(--text);">1,349.5</strong></span>
+                                <span data-id="128">PA: <strong data-id="129" style="color: var(--text);">1,250.5</strong></span>
+                                <span data-id="130" class="font-bold" style="color: var(--bright);">+99.0</span>
+                            </div>
+                            <p data-id="131" class="text-sm leading-relaxed" style="color: rgba(255,184,153,0.9);">David Wilson announced his arrival to the GFL with one of the strongest debut seasons in league history. A 9-4 record, the 2nd-best finish in the league, and a healthy +99 point differential. The Dawgs weren't just barking — they were biting. The father had arrived.</p>
+                        </div>
+                    </div>
+
+                    <!-- 2014 -->
+                    <div data-id="132" class="relative mb-8 md:mb-10 fade-in">
+                        <div data-id="133" class="timeline-node top-6" aria-hidden="true"><span data-id="134" style="color: var(--gold);">⚡</span></div>
+                        <div data-id="135" class="card-glow rounded-2xl p-5 md:p-7 relative" style="background: var(--card);">
+                            <span data-id="136" class="fs-pill px-2 py-0.5 rounded-full text-[9px] font-bold uppercase tracking-wider chip-dad">D 4th · C 9th</span>
+                            <div data-id="137" class="flex flex-wrap items-center gap-2 md:gap-3 mb-3">
+                                <span data-id="138" class="text-2xl md:text-3xl font-black tabular-nums" style="color: var(--gold);">2014</span>
+                                <span data-id="139" class="px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider finish-green">4th Place</span>
+                                <span data-id="140" class="px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider chip-dad">⚡ DAD WINS</span>
+                            </div>
+                            <p data-id="141" class="text-xs font-bold uppercase tracking-widest mb-2" style="color: var(--bright);">STILL HUNGRY</p>
+                            <div data-id="142" class="flex flex-wrap gap-3 md:gap-5 text-xs mb-3 tabular-nums" style="color: var(--muted);">
+                                <span data-id="143"><strong data-id="144" style="color: var(--text);">9-4-0</strong></span>
+                                <span data-id="145">PF: <strong data-id="146" style="color: var(--text);">1,316.0</strong></span>
+                                <span data-id="147">PA: <strong data-id="148" style="color: var(--text);">1,239.5</strong></span>
+                                <span data-id="149" class="font-bold" style="color: var(--bright);">+76.5</span>
+                            </div>
+                            <p data-id="150" class="text-sm leading-relaxed" style="color: rgba(255,184,153,0.9);">Another 9-4 campaign, another dominant regular season — but this time the playoff bracket had other ideas. David slid to 4th, proving that consistency and success aren't always the same thing in fantasy football. While son Collin (9th) watched from the bottom half, Dad was still very much in the conversation.</p>
+                        </div>
+                    </div>
+
+                    <!-- 2015 -->
+                    <div data-id="151" class="relative mb-8 md:mb-10 fade-in">
+                        <div data-id="152" class="timeline-node top-6" aria-hidden="true"><span data-id="153" style="color: var(--gold);">⚡</span></div>
+                        <div data-id="154" class="card-glow rounded-2xl p-5 md:p-7 relative" style="background: var(--card);">
+                            <span data-id="155" class="fs-pill px-2 py-0.5 rounded-full text-[9px] font-bold uppercase tracking-wider chip-dad">D 7th · C 9th</span>
+                            <div data-id="156" class="flex flex-wrap items-center gap-2 md:gap-3 mb-3">
+                                <span data-id="157" class="text-2xl md:text-3xl font-black tabular-nums" style="color: var(--gold);">2015</span>
+                                <span data-id="158" class="px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider finish-muted">7th Place</span>
+                                <span data-id="159" class="px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider chip-dad">⚡ DAD WINS</span>
+                            </div>
+                            <p data-id="160" class="text-xs font-bold uppercase tracking-widest mb-2" style="color: var(--bright);">GROWING PAINS</p>
+                            <div data-id="161" class="flex flex-wrap gap-3 md:gap-5 text-xs mb-3 tabular-nums" style="color: var(--muted);">
+                                <span data-id="162"><strong data-id="163" style="color: var(--text);">6-7-0</strong></span>
+                                <span data-id="164">PF: <strong data-id="165" style="color: var(--text);">1,291.0</strong></span>
+                                <span data-id="166">PA: <strong data-id="167" style="color: var(--text);">1,297.0</strong></span>
+                                <span data-id="168" class="text-red-400 font-bold">-6.0</span>
+                            </div>
+                            <p data-id="169" class="text-sm leading-relaxed" style="color: rgba(255,184,153,0.9);">A dip in the standings — 6-7, 7th place — but the numbers tell a tighter story. Just -6 points across 13 weeks of fantasy football. The Dawgs were as competitive as ever; luck just wasn't riding shotgun. Still beat the kid in the standings. Dad doesn't lose sleep.</p>
+                        </div>
+                    </div>
+
+                    <!-- 2016 -->
+                    <div data-id="170" class="relative mb-8 md:mb-10 fade-in">
+                        <div data-id="171" class="timeline-node top-6" aria-hidden="true"><span data-id="172" style="color: var(--gold);">⚡</span></div>
+                        <div data-id="173" class="card-glow rounded-2xl p-5 md:p-7 relative" style="background: var(--card);">
+                            <span data-id="174" class="fs-pill px-2 py-0.5 rounded-full text-[9px] font-bold uppercase tracking-wider chip-son">D 7th · C 4th</span>
+                            <div data-id="175" class="flex flex-wrap items-center gap-2 md:gap-3 mb-3">
+                                <span data-id="176" class="text-2xl md:text-3xl font-black tabular-nums" style="color: var(--gold);">2016</span>
+                                <span data-id="177" class="px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider finish-muted">7th Place</span>
+                                <span data-id="178" class="px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider chip-son">👑 SON WINS</span>
+                            </div>
+                            <p data-id="179" class="text-xs font-bold uppercase tracking-widest mb-2" style="color: var(--bright);">THE STUDENT RISES</p>
+                            <div data-id="180" class="flex flex-wrap gap-3 md:gap-5 text-xs mb-3 tabular-nums" style="color: var(--muted);">
+                                <span data-id="181"><strong data-id="182" style="color: var(--text);">6-7-0</strong></span>
+                                <span data-id="183">PF: <strong data-id="184" style="color: var(--text);">1,252.0</strong></span>
+                                <span data-id="185">PA: <strong data-id="186" style="color: var(--text);">1,256.5</strong></span>
+                                <span data-id="187" class="text-red-400 font-bold">-4.5</span>
+                            </div>
+                            <p data-id="188" class="text-sm leading-relaxed" style="color: rgba(255,184,153,0.9);">Back-to-back 6-7 seasons, and back-to-back 7th place finishes. But something quietly seismic happened across the Wilson household this year — Collin climbed to 4th. For the first time in league history, the son outranked the father. We can only imagine the dinner table conversation.</p>
+                        </div>
+                    </div>
+
+                    <!-- 2017 -->
+                    <div data-id="189" class="relative mb-8 md:mb-10 fade-in">
+                        <div data-id="190" class="timeline-node top-6" aria-hidden="true"><span data-id="191" style="color: var(--gold);">⚡</span></div>
+                        <div data-id="192" class="card-glow rounded-2xl p-5 md:p-7 relative" style="background: var(--card);">
+                            <span data-id="193" class="fs-pill px-2 py-0.5 rounded-full text-[9px] font-bold uppercase tracking-wider chip-dad">D 7th · C 10th</span>
+                            <div data-id="194" class="flex flex-wrap items-center gap-2 md:gap-3 mb-3">
+                                <span data-id="195" class="text-2xl md:text-3xl font-black tabular-nums" style="color: var(--gold);">2017</span>
+                                <span data-id="196" class="px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider finish-muted">7th Place</span>
+                                <span data-id="197" class="px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider chip-dad">⚡ DAD WINS</span>
+                            </div>
+                            <p data-id="198" class="text-xs font-bold uppercase tracking-widest mb-2" style="color: var(--bright);">REBUILDING SEASON</p>
+                            <div data-id="199" class="flex flex-wrap gap-3 md:gap-5 text-xs mb-3 tabular-nums" style="color: var(--muted);">
+                                <span data-id="200"><strong data-id="201" style="color: var(--text);">5-8-0</strong></span>
+                                <span data-id="202">PF: <strong data-id="203" style="color: var(--text);">1,107.5</strong></span>
+                                <span data-id="204">PA: <strong data-id="205" style="color: var(--text);">1,188.5</strong></span>
+                                <span data-id="206" class="text-red-400 font-bold">-81.0</span>
+                            </div>
+                            <p data-id="207" class="text-sm leading-relaxed" style="color: rgba(255,184,153,0.9);">The roughest statistical year of the David Wilson era. A 5-8 record and -81 point differential painted a bleak picture. But true competitors don't quit — they recalibrate. Collin tanked to 10th, so Dad still held the family bragging rights. Pride, at least, was intact.</p>
+                        </div>
+                    </div>
+
+                    <!-- 2018 -->
+                    <div data-id="208" class="relative mb-8 md:mb-10 fade-in">
+                        <div data-id="209" class="timeline-node top-6" aria-hidden="true"><span data-id="210" style="color: var(--gold);">⚡</span></div>
+                        <div data-id="211" class="card-glow rounded-2xl p-5 md:p-7 relative" style="background: var(--card);">
+                            <span data-id="212" class="fs-pill px-2 py-0.5 rounded-full text-[9px] font-bold uppercase tracking-wider chip-dad">D 6th · C 11th</span>
+                            <div data-id="213" class="flex flex-wrap items-center gap-2 md:gap-3 mb-3">
+                                <span data-id="214" class="text-2xl md:text-3xl font-black tabular-nums" style="color: var(--gold);">2018</span>
+                                <span data-id="215" class="px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider finish-green">6th Place</span>
+                                <span data-id="216" class="px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider chip-dad">⚡ DAD WINS</span>
+                            </div>
+                            <p data-id="217" class="text-xs font-bold uppercase tracking-widest mb-2" style="color: var(--bright);">THE GRINDER</p>
+                            <div data-id="218" class="flex flex-wrap gap-3 md:gap-5 text-xs mb-3 tabular-nums" style="color: var(--muted);">
+                                <span data-id="219"><strong data-id="220" style="color: var(--text);">7-6-0</strong></span>
+                                <span data-id="221">PF: <strong data-id="222" style="color: var(--text);">1,388.0</strong></span>
+                                <span data-id="223">PA: <strong data-id="224" style="color: var(--text);">1,442.5</strong></span>
+                                <span data-id="225" class="text-red-400 font-bold">-54.5</span>
+                            </div>
+                            <p data-id="226" class="text-sm leading-relaxed" style="color: rgba(255,184,153,0.9);">Back above .500. 1,388 points scored — the Dawgs were generating offense. The defense was leaky, and 6th place was the ceiling this year, but the fight was back. Meanwhile Collin (11th) hit rock bottom. Dad outpaced the kid by five positions. The master and the student.</p>
+                        </div>
+                    </div>
+
+                    <!-- 2019 -->
+                    <div data-id="227" class="relative mb-8 md:mb-10 fade-in">
+                        <div data-id="228" class="timeline-node top-6" aria-hidden="true"><span data-id="229" style="color: var(--gold);">⚡</span></div>
+                        <div data-id="230" class="card-glow rounded-2xl p-5 md:p-7 relative" style="background: var(--card);">
+                            <span data-id="231" class="fs-pill px-2 py-0.5 rounded-full text-[9px] font-bold uppercase tracking-wider chip-dad">D 3rd · C 7th</span>
+                            <div data-id="232" class="flex flex-wrap items-center gap-2 md:gap-3 mb-3">
+                                <span data-id="233" class="text-2xl md:text-3xl font-black tabular-nums" style="color: var(--gold);">2019</span>
+                                <span data-id="234" class="px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider finish-gold">3rd Place</span>
+                                <span data-id="235" class="px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider chip-dad">⚡ DAD WINS</span>
+                            </div>
+                            <p data-id="236" class="text-xs font-bold uppercase tracking-widest mb-2" style="color: var(--bright);">THE RESURRECTION</p>
+                            <div data-id="237" class="flex flex-wrap gap-3 md:gap-5 text-xs mb-3 tabular-nums" style="color: var(--muted);">
+                                <span data-id="238"><strong data-id="239" style="color: var(--text);">7-5-1</strong></span>
+                                <span data-id="240">PF: <strong data-id="241" style="color: var(--text);">1,361.5</strong></span>
+                                <span data-id="242">PA: <strong data-id="243" style="color: var(--text);">1,181.0</strong></span>
+                                <span data-id="244" class="font-bold" style="color: var(--bright);">+180.5</span>
+                            </div>
+                            <p data-id="245" class="text-sm leading-relaxed" style="color: rgba(255,184,153,0.9);">If there was one season that defined David Wilson's brilliance as a fantasy manager, this was it. A +180.5 point differential — by far the biggest of his career — and a 3rd-place finish. The Dawgs were on fire. Collin (7th) looked on from afar. Dad still had it. He always had it.</p>
+                        </div>
+                    </div>
+
+                    <!-- 2020 -->
+                    <div data-id="246" class="relative mb-8 md:mb-10 fade-in">
+                        <div data-id="247" class="timeline-node top-6" aria-hidden="true"><span data-id="248" style="color: var(--gold);">⚡</span></div>
+                        <div data-id="249" class="card-glow rounded-2xl p-5 md:p-7 relative" style="background: var(--card);">
+                            <span data-id="250" class="fs-pill px-2 py-0.5 rounded-full text-[9px] font-bold uppercase tracking-wider chip-dad">D 9th · C 10th</span>
+                            <div data-id="251" class="flex flex-wrap items-center gap-2 md:gap-3 mb-3">
+                                <span data-id="252" class="text-2xl md:text-3xl font-black tabular-nums" style="color: var(--gold);">2020</span>
+                                <span data-id="253" class="px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider finish-muted">9th Place</span>
+                                <span data-id="254" class="px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider chip-dad">⚡ DAD WINS</span>
+                            </div>
+                            <p data-id="255" class="text-xs font-bold uppercase tracking-widest mb-2" style="color: var(--bright);">THE PANDEMIC DIP</p>
+                            <div data-id="256" class="flex flex-wrap gap-3 md:gap-5 text-xs mb-3 tabular-nums" style="color: var(--muted);">
+                                <span data-id="257"><strong data-id="258" style="color: var(--text);">6-7-0</strong></span>
+                                <span data-id="259">PF: <strong data-id="260" style="color: var(--text);">1,391.5</strong></span>
+                                <span data-id="261">PA: <strong data-id="262" style="color: var(--text);">1,330.0</strong></span>
+                                <span data-id="263" class="font-bold" style="color: var(--bright);">+61.5</span>
+                            </div>
+                            <p data-id="264" class="text-sm leading-relaxed" style="color: rgba(255,184,153,0.9);">A bizarre, unpredictable NFL season made for a bizarre GFL season. David slipped to 9th — his worst-ever finish — despite a positive point differential. The Dawgs were scoring; they just couldn't catch the breaks. Collin (10th) managed to finish one spot worse. Dad's dignity, somehow, survived.</p>
+                        </div>
+                    </div>
+
+                    <!-- 2021 -->
+                    <div data-id="265" class="relative mb-8 md:mb-10 fade-in">
+                        <div data-id="266" class="timeline-node top-6" aria-hidden="true"><span data-id="267" style="color: var(--gold);">⚡</span></div>
+                        <div data-id="268" class="card-glow rounded-2xl p-5 md:p-7 relative" style="background: var(--card);">
+                            <span data-id="269" class="fs-pill px-2 py-0.5 rounded-full text-[9px] font-bold uppercase tracking-wider chip-dad">D 2nd · C 7th</span>
+                            <div data-id="270" class="flex flex-wrap items-center gap-2 md:gap-3 mb-3">
+                                <span data-id="271" class="text-2xl md:text-3xl font-black tabular-nums" style="color: var(--gold);">2021</span>
+                                <span data-id="272" class="px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider finish-gold">2nd Place</span>
+                                <span data-id="273" class="px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider chip-dad">⚡ DAD WINS</span>
+                            </div>
+                            <p data-id="274" class="text-xs font-bold uppercase tracking-widest mb-2" style="color: var(--bright);">THE RENAISSANCE</p>
+                            <div data-id="275" class="flex flex-wrap gap-3 md:gap-5 text-xs mb-3 tabular-nums" style="color: var(--muted);">
+                                <span data-id="276"><strong data-id="277" style="color: var(--text);">8-6-0</strong></span>
+                                <span data-id="278">PF: <strong data-id="279" style="color: var(--text);">1,500.0</strong></span>
+                                <span data-id="280">PA: <strong data-id="281" style="color: var(--text);">1,431.0</strong></span>
+                                <span data-id="282" class="font-bold" style="color: var(--bright);">+69.0</span>
+                            </div>
+                            <p data-id="283" class="text-sm leading-relaxed" style="color: rgba(255,184,153,0.9);">This was David Wilson's masterpiece season. 1,500 points — the only time in his career he cracked that barrier. An 8-6 record. A 2nd-place finish. Playing some of the most dominant fantasy football of his entire decade in the GFL. Collin (7th) watched his father light up the league. The old man still had fire in his belly.</p>
+                        </div>
+                    </div>
+
+                    <!-- 2022 — THE FINAL CHAPTER -->
+                    <div data-id="284" class="relative mb-8 md:mb-10 fade-in">
+                        <div data-id="285" class="timeline-node top-6" aria-hidden="true"><span data-id="286" class="text-lg" style="color: var(--gold);">⚡</span></div>
+                        <div data-id="287" class="gold-glow rounded-2xl p-5 md:p-7 relative overflow-hidden" style="background: linear-gradient(145deg, #3d1a00 0%, #2d1200 50%, #3a1800 100%);">
+                            <div data-id="288" class="absolute top-0 right-0 px-3 py-1 rounded-bl-xl text-[10px] font-bold uppercase tracking-widest" style="background: linear-gradient(135deg, rgba(250,204,21,0.3), rgba(245,158,11,0.3)); color: var(--gold); border-bottom: 1px solid rgba(250,204,21,0.3); border-left: 1px solid rgba(250,204,21,0.3);">
+                                🕊️ FINAL SEASON
+                            </div>
+                            <span data-id="289" class="fs-pill px-2 py-0.5 rounded-full text-[9px] font-bold uppercase tracking-wider chip-son" style="top: 2.2rem;">D 6th · C 1st 🏆</span>
+                            <div data-id="290" class="flex flex-wrap items-center gap-2 md:gap-3 mb-3 mt-4">
+                                <span data-id="291" class="text-2xl md:text-3xl font-black tabular-nums" style="color: var(--gold);">2022</span>
+                                <span data-id="292" class="px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider finish-green">6th Place</span>
+                                <span data-id="293" class="px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider chip-son">👑 SON WINS</span>
+                            </div>
+                            <p data-id="294" class="text-xs font-bold uppercase tracking-widest mb-2" style="color: var(--gold);">THE FINAL CHAPTER</p>
+                            <div data-id="295" class="flex flex-wrap gap-3 md:gap-5 text-xs mb-3 tabular-nums" style="color: var(--muted);">
+                                <span data-id="296"><strong data-id="297" style="color: var(--text);">6-8-0</strong></span>
+                                <span data-id="298">PF: <strong data-id="299" style="color: var(--text);">1,481.82</strong></span>
+                                <span data-id="300">PA: <strong data-id="301" style="color: var(--text);">1,547.48</strong></span>
+                                <span data-id="302" class="text-red-400 font-bold">-65.66</span>
+                            </div>
+                            <p data-id="303" class="text-sm leading-relaxed mb-4" style="color: rgba(255,184,153,0.9);">Nobody knew it would be the last one. The 2022 Dawgs were still generating nearly 1,500 points — still competing, still fighting. But across the Wilson family living room, something extraordinary was unfolding. Collin — the son who had spent a decade chasing his father's shadow — won the entire league. 1st place. GFL Champion. In David's final season, the student became the master. There is no more beautiful sendoff a fantasy football father could ever receive. The torch was passed. The legacy lives on. 🐾⚡</p>
+                            <div data-id="304" class="rounded-xl p-4 text-center" style="background: rgba(250,204,21,0.06); border: 1px solid rgba(250,204,21,0.2);">
+                                <p data-id="305" class="text-sm md:text-base font-semibold italic" style="color: var(--gold);">"He taught you the game. You won it for him."</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== SEASON PERFORMANCE RANKINGS ========== -->
+        <section data-id="306" id="rankings" class="py-12 md:py-20 px-4 md:px-6" style="background: linear-gradient(180deg, var(--bg) 0%, rgba(45,18,0,0.3) 50%, var(--bg) 100%);">
+            <div data-id="307" class="max-w-5xl mx-auto">
+                <div data-id="308" class="text-center mb-10 md:mb-14 fade-in">
+                    <div data-id="309" class="section-header justify-center mb-3">
+                        <span data-id="310" class="bolt">⚡</span>
+                        <h2 data-id="311" class="text-2xl md:text-3xl font-black tracking-tight" style="color: var(--text);">SEASON PERFORMANCE RANKINGS</h2>
+                        <span data-id="312" class="bolt">⚡</span>
+                    </div>
+                    <p data-id="313" class="text-sm uppercase tracking-widest font-medium" style="color: rgba(255,184,153,0.7);">Every year graded, ranked, and put in its place.</p>
+                </div>
+
+                <div data-id="314" class="card-glow rounded-2xl overflow-hidden fade-in" style="background: var(--card);">
+                    <div data-id="315" class="overflow-x-auto">
+                        <table data-id="316" class="w-full text-left sort-table" id="rankings-table">
+                            <thead data-id="317">
+                                <tr data-id="318" style="background: rgba(255,60,0,0.15);">
+                                    <th data-id="319" class="px-3 md:px-4 py-3 text-[10px] md:text-xs font-bold uppercase tracking-wider whitespace-nowrap" style="color: var(--accent);" data-sort="season">Season <span data-id="320" class="sort-arrow">⇅</span></th>
+                                    <th data-id="321" class="px-3 md:px-4 py-3 text-[10px] md:text-xs font-bold uppercase tracking-wider whitespace-nowrap" style="color: var(--accent);" data-sort="record">Record <span data-id="322" class="sort-arrow">⇅</span></th>
+                                    <th data-id="323" class="px-3 md:px-4 py-3 text-[10px] md:text-xs font-bold uppercase tracking-wider whitespace-nowrap" style="color: var(--accent);" data-sort="finish">Finish <span data-id="324" class="sort-arrow">⇅</span></th>
+                                    <th data-id="325" class="px-3 md:px-4 py-3 text-[10px] md:text-xs font-bold uppercase tracking-wider whitespace-nowrap" style="color: var(--accent);" data-sort="pf">Points For <span data-id="326" class="sort-arrow active">▼</span></th>
+                                    <th data-id="327" class="px-3 md:px-4 py-3 text-[10px] md:text-xs font-bold uppercase tracking-wider whitespace-nowrap" style="color: var(--accent);" data-sort="ppg">Pts Avg/Gm <span data-id="328" class="sort-arrow">⇅</span></th>
+                                    <th data-id="329" class="px-3 md:px-4 py-3 text-[10px] md:text-xs font-bold uppercase tracking-wider whitespace-nowrap" style="color: var(--accent);" data-sort="pa">Points Against <span data-id="330" class="sort-arrow">⇅</span></th>
+                                    <th data-id="331" class="px-3 md:px-4 py-3 text-[10px] md:text-xs font-bold uppercase tracking-wider whitespace-nowrap" style="color: var(--accent);" data-sort="diff">Differential <span data-id="332" class="sort-arrow">⇅</span></th>
+                                    <th data-id="333" class="px-3 md:px-4 py-3 text-[10px] md:text-xs font-bold uppercase tracking-wider whitespace-nowrap" style="color: var(--accent);" data-sort="ppgrank">PPG Rank <span data-id="334" class="sort-arrow">⇅</span></th>
+                                </tr>
+                            </thead>
+                            <tbody data-id="335" id="rankings-body">
+                                <!-- Rendered via JS -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== THREE ERAS OF THE DAWGS ========== -->
+        <section data-id="336" id="eras" class="py-12 md:py-20 px-4 md:px-6">
+            <div data-id="337" class="max-w-5xl mx-auto">
+                <div data-id="338" class="text-center mb-10 md:mb-14 fade-in">
+                    <div data-id="339" class="section-header justify-center mb-3">
+                        <span data-id="340" class="bolt">⚡</span>
+                        <h2 data-id="341" class="text-2xl md:text-3xl font-black tracking-tight" style="color: var(--text);">THREE ERAS OF THE DAWGS</h2>
+                        <span data-id="342" class="bolt">⚡</span>
+                    </div>
+                    <p data-id="343" class="text-sm uppercase tracking-widest font-medium" style="color: rgba(255,184,153,0.7);">Every franchise has chapters. Here are David's.</p>
+                </div>
+
+                <div data-id="344" class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mb-8 md:mb-10">
+                    <!-- Era 1 -->
+                    <div data-id="345" class="era-card card-glow rounded-2xl p-5 md:p-7 fade-in" style="background: var(--card);">
+                        <div data-id="346" class="flex items-center gap-2 mb-3">
+                            <span data-id="347" class="px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider finish-gold">🏆 PEAK ERA</span>
+                        </div>
+                        <h3 data-id="348" class="text-lg md:text-xl font-black mb-1" style="color: var(--gold);">THE GOLDEN YEARS</h3>
+                        <p data-id="349" class="text-xs font-semibold uppercase tracking-wider mb-4" style="color: var(--muted);">2013–2014</p>
+                        <div data-id="350" class="grid grid-cols-2 gap-2 mb-4">
+                            <div data-id="351" class="text-center p-2 rounded-lg" style="background: rgba(255,60,0,0.08);">
+                                <p data-id="352" class="text-base md:text-lg font-black tabular-nums" style="color: var(--text);">18-8-0</p>
+                                <p data-id="353" class="text-[9px] uppercase tracking-wider" style="color: var(--muted);">Record</p>
+                            </div>
+                            <div data-id="354" class="text-center p-2 rounded-lg" style="background: rgba(255,60,0,0.08);">
+                                <p data-id="355" class="text-base md:text-lg font-black tabular-nums" style="color: var(--gold);">69.2%</p>
+                                <p data-id="356" class="text-[9px] uppercase tracking-wider" style="color: var(--muted);">Win %</p>
+                            </div>
+                            <div data-id="357" class="text-center p-2 rounded-lg" style="background: rgba(255,60,0,0.08);">
+                                <p data-id="358" class="text-base md:text-lg font-black tabular-nums" style="color: var(--text);">1,332.8</p>
+                                <p data-id="359" class="text-[9px] uppercase tracking-wider" style="color: var(--muted);">Avg PF</p>
+                            </div>
+                            <div data-id="360" class="text-center p-2 rounded-lg" style="background: rgba(255,60,0,0.08);">
+                                <p data-id="361" class="text-base md:text-lg font-black tabular-nums" style="color: var(--bright);">+87.8</p>
+                                <p data-id="362" class="text-[9px] uppercase tracking-wider" style="color: var(--muted);">Avg Diff</p>
+                            </div>
+                        </div>
+                        <p data-id="363" class="text-xs leading-relaxed" style="color: rgba(255,184,153,0.85);">David arrived and immediately dominated. Back-to-back 9-4 seasons, positive point differentials both years, and a top-4 finish in each. The Dawgs hit the ground running and never looked slow in this era.</p>
+                    </div>
+
+                    <!-- Era 2 -->
+                    <div data-id="364" class="era-card card-glow rounded-2xl p-5 md:p-7 fade-in" style="background: var(--card);">
+                        <div data-id="365" class="flex items-center gap-2 mb-3">
+                            <span data-id="366" class="px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider finish-muted">🔧 REBUILDING ERA</span>
+                        </div>
+                        <h3 data-id="367" class="text-lg md:text-xl font-black mb-1" style="color: var(--muted);">THE STRUGGLE</h3>
+                        <p data-id="368" class="text-xs font-semibold uppercase tracking-wider mb-4" style="color: var(--muted);">2015–2018</p>
+                        <div data-id="369" class="grid grid-cols-2 gap-2 mb-4">
+                            <div data-id="370" class="text-center p-2 rounded-lg" style="background: rgba(255,60,0,0.08);">
+                                <p data-id="371" class="text-base md:text-lg font-black tabular-nums" style="color: var(--text);">24-28-0</p>
+                                <p data-id="372" class="text-[9px] uppercase tracking-wider" style="color: var(--muted);">Record</p>
+                            </div>
+                            <div data-id="373" class="text-center p-2 rounded-lg" style="background: rgba(255,60,0,0.08);">
+                                <p data-id="374" class="text-base md:text-lg font-black tabular-nums" style="color: #fca5a5;">46.2%</p>
+                                <p data-id="375" class="text-[9px] uppercase tracking-wider" style="color: var(--muted);">Win %</p>
+                            </div>
+                            <div data-id="376" class="text-center p-2 rounded-lg" style="background: rgba(255,60,0,0.08);">
+                                <p data-id="377" class="text-base md:text-lg font-black tabular-nums" style="color: var(--text);">1,259.6</p>
+                                <p data-id="378" class="text-[9px] uppercase tracking-wider" style="color: var(--muted);">Avg PF</p>
+                            </div>
+                            <div data-id="379" class="text-center p-2 rounded-lg" style="background: rgba(255,60,0,0.08);">
+                                <p data-id="380" class="text-base md:text-lg font-black tabular-nums" style="color: #fca5a5;">-36.5</p>
+                                <p data-id="381" class="text-[9px] uppercase tracking-wider" style="color: var(--muted);">Avg Diff</p>
+                            </div>
+                        </div>
+                        <p data-id="382" class="text-xs leading-relaxed" style="color: rgba(255,184,153,0.85);">Four seasons of grinding. Win percentages dipped below 50%, point differentials went negative, and 7th place became the Dawgs' home zip code. But David never stopped competing, and the foundation was being laid for what came next.</p>
+                    </div>
+
+                    <!-- Era 3 -->
+                    <div data-id="383" class="era-card card-glow rounded-2xl p-5 md:p-7 fade-in" style="background: var(--card);">
+                        <div data-id="384" class="flex items-center gap-2 mb-3">
+                            <span data-id="385" class="px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider finish-green">🔥 COMEBACK ERA</span>
+                        </div>
+                        <h3 data-id="386" class="text-lg md:text-xl font-black mb-1" style="color: var(--bright);">THE RENAISSANCE</h3>
+                        <p data-id="387" class="text-xs font-semibold uppercase tracking-wider mb-4" style="color: var(--muted);">2019–2022</p>
+                        <div data-id="388" class="grid grid-cols-2 gap-2 mb-4">
+                            <div data-id="389" class="text-center p-2 rounded-lg" style="background: rgba(255,60,0,0.08);">
+                                <p data-id="390" class="text-base md:text-lg font-black tabular-nums" style="color: var(--text);">27-26-1</p>
+                                <p data-id="391" class="text-[9px] uppercase tracking-wider" style="color: var(--muted);">Record</p>
+                            </div>
+                            <div data-id="392" class="text-center p-2 rounded-lg" style="background: rgba(255,60,0,0.08);">
+                                <p data-id="393" class="text-base md:text-lg font-black tabular-nums" style="color: var(--accent);">50.9%</p>
+                                <p data-id="394" class="text-[9px] uppercase tracking-wider" style="color: var(--muted);">Win %</p>
+                            </div>
+                            <div data-id="395" class="text-center p-2 rounded-lg" style="background: rgba(255,60,0,0.08);">
+                                <p data-id="396" class="text-base md:text-lg font-black tabular-nums" style="color: var(--text);">1,433.7</p>
+                                <p data-id="397" class="text-[9px] uppercase tracking-wider" style="color: var(--muted);">Avg PF</p>
+                            </div>
+                            <div data-id="398" class="text-center p-2 rounded-lg" style="background: rgba(255,60,0,0.08);">
+                                <p data-id="399" class="text-base md:text-lg font-black tabular-nums" style="color: var(--bright);">+61.3</p>
+                                <p data-id="400" class="text-[9px] uppercase tracking-wider" style="color: var(--muted);">Avg Diff</p>
+                            </div>
+                        </div>
+                        <p data-id="401" class="text-xs leading-relaxed" style="color: rgba(255,184,153,0.85);">The scoring exploded. Four straight seasons above 1,360 points, a monster +180.5 differential in 2019, and a 1,500-point masterpiece in 2021. The final four years were David's highest-scoring era by far — a man hitting his stride right when it mattered most.</p>
+                    </div>
+                </div>
+
+                <!-- Trades/Moves Info Banner -->
+                <div data-id="402" class="info-banner rounded-xl p-4 md:p-5 flex items-start gap-3 fade-in">
+                    <span data-id="403" class="text-xl mt-0.5">📋</span>
+                    <div data-id="404">
+                        <p data-id="405" class="text-sm font-bold mb-1" style="color: var(--text);">Trade & Roster Move History — Coming Soon</p>
+                        <p data-id="406" class="text-xs leading-relaxed" style="color: rgba(255,184,153,0.7);">Individual season roster moves, trades, and waiver wire pickups can be found in the GFL clubhouse records. Watch this space.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== SECTION 4: THE FATHER-SON RIVALRY (COMPACT) ========== -->
+        <section data-id="407" id="rivalry" class="py-10 md:py-14 px-4 md:px-6" style="background: linear-gradient(180deg, var(--bg) 0%, rgba(45,18,0,0.2) 50%, var(--bg) 100%);">
+            <div data-id="408" class="max-w-5xl mx-auto">
+                <div data-id="409" class="text-center mb-6 md:mb-8 fade-in">
+                    <div data-id="410" class="section-header justify-center mb-2">
+                        <span data-id="411" class="bolt">⚡</span>
+                        <h2 data-id="412" class="text-xl md:text-2xl font-black tracking-tight" style="color: var(--text);">THE WILSON HOUSE DIVIDED</h2>
+                        <span data-id="413" class="bolt">⚡</span>
+                    </div>
+                    <p data-id="414" class="text-xs uppercase tracking-widest font-medium" style="color: rgba(255,184,153,0.7);">10 years. Two sides of the same coin.</p>
+                </div>
+
+                <!-- Season chips row -->
+                <div data-id="415" class="flex flex-wrap justify-center gap-1.5 md:gap-2 mb-6 md:mb-8 fade-in">
+                    <div data-id="416" class="rivalry-chip chip-dad"><span data-id="417" class="year">2013</span><span data-id="418">DAD ⚡</span></div>
+                    <div data-id="419" class="rivalry-chip chip-dad"><span data-id="420" class="year">2014</span><span data-id="421">DAD ⚡</span></div>
+                    <div data-id="422" class="rivalry-chip chip-dad"><span data-id="423" class="year">2015</span><span data-id="424">DAD ⚡</span></div>
+                    <div data-id="425" class="rivalry-chip chip-son"><span data-id="426" class="year">2016</span><span data-id="427">SON 👑</span></div>
+                    <div data-id="428" class="rivalry-chip chip-dad"><span data-id="429" class="year">2017</span><span data-id="430">DAD ⚡</span></div>
+                    <div data-id="431" class="rivalry-chip chip-dad"><span data-id="432" class="year">2018</span><span data-id="433">DAD ⚡</span></div>
+                    <div data-id="434" class="rivalry-chip chip-dad"><span data-id="435" class="year">2019</span><span data-id="436">DAD ⚡</span></div>
+                    <div data-id="437" class="rivalry-chip chip-dad"><span data-id="438" class="year">2020</span><span data-id="439">DAD ⚡</span></div>
+                    <div data-id="440" class="rivalry-chip chip-dad"><span data-id="441" class="year">2021</span><span data-id="442">DAD ⚡</span></div>
+                    <div data-id="443" class="rivalry-chip chip-son" style="box-shadow: 0 0 15px rgba(250,204,21,0.3);"><span data-id="444" class="year">2022</span><span data-id="445">SON 👑</span></div>
+                </div>
+
+                <!-- Two stat boxes side by side -->
+                <div data-id="446" class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-5 fade-in">
+                    <div data-id="447" class="card-glow rounded-2xl p-5 md:p-6 text-center gold-top-border" style="background: var(--card); border-top-color: var(--bright);">
+                        <p data-id="448" class="text-2xl mb-1">⚡🐾</p>
+                        <h3 data-id="449" class="text-base md:text-lg font-black mb-1" style="color: var(--text);">DAVID "THE DOG" WILSON</h3>
+                        <p data-id="450" class="text-3xl md:text-4xl font-black mb-1 tabular-nums" style="color: var(--bright);">8</p>
+                        <p data-id="451" class="text-xs font-bold uppercase tracking-wider" style="color: var(--muted);">Seasons on Top</p>
+                        <div data-id="452" class="mt-3 flex flex-wrap justify-center gap-1">
+                            <span data-id="453" class="w-3 h-3 rounded-sm" style="background: var(--bright);"></span>
+                            <span data-id="454" class="w-3 h-3 rounded-sm" style="background: var(--bright);"></span>
+                            <span data-id="455" class="w-3 h-3 rounded-sm" style="background: var(--bright);"></span>
+                            <span data-id="456" class="w-3 h-3 rounded-sm" style="background: var(--bright);"></span>
+                            <span data-id="457" class="w-3 h-3 rounded-sm" style="background: var(--bright);"></span>
+                            <span data-id="458" class="w-3 h-3 rounded-sm" style="background: var(--bright);"></span>
+                            <span data-id="459" class="w-3 h-3 rounded-sm" style="background: var(--bright);"></span>
+                            <span data-id="460" class="w-3 h-3 rounded-sm" style="background: var(--bright);"></span>
+                        </div>
+                    </div>
+                    <div data-id="461" class="rounded-2xl p-5 md:p-6 text-center gold-top-border" style="background: var(--card); box-shadow: 0 0 20px var(--glow-gold); border: 1px solid rgba(250,204,21,0.2);">
+                        <p data-id="462" class="text-2xl mb-1">👑🏆</p>
+                        <h3 data-id="463" class="text-base md:text-lg font-black mb-1" style="color: var(--text);">COLLIN WILSON</h3>
+                        <p data-id="464" class="text-3xl md:text-4xl font-black mb-1 tabular-nums" style="color: var(--gold);">2</p>
+                        <p data-id="465" class="text-xs font-bold uppercase tracking-wider" style="color: rgba(250,204,21,0.8);">Seasons on Top</p>
+                        <p data-id="466" class="text-[10px] italic mt-0.5" style="color: rgba(250,204,21,0.6);">(but one was the CHAMPIONSHIP)</p>
+                        <div data-id="467" class="mt-3 flex flex-wrap justify-center gap-1">
+                            <span data-id="468" class="w-3 h-3 rounded-sm" style="background: var(--gold);"></span>
+                            <span data-id="469" class="w-3 h-3 rounded-sm" style="background: var(--gold);"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Punchy one-liner -->
+                <p data-id="470" class="text-center text-sm md:text-base font-semibold italic fade-in" style="color: rgba(255,184,153,0.8);">
+                    8 seasons on top. But the son saved his best for last.
+                </p>
+            </div>
+        </section>
+
+        <!-- ========== SECTION 5: LEGACY WALL ========== -->
+        <section data-id="471" id="legacy" class="py-12 md:py-20 px-4 md:px-6" style="background: linear-gradient(180deg, var(--bg) 0%, rgba(45,18,0,0.4) 50%, var(--bg) 100%);">
+            <div data-id="472" class="max-w-5xl mx-auto">
+                <div data-id="473" class="text-center mb-10 md:mb-14 fade-in">
+                    <div data-id="474" class="section-header justify-center mb-3">
+                        <span data-id="475" class="bolt">⚡</span>
+                        <h2 data-id="476" class="text-2xl md:text-3xl font-black tracking-tight" style="color: var(--text);">THE LEGACY OF THE DAWGS ⚡🐾</h2>
+                    </div>
+                </div>
+
+                <div data-id="477" class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mb-10 md:mb-14">
+                    <div data-id="478" class="card-glow rounded-2xl p-6 md:p-8 text-center fade-in" style="background: var(--card);">
+                        <div data-id="479" class="text-3xl mb-3">🐾</div>
+                        <p data-id="480" class="text-sm md:text-base font-bold leading-snug" style="color: var(--text);">10 seasons,<br data-id="481"/>never once walked away</p>
+                    </div>
+                    <div data-id="482" class="card-glow rounded-2xl p-6 md:p-8 text-center fade-in" style="background: var(--card);">
+                        <div data-id="483" class="text-3xl mb-3">⚡</div>
+                        <p data-id="484" class="text-xs uppercase tracking-wider font-medium mb-1" style="color: var(--muted);">Most Points in a Single Season</p>
+                        <p data-id="485" class="text-3xl md:text-4xl font-black tabular-nums" style="color: var(--gold);">1,500.0</p>
+                        <p data-id="486" class="text-xs mt-1" style="color: rgba(255,184,153,0.6);">(2021)</p>
+                    </div>
+                    <div data-id="487" class="card-glow rounded-2xl p-6 md:p-8 text-center fade-in" style="background: var(--card);">
+                        <div data-id="488" class="text-3xl mb-3">⚡</div>
+                        <p data-id="489" class="text-xs uppercase tracking-wider font-medium mb-1" style="color: var(--muted);">Biggest Point Differential</p>
+                        <p data-id="490" class="text-3xl md:text-4xl font-black tabular-nums" style="color: var(--bright);">+180.5</p>
+                        <p data-id="491" class="text-xs mt-1" style="color: rgba(255,184,153,0.6);">(2019)</p>
+                    </div>
+                </div>
+
+                <div data-id="492" class="memorial-quote rounded-3xl p-8 md:p-12 text-center fade-in">
+                    <div data-id="493" class="text-4xl md:text-5xl mb-6" style="color: var(--gold);">⚡</div>
+                    <blockquote data-id="494" class="text-base md:text-lg leading-relaxed max-w-3xl mx-auto mb-6 italic" style="color: rgba(255,248,240,0.9);">
+                        "The Cleveland Dawgs of War were more than a fantasy team — they were an extension of a man who competed with everything he had, season after season. He built something here. He left a mark on this league. And in his final season, his son carried the banner all the way to the championship. That's not a coincidence. That's a legacy."
+                    </blockquote>
+                    <div data-id="495" class="w-16 h-0.5 mx-auto mb-4" style="background: linear-gradient(90deg, transparent, var(--gold), transparent);"></div>
+                    <p data-id="496" class="text-sm font-bold uppercase tracking-widest" style="color: var(--muted);">
+                        David Wilson &bull; GFL &bull; 2013–2022
+                    </p>
+                    <p data-id="497" class="text-sm mt-1" style="color: var(--bright);">Forever a Dawg 🐾</p>
+                </div>
+
+                <div data-id="498" class="flex items-center justify-center gap-3 mt-10 text-2xl select-none" style="color: rgba(250,204,21,0.2);" aria-hidden="true">
+                    <span data-id="499">⚡</span><span data-id="500">⚡</span><span data-id="501">⚡</span>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer data-id="502" class="py-8 text-center" style="background: var(--bg); border-top: 1px solid var(--border);">
+        <div data-id="503" class="flex items-center justify-center gap-2 mb-2 text-sm select-none" style="color: rgba(250,204,21,0.3);" aria-hidden="true">
+            <span data-id="504">⚡</span><span data-id="505">🐾</span><span data-id="506">⚡</span>
+        </div>
+        <p data-id="507" class="text-xs mb-1" style="color: rgba(255,184,153,0.4);">David Wilson &bull; GFL &bull; 2013–2022 &bull; Forever a Dawg 🐾</p>
+        <p data-id="508" class="text-xs" style="color: rgba(255,184,153,0.3);">Made by Copilot</p>
+    </footer>
+
+    <script>
+        // Lucide icons
+        if (typeof lucide !== "undefined" && typeof lucide.createIcons === "function") {
+            lucide.createIcons();
+        }
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuClose = document.getElementById('mobile-menu-close');
+
+        if (mobileMenuBtn && mobileMenu && mobileMenuClose) {
+            mobileMenuBtn.addEventListener('click', function() {
+                mobileMenu.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            });
+            mobileMenuClose.addEventListener('click', function() {
+                mobileMenu.classList.add('hidden');
+                document.body.style.overflow = '';
+            });
+            document.querySelectorAll('.mobile-nav-link').forEach(function(link) {
+                link.addEventListener('click', function() {
+                    mobileMenu.classList.add('hidden');
+                    document.body.style.overflow = '';
+                });
+            });
+        }
+
+        // Intersection Observer for fade-in
+        const observerOptions = { root: null, rootMargin: '0px 0px -60px 0px', threshold: 0.1 };
+        const fadeObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    fadeObserver.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+        document.querySelectorAll('.fade-in').forEach(function(el) { fadeObserver.observe(el); });
+
+        // Active nav highlighting
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-link');
+        function updateActiveNav() {
+            var scrollY = window.scrollY + 100;
+            sections.forEach(function(section) {
+                var top = section.offsetTop;
+                var height = section.offsetHeight;
+                var id = section.getAttribute('id');
+                if (scrollY >= top && scrollY < top + height) {
+                    navLinks.forEach(function(link) {
+                        link.style.color = 'var(--muted)';
+                        if (link.getAttribute('href') === '#' + id) {
+                            link.style.color = 'var(--accent)';
+                        }
+                    });
+                }
+            });
+        }
+        window.addEventListener('scroll', updateActiveNav, { passive: true });
+        updateActiveNav();
+
+        // ===== CHART.JS CHARTS =====
+        if (typeof Chart !== 'undefined') {
+            Chart.defaults.color = '#ffb899';
+            Chart.defaults.borderColor = 'rgba(90,53,32,0.3)';
+            Chart.defaults.font.family = "'Inter', system-ui, sans-serif";
+
+            const seasons = ['2013','2014','2015','2016','2017','2018','2019','2020','2021','2022'];
+            const pf = [1349.5, 1316.0, 1291.0, 1252.0, 1107.5, 1388.0, 1361.5, 1391.5, 1500.0, 1481.82];
+            const pa = [1250.5, 1239.5, 1297.0, 1256.5, 1188.5, 1442.5, 1181.0, 1330.0, 1431.0, 1547.48];
+            const diff = [99.0, 76.5, -6.0, -4.5, -81.0, -54.5, 180.5, 61.5, 69.0, -65.66];
+
+            // Chart 1: Grouped Bar
+            var ctx1 = document.getElementById('chart-pf-pa').getContext('2d');
+            new Chart(ctx1, {
+                type: 'bar',
+                data: {
+                    labels: seasons,
+                    datasets: [
+                        {
+                            label: 'Points For',
+                            data: pf,
+                            backgroundColor: 'rgba(255, 107, 53, 0.8)',
+                            borderColor: '#FF6B35',
+                            borderWidth: 1,
+                            borderRadius: 4,
+                        },
+                        {
+                            label: 'Points Against',
+                            data: pa,
+                            backgroundColor: 'rgba(107, 58, 31, 0.7)',
+                            borderColor: '#6b3a1f',
+                            borderWidth: 1,
+                            borderRadius: 4,
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            labels: { color: '#ffb899', font: { size: 11, weight: '600' }, usePointStyle: true, pointStyle: 'rectRounded' }
+                        },
+                        tooltip: {
+                            backgroundColor: 'rgba(45,18,0,0.95)',
+                            titleColor: '#fff8f0',
+                            bodyColor: '#ffb899',
+                            borderColor: 'rgba(255,60,0,0.3)',
+                            borderWidth: 1,
+                            cornerRadius: 8,
+                            callbacks: {
+                                label: function(ctx) { return ctx.dataset.label + ': ' + ctx.parsed.y.toLocaleString(); }
+                            }
+                        }
+                    },
+                    scales: {
+                        x: { grid: { color: 'rgba(90,53,32,0.15)' }, ticks: { color: '#ffb899', font: { size: 11, weight: '600' } } },
+                        y: { grid: { color: 'rgba(90,53,32,0.15)' }, ticks: { color: '#ffb899', font: { size: 10 } }, beginAtZero: false, min: 1000 }
+                    }
+                }
+            });
+
+            // Chart 2: Point Differential Line
+            var ctx2 = document.getElementById('chart-diff').getContext('2d');
+
+            var gradientAbove = ctx2.createLinearGradient(0, 0, 0, 280);
+            gradientAbove.addColorStop(0, 'rgba(255,60,0,0.3)');
+            gradientAbove.addColorStop(1, 'rgba(255,60,0,0.0)');
+
+            var gradientBelow = ctx2.createLinearGradient(0, 0, 0, 280);
+            gradientBelow.addColorStop(0, 'rgba(255,60,0,0.0)');
+            gradientBelow.addColorStop(1, 'rgba(239,68,68,0.25)');
+
+            new Chart(ctx2, {
+                type: 'line',
+                data: {
+                    labels: seasons,
+                    datasets: [{
+                        label: 'Point Differential',
+                        data: diff,
+                        borderColor: '#FF3C00',
+                        borderWidth: 3,
+                        pointBackgroundColor: diff.map(function(v, i) {
+                            if (i === 6) return '#facc15'; // 2019 best
+                            if (i === 4) return '#ef4444'; // 2017 worst
+                            return '#FF3C00';
+                        }),
+                        pointBorderColor: diff.map(function(v, i) {
+                            if (i === 6) return '#facc15';
+                            if (i === 4) return '#ef4444';
+                            return '#FF3C00';
+                        }),
+                        pointRadius: diff.map(function(v, i) {
+                            if (i === 6 || i === 4) return 7;
+                            return 4;
+                        }),
+                        pointHoverRadius: 8,
+                        tension: 0.3,
+                        fill: {
+                            target: { value: 0 },
+                            above: gradientAbove,
+                            below: gradientBelow
+                        },
+                        segment: {
+                            borderColor: function(ctx) {
+                                return ctx.p1.parsed.y < 0 ? 'rgba(239,68,68,0.7)' : '#FF3C00';
+                            }
+                        }
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            backgroundColor: 'rgba(45,18,0,0.95)',
+                            titleColor: '#fff8f0',
+                            bodyColor: '#ffb899',
+                            borderColor: 'rgba(255,60,0,0.3)',
+                            borderWidth: 1,
+                            cornerRadius: 8,
+                            callbacks: {
+                                label: function(ctx) {
+                                    var v = ctx.parsed.y;
+                                    var prefix = v >= 0 ? '+' : '';
+                                    var suffix = '';
+                                    if (ctx.dataIndex === 6) suffix = ' ★ BEST';
+                                    if (ctx.dataIndex === 4) suffix = ' ✗ WORST';
+                                    return 'Diff: ' + prefix + v.toFixed(1) + suffix;
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        x: { grid: { color: 'rgba(90,53,32,0.15)' }, ticks: { color: '#ffb899', font: { size: 11, weight: '600' } } },
+                        y: {
+                            grid: {
+                                color: function(context) {
+                                    if (context.tick.value === 0) return 'rgba(255,184,153,0.4)';
+                                    return 'rgba(90,53,32,0.15)';
+                                },
+                                lineWidth: function(context) {
+                                    if (context.tick.value === 0) return 2;
+                                    return 1;
+                                }
+                            },
+                            ticks: { color: '#ffb899', font: { size: 10 }, callback: function(v) { return (v >= 0 ? '+' : '') + v; } }
+                        }
+                    }
+                }
+            });
+        }
+
+        // ===== SORTABLE RANKINGS TABLE =====
+        var rankingsData = [
+            { season: 2013, record: '9-4', wins: 9, finish: 2, pf: 1349.5, ppg: 103.8, pa: 1250.5, diff: 99.0, ppgrank: 4, ppgrankStr: '#4', goat: false },
+            { season: 2014, record: '9-4', wins: 9, finish: 4, pf: 1316.0, ppg: 101.2, pa: 1239.5, diff: 76.5, ppgrank: 6, ppgrankStr: '#6', goat: false },
+            { season: 2015, record: '6-7', wins: 6, finish: 7, pf: 1291.0, ppg: 99.3, pa: 1297.0, diff: -6.0, ppgrank: 7, ppgrankStr: '#7', goat: false },
+            { season: 2016, record: '6-7', wins: 6, finish: 7, pf: 1252.0, ppg: 96.3, pa: 1256.5, diff: -4.5, ppgrank: 8, ppgrankStr: '#8', goat: false },
+            { season: 2017, record: '5-8', wins: 5, finish: 7, pf: 1107.5, ppg: 85.2, pa: 1188.5, diff: -81.0, ppgrank: 10, ppgrankStr: '#10', goat: false },
+            { season: 2018, record: '7-6', wins: 7, finish: 6, pf: 1388.0, ppg: 106.8, pa: 1442.5, diff: -54.5, ppgrank: 3, ppgrankStr: '#3', goat: false },
+            { season: 2019, record: '7-5-1', wins: 7, finish: 3, pf: 1361.5, ppg: 104.7, pa: 1181.0, diff: 180.5, ppgrank: 5, ppgrankStr: '#5', goat: false },
+            { season: 2020, record: '6-7', wins: 6, finish: 9, pf: 1391.5, ppg: 107.0, pa: 1330.0, diff: 61.5, ppgrank: 2, ppgrankStr: '#2', goat: false },
+            { season: 2021, record: '8-6', wins: 8, finish: 2, pf: 1500.0, ppg: 107.1, pa: 1431.0, diff: 69.0, ppgrank: 1, ppgrankStr: '#1', goat: true },
+            { season: 2022, record: '6-8', wins: 6, finish: 6, pf: 1481.82, ppg: 105.8, pa: 1547.48, diff: -65.66, ppgrank: 2, ppgrankStr: '#2 (t)', goat: false }
+        ];
+
+        var sortCol = 'pf';
+        var sortDir = 'desc';
+
+        function renderRankingsTable() {
+            var sorted = rankingsData.slice().sort(function(a, b) {
+                var va = a[sortCol];
+                var vb = b[sortCol];
+                if (typeof va === 'string') va = va.toLowerCase();
+                if (typeof vb === 'string') vb = vb.toLowerCase();
+                if (va < vb) return sortDir === 'asc' ? -1 : 1;
+                if (va > vb) return sortDir === 'asc' ? 1 : -1;
+                return 0;
+            });
+
+            var tbody = document.getElementById('rankings-body');
+            tbody.innerHTML = '';
+
+            sorted.forEach(function(row, idx) {
+                var tr = document.createElement('tr');
+                tr.style.borderBottom = '1px solid rgba(90,53,32,0.2)';
+                if (row.goat) tr.className = 'goat-row';
+                else if (idx % 2 === 1) tr.style.background = 'rgba(255,60,0,0.03)';
+
+                var diffColor = row.diff >= 0 ? 'var(--bright)' : '#fca5a5';
+                var diffPrefix = row.diff >= 0 ? '+' : '';
+                var goatBadge = row.goat ? ' <span style="color:var(--gold);font-size:9px;font-weight:800;">★ GOAT</span>' : '';
+
+                tr.innerHTML =
+                    '<td class="px-3 md:px-4 py-2.5 text-xs md:text-sm font-bold tabular-nums" style="color:var(--gold);">' + row.season + goatBadge + '</td>' +
+                    '<td class="px-3 md:px-4 py-2.5 text-xs md:text-sm font-semibold tabular-nums" style="color:var(--text);">' + row.record + '</td>' +
+                    '<td class="px-3 md:px-4 py-2.5 text-xs md:text-sm font-semibold tabular-nums" style="color:var(--muted);">' + ordinal(row.finish) + '</td>' +
+                    '<td class="px-3 md:px-4 py-2.5 text-xs md:text-sm font-bold tabular-nums" style="color:var(--text);">' + row.pf.toLocaleString(undefined, {minimumFractionDigits:1, maximumFractionDigits:2}) + '</td>' +
+                    '<td class="px-3 md:px-4 py-2.5 text-xs md:text-sm font-semibold tabular-nums" style="color:var(--muted);">' + row.ppg.toFixed(1) + '</td>' +
+                    '<td class="px-3 md:px-4 py-2.5 text-xs md:text-sm font-semibold tabular-nums" style="color:var(--muted);">' + row.pa.toLocaleString(undefined, {minimumFractionDigits:1, maximumFractionDigits:2}) + '</td>' +
+                    '<td class="px-3 md:px-4 py-2.5 text-xs md:text-sm font-bold tabular-nums" style="color:' + diffColor + ';">' + diffPrefix + row.diff.toFixed(1) + '</td>' +
+                    '<td class="px-3 md:px-4 py-2.5 text-xs md:text-sm font-semibold tabular-nums" style="color:var(--accent);">' + row.ppgrankStr + '</td>';
+
+                tbody.appendChild(tr);
+            });
+
+            // Update sort arrows
+            document.querySelectorAll('.sort-table th[data-sort]').forEach(function(th) {
+                var arrow = th.querySelector('.sort-arrow');
+                if (th.dataset.sort === sortCol) {
+                    arrow.className = 'sort-arrow active';
+                    arrow.textContent = sortDir === 'asc' ? '▲' : '▼';
+                } else {
+                    arrow.className = 'sort-arrow';
+                    arrow.textContent = '⇅';
+                }
+            });
+        }
+
+        function ordinal(n) {
+            var s = ['th','st','nd','rd'];
+            var v = n % 100;
+            return n + (s[(v-20)%10]||s[v]||s[0]);
+        }
+
+        document.querySelectorAll('.sort-table th[data-sort]').forEach(function(th) {
+            th.addEventListener('click', function() {
+                var col = th.dataset.sort;
+                if (sortCol === col) {
+                    sortDir = sortDir === 'asc' ? 'desc' : 'asc';
+                } else {
+                    sortCol = col;
+                    sortDir = 'desc';
+                }
+                renderRankingsTable();
+            });
+        });
+
+        renderRankingsTable();
+    </script>
+</body>
+</html>

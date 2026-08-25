@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Derek Baxter GFL Franchise Guide</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            scarlet: { DEFAULT: '#BA0C2F', dark: '#8a0923', light: '#d4364f', faint: '#f5e0e5' },
+            osu: { gray: '#666666', charcoal: '#1a1a1a', dark: '#111111', silver: '#a7a7a7' },
+          },
+          fontFamily: {
+            display: ['Georgia', 'Times New Roman', 'serif'],
+            body: ['system-ui', '-apple-system', 'Segoe UI', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+  <script src="https://unpkg.com/lucide@latest" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <style>
+    :root {
+      --scarlet: #BA0C2F;
+      --scarlet-dark: #8a0923;
+      --gray: #666666;
+      --charcoal: #1a1a1a;
+      --silver: #a7a7a7;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: system-ui, -apple-system, 'Segoe UI', sans-serif; margin: 0; background: #0f0f0f; color: #f0f0f0; }
+
+    .field-texture {
+      background-image:
+        repeating-linear-gradient(
+          0deg,
+          transparent,
+          transparent 39px,
+          rgba(255,255,255,0.02) 39px,
+          rgba(255,255,255,0.02) 40px
+        );
+    }
+    .hero-stripes {
+      background:
+        repeating-linear-gradient(
+          135deg,
+          transparent,
+          transparent 30px,
+          rgba(255,255,255,0.03) 30px,
+          rgba(255,255,255,0.03) 32px
+        ),
+        linear-gradient(180deg, #BA0C2F 0%, #8a0923 100%);
+    }
+    .stat-pill {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.2);
+      backdrop-filter: blur(6px);
+    }
+    .era-card {
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .era-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 36px rgba(186,12,47,0.35);
+    }
+    .nav-link {
+      position: relative;
+      transition: color 0.2s;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: #BA0C2F;
+      transition: width 0.3s;
+    }
+    .nav-link.active { color: #BA0C2F; }
+    .nav-link.active::after,
+    .nav-link:hover::after { width: 100%; }
+    .season-row { transition: background-color 0.2s; }
+    .season-row:hover { background-color: rgba(186,12,47,0.1) !important; }
+    .best-row { background-color: rgba(186,12,47,0.25) !important; }
+    .best-row:hover { background-color: rgba(186,12,47,0.35) !important; }
+    .worst-row { background-color: rgba(80,80,80,0.25) !important; }
+    .worst-row:hover { background-color: rgba(80,80,80,0.35) !important; }
+    .stat-card {
+      background: linear-gradient(145deg, #BA0C2F, #8a0923);
+      border-radius: 16px;
+      transition: transform 0.25s;
+    }
+    .stat-card:hover { transform: scale(1.03); }
+    .hall-card {
+      background: linear-gradient(145deg, #1e1e1e, #161616);
+      border: 1px solid rgba(186,12,47,0.25);
+      border-radius: 16px;
+      transition: transform 0.25s, border-color 0.25s;
+    }
+    .hall-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(186,12,47,0.6);
+    }
+    .filter-btn {
+      transition: all 0.2s;
+    }
+    .filter-btn.active-filter {
+      background-color: #BA0C2F !important;
+      color: white !important;
+      border-color: #BA0C2F !important;
+    }
+    .timeline-scroll {
+      scrollbar-width: thin;
+      scrollbar-color: #BA0C2F #1a1a1a;
+    }
+    .timeline-scroll::-webkit-scrollbar { height: 6px; }
+    .timeline-scroll::-webkit-scrollbar-track { background: #1a1a1a; border-radius: 3px; }
+    .timeline-scroll::-webkit-scrollbar-thumb { background: #BA0C2F; border-radius: 3px; }
+    @keyframes countUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+    .counter-animated { animation: countUp 0.6s ease-out forwards; }
+    .left-border-era1 { border-left: 4px solid #666666; }
+    .left-border-era2 { border-left: 4px solid #BA0C2F; }
+    .left-border-era3 { border-left: 4px solid #6b1525; }
+    .left-border-era4 { border-left: 4px solid #1a1a1a; }
+    .tabular-nums { font-variant-numeric: tabular-nums; }
+  </style>
+</head>
+<body data-id="0" class="field-texture">
+
+  <app-icon data-id="1" hidden data-icon="trophy" data-palette="Red"></app-icon>
+
+  <!-- HERO SECTION -->
+  <header data-id="2" id="hero-section-dkb1" class="hero-stripes relative overflow-hidden">
+    <div data-id="3" class="absolute inset-0 bg-gradient-to-b from-black/20 to-transparent"></div>
+    <div data-id="4" class="relative z-10 max-w-6xl mx-auto px-4 md:px-8 py-16 md:py-24 text-center">
+      <div data-id="5" id="hero-badge-ab12" class="inline-block mb-4 px-4 py-1 rounded-full bg-white/10 border border-white/20 text-xs tracking-widest uppercase text-white/80 font-body">
+        Franchise Profile
+      </div>
+      <h1 data-id="6" id="hero-title-zx99" class="font-display text-4xl md:text-6xl lg:text-7xl font-bold text-white tracking-tight leading-tight mb-3" style="text-shadow: 2px 4px 12px rgba(0,0,0,0.5);">
+        THE DEREK BAXTER FILE
+      </h1>
+      <p data-id="7" id="hero-subtitle-mn44" class="text-lg md:text-xl text-white/80 font-body mb-10 max-w-2xl mx-auto">
+        Gandorf National Football League · 2013–Present · 13 Seasons
+      </p>
+      <div data-id="8" id="hero-pills-qw88" class="flex flex-wrap justify-center gap-3 md:gap-4">
+        <span data-id="9" class="stat-pill rounded-full px-4 py-2 text-sm md:text-base font-semibold text-white">81–93 Career Record</span>
+        <span data-id="10" class="stat-pill rounded-full px-4 py-2 text-sm md:text-base font-semibold text-white">13 Seasons</span>
+        <span data-id="11" class="stat-pill rounded-full px-4 py-2 text-sm md:text-base font-semibold text-white">4 Team Names</span>
+        <span data-id="12" class="stat-pill rounded-full px-4 py-2 text-sm md:text-base font-semibold text-white">#1 Seed 2021</span>
+      </div>
+    </div>
+    <!-- Decorative corner badge -->
+    <div data-id="13" class="absolute top-4 right-4 md:top-6 md:right-8 opacity-10 font-display text-[8rem] md:text-[12rem] font-bold text-white leading-none select-none pointer-events-none" aria-hidden="true">
+      GFL
+    </div>
+  </header>
+
+  <!-- STICKY NAV -->
+  <nav data-id="14" id="sticky-nav-rt56" class="sticky top-0 z-50 bg-osu-charcoal/95 backdrop-blur-md border-b border-white/10">
+    <div data-id="15" class="max-w-6xl mx-auto px-4 md:px-8 flex items-center justify-between h-14">
+      <span data-id="16" class="font-display text-scarlet font-bold text-lg hidden md:block">DB</span>
+      <!-- Mobile menu button -->
+      <button data-id="17" id="mobile-menu-btn-jk23" class="md:hidden p-2 text-white" aria-label="Open menu">
+        <i data-id="18" data-lucide="menu" class="w-6 h-6"></i>
+      </button>
+      <!-- Desktop nav -->
+      <div data-id="19" class="hidden md:flex items-center gap-8">
+        <a data-id="20" href="#overview-section" class="nav-link text-sm font-medium text-osu-silver hover:text-white">Overview</a>
+        <a data-id="21" href="#eras-section" class="nav-link text-sm font-medium text-osu-silver hover:text-white">Eras</a>
+        <a data-id="22" href="#seasons-section" class="nav-link text-sm font-medium text-osu-silver hover:text-white">Seasons</a>
+        <a data-id="23" href="#hall-section" class="nav-link text-sm font-medium text-osu-silver hover:text-white">Hall of Stats</a>
+      </div>
+      <span data-id="24" class="text-xs text-osu-silver/50 hidden md:block">Est. 2013</span>
+    </div>
+    <!-- Mobile nav overlay -->
+    <div data-id="25" id="mobile-menu-overlay-qr67" class="hidden fixed inset-0 bg-osu-charcoal z-50 flex flex-col p-6 md:hidden">
+      <div data-id="26" class="flex items-center justify-between mb-10">
+        <span data-id="27" class="font-display text-scarlet font-bold text-xl">DB</span>
+        <button data-id="28" id="mobile-menu-close-ww12" class="p-2 text-white" aria-label="Close menu">
+          <i data-id="29" data-lucide="x" class="w-6 h-6"></i>
+        </button>
+      </div>
+      <div data-id="30" class="flex flex-col gap-6">
+        <a data-id="31" href="#overview-section" class="mobile-nav-link text-xl font-display text-white hover:text-scarlet">Overview</a>
+        <a data-id="32" href="#eras-section" class="mobile-nav-link text-xl font-display text-white hover:text-scarlet">Eras</a>
+        <a data-id="33" href="#seasons-section" class="mobile-nav-link text-xl font-display text-white hover:text-scarlet">Seasons</a>
+        <a data-id="34" href="#hall-section" class="mobile-nav-link text-xl font-display text-white hover:text-scarlet">Hall of Stats</a>
+      </div>
+    </div>
+  </nav>
+
+  <main data-id="35">
+
+    <!-- SECTION 2: CAREER OVERVIEW -->
+    <section data-id="36" id="overview-section" class="py-16 md:py-24">
+      <div data-id="37" class="max-w-6xl mx-auto px-4 md:px-8">
+        <div data-id="38" class="text-center mb-12">
+          <h2 data-id="39" id="overview-title-pp11" class="font-display text-3xl md:text-4xl font-bold text-white mb-2">Career Overview</h2>
+          <p data-id="40" class="text-osu-silver text-sm md:text-base">Thirteen seasons of highs, lows, and name changes</p>
+        </div>
+
+        <!-- Stat Cards Grid -->
+        <div data-id="41" id="stat-cards-grid-ff33" class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-14">
+          <div data-id="42" class="stat-card p-5 md:p-7 text-center">
+            <div data-id="43" class="text-3xl md:text-4xl font-bold text-white tabular-nums" data-counter="81" data-suffix="">0</div>
+            <div data-id="44" class="text-sm text-white/70 mt-1 font-medium">Career Wins</div>
+          </div>
+          <div data-id="45" class="stat-card p-5 md:p-7 text-center">
+            <div data-id="46" class="text-2xl md:text-4xl font-bold text-white tabular-nums" data-counter="16902.84" data-suffix="" data-decimals="2" data-comma="true">0</div>
+            <div data-id="47" class="text-sm text-white/70 mt-1 font-medium">Career PF</div>
+          </div>
+          <div data-id="48" class="stat-card p-5 md:p-7 text-center">
+            <div data-id="49" class="text-3xl md:text-4xl font-bold text-white tabular-nums" data-counter="46.6" data-suffix="%" data-decimals="1">0</div>
+            <div data-id="50" class="text-sm text-white/70 mt-1 font-medium">Win Rate</div>
+          </div>
+          <div data-id="51" class="stat-card p-5 md:p-7 text-center">
+            <div data-id="52" class="text-3xl md:text-4xl font-bold text-white">
+              <span data-id="53" class="tabular-nums" data-counter="1" data-suffix="">0</span><span data-id="54" class="text-lg text-white/60">st</span>
+            </div>
+            <div data-id="55" class="text-sm text-white/70 mt-1 font-medium">Best Finish (2021)</div>
+          </div>
+        </div>
+
+        <!-- Chart -->
+        <div data-id="56" class="bg-osu-charcoal rounded-2xl p-4 md:p-8 border border-white/5">
+          <h3 data-id="57" id="chart-title-ll88" class="font-display text-lg md:text-xl font-bold text-white mb-4">Points For vs Points Against</h3>
+          <div data-id="58" class="relative h-64 md:h-80">
+            <canvas data-id="59" id="pf-pa-chart-cc77"></canvas>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: THE NAME EVOLUTION -->
+    <section data-id="60" id="eras-section" class="py-16 md:py-24 bg-osu-dark/80">
+      <div data-id="61" class="max-w-6xl mx-auto px-4 md:px-8">
+        <div data-id="62" class="text-center mb-10">
+          <h2 data-id="63" id="eras-title-yy22" class="font-display text-3xl md:text-4xl font-bold text-white mb-2">A Legend By Many Names</h2>
+          <p data-id="64" class="text-osu-silver text-sm md:text-base">Four eras. Four identities. One franchise.</p>
+        </div>
+
+        <div data-id="65" id="eras-timeline-ee55" class="flex gap-5 overflow-x-auto pb-6 timeline-scroll snap-x snap-mandatory">
+
+          <!-- Era 1 -->
+          <div data-id="66" class="era-card flex-shrink-0 w-72 md:w-80 bg-osu-charcoal rounded-2xl p-6 border border-white/10 snap-start">
+            <div data-id="67" class="inline-block px-3 py-1 rounded-full bg-osu-gray text-xs font-bold text-white uppercase tracking-widest mb-4">Era 1</div>
+            <h3 data-id="68" class="font-display text-xl md:text-2xl font-bold text-white mb-1">Team babyfacebuckeye</h3>
+            <p data-id="69" class="text-osu-silver text-sm mb-3">2013 – 2019</p>
+            <div data-id="70" class="flex gap-4 mb-4">
+              <div data-id="71">
+                <span data-id="72" class="text-white font-bold tabular-nums">40-51</span>
+                <span data-id="73" class="text-osu-silver text-xs ml-1">Record</span>
+              </div>
+              <div data-id="74">
+                <span data-id="75" class="text-white font-bold tabular-nums">44.0%</span>
+                <span data-id="76" class="text-osu-silver text-xs ml-1">Win%</span>
+              </div>
+            </div>
+            <p data-id="77" class="text-osu-silver text-sm leading-relaxed italic">"Seven long seasons. Three last-place finishes. Pure Buckeye loyalty. The foundation, however shaky, was being laid."</p>
+          </div>
+
+          <!-- Era 2 -->
+          <div data-id="78" class="era-card flex-shrink-0 w-72 md:w-80 bg-osu-charcoal rounded-2xl p-6 border border-scarlet/40 snap-start" style="box-shadow: 0 0 20px rgba(186,12,47,0.15);">
+            <div data-id="79" class="inline-block px-3 py-1 rounded-full bg-scarlet text-xs font-bold text-white uppercase tracking-widest mb-4">Era 2 · Peak</div>
+            <h3 data-id="80" class="font-display text-xl md:text-2xl font-bold text-scarlet mb-1">OH - IO</h3>
+            <p data-id="81" class="text-osu-silver text-sm mb-3">2020 – 2021</p>
+            <div data-id="82" class="flex gap-4 mb-4">
+              <div data-id="83">
+                <span data-id="84" class="text-white font-bold tabular-nums">19-8</span>
+                <span data-id="85" class="text-osu-silver text-xs ml-1">Record</span>
+              </div>
+              <div data-id="86">
+                <span data-id="87" class="text-scarlet font-bold tabular-nums">70.4%</span>
+                <span data-id="88" class="text-osu-silver text-xs ml-1">Win%</span>
+              </div>
+            </div>
+            <p data-id="89" class="text-osu-silver text-sm leading-relaxed italic">"The rebrand heard 'round the GFL. Something clicked when Derek channeled his inner OSU superfan — 19-8, a 1st place regular season finish, and the best two years of his franchise career."</p>
+          </div>
+
+          <!-- Era 3 -->
+          <div data-id="90" class="era-card flex-shrink-0 w-72 md:w-80 bg-osu-charcoal rounded-2xl p-6 border border-white/10 snap-start">
+            <div data-id="91" class="inline-block px-3 py-1 rounded-full text-xs font-bold text-white uppercase tracking-widest mb-4" style="background:#6b1525;">Era 3</div>
+            <h3 data-id="92" class="font-display text-xl md:text-2xl font-bold text-white mb-1">Terick Duggertuts</h3>
+            <p data-id="93" class="text-osu-silver text-sm mb-3">2022 – 2024</p>
+            <div data-id="94" class="flex gap-4 mb-4">
+              <div data-id="95">
+                <span data-id="96" class="text-white font-bold tabular-nums">16-26</span>
+                <span data-id="97" class="text-osu-silver text-xs ml-1">Record</span>
+              </div>
+              <div data-id="98">
+                <span data-id="99" class="text-white font-bold tabular-nums">38.1%</span>
+                <span data-id="100" class="text-osu-silver text-xs ml-1">Win%</span>
+              </div>
+            </div>
+            <p data-id="101" class="text-osu-silver text-sm leading-relaxed italic">"With a name that sounds like an anagram of his own identity, Derek entered his experimental phase. Spoiler: 16-26 doesn't lie."</p>
+          </div>
+
+          <!-- Era 4 -->
+          <div data-id="102" class="era-card flex-shrink-0 w-72 md:w-80 bg-osu-charcoal rounded-2xl p-6 border border-white/10 snap-start">
+            <div data-id="103" class="inline-block px-3 py-1 rounded-full bg-osu-charcoal border border-white/20 text-xs font-bold text-white uppercase tracking-widest mb-4">Era 4</div>
+            <h3 data-id="104" class="font-display text-xl md:text-2xl font-bold text-white mb-1">Netherite Warriors</h3>
+            <p data-id="105" class="text-osu-silver text-sm mb-3">2025</p>
+            <div data-id="106" class="flex gap-4 mb-4">
+              <div data-id="107">
+                <span data-id="108" class="text-white font-bold tabular-nums">6-8</span>
+                <span data-id="109" class="text-osu-silver text-xs ml-1">Record</span>
+              </div>
+              <div data-id="110">
+                <span data-id="111" class="text-white font-bold tabular-nums">42.9%</span>
+                <span data-id="112" class="text-osu-silver text-xs ml-1">Win%</span>
+              </div>
+            </div>
+            <p data-id="113" class="text-osu-silver text-sm leading-relaxed italic">"Gone full Minecraft. The rarest material in the game — but is the roster built from it? 2025 says: not yet."</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: SEASON-BY-SEASON TABLE -->
+    <section data-id="114" id="seasons-section" class="py-16 md:py-24">
+      <div data-id="115" class="max-w-6xl mx-auto px-4 md:px-8">
+        <div data-id="116" class="text-center mb-8">
+          <h2 data-id="117" id="seasons-title-tt99" class="font-display text-3xl md:text-4xl font-bold text-white mb-2">Season-by-Season</h2>
+          <p data-id="118" class="text-osu-silver text-sm md:text-base">Every win, loss, and heartbreak — quantified</p>
+        </div>
+
+        <!-- Era Filters -->
+        <div data-id="119" id="era-filters-bb44" class="flex flex-wrap justify-center gap-2 md:gap-3 mb-8">
+          <button data-id="120" class="filter-btn active-filter px-4 py-2 rounded-full text-sm font-semibold border border-white/20 bg-transparent text-white min-h-[44px]" data-era="all">All</button>
+          <button data-id="121" class="filter-btn px-4 py-2 rounded-full text-sm font-semibold border border-white/20 bg-transparent text-osu-silver min-h-[44px]" data-era="1">Buckeye Era</button>
+          <button data-id="122" class="filter-btn px-4 py-2 rounded-full text-sm font-semibold border border-white/20 bg-transparent text-osu-silver min-h-[44px]" data-era="2">OH-IO Era</button>
+          <button data-id="123" class="filter-btn px-4 py-2 rounded-full text-sm font-semibold border border-white/20 bg-transparent text-osu-silver min-h-[44px]" data-era="3">Terick Era</button>
+          <button data-id="124" class="filter-btn px-4 py-2 rounded-full text-sm font-semibold border border-white/20 bg-transparent text-osu-silver min-h-[44px]" data-era="4">Netherite Era</button>
+        </div>
+
+        <!-- Table -->
+        <div data-id="125" class="overflow-x-auto rounded-2xl border border-white/10 bg-osu-charcoal">
+          <table data-id="126" id="seasons-table-uu11" class="w-full text-sm">
+            <thead data-id="127">
+              <tr data-id="128" class="border-b border-white/10 text-osu-silver uppercase text-xs tracking-wider">
+                <th data-id="129" class="text-left px-4 py-3 font-semibold">Year</th>
+                <th data-id="130" class="text-left px-4 py-3 font-semibold">Team Name</th>
+                <th data-id="131" class="text-center px-4 py-3 font-semibold">Record</th>
+                <th data-id="132" class="text-right px-4 py-3 font-semibold">PF</th>
+                <th data-id="133" class="text-right px-4 py-3 font-semibold">PA</th>
+                <th data-id="134" class="text-right px-4 py-3 font-semibold">PF/G</th>
+                <th data-id="135" class="text-right px-4 py-3 font-semibold">Diff</th>
+                <th data-id="136" class="text-center px-4 py-3 font-semibold">Finish</th>
+              </tr>
+            </thead>
+            <tbody data-id="137" id="seasons-tbody-vv22">
+              <!-- Populated by JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: HALL OF STATS -->
+    <section data-id="138" id="hall-section" class="py-16 md:py-24 bg-osu-dark/80">
+      <div data-id="139" class="max-w-6xl mx-auto px-4 md:px-8">
+        <div data-id="140" class="text-center mb-12">
+          <h2 data-id="141" id="hall-title-hh66" class="font-display text-3xl md:text-4xl font-bold text-white mb-2">Hall of Stats</h2>
+          <p data-id="142" class="text-osu-silver text-sm md:text-base">The numbers that define a franchise</p>
+        </div>
+
+        <div data-id="143" id="hall-grid-kk33" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
+
+          <div data-id="144" class="hall-card p-6">
+            <div data-id="145" class="text-3xl mb-3">🔥</div>
+            <h3 data-id="146" class="font-display text-lg font-bold text-scarlet mb-1">PEAK SEASON</h3>
+            <p data-id="147" class="text-white font-bold tabular-nums text-xl mb-2">2021 · 11-3 · 1,533 pts</p>
+            <p data-id="148" class="text-osu-silver text-sm leading-relaxed">"The OH-IO miracle. The GFL's closest thing to a Buckeye national title run."</p>
+          </div>
+
+          <div data-id="149" class="hall-card p-6">
+            <div data-id="150" class="text-3xl mb-3">💀</div>
+            <h3 data-id="151" class="font-display text-lg font-bold text-osu-silver mb-1">DARK SEASON</h3>
+            <p data-id="152" class="text-white font-bold tabular-nums text-xl mb-2">2016 · 4-9 · 1,058 pts</p>
+            <p data-id="153" class="text-osu-silver text-sm leading-relaxed">"Only 1,058 points in a full season. That's 81.4 per game. Urban Meyer would not approve."</p>
+          </div>
+
+          <div data-id="154" class="hall-card p-6">
+            <div data-id="155" class="text-3xl mb-3">📉</div>
+            <h3 data-id="156" class="font-display text-lg font-bold text-scarlet mb-1">CAREER DIFF</h3>
+            <p data-id="157" class="text-red-400 font-bold tabular-nums text-xl mb-2">-569.42 pts</p>
+            <p data-id="158" class="text-osu-silver text-sm leading-relaxed">"Outscored over 13 seasons. A man who scores just enough to keep things interesting — for everyone else."</p>
+          </div>
+
+          <div data-id="159" class="hall-card p-6">
+            <div data-id="160" class="text-3xl mb-3">🏅</div>
+            <h3 data-id="161" class="font-display text-lg font-bold text-scarlet mb-1">MOST WINS IN A SEASON</h3>
+            <p data-id="162" class="text-white font-bold tabular-nums text-xl mb-2">11 (2021)</p>
+            <p data-id="163" class="text-osu-silver text-sm leading-relaxed">"Unrepeated. Possibly unrepeatable."</p>
+          </div>
+
+          <div data-id="164" class="hall-card p-6">
+            <div data-id="165" class="text-3xl mb-3">📛</div>
+            <h3 data-id="166" class="font-display text-lg font-bold text-scarlet mb-1">NAME CHANGES</h3>
+            <p data-id="167" class="text-white font-bold tabular-nums text-xl mb-2">4 team names in 13 years</p>
+            <p data-id="168" class="text-osu-silver text-sm leading-relaxed">"More rebrands than a startup. Less funding."</p>
+          </div>
+
+          <div data-id="169" class="hall-card p-6">
+            <div data-id="170" class="text-3xl mb-3">💡</div>
+            <h3 data-id="171" class="font-display text-lg font-bold text-scarlet mb-1">THE OH-IO EFFECT</h3>
+            <p data-id="172" class="text-white font-bold tabular-nums text-xl mb-2">44% → 70% win rate</p>
+            <p data-id="173" class="text-osu-silver text-sm leading-relaxed">"Proof that a good team name matters."</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer data-id="174" id="footer-section-zz00" class="hero-stripes py-10 text-center">
+    <div data-id="175" class="max-w-6xl mx-auto px-4 md:px-8">
+      <p data-id="176" class="font-display text-xl md:text-2xl font-bold text-white mb-2">Est. 2013 · Gandorf National Football League</p>
+      <p data-id="177" class="text-white/60 text-sm mb-4 italic">"O-H... I-O... We tried."</p>
+      <div data-id="178" class="w-12 h-px bg-white/20 mx-auto mb-4"></div>
+      <p data-id="179" class="text-white/40 text-xs">Made by Copilot</p>
+    </div>
+  </footer>
+
+  <script>
+    // ============================================
+    // DATA
+    // ============================================
+    const seasons = [
+      { year: 2013, name: "Team babyfacebuckeye", era: 1, w: 7,  l: 6,  pf: 1321.50, pa: 1161.50, finish: 3  },
+      { year: 2014, name: "Team babyfacebuckeye", era: 1, w: 5,  l: 8,  pf: 1205.50, pa: 1331.50, finish: 7  },
+      { year: 2015, name: "Team babyfacebuckeye", era: 1, w: 6,  l: 7,  pf: 1243.50, pa: 1260.00, finish: 12 },
+      { year: 2016, name: "Team babyfacebuckeye", era: 1, w: 4,  l: 9,  pf: 1058.00, pa: 1256.00, finish: 12 },
+      { year: 2017, name: "Team babyfacebuckeye", era: 1, w: 7,  l: 6,  pf: 1262.00, pa: 1282.50, finish: 5  },
+      { year: 2018, name: "Team babyfacebuckeye", era: 1, w: 5,  l: 8,  pf: 1116.50, pa: 1365.50, finish: 12 },
+      { year: 2019, name: "Team babyfacebuckeye", era: 1, w: 6,  l: 7,  pf: 1252.00, pa: 1403.00, finish: 8  },
+      { year: 2020, name: "OH - IO",              era: 2, w: 8,  l: 5,  pf: 1491.50, pa: 1199.00, finish: 2  },
+      { year: 2021, name: "OH - IO",              era: 2, w: 11, l: 3,  pf: 1533.00, pa: 1284.00, finish: 1  },
+      { year: 2022, name: "Terick Duggertuts",    era: 3, w: 5,  l: 9,  pf: 1287.74, pa: 1468.22, finish: 10 },
+      { year: 2023, name: "Terick Duggertuts",    era: 3, w: 4,  l: 10, pf: 1376.42, pa: 1588.92, finish: 7  },
+      { year: 2024, name: "Terick Duggertuts",    era: 3, w: 7,  l: 7,  pf: 1447.74, pa: 1447.80, finish: 10 },
+      { year: 2025, name: "Netherite Warriors",   era: 4, w: 6,  l: 8,  pf: 1307.44, pa: 1424.32, finish: 10 },
+    ];
+
+    // ============================================
+    // LUCIDE ICONS
+    // ============================================
+    if (typeof lucide !== "undefined" && typeof lucide.createIcons === "function") {
+      lucide.createIcons();
+    }
+
+    // ============================================
+    // MOBILE MENU
+    // ============================================
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn-jk23');
+    const mobileMenuOverlay = document.getElementById('mobile-menu-overlay-qr67');
+    const mobileMenuClose = document.getElementById('mobile-menu-close-ww12');
+
+    if (mobileMenuBtn) {
+      mobileMenuBtn.addEventListener('click', function() {
+        mobileMenuOverlay.classList.remove('hidden');
+      });
+    }
+    if (mobileMenuClose) {
+      mobileMenuClose.addEventListener('click', function() {
+        mobileMenuOverlay.classList.add('hidden');
+      });
+    }
+    document.querySelectorAll('.mobile-nav-link').forEach(function(link) {
+      link.addEventListener('click', function() {
+        mobileMenuOverlay.classList.add('hidden');
+      });
+    });
+
+    // ============================================
+    // ACTIVE NAV HIGHLIGHTING
+    // ============================================
+    const navLinks = document.querySelectorAll('.nav-link');
+    const sectionIds = ['overview-section', 'eras-section', 'seasons-section', 'hall-section'];
+
+    function updateActiveNav() {
+      let current = '';
+      sectionIds.forEach(function(id) {
+        const section = document.getElementById(id);
+        if (section) {
+          const rect = section.getBoundingClientRect();
+          if (rect.top <= 120) {
+            current = id;
+          }
+        }
+      });
+      navLinks.forEach(function(link) {
+        if (link.getAttribute('href') === '#' + current) {
+          link.classList.add('active');
+        } else {
+          link.classList.remove('active');
+        }
+      });
+    }
+    window.addEventListener('scroll', updateActiveNav);
+
+    // ============================================
+    // ANIMATED COUNTERS
+    // ============================================
+    function animateCounters() {
+      const counters = document.querySelectorAll('[data-counter]');
+      counters.forEach(function(el) {
+        const target = parseFloat(el.getAttribute('data-counter'));
+        const suffix = el.getAttribute('data-suffix') || '';
+        const decimals = parseInt(el.getAttribute('data-decimals') || '0');
+        const useComma = el.getAttribute('data-comma') === 'true';
+        const duration = 1500;
+        const startTime = performance.now();
+
+        function step(now) {
+          const elapsed = now - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+          const eased = 1 - Math.pow(1 - progress, 3);
+          const current = target * eased;
+          let formatted;
+          if (useComma) {
+            formatted = current.toLocaleString('en-US', { minimumFractionDigits: decimals, maximumFractionDigits: decimals });
+          } else {
+            formatted = current.toFixed(decimals);
+          }
+          el.textContent = formatted + suffix;
+          if (progress < 1) {
+            requestAnimationFrame(step);
+          }
+        }
+        requestAnimationFrame(step);
+        el.classList.add('counter-animated');
+      });
+    }
+
+    const overviewSection = document.getElementById('overview-section');
+    let countersAnimated = false;
+    const counterObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting && !countersAnimated) {
+          countersAnimated = true;
+          animateCounters();
+          counterObserver.disconnect();
+        }
+      });
+    }, { threshold: 0.2 });
+    if (overviewSection) counterObserver.observe(overviewSection);
+
+    // ============================================
+    // CHART.JS — PF vs PA
+    // ============================================
+    function renderChart() {
+      const ctx = document.getElementById('pf-pa-chart-cc77');
+      if (!ctx || typeof Chart === 'undefined') return;
+
+      new Chart(ctx.getContext('2d'), {
+        type: 'bar',
+        data: {
+          labels: seasons.map(function(s) { return s.year; }),
+          datasets: [
+            {
+              label: 'Points For',
+              data: seasons.map(function(s) { return s.pf; }),
+              backgroundColor: '#BA0C2F',
+              borderRadius: 4,
+              borderSkipped: false,
+            },
+            {
+              label: 'Points Against',
+              data: seasons.map(function(s) { return s.pa; }),
+              backgroundColor: '#888888',
+              borderRadius: 4,
+              borderSkipped: false,
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              position: 'top',
+              labels: { color: '#ccc', font: { size: 12 }, padding: 16, usePointStyle: true, pointStyleWidth: 12 }
+            },
+            tooltip: {
+              backgroundColor: '#1a1a1a',
+              titleColor: '#fff',
+              bodyColor: '#ccc',
+              borderColor: '#BA0C2F',
+              borderWidth: 1,
+              cornerRadius: 8,
+              padding: 12,
+              callbacks: {
+                afterBody: function(context) {
+                  const idx = context[0].dataIndex;
+                  const s = seasons[idx];
+                  const diff = (s.pf - s.pa).toFixed(2);
+                  const sign = diff > 0 ? '+' : '';
+                  return 'Diff: ' + sign + diff;
+                }
+              }
+            }
+          },
+          scales: {
+            x: {
+              ticks: { color: '#999', font: { size: 11 } },
+              grid: { color: 'rgba(255,255,255,0.05)' }
+            },
+            y: {
+              ticks: { color: '#999', font: { size: 11 }, callback: function(v) { return v.toLocaleString(); } },
+              grid: { color: 'rgba(255,255,255,0.05)' },
+              beginAtZero: false,
+              suggestedMin: 900
+            }
+          }
+        }
+      });
+    }
+    renderChart();
+
+    // ============================================
+    // SEASONS TABLE
+    // ============================================
+    function getFinishBadge(finish) {
+      if (finish === 1) return ' 🏆';
+      if (finish <= 3) return ' ⭐';
+      if (finish === 12) return ' 💀';
+      return '';
+    }
+
+    function getOrdinal(n) {
+      const s = ['th','st','nd','rd'];
+      const v = n % 100;
+      return n + (s[(v - 20) % 10] || s[v] || s[0]);
+    }
+
+    function renderTable(filterEra) {
+      const tbody = document.getElementById('seasons-tbody-vv22');
+      if (!tbody) return;
+      tbody.innerHTML = '';
+
+      const filtered = filterEra === 'all' ? seasons : seasons.filter(function(s) { return s.era === parseInt(filterEra); });
+
+      filtered.forEach(function(s) {
+        const totalGames = s.w + s.l;
+        const pfg = (s.pf / totalGames).toFixed(1);
+        const diff = (s.pf - s.pa).toFixed(2);
+        const diffNum = parseFloat(diff);
+        const diffColor = diffNum > 0 ? 'text-green-400' : diffNum < 0 ? 'text-red-400' : 'text-osu-silver';
+        const diffSign = diffNum > 0 ? '+' : '';
+        const badge = getFinishBadge(s.finish);
+        const ordinal = getOrdinal(s.finish);
+
+        let rowClass = 'season-row border-b border-white/5 ';
+        if (s.year === 2021) rowClass += 'best-row ';
+        else if (s.year === 2016) rowClass += 'worst-row ';
+
+        const eraBorderClass = 'left-border-era' + s.era;
+
+        const tr = document.createElement('tr');
+        tr.className = rowClass + eraBorderClass;
+        tr.setAttribute('data-era', s.era);
+
+        tr.innerHTML =
+          '<td class="px-4 py-3 font-bold text-white tabular-nums">' + s.year + '</td>' +
+          '<td class="px-4 py-3 text-osu-silver whitespace-nowrap">' + s.name + '</td>' +
+          '<td class="px-4 py-3 text-center text-white font-semibold tabular-nums">' + s.w + '-' + s.l + '</td>' +
+          '<td class="px-4 py-3 text-right text-white tabular-nums">' + s.pf.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2}) + '</td>' +
+          '<td class="px-4 py-3 text-right text-osu-silver tabular-nums">' + s.pa.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2}) + '</td>' +
+          '<td class="px-4 py-3 text-right text-osu-silver tabular-nums">' + pfg + '</td>' +
+          '<td class="px-4 py-3 text-right font-semibold tabular-nums ' + diffColor + '">' + diffSign + diff + '</td>' +
+          '<td class="px-4 py-3 text-center font-semibold text-white">' + ordinal + badge + '</td>';
+
+        tbody.appendChild(tr);
+      });
+    }
+
+    renderTable('all');
+
+    // ============================================
+    // ERA FILTER BUTTONS
+    // ============================================
+    document.querySelectorAll('.filter-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('.filter-btn').forEach(function(b) {
+          b.classList.remove('active-filter');
+          b.classList.add('text-osu-silver');
+        });
+        btn.classList.add('active-filter');
+        btn.classList.remove('text-osu-silver');
+        renderTable(btn.getAttribute('data-era'));
+      });
+    });
+
+  </script>
+</body>
+</html>

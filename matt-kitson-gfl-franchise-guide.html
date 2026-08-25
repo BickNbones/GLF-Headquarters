@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark" />
+    <title>Matt Kitson GFL Franchise Guide</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            900: '#070D15',
+                            800: '#0D1B2A',
+                            700: '#1B2A3B',
+                            600: '#24364A',
+                            500: '#2E425B',
+                            400: '#3A506D',
+                        },
+                        gold: {
+                            100: '#FFF8E7',
+                            200: '#F5E6B8',
+                            300: '#E8D08A',
+                            400: '#D4B44A',
+                            500: '#C9A227',
+                            600: '#A8861E',
+                            700: '#866A18',
+                            800: '#5C4910',
+                        },
+                        slate2: {
+                            100: '#D0D5DC',
+                            200: '#B0B8C4',
+                            300: '#8B95A1',
+                            400: '#6B7785',
+                            500: '#4A5568',
+                        },
+                        offwhite: '#F0F4F8',
+                        crimson: {
+                            100: '#FF6B6B',
+                            200: '#E63946',
+                            300: '#C1121F',
+                            400: '#9B0F1A',
+                            500: '#6B0F1A',
+                            600: '#4A0A12',
+                        },
+                    },
+                    fontFamily: {
+                        display: ['Playfair Display', 'Georgia', 'serif'],
+                        mono: ['Courier Prime', 'Courier New', 'monospace'],
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                },
+            },
+        };
+    </script>
+    <style>
+        :root {
+            --navy-bg: #0D1B2A;
+            --gold: #C9A227;
+            --crimson: #C1121F;
+            --crimson-dark: #6B0F1A;
+        }
+
+        * { box-sizing: border-box; }
+
+        html {
+            scroll-behavior: smooth;
+            background-color: #070D15;
+        }
+
+        body {
+            background-color: #0D1B2A;
+            color: #F0F4F8;
+            margin: 0;
+        }
+
+        /* Scouting report stamp effect */
+        .stamp {
+            display: inline-block;
+            border: 3px solid var(--gold);
+            padding: 6px 18px;
+            font-family: 'Courier Prime', monospace;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            transform: rotate(-2deg);
+            position: relative;
+        }
+
+        .stamp::before {
+            content: '';
+            position: absolute;
+            inset: -1px;
+            border: 1px solid rgba(201, 162, 39, 0.3);
+        }
+
+        .stamp-red {
+            border-color: var(--crimson);
+            color: var(--crimson);
+        }
+
+        .stamp-red::before {
+            border-color: rgba(193, 18, 31, 0.3);
+        }
+
+        /* Chapter card hover */
+        .alias-card {
+            transition: all 0.3s ease;
+            border-left: 4px solid #C9A227;
+        }
+
+        .alias-card:hover {
+            box-shadow: 0 0 24px rgba(201, 162, 39, 0.25), inset 0 0 0 1px rgba(201, 162, 39, 0.2);
+            transform: translateY(-2px);
+        }
+
+        /* Pulsing border for troll section */
+        @keyframes pulse-border {
+            0%, 100% { border-color: rgba(193, 18, 31, 0.4); }
+            50% { border-color: rgba(193, 18, 31, 0.9); }
+        }
+
+        .heist-pulse {
+            border: 2px solid rgba(193, 18, 31, 0.5);
+            animation: pulse-border 2.5s ease-in-out infinite;
+        }
+
+        /* Timeline dot */
+        .timeline-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--gold);
+            flex-shrink: 0;
+            position: relative;
+        }
+
+        .timeline-dot::after {
+            content: '';
+            position: absolute;
+            top: 12px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: calc(100% + 24px);
+            background: rgba(201, 162, 39, 0.2);
+        }
+
+        .timeline-item:last-child .timeline-dot::after {
+            display: none;
+        }
+
+        /* Sticky nav */
+        .sticky-nav {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            backdrop-filter: blur(12px);
+            background: rgba(13, 27, 42, 0.92);
+            border-bottom: 1px solid rgba(201, 162, 39, 0.15);
+        }
+
+        /* Table row hover */
+        .evidence-row {
+            transition: background-color 0.2s;
+        }
+        .evidence-row:hover {
+            background-color: rgba(201, 162, 39, 0.08) !important;
+        }
+
+        /* Yard-line decoration */
+        .redacted-line {
+            background: repeating-linear-gradient(
+                90deg,
+                rgba(201, 162, 39, 0.08) 0px,
+                rgba(201, 162, 39, 0.08) 60px,
+                transparent 60px,
+                transparent 65px
+            );
+            height: 1px;
+        }
+
+        /* Filter button */
+        .filter-btn {
+            transition: all 0.2s;
+        }
+        .filter-btn.active {
+            background-color: #C9A227;
+            color: #0D1B2A;
+        }
+        .filter-btn:not(.active):hover {
+            background-color: rgba(201, 162, 39, 0.15);
+        }
+
+        /* Animated counters */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-in {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        /* Scrollbar styling */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #0D1B2A; }
+        ::-webkit-scrollbar-thumb { background: #3A506D; border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: #C9A227; }
+
+        /* Mobile menu */
+        .mobile-menu-overlay {
+            transition: opacity 0.3s, visibility 0.3s;
+        }
+        .mobile-menu-overlay.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+        .mobile-menu-overlay:not(.hidden) {
+            opacity: 1;
+            visibility: visible;
+        }
+    </style>
+</head>
+<body data-id="0" class="font-sans min-h-screen">
+    <app-icon data-id="1" hidden data-icon="file-search" data-palette="Dark"></app-icon>
+
+    <!-- STICKY NAV -->
+    <nav data-id="2" class="sticky-nav" id="main-nav-zk8p">
+        <div data-id="3" class="max-w-7xl mx-auto px-4 md:px-6 flex items-center justify-between h-14">
+            <div data-id="4" class="flex items-center gap-2">
+                <i data-id="5" data-lucide="clipboard-list" class="w-5 h-5 text-gold-500"></i>
+                <span data-id="6" class="font-mono text-xs text-gold-500 tracking-widest uppercase">GFL Front Office</span>
+            </div>
+            <!-- Desktop nav -->
+            <div data-id="7" class="hidden md:flex items-center gap-1" id="desktop-nav-l4m2">
+                <a data-id="8" href="#aliases" class="nav-link px-3 py-2 text-sm font-medium text-slate2-200 hover:text-gold-500 transition-colors rounded-lg">Team Names</a>
+                <a data-id="9" href="#seasons" class="nav-link px-3 py-2 text-sm font-medium text-slate2-200 hover:text-gold-500 transition-colors rounded-lg">Seasons</a>
+                <a data-id="10" href="#heist" class="nav-link px-3 py-2 text-sm font-medium text-crimson-200 hover:text-crimson-100 transition-colors rounded-lg">The Troll</a>
+                <a data-id="11" href="#summary" class="nav-link px-3 py-2 text-sm font-medium text-slate2-200 hover:text-gold-500 transition-colors rounded-lg">Scouting Report</a>
+            </div>
+            <!-- Mobile menu button -->
+            <button data-id="12" id="mobile-menu-btn-r3v1" class="md:hidden p-2 text-gold-500">
+                <i data-id="13" data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile menu overlay -->
+    <div data-id="14" id="mobile-menu-x9q3" class="mobile-menu-overlay hidden fixed inset-0 bg-navy-900/95 z-[60] flex flex-col items-center justify-center gap-6">
+        <button data-id="15" id="mobile-menu-close-k2j8" class="absolute top-4 right-4 p-2 text-gold-500">
+            <i data-id="16" data-lucide="x" class="w-6 h-6"></i>
+        </button>
+        <a data-id="17" href="#aliases" class="mobile-nav-link text-xl font-mono text-gold-500 tracking-wider uppercase">Team Names</a>
+        <a data-id="18" href="#seasons" class="mobile-nav-link text-xl font-mono text-gold-500 tracking-wider uppercase">Seasons</a>
+        <a data-id="19" href="#heist" class="mobile-nav-link text-xl font-mono text-crimson-200 tracking-wider uppercase">The Troll</a>
+        <a data-id="20" href="#summary" class="mobile-nav-link text-xl font-mono text-gold-500 tracking-wider uppercase">Scouting Report</a>
+    </div>
+
+    <main data-id="21">
+        <!-- HERO — SCOUTING REPORT COVER -->
+        <section data-id="22" id="hero-jf7a" class="relative min-h-screen flex flex-col items-center justify-center px-4 py-16 md:py-24 overflow-hidden">
+            <!-- Background texture -->
+            <div data-id="23" class="absolute inset-0 opacity-5" style="background-image: repeating-linear-gradient(0deg, transparent, transparent 50px, rgba(201,162,39,0.1) 50px, rgba(201,162,39,0.1) 51px), repeating-linear-gradient(90deg, transparent, transparent 50px, rgba(201,162,39,0.1) 50px, rgba(201,162,39,0.1) 51px);"></div>
+
+            <div data-id="24" class="relative z-10 text-center max-w-3xl mx-auto">
+                <!-- Top classification -->
+                <div data-id="25" class="mb-8 animate-in" style="animation-delay: 0.1s;">
+                    <span data-id="26" class="stamp text-gold-500 text-xs md:text-sm">GFL Front Office — Scouting Report</span>
+                </div>
+
+                <!-- Scout file number -->
+                <p data-id="27" class="font-mono text-slate2-300 text-xs md:text-sm tracking-[0.3em] uppercase mb-4 animate-in" style="animation-delay: 0.3s;">
+                    Scout File No. GFL-MK-2013 · Priority Level: High
+                </p>
+
+                <!-- Main title -->
+                <h1 data-id="28" class="font-display text-4xl md:text-6xl lg:text-7xl font-black text-offwhite mb-2 animate-in" style="animation-delay: 0.5s;">
+                    SUBJECT: MATT KITSON
+                </h1>
+                <div data-id="29" class="w-32 md:w-48 h-1 bg-gold-500 mx-auto mb-6 animate-in" style="animation-delay: 0.6s;"></div>
+
+                <!-- File metadata -->
+                <p data-id="30" class="font-mono text-slate2-200 text-xs md:text-sm tracking-widest mb-10 animate-in" style="animation-delay: 0.7s;">
+                    SCOUT FILE NO. GFL-MK-2013 &nbsp;·&nbsp; 13 SEASONS &nbsp;·&nbsp; 6 TEAM NAMES &nbsp;·&nbsp; 1 LEGENDARY TROLL
+                </p>
+
+                <!-- Stat pills -->
+                <div data-id="31" class="flex flex-wrap justify-center gap-3 mb-12 animate-in" style="animation-delay: 0.9s;" id="hero-pills-q4w1">
+                    <span data-id="32" class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gold-500/15 border border-gold-500/30 text-gold-300 text-xs md:text-sm font-mono font-bold">
+                        <i data-id="33" data-lucide="trophy" class="w-4 h-4"></i> 82–91–1 Career
+                    </span>
+                    <span data-id="34" class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gold-500/15 border border-gold-500/30 text-gold-300 text-xs md:text-sm font-mono font-bold">
+                        <i data-id="35" data-lucide="user" class="w-4 h-4"></i> 6 Team Names
+                    </span>
+                    <span data-id="36" class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-crimson-300/15 border border-crimson-300/30 text-crimson-100 text-xs md:text-sm font-mono font-bold">
+                        <i data-id="37" data-lucide="zap" class="w-4 h-4"></i> 1 Legendary Troll
+                    </span>
+                    <span data-id="38" class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gold-500/15 border border-gold-500/30 text-gold-300 text-xs md:text-sm font-mono font-bold">
+                        <i data-id="39" data-lucide="medal" class="w-4 h-4"></i> 2nd Place 2025
+                    </span>
+                </div>
+
+                <!-- Scroll prompt -->
+                <div data-id="40" class="animate-in" style="animation-delay: 1.1s;">
+                    <p data-id="41" class="font-mono text-slate2-400 text-[10px] md:text-xs tracking-[0.4em] uppercase mb-4">
+                        Full Player File Below — Scroll to Review
+                    </p>
+                    <i data-id="42" data-lucide="chevrons-down" class="w-5 h-5 text-gold-500/50 mx-auto animate-bounce"></i>
+                </div>
+            </div>
+        </section>
+
+        <!-- Divider -->
+        <div data-id="43" class="redacted-line max-w-6xl mx-auto"></div>
+
+        <!-- TEAM NAME HISTORY -->
+        <section data-id="44" id="aliases" class="py-16 md:py-24 px-4 md:px-6" aria-label="Team Name History">
+            <div data-id="45" class="max-w-6xl mx-auto">
+                <!-- Section header -->
+                <div data-id="46" class="text-center mb-12">
+                    <div data-id="47" class="inline-block mb-4">
+                        <span data-id="48" class="stamp text-gold-500 text-sm md:text-base">Team Name History</span>
+                    </div>
+                    <p data-id="49" class="font-sans text-slate2-300 text-sm md:text-base max-w-2xl mx-auto">
+                        Subject has rebranded <span data-id="50" class="text-gold-400 font-semibold">6 times</span> since 2013. Each name tells a story.
+                    </p>
+                </div>
+
+                <!-- Chapter Cards Grid -->
+                <div data-id="51" class="grid grid-cols-1 md:grid-cols-2 gap-5" id="alias-grid-m8n3">
+                    <!-- Chapter 1: Sark Manchez -->
+                    <div data-id="52" class="alias-card bg-navy-700/60 rounded-xl p-5 md:p-6" id="alias1-h2k9">
+                        <div data-id="53" class="flex items-start justify-between mb-3">
+                            <span data-id="54" class="font-mono text-gold-500 text-xs tracking-widest bg-gold-500/10 px-3 py-1 rounded">CHAPTER 1</span>
+                            <span data-id="55" class="font-mono text-slate2-400 text-xs">2013–2014</span>
+                        </div>
+                        <h3 data-id="56" class="font-display text-xl md:text-2xl font-bold text-offwhite mb-2">Sark Manchez</h3>
+                        <p data-id="57" class="font-mono text-slate2-300 text-xs mb-3">12–14–0 &nbsp;·&nbsp; 46.2% Win Rate</p>
+                        <div data-id="58" class="border-t border-gold-500/10 pt-3">
+                            <p data-id="59" class="text-xs font-mono text-gold-500/70 uppercase tracking-wider mb-1">Coach's Notes</p>
+                            <p data-id="60" class="text-sm text-slate2-200 leading-relaxed">Named after the NFL's most chaotic QB duo. 2013: a 4-9 disaster. 2014: 8-5, 2nd place. Classic boom-bust entry.</p>
+                        </div>
+                    </div>
+
+                    <!-- Chapter 2: Geno's Dentures -->
+                    <div data-id="61" class="alias-card bg-navy-700/60 rounded-xl p-5 md:p-6" id="alias2-t5r3">
+                        <div data-id="62" class="flex items-start justify-between mb-3">
+                            <span data-id="63" class="font-mono text-gold-500 text-xs tracking-widest bg-gold-500/10 px-3 py-1 rounded">CHAPTER 2</span>
+                            <span data-id="64" class="font-mono text-slate2-400 text-xs">2015</span>
+                        </div>
+                        <h3 data-id="65" class="font-display text-xl md:text-2xl font-bold text-offwhite mb-2">Geno's Dentures</h3>
+                        <p data-id="66" class="font-mono text-slate2-300 text-xs mb-3">4–9–0 &nbsp;·&nbsp; 30.8% Win Rate</p>
+                        <div data-id="67" class="border-t border-gold-500/10 pt-3">
+                            <p data-id="68" class="text-xs font-mono text-gold-500/70 uppercase tracking-wider mb-1">Coach's Notes</p>
+                            <p data-id="69" class="text-sm text-slate2-200 leading-relaxed">Gone after one season. 4-9. Presumably the dentures fell out somewhere around Week 7.</p>
+                        </div>
+                    </div>
+
+                    <!-- Chapter 3: Mangold Digger -->
+                    <div data-id="70" class="alias-card bg-navy-700/60 rounded-xl p-5 md:p-6" id="alias3-y7u2">
+                        <div data-id="71" class="flex items-start justify-between mb-3">
+                            <span data-id="72" class="font-mono text-gold-500 text-xs tracking-widest bg-gold-500/10 px-3 py-1 rounded">CHAPTER 3</span>
+                            <span data-id="73" class="font-mono text-slate2-400 text-xs">2016</span>
+                        </div>
+                        <h3 data-id="74" class="font-display text-xl md:text-2xl font-bold text-offwhite mb-2">Mangold Digger</h3>
+                        <p data-id="75" class="font-mono text-slate2-300 text-xs mb-3">7–6–0 &nbsp;·&nbsp; 53.8% Win Rate</p>
+                        <div data-id="76" class="border-t border-gold-500/10 pt-3">
+                            <p data-id="77" class="text-xs font-mono text-gold-500/70 uppercase tracking-wider mb-1">Coach's Notes</p>
+                            <p data-id="78" class="text-sm text-slate2-200 leading-relaxed">One year, one name, one pun. Nick Mangold called; he wants his reputation back. 7-6 wasn't bad though.</p>
+                        </div>
+                    </div>
+
+                    <!-- Chapter 4: CTE Decisions! -->
+                    <div data-id="79" class="alias-card bg-navy-700/60 rounded-xl p-5 md:p-6" id="alias4-p1w8">
+                        <div data-id="80" class="flex items-start justify-between mb-3">
+                            <span data-id="81" class="font-mono text-gold-500 text-xs tracking-widest bg-gold-500/10 px-3 py-1 rounded">CHAPTER 4</span>
+                            <span data-id="82" class="font-mono text-slate2-400 text-xs">2017–2020</span>
+                        </div>
+                        <h3 data-id="83" class="font-display text-xl md:text-2xl font-bold text-offwhite mb-2">CTE Decisions!</h3>
+                        <p data-id="84" class="font-mono text-slate2-300 text-xs mb-3">22–29–1 &nbsp;·&nbsp; 43.3% Win Rate</p>
+                        <div data-id="85" class="border-t border-gold-500/10 pt-3">
+                            <p data-id="86" class="text-xs font-mono text-gold-500/70 uppercase tracking-wider mb-1">Coach's Notes</p>
+                            <p data-id="87" class="text-sm text-slate2-200 leading-relaxed">The franchise's most committed era — 4 seasons under one name. A name so bold the NFL would never approve it. Mixed results on the field. Unambiguous results in the chaos department. Includes the only TIE in franchise history (2020: 7-5-1).</p>
+                        </div>
+                    </div>
+
+                    <!-- Chapter 5: Broadway Joe Biden -->
+                    <div data-id="88" class="alias-card bg-navy-700/60 rounded-xl p-5 md:p-6" id="alias5-s3d6">
+                        <div data-id="89" class="flex items-start justify-between mb-3">
+                            <span data-id="90" class="font-mono text-gold-500 text-xs tracking-widest bg-gold-500/10 px-3 py-1 rounded">CHAPTER 5</span>
+                            <span data-id="91" class="font-mono text-slate2-400 text-xs">2021</span>
+                        </div>
+                        <h3 data-id="92" class="font-display text-xl md:text-2xl font-bold text-offwhite mb-2">Broadway Joe Biden</h3>
+                        <p data-id="93" class="font-mono text-slate2-300 text-xs mb-3">7–7–0 &nbsp;·&nbsp; 50.0% Win Rate</p>
+                        <div data-id="94" class="border-t border-gold-500/10 pt-3">
+                            <p data-id="95" class="text-xs font-mono text-gold-500/70 uppercase tracking-wider mb-1">Coach's Notes</p>
+                            <p data-id="96" class="text-sm text-slate2-200 leading-relaxed">One season wonder. 7-7, 3rd place finish. The name is a political fever dream. The season was decent. Nobody knows why it lasted only a year.</p>
+                        </div>
+                    </div>
+
+                    <!-- Chapter 6: The Barton Spartans -->
+                    <div data-id="97" class="alias-card bg-navy-700/60 rounded-xl p-5 md:p-6 relative overflow-hidden" id="alias6-v9b4">
+                        <div data-id="98" class="absolute top-0 right-0 w-20 h-20 bg-crimson-300/10 rounded-bl-full"></div>
+                        <div data-id="99" class="flex items-start justify-between mb-3">
+                            <span data-id="100" class="font-mono text-crimson-200 text-xs tracking-widest bg-crimson-300/10 px-3 py-1 rounded">CHAPTER 6</span>
+                            <span data-id="101" class="font-mono text-slate2-400 text-xs">2022–PRESENT</span>
+                        </div>
+                        <h3 data-id="102" class="font-display text-xl md:text-2xl font-bold text-offwhite mb-2">The Barton Spartans</h3>
+                        <p data-id="103" class="font-mono text-slate2-300 text-xs mb-3">30–26–0 &nbsp;·&nbsp; 53.6% Win Rate</p>
+                        <div data-id="104" class="border-t border-crimson-300/15 pt-3">
+                            <p data-id="105" class="text-xs font-mono text-crimson-200/70 uppercase tracking-wider mb-1">Coach's Notes</p>
+                            <p data-id="106" class="text-sm text-slate2-200 leading-relaxed">
+                                <span data-id="107" class="inline-flex items-center gap-1 text-crimson-200 font-semibold">
+                                    <i data-id="108" data-lucide="zap" class="w-3 h-3"></i> SEE: 'THE TROLL' SECTION BELOW
+                                </span>
+                                — Swiped from Tom Campbell's playbook with zero hesitation. The audacity? Unmatched. The results? Improving every year. 2025: 10-4, 2nd place finish. Greatness favors the bold.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Divider -->
+        <div data-id="109" class="redacted-line max-w-6xl mx-auto"></div>
+
+        <!-- THE TROLL -->
+        <section data-id="110" id="heist" class="py-16 md:py-24 px-4 md:px-6 relative" style="background: linear-gradient(135deg, #6B0F1A 0%, #4A0A12 50%, #3A0810 100%);" aria-label="The Troll">
+            <!-- Pulsing border overlay -->
+            <div data-id="111" class="absolute inset-0 heist-pulse pointer-events-none rounded-none"></div>
+
+            <!-- Scan lines effect -->
+            <div data-id="112" class="absolute inset-0 opacity-[0.03] pointer-events-none" style="background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.3) 2px, rgba(0,0,0,0.3) 4px);"></div>
+
+            <div data-id="113" class="max-w-6xl mx-auto relative z-10">
+                <!-- Header -->
+                <div data-id="114" class="text-center mb-12">
+                    <div data-id="115" class="inline-block mb-4">
+                        <span data-id="116" class="stamp stamp-red text-crimson-100 text-xs md:text-sm">
+                            🏈 Legendary Trick Play
+                        </span>
+                    </div>
+                    <h2 data-id="117" class="font-display text-2xl md:text-4xl lg:text-5xl font-black text-offwhite mb-3">
+                        THE GREATEST TRICK PLAY<br data-id="118">IN GFL HISTORY
+                    </h2>
+                    <p data-id="119" class="font-mono text-crimson-100/70 text-xs md:text-sm tracking-widest uppercase">A GFL Front Office Breakdown</p>
+                </div>
+
+                <!-- Two-column layout -->
+                <div data-id="120" class="grid grid-cols-1 lg:grid-cols-5 gap-8">
+                    <!-- Play-by-Play (left, 3 cols) -->
+                    <div data-id="121" class="lg:col-span-3 bg-black/20 rounded-xl p-5 md:p-8 border border-crimson-300/10" id="heist-timeline-g5h2">
+                        <h3 data-id="122" class="font-mono text-gold-400 text-sm tracking-widest uppercase mb-6 flex items-center gap-2">
+                            <i data-id="123" data-lucide="clock" class="w-4 h-4"></i> Play-by-Play
+                        </h3>
+
+                        <div data-id="124" class="space-y-6">
+                            <div data-id="125" class="timeline-item flex gap-4">
+                                <div data-id="126" class="flex flex-col items-center pt-1">
+                                    <div data-id="127" class="timeline-dot"></div>
+                                </div>
+                                <div data-id="128">
+                                    <span data-id="129" class="font-mono text-gold-400 text-xs font-bold">2013–2021 · PRE-SNAP</span>
+                                    <p data-id="130" class="text-sm text-slate2-100 mt-1">Tom Campbell operates "Barton Spartans" — a proud GFL franchise name. A dynasty built over nearly a decade. The formation looks set.</p>
+                                </div>
+                            </div>
+
+                            <div data-id="131" class="timeline-item flex gap-4">
+                                <div data-id="132" class="flex flex-col items-center pt-1">
+                                    <div data-id="133" class="timeline-dot"></div>
+                                </div>
+                                <div data-id="134">
+                                    <span data-id="135" class="font-mono text-gold-400 text-xs font-bold">2021 · THE READ</span>
+                                    <p data-id="136" class="text-sm text-slate2-100 mt-1">Tom Campbell finishes 11th place (4-10). The defense is exposed. A rival quarterback reads the coverage and sees an opening.</p>
+                                </div>
+                            </div>
+
+                            <div data-id="137" class="timeline-item flex gap-4">
+                                <div data-id="138" class="flex flex-col items-center pt-1">
+                                    <div data-id="139" class="timeline-dot" style="background: #C1121F;"></div>
+                                </div>
+                                <div data-id="140">
+                                    <span data-id="141" class="font-mono text-crimson-100 text-xs font-bold">2022 · THE AUDIBLE</span>
+                                    <p data-id="142" class="text-sm text-slate2-100 mt-1"><span data-id="143" class="text-crimson-100 font-semibold">Matt Kitson</span> calls the audible. In an act of premeditated genius, he registers "The Barton Spartans" as his own team name. Executed the play flawlessly. Ran it in untouched.</p>
+                                </div>
+                            </div>
+
+                            <div data-id="144" class="timeline-item flex gap-4">
+                                <div data-id="145" class="flex flex-col items-center pt-1">
+                                    <div data-id="146" class="timeline-dot" style="background: #C1121F;"></div>
+                                </div>
+                                <div data-id="147">
+                                    <span data-id="148" class="font-mono text-crimson-100 text-xs font-bold">2022 · THE AFTERMATH</span>
+                                    <p data-id="149" class="text-sm text-slate2-100 mt-1">Tom Campbell, outmaneuvered and stripped of his franchise identity, is forced to rebrand to <span data-id="150" class="text-gold-400">"Monti Thunderbolts."</span> A coach displaced. A legacy picked off.</p>
+                                </div>
+                            </div>
+
+                            <div data-id="151" class="timeline-item flex gap-4">
+                                <div data-id="152" class="flex flex-col items-center pt-1">
+                                    <div data-id="153" class="timeline-dot"></div>
+                                </div>
+                                <div data-id="154">
+                                    <span data-id="155" class="font-mono text-gold-400 text-xs font-bold">2022–PRESENT · THE VICTORY LAP</span>
+                                    <p data-id="156" class="text-sm text-slate2-100 mt-1">Matt Kitson runs the playbook under the stolen franchise flag. Shows <span data-id="157" class="font-bold text-crimson-100 uppercase">zero remorse</span>. In fact, he's thriving. Spiking the ball every week.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Final Whistle (right, 2 cols) -->
+                    <div data-id="158" class="lg:col-span-2 space-y-5" id="heist-verdict-n1m6">
+                        <div data-id="159" class="bg-black/20 rounded-xl p-5 md:p-8 border border-crimson-300/10 text-center">
+                            <p data-id="160" class="font-mono text-crimson-100/60 text-xs tracking-widest uppercase mb-3">Final Whistle</p>
+                            <h3 data-id="161" class="font-display text-4xl md:text-5xl font-black text-gold-500 mb-3" style="transform: rotate(-3deg);">TOUCHDOWN</h3>
+                            <div data-id="162" class="space-y-2 text-sm text-slate2-200">
+                                <p data-id="163"><span data-id="164" class="text-crimson-100 font-semibold">Most Audacious Move</span></p>
+                                <p data-id="165"><span data-id="166" class="text-crimson-100 font-semibold">in GFL History</span></p>
+                                <p data-id="167"><span data-id="168" class="text-crimson-100 font-semibold">Hall of Fame Trolling</span></p>
+                            </div>
+                            <div data-id="169" class="mt-5 pt-5 border-t border-crimson-300/15">
+                                <p data-id="170" class="font-mono text-gold-400/70 text-xs tracking-wider uppercase mb-1">Reward</p>
+                                <p data-id="171" class="text-sm text-offwhite font-medium">Rewarded with managing "The Barton Spartans" indefinitely.</p>
+                            </div>
+                        </div>
+
+                        <!-- Plot twist box -->
+                        <div data-id="172" class="bg-gold-500/10 rounded-xl p-5 border border-gold-500/20">
+                            <div data-id="173" class="flex items-center gap-2 mb-3">
+                                <i data-id="174" data-lucide="zap" class="w-4 h-4 text-gold-400"></i>
+                                <span data-id="175" class="font-mono text-gold-400 text-xs tracking-widest uppercase font-bold">Plot Twist</span>
+                            </div>
+                            <p data-id="176" class="text-sm text-slate2-100 leading-relaxed">
+                                The stolen name unlocked Matt's best era. 4 seasons as "The Barton Spartans": <span data-id="177" class="text-gold-400 font-bold">30–26</span>, steadily improving to a <span data-id="178" class="text-gold-400 font-bold">10-4</span> 2025 campaign.
+                            </p>
+                            <p data-id="179" class="font-mono text-gold-500 text-sm font-bold mt-3">Trick plays win championships.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Divider -->
+        <div data-id="180" class="redacted-line max-w-6xl mx-auto"></div>
+
+        <!-- GAME FILM BREAKDOWN -->
+        <section data-id="181" id="seasons" class="py-16 md:py-24 px-4 md:px-6" aria-label="Game Film Breakdown">
+            <div data-id="182" class="max-w-6xl mx-auto">
+                <!-- Section header -->
+                <div data-id="183" class="text-center mb-8">
+                    <div data-id="184" class="inline-block mb-4">
+                        <span data-id="185" class="stamp text-gold-500 text-sm md:text-base">Game Film Breakdown</span>
+                    </div>
+                    <h2 data-id="186" class="font-display text-2xl md:text-3xl font-bold text-offwhite">Season-by-Season Game Film</h2>
+                </div>
+
+                <!-- Filter buttons -->
+                <div data-id="187" class="flex flex-wrap justify-center gap-2 mb-8" id="filter-container-z3x7">
+                    <button data-id="188" class="filter-btn active font-mono text-xs px-3 py-2 rounded-lg border border-gold-500/30 text-gold-300 bg-gold-500 text-navy-800" data-filter="all">All Seasons</button>
+                    <button data-id="189" class="filter-btn font-mono text-xs px-3 py-2 rounded-lg border border-gold-500/30 text-gold-300" data-filter="Sark Manchez">Sark Manchez</button>
+                    <button data-id="190" class="filter-btn font-mono text-xs px-3 py-2 rounded-lg border border-gold-500/30 text-gold-300" data-filter="Geno's Dentures">Geno's Dentures</button>
+                    <button data-id="191" class="filter-btn font-mono text-xs px-3 py-2 rounded-lg border border-gold-500/30 text-gold-300" data-filter="Mangold Digger">Mangold Digger</button>
+                    <button data-id="192" class="filter-btn font-mono text-xs px-3 py-2 rounded-lg border border-gold-500/30 text-gold-300" data-filter="CTE Decisions!">CTE Decisions!</button>
+                    <button data-id="193" class="filter-btn font-mono text-xs px-3 py-2 rounded-lg border border-gold-500/30 text-gold-300" data-filter="Broadway Joe Biden">Broadway Joe Biden</button>
+                    <button data-id="194" class="filter-btn font-mono text-xs px-3 py-2 rounded-lg border border-gold-500/30 text-gold-300" data-filter="The Barton Spartans">The Barton Spartans</button>
+                </div>
+
+                <!-- Table -->
+                <div data-id="195" class="overflow-x-auto rounded-xl border border-gold-500/10">
+                    <table data-id="196" class="w-full text-sm" id="season-table-b8c5">
+                        <thead data-id="197">
+                            <tr data-id="198" class="bg-navy-700/80 border-b border-gold-500/15">
+                                <th data-id="199" class="text-left px-3 md:px-4 py-3 font-mono text-gold-500 text-xs tracking-wider uppercase">Year</th>
+                                <th data-id="200" class="text-left px-3 md:px-4 py-3 font-mono text-gold-500 text-xs tracking-wider uppercase">Team Name</th>
+                                <th data-id="201" class="text-center px-3 md:px-4 py-3 font-mono text-gold-500 text-xs tracking-wider uppercase">Record</th>
+                                <th data-id="202" class="text-right px-3 md:px-4 py-3 font-mono text-gold-500 text-xs tracking-wider uppercase">PF</th>
+                                <th data-id="203" class="text-right px-3 md:px-4 py-3 font-mono text-gold-500 text-xs tracking-wider uppercase">PA</th>
+                                <th data-id="204" class="text-right px-3 md:px-4 py-3 font-mono text-gold-500 text-xs tracking-wider uppercase">Diff</th>
+                                <th data-id="205" class="text-right px-3 md:px-4 py-3 font-mono text-gold-500 text-xs tracking-wider uppercase">PF/G</th>
+                                <th data-id="206" class="text-center px-3 md:px-4 py-3 font-mono text-gold-500 text-xs tracking-wider uppercase">Finish</th>
+                            </tr>
+                        </thead>
+                        <tbody data-id="207" id="season-tbody-k4j9">
+                            <!-- Populated by JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Divider -->
+        <div data-id="208" class="redacted-line max-w-6xl mx-auto"></div>
+
+        <!-- SCOUTING REPORT SUMMARY -->
+        <section data-id="209" id="summary" class="py-16 md:py-24 px-4 md:px-6" aria-label="Scouting Report Summary">
+            <div data-id="210" class="max-w-6xl mx-auto">
+                <!-- Section header -->
+                <div data-id="211" class="text-center mb-12">
+                    <div data-id="212" class="inline-block mb-4">
+                        <span data-id="213" class="stamp text-gold-500 text-sm md:text-base">Scouting Report Summary</span>
+                    </div>
+                    <h2 data-id="214" class="font-display text-2xl md:text-3xl font-bold text-offwhite">Career Overview</h2>
+                </div>
+
+                <!-- 4 Stat cards -->
+                <div data-id="215" class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12" id="stat-cards-f2g7">
+                    <div data-id="216" class="bg-navy-700/60 rounded-xl p-5 md:p-6 border border-gold-500/15 text-center">
+                        <p data-id="217" class="font-mono text-gold-500/60 text-xs tracking-widest uppercase mb-2">Career Record</p>
+                        <p data-id="218" class="font-display text-2xl md:text-3xl font-bold text-offwhite tabular-nums" id="stat-record-w5e3">82–91–1</p>
+                    </div>
+                    <div data-id="219" class="bg-navy-700/60 rounded-xl p-5 md:p-6 border border-gold-500/15 text-center">
+                        <p data-id="220" class="font-mono text-gold-500/60 text-xs tracking-widest uppercase mb-2">Career PF</p>
+                        <p data-id="221" class="font-display text-2xl md:text-3xl font-bold text-gold-400 tabular-nums" id="stat-pf-r8t1">17,529.98</p>
+                    </div>
+                    <div data-id="222" class="bg-navy-700/60 rounded-xl p-5 md:p-6 border border-gold-500/15 text-center">
+                        <p data-id="223" class="font-mono text-gold-500/60 text-xs tracking-widest uppercase mb-2">Win Rate</p>
+                        <p data-id="224" class="font-display text-2xl md:text-3xl font-bold text-offwhite tabular-nums" id="stat-winpct-d4s9">47.4%</p>
+                    </div>
+                    <div data-id="225" class="bg-navy-700/60 rounded-xl p-5 md:p-6 border border-gold-500/15 text-center">
+                        <p data-id="226" class="font-mono text-gold-500/60 text-xs tracking-widest uppercase mb-2">Best Finish</p>
+                        <p data-id="227" class="font-display text-2xl md:text-3xl font-bold text-gold-400 tabular-nums" id="stat-best-a7c2">2nd</p>
+                        <p data-id="228" class="font-mono text-slate2-400 text-xs mt-1">2014 & 2025</p>
+                    </div>
+                </div>
+
+                <!-- Chart -->
+                <div data-id="229" class="bg-navy-700/40 rounded-xl p-4 md:p-6 border border-gold-500/10 mb-12">
+                    <h3 data-id="230" class="font-mono text-gold-500 text-xs tracking-widest uppercase mb-4 flex items-center gap-2">
+                        <i data-id="231" data-lucide="bar-chart-3" class="w-4 h-4"></i> Points For vs Points Against (2013–2025)
+                    </h3>
+                    <div data-id="232" class="relative h-64 md:h-80">
+                        <canvas data-id="233" id="pf-pa-chart-m3n8"></canvas>
+                    </div>
+                </div>
+
+                <!-- 6 Film Room Notes cards -->
+                <div data-id="234" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" id="findings-grid-u6y1">
+                    <!-- Note 1 -->
+                    <div data-id="235" class="bg-navy-700/60 rounded-xl p-5 border-l-4 border-gold-500" id="finding1-q2w4">
+                        <div data-id="236" class="flex items-center gap-2 mb-2">
+                            <span data-id="237" class="text-lg">📋</span>
+                            <span data-id="238" class="font-mono text-gold-400 text-xs tracking-widest uppercase font-bold">Longest Era</span>
+                        </div>
+                        <p data-id="239" class="font-display text-lg font-bold text-offwhite mb-1">CTE Decisions!</p>
+                        <p data-id="240" class="font-mono text-slate2-300 text-xs mb-2">4 seasons (2017–2020)</p>
+                        <p data-id="241" class="text-sm text-slate2-300 leading-relaxed">"The most committed Matt has ever been to anything."</p>
+                    </div>
+
+                    <!-- Note 2 -->
+                    <div data-id="242" class="bg-navy-700/60 rounded-xl p-5 border-l-4 border-gold-500" id="finding2-e5r8">
+                        <div data-id="243" class="flex items-center gap-2 mb-2">
+                            <span data-id="244" class="text-lg">🏆</span>
+                            <span data-id="245" class="font-mono text-gold-400 text-xs tracking-widest uppercase font-bold">Peak Season</span>
+                        </div>
+                        <p data-id="246" class="font-display text-lg font-bold text-offwhite mb-1">2025 — 10-4</p>
+                        <p data-id="247" class="font-mono text-slate2-300 text-xs mb-2">1,590.26 PF · 2nd Place</p>
+                        <p data-id="248" class="text-sm text-slate2-300 leading-relaxed">"Turns out borrowing a team name was the glow-up he needed."</p>
+                    </div>
+
+                    <!-- Note 3 -->
+                    <div data-id="249" class="bg-navy-700/60 rounded-xl p-5 border-l-4 border-crimson-300" id="finding3-i9o0">
+                        <div data-id="250" class="flex items-center gap-2 mb-2">
+                            <span data-id="251" class="text-lg">💀</span>
+                            <span data-id="252" class="font-mono text-crimson-200 text-xs tracking-widest uppercase font-bold">Worst Drive</span>
+                        </div>
+                        <p data-id="253" class="font-display text-lg font-bold text-offwhite mb-1">2019 — 4-9</p>
+                        <p data-id="254" class="font-mono text-slate2-300 text-xs mb-2">1,280.50 PF · 11th Place</p>
+                        <p data-id="255" class="text-sm text-slate2-300 leading-relaxed">"CTE Decisions! entered its rebuilding year. It didn't rebuild."</p>
+                    </div>
+
+                    <!-- Note 4 -->
+                    <div data-id="256" class="bg-navy-700/60 rounded-xl p-5 border-l-4 border-gold-500" id="finding4-p3a6">
+                        <div data-id="257" class="flex items-center gap-2 mb-2">
+                            <span data-id="258" class="text-lg">🤝</span>
+                            <span data-id="259" class="font-mono text-gold-400 text-xs tracking-widest uppercase font-bold">Only Tie</span>
+                        </div>
+                        <p data-id="260" class="font-display text-lg font-bold text-offwhite mb-1">2020 — 7-5-1</p>
+                        <p data-id="261" class="font-mono text-slate2-300 text-xs mb-2">CTE Decisions! Era</p>
+                        <p data-id="262" class="text-sm text-slate2-300 leading-relaxed">"Even when Matt can't win, he refuses to fully lose. An overtime classic with no winner."</p>
+                    </div>
+
+                    <!-- Note 5 -->
+                    <div data-id="263" class="bg-navy-700/60 rounded-xl p-5 border-l-4 border-gold-500" id="finding5-s7d1">
+                        <div data-id="264" class="flex items-center gap-2 mb-2">
+                            <span data-id="265" class="text-lg">🎭</span>
+                            <span data-id="266" class="font-mono text-gold-400 text-xs tracking-widest uppercase font-bold">Rebrands</span>
+                        </div>
+                        <p data-id="267" class="font-display text-lg font-bold text-offwhite mb-1">6 Names in 13 Years</p>
+                        <p data-id="268" class="font-mono text-slate2-300 text-xs mb-2">Avg: 2.2 seasons per name</p>
+                        <p data-id="269" class="text-sm text-slate2-300 leading-relaxed">"A GM reinventing the franchise annually. Or just chaotic. Probably chaotic."</p>
+                    </div>
+
+                    <!-- Note 6 -->
+                    <div data-id="270" class="bg-navy-700/60 rounded-xl p-5 border-l-4 border-gold-500" id="finding6-f4g8">
+                        <div data-id="271" class="flex items-center gap-2 mb-2">
+                            <span data-id="272" class="text-lg">📈</span>
+                            <span data-id="273" class="font-mono text-gold-400 text-xs tracking-widest uppercase font-bold">The Barton Effect</span>
+                        </div>
+                        <p data-id="274" class="font-display text-lg font-bold text-offwhite mb-1">Post-Troll: 30–26</p>
+                        <p data-id="275" class="font-mono text-slate2-300 text-xs mb-2">53.6% Win Rate (2022–2025)</p>
+                        <p data-id="276" class="text-sm text-slate2-300 leading-relaxed">"Moral of the story: steal your friend's team name and ride it to glory."</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer data-id="277" class="bg-navy-900 border-t border-gold-500/10 py-10 px-4 text-center" id="footer-h8j3">
+        <div data-id="278" class="max-w-6xl mx-auto">
+            <div data-id="279" class="flex items-center justify-center gap-2 mb-3">
+                <i data-id="280" data-lucide="clipboard-list" class="w-4 h-4 text-gold-500/50"></i>
+                <span data-id="281" class="font-mono text-gold-500/50 text-xs tracking-widest uppercase">GFL Front Office — Scouting File Complete</span>
+                <i data-id="282" data-lucide="clipboard-list" class="w-4 h-4 text-gold-500/50"></i>
+            </div>
+            <p data-id="283" class="font-mono text-slate2-400 text-xs tracking-wider">Est. 2013 · 6 Team Names · 1 Legendary Troll · Still Active</p>
+            <p data-id="284" class="text-xs text-slate2-400/60 mt-4">Made by Copilot</p>
+        </div>
+    </footer>
+
+    <script>
+        // === DATA ===
+        const seasons = [
+            { year: 2013, name: "Sark Manchez",        era: 1, w: 4,  l: 9,  t: 0, pf: 1218.50, pa: 1419.00, finish: 6  },
+            { year: 2014, name: "Sark Manchez",        era: 1, w: 8,  l: 5,  t: 0, pf: 1298.50, pa: 1240.00, finish: 2  },
+            { year: 2015, name: "Geno's Dentures",     era: 2, w: 4,  l: 9,  t: 0, pf: 1188.50, pa: 1364.00, finish: 6  },
+            { year: 2016, name: "Mangold Digger",      era: 3, w: 7,  l: 6,  t: 0, pf: 1322.00, pa: 1190.00, finish: 10 },
+            { year: 2017, name: "CTE Decisions!",      era: 4, w: 5,  l: 8,  t: 0, pf: 1189.50, pa: 1255.50, finish: 8  },
+            { year: 2018, name: "CTE Decisions!",      era: 4, w: 6,  l: 7,  t: 0, pf: 1421.00, pa: 1394.50, finish: 8  },
+            { year: 2019, name: "CTE Decisions!",      era: 4, w: 4,  l: 9,  t: 0, pf: 1280.50, pa: 1452.50, finish: 11 },
+            { year: 2020, name: "CTE Decisions!",      era: 4, w: 7,  l: 5,  t: 1, pf: 1280.50, pa: 1261.00, finish: 6  },
+            { year: 2021, name: "Broadway Joe Biden",  era: 5, w: 7,  l: 7,  t: 0, pf: 1496.50, pa: 1475.00, finish: 3  },
+            { year: 2022, name: "The Barton Spartans", era: 6, w: 6,  l: 8,  t: 0, pf: 1354.00, pa: 1445.80, finish: 8  },
+            { year: 2023, name: "The Barton Spartans", era: 6, w: 6,  l: 8,  t: 0, pf: 1472.78, pa: 1478.26, finish: 6  },
+            { year: 2024, name: "The Barton Spartans", era: 6, w: 8,  l: 6,  t: 0, pf: 1417.44, pa: 1525.32, finish: 4  },
+            { year: 2025, name: "The Barton Spartans", era: 6, w: 10, l: 4,  t: 0, pf: 1590.26, pa: 1371.58, finish: 2  },
+        ];
+
+        const eraColors = {
+            1: '#C9A227',
+            2: '#E8D08A',
+            3: '#D4B44A',
+            4: '#A8861E',
+            5: '#866A18',
+            6: '#C1121F',
+        };
+
+        // === ICONS (progressive enhancement) ===
+        if (typeof lucide !== "undefined" && typeof lucide.createIcons === "function") {
+            lucide.createIcons();
+        }
+
+        // === MOBILE MENU ===
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn-r3v1');
+        const mobileMenu = document.getElementById('mobile-menu-x9q3');
+        const mobileMenuClose = document.getElementById('mobile-menu-close-k2j8');
+
+        if (mobileMenuBtn) {
+            mobileMenuBtn.addEventListener('click', function() {
+                mobileMenu.classList.remove('hidden');
+            });
+        }
+
+        if (mobileMenuClose) {
+            mobileMenuClose.addEventListener('click', function() {
+                mobileMenu.classList.add('hidden');
+            });
+        }
+
+        // Close mobile menu on link click
+        document.querySelectorAll('.mobile-nav-link').forEach(function(link) {
+            link.addEventListener('click', function() {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // === SEASON TABLE ===
+        function getGamesPlayed(s) {
+            return s.w + s.l + s.t;
+        }
+
+        function renderTable(filter) {
+            var tbody = document.getElementById('season-tbody-k4j9');
+            tbody.innerHTML = '';
+
+            var filtered = filter === 'all' ? seasons : seasons.filter(function(s) { return s.name === filter; });
+
+            filtered.forEach(function(s) {
+                var games = getGamesPlayed(s);
+                var diff = s.pf - s.pa;
+                var pfg = s.pf / games;
+                var record = s.t > 0 ? s.w + '-' + s.l + '-' + s.t : s.w + '-' + s.l;
+
+                var isBest = s.year === 2025;
+                var isWorst = s.year === 2019;
+                var hasTie = s.t > 0;
+
+                var rowBg = '';
+                if (isBest) rowBg = 'background-color: rgba(201, 162, 39, 0.08);';
+                else if (isWorst) rowBg = 'background-color: rgba(193, 18, 31, 0.06);';
+
+                var diffColor = diff >= 0 ? 'color: #54C46A;' : 'color: #C1121F;';
+                var diffText = (diff >= 0 ? '+' : '') + diff.toFixed(2);
+                var fontWeight = isBest ? 'font-weight: 700;' : '';
+
+                var tieBadge = hasTie ? ' <span style="background: rgba(201,162,39,0.2); color: #C9A227; font-size: 9px; padding: 1px 5px; border-radius: 4px; font-family: Courier Prime, monospace; vertical-align: middle;">TIE</span>' : '';
+
+                var tr = document.createElement('tr');
+                tr.className = 'evidence-row border-b border-gold-500/5';
+                tr.setAttribute('data-name', s.name);
+                tr.style.cssText = rowBg + fontWeight;
+
+                tr.innerHTML =
+                    '<td class="px-3 md:px-4 py-3 font-mono text-sm tabular-nums" style="border-left: 3px solid ' + eraColors[s.era] + ';">' + s.year + '</td>' +
+                    '<td class="px-3 md:px-4 py-3 text-sm text-slate2-200 whitespace-nowrap">' + s.name + '</td>' +
+                    '<td class="px-3 md:px-4 py-3 text-sm text-center font-mono tabular-nums text-offwhite">' + record + tieBadge + '</td>' +
+                    '<td class="px-3 md:px-4 py-3 text-sm text-right font-mono tabular-nums text-gold-300">' + s.pf.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2}) + '</td>' +
+                    '<td class="px-3 md:px-4 py-3 text-sm text-right font-mono tabular-nums text-slate2-300">' + s.pa.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2}) + '</td>' +
+                    '<td class="px-3 md:px-4 py-3 text-sm text-right font-mono tabular-nums" style="' + diffColor + '">' + diffText + '</td>' +
+                    '<td class="px-3 md:px-4 py-3 text-sm text-right font-mono tabular-nums text-slate2-200">' + pfg.toFixed(1) + '</td>' +
+                    '<td class="px-3 md:px-4 py-3 text-sm text-center font-mono tabular-nums">' + (s.finish <= 3 ? '<span class="text-gold-400 font-bold">' + getOrdinal(s.finish) + '</span>' : '<span class="text-slate2-300">' + getOrdinal(s.finish) + '</span>') + '</td>';
+
+                tbody.appendChild(tr);
+            });
+        }
+
+        function getOrdinal(n) {
+            var s = ['th','st','nd','rd'];
+            var v = n % 100;
+            return n + (s[(v-20)%10] || s[v] || s[0]);
+        }
+
+        // Render initial table
+        renderTable('all');
+
+        // === FILTER BUTTONS ===
+        document.querySelectorAll('.filter-btn').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.filter-btn').forEach(function(b) {
+                    b.classList.remove('active');
+                    b.classList.remove('bg-gold-500', 'text-navy-800');
+                });
+                btn.classList.add('active');
+                renderTable(btn.dataset.filter);
+            });
+        });
+
+        // === CHART.JS ===
+        function renderChart() {
+            var ctx = document.getElementById('pf-pa-chart-m3n8');
+            if (!ctx) return;
+
+            var labels = seasons.map(function(s) { return s.year; });
+            var pfData = seasons.map(function(s) { return s.pf; });
+            var paData = seasons.map(function(s) { return s.pa; });
+
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [
+                        {
+                            label: 'Points For',
+                            data: pfData,
+                            backgroundColor: '#C9A227',
+                            borderColor: '#C9A227',
+                            borderWidth: 0,
+                            borderRadius: 0,
+                            barPercentage: 0.7,
+                            categoryPercentage: 0.8,
+                        },
+                        {
+                            label: 'Points Against',
+                            data: paData,
+                            backgroundColor: '#4A5568',
+                            borderColor: '#4A5568',
+                            borderWidth: 0,
+                            borderRadius: 0,
+                            barPercentage: 0.7,
+                            categoryPercentage: 0.8,
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                            labels: {
+                                color: '#8B95A1',
+                                font: { family: 'Courier Prime', size: 11 },
+                                boxWidth: 12,
+                                boxHeight: 12,
+                                padding: 20,
+                            }
+                        },
+                        tooltip: {
+                            backgroundColor: '#1B2A3B',
+                            titleColor: '#C9A227',
+                            bodyColor: '#F0F4F8',
+                            titleFont: { family: 'Courier Prime', size: 12, weight: 'bold' },
+                            bodyFont: { family: 'Inter', size: 12 },
+                            borderColor: 'rgba(201,162,39,0.2)',
+                            borderWidth: 1,
+                            cornerRadius: 8,
+                            padding: 12,
+                            callbacks: {
+                                afterBody: function(tooltipItems) {
+                                    if (tooltipItems.length >= 2) {
+                                        var pf = tooltipItems[0].parsed.y;
+                                        var pa = tooltipItems[1].parsed.y;
+                                        var diff = pf - pa;
+                                        return 'Diff: ' + (diff >= 0 ? '+' : '') + diff.toFixed(2);
+                                    }
+                                    return '';
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            ticks: {
+                                color: '#8B95A1',
+                                font: { family: 'Courier Prime', size: 11 },
+                            },
+                            grid: {
+                                color: 'rgba(201, 162, 39, 0.06)',
+                            },
+                            border: {
+                                color: 'rgba(201, 162, 39, 0.15)',
+                            }
+                        },
+                        y: {
+                            ticks: {
+                                color: '#8B95A1',
+                                font: { family: 'Courier Prime', size: 11 },
+                                callback: function(value) { return value.toLocaleString(); }
+                            },
+                            grid: {
+                                color: 'rgba(201, 162, 39, 0.06)',
+                            },
+                            border: {
+                                color: 'rgba(201, 162, 39, 0.15)',
+                            },
+                            min: 1000,
+                        }
+                    }
+                }
+            });
+        }
+
+        renderChart();
+
+        // === COUNTER ANIMATION ===
+        function animateCounter(el, end, suffix, isFloat) {
+            if (!el) return;
+            var duration = 1500;
+            var start = 0;
+            var startTime = null;
+
+            function step(timestamp) {
+                if (!startTime) startTime = timestamp;
+                var progress = Math.min((timestamp - startTime) / duration, 1);
+                var eased = 1 - Math.pow(1 - progress, 3); // ease out cubic
+                var current = start + (end - start) * eased;
+
+                if (isFloat) {
+                    el.textContent = current.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2}) + (suffix || '');
+                } else {
+                    el.textContent = Math.round(current).toLocaleString() + (suffix || '');
+                }
+
+                if (progress < 1) {
+                    requestAnimationFrame(step);
+                }
+            }
+            requestAnimationFrame(step);
+        }
+
+        // Observe stat cards for animation trigger
+        var statObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    animateCounter(document.getElementById('stat-pf-r8t1'), 17529.98, '', true);
+                    statObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.3 });
+
+        var statCards = document.getElementById('stat-cards-f2g7');
+        if (statCards) {
+            statObserver.observe(statCards);
+        }
+
+        // === RE-CREATE ICONS after dynamic content (defensive) ===
+        if (typeof lucide !== "undefined" && typeof lucide.createIcons === "function") {
+            lucide.createIcons();
+        }
+    </script>
+</body>
+</html>

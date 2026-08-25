@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark" />
+    <title>Steve Davis GFL Franchise Guide</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1/dist/chart.umd.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        panther: {
+                            blue: '#0085CA',
+                            'blue-dark': '#006BA1',
+                            'blue-deep': '#004F77',
+                            'blue-glow': '#00B2E3',
+                            black: '#101820',
+                            'black-light': '#1a2530',
+                            'black-lighter': '#0d1e2e',
+                            silver: '#BFC0BF',
+                            'silver-dark': '#8a8b8a',
+                            'silver-light': '#d9dad9',
+                        },
+                        danger: '#e53e3e',
+                        'danger-dark': '#9b2c2c',
+                        gold: '#FFD700',
+                    },
+                    fontFamily: {
+                        display: ['Oswald', 'sans-serif'],
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                },
+            },
+        };
+    </script>
+    <style>
+        :root {
+            --panther-blue: #0085CA;
+            --panther-blue-glow: #00B2E3;
+            --panther-black: #101820;
+            --panther-silver: #BFC0BF;
+            --card-bg: #0d1e2e;
+            --card-border: rgba(0, 133, 202, 0.25);
+        }
+        html { scroll-behavior: smooth; }
+        body {
+            background-color: #101820;
+            color: #e2e8f0;
+            font-family: 'Inter', sans-serif;
+        }
+        .glow-card {
+            background: #0d1e2e;
+            border: 1px solid rgba(0, 133, 202, 0.2);
+            box-shadow: 0 0 20px rgba(0, 133, 202, 0.08), inset 0 1px 0 rgba(0, 178, 227, 0.05);
+        }
+        .glow-card:hover {
+            border-color: rgba(0, 133, 202, 0.4);
+            box-shadow: 0 0 30px rgba(0, 133, 202, 0.15), inset 0 1px 0 rgba(0, 178, 227, 0.1);
+        }
+        .champion-row {
+            border-left: 4px solid #0085CA;
+            background: rgba(0, 133, 202, 0.08);
+        }
+        .worst-row {
+            border-left: 4px solid #e53e3e;
+            background: rgba(229, 62, 62, 0.06);
+        }
+        .notable-row {
+            border-left: 4px solid #FFD700;
+            background: rgba(255, 215, 0, 0.04);
+        }
+        .hero-gradient {
+            background: radial-gradient(ellipse at 50% 30%, rgba(0, 133, 202, 0.3) 0%, rgba(0, 133, 202, 0.08) 40%, #101820 75%);
+        }
+        .dynasty-gradient {
+            background: linear-gradient(135deg, rgba(0, 133, 202, 0.15) 0%, rgba(0, 133, 202, 0.05) 100%);
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #BFC0BF 0%, #00B2E3 50%, #0085CA 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .stat-pill {
+            background: rgba(0, 133, 202, 0.15);
+            border: 1px solid rgba(0, 133, 202, 0.3);
+        }
+        .scroll-cards {
+            scrollbar-width: thin;
+            scrollbar-color: rgba(0, 133, 202, 0.3) transparent;
+        }
+        .scroll-cards::-webkit-scrollbar { height: 6px; }
+        .scroll-cards::-webkit-scrollbar-track { background: transparent; }
+        .scroll-cards::-webkit-scrollbar-thumb {
+            background: rgba(0, 133, 202, 0.3);
+            border-radius: 3px;
+        }
+        .star-filled { color: #0085CA; }
+        .star-empty { color: #2a3a4a; }
+        .jersey-score {
+            background: linear-gradient(180deg, #0085CA 0%, #006BA1 100%);
+            clip-path: polygon(15% 0%, 85% 0%, 100% 8%, 100% 100%, 80% 95%, 50% 100%, 20% 95%, 0% 100%, 0% 8%);
+        }
+        .ring-badge {
+            background: linear-gradient(135deg, #0085CA, #00B2E3);
+            box-shadow: 0 0 15px rgba(0, 133, 202, 0.4);
+        }
+        .decline-arrow {
+            animation: pulseDown 2s ease-in-out infinite;
+        }
+        @keyframes pulseDown {
+            0%, 100% { opacity: 0.7; transform: translateY(0); }
+            50% { opacity: 1; transform: translateY(4px); }
+        }
+        .nav-link { transition: color 0.2s, border-color 0.2s; }
+        .nav-link:hover { color: #00B2E3; }
+        @media (max-width: 767px) {
+            .facts-scroll { overflow-x: auto; scroll-snap-type: x mandatory; }
+            .facts-scroll > div { scroll-snap-align: start; min-width: 280px; }
+        }
+    </style>
+</head>
+<body data-id="0">
+    <app-icon data-id="1" hidden data-icon="trophy" data-palette="Blue"></app-icon>
+
+    <!-- NAVIGATION -->
+    <nav data-id="2" id="navbar-a1b2" class="fixed top-0 left-0 right-0 z-50 bg-panther-black/95 backdrop-blur-sm border-b border-panther-blue/20">
+        <div data-id="3" class="max-w-7xl mx-auto px-4 md:px-6 py-3 flex items-center justify-between">
+            <div data-id="4" class="flex items-center gap-3">
+                <i data-id="5" data-lucide="trophy" class="w-5 h-5 text-panther-blue"></i>
+                <span data-id="6" class="font-display text-lg font-semibold tracking-wide text-white">GFL FRANCHISE GUIDE</span>
+            </div>
+            <div data-id="7" class="hidden md:flex items-center gap-6">
+                <a data-id="8" href="#hero" class="nav-link text-sm font-medium text-panther-silver border-b-2 border-transparent hover:border-panther-blue-glow">Home</a>
+                <a data-id="9" href="#overview" class="nav-link text-sm font-medium text-panther-silver border-b-2 border-transparent hover:border-panther-blue-glow">Overview</a>
+                <a data-id="10" href="#dynasty" class="nav-link text-sm font-medium text-panther-silver border-b-2 border-transparent hover:border-panther-blue-glow">Dynasty</a>
+                <a data-id="11" href="#seasons" class="nav-link text-sm font-medium text-panther-silver border-b-2 border-transparent hover:border-panther-blue-glow">Seasons</a>
+                <a data-id="12" href="#dropoff" class="nav-link text-sm font-medium text-panther-silver border-b-2 border-transparent hover:border-panther-blue-glow">Drop-Off</a>
+                <a data-id="13" href="#eras" class="nav-link text-sm font-medium text-panther-silver border-b-2 border-transparent hover:border-panther-blue-glow">Eras</a>
+                <a data-id="14" href="#legacy" class="nav-link text-sm font-medium text-panther-silver border-b-2 border-transparent hover:border-panther-blue-glow">Legacy</a>
+            </div>
+            <button data-id="15" id="mobile-menu-btn-c3d4" class="md:hidden p-2 text-panther-silver">
+                <i data-id="16" data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <nav data-id="17" id="mobile-menu-e5f6" class="hidden fixed inset-0 bg-panther-black/98 z-[60] flex flex-col p-6">
+        <div data-id="18" class="flex items-center justify-between mb-8">
+            <span data-id="19" class="font-display text-lg font-semibold text-white">GFL FRANCHISE GUIDE</span>
+            <button data-id="20" id="mobile-menu-close-g7h8" class="p-2 text-panther-silver">
+                <i data-id="21" data-lucide="x" class="w-6 h-6"></i>
+            </button>
+        </div>
+        <div data-id="22" class="flex flex-col gap-4">
+            <a data-id="23" href="#hero" class="mobile-nav-link text-lg font-display text-panther-silver py-3 border-b border-panther-blue/10">Home</a>
+            <a data-id="24" href="#overview" class="mobile-nav-link text-lg font-display text-panther-silver py-3 border-b border-panther-blue/10">Overview</a>
+            <a data-id="25" href="#dynasty" class="mobile-nav-link text-lg font-display text-panther-silver py-3 border-b border-panther-blue/10">Dynasty</a>
+            <a data-id="26" href="#seasons" class="mobile-nav-link text-lg font-display text-panther-silver py-3 border-b border-panther-blue/10">Seasons</a>
+            <a data-id="27" href="#dropoff" class="mobile-nav-link text-lg font-display text-panther-silver py-3 border-b border-panther-blue/10">Drop-Off</a>
+            <a data-id="28" href="#eras" class="mobile-nav-link text-lg font-display text-panther-silver py-3 border-b border-panther-blue/10">Eras</a>
+            <a data-id="29" href="#legacy" class="mobile-nav-link text-lg font-display text-panther-silver py-3 border-b border-panther-blue/10">Legacy</a>
+        </div>
+    </nav>
+
+    <main data-id="30">
+        <!-- ===== SECTION 1: HERO ===== -->
+        <section data-id="31" id="hero" class="hero-gradient min-h-screen flex items-center justify-center pt-16 pb-12 px-4">
+            <div data-id="32" class="max-w-5xl mx-auto text-center">
+                <p data-id="33" class="font-display text-sm md:text-base uppercase tracking-[0.3em] text-panther-blue-glow mb-4">Gandorf National Football League · Franchise Profile</p>
+                <h1 data-id="34" class="font-display text-6xl md:text-8xl lg:text-9xl font-bold tracking-tight text-gradient mb-3" id="hero-name-i9j0">STEVE DAVIS</h1>
+                <p data-id="35" class="font-display text-xl md:text-2xl italic text-panther-silver mb-2" id="hero-sub-k1l2">"The Architect"</p>
+                <p data-id="36" class="text-sm md:text-base text-panther-silver-dark mb-8">GFL Member Since 2015</p>
+
+                <div data-id="37" class="flex flex-wrap items-center justify-center gap-3 mb-8">
+                    <span data-id="38" class="px-4 py-1.5 rounded-full text-sm font-medium bg-panther-blue/20 text-panther-blue-glow border border-panther-blue/30">
+                        <span data-id="39" class="font-display">Atlas X-Men</span> <span data-id="40" class="text-panther-silver-dark text-xs">2015–2022</span>
+                    </span>
+                    <i data-id="41" data-lucide="arrow-right" class="w-4 h-4 text-panther-silver-dark"></i>
+                    <span data-id="42" class="px-4 py-1.5 rounded-full text-sm font-medium bg-panther-blue/20 text-panther-blue-glow border border-panther-blue/30">
+                        <span data-id="43" class="font-display">Flint Tropics</span> <span data-id="44" class="text-panther-silver-dark text-xs">2023–2025</span>
+                    </span>
+                </div>
+
+                <div data-id="45" class="flex flex-wrap items-center justify-center gap-3 md:gap-4 mb-8">
+                    <span data-id="46" class="stat-pill px-4 py-2 rounded-full text-sm font-medium text-white">🏆 2x Champion</span>
+                    <span data-id="47" class="stat-pill px-4 py-2 rounded-full text-sm font-medium text-white">11 Seasons</span>
+                    <span data-id="48" class="stat-pill px-4 py-2 rounded-full text-sm font-medium text-white tabular-nums">68-80 Record</span>
+                    <span data-id="49" class="stat-pill px-4 py-2 rounded-full text-sm font-medium text-white tabular-nums">14,846 Career PF</span>
+                </div>
+
+                <div data-id="50" class="inline-flex items-center gap-2 ring-badge px-6 py-3 rounded-2xl">
+                    <i data-id="51" data-lucide="crown" class="w-5 h-5 text-white"></i>
+                    <span data-id="52" class="font-display text-sm md:text-base font-semibold text-white uppercase tracking-wider">Rings in First 3 Seasons: 2</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SECTION 2: CAREER OVERVIEW CARDS ===== -->
+        <section data-id="53" id="overview" class="py-16 md:py-24 px-4">
+            <div data-id="54" class="max-w-7xl mx-auto">
+                <div data-id="55" class="text-center mb-12">
+                    <p data-id="56" class="font-display text-xs uppercase tracking-[0.2em] text-panther-blue-glow mb-2">Career Snapshot</p>
+                    <h2 data-id="57" class="font-display text-3xl md:text-4xl font-bold text-white">BY THE NUMBERS</h2>
+                </div>
+
+                <div data-id="58" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                    <!-- Championships -->
+                    <div data-id="59" class="glow-card rounded-2xl p-6 transition-all duration-300">
+                        <div data-id="60" class="flex items-center gap-2 mb-4">
+                            <i data-id="61" data-lucide="trophy" class="w-5 h-5 text-panther-blue"></i>
+                            <span data-id="62" class="text-xs uppercase tracking-wider text-panther-silver-dark font-medium">Championships</span>
+                        </div>
+                        <p data-id="63" class="font-display text-5xl font-bold text-white mb-2 tabular-nums">2</p>
+                        <p data-id="64" class="text-sm text-panther-silver">🏆 Ring #1 — 2015</p>
+                        <p data-id="65" class="text-sm text-panther-silver">🏆 Ring #2 — 2017</p>
+                    </div>
+
+                    <!-- Best Season -->
+                    <div data-id="66" class="glow-card rounded-2xl p-6 transition-all duration-300">
+                        <div data-id="67" class="flex items-center gap-2 mb-4">
+                            <i data-id="68" data-lucide="trending-up" class="w-5 h-5 text-panther-blue"></i>
+                            <span data-id="69" class="text-xs uppercase tracking-wider text-panther-silver-dark font-medium">Best Season</span>
+                        </div>
+                        <p data-id="70" class="font-display text-5xl font-bold text-white mb-2 tabular-nums">2017</p>
+                        <p data-id="71" class="text-sm text-panther-silver">9-4 | 1,500.0 PF</p>
+                        <p data-id="72" class="text-sm text-panther-blue-glow font-medium">🏆 Champion</p>
+                    </div>
+
+                    <!-- Career Worst -->
+                    <div data-id="73" class="glow-card rounded-2xl p-6 transition-all duration-300" style="border-color: rgba(229, 62, 62, 0.2);">
+                        <div data-id="74" class="flex items-center gap-2 mb-4">
+                            <i data-id="75" data-lucide="trending-down" class="w-5 h-5 text-danger"></i>
+                            <span data-id="76" class="text-xs uppercase tracking-wider text-panther-silver-dark font-medium">Career Worst</span>
+                        </div>
+                        <p data-id="77" class="font-display text-5xl font-bold text-danger mb-2 tabular-nums">2020</p>
+                        <p data-id="78" class="text-sm text-panther-silver">2-11 | 12th Place</p>
+                        <p data-id="79" class="text-sm text-panther-silver tabular-nums">1,168.5 PF</p>
+                    </div>
+
+                    <!-- Championship Drought -->
+                    <div data-id="80" class="glow-card rounded-2xl p-6 transition-all duration-300">
+                        <div data-id="81" class="flex items-center gap-2 mb-4">
+                            <i data-id="82" data-lucide="hourglass" class="w-5 h-5 text-panther-blue"></i>
+                            <span data-id="83" class="text-xs uppercase tracking-wider text-panther-silver-dark font-medium">Title Drought</span>
+                        </div>
+                        <p data-id="84" class="font-display text-5xl font-bold text-white mb-2 tabular-nums">8</p>
+                        <p data-id="85" class="text-sm text-panther-silver">Seasons since last ring</p>
+                        <p data-id="86" class="text-sm text-panther-silver-dark italic">Since 2017 and counting…</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SECTION 3: THE DYNASTY CHAPTER ===== -->
+        <section data-id="87" id="dynasty" class="py-16 md:py-24 px-4 dynasty-gradient border-t border-b border-panther-blue/10">
+            <div data-id="88" class="max-w-7xl mx-auto">
+                <div data-id="89" class="text-center mb-12">
+                    <span data-id="90" class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-panther-blue/15 border border-panther-blue/30 text-panther-blue-glow text-xs uppercase tracking-wider font-semibold mb-4">
+                        <i data-id="91" data-lucide="crown" class="w-4 h-4"></i>
+                        Blueprint Era
+                    </span>
+                    <h2 data-id="92" class="font-display text-3xl md:text-4xl font-bold text-white mb-2">2 RINGS IN 3 SEASONS</h2>
+                    <p data-id="93" class="text-panther-silver max-w-3xl mx-auto leading-relaxed text-sm md:text-base">
+                        Steve Davis didn't just show up to the GFL — he arrived and immediately made his mark. Ring #1 in 2015 as a 10-3 machine. Ring #2 in 2017 after a bounce-back from the 2016 sophomore slump. Two rings in his first three seasons — one of the most dominant starts in GFL history. The blueprint was set early — but the construction has stalled.
+                    </p>
+                </div>
+
+                <div data-id="94" class="grid grid-cols-1 md:grid-cols-3 gap-5">
+                    <!-- 2015 -->
+                    <div data-id="95" class="glow-card rounded-2xl p-6 text-center" style="box-shadow: 0 0 25px rgba(0, 133, 202, 0.2);">
+                        <p data-id="96" class="font-display text-4xl font-bold text-panther-blue-glow mb-1 tabular-nums">2015</p>
+                        <p data-id="97" class="font-display text-sm uppercase tracking-widest text-panther-blue mb-4">Year One Dominance</p>
+                        <p data-id="98" class="font-display text-5xl font-bold text-white mb-2 tabular-nums">10-3</p>
+                        <p data-id="99" class="text-sm text-panther-silver tabular-nums mb-4">1,405.0 PF | 1,252.0 PA</p>
+                        <span data-id="100" class="inline-flex items-center gap-1 px-4 py-2 rounded-full bg-panther-blue text-white font-display text-sm font-semibold">🏆 CHAMPION</span>
+                    </div>
+
+                    <!-- 2016 -->
+                    <div data-id="101" class="glow-card rounded-2xl p-6 text-center" style="border-color: rgba(191, 192, 191, 0.15);">
+                        <p data-id="102" class="font-display text-4xl font-bold text-panther-silver mb-1 tabular-nums">2016</p>
+                        <p data-id="103" class="font-display text-sm uppercase tracking-widest text-panther-silver-dark mb-4">The Middle Child</p>
+                        <p data-id="104" class="font-display text-5xl font-bold text-panther-silver-dark mb-2 tabular-nums">4-9</p>
+                        <p data-id="105" class="text-sm text-panther-silver-dark tabular-nums mb-4">1,209.0 PF | 1,417.5 PA</p>
+                        <span data-id="106" class="inline-flex items-center gap-1 px-4 py-2 rounded-full bg-panther-silver/10 text-panther-silver-dark font-display text-sm">😬 11th Place</span>
+                    </div>
+
+                    <!-- 2017 -->
+                    <div data-id="107" class="glow-card rounded-2xl p-6 text-center" style="box-shadow: 0 0 25px rgba(0, 133, 202, 0.2);">
+                        <p data-id="108" class="font-display text-4xl font-bold text-panther-blue-glow mb-1 tabular-nums">2017</p>
+                        <p data-id="109" class="font-display text-sm uppercase tracking-widest text-panther-blue mb-4">The Return of the King</p>
+                        <p data-id="110" class="font-display text-5xl font-bold text-white mb-2 tabular-nums">9-4</p>
+                        <p data-id="111" class="text-sm text-panther-silver tabular-nums mb-4">1,500.0 PF | 1,172.5 PA</p>
+                        <span data-id="112" class="inline-flex items-center gap-1 px-4 py-2 rounded-full bg-panther-blue text-white font-display text-sm font-semibold">🏆 CHAMPION</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SECTION 4: SEASON-BY-SEASON ===== -->
+        <section data-id="113" id="seasons" class="py-16 md:py-24 px-4">
+            <div data-id="114" class="max-w-7xl mx-auto">
+                <div data-id="115" class="text-center mb-12">
+                    <p data-id="116" class="font-display text-xs uppercase tracking-[0.2em] text-panther-blue-glow mb-2">Complete Record</p>
+                    <h2 data-id="117" class="font-display text-3xl md:text-4xl font-bold text-white">SEASON-BY-SEASON</h2>
+                </div>
+
+                <!-- Chart -->
+                <div data-id="118" class="glow-card rounded-2xl p-4 md:p-6 mb-8">
+                    <p data-id="119" class="font-display text-sm uppercase tracking-wider text-panther-silver mb-4">Points For vs Points Against — 11 Seasons</p>
+                    <div data-id="120" class="relative h-64 md:h-80">
+                        <canvas data-id="121" id="pf-pa-chart-m1n2"></canvas>
+                    </div>
+                </div>
+
+                <!-- Table -->
+                <div data-id="122" class="glow-card rounded-2xl overflow-hidden">
+                    <div data-id="123" class="overflow-x-auto">
+                        <table data-id="124" class="w-full text-sm">
+                            <thead data-id="125">
+                                <tr data-id="126" class="border-b border-panther-blue/20">
+                                    <th data-id="127" class="px-4 py-3 text-left font-display text-xs uppercase tracking-wider text-panther-blue-glow">Year</th>
+                                    <th data-id="128" class="px-4 py-3 text-left font-display text-xs uppercase tracking-wider text-panther-blue-glow">Team</th>
+                                    <th data-id="129" class="px-4 py-3 text-center font-display text-xs uppercase tracking-wider text-panther-blue-glow">W-L</th>
+                                    <th data-id="130" class="px-4 py-3 text-right font-display text-xs uppercase tracking-wider text-panther-blue-glow">PF</th>
+                                    <th data-id="131" class="px-4 py-3 text-right font-display text-xs uppercase tracking-wider text-panther-blue-glow">PA</th>
+                                    <th data-id="132" class="px-4 py-3 text-center font-display text-xs uppercase tracking-wider text-panther-blue-glow">Finish</th>
+                                    <th data-id="133" class="px-4 py-3 text-center font-display text-xs uppercase tracking-wider text-panther-blue-glow">Era</th>
+                                </tr>
+                            </thead>
+                            <tbody data-id="134" id="season-table-body-o3p4">
+                            </tbody>
+                            <tfoot data-id="135">
+                                <tr data-id="136" class="border-t-2 border-panther-blue/30 bg-panther-blue/5">
+                                    <td data-id="137" class="px-4 py-3 font-display font-bold text-white">CAREER</td>
+                                    <td data-id="138" class="px-4 py-3 text-panther-silver">—</td>
+                                    <td data-id="139" class="px-4 py-3 text-center font-bold text-white tabular-nums">68-80</td>
+                                    <td data-id="140" class="px-4 py-3 text-right font-bold text-white tabular-nums">14,846.46</td>
+                                    <td data-id="141" class="px-4 py-3 text-right font-bold text-white tabular-nums">14,927.92</td>
+                                    <td data-id="142" class="px-4 py-3 text-center text-panther-silver">45.9% Win</td>
+                                    <td data-id="143" class="px-4 py-3 text-center text-panther-silver">—</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SECTION 5: THE PRODUCTION DROP-OFF ===== -->
+        <section data-id="144" id="dropoff" class="py-16 md:py-24 px-4 border-t border-panther-blue/10">
+            <div data-id="145" class="max-w-7xl mx-auto">
+                <div data-id="146" class="text-center mb-12">
+                    <span data-id="147" class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-danger/15 border border-danger/30 text-danger text-xs uppercase tracking-wider font-semibold mb-4">
+                        <i data-id="148" data-lucide="alert-triangle" class="w-4 h-4"></i>
+                        Warning Signs
+                    </span>
+                    <h2 data-id="149" class="font-display text-3xl md:text-4xl font-bold text-white mb-2">THE FLINT TROPICS PROBLEM</h2>
+                    <p data-id="150" class="text-panther-silver max-w-3xl mx-auto leading-relaxed text-sm md:text-base">
+                        The rebranding was supposed to signal a new era. 2023 was electric — 11-3, the best record in the modern era — but a 4th place finish exposed the playoff vulnerability. Since then, the numbers tell a different story. PF has dropped from 1,471 (2023) → 1,415 (2024) → 1,246 (2025). That 2025 total is the lowest output since the 2020 collapse. The question isn't whether Steve Davis knows how to build a winner — he has the rings to prove it. The question is whether Flint Tropics can rediscover what Atlas X-Men had.
+                    </p>
+                </div>
+
+                <div data-id="151" class="grid grid-cols-1 md:grid-cols-3 gap-5">
+                    <!-- 2023 -->
+                    <div data-id="152" class="glow-card rounded-2xl p-6 text-center relative">
+                        <p data-id="153" class="font-display text-lg uppercase tracking-wider text-panther-blue-glow mb-1">2023</p>
+                        <p data-id="154" class="font-display text-5xl font-bold text-white mb-2 tabular-nums">1,471</p>
+                        <p data-id="155" class="text-xs uppercase tracking-wider text-panther-silver-dark mb-3">Points For</p>
+                        <p data-id="156" class="text-sm text-panther-silver tabular-nums">11-3 Record</p>
+                        <p data-id="157" class="text-xs text-panther-silver-dark mt-1">😤 4th Place Finish</p>
+                    </div>
+
+                    <!-- Arrow -->
+                    <div data-id="158" class="glow-card rounded-2xl p-6 text-center relative" style="border-color: rgba(229, 62, 62, 0.15);">
+                        <p data-id="159" class="font-display text-lg uppercase tracking-wider text-panther-silver-dark mb-1">2024</p>
+                        <p data-id="160" class="font-display text-5xl font-bold text-panther-silver mb-2 tabular-nums">1,415</p>
+                        <p data-id="161" class="text-xs uppercase tracking-wider text-panther-silver-dark mb-3">Points For</p>
+                        <p data-id="162" class="text-sm text-panther-silver tabular-nums">6-8 Record</p>
+                        <div data-id="163" class="absolute -left-4 top-1/2 -translate-y-1/2 hidden md:block">
+                            <i data-id="164" data-lucide="chevron-right" class="w-8 h-8 text-danger decline-arrow"></i>
+                        </div>
+                    </div>
+
+                    <!-- 2025 -->
+                    <div data-id="165" class="rounded-2xl p-6 text-center relative" style="background: #0d1e2e; border: 1px solid rgba(229, 62, 62, 0.3); box-shadow: 0 0 20px rgba(229, 62, 62, 0.1);">
+                        <p data-id="166" class="font-display text-lg uppercase tracking-wider text-danger mb-1">2025</p>
+                        <p data-id="167" class="font-display text-5xl font-bold text-danger mb-2 tabular-nums">1,246</p>
+                        <p data-id="168" class="text-xs uppercase tracking-wider text-panther-silver-dark mb-3">Points For</p>
+                        <p data-id="169" class="text-sm text-panther-silver tabular-nums">5-9 Record</p>
+                        <div data-id="170" class="absolute -left-4 top-1/2 -translate-y-1/2 hidden md:block">
+                            <i data-id="171" data-lucide="chevron-right" class="w-8 h-8 text-danger decline-arrow"></i>
+                        </div>
+                        <p data-id="172" class="text-xs text-danger/70 mt-2">Lowest PF since 2020</p>
+                    </div>
+                </div>
+
+                <div data-id="173" class="text-center mt-8">
+                    <div data-id="174" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-danger/10 border border-danger/20">
+                        <i data-id="175" data-lucide="trending-down" class="w-5 h-5 text-danger"></i>
+                        <span data-id="176" class="text-sm font-medium text-danger tabular-nums">−225 PF across 3 seasons (−15.3% decline)</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SECTION 6: ERA COMPARISON ===== -->
+        <section data-id="177" id="eras" class="py-16 md:py-24 px-4 border-t border-panther-blue/10">
+            <div data-id="178" class="max-w-7xl mx-auto">
+                <div data-id="179" class="text-center mb-12">
+                    <p data-id="180" class="font-display text-xs uppercase tracking-[0.2em] text-panther-blue-glow mb-2">Head to Head</p>
+                    <h2 data-id="181" class="font-display text-3xl md:text-4xl font-bold text-white">ERA COMPARISON</h2>
+                </div>
+
+                <div data-id="182" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Atlas X-Men Era -->
+                    <div data-id="183" class="glow-card rounded-2xl p-6 md:p-8">
+                        <div data-id="184" class="flex items-center gap-3 mb-6">
+                            <span data-id="185" class="px-3 py-1 rounded-full bg-panther-blue/20 text-panther-blue-glow text-xs font-display uppercase tracking-wider">Atlas X-Men</span>
+                            <span data-id="186" class="text-xs text-panther-silver-dark tabular-nums">2015–2022</span>
+                        </div>
+                        <div data-id="187" class="grid grid-cols-2 gap-4 mb-6">
+                            <div data-id="188">
+                                <p data-id="189" class="text-xs uppercase tracking-wider text-panther-silver-dark mb-1">Seasons</p>
+                                <p data-id="190" class="font-display text-2xl font-bold text-white tabular-nums">8</p>
+                            </div>
+                            <div data-id="191">
+                                <p data-id="192" class="text-xs uppercase tracking-wider text-panther-silver-dark mb-1">Record</p>
+                                <p data-id="193" class="font-display text-2xl font-bold text-white tabular-nums">46-52</p>
+                            </div>
+                            <div data-id="194">
+                                <p data-id="195" class="text-xs uppercase tracking-wider text-panther-silver-dark mb-1">Avg PF</p>
+                                <p data-id="196" class="font-display text-2xl font-bold text-white tabular-nums">1,339.3</p>
+                            </div>
+                            <div data-id="197">
+                                <p data-id="198" class="text-xs uppercase tracking-wider text-panther-silver-dark mb-1">Championships</p>
+                                <p data-id="199" class="font-display text-2xl font-bold text-panther-blue-glow tabular-nums">2</p>
+                            </div>
+                        </div>
+                        <div data-id="200" class="border-t border-panther-blue/10 pt-4">
+                            <p data-id="201" class="text-xs text-panther-silver-dark"><span data-id="202" class="text-panther-silver">High:</span> 1,500.0 (2017) · <span data-id="203" class="text-panther-silver">Low:</span> 1,168.5 (2020)</p>
+                        </div>
+                    </div>
+
+                    <!-- Flint Tropics Era -->
+                    <div data-id="204" class="glow-card rounded-2xl p-6 md:p-8">
+                        <div data-id="205" class="flex items-center gap-3 mb-6">
+                            <span data-id="206" class="px-3 py-1 rounded-full bg-panther-blue/20 text-panther-blue-glow text-xs font-display uppercase tracking-wider">Flint Tropics</span>
+                            <span data-id="207" class="text-xs text-panther-silver-dark tabular-nums">2023–2025</span>
+                        </div>
+                        <div data-id="208" class="grid grid-cols-2 gap-4 mb-6">
+                            <div data-id="209">
+                                <p data-id="210" class="text-xs uppercase tracking-wider text-panther-silver-dark mb-1">Seasons</p>
+                                <p data-id="211" class="font-display text-2xl font-bold text-white tabular-nums">3</p>
+                            </div>
+                            <div data-id="212">
+                                <p data-id="213" class="text-xs uppercase tracking-wider text-panther-silver-dark mb-1">Record</p>
+                                <p data-id="214" class="font-display text-2xl font-bold text-white tabular-nums">22-20</p>
+                            </div>
+                            <div data-id="215">
+                                <p data-id="216" class="text-xs uppercase tracking-wider text-panther-silver-dark mb-1">Avg PF</p>
+                                <p data-id="217" class="font-display text-2xl font-bold text-white tabular-nums">1,377.4</p>
+                            </div>
+                            <div data-id="218">
+                                <p data-id="219" class="text-xs uppercase tracking-wider text-panther-silver-dark mb-1">Championships</p>
+                                <p data-id="220" class="font-display text-2xl font-bold text-panther-silver-dark tabular-nums">0</p>
+                            </div>
+                        </div>
+                        <div data-id="221" class="border-t border-panther-blue/10 pt-4">
+                            <p data-id="222" class="text-xs text-panther-silver-dark"><span data-id="223" class="text-panther-silver">High:</span> 1,471.12 (2023) · <span data-id="224" class="text-panther-silver">Low:</span> 1,246.02 (2025)</p>
+                            <p data-id="225" class="text-xs italic text-panther-silver-dark mt-2">"New name, no new rings — yet"</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SECTION 7: DID YOU KNOW? ===== -->
+        <section data-id="226" id="facts" class="py-16 md:py-24 px-4 border-t border-panther-blue/10 dynasty-gradient">
+            <div data-id="227" class="max-w-7xl mx-auto">
+                <div data-id="228" class="text-center mb-10">
+                    <p data-id="229" class="font-display text-xs uppercase tracking-[0.2em] text-panther-blue-glow mb-2">Deep Cuts</p>
+                    <h2 data-id="230" class="font-display text-3xl md:text-4xl font-bold text-white">DID YOU KNOW?</h2>
+                </div>
+
+                <div data-id="231" class="flex gap-5 overflow-x-auto pb-4 scroll-cards facts-scroll">
+                    <div data-id="232" class="glow-card rounded-2xl p-6 min-w-[280px] md:min-w-[320px] flex-shrink-0">
+                        <span data-id="233" class="text-3xl mb-3 block">🏆</span>
+                        <p data-id="234" class="text-sm text-panther-silver leading-relaxed">Steve Davis won <span data-id="235" class="text-white font-semibold">2 championships in his first 3 GFL seasons</span> — one of the most explosive championship starts in GFL history.</p>
+                    </div>
+                    <div data-id="236" class="glow-card rounded-2xl p-6 min-w-[280px] md:min-w-[320px] flex-shrink-0">
+                        <span data-id="237" class="text-3xl mb-3 block">😤</span>
+                        <p data-id="238" class="text-sm text-panther-silver leading-relaxed">In 2023, Steve went <span data-id="239" class="text-white font-semibold">11-3</span> — the best single-season record of his career — and STILL only finished <span data-id="240" class="text-white font-semibold">4th</span>.</p>
+                    </div>
+                    <div data-id="241" class="glow-card rounded-2xl p-6 min-w-[280px] md:min-w-[320px] flex-shrink-0">
+                        <span data-id="242" class="text-3xl mb-3 block">💀</span>
+                        <p data-id="243" class="text-sm text-panther-silver leading-relaxed">2020 was rock bottom: <span data-id="244" class="text-danger font-semibold">2-11</span>, dead last (12th place), lowest PF of his career at <span data-id="245" class="text-danger font-semibold">1,168.5</span>.</p>
+                    </div>
+                    <div data-id="246" class="glow-card rounded-2xl p-6 min-w-[280px] md:min-w-[320px] flex-shrink-0">
+                        <span data-id="247" class="text-3xl mb-3 block">🛡️</span>
+                        <p data-id="248" class="text-sm text-panther-silver leading-relaxed">In 2021, Steve allowed the <span data-id="249" class="text-white font-semibold">fewest points against in the GFL (1,271.0 PA)</span> yet still finished 9th.</p>
+                    </div>
+                    <div data-id="250" class="glow-card rounded-2xl p-6 min-w-[280px] md:min-w-[320px] flex-shrink-0">
+                        <span data-id="251" class="text-3xl mb-3 block">📉</span>
+                        <p data-id="252" class="text-sm text-panther-silver leading-relaxed">The Flint Tropics era PF has declined each season: <span data-id="253" class="text-white font-semibold tabular-nums">1,471 → 1,415 → 1,246</span>.</p>
+                    </div>
+                    <div data-id="254" class="glow-card rounded-2xl p-6 min-w-[280px] md:min-w-[320px] flex-shrink-0">
+                        <span data-id="255" class="text-3xl mb-3 block">⚡</span>
+                        <p data-id="256" class="text-sm text-panther-silver leading-relaxed">Steve's peak scoring season (<span data-id="257" class="text-white font-semibold tabular-nums">2017, 1,500.0 PF</span>) came the same year as his 2nd championship.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SECTION 8: LEGACY SCORE ===== -->
+        <section data-id="258" id="legacy" class="py-16 md:py-24 px-4 border-t border-panther-blue/10">
+            <div data-id="259" class="max-w-5xl mx-auto">
+                <div data-id="260" class="text-center mb-12">
+                    <p data-id="261" class="font-display text-xs uppercase tracking-[0.2em] text-panther-blue-glow mb-2">Franchise Assessment</p>
+                    <h2 data-id="262" class="font-display text-3xl md:text-4xl font-bold text-white">LEGACY SCORE</h2>
+                </div>
+
+                <div data-id="263" class="glow-card rounded-2xl p-6 md:p-10">
+                    <div data-id="264" class="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+                        <!-- Jersey Score -->
+                        <div data-id="265" class="flex-shrink-0">
+                            <div data-id="266" class="jersey-score w-36 h-44 md:w-44 md:h-52 flex flex-col items-center justify-center">
+                                <p data-id="267" class="font-display text-7xl md:text-8xl font-bold text-white" style="text-shadow: 0 2px 10px rgba(0,0,0,0.4);">2</p>
+                                <p data-id="268" class="font-display text-xs uppercase tracking-widest text-white/80 mt-1">RINGS</p>
+                            </div>
+                        </div>
+
+                        <!-- Rating Breakdown -->
+                        <div data-id="269" class="flex-1 w-full">
+                            <p data-id="270" class="font-display text-xl md:text-2xl font-bold text-panther-blue-glow mb-1">"Proven Champion, Unfinished Business"</p>
+                            <p data-id="271" class="text-sm text-panther-silver-dark mb-6">Overall Franchise Rating</p>
+
+                            <div data-id="272" class="space-y-4">
+                                <!-- Championship Pedigree -->
+                                <div data-id="273" class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4">
+                                    <span data-id="274" class="text-sm text-panther-silver w-48 flex-shrink-0">Championship Pedigree</span>
+                                    <div data-id="275" class="flex gap-1" id="stars-champ-q5r6">
+                                    </div>
+                                    <span data-id="276" class="text-xs text-panther-silver-dark ml-2">2 rings, among the GFL elite</span>
+                                </div>
+                                <!-- Longevity -->
+                                <div data-id="277" class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4">
+                                    <span data-id="278" class="text-sm text-panther-silver w-48 flex-shrink-0">Longevity</span>
+                                    <div data-id="279" class="flex gap-1" id="stars-long-s7t8">
+                                    </div>
+                                    <span data-id="280" class="text-xs text-panther-silver-dark ml-2">11 seasons, day-one member</span>
+                                </div>
+                                <!-- Consistency -->
+                                <div data-id="281" class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4">
+                                    <span data-id="282" class="text-sm text-panther-silver w-48 flex-shrink-0">Consistency</span>
+                                    <div data-id="283" class="flex gap-1" id="stars-cons-u9v0">
+                                    </div>
+                                    <span data-id="284" class="text-xs text-panther-silver-dark ml-2">Feast-or-famine pattern</span>
+                                </div>
+                                <!-- Recent Form -->
+                                <div data-id="285" class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4">
+                                    <span data-id="286" class="text-sm text-panther-silver w-48 flex-shrink-0">Recent Form</span>
+                                    <div data-id="287" class="flex gap-1" id="stars-recent-w1x2">
+                                    </div>
+                                    <span data-id="288" class="text-xs text-panther-silver-dark ml-2">Declining PF trend</span>
+                                </div>
+
+                                <!-- Overall -->
+                                <div data-id="289" class="border-t border-panther-blue/20 pt-4 mt-4">
+                                    <div data-id="290" class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4">
+                                        <span data-id="291" class="text-sm text-white font-semibold w-48 flex-shrink-0">Overall Legacy</span>
+                                        <div data-id="292" class="flex gap-1" id="stars-overall-y3z4">
+                                        </div>
+                                    </div>
+                                    <p data-id="293" class="text-sm text-panther-silver mt-3 leading-relaxed max-w-xl">
+                                        Hall of Fame caliber if the rings stop at 2. A third ring would cement his place as one of the GFL's all-time greats.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer data-id="294" class="py-8 border-t border-panther-blue/10 text-center">
+        <div data-id="295" class="max-w-7xl mx-auto px-4">
+            <div data-id="296" class="flex flex-col items-center gap-2">
+                <div data-id="297" class="flex items-center gap-2">
+                    <i data-id="298" data-lucide="trophy" class="w-4 h-4 text-panther-blue/50"></i>
+                    <span data-id="299" class="font-display text-xs uppercase tracking-widest text-panther-silver-dark">Gandorf National Football League</span>
+                </div>
+                <p data-id="300" class="text-xs text-panther-silver-dark">Steve Davis Franchise Guide · 11 Seasons · 2x Champion</p>
+                <p data-id="301" class="text-xs text-panther-silver-dark/50 mt-2">Made by Copilot</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // === Lucide Icons (progressive enhancement) ===
+        if (typeof lucide !== "undefined" && typeof lucide.createIcons === "function") {
+            lucide.createIcons();
+        }
+
+        // === Mobile Menu ===
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn-c3d4');
+        const mobileMenu = document.getElementById('mobile-menu-e5f6');
+        const mobileMenuClose = document.getElementById('mobile-menu-close-g7h8');
+
+        if (mobileMenuBtn && mobileMenu && mobileMenuClose) {
+            mobileMenuBtn.addEventListener('click', function() {
+                mobileMenu.classList.remove('hidden');
+            });
+            mobileMenuClose.addEventListener('click', function() {
+                mobileMenu.classList.add('hidden');
+            });
+            document.querySelectorAll('.mobile-nav-link').forEach(function(link) {
+                link.addEventListener('click', function() {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+        }
+
+        // === Season Data ===
+        const seasons = [
+            { year: 2015, team: 'Atlas X-Men', w: 10, l: 3, pf: 1405.0, pa: 1252.0, finish: '1st', champion: true, note: '' },
+            { year: 2016, team: 'Atlas X-Men', w: 4, l: 9, pf: 1209.0, pa: 1417.5, finish: '11th', champion: false, note: '' },
+            { year: 2017, team: 'Atlas X-Men', w: 9, l: 4, pf: 1500.0, pa: 1172.5, finish: '1st', champion: true, note: '' },
+            { year: 2018, team: 'Atlas X-Men', w: 5, l: 8, pf: 1356.0, pa: 1484.0, finish: '10th', champion: false, note: '' },
+            { year: 2019, team: 'Atlas X-Men', w: 5, l: 8, pf: 1250.5, pa: 1380.5, finish: '10th', champion: false, note: '' },
+            { year: 2020, team: 'Atlas X-Men', w: 2, l: 11, pf: 1168.5, pa: 1435.0, finish: '12th', champion: false, note: 'worst' },
+            { year: 2021, team: 'Atlas X-Men', w: 7, l: 7, pf: 1476.5, pa: 1271.0, finish: '9th', champion: false, note: '' },
+            { year: 2022, team: 'Atlas X-Men', w: 4, l: 10, pf: 1348.84, pa: 1440.3, finish: '11th', champion: false, note: '' },
+            { year: 2023, team: 'Flint Tropics', w: 11, l: 3, pf: 1471.12, pa: 1290.46, finish: '4th', champion: false, note: 'notable' },
+            { year: 2024, team: 'Flint Tropics', w: 6, l: 8, pf: 1414.98, pa: 1451.84, finish: '9th', champion: false, note: '' },
+            { year: 2025, team: 'Flint Tropics', w: 5, l: 9, pf: 1246.02, pa: 1332.82, finish: '9th', champion: false, note: '' },
+        ];
+
+        // === Populate Table ===
+        const tbody = document.getElementById('season-table-body-o3p4');
+        if (tbody) {
+            seasons.forEach(function(s) {
+                const tr = document.createElement('tr');
+                let rowClass = 'border-b border-panther-blue/5 hover:bg-panther-blue/5 transition-colors';
+                if (s.champion) rowClass += ' champion-row';
+                else if (s.note === 'worst') rowClass += ' worst-row';
+                else if (s.note === 'notable') rowClass += ' notable-row';
+                tr.className = rowClass;
+
+                const eraIsAtlas = s.team === 'Atlas X-Men';
+                const eraBadge = eraIsAtlas
+                    ? '<span class="inline-block px-2 py-0.5 rounded-full text-xs font-medium bg-panther-blue/20 text-panther-blue-glow">Atlas X-Men</span>'
+                    : '<span class="inline-block px-2 py-0.5 rounded-full text-xs font-medium bg-[#00B2E3]/15 text-[#00B2E3]">Flint Tropics</span>';
+
+                let finishDisplay = s.finish;
+                if (s.champion) finishDisplay = '🏆 ' + s.finish;
+                else if (s.note === 'notable') finishDisplay = s.finish + ' 😤';
+                else if (s.note === 'worst') finishDisplay = '<span class="text-danger">' + s.finish + '</span>';
+
+                tr.innerHTML =
+                    '<td class="px-4 py-3 font-display font-semibold text-white tabular-nums">' + s.year + '</td>' +
+                    '<td class="px-4 py-3 text-panther-silver text-sm">' + s.team + '</td>' +
+                    '<td class="px-4 py-3 text-center font-semibold text-white tabular-nums">' + s.w + '-' + s.l + '</td>' +
+                    '<td class="px-4 py-3 text-right tabular-nums text-panther-silver">' + s.pf.toLocaleString(undefined, {minimumFractionDigits: 1, maximumFractionDigits: 2}) + '</td>' +
+                    '<td class="px-4 py-3 text-right tabular-nums text-panther-silver">' + s.pa.toLocaleString(undefined, {minimumFractionDigits: 1, maximumFractionDigits: 2}) + '</td>' +
+                    '<td class="px-4 py-3 text-center text-sm">' + finishDisplay + '</td>' +
+                    '<td class="px-4 py-3 text-center">' + eraBadge + '</td>';
+
+                tbody.appendChild(tr);
+            });
+        }
+
+        // === Chart.js PF vs PA ===
+        const chartCanvas = document.getElementById('pf-pa-chart-m1n2');
+        if (chartCanvas && typeof Chart !== 'undefined') {
+            const ctx = chartCanvas.getContext('2d');
+
+            const labels = seasons.map(function(s) { return s.year.toString(); });
+            const pfData = seasons.map(function(s) { return s.pf; });
+            const paData = seasons.map(function(s) { return s.pa; });
+
+            // Custom point styles for championship years
+            const pointBgColors = seasons.map(function(s) {
+                return s.champion ? '#FFD700' : '#0085CA';
+            });
+            const pointRadii = seasons.map(function(s) {
+                return s.champion ? 8 : 4;
+            });
+            const pointStyles = seasons.map(function(s) {
+                return s.champion ? 'star' : 'circle';
+            });
+
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [
+                        {
+                            label: 'Points For (PF)',
+                            data: pfData,
+                            borderColor: '#0085CA',
+                            backgroundColor: 'rgba(0, 133, 202, 0.1)',
+                            borderWidth: 3,
+                            fill: true,
+                            tension: 0.3,
+                            pointBackgroundColor: pointBgColors,
+                            pointBorderColor: pointBgColors,
+                            pointRadius: pointRadii,
+                            pointStyle: pointStyles,
+                            pointHoverRadius: 10,
+                        },
+                        {
+                            label: 'Points Against (PA)',
+                            data: paData,
+                            borderColor: '#BFC0BF',
+                            backgroundColor: 'transparent',
+                            borderWidth: 2,
+                            borderDash: [6, 4],
+                            fill: false,
+                            tension: 0.3,
+                            pointBackgroundColor: '#BFC0BF',
+                            pointBorderColor: '#BFC0BF',
+                            pointRadius: 3,
+                            pointHoverRadius: 6,
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    interaction: {
+                        mode: 'index',
+                        intersect: false,
+                    },
+                    plugins: {
+                        legend: {
+                            labels: {
+                                color: '#BFC0BF',
+                                font: { family: 'Inter', size: 12 },
+                                usePointStyle: true,
+                                pointStyleWidth: 20,
+                            }
+                        },
+                        tooltip: {
+                            backgroundColor: '#0d1e2e',
+                            titleColor: '#ffffff',
+                            bodyColor: '#BFC0BF',
+                            borderColor: 'rgba(0, 133, 202, 0.3)',
+                            borderWidth: 1,
+                            cornerRadius: 12,
+                            titleFont: { family: 'Oswald', size: 14 },
+                            bodyFont: { family: 'Inter', size: 12 },
+                            callbacks: {
+                                title: function(tooltipItems) {
+                                    const idx = tooltipItems[0].dataIndex;
+                                    const s = seasons[idx];
+                                    let title = s.year + ' — ' + s.team;
+                                    if (s.champion) title += ' 🏆';
+                                    return title;
+                                },
+                                label: function(context) {
+                                    return context.dataset.label + ': ' + context.parsed.y.toLocaleString(undefined, {minimumFractionDigits: 1, maximumFractionDigits: 2});
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            ticks: {
+                                color: '#8a8b8a',
+                                font: { family: 'Inter', size: 11 },
+                            },
+                            grid: {
+                                color: 'rgba(0, 133, 202, 0.06)',
+                            },
+                            title: {
+                                display: true,
+                                text: 'Season',
+                                color: '#8a8b8a',
+                                font: { family: 'Inter', size: 12, weight: 500 },
+                            }
+                        },
+                        y: {
+                            ticks: {
+                                color: '#8a8b8a',
+                                font: { family: 'Inter', size: 11 },
+                                callback: function(value) {
+                                    return value.toLocaleString();
+                                }
+                            },
+                            grid: {
+                                color: 'rgba(0, 133, 202, 0.06)',
+                            },
+                            title: {
+                                display: true,
+                                text: 'Points',
+                                color: '#8a8b8a',
+                                font: { family: 'Inter', size: 12, weight: 500 },
+                            },
+                            min: 1100,
+                            max: 1600,
+                        }
+                    }
+                },
+                plugins: [{
+                    id: 'championAnnotation',
+                    afterDraw: function(chart) {
+                        const xAxis = chart.scales.x;
+                        const yAxis = chart.scales.y;
+                        const ctxDraw = chart.ctx;
+
+                        // Mark championship years with glow
+                        [0, 2].forEach(function(idx) {
+                            const x = xAxis.getPixelForValue(idx);
+                            const y = yAxis.getPixelForValue(pfData[idx]);
+                            ctxDraw.save();
+                            ctxDraw.shadowColor = 'rgba(0, 133, 202, 0.6)';
+                            ctxDraw.shadowBlur = 15;
+                            ctxDraw.restore();
+                        });
+
+                        // Red zone for 2023-2025 decline
+                        var x1 = xAxis.getPixelForValue(8);
+                        var x2 = xAxis.getPixelForValue(10);
+                        var yTop = yAxis.top;
+                        var yBottom = yAxis.bottom;
+
+                        ctxDraw.save();
+                        ctxDraw.fillStyle = 'rgba(229, 62, 62, 0.04)';
+                        ctxDraw.fillRect(x1, yTop, x2 - x1, yBottom - yTop);
+                        ctxDraw.strokeStyle = 'rgba(229, 62, 62, 0.15)';
+                        ctxDraw.lineWidth = 1;
+                        ctxDraw.setLineDash([4, 4]);
+                        ctxDraw.strokeRect(x1, yTop, x2 - x1, yBottom - yTop);
+                        ctxDraw.setLineDash([]);
+
+                        // Label
+                        ctxDraw.fillStyle = 'rgba(229, 62, 62, 0.6)';
+                        ctxDraw.font = '10px Inter';
+                        ctxDraw.textAlign = 'center';
+                        ctxDraw.fillText('DECLINE', (x1 + x2) / 2, yTop + 14);
+                        ctxDraw.fillText('ZONE', (x1 + x2) / 2, yTop + 26);
+                        ctxDraw.restore();
+                    }
+                }]
+            });
+        }
+
+        // === Star Ratings ===
+        function renderStars(containerId, filled, total) {
+            var container = document.getElementById(containerId);
+            if (!container) return;
+            for (var i = 0; i < total; i++) {
+                var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+                svg.setAttribute('width', '18');
+                svg.setAttribute('height', '18');
+                svg.setAttribute('viewBox', '0 0 24 24');
+                svg.setAttribute('fill', i < filled ? '#0085CA' : '#2a3a4a');
+                svg.setAttribute('stroke', 'none');
+                var path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+                path.setAttribute('d', 'M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z');
+                svg.appendChild(path);
+                container.appendChild(svg);
+            }
+        }
+
+        renderStars('stars-champ-q5r6', 5, 5);
+        renderStars('stars-long-s7t8', 4, 5);
+        renderStars('stars-cons-u9v0', 2, 5);
+        renderStars('stars-recent-w1x2', 2, 5);
+        renderStars('stars-overall-y3z4', 4, 5);
+    </script>
+</body>
+</html>

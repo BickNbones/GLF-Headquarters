@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kyle O'Connell — Off Boys GFL Franchise Guide</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1/dist/chart.umd.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            forest: {
+              900: '#0e3318',
+              800: '#133d20',
+              700: '#1a5c2e',
+              600: '#1f6e37',
+              500: '#258040',
+              400: '#2ecc71',
+              300: '#5dde96',
+              200: '#a3ecc2',
+              100: '#d4f7e2',
+              50: '#edfcf3',
+            },
+            gold: {
+              700: '#a07a10',
+              600: '#c49a20',
+              500: '#d4a828',
+              400: '#f0c040',
+              300: '#f5d56e',
+              200: '#fae9a8',
+              100: '#fdf4d4',
+              50: '#fffaeb',
+            },
+            dark: {
+              900: '#111111',
+              800: '#1a1a1a',
+              700: '#222222',
+              600: '#2a2a2a',
+              500: '#333333',
+              400: '#444444',
+              300: '#666666',
+              200: '#888888',
+              100: '#aaaaaa',
+            },
+          },
+          fontFamily: {
+            display: ['Oswald', 'sans-serif'],
+            sans: ['Inter', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    :root {
+      --forest-dark: #1a5c2e;
+      --forest-deeper: #0e3318;
+      --accent-green: #2ecc71;
+      --gold: #f0c040;
+      --gold-dark: #c49a20;
+      --black: #111;
+      --white: #fff;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background: #111; color: #fff; }
+    .font-display { font-family: 'Oswald', sans-serif; }
+    .gold-glow {
+      box-shadow: 0 0 40px rgba(240, 192, 64, 0.25), 0 0 80px rgba(240, 192, 64, 0.1);
+    }
+    .gold-text-shadow {
+      text-shadow: 0 2px 16px rgba(240, 192, 64, 0.4);
+    }
+    .trophy-pulse {
+      animation: trophyPulse 2s ease-in-out infinite;
+    }
+    @keyframes trophyPulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.12); }
+    }
+    .table-row-hover:hover {
+      background: rgba(46, 204, 113, 0.08) !important;
+      transition: background 0.2s;
+    }
+    .stat-card {
+      background: linear-gradient(145deg, #1a1a1a, #222);
+      border: 1px solid rgba(46, 204, 113, 0.15);
+    }
+    .stat-card:hover {
+      border-color: rgba(46, 204, 113, 0.4);
+      transform: translateY(-2px);
+      transition: all 0.3s;
+    }
+    .era-card {
+      border-left: 4px solid #2ecc71;
+    }
+    .era-card.golden {
+      border-left-color: #f0c040;
+    }
+    .nav-link {
+      position: relative;
+      transition: color 0.2s;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: #2ecc71;
+      transition: width 0.3s;
+    }
+    .nav-link:hover::after, .nav-link.active::after {
+      width: 100%;
+    }
+    canvas { max-width: 100%; }
+    .championship-bg {
+      background: linear-gradient(135deg, #c49a20 0%, #f0c040 30%, #f5d56e 50%, #f0c040 70%, #c49a20 100%);
+    }
+    .hero-bg {
+      background: linear-gradient(180deg, #0e3318 0%, #1a5c2e 60%, #133d20 100%);
+    }
+  </style>
+</head>
+<body data-id="0" class="bg-dark-900 text-white min-h-screen">
+  <app-icon data-id="1" hidden data-icon="trophy" data-palette="Green"></app-icon>
+
+  <!-- Sticky Nav -->
+  <nav data-id="2" id="navbar-x8k2" class="fixed top-0 left-0 right-0 z-50 bg-dark-900/95 backdrop-blur-md border-b border-forest-700/30">
+    <div data-id="3" class="max-w-6xl mx-auto px-4 md:px-6 flex items-center justify-between h-14">
+      <a data-id="4" href="#hero" class="font-display text-lg md:text-xl font-bold tracking-wider text-forest-400">OFF BOYS <span data-id="5" class="text-dark-200 text-sm font-sans font-normal hidden sm:inline">GFL</span></a>
+      <div data-id="6" class="hidden md:flex items-center gap-6">
+        <a data-id="7" href="#hero" class="nav-link text-sm font-medium text-dark-100 hover:text-white">Home</a>
+        <a data-id="8" href="#seasons" class="nav-link text-sm font-medium text-dark-100 hover:text-white">Seasons</a>
+        <a data-id="9" href="#charts" class="nav-link text-sm font-medium text-dark-100 hover:text-white">Charts</a>
+        <a data-id="10" href="#stats" class="nav-link text-sm font-medium text-dark-100 hover:text-white">Stats</a>
+        <a data-id="11" href="#eras" class="nav-link text-sm font-medium text-dark-100 hover:text-white">Eras</a>
+      </div>
+      <button data-id="12" id="mobile-menu-btn-r4f1" class="md:hidden p-2 text-dark-100 hover:text-white">
+        <i data-id="13" data-lucide="menu" class="w-6 h-6"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <nav data-id="14" id="mobile-menu-m3n7" class="hidden fixed inset-0 bg-dark-900/98 z-[60] flex flex-col items-center justify-center gap-8">
+    <button data-id="15" id="mobile-menu-close-k2j4" class="absolute top-4 right-4 p-2 text-dark-100 hover:text-white">
+      <i data-id="16" data-lucide="x" class="w-7 h-7"></i>
+    </button>
+    <a data-id="17" href="#hero" class="mobile-nav-link font-display text-2xl text-white hover:text-forest-400 transition">Home</a>
+    <a data-id="18" href="#seasons" class="mobile-nav-link font-display text-2xl text-white hover:text-forest-400 transition">Seasons</a>
+    <a data-id="19" href="#charts" class="mobile-nav-link font-display text-2xl text-white hover:text-forest-400 transition">Charts</a>
+    <a data-id="20" href="#stats" class="mobile-nav-link font-display text-2xl text-white hover:text-forest-400 transition">Stats</a>
+    <a data-id="21" href="#eras" class="mobile-nav-link font-display text-2xl text-white hover:text-forest-400 transition">Eras</a>
+  </nav>
+
+  <main data-id="22">
+
+    <!-- 1. Hero Header -->
+    <section data-id="23" id="hero" class="hero-bg pt-24 pb-16 md:pt-32 md:pb-20 px-4">
+      <div data-id="24" class="max-w-5xl mx-auto text-center">
+        <p data-id="25" class="text-forest-400 font-sans text-xs md:text-sm font-medium uppercase tracking-[0.25em] mb-4">Franchise Record Book</p>
+        <h1 data-id="26" id="hero-title-j9w3" class="font-display text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold tracking-wide text-white leading-none mb-4" style="text-shadow: 0 4px 32px rgba(46,204,113,0.2);">OFF BOYS</h1>
+        <p data-id="27" id="hero-subtitle-p2m1" class="text-dark-100 text-base md:text-lg font-sans font-normal mb-10">Kyle O'Connell · Gandorf National Football League · Est. 2013</p>
+        <div data-id="28" class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 max-w-3xl mx-auto">
+          <div data-id="29" class="stat-card rounded-2xl p-4 md:p-5 text-center transition-all">
+            <p data-id="30" class="font-display text-2xl md:text-3xl font-bold text-white tabular-nums">13</p>
+            <p data-id="31" class="text-xs font-medium uppercase tracking-wider text-dark-200 mt-1">Seasons</p>
+          </div>
+          <div data-id="32" class="stat-card rounded-2xl p-4 md:p-5 text-center transition-all">
+            <p data-id="33" class="font-display text-2xl md:text-3xl font-bold text-white tabular-nums">96-77-1</p>
+            <p data-id="34" class="text-xs font-medium uppercase tracking-wider text-dark-200 mt-1">Career Record</p>
+          </div>
+          <div data-id="35" class="stat-card rounded-2xl p-4 md:p-5 text-center transition-all">
+            <p data-id="36" class="font-display text-2xl md:text-3xl font-bold text-gold-400 tabular-nums">1</p>
+            <p data-id="37" class="text-xs font-medium uppercase tracking-wider text-dark-200 mt-1">Championship</p>
+          </div>
+          <div data-id="38" class="stat-card rounded-2xl p-4 md:p-5 text-center transition-all">
+            <p data-id="39" class="font-display text-2xl md:text-3xl font-bold text-white tabular-nums">17,864</p>
+            <p data-id="40" class="text-xs font-medium uppercase tracking-wider text-dark-200 mt-1">Career Points</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Championship Banner -->
+    <section data-id="41" id="championship-b4k9" class="championship-bg py-10 md:py-14 px-4 gold-glow relative overflow-hidden">
+      <div data-id="42" class="absolute inset-0 opacity-10" style="background: repeating-linear-gradient(45deg, transparent, transparent 20px, rgba(255,255,255,0.05) 20px, rgba(255,255,255,0.05) 40px);"></div>
+      <div data-id="43" class="max-w-4xl mx-auto text-center relative z-10">
+        <div data-id="44" class="text-5xl md:text-6xl mb-3 trophy-pulse inline-block">🏆</div>
+        <h2 data-id="45" id="champ-title-w7r2" class="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-dark-900 tracking-wide gold-text-shadow mb-3">2018 GFL CHAMPIONS</h2>
+        <p data-id="46" id="champ-desc-n1f4" class="text-dark-800 text-base md:text-lg font-medium max-w-xl mx-auto">9-4 Regular Season · Defeated the league's best record en route to the title</p>
+        <div data-id="47" class="flex items-center justify-center gap-2 mt-4">
+          <span data-id="48" class="inline-block w-8 h-0.5 bg-dark-900/30 rounded"></span>
+          <i data-id="49" data-lucide="star" class="w-4 h-4 text-dark-900/50"></i>
+          <span data-id="50" class="inline-block w-8 h-0.5 bg-dark-900/30 rounded"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Season-by-Season Table -->
+    <section data-id="51" id="seasons" class="py-14 md:py-20 px-4 bg-dark-900">
+      <div data-id="52" class="max-w-5xl mx-auto">
+        <div data-id="53" class="text-center mb-10">
+          <p data-id="54" class="text-forest-400 text-xs font-medium uppercase tracking-[0.2em] mb-2">Complete History</p>
+          <h2 data-id="55" id="seasons-title-q3p5" class="font-display text-2xl md:text-3xl font-bold text-white">Season-by-Season Results</h2>
+        </div>
+        <div data-id="56" class="overflow-x-auto rounded-2xl border border-dark-600/50">
+          <table data-id="57" id="seasons-table-f8s2" class="w-full text-sm">
+            <thead data-id="58">
+              <tr data-id="59" class="bg-forest-700 text-white">
+                <th data-id="60" class="px-3 md:px-4 py-3 text-left font-semibold text-xs uppercase tracking-wider">Year</th>
+                <th data-id="61" class="px-3 md:px-4 py-3 text-left font-semibold text-xs uppercase tracking-wider">Record</th>
+                <th data-id="62" class="px-3 md:px-4 py-3 text-center font-semibold text-xs uppercase tracking-wider">Finish</th>
+                <th data-id="63" class="px-3 md:px-4 py-3 text-right font-semibold text-xs uppercase tracking-wider">PF</th>
+                <th data-id="64" class="px-3 md:px-4 py-3 text-right font-semibold text-xs uppercase tracking-wider">PA</th>
+                <th data-id="65" class="px-3 md:px-4 py-3 text-right font-semibold text-xs uppercase tracking-wider">Diff</th>
+                <th data-id="66" class="px-3 md:px-4 py-3 text-left font-semibold text-xs uppercase tracking-wider hidden md:table-cell">Notes</th>
+              </tr>
+            </thead>
+            <tbody data-id="67" id="seasons-tbody-a1b2">
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4 & 5. Charts Section -->
+    <section data-id="68" id="charts" class="py-14 md:py-20 px-4 bg-dark-800">
+      <div data-id="69" class="max-w-5xl mx-auto">
+        <div data-id="70" class="text-center mb-10">
+          <p data-id="71" class="text-forest-400 text-xs font-medium uppercase tracking-[0.2em] mb-2">Visual Analytics</p>
+          <h2 data-id="72" id="charts-title-z2v8" class="font-display text-2xl md:text-3xl font-bold text-white">Franchise Performance Charts</h2>
+        </div>
+        <div data-id="73" class="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
+          <!-- PF vs PA Line Chart -->
+          <div data-id="74" class="bg-dark-900 rounded-2xl p-4 md:p-6 border border-dark-600/30">
+            <h3 data-id="75" id="pf-chart-title-h4d1" class="font-display text-lg font-semibold text-white mb-4">Scoring Trends: Off Boys 2013–2025</h3>
+            <div data-id="76" class="relative h-64 md:h-80">
+              <canvas data-id="77" id="pf-pa-chart-c3e5"></canvas>
+            </div>
+          </div>
+          <!-- Finish Position Bar Chart -->
+          <div data-id="78" class="bg-dark-900 rounded-2xl p-4 md:p-6 border border-dark-600/30">
+            <h3 data-id="79" id="finish-chart-title-k9n3" class="font-display text-lg font-semibold text-white mb-4">Final Standings Finish by Season</h3>
+            <div data-id="80" class="relative h-64 md:h-80">
+              <canvas data-id="81" id="finish-chart-m7a6"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Career Stats Summary Cards -->
+    <section data-id="82" id="stats" class="py-14 md:py-20 px-4 bg-dark-900">
+      <div data-id="83" class="max-w-5xl mx-auto">
+        <div data-id="84" class="text-center mb-10">
+          <p data-id="85" class="text-forest-400 text-xs font-medium uppercase tracking-[0.2em] mb-2">By The Numbers</p>
+          <h2 data-id="86" id="stats-title-g5t7" class="font-display text-2xl md:text-3xl font-bold text-white">Career Stats Summary</h2>
+        </div>
+        <div data-id="87" class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+          <div data-id="88" class="stat-card rounded-2xl p-5 text-center transition-all">
+            <div data-id="89" class="flex items-center justify-center mb-2">
+              <i data-id="90" data-lucide="trophy" class="w-5 h-5 text-gold-400"></i>
+            </div>
+            <p data-id="91" class="font-display text-xl md:text-2xl font-bold text-white tabular-nums">2024</p>
+            <p data-id="92" class="text-xs font-medium uppercase tracking-wider text-dark-200 mt-1">Best Season</p>
+            <p data-id="93" class="text-xs text-dark-300 mt-0.5">10-4, 1,606 pts</p>
+          </div>
+          <div data-id="94" class="stat-card rounded-2xl p-5 text-center transition-all">
+            <div data-id="95" class="flex items-center justify-center mb-2">
+              <i data-id="96" data-lucide="trending-down" class="w-5 h-5 text-red-400"></i>
+            </div>
+            <p data-id="97" class="font-display text-xl md:text-2xl font-bold text-white tabular-nums">2017</p>
+            <p data-id="98" class="text-xs font-medium uppercase tracking-wider text-dark-200 mt-1">Worst Season</p>
+            <p data-id="99" class="text-xs text-dark-300 mt-0.5">5-8, 11th place</p>
+          </div>
+          <div data-id="100" class="stat-card rounded-2xl p-5 text-center transition-all">
+            <div data-id="101" class="flex items-center justify-center mb-2">
+              <i data-id="102" data-lucide="flame" class="w-5 h-5 text-forest-400"></i>
+            </div>
+            <p data-id="103" class="font-display text-xl md:text-2xl font-bold text-white tabular-nums">1,606.2</p>
+            <p data-id="104" class="text-xs font-medium uppercase tracking-wider text-dark-200 mt-1">Most PF (Season)</p>
+            <p data-id="105" class="text-xs text-dark-300 mt-0.5">2024</p>
+          </div>
+          <div data-id="106" class="stat-card rounded-2xl p-5 text-center transition-all">
+            <div data-id="107" class="flex items-center justify-center mb-2">
+              <i data-id="108" data-lucide="target" class="w-5 h-5 text-forest-400"></i>
+            </div>
+            <p data-id="109" class="font-display text-xl md:text-2xl font-bold text-forest-400 tabular-nums">5.7</p>
+            <p data-id="110" class="text-xs font-medium uppercase tracking-wider text-dark-200 mt-1">Avg Finish</p>
+            <p data-id="111" class="text-xs text-dark-300 mt-0.5">out of 12</p>
+          </div>
+          <div data-id="112" class="stat-card rounded-2xl p-5 text-center transition-all">
+            <div data-id="113" class="flex items-center justify-center mb-2">
+              <i data-id="114" data-lucide="bar-chart-3" class="w-5 h-5 text-forest-400"></i>
+            </div>
+            <p data-id="115" class="font-display text-xl md:text-2xl font-bold text-white tabular-nums">17,864.7</p>
+            <p data-id="116" class="text-xs font-medium uppercase tracking-wider text-dark-200 mt-1">Career PF</p>
+          </div>
+          <div data-id="117" class="stat-card rounded-2xl p-5 text-center transition-all">
+            <div data-id="118" class="flex items-center justify-center mb-2">
+              <i data-id="119" data-lucide="shield" class="w-5 h-5 text-dark-200"></i>
+            </div>
+            <p data-id="120" class="font-display text-xl md:text-2xl font-bold text-white tabular-nums">17,605.4</p>
+            <p data-id="121" class="text-xs font-medium uppercase tracking-wider text-dark-200 mt-1">Career PA</p>
+          </div>
+          <div data-id="122" class="stat-card rounded-2xl p-5 text-center transition-all">
+            <div data-id="123" class="flex items-center justify-center mb-2">
+              <i data-id="124" data-lucide="plus-circle" class="w-5 h-5 text-forest-400"></i>
+            </div>
+            <p data-id="125" class="font-display text-xl md:text-2xl font-bold text-forest-400 tabular-nums">+259.3</p>
+            <p data-id="126" class="text-xs font-medium uppercase tracking-wider text-dark-200 mt-1">Career Diff</p>
+          </div>
+          <div data-id="127" class="stat-card rounded-2xl p-5 text-center transition-all">
+            <div data-id="128" class="flex items-center justify-center mb-2">
+              <i data-id="129" data-lucide="trending-up" class="w-5 h-5 text-forest-400"></i>
+            </div>
+            <p data-id="130" class="font-display text-xl md:text-2xl font-bold text-forest-400 tabular-nums">+19</p>
+            <p data-id="131" class="text-xs font-medium uppercase tracking-wider text-dark-200 mt-1">Games Over .500</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Era Analysis -->
+    <section data-id="132" id="eras" class="py-14 md:py-20 px-4 bg-dark-800">
+      <div data-id="133" class="max-w-4xl mx-auto">
+        <div data-id="134" class="text-center mb-10">
+          <p data-id="135" class="text-forest-400 text-xs font-medium uppercase tracking-[0.2em] mb-2">Franchise Eras</p>
+          <h2 data-id="136" id="eras-title-t6l0" class="font-display text-2xl md:text-3xl font-bold text-white">The Story of the Off Boys</h2>
+        </div>
+        <div data-id="137" class="space-y-5 md:space-y-6">
+          <div data-id="138" id="era1-card-u2w5" class="era-card bg-dark-900 rounded-2xl p-5 md:p-7 border border-dark-600/30">
+            <div data-id="139" class="flex items-center gap-3 mb-3">
+              <span data-id="140" class="font-display text-xs font-semibold uppercase tracking-wider text-forest-400 bg-forest-900/50 px-3 py-1 rounded-full">2013–2017</span>
+            </div>
+            <h3 data-id="141" class="font-display text-xl md:text-2xl font-bold text-white mb-2">The Building Years</h3>
+            <p data-id="142" class="text-dark-100 text-sm md:text-base leading-relaxed">Two top-5 finishes, one 3rd place, but also two 8th-place showings and a brutal 11th. Kyle was learning the game, finding his footing in a competitive league, and laying the groundwork for what was to come. The record was 32-33 — hovering right at .500 — but the foundation was being built.</p>
+            <div data-id="143" class="flex items-center gap-4 mt-4 text-xs text-dark-300">
+              <span data-id="144" class="tabular-nums">32-33-0</span>
+              <span data-id="145">·</span>
+              <span data-id="146">Best: 3rd (2015)</span>
+              <span data-id="147">·</span>
+              <span data-id="148">Worst: 11th (2017)</span>
+            </div>
+          </div>
+          <div data-id="149" id="era2-card-v8x1" class="era-card golden bg-dark-900 rounded-2xl p-5 md:p-7 border border-gold-600/20">
+            <div data-id="150" class="flex items-center gap-3 mb-3">
+              <span data-id="151" class="font-display text-xs font-semibold uppercase tracking-wider text-gold-400 bg-gold-700/20 px-3 py-1 rounded-full">2018–2020</span>
+              <span data-id="152" class="text-sm">🏆</span>
+            </div>
+            <h3 data-id="153" class="font-display text-xl md:text-2xl font-bold text-gold-400 mb-2">The Golden Era</h3>
+            <p data-id="154" class="text-dark-100 text-sm md:text-base leading-relaxed">1st, 5th, 3rd — the most consistent three-year run in franchise history, anchored by the 2018 Championship. Kyle went 26-13 across these three seasons, averaged 1,377 points scored, and cemented his legacy as a GFL Champion. This was the Off Boys at their absolute peak.</p>
+            <div data-id="155" class="flex items-center gap-4 mt-4 text-xs text-gold-300/70">
+              <span data-id="156" class="tabular-nums">26-13-0</span>
+              <span data-id="157">·</span>
+              <span data-id="158">Championship: 2018</span>
+              <span data-id="159">·</span>
+              <span data-id="160">Avg Finish: 3.0</span>
+            </div>
+          </div>
+          <div data-id="161" id="era3-card-y4z9" class="era-card bg-dark-900 rounded-2xl p-5 md:p-7 border border-dark-600/30">
+            <div data-id="162" class="flex items-center gap-3 mb-3">
+              <span data-id="163" class="font-display text-xs font-semibold uppercase tracking-wider text-forest-400 bg-forest-900/50 px-3 py-1 rounded-full">2021–2025</span>
+            </div>
+            <h3 data-id="164" class="font-display text-xl md:text-2xl font-bold text-white mb-2">The Modern Era</h3>
+            <p data-id="165" class="text-dark-100 text-sm md:text-base leading-relaxed">Big scoring numbers but mixed results. A runner-up finish in 2022, a dark 2023 campaign, then the franchise's highest-scoring season ever in 2024 with 1,606 points. The Modern Era Off Boys can put up points with anyone — the challenge is translating firepower into postseason glory.</p>
+            <div data-id="166" class="flex items-center gap-4 mt-4 text-xs text-dark-300">
+              <span data-id="167" class="tabular-nums">38-31-1</span>
+              <span data-id="168">·</span>
+              <span data-id="169">Best: 2nd (2022)</span>
+              <span data-id="170">·</span>
+              <span data-id="171">High PF: 1,606 (2024)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. Fun Facts Footer -->
+    <section data-id="172" id="funfacts-s5g3" class="bg-forest-900 py-12 md:py-16 px-4">
+      <div data-id="173" class="max-w-4xl mx-auto">
+        <div data-id="174" class="text-center mb-8">
+          <h2 data-id="175" id="facts-title-d7r4" class="font-display text-xl md:text-2xl font-bold text-white">Did You Know?</h2>
+        </div>
+        <div data-id="176" class="space-y-4">
+          <div data-id="177" class="flex items-start gap-3 bg-forest-800/40 rounded-xl p-4">
+            <span data-id="178" class="text-xl flex-shrink-0 mt-0.5">🏆</span>
+            <p data-id="179" class="text-sm md:text-base text-forest-100">Only manager to win a GFL Championship with a 9-4 regular season record</p>
+          </div>
+          <div data-id="180" class="flex items-start gap-3 bg-forest-800/40 rounded-xl p-4">
+            <span data-id="181" class="text-xl flex-shrink-0 mt-0.5">📈</span>
+            <p data-id="182" class="text-sm md:text-base text-forest-100">2024 was the highest-scoring season in Off Boys history (1,606 pts)</p>
+          </div>
+          <div data-id="183" class="flex items-start gap-3 bg-forest-800/40 rounded-xl p-4">
+            <span data-id="184" class="text-xl flex-shrink-0 mt-0.5">⚡</span>
+            <p data-id="185" class="text-sm md:text-base text-forest-100">2024: Won 8 straight to close the regular season</p>
+          </div>
+          <div data-id="186" class="flex items-start gap-3 bg-forest-800/40 rounded-xl p-4">
+            <span data-id="187" class="text-xl flex-shrink-0 mt-0.5">💀</span>
+            <p data-id="188" class="text-sm md:text-base text-forest-100">2021: Scored 1,509 points — 6th highest in the league — and still finished 6th. Brutal.</p>
+          </div>
+          <div data-id="189" class="flex items-start gap-3 bg-forest-800/40 rounded-xl p-4">
+            <span data-id="190" class="text-xl flex-shrink-0 mt-0.5">🔥</span>
+            <p data-id="191" class="text-sm md:text-base text-forest-100">Career record vs .500: +19 games over .500 all-time</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer data-id="192" class="bg-dark-900 border-t border-dark-700 py-8 text-center">
+    <p data-id="193" class="text-xs text-dark-300">Made by Copilot</p>
+  </footer>
+
+  <script>
+    // Mobile menu
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn-r4f1');
+    const mobileMenu = document.getElementById('mobile-menu-m3n7');
+    const mobileMenuClose = document.getElementById('mobile-menu-close-k2j4');
+
+    if (mobileMenuBtn) {
+      mobileMenuBtn.addEventListener('click', function() {
+        mobileMenu.classList.remove('hidden');
+        mobileMenu.classList.add('flex');
+      });
+    }
+    if (mobileMenuClose) {
+      mobileMenuClose.addEventListener('click', function() {
+        mobileMenu.classList.add('hidden');
+        mobileMenu.classList.remove('flex');
+      });
+    }
+    document.querySelectorAll('.mobile-nav-link').forEach(function(link) {
+      link.addEventListener('click', function() {
+        mobileMenu.classList.add('hidden');
+        mobileMenu.classList.remove('flex');
+      });
+    });
+
+    // Season data
+    var seasons = [
+      { year: 2013, record: '7-6-0', finish: '5th', pf: 1384.5, pa: 1330.5, diff: '+54.0', notes: '', tier: 'mid' },
+      { year: 2014, record: '6-7-0', finish: '8th', pf: 1197.5, pa: 1344.0, diff: '-146.5', notes: '', tier: 'bottom' },
+      { year: 2015, record: '10-3-0', finish: '3rd', pf: 1326.0, pa: 1183.0, diff: '+143.0', notes: 'Strong bounce-back, top 3 finish', tier: 'top' },
+      { year: 2016, record: '4-9-0', finish: '8th', pf: 1292.0, pa: 1350.0, diff: '-58.0', notes: '', tier: 'bottom' },
+      { year: 2017, record: '5-8-0', finish: '11th', pf: 1129.0, pa: 1334.0, diff: '-205.0', notes: 'Darkest season — 11th place, -205 point diff', tier: 'bottom' },
+      { year: 2018, record: '9-4-0', finish: '1st 🏆', pf: 1386.0, pa: 1280.0, diff: '+106.0', notes: '🏆 CHAMPION — beat the league\'s #1 seed', tier: 'champ' },
+      { year: 2019, record: '8-5-0', finish: '5th', pf: 1356.5, pa: 1344.5, diff: '+12.0', notes: '', tier: 'mid' },
+      { year: 2020, record: '9-4-0', finish: '3rd', pf: 1388.5, pa: 1287.5, diff: '+101.0', notes: 'Back in top 3 — second best record in league', tier: 'top' },
+      { year: 2021, record: '6-7-1', finish: '6th', pf: 1509.0, pa: 1427.5, diff: '+81.5', notes: '1,509 pts scored but only 6th — brutal scheduling luck', tier: 'mid' },
+      { year: 2022, record: '8-6-0', finish: '2nd', pf: 1413.3, pa: 1428.9, diff: '-15.6', notes: 'Runner-up — so close!', tier: 'top' },
+      { year: 2023, record: '7-7-0', finish: '11th', pf: 1331.7, pa: 1423.4, diff: '-91.7', notes: '', tier: 'bottom' },
+      { year: 2024, record: '10-4-0', finish: '5th', pf: 1606.2, pa: 1439.0, diff: '+167.2', notes: 'Highest scoring season ever (1,606 pts), W8 streak to close regular season', tier: 'mid' },
+      { year: 2025, record: '7-7-0', finish: '6th', pf: 1544.5, pa: 1433.1, diff: '+111.4', notes: '', tier: 'mid' }
+    ];
+
+    // Populate table
+    var tbody = document.getElementById('seasons-tbody-a1b2');
+    seasons.forEach(function(s) {
+      var tr = document.createElement('tr');
+      tr.className = 'table-row-hover border-b border-dark-700/40 transition-colors';
+
+      var bgClass = '';
+      if (s.tier === 'champ') bgClass = 'background: rgba(240, 192, 64, 0.1);';
+      else if (s.tier === 'top') bgClass = 'background: rgba(46, 204, 113, 0.06);';
+      else if (s.tier === 'bottom') bgClass = 'background: rgba(220, 60, 60, 0.06);';
+
+      if (bgClass) tr.setAttribute('style', bgClass);
+
+      var diffColor = 'text-white';
+      if (s.diff.startsWith('+')) diffColor = 'text-green-400';
+      else if (s.diff.startsWith('-')) diffColor = 'text-red-400';
+
+      var yearDisplay = s.year;
+      var yearClass = 'text-white font-semibold';
+      if (s.tier === 'champ') yearClass = 'text-gold-400 font-bold';
+
+      tr.innerHTML =
+        '<td class="px-3 md:px-4 py-3 ' + yearClass + ' tabular-nums">' + yearDisplay + '</td>' +
+        '<td class="px-3 md:px-4 py-3 text-white tabular-nums">' + s.record + '</td>' +
+        '<td class="px-3 md:px-4 py-3 text-center font-semibold ' + (s.tier === 'champ' ? 'text-gold-400' : s.tier === 'top' ? 'text-green-400' : s.tier === 'bottom' ? 'text-red-400' : 'text-white') + '">' + s.finish + '</td>' +
+        '<td class="px-3 md:px-4 py-3 text-right tabular-nums text-white">' + s.pf.toLocaleString('en-US', {minimumFractionDigits: 1, maximumFractionDigits: 1}) + '</td>' +
+        '<td class="px-3 md:px-4 py-3 text-right tabular-nums text-dark-200">' + s.pa.toLocaleString('en-US', {minimumFractionDigits: 1, maximumFractionDigits: 1}) + '</td>' +
+        '<td class="px-3 md:px-4 py-3 text-right tabular-nums font-semibold ' + diffColor + '">' + s.diff + '</td>' +
+        '<td class="px-3 md:px-4 py-3 text-dark-200 text-xs hidden md:table-cell">' + (s.notes || '—') + '</td>';
+
+      tbody.appendChild(tr);
+    });
+
+    // Charts
+    var years = seasons.map(function(s) { return s.year; });
+    var pfData = seasons.map(function(s) { return s.pf; });
+    var paData = seasons.map(function(s) { return s.pa; });
+    var finishData = seasons.map(function(s) {
+      var f = s.finish.replace(/[^0-9]/g, '');
+      return parseInt(f) || 1;
+    });
+
+    // Chart defaults
+    Chart.defaults.color = '#aaa';
+    Chart.defaults.borderColor = 'rgba(255,255,255,0.06)';
+    Chart.defaults.font.family = "'Inter', sans-serif";
+
+    // PF vs PA Line Chart
+    var pfPaCtx = document.getElementById('pf-pa-chart-c3e5').getContext('2d');
+    var pfGrad = pfPaCtx.createLinearGradient(0, 0, 0, 320);
+    pfGrad.addColorStop(0, 'rgba(46, 204, 113, 0.25)');
+    pfGrad.addColorStop(1, 'rgba(46, 204, 113, 0.0)');
+
+    new Chart(pfPaCtx, {
+      type: 'line',
+      data: {
+        labels: years,
+        datasets: [
+          {
+            label: 'Points For',
+            data: pfData,
+            borderColor: '#2ecc71',
+            backgroundColor: pfGrad,
+            fill: true,
+            tension: 0.3,
+            borderWidth: 2.5,
+            pointRadius: years.map(function(y) { return y === 2018 ? 8 : 4; }),
+            pointBackgroundColor: years.map(function(y) { return y === 2018 ? '#f0c040' : '#2ecc71'; }),
+            pointBorderColor: years.map(function(y) { return y === 2018 ? '#f0c040' : '#2ecc71'; }),
+            pointBorderWidth: years.map(function(y) { return y === 2018 ? 3 : 1; }),
+            pointStyle: years.map(function(y) { return y === 2018 ? 'star' : 'circle'; }),
+          },
+          {
+            label: 'Points Against',
+            data: paData,
+            borderColor: '#666',
+            backgroundColor: 'rgba(102,102,102,0.05)',
+            fill: false,
+            tension: 0.3,
+            borderWidth: 2,
+            borderDash: [5, 3],
+            pointRadius: 3,
+            pointBackgroundColor: '#666',
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: {
+            position: 'top',
+            labels: {
+              usePointStyle: true,
+              boxWidth: 8,
+              padding: 16,
+              font: { size: 11 }
+            }
+          },
+          tooltip: {
+            backgroundColor: '#1a1a1a',
+            titleColor: '#fff',
+            bodyColor: '#aaa',
+            borderColor: 'rgba(46,204,113,0.2)',
+            borderWidth: 1,
+            cornerRadius: 10,
+            padding: 12,
+            callbacks: {
+              label: function(ctx) {
+                return ctx.dataset.label + ': ' + ctx.parsed.y.toLocaleString('en-US', {minimumFractionDigits: 1});
+              }
+            }
+          }
+        },
+        scales: {
+          x: {
+            grid: { color: 'rgba(255,255,255,0.04)' },
+            ticks: { font: { size: 10 } }
+          },
+          y: {
+            grid: { color: 'rgba(255,255,255,0.04)' },
+            ticks: {
+              font: { size: 10 },
+              callback: function(value) { return value.toLocaleString(); }
+            },
+            min: 1000,
+          }
+        }
+      }
+    });
+
+    // Finish Position Bar Chart
+    var finishCtx = document.getElementById('finish-chart-m7a6').getContext('2d');
+    var barColors = finishData.map(function(f, i) {
+      if (f === 1) return '#f0c040';
+      if (f <= 3) return '#2ecc71';
+      if (f >= 10) return '#e74c3c';
+      return '#555';
+    });
+
+    new Chart(finishCtx, {
+      type: 'bar',
+      data: {
+        labels: years,
+        datasets: [{
+          label: 'Finish Position',
+          data: finishData,
+          backgroundColor: barColors,
+          borderColor: barColors.map(function(c) { return c; }),
+          borderWidth: 0,
+          borderRadius: 0,
+          barThickness: 'flex',
+          maxBarThickness: 36,
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        indexAxis: 'x',
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            backgroundColor: '#1a1a1a',
+            titleColor: '#fff',
+            bodyColor: '#aaa',
+            borderColor: 'rgba(46,204,113,0.2)',
+            borderWidth: 1,
+            cornerRadius: 10,
+            padding: 12,
+            callbacks: {
+              label: function(ctx) {
+                var pos = ctx.parsed.y;
+                var suffix = 'th';
+                if (pos === 1) suffix = 'st';
+                else if (pos === 2) suffix = 'nd';
+                else if (pos === 3) suffix = 'rd';
+                return 'Finished ' + pos + suffix;
+              }
+            }
+          }
+        },
+        scales: {
+          x: {
+            grid: { color: 'rgba(255,255,255,0.04)' },
+            ticks: { font: { size: 10 } }
+          },
+          y: {
+            reverse: true,
+            min: 1,
+            max: 12,
+            grid: { color: 'rgba(255,255,255,0.04)' },
+            ticks: {
+              font: { size: 10 },
+              stepSize: 1,
+              callback: function(value) {
+                var suffix = 'th';
+                if (value === 1) suffix = 'st';
+                else if (value === 2) suffix = 'nd';
+                else if (value === 3) suffix = 'rd';
+                return value + suffix;
+              }
+            }
+          }
+        }
+      }
+    });
+
+    // Active nav highlighting on scroll
+    var sections = ['hero', 'seasons', 'charts', 'stats', 'eras'];
+    var navLinks = document.querySelectorAll('.nav-link');
+
+    function updateActiveNav() {
+      var scrollPos = window.scrollY + 100;
+      sections.forEach(function(id, i) {
+        var section = document.getElementById(id);
+        if (section) {
+          var top = section.offsetTop;
+          var bottom = top + section.offsetHeight;
+          if (scrollPos >= top && scrollPos < bottom) {
+            navLinks.forEach(function(link) { link.classList.remove('active'); });
+            if (navLinks[i]) navLinks[i].classList.add('active');
+          }
+        }
+      });
+    }
+    window.addEventListener('scroll', updateActiveNav);
+    updateActiveNav();
+
+    // Lucide icons
+    if (typeof lucide !== "undefined" && typeof lucide.createIcons === "function") {
+      lucide.createIcons();
+    }
+  </script>
+</body>
+</html>
