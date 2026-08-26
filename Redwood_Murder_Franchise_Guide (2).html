@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="dark" />
+  <title>Redwood Murder — Franchise Visual Guide</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['"Bebas Neue"', 'sans-serif'],
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            bg: { 900: '#0f0f13', 800: '#15151b', 700: '#1a1a22', 600: '#22222d', 500: '#2a2a36' },
+            crimson: { 400: '#e74c3c', 500: '#c0392b', 600: '#a5311f', 700: '#7a2518' },
+            gold: { 400: '#f0c040', 500: '#d4a830', 600: '#b08b20' },
+            silver: { 400: '#c0c8d8', 500: '#a0a8b8', 600: '#808898' },
+            teal: { 400: '#3498db', 500: '#2980b9', 600: '#1f6690' },
+            txt: { 100: '#ffffff', 200: '#e8e8ee', 300: '#b0b0be', 400: '#808090', 500: '#60606e' },
+            pos: '#2ecc71',
+            neg: '#e74c3c',
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { background-color: #0f0f13; color: #e8e8ee; font-family: 'Inter', sans-serif; }
+    .font-display { font-family: 'Bebas Neue', sans-serif; }
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #15151b; }
+    ::-webkit-scrollbar-thumb { background: #2a2a36; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #3a3a46; }
+
+    .hero-glow {
+      position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+      width: 600px; height: 400px;
+      background: radial-gradient(ellipse, rgba(192,57,43,0.18) 0%, rgba(192,57,43,0.05) 40%, transparent 70%);
+      pointer-events: none; z-index: 0;
+    }
+
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+    .fade-up { animation: fadeUp 0.6s ease forwards; opacity: 0; }
+    .fade-up-d1 { animation-delay: 0.1s; }
+    .fade-up-d2 { animation-delay: 0.2s; }
+    .fade-up-d3 { animation-delay: 0.3s; }
+    .fade-up-d4 { animation-delay: 0.4s; }
+    .fade-up-d5 { animation-delay: 0.5s; }
+    .fade-up-d6 { animation-delay: 0.6s; }
+
+    .section-reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .section-reveal.visible { opacity: 1; transform: translateY(0); }
+
+    .stat-card { border-top: 3px solid #c0392b; }
+    .stat-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(192,57,43,0.15); }
+
+    .season-card { transition: transform 0.25s ease, box-shadow 0.25s ease; }
+    .season-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.4); }
+    .season-card.hidden-card { display: none; }
+
+    .ribbon {
+      position: absolute; top: 18px; right: -32px;
+      padding: 4px 40px; font-size: 11px; font-weight: 700;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      transform: rotate(45deg); z-index: 2;
+    }
+    .ribbon-gold { background: linear-gradient(135deg, #f0c040, #d4a830); color: #1a1a22; }
+    .ribbon-silver { background: linear-gradient(135deg, #c0c8d8, #a0a8b8); color: #1a1a22; }
+
+    .finish-badge { display: inline-flex; align-items: center; justify-content: center; padding: 2px 10px; border-radius: 9999px; font-size: 12px; font-weight: 600; }
+    .finish-1 { background: linear-gradient(135deg, #f0c040, #d4a830); color: #1a1a22; box-shadow: 0 0 12px rgba(240,192,64,0.4); }
+    .finish-2 { background: linear-gradient(135deg, #c0c8d8, #a0a8b8); color: #1a1a22; box-shadow: 0 0 10px rgba(160,168,184,0.3); }
+    .finish-3 { background: #cd7f32; color: #1a1a22; }
+    .finish-4, .finish-5, .finish-6 { background: rgba(46,204,113,0.2); color: #2ecc71; }
+    .finish-7, .finish-8, .finish-9 { background: rgba(241,196,15,0.15); color: #f1c40f; }
+    .finish-10, .finish-11 { background: rgba(231,76,60,0.2); color: #e74c3c; }
+
+    .diff-pos { background: rgba(46,204,113,0.15); color: #2ecc71; }
+    .diff-neg { background: rgba(231,76,60,0.15); color: #e74c3c; }
+    .diff-null { background: rgba(128,128,144,0.15); color: #808090; }
+
+    .era-dot { width: 14px; height: 14px; border-radius: 50%; cursor: pointer; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+    .era-dot:hover { transform: scale(1.5); box-shadow: 0 0 10px currentColor; }
+
+    .era-divider { width: 3px; background: linear-gradient(180deg, #2980b9, #c0392b); box-shadow: 0 0 12px rgba(192,57,43,0.4); animation: glowPulse 2s ease-in-out infinite alternate; }
+    @keyframes glowPulse { from { box-shadow: 0 0 8px rgba(192,57,43,0.3); } to { box-shadow: 0 0 20px rgba(192,57,43,0.6); } }
+
+    .filter-btn { transition: all 0.2s ease; }
+    .filter-btn.active { background: #c0392b; color: #fff; }
+
+    .champ-card-gold { border: 2px solid transparent; background-image: linear-gradient(#1a1a22, #1a1a22), linear-gradient(135deg, #f0c040, #d4a830, #f0c040); background-origin: border-box; background-clip: padding-box, border-box; }
+    .champ-card-silver { border: 2px solid transparent; background-image: linear-gradient(#1a1a22, #1a1a22), linear-gradient(135deg, #c0c8d8, #a0a8b8, #c0c8d8); background-origin: border-box; background-clip: padding-box, border-box; }
+
+    .nav-link { transition: color 0.2s ease; }
+    .nav-link.active-nav { color: #e74c3c; }
+
+    .section-header { position: relative; display: inline-block; }
+    .section-header::after { content: ''; position: absolute; bottom: -8px; left: 50%; transform: translateX(-50%); width: 60px; height: 3px; background: #c0392b; border-radius: 2px; }
+
+    .timeline-line { height: 3px; background: linear-gradient(90deg, #2980b9 60%, #c0392b 60%); }
+  </style>
+</head>
+<body data-id="0" class="min-h-screen">
+  <app-icon data-id="1" hidden data-icon="skull" data-palette="Red"></app-icon>
+
+  <!-- STICKY NAV -->
+  <nav data-id="2" id="topnav-xk2m" class="fixed top-0 left-0 right-0 z-50 bg-bg-900/90 backdrop-blur-md border-b border-white/5">
+    <div data-id="3" class="max-w-7xl mx-auto px-4 md:px-6 flex items-center justify-between h-14">
+      <a data-id="4" href="#hero" class="font-display text-xl text-crimson-400 tracking-wider">RM</a>
+      <div data-id="5" class="hidden md:flex items-center gap-6">
+        <a data-id="6" href="#overview" class="nav-link text-sm font-medium text-txt-300 hover:text-txt-100" data-nav="overview">Overview</a>
+        <a data-id="7" href="#era-timeline" class="nav-link text-sm font-medium text-txt-300 hover:text-txt-100" data-nav="era-timeline">Era Timeline</a>
+        <a data-id="8" href="#seasons" class="nav-link text-sm font-medium text-txt-300 hover:text-txt-100" data-nav="seasons">Seasons</a>
+        <a data-id="9" href="#charts" class="nav-link text-sm font-medium text-txt-300 hover:text-txt-100" data-nav="charts">Charts</a>
+        <a data-id="10" href="#identity" class="nav-link text-sm font-medium text-txt-300 hover:text-txt-100" data-nav="identity">Identity</a>
+        <a data-id="11" href="#champions" class="nav-link text-sm font-medium text-txt-300 hover:text-txt-100" data-nav="champions">Champions</a>
+        <a data-id="12" href="#highs-lows" class="nav-link text-sm font-medium text-txt-300 hover:text-txt-100" data-nav="highs-lows">Highs & Lows</a>
+      </div>
+      <button data-id="13" id="mobile-menu-btn-rm01" class="md:hidden p-2 text-txt-200">
+        <i data-id="14" data-lucide="menu" class="w-6 h-6"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <nav data-id="15" id="mobile-menu-rm02" class="hidden fixed inset-0 bg-bg-900/98 z-[60] flex flex-col items-center justify-center gap-6 p-6">
+    <button data-id="16" id="mobile-menu-close-rm03" class="absolute top-4 right-4 p-2 text-txt-200">
+      <i data-id="17" data-lucide="x" class="w-6 h-6"></i>
+    </button>
+    <a data-id="18" href="#overview" class="mobile-nav-link font-display text-2xl text-txt-200 tracking-widest hover:text-crimson-400">Overview</a>
+    <a data-id="19" href="#era-timeline" class="mobile-nav-link font-display text-2xl text-txt-200 tracking-widest hover:text-crimson-400">Era Timeline</a>
+    <a data-id="20" href="#seasons" class="mobile-nav-link font-display text-2xl text-txt-200 tracking-widest hover:text-crimson-400">Seasons</a>
+    <a data-id="21" href="#charts" class="mobile-nav-link font-display text-2xl text-txt-200 tracking-widest hover:text-crimson-400">Charts</a>
+    <a data-id="22" href="#identity" class="mobile-nav-link font-display text-2xl text-txt-200 tracking-widest hover:text-crimson-400">Identity</a>
+    <a data-id="23" href="#champions" class="mobile-nav-link font-display text-2xl text-txt-200 tracking-widest hover:text-crimson-400">Champions</a>
+    <a data-id="24" href="#highs-lows" class="mobile-nav-link font-display text-2xl text-txt-200 tracking-widest hover:text-crimson-400">Highs & Lows</a>
+  </nav>
+
+  <main data-id="25">
+    <!-- 1. HERO BANNER -->
+    <section data-id="26" id="hero" class="relative min-h-[70vh] md:min-h-[80vh] flex flex-col items-center justify-center text-center px-4 pt-20 pb-16 overflow-hidden">
+      <div data-id="27" class="hero-glow"></div>
+      <h1 data-id="28" class="font-display text-6xl sm:text-7xl md:text-8xl lg:text-9xl text-txt-100 tracking-[0.06em] relative z-10 fade-up">REDWOOD MURDER</h1>
+      <p data-id="29" class="text-sm sm:text-base md:text-lg text-txt-300 tracking-[0.3em] uppercase mt-2 relative z-10 fade-up fade-up-d1">Franchise Visual Guide · 2012–2025</p>
+      <div data-id="30" class="flex flex-wrap items-center justify-center gap-3 mt-8 relative z-10">
+        <span data-id="31" class="fade-up fade-up-d2 inline-block px-4 py-2 bg-bg-700 rounded-full text-sm font-medium text-txt-200">14 Seasons</span>
+        <span data-id="32" class="fade-up fade-up-d3 inline-block px-4 py-2 bg-bg-700 rounded-full text-sm font-medium text-txt-200">89-108-2 Record</span>
+        <span data-id="33" class="fade-up fade-up-d4 inline-block px-4 py-2 bg-bg-700 rounded-full text-sm font-medium text-txt-200 border border-gold-400/30"><span data-id="34" class="text-gold-400">1×</span> Champion</span>
+        <span data-id="35" class="fade-up fade-up-d5 inline-block px-4 py-2 bg-bg-700 rounded-full text-sm font-medium text-txt-200 border border-silver-500/30"><span data-id="36" class="text-silver-400">1×</span> Runner-Up</span>
+      </div>
+    </section>
+
+    <!-- 2. FRANCHISE STAT SUMMARY BAR -->
+    <section data-id="37" id="overview" class="section-reveal py-16 px-4 md:px-6">
+      <div data-id="38" class="max-w-7xl mx-auto">
+        <h2 data-id="39" class="font-display text-3xl md:text-4xl text-center text-txt-100 tracking-[0.15em] uppercase mb-2 section-header">Franchise Overview</h2>
+        <p data-id="40" class="text-center text-txt-400 text-sm mb-12 mt-4">The numbers that define the franchise</p>
+        <div data-id="41" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+          <div data-id="42" class="stat-card bg-bg-700 rounded-xl p-5 text-center transition-all duration-300">
+            <p data-id="43" class="text-3xl md:text-4xl font-bold text-txt-100 tabular-nums" data-count="14">0</p>
+            <p data-id="44" class="text-xs font-medium uppercase tracking-wider text-txt-400 mt-2">Total Seasons</p>
+          </div>
+          <div data-id="45" class="stat-card bg-bg-700 rounded-xl p-5 text-center transition-all duration-300">
+            <p data-id="46" class="text-2xl md:text-3xl font-bold text-txt-100 tabular-nums" data-count-text="89-108-2">—</p>
+            <p data-id="47" class="text-xs font-medium uppercase tracking-wider text-txt-400 mt-2">Overall Record</p>
+          </div>
+          <div data-id="48" class="stat-card bg-bg-700 rounded-xl p-5 text-center transition-all duration-300">
+            <p data-id="49" class="text-3xl md:text-4xl font-bold text-txt-100 tabular-nums" data-count-pct="45.2">0%</p>
+            <p data-id="50" class="text-xs font-medium uppercase tracking-wider text-txt-400 mt-2">Win %</p>
+          </div>
+          <div data-id="51" class="stat-card bg-bg-700 rounded-xl p-5 text-center transition-all duration-300">
+            <p data-id="52" class="text-3xl md:text-4xl font-bold text-gold-400 tabular-nums" data-count="1">0</p>
+            <p data-id="53" class="text-xs font-medium uppercase tracking-wider text-txt-400 mt-2">Championships</p>
+            <p data-id="54" class="text-xs text-gold-400 mt-1">(2022)</p>
+          </div>
+          <div data-id="55" class="stat-card bg-bg-700 rounded-xl p-5 text-center transition-all duration-300">
+            <p data-id="56" class="text-3xl md:text-4xl font-bold text-silver-400 tabular-nums" data-count="1">0</p>
+            <p data-id="57" class="text-xs font-medium uppercase tracking-wider text-txt-400 mt-2">Runner-Ups</p>
+            <p data-id="58" class="text-xs text-silver-400 mt-1">(2023)</p>
+          </div>
+          <div data-id="59" class="stat-card bg-bg-700 rounded-xl p-5 text-center transition-all duration-300">
+            <p data-id="60" class="text-3xl md:text-4xl font-bold text-crimson-400 tabular-nums" data-count-text="1st">—</p>
+            <p data-id="61" class="text-xs font-medium uppercase tracking-wider text-txt-400 mt-2">Best Finish</p>
+            <p data-id="62" class="text-xs text-crimson-400 mt-1">(2022)</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. ERA TIMELINE -->
+    <section data-id="63" id="era-timeline" class="section-reveal py-16 px-4 md:px-6 bg-bg-800">
+      <div data-id="64" class="max-w-7xl mx-auto">
+        <h2 data-id="65" class="font-display text-3xl md:text-4xl text-center text-txt-100 tracking-[0.15em] uppercase mb-2 section-header">Era Timeline</h2>
+        <p data-id="66" class="text-center text-txt-400 text-sm mb-12 mt-4">Two distinct eras — one franchise</p>
+
+        <!-- Timeline visual -->
+        <div data-id="67" class="relative mb-12 px-2 md:px-8">
+          <div data-id="68" class="flex items-center justify-between relative">
+            <div data-id="69" class="absolute inset-x-0 top-1/2 -translate-y-1/2 h-[3px] rounded" style="background: linear-gradient(90deg, #2980b9 0%, #2980b9 62%, #c0392b 62%, #c0392b 100%);"></div>
+            <div data-id="70" id="timeline-dots-t1" class="flex items-center justify-between w-full relative z-10"></div>
+          </div>
+          <div data-id="71" class="flex items-center justify-between mt-2 text-xs text-txt-400 tabular-nums px-0" id="timeline-labels-t2"></div>
+        </div>
+
+        <!-- Era cards -->
+        <div data-id="72" class="grid grid-cols-1 md:grid-cols-2 gap-6 relative">
+          <div data-id="73" class="bg-bg-700 rounded-xl p-6 border-l-4 border-teal-500">
+            <div data-id="74" class="flex items-center gap-3 mb-4">
+              <span data-id="75" class="font-display text-2xl md:text-3xl text-teal-400 tracking-wider">THE TYRANNY ERA</span>
+              <span data-id="76" class="text-xs px-2 py-1 rounded bg-teal-500/20 text-teal-400">2012–2020</span>
+            </div>
+            <p data-id="77" class="text-sm text-txt-300 mb-3">9 seasons under various "Tyranny" branding — a nomadic era of identity shifts and rebuilding.</p>
+            <div data-id="78" class="flex flex-wrap gap-2 mb-4">
+              <span data-id="79" class="text-xs px-2 py-1 rounded bg-bg-600 text-txt-300">Topaz Lake Tyranny</span>
+              <span data-id="80" class="text-xs px-2 py-1 rounded bg-bg-600 text-txt-300">Tremper Trannys</span>
+              <span data-id="81" class="text-xs px-2 py-1 rounded bg-bg-600 text-txt-300">North Bay Tyranny</span>
+              <span data-id="82" class="text-xs px-2 py-1 rounded bg-bg-600 text-txt-300">Old Dominion Tyranny</span>
+              <span data-id="83" class="text-xs px-2 py-1 rounded bg-bg-600 text-txt-300">Tusten Tyranny</span>
+            </div>
+            <div data-id="84" class="grid grid-cols-2 gap-4 text-center">
+              <div data-id="85"><p data-id="86" class="text-xl font-bold text-teal-400 tabular-nums">51-64-2</p><p data-id="87" class="text-xs text-txt-400 uppercase tracking-wider">Era Record</p></div>
+              <div data-id="88"><p data-id="89" class="text-xl font-bold text-teal-400 tabular-nums">8.0</p><p data-id="90" class="text-xs text-txt-400 uppercase tracking-wider">Avg Finish</p></div>
+            </div>
+          </div>
+
+          <!-- Animated divider for desktop -->
+          <div data-id="91" class="hidden md:block absolute left-1/2 top-0 bottom-0 -translate-x-1/2 era-divider rounded-full"></div>
+
+          <div data-id="92" class="bg-bg-700 rounded-xl p-6 border-l-4 border-crimson-500">
+            <div data-id="93" class="flex items-center gap-3 mb-4">
+              <span data-id="94" class="font-display text-2xl md:text-3xl text-crimson-400 tracking-wider">THE MURDER ERA</span>
+              <span data-id="95" class="text-xs px-2 py-1 rounded bg-crimson-500/20 text-crimson-400">2021–2025</span>
+            </div>
+            <p data-id="96" class="text-sm text-txt-300 mb-3">5 seasons as Redwood — the franchise found its identity and won its first championship.</p>
+            <div data-id="97" class="flex flex-wrap gap-2 mb-4">
+              <span data-id="98" class="text-xs px-2 py-1 rounded bg-bg-600 text-txt-300">Redwood Murders</span>
+              <span data-id="99" class="text-xs px-2 py-1 rounded bg-bg-600 text-txt-300">Redwood Murder</span>
+            </div>
+            <div data-id="100" class="grid grid-cols-2 gap-4 text-center mb-4">
+              <div data-id="101"><p data-id="102" class="text-xl font-bold text-crimson-400 tabular-nums">37-33-0</p><p data-id="103" class="text-xs text-txt-400 uppercase tracking-wider">Era Record</p></div>
+              <div data-id="104"><p data-id="105" class="text-xl font-bold text-crimson-400 tabular-nums">5.0</p><p data-id="106" class="text-xs text-txt-400 uppercase tracking-wider">Avg Finish</p></div>
+            </div>
+            <div data-id="107" class="flex gap-2">
+              <span data-id="108" class="text-xs px-3 py-1 rounded-full bg-gold-400/20 text-gold-400 font-semibold">🏆 Champion 2022</span>
+              <span data-id="109" class="text-xs px-3 py-1 rounded-full bg-silver-500/20 text-silver-400 font-semibold">🥈 Runner-Up 2023</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. SEASON-BY-SEASON CARDS -->
+    <section data-id="110" id="seasons" class="section-reveal py-16 px-4 md:px-6">
+      <div data-id="111" class="max-w-7xl mx-auto">
+        <h2 data-id="112" class="font-display text-3xl md:text-4xl text-center text-txt-100 tracking-[0.15em] uppercase mb-2 section-header">Season by Season</h2>
+        <p data-id="113" class="text-center text-txt-400 text-sm mb-8 mt-4">Every season at a glance</p>
+
+        <!-- Filter bar -->
+        <div data-id="114" class="flex flex-wrap justify-center gap-2 mb-8" id="filter-bar-fb01">
+          <button data-id="115" class="filter-btn active px-4 py-2 rounded-full text-sm font-medium bg-crimson-500 text-white" data-filter="all">All</button>
+          <button data-id="116" class="filter-btn px-4 py-2 rounded-full text-sm font-medium bg-bg-700 text-txt-300 hover:bg-bg-600" data-filter="tyranny">Tyranny Era</button>
+          <button data-id="117" class="filter-btn px-4 py-2 rounded-full text-sm font-medium bg-bg-700 text-txt-300 hover:bg-bg-600" data-filter="murder">Murder Era</button>
+          <button data-id="118" class="filter-btn px-4 py-2 rounded-full text-sm font-medium bg-bg-700 text-txt-300 hover:bg-bg-600" data-filter="winning">Winning Seasons</button>
+          <button data-id="119" class="filter-btn px-4 py-2 rounded-full text-sm font-medium bg-bg-700 text-txt-300 hover:bg-bg-600" data-filter="playoff">Playoff Finishes</button>
+        </div>
+
+        <!-- Cards grid -->
+        <div data-id="120" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4" id="season-grid-sg01"></div>
+      </div>
+    </section>
+
+    <!-- 5. PERFORMANCE CHARTS -->
+    <section data-id="121" id="charts" class="section-reveal py-16 px-4 md:px-6 bg-bg-800">
+      <div data-id="122" class="max-w-7xl mx-auto">
+        <h2 data-id="123" class="font-display text-3xl md:text-4xl text-center text-txt-100 tracking-[0.15em] uppercase mb-2 section-header">Performance Charts</h2>
+        <p data-id="124" class="text-center text-txt-400 text-sm mb-12 mt-4">Visualizing the franchise journey</p>
+
+        <!-- Chart A: Win/Loss -->
+        <div data-id="125" class="bg-bg-700 rounded-xl p-4 md:p-6 mb-8">
+          <h3 data-id="126" class="font-display text-xl md:text-2xl text-txt-100 tracking-wider mb-4">Win / Loss Record by Season</h3>
+          <div data-id="127" class="relative h-64 md:h-80">
+            <canvas data-id="128" id="chart-winloss-c1"></canvas>
+          </div>
+        </div>
+
+        <!-- Chart B: PF vs PA -->
+        <div data-id="129" class="bg-bg-700 rounded-xl p-4 md:p-6 mb-8">
+          <h3 data-id="130" class="font-display text-xl md:text-2xl text-txt-100 tracking-wider mb-4">Points For vs Points Against</h3>
+          <div data-id="131" class="relative h-64 md:h-80">
+            <canvas data-id="132" id="chart-points-c2"></canvas>
+          </div>
+        </div>
+
+        <!-- Chart C: Finish Position -->
+        <div data-id="133" class="bg-bg-700 rounded-xl p-4 md:p-6">
+          <h3 data-id="134" class="font-display text-xl md:text-2xl text-txt-100 tracking-wider mb-4">Finish Position Over Time</h3>
+          <div data-id="135" class="relative h-64 md:h-80">
+            <canvas data-id="136" id="chart-finish-c3"></canvas>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. IDENTITY EVOLUTION -->
+    <section data-id="137" id="identity" class="section-reveal py-16 px-4 md:px-6">
+      <div data-id="138" class="max-w-7xl mx-auto">
+        <h2 data-id="139" class="font-display text-3xl md:text-4xl text-center text-txt-100 tracking-[0.15em] uppercase mb-2 section-header">Identity Evolution</h2>
+        <p data-id="140" class="text-center text-txt-400 text-sm mb-12 mt-4">Every name this franchise has worn</p>
+        <div data-id="141" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4" id="identity-grid-ig01"></div>
+      </div>
+    </section>
+
+    <!-- 7. CHAMPIONSHIP SPOTLIGHT -->
+    <section data-id="142" id="champions" class="section-reveal py-16 px-4 md:px-6 bg-bg-800">
+      <div data-id="143" class="max-w-7xl mx-auto">
+        <h2 data-id="144" class="font-display text-3xl md:text-4xl text-center text-txt-100 tracking-[0.15em] uppercase mb-2 section-header">Championship Spotlight</h2>
+        <p data-id="145" class="text-center text-txt-400 text-sm mb-12 mt-4">The franchise's finest hours</p>
+
+        <div data-id="146" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- 2022 Champion -->
+          <div data-id="147" class="champ-card-gold rounded-xl p-6 md:p-8 relative overflow-hidden">
+            <div data-id="148" class="absolute top-4 right-4 text-gold-400">
+              <i data-id="149" data-lucide="crown" class="w-8 h-8"></i>
+            </div>
+            <span data-id="150" class="inline-block px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-gold-400/20 text-gold-400 mb-4">Champion</span>
+            <h3 data-id="151" class="font-display text-4xl md:text-5xl text-gold-400 tracking-wider">2022</h3>
+            <p data-id="152" class="font-display text-xl text-txt-200 tracking-wider mt-1">THE CHAMPIONSHIP</p>
+            <div data-id="153" class="grid grid-cols-2 gap-4 mt-6">
+              <div data-id="154"><p data-id="155" class="text-sm text-txt-400">Record</p><p data-id="156" class="text-lg font-bold text-txt-100 tabular-nums">9-5-0</p></div>
+              <div data-id="157"><p data-id="158" class="text-sm text-txt-400">Finish</p><p data-id="159" class="text-lg font-bold text-gold-400 tabular-nums">1st Place</p></div>
+              <div data-id="160"><p data-id="161" class="text-sm text-txt-400">Points For</p><p data-id="162" class="text-lg font-bold text-txt-100 tabular-nums">1,600.4</p></div>
+              <div data-id="163"><p data-id="164" class="text-sm text-txt-400">Points Against</p><p data-id="165" class="text-lg font-bold text-txt-100 tabular-nums">1,591.5</p></div>
+            </div>
+            <div data-id="166" class="mt-4 px-3 py-2 rounded-lg bg-pos/10 inline-block">
+              <span data-id="167" class="text-sm font-semibold text-pos tabular-nums">+8.9 Point Diff</span>
+            </div>
+            <p data-id="168" class="text-sm text-txt-300 mt-5 italic leading-relaxed">The year the Murder took it all — a dominant scoring campaign capped by the franchise's first championship.</p>
+          </div>
+
+          <!-- 2023 Runner-Up -->
+          <div data-id="169" class="champ-card-silver rounded-xl p-6 md:p-8 relative overflow-hidden">
+            <div data-id="170" class="absolute top-4 right-4 text-silver-400">
+              <i data-id="171" data-lucide="medal" class="w-8 h-8"></i>
+            </div>
+            <span data-id="172" class="inline-block px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-silver-500/20 text-silver-400 mb-4">Runner-Up</span>
+            <h3 data-id="173" class="font-display text-4xl md:text-5xl text-silver-400 tracking-wider">2023</h3>
+            <p data-id="174" class="font-display text-xl text-txt-200 tracking-wider mt-1">THE RUNNER-UP</p>
+            <div data-id="175" class="grid grid-cols-2 gap-4 mt-6">
+              <div data-id="176"><p data-id="177" class="text-sm text-txt-400">Record</p><p data-id="178" class="text-lg font-bold text-txt-100 tabular-nums">9-5-0</p></div>
+              <div data-id="179"><p data-id="180" class="text-sm text-txt-400">Finish</p><p data-id="181" class="text-lg font-bold text-silver-400 tabular-nums">2nd Place</p></div>
+              <div data-id="182"><p data-id="183" class="text-sm text-txt-400">Points For</p><p data-id="184" class="text-lg font-bold text-txt-100 tabular-nums">1,555.22</p></div>
+              <div data-id="185"><p data-id="186" class="text-sm text-txt-400">Points Against</p><p data-id="187" class="text-lg font-bold text-txt-100 tabular-nums">1,378.64</p></div>
+            </div>
+            <div data-id="188" class="mt-4 px-3 py-2 rounded-lg bg-pos/10 inline-block">
+              <span data-id="189" class="text-sm font-semibold text-pos tabular-nums">+12.6 Point Diff (Best Ever)</span>
+            </div>
+            <p data-id="190" class="text-sm text-txt-300 mt-5 italic leading-relaxed">Back-to-back dominance — the best point differential in franchise history, just one win short of back-to-back titles.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. HIGHS & LOWS -->
+    <section data-id="191" id="highs-lows" class="section-reveal py-16 px-4 md:px-6">
+      <div data-id="192" class="max-w-7xl mx-auto">
+        <h2 data-id="193" class="font-display text-3xl md:text-4xl text-center text-txt-100 tracking-[0.15em] uppercase mb-2 section-header">Highs & Lows</h2>
+        <p data-id="194" class="text-center text-txt-400 text-sm mb-12 mt-4">The best and worst of 14 seasons</p>
+
+        <div data-id="195" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- Bests -->
+          <div data-id="196" class="bg-bg-700 rounded-xl p-6 border-l-4 border-pos">
+            <h3 data-id="197" class="font-display text-2xl text-pos tracking-wider mb-6 flex items-center gap-2">
+              <i data-id="198" data-lucide="trophy" class="w-6 h-6"></i> Franchise Bests
+            </h3>
+            <div data-id="199" class="space-y-4">
+              <div data-id="200" class="flex justify-between items-center py-2 border-b border-white/5">
+                <span data-id="201" class="text-sm text-txt-300">Most Wins</span>
+                <span data-id="202" class="text-sm font-bold text-txt-100 tabular-nums">9 <span data-id="203" class="text-txt-400 font-normal">(2016, 2022, 2023)</span></span>
+              </div>
+              <div data-id="204" class="flex justify-between items-center py-2 border-b border-white/5">
+                <span data-id="205" class="text-sm text-txt-300">Best Finish</span>
+                <span data-id="206" class="text-sm font-bold text-gold-400 tabular-nums">1st <span data-id="207" class="text-txt-400 font-normal">(2022)</span></span>
+              </div>
+              <div data-id="208" class="flex justify-between items-center py-2 border-b border-white/5">
+                <span data-id="209" class="text-sm text-txt-300">Most Points For</span>
+                <span data-id="210" class="text-sm font-bold text-txt-100 tabular-nums">1,600.4 <span data-id="211" class="text-txt-400 font-normal">(2022)</span></span>
+              </div>
+              <div data-id="212" class="flex justify-between items-center py-2 border-b border-white/5">
+                <span data-id="213" class="text-sm text-txt-300">Best Point Diff</span>
+                <span data-id="214" class="text-sm font-bold text-pos tabular-nums">+12.6 <span data-id="215" class="text-txt-400 font-normal">(2023)</span></span>
+              </div>
+              <div data-id="216" class="flex justify-between items-center py-2">
+                <span data-id="217" class="text-sm text-txt-300">Best Win %</span>
+                <span data-id="218" class="text-sm font-bold text-txt-100 tabular-nums">69.2% <span data-id="219" class="text-txt-400 font-normal">(2016: 9-4-0)</span></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Worsts -->
+          <div data-id="220" class="bg-bg-700 rounded-xl p-6 border-l-4 border-neg">
+            <h3 data-id="221" class="font-display text-2xl text-neg tracking-wider mb-6 flex items-center gap-2">
+              <i data-id="222" data-lucide="trending-down" class="w-6 h-6"></i> Franchise Worsts
+            </h3>
+            <div data-id="223" class="space-y-4">
+              <div data-id="224" class="flex justify-between items-center py-2 border-b border-white/5">
+                <span data-id="225" class="text-sm text-txt-300">Fewest Wins</span>
+                <span data-id="226" class="text-sm font-bold text-txt-100 tabular-nums">2 <span data-id="227" class="text-txt-400 font-normal">(2018, 2020)</span></span>
+              </div>
+              <div data-id="228" class="flex justify-between items-center py-2 border-b border-white/5">
+                <span data-id="229" class="text-sm text-txt-300">Worst Finish</span>
+                <span data-id="230" class="text-sm font-bold text-neg tabular-nums">11th <span data-id="231" class="text-txt-400 font-normal">(2018, 2024)</span></span>
+              </div>
+              <div data-id="232" class="flex justify-between items-center py-2 border-b border-white/5">
+                <span data-id="233" class="text-sm text-txt-300">Lowest Points For</span>
+                <span data-id="234" class="text-sm font-bold text-txt-100 tabular-nums">1,458.78 <span data-id="235" class="text-txt-400 font-normal">(2024)</span></span>
+              </div>
+              <div data-id="236" class="flex justify-between items-center py-2 border-b border-white/5">
+                <span data-id="237" class="text-sm text-txt-300">Worst Point Diff</span>
+                <span data-id="238" class="text-sm font-bold text-neg tabular-nums">-6.8 <span data-id="239" class="text-txt-400 font-normal">(2024)</span></span>
+              </div>
+              <div data-id="240" class="flex justify-between items-center py-2">
+                <span data-id="241" class="text-sm text-txt-300">Most Losses</span>
+                <span data-id="242" class="text-sm font-bold text-txt-100 tabular-nums">11 <span data-id="243" class="text-txt-400 font-normal">(2018)</span></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 9. FOOTER -->
+  <footer data-id="244" class="py-10 text-center border-t border-white/5 bg-bg-900">
+    <p data-id="245" class="font-display text-lg text-crimson-400 tracking-wider mb-1">Redwood Murder Franchise</p>
+    <p data-id="246" class="text-xs text-txt-400">Est. 2012 · 14 Seasons of Tyranny and Murder</p>
+    <p data-id="247" class="text-xs text-txt-500 mt-4">Made by Copilot</p>
+  </footer>
+
+  <script>
+    // ===== DATA =====
+    const seasons = [
+      { year: 2012, name: "Topaz Lake Tyranny", w: 8, l: 5, t: 0, finish: 2, pf: null, pa: null, diff: null, era: "tyranny" },
+      { year: 2013, name: "Tremper Trannys", w: 7, l: 6, t: 0, finish: 10, pf: null, pa: null, diff: null, era: "tyranny" },
+      { year: 2014, name: "North Bay Tyranny", w: 5, l: 8, t: 0, finish: 9, pf: null, pa: null, diff: null, era: "tyranny" },
+      { year: 2015, name: "North Bay Tyranny", w: 7, l: 6, t: 0, finish: 9, pf: null, pa: null, diff: null, era: "tyranny" },
+      { year: 2016, name: "North Bay Tyranny", w: 9, l: 4, t: 0, finish: 4, pf: null, pa: null, diff: null, era: "tyranny" },
+      { year: 2017, name: "North Bay Tyranny", w: 6, l: 7, t: 0, finish: 10, pf: null, pa: null, diff: null, era: "tyranny" },
+      { year: 2018, name: "North Bay Tyranny", w: 2, l: 11, t: 0, finish: 11, pf: null, pa: null, diff: null, era: "tyranny" },
+      { year: 2019, name: "Old Dominion Tyranny", w: 5, l: 7, t: 1, finish: 7, pf: null, pa: null, diff: null, era: "tyranny" },
+      { year: 2020, name: "Tusten Tyranny", w: 2, l: 10, t: 1, finish: 10, pf: null, pa: null, diff: null, era: "tyranny" },
+      { year: 2021, name: "Redwood Murders", w: 7, l: 7, t: 0, finish: 7, pf: null, pa: null, diff: null, era: "murder" },
+      { year: 2022, name: "Redwood Murder", w: 9, l: 5, t: 0, finish: 1, pf: 1600.4, pa: 1591.5, diff: 8.9, era: "murder", title: "champion" },
+      { year: 2023, name: "Redwood Murder", w: 9, l: 5, t: 0, finish: 2, pf: 1555.22, pa: 1378.64, diff: 12.6, era: "murder", title: "runnerup" },
+      { year: 2024, name: "Redwood Murder", w: 4, l: 10, t: 0, finish: 11, pf: 1458.78, pa: 1553.64, diff: -6.8, era: "murder" },
+      { year: 2025, name: "Redwood Murder", w: 8, l: 6, t: 0, finish: 4, pf: 1500.86, pa: 1468.52, diff: 2.3, era: "murder" },
+    ];
+
+    // ===== LUCIDE ICONS =====
+    if (typeof lucide !== "undefined" && typeof lucide.createIcons === "function") {
+      lucide.createIcons();
+    }
+
+    // ===== HELPER: Force all sections visible =====
+    function forceAllSectionsVisible() {
+      document.querySelectorAll('.section-reveal').forEach(function(el) {
+        el.classList.add('visible');
+      });
+    }
+
+    // ===== MOBILE MENU =====
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn-rm01');
+    const mobileMenu = document.getElementById('mobile-menu-rm02');
+    const mobileMenuClose = document.getElementById('mobile-menu-close-rm03');
+
+    if (mobileMenuBtn) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.remove('hidden');
+      });
+    }
+    if (mobileMenuClose) {
+      mobileMenuClose.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    }
+    document.querySelectorAll('.mobile-nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+
+    // ===== NAV LINK CLICK: Force all sections visible before scroll =====
+    document.querySelectorAll('a[href^="#"]').forEach(function(link) {
+      link.addEventListener('click', function() {
+        forceAllSectionsVisible();
+      });
+    });
+
+    // ===== TIMELINE DOTS =====
+    (function buildTimeline() {
+      const dotsContainer = document.getElementById('timeline-dots-t1');
+      const labelsContainer = document.getElementById('timeline-labels-t2');
+      if (!dotsContainer || !labelsContainer) return;
+      seasons.forEach(s => {
+        const dot = document.createElement('a');
+        dot.href = '#season-' + s.year;
+        dot.className = 'era-dot flex-shrink-0';
+        const color = s.era === 'tyranny' ? '#2980b9' : '#c0392b';
+        let bg = color;
+        let shadow = '';
+        if (s.title === 'champion') { bg = '#f0c040'; shadow = '0 0 10px rgba(240,192,64,0.6)'; }
+        else if (s.title === 'runnerup') { bg = '#a0a8b8'; shadow = '0 0 10px rgba(160,168,184,0.5)'; }
+        dot.style.backgroundColor = bg;
+        dot.style.color = color;
+        if (shadow) dot.style.boxShadow = shadow;
+        dot.title = s.year + ' — ' + s.name;
+        dot.addEventListener('click', function() { forceAllSectionsVisible(); });
+        dotsContainer.appendChild(dot);
+
+        const label = document.createElement('span');
+        label.textContent = s.year.toString().slice(-2);
+        label.className = 'flex-shrink-0 text-center';
+        label.style.width = '14px';
+        labelsContainer.appendChild(label);
+      });
+    })();
+
+    // ===== SEASON CARDS =====
+    (function buildSeasonCards() {
+      const grid = document.getElementById('season-grid-sg01');
+      if (!grid) return;
+      seasons.forEach(s => {
+        const topColor = s.era === 'tyranny' ? '#2980b9' : '#c0392b';
+        const record = s.w + '-' + s.l + '-' + s.t;
+        const finishLabel = s.finish === 1 ? '1st' : s.finish === 2 ? '2nd' : s.finish === 3 ? '3rd' : s.finish + 'th';
+        const finishClass = 'finish-' + Math.min(s.finish, 11);
+
+        let ribbonHTML = '';
+        if (s.title === 'champion') ribbonHTML = '<div class="ribbon ribbon-gold">Champion</div>';
+        else if (s.title === 'runnerup') ribbonHTML = '<div class="ribbon ribbon-silver">Runner-Up</div>';
+
+        const pfText = s.pf !== null ? s.pf.toLocaleString(undefined, {minimumFractionDigits:1, maximumFractionDigits:2}) : '—';
+        const paText = s.pa !== null ? s.pa.toLocaleString(undefined, {minimumFractionDigits:1, maximumFractionDigits:2}) : '—';
+
+        let diffBadge = '';
+        if (s.diff !== null) {
+          const cls = s.diff >= 0 ? 'diff-pos' : 'diff-neg';
+          const sign = s.diff >= 0 ? '+' : '';
+          diffBadge = '<span class="inline-block px-2 py-0.5 rounded text-xs font-semibold tabular-nums ' + cls + '">' + sign + s.diff + '</span>';
+        } else {
+          diffBadge = '<span class="inline-block px-2 py-0.5 rounded text-xs font-semibold tabular-nums diff-null">—</span>';
+        }
+
+        const isWinning = s.w > s.l ? true : false;
+        const isPlayoff = s.finish <= 4;
+
+        const card = document.createElement('div');
+        card.className = 'season-card bg-bg-700 rounded-xl overflow-hidden relative';
+        card.id = 'season-' + s.year;
+        card.dataset.era = s.era;
+        card.dataset.winning = isWinning;
+        card.dataset.playoff = isPlayoff;
+
+        card.innerHTML =
+          '<div style="height:4px;background:' + topColor + '"></div>' +
+          ribbonHTML +
+          '<div class="p-4">' +
+            '<p class="font-display text-3xl text-txt-100 tracking-wider">' + s.year + '</p>' +
+            '<p class="text-xs text-txt-400 italic mb-3">' + s.name + '</p>' +
+            '<div class="flex items-center justify-between mb-2">' +
+              '<span class="text-lg font-bold text-txt-100 tabular-nums">' + record + '</span>' +
+              '<span class="finish-badge ' + finishClass + '">' + finishLabel + '</span>' +
+            '</div>' +
+            '<div class="grid grid-cols-2 gap-2 text-xs text-txt-300 mb-2">' +
+              '<div>PF: <span class="text-txt-200 font-medium tabular-nums">' + pfText + '</span></div>' +
+              '<div>PA: <span class="text-txt-200 font-medium tabular-nums">' + paText + '</span></div>' +
+            '</div>' +
+            '<div class="text-right">' + diffBadge + '</div>' +
+          '</div>';
+
+        grid.appendChild(card);
+      });
+    })();
+
+    // ===== FILTER =====
+    (function setupFilters() {
+      const btns = document.querySelectorAll('#filter-bar-fb01 .filter-btn');
+      const cards = document.querySelectorAll('#season-grid-sg01 .season-card');
+      btns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          btns.forEach(b => { b.classList.remove('active'); b.style.background = ''; b.style.color = ''; });
+          btn.classList.add('active');
+          const filter = btn.dataset.filter;
+          cards.forEach(card => {
+            let show = true;
+            if (filter === 'tyranny') show = card.dataset.era === 'tyranny';
+            else if (filter === 'murder') show = card.dataset.era === 'murder';
+            else if (filter === 'winning') show = card.dataset.winning === 'true';
+            else if (filter === 'playoff') show = card.dataset.playoff === 'true';
+            card.style.display = show ? '' : 'none';
+          });
+        });
+      });
+    })();
+
+    // ===== IDENTITY CARDS =====
+    (function buildIdentityCards() {
+      const grid = document.getElementById('identity-grid-ig01');
+      if (!grid) return;
+      const identities = [
+        { name: 'Topaz Lake Tyranny', years: '2012', count: 1, era: 'tyranny', color: '#2980b9', record: '8-5-0', bestFinish: '2nd' },
+        { name: 'Tremper Trannys', years: '2013', count: 1, era: 'tyranny', color: '#2980b9', record: '7-6-0', bestFinish: '10th' },
+        { name: 'North Bay Tyranny', years: '2014–2018', count: 5, era: 'tyranny', color: '#2980b9', record: '29-36-0', bestFinish: '4th' },
+        { name: 'Old Dominion Tyranny', years: '2019', count: 1, era: 'tyranny', color: '#2980b9', record: '5-7-1', bestFinish: '7th' },
+        { name: 'Tusten Tyranny', years: '2020', count: 1, era: 'tyranny', color: '#2980b9', record: '2-10-1', bestFinish: '10th' },
+        { name: 'Redwood Murders', years: '2021', count: 1, era: 'murder', color: '#c0392b', record: '7-7-0', bestFinish: '7th' },
+        { name: 'Redwood Murder', years: '2022–2025', count: 4, era: 'murder', color: '#c0392b', record: '30-26-0', bestFinish: '1st', highlight: true },
+      ];
+      identities.forEach(id => {
+        const card = document.createElement('div');
+        let borderExtra = id.highlight ? 'border border-gold-400/30' : '';
+        card.className = 'bg-bg-700 rounded-xl p-5 border-l-4 ' + borderExtra;
+        card.style.borderLeftColor = id.color;
+        card.innerHTML =
+          '<p class="font-display text-xl tracking-wider" style="color:' + id.color + '">' + id.name + '</p>' +
+          '<p class="text-xs text-txt-400 mt-1">' + id.years + ' · ' + id.count + ' season' + (id.count > 1 ? 's' : '') + '</p>' +
+          '<div class="flex items-center justify-between mt-4">' +
+            '<div><p class="text-xs text-txt-400 uppercase tracking-wider">Record</p><p class="text-sm font-bold text-txt-100 tabular-nums">' + id.record + '</p></div>' +
+            '<div class="text-right"><p class="text-xs text-txt-400 uppercase tracking-wider">Best Finish</p><p class="text-sm font-bold text-txt-100 tabular-nums">' + id.bestFinish + '</p></div>' +
+          '</div>' +
+          (id.highlight ? '<div class="mt-3 flex gap-1"><span class="text-xs px-2 py-0.5 rounded-full bg-gold-400/20 text-gold-400">🏆 2022</span><span class="text-xs px-2 py-0.5 rounded-full bg-silver-500/20 text-silver-400">🥈 2023</span></div>' : '');
+        grid.appendChild(card);
+      });
+    })();
+
+    // ===== CHART.JS SETUP =====
+    Chart.defaults.color = '#b0b0be';
+    Chart.defaults.borderColor = 'rgba(255,255,255,0.06)';
+    Chart.defaults.font.family = "'Inter', sans-serif";
+
+    // Chart A: Win/Loss
+    (function chartWinLoss() {
+      const ctx = document.getElementById('chart-winloss-c1');
+      if (!ctx) return;
+      const years = seasons.map(s => s.year);
+      const wins = seasons.map(s => s.w);
+      const losses = seasons.map(s => s.l);
+      const ties = seasons.map(s => s.t);
+
+      new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: years,
+          datasets: [
+            { label: 'Wins', data: wins, backgroundColor: '#c0392b', borderRadius: 0, barPercentage: 0.7, categoryPercentage: 0.7 },
+            { label: 'Losses', data: losses, backgroundColor: '#2980b9', borderRadius: 0, barPercentage: 0.7, categoryPercentage: 0.7 },
+            { label: 'Ties', data: ties, type: 'scatter', backgroundColor: '#f0c040', pointRadius: ties.map(t => t > 0 ? 6 : 0), pointStyle: 'circle', showLine: false },
+          ]
+        },
+        options: {
+          responsive: true, maintainAspectRatio: false,
+          plugins: {
+            legend: { labels: { usePointStyle: true, padding: 16, font: { size: 12 } } },
+            tooltip: { backgroundColor: '#1a1a22', titleColor: '#e8e8ee', bodyColor: '#b0b0be', borderWidth: 0, cornerRadius: 8, padding: 12 }
+          },
+          scales: {
+            x: { grid: { color: 'rgba(255,255,255,0.04)' }, ticks: { color: '#808090', font: { size: 11 } } },
+            y: { min: 0, max: 13, grid: { color: 'rgba(255,255,255,0.06)' }, ticks: { color: '#808090', stepSize: 2 } }
+          }
+        }
+      });
+    })();
+
+    // Chart B: Points For vs Points Against
+    (function chartPoints() {
+      const ctx = document.getElementById('chart-points-c2');
+      if (!ctx) return;
+      const pfSeasons = seasons.filter(s => s.pf !== null);
+      const labels = pfSeasons.map(s => s.year);
+      const pf = pfSeasons.map(s => s.pf);
+      const pa = pfSeasons.map(s => s.pa);
+
+      new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: labels,
+          datasets: [
+            {
+              label: 'Points For', data: pf, borderColor: '#e74c3c', backgroundColor: 'rgba(231,76,60,0.1)',
+              fill: true, tension: 0.3, pointRadius: 5, pointBackgroundColor: '#e74c3c', borderWidth: 2.5
+            },
+            {
+              label: 'Points Against', data: pa, borderColor: '#2980b9', backgroundColor: 'rgba(41,128,185,0.05)',
+              fill: true, tension: 0.3, pointRadius: 5, pointBackgroundColor: '#2980b9', borderWidth: 2, borderDash: [6, 3]
+            }
+          ]
+        },
+        options: {
+          responsive: true, maintainAspectRatio: false,
+          plugins: {
+            legend: { labels: { usePointStyle: true, padding: 16, font: { size: 12 } } },
+            tooltip: { backgroundColor: '#1a1a22', titleColor: '#e8e8ee', bodyColor: '#b0b0be', borderWidth: 0, cornerRadius: 8, padding: 12 }
+          },
+          scales: {
+            x: { grid: { color: 'rgba(255,255,255,0.04)' }, ticks: { color: '#808090' } },
+            y: { min: 1350, max: 1650, grid: { color: 'rgba(255,255,255,0.06)' }, ticks: { color: '#808090' } }
+          }
+        }
+      });
+    })();
+
+    // Chart C: Finish Position (inverted)
+    (function chartFinish() {
+      const ctx = document.getElementById('chart-finish-c3');
+      if (!ctx) return;
+      const years = seasons.map(s => s.year);
+      const finishes = seasons.map(s => s.finish);
+      const pointColors = seasons.map(s => {
+        if (s.title === 'champion') return '#f0c040';
+        if (s.title === 'runnerup') return '#a0a8b8';
+        return '#e74c3c';
+      });
+      const pointSizes = seasons.map(s => 3 + s.w * 0.8);
+
+      new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: years,
+          datasets: [
+            {
+              label: 'Finish Position', data: finishes, borderColor: '#c0392b', backgroundColor: 'rgba(192,57,43,0.1)',
+              fill: false, tension: 0.2, pointRadius: pointSizes, pointBackgroundColor: pointColors, pointBorderColor: pointColors, borderWidth: 2.5
+            },
+            {
+              label: 'Playoff Line (Top 4)', data: Array(years.length).fill(4), borderColor: 'rgba(46,204,113,0.4)',
+              borderDash: [8, 4], pointRadius: 0, borderWidth: 1.5, fill: false
+            }
+          ]
+        },
+        options: {
+          responsive: true, maintainAspectRatio: false,
+          plugins: {
+            legend: { labels: { usePointStyle: true, padding: 16, font: { size: 12 } } },
+            tooltip: {
+              backgroundColor: '#1a1a22', titleColor: '#e8e8ee', bodyColor: '#b0b0be', borderWidth: 0, cornerRadius: 8, padding: 12,
+              callbacks: { label: function(ctx) { const v = ctx.raw; const s = v === 1 ? '1st' : v === 2 ? '2nd' : v === 3 ? '3rd' : v + 'th'; return ctx.dataset.label + ': ' + s; } }
+            }
+          },
+          scales: {
+            x: { grid: { color: 'rgba(255,255,255,0.04)' }, ticks: { color: '#808090' } },
+            y: {
+              reverse: true, min: 1, max: 12,
+              grid: { color: 'rgba(255,255,255,0.06)' },
+              ticks: { color: '#808090', callback: function(v) { return v === 1 ? '1st' : v === 2 ? '2nd' : v === 3 ? '3rd' : v + 'th'; }, stepSize: 1 }
+            }
+          }
+        }
+      });
+    })();
+
+    // ===== COUNT-UP ANIMATION =====
+    function animateCountUp(el, target, duration) {
+      let start = 0;
+      const startTime = performance.now();
+      function update(now) {
+        const elapsed = now - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        const current = Math.round(eased * target);
+        el.textContent = current;
+        if (progress < 1) requestAnimationFrame(update);
+        else el.textContent = target;
+      }
+      requestAnimationFrame(update);
+    }
+
+    function animateCountUpPct(el, target, duration) {
+      const startTime = performance.now();
+      function update(now) {
+        const elapsed = now - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        const current = (eased * target).toFixed(1);
+        el.textContent = current + '%';
+        if (progress < 1) requestAnimationFrame(update);
+        else el.textContent = target + '%';
+      }
+      requestAnimationFrame(update);
+    }
+
+    // ===== INTERSECTION OBSERVER =====
+    const observerOptions = { threshold: 0.15 };
+
+    // Section reveals
+    const sectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          sectionObserver.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.section-reveal').forEach(s => sectionObserver.observe(s));
+
+    // ===== FALLBACK: Force all sections visible after 800ms =====
+    setTimeout(forceAllSectionsVisible, 800);
+
+    // ===== FALLBACK: Force all sections visible on window load + 300ms =====
+    window.addEventListener('load', function() {
+      setTimeout(forceAllSectionsVisible, 300);
+    });
+
+    // Stat count-ups
+    const statObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          if (el.dataset.count) {
+            animateCountUp(el, parseInt(el.dataset.count), 1200);
+          } else if (el.dataset.countPct) {
+            animateCountUpPct(el, parseFloat(el.dataset.countPct), 1400);
+          } else if (el.dataset.countText) {
+            setTimeout(() => { el.textContent = el.dataset.countText; }, 600);
+          }
+          statObserver.unobserve(el);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    document.querySelectorAll('[data-count], [data-count-pct], [data-count-text]').forEach(el => statObserver.observe(el));
+
+    // ===== ACTIVE NAV HIGHLIGHT =====
+    const navSections = ['overview', 'era-timeline', 'seasons', 'charts', 'identity', 'champions', 'highs-lows'];
+    const navLinks = document.querySelectorAll('.nav-link[data-nav]');
+
+    const navObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.id;
+          navLinks.forEach(link => {
+            link.classList.toggle('active-nav', link.dataset.nav === id);
+            if (link.dataset.nav === id) link.style.color = '#e74c3c';
+            else link.style.color = '';
+          });
+        }
+      });
+    }, { threshold: 0.2, rootMargin: '-80px 0px -50% 0px' });
+
+    navSections.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) navObserver.observe(el);
+    });
+  </script>
+</body>
+</html>
