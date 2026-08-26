@@ -282,7 +282,6 @@ const champions = [
   {year:2024,mgr:"Owen Garritt",team:"Sullco MethMouths"},
   {year:2025,mgr:"Tavis Tucker",team:"CUNT / VaG"},
 ];
-<script>
 
 const managers = [
   {name:"Danny Sattler", emoji:"🧠", team:"MY Red Reapers", names:"MY Red Reapers", seasons:14,w:106,l:78,t:0,champs:[], url:"managers/Simpson_Sith_Franchise_Guide.html", status:"active"},
@@ -301,8 +300,7 @@ const managers = [
   {name:"Rob Olerich", emoji:"🦅", team:"PennsyLucky Cocks N' Glocks", names:"PennsyLucky Cocks N' Glocks", seasons:4,w:29,l:123,t:0,champs:[], url:"managers/Rob_Olerich_GFL_Franchise_Guide.html", status:"retired"}
 ];
 
-    // ═══════════════ MANAGER DIRECTORY RENDERER ═══════════════
-
+// ═══════════════ MANAGER DIRECTORY RENDERER ═══════════════
 function renderManagerDirectory() {
   const list = document.getElementById("linkList");
   list.innerHTML = "";
@@ -322,6 +320,8 @@ function renderManagerDirectory() {
 }
 
 renderManagerDirectory();
+</script>
+
 
 const bests = [
   {icon:"👑",cat:"Most Championships",val:"3× Rings",who:"Tyler Shaver",sub:"2019, 2020, 2023 — the only 3-time champion in GFL history"},
