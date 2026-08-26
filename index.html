@@ -232,7 +232,7 @@ footer span{color:var(--gold);}
     <div class="mem-years">GFL Manager · 2013–2022 · 10 Seasons · Cleveland Dawgs of War</div>
     <p class="mem-text">David Wilson was a GFL manager for a decade. He showed up every year, competed hard, and brought real heart to the league. He never won the championship — but in 2022, his final season, his son Collin did. Some legacies don't need a ring.</p>
     <blockquote class="mem-quote">"He didn't need a trophy. His legacy is already written in this league."</blockquote>
-    <a class="mem-btn" href="https://stupendous-pegasus-04ed9e.netlify.app" target="_blank">View David's Franchise Guide →</a>
+    <a class="mem-btn" href="David_Wilson_GFL_Memorial_Guide.html">View David's Franchise Guide →</a>
   </div>
 </section>
 
@@ -284,20 +284,29 @@ const champions = [
 ];
 
 const managers = [
-  {name:"Danny Sattler", emoji:"🧠", team:"MY Red Reapers", names:"MY Red Reapers", seasons:14,w:106,l:78,t:0,champs:[], url:"managers/Simpson_Sith_Franchise_Guide.html", status:"active"},
-  {name:"Tavis Tucker", emoji:"🦅", team:"CUIT / VAG", seasons:12,w:89,l:63,t:0,champs:[2014,2021], url:"managers/tavis-tucker-gfl-franchise-guide.html", status:"active"},
-  {name:"Tyler Shaver", emoji:"🦍", team:"Turbulent Tickeshits", names:"Turbulent Tickleshits", seasons:5,w:44,l:42,t:0,champs:[2019,2020,2023], url:"managers/Tyler_Shaver_GFL_Franchise_Guide.html", status:"active"},
-  {name:"Doug Meyer", emoji:"🦧", team:"Medford Mountainmen", names:"Medford Mountainmen", seasons:13,w:87,l:87,t:0,champs:[2013,2016], url:"managers/doug_meyer_mountainmen_gfl.html", status:"active"},
-  {name:"David Wilson", emoji:"🦈", team:"Cleveland Bad Boys & Bad", names:"Cleveland Bad Boys & Bad", seasons:16,w:99,l:162,t:9,champs:[], url:"managers/David_Wilson_GFL_Memorial_Guide.html", status:"memorial"},
-  {name:"Sean O'Connell", emoji:"🦩", team:"Cocoon", names:"Cocoon", seasons:13,w:123,l:115,t:0,champs:[], url:"managers/Sean_OConnell_GFL_Franchise_Guide.html", status:"active"},
-  {name:"Matt Kitson", emoji:"🦧", team:"Broadway Joe Biden", names:"Mark Machine + Broadway Joe Biden + The Barton Spartans + 6 names", seasons:13,w:82,l:91,t:1,champs:[], url:"managers/matt-kitson-gfl-franchise-guide.html", status:"active"},
-  {name:"Tom Campbell", emoji:"🐉", team:"Thunderboltz", names:"Thunderboltz", seasons:14,w:113,l:81,t:0,champs:[2015,2017], url:"managers/tom-campbell-gfl-franchise-guide.html", status:"active"},
-  {name:"Steve Davis", emoji:"🦈", team:"Flint Tropics", names:"Flint Tropics", seasons:11,w:63,l:118,t:0,champs:[2015,2017], url:"managers/Steve_Davis_GFL_Franchise_Guide.html", status:"active"},
-  {name:"Collin Wilson", emoji:"🦅", team:"Redwood Murders", names:"Tranny n Trays + Murder Murders", seasons:14,w:89,l:118,t:0,champs:[2022], url:"managers/Collin_Wilson_GFL_Franchise_Guide.html", status:"active"},
-  {name:"Owen Garrett", emoji:"🦇", team:"Silico Methmouths", names:"Prison Purse + Silico Methmouths", seasons:5,w:32,l:118,t:3,champs:[2024], url:"managers/Owen_Garrett_GFL_Franchise_Guide.html", status:"active"},
-  {name:"Kris Cappiello", emoji:"🦅", team:"Space Cadets", names:"Space Cadets", seasons:8,w:43,l:161,t:0,champs:[], url:"managers/Kris_Cappiello_GFL_Franchise_Guide.html", status:"retired"},
-  {name:"Josh Hickey", emoji:"🦩", team:"Northern IceBeaks", names:"Northern IceBeaks", seasons:2,w:11,l:115,t:0,champs:[], url:"managers/Josh_Hickey_GFL_Franchise_Guide.html", status:"retired"},
-  {name:"Rob Olerich", emoji:"🦅", team:"PennsyLucky Cocks N' Glocks", names:"PennsyLucky Cocks N' Glocks", seasons:4,w:29,l:123,t:0,champs:[], url:"managers/Rob_Olerich_GFL_Franchise_Guide.html", status:"retired"}
+  {name:"Danny Sattler",emoji:"🎭",team:"NY Red Reapers",names:"Benton Hollow Blue → Simpson Sith → NY Red Reapers",seasons:14,w:106,l:78,t:0,champs:[],url:"Simpson_Sith_Franchise_Guide.html",status:"active"},
+  {name:"Tavis Tucker",emoji:"🔥",team:"CUNT / VaG",names:"CUNT / VaG",seasons:12,w:98,l:63,t:0,champs:[2014,2025],url:"tavis-tucker-gfl-franchise-guide.html",status:"active"},
+  {name:"Kyle O'Connell",emoji:"⚡",team:"Off Boys",names:"Off Boys",seasons:13,w:96,l:77,t:1,champs:[2018],url:"OffBoys_GFL_Franchise_Guide.html",status:"active"},
+  {name:"Tyler Shaver",emoji:"🐯",team:"Turbulent Ticklesh!ts",names:"Northern BTH Tigers → Turbulent Ticklesh!ts",seasons:7,w:54,l:42,t:0,champs:[2019,2020,2023],url:"Tyler_Shaver_GFL_Franchise_Guide.html",status:"active"},
+  {name:"Doug Meyer",emoji:"🏔️",team:"Medford MountainMen",names:"Medford MountainMen",seasons:13,w:87,l:87,t:0,champs:[2013,2016],url:"doug_meyer_mountainmen_gfl.html",status:"active"},
+  {name:"David Wilson",emoji:"🕊️",team:"Cleveland Dawgs of War",names:"Cleveland Dawgs of War",seasons:10,w:69,l:62,t:1,champs:[],url:"David_Wilson_GFL_Memorial_Guide.html",status:"memorial"},
+  {name:"Sean O'Connell",emoji:"🎯",team:"Eskimo Brothers",names:"Eskimo Brothers (joined 2023)",seasons:3,w:23,l:25,t:0,champs:[],url:"Sean_OConnell_GFL_Franchise_Guide.html",status:"active"},
+  {name:"Matt Kitson",emoji:"🔄",team:"Broadway Joe Biden",names:"Sark Manchez → Geno's Dentures → Mangold Digger → CTE Decisions! → Broadway Joe Biden → The Barton Spartans → 6+ names",seasons:13,w:82,l:91,t:1,champs:[],url:"matt-kitson-gfl-franchise-guide.html",status:"active"},
+  {name:"Derek Baxter",emoji:"🪖",team:"Netherite Warriors",names:"babyfacebuckeye → OH-IO → Terick Duggertuts → Netherite Warriors",seasons:13,w:81,l:93,t:0,champs:[2021],url:"derek-baxter-gfl-franchise-guide.html",status:"active"},
+  {name:"Tom Campbell",emoji:"⚔️",team:"Monti Thunderboltz",names:"Barton Spartans → Monti Thunderboltz",seasons:14,w:85,l:102,t:0,champs:[2012],url:"Tom_Campbell_GFL_Franchise_Guide.html",status:"active"},
+  {name:"Stephen Davis",emoji:"🗺️",team:"Flint Tropics",names:"Atlas X-Men → Flint Tropics",seasons:11,w:68,l:80,t:0,champs:[2015,2017],url:"Steve_Davis_GFL_Franchise_Guide.html",status:"active"},
+  {name:"Collin Wilson",emoji:"🌲",team:"Redwood Murders",names:"Tyranny → Trannys → Murder → Murders → Redwood Murders",seasons:14,w:89,l:108,t:2,champs:[2022],url:"Redwood_Murder_Franchise_Guide%20(2).html",status:"active"},
+  {name:"Owen Garritt",emoji:"🦁",team:"Sullco MethMouths",names:"Prison Purse → Sullco MethMouths",seasons:5,w:32,l:38,t:0,champs:[2024],url:"Owen_Garritt_GFL_Franchise_Guide.html",status:"active"},
+  {name:"Kris Cappiello",emoji:"🚀",team:"Space Cadets",names:"Space Cadets (never changed — 8 seasons)",seasons:8,w:43,l:61,t:0,champs:[],url:"Kris_Cappiello_GFL_Franchise_Guide.html",status:"retired"},
+  {name:"Josh Hickey",emoji:"👋",team:"Northern IceBacks",names:"Northern IceBacks",seasons:2,w:11,l:15,t:0,champs:[],url:null,status:"retired"},
+  {name:"Rob Olerich",emoji:"🐓",team:"Pennsyltucky Cocks N' Glocks",names:"Pennsyltucky Cocks N' Glocks",seasons:4,w:29,l:23,t:0,champs:[],url:null,status:"retired"},
+  {name:"Joe Meyer",emoji:"📊",team:"Team Average Joe's",names:"Team Average Joe's",seasons:1,w:7,l:6,t:0,champs:[],url:null,status:"retired"},
+  {name:"Mike Morgan",emoji:"🤠",team:"Team amish rifle",names:"Team amish rifle",seasons:1,w:9,l:4,t:0,champs:[],url:null,status:"retired"},
+  {name:"Eric Hector",emoji:"🏀",team:"Team mymagicjohnson",names:"Team mymagicjohnson",seasons:1,w:2,l:11,t:0,champs:[],url:null,status:"retired"},
+  {name:"Greg Brewer",emoji:"🍺",team:"Morgan Post",names:"Morgan Post",seasons:1,w:7,l:6,t:0,champs:[],url:null,status:"retired"},
+  {name:"Will O'Brien",emoji:"⛈️",team:"Storm'n Norman",names:"Storm'n Norman",seasons:1,w:4,l:9,t:0,champs:[],url:null,status:"retired"},
+  {name:"Aimee Baker",emoji:"🧇",team:"L'eggo My Eggo",names:"L'eggo My Eggo",seasons:1,w:3,l:10,t:0,champs:[],url:null,status:"retired"},
+  {name:"Jon Moffett",emoji:"💀",team:"ny heart eaters",names:"ny heart eaters",seasons:2,w:9,l:17,t:0,champs:[],url:null,status:"retired"}
 ];
 
 // ═══════════════ MANAGER DIRECTORY RENDERER ═══════════════
@@ -373,14 +382,14 @@ function renderTbl(data){
     const dots=m.champs.length?`<div class="dots">${m.champs.map(y=>`<div class="dot" title="${y}">${String(y).slice(2)}</div>`).join('')}</div>`:'<span style="color:var(--muted);font-size:.72rem">—</span>';
     b.innerHTML+=`<tr>
       <td><span class="rank ${rankClass}">${p>=0?i+1:'—'}</span></td>
-      <td><a class="mgr-link" href="${m.url}" target="_blank">${m.emoji} ${m.name}</a></td>
+      <td>${m.url?`<a class="mgr-link" href="${m.url}">${m.emoji} ${m.name}</a>`:`<span class="mgr-link">${m.emoji} ${m.name}</span>`}</td>
       <td>${badge}</td>
       <td>${m.seasons??'—'}</td>
       <td style="font-weight:600">${m.w??'—'}</td>
       <td style="color:var(--muted)">${m.l??'—'}</td>
       <td><div class="bar-wrap"><div class="bar-track"><div class="bar-fill" style="width:${barW}%;background:${barColor}"></div></div><span style="font-size:.78rem;font-weight:600;min-width:42px">${pStr}</span></div></td>
       <td>${dots}</td>
-      <td><a href="${m.url}" target="_blank" style="color:var(--gold);font-size:.72rem;text-decoration:none">View →</a></td>
+      <td>${m.url?`<a href="${m.url}" style="color:var(--gold);font-size:.72rem;text-decoration:none">View →</a>`:`<span style="color:var(--muted);font-size:.72rem">No guide</span>`}</td>
     </tr>`;
   });
 }
@@ -400,7 +409,7 @@ function sortTbl(col){
 
 // ═══════════════ CHART ═══════════════
 const chartMgrs=[...managers].filter(m=>m.w!==null&&m.seasons>=3).sort((a,b)=>pct(b)-pct(a));
-new Chart(document.getElementById('winChart'),{
+if (typeof Chart !== 'undefined') new Chart(document.getElementById('winChart'),{
   type:'bar',
   data:{
     labels:chartMgrs.map(m=>m.name),
@@ -439,8 +448,8 @@ function filterMgrs(f,btn){
   const g=document.getElementById('mgrGrid');
   g.innerHTML='';
   managers.filter(m=>f==='all'||m.status===f).forEach(m=>{
-    const d=document.createElement('a');
-    d.href=m.url;d.target='_blank';
+    const d=document.createElement(m.url?'a':'div');
+    if(m.url) d.href=m.url;
     d.className='mc'+(m.status==='memorial'?' mem':m.status==='retired'?' ret':'');
     d.innerHTML=`
       <div class="mc-top"><span class="mc-emoji">${m.emoji}</span>${m.status==='memorial'?'<span class="badge b-mem">Memorial</span>':m.status==='retired'?'<span class="badge b-ret">Retired</span>':'<span class="badge b-active">Active</span>'}</div>
@@ -460,11 +469,11 @@ filterMgrs('all',document.querySelector('.tab-btn'));
 
 // ═══════════════ LINK LIST ═══════════════
 const ll=document.getElementById('linkList');
-managers.forEach(m=>{
+managers.filter(m=>m.url).forEach(m=>{
   const a=document.createElement('a');
-  a.href=m.url;a.target='_blank';
+  a.href=m.url;
   a.style.cssText='color:var(--gold);font-size:.78rem;text-decoration:none;padding:.25rem 0;display:block;';
-  a.innerHTML=`${m.emoji} <strong style="color:var(--text)">${m.name}</strong> — ${m.url.replace('https://','').replace('.netlify.app','')}`;
+  a.innerHTML=`${m.emoji} <strong style="color:var(--text)">${m.name}</strong> — View guide`;
   ll.appendChild(a);
 });
 </script>
