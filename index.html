@@ -129,6 +129,7 @@ footer span{color:var(--gold);}
     <li><a href="#champions">Champions</a></li>
     <li><a href="#leaderboard">Standings</a></li>
     <li><a href="#bests">Records</a></li>
+    <li><a href="#lorebook">Lore</a></li>
     <li><a href="#division-awards">Divisions</a></li>
     <li><a href="#dawg-bowl">Dawg Bowl</a></li>
     <li><a href="#managers">Managers</a></li>
@@ -149,6 +150,7 @@ footer span{color:var(--gold);}
     <div class="pill"><span class="pill-num">3</span><span class="pill-label">Dynasties</span></div>
   </div>
   <a href="weekly.html" class="weekly-hub-connector">📅 Open Weekly Hub →</a><div class="league-facts-grid"><div class="league-fact"><strong>2012</strong><span>Established</span></div><div class="league-fact"><strong>Season XV</strong><span>Current Season</span></div><div class="league-fact"><strong>$100</strong><span>Buy-In</span></div><div class="league-fact"><strong>Rueben Bowl</strong><span>Championship</span></div><div class="league-fact"><strong>The Ring</strong><span>Champion Award</span></div></div><p class="hero-tagline">"Started as a group of friends doing fantasy football. Fourteen seasons later, it's the most competitive thing any of us do that we'd never admit to caring about."</p>
+  <div id="todayLore" class="hero-badge" style="margin-top:1rem;max-width:900px;"></div>
 </div>
 
 <div class="divider"></div>
@@ -194,6 +196,15 @@ footer span{color:var(--gold);}
   <div class="sl">Visual Comparison</div>
   <div class="st">📈 Win % by Manager</div>
   <div class="chart-box"><canvas id="winChart" height="340"></canvas></div>
+</section>
+
+<div class="divider"></div>
+
+<!-- LEAGUE LORE -->
+<section id="lorebook">
+  <div class="sl">League Lore</div>
+  <div class="st">📖 The Stories People Still Bring Up</div>
+  <div class="bests-grid" id="loreGrid"></div>
 </section>
 
 <div class="divider"></div>
@@ -356,6 +367,21 @@ const bests = [
 ];
 
 
+const lore = [
+  {icon:"🚀",cat:"The Invader",val:"Tyler Shaver",who:"Champion in Year One",sub:"Joined the league. Won the league. Refused to elaborate."},
+  {icon:"📈",cat:"The No-Ring King",val:"Danny Sattler",who:"106 Career Wins",sub:"The all-time wins leader. Enough victories to fill a trophy case. The actual trophies remain harder to locate."},
+  {icon:"💔",cat:"Greatest Robbery",val:"2019 Tavis Tucker",who:"11-2 • Scoring Leader",sub:"One of the greatest regular seasons ever produced. Left without the ring."},
+  {icon:"🌲",cat:"Redemption Arc",val:"Collin Wilson",who:"2022 Champion",sub:"Years of rebuilding and near misses finally ended with a championship run."},
+  {icon:"⚡",cat:"The Architect",val:"Kyle O'Connell",who:"Off Boys",sub:"Never flashy. Usually dangerous. Especially in December."},
+  {icon:"🏔️",cat:"Transaction Legend",val:"Doug Meyer",who:"Medford MountainMen",sub:"Treats the waiver wire as a full-time occupation."},
+  {icon:"🥷",cat:"Identity Theft",val:"Barton Spartans",who:"League Controversy",sub:"Matt Kitson adopted the league's most historic franchise name. Tom Campbell evolved. Historians remain divided."},
+  {icon:"🎯",cat:"The Meteor",val:"Sean O'Connell",who:"1,702-Point Season",sub:"Arrived late and started breaking records almost immediately."},
+  {icon:"🐯",cat:"Playoff Assassin",val:"Tyler Shaver",who:"2023 • #4 Seed Champion",sub:"When the bracket starts, regular-season records stop mattering."},
+  {icon:"🕊️",cat:"League Legacy",val:"David Wilson",who:"2013-2022",sub:"Ten seasons and countless matchups. Proof that championships are not the only way to leave a lasting mark."},
+  {icon:"💀",cat:"Heartbreak Hall",val:"2022 Simpson Sith",who:"12-2 • 1,653 PF",sub:"One of the greatest teams ever assembled. No championship."},
+  {icon:"📉",cat:"The Doug Meyer Experience",val:"12-1, No Title",who:"2018 MountainMen",sub:"The greatest regular season record produced one important lesson: fantasy football does not care."}
+];
+
 // ═══════════════ CHAMPIONS WALL ═══════════════
 const cg = document.getElementById('champGrid');
 champions.forEach(c=>{
@@ -440,6 +466,10 @@ bests.forEach(b=>{
   bg.appendChild(d);
 });
 
+// ═══════════════ LEAGUE LORE ═══════════════
+const loreGrid=document.getElementById('loreGrid');
+if(loreGrid){lore.forEach(l=>{const d=document.createElement('div');d.className='best-card';d.innerHTML=`<div class="best-icon">${l.icon}</div><div class="best-cat">${l.cat}</div><div class="best-val">${l.val}</div><div class="best-who">${l.who}</div><div class="best-sub">${l.sub}</div>`;loreGrid.appendChild(d);});}
+
 const divisionAwardsData=[{"name": "East", "awards": [{"year": 2012, "manager": "Mike Morgan", "team": "Amish Rifle"}, {"year": 2013, "manager": "Danny Sattler", "team": "Benton Hollow Blue"}, {"year": 2014, "manager": "Rob O.", "team": "Pensyltucky Cocks n' Glocks"}, {"year": 2015, "manager": "Tom Cambell", "team": "Barton Spartans"}, {"year": 2016, "manager": "Rob O.", "team": "Pensyltucky Cocks n' Glocks"}, {"year": 2017, "manager": "Danny Sattler", "team": "NY Red Reapers"}, {"year": 2018, "manager": "Tom Cambell", "team": "Barton Spartans"}, {"year": 2019, "manager": "Danny Sattler", "team": "NY Red Reapers"}, {"year": 2020, "manager": "Derek Baxter", "team": "OH-IO"}, {"year": 2021, "manager": "Derek Baxter", "team": "OH-IO"}, {"year": 2022, "manager": "Danny Sattler", "team": "Simpson Sith"}, {"year": 2023, "manager": "Danny Sattler", "team": "Simpson Sith"}, {"year": 2024, "manager": "Owen Garritt", "team": "Sullco Methmouths"}, {"year": 2025, "manager": "Tom Cambell", "team": "Monti Thunderbolts"}]}, {"name": "West", "awards": [{"year": 2012, "manager": "Joe Meyer", "team": "Average Joe's"}, {"year": 2013, "manager": "David Wilson", "team": "Cleveland Dawgs of War"}, {"year": 2014, "manager": "Tavis Tucker", "team": "California Un-Named Team"}, {"year": 2015, "manager": "Kyle O'Connell", "team": "Off Boys"}, {"year": 2016, "manager": "Collin Wilson", "team": "North Bay Tyranny"}, {"year": 2017, "manager": "Tavis Tucker", "team": "California Un-Named Team"}, {"year": 2018, "manager": "Kyle O'Connell", "team": "Off Boys"}, {"year": 2019, "manager": "Tavis Tucker", "team": "Virginia Gentiles"}, {"year": 2020, "manager": "Kyle O'Connell", "team": "Off Boys"}, {"year": 2021, "manager": "David Wilson", "team": "Cleveland Dawgs of War"}, {"year": 2022, "manager": "Collin Wilson", "team": "Redwood Murder"}, {"year": 2023, "manager": "Collin Wilson", "team": "Redwood Murder"}, {"year": 2024, "manager": "Sean O'Connell", "team": "Eskimo Brothers"}, {"year": 2025, "manager": "Tavis Tucker", "team": "California Un-Named Team"}]}, {"name": "Central", "awards": [{"year": 2012, "manager": "N/A", "team": ""}, {"year": 2013, "manager": "Doug Meyer", "team": "Medford Mountainmen"}, {"year": 2014, "manager": "Matt Kitson", "team": "Sark Manchez"}, {"year": 2015, "manager": "Stephen Davis", "team": "Atlas Xmen"}, {"year": 2016, "manager": "Doug Meyer", "team": "Medford Mountainmen"}, {"year": 2017, "manager": "Stephen Davis", "team": "Atlas Xmen"}, {"year": 2018, "manager": "Doug Meyer", "team": "Medford Mountainmen"}, {"year": 2019, "manager": "Tyler Shaver", "team": "Northern BTH Tigers"}, {"year": 2020, "manager": "Tyler Shaver", "team": "Northern BTH Tigers"}, {"year": 2021, "manager": "Matt Kitson", "team": "Broadway Joe Biden"}, {"year": 2022, "manager": "Tyler Shaver", "team": "Northern BTH Tigers"}, {"year": 2023, "manager": "Stephen Davis", "team": "Flint Tropics"}, {"year": 2024, "manager": "Matt Kitson", "team": "Barton Spartans"}, {"year": 2025, "manager": "Matt Kitson", "team": "Barton Spartans"}]}];const tabs=document.getElementById('divisionTabs');['All',...divisionAwardsData.map(d=>d.name)].forEach((n,i)=>{const b=document.createElement('button');b.className='addon-tab'+(i?'':' active');b.textContent=n;b.onclick=()=>renderDivisionHistory(n,b);tabs.appendChild(b)});function renderDivisionHistory(filter,btn){document.querySelectorAll('.addon-tab').forEach(b=>b.classList.remove('active'));btn.classList.add('active');const g=document.getElementById('divisionGrid');g.innerHTML='';divisionAwardsData.filter(d=>filter==='All'||d.name===filter).forEach(d=>[...d.awards].reverse().forEach(a=>g.innerHTML+=`<article class="addon-card"><div class="addon-year">${a.year} · ${d.name}</div><div class="addon-name">${a.manager}</div><div class="addon-team">${a.team}</div></article>`))}renderDivisionHistory('All',document.querySelector('.addon-tab'));
 // ═══════════════ MANAGER DIRECTORY ═══════════════
 function filterMgrs(f,btn){
@@ -476,6 +506,20 @@ managers.filter(m=>m.url).forEach(m=>{
   a.innerHTML=`${m.emoji} <strong style="color:var(--text)">${m.name}</strong> — View guide`;
   ll.appendChild(a);
 });
+const loreMoments = [
+  "🏆 Tom Campbell was the league's first champion.",
+  "🚀 Tyler Shaver won a championship in his rookie season.",
+  "📈 Danny Sattler owns 106 career victories.",
+  "💔 Doug Meyer went 12-1 and still did not win the title.",
+  "🌲 Redwood Murder finally reached the summit in 2022.",
+  "⚡ Off Boys launched a championship era in 2018.",
+  "🎯 Sean O'Connell set the all-time scoring record.",
+  "🕊️ David Wilson's legacy still shapes the GFL.",
+  "🐯 A #4 seed won the championship in 2023.",
+  "🏔️ Doug Meyer is currently browsing waivers."
+];
+const loreBadge=document.getElementById('todayLore');
+if(loreBadge){loreBadge.textContent=loreMoments[Math.floor(Math.random()*loreMoments.length)];}
 </script>
 </body>
 </html>
