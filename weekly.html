@@ -851,7 +851,7 @@ select option { background: var(--bg-input); color: #fff; }
 <app-icon data-id="1" hidden data-icon="trophy" data-palette="Yellow"></app-icon>
 
 <div data-id="2" class="top-bar">
-  <a data-id="3" href="index.html" class="bc">⚡ GFL HQ</a>
+  <a data-id="3" href="/index.html" class="bc">⚡ GFL HQ</a>
   <div data-id="4" class="top-bar-actions">
     <button data-id="5" class="btn-sm" id="btn-export">💾 Export</button>
     <button data-id="6" class="btn-sm" id="btn-import">📂 Import</button>
@@ -1083,7 +1083,7 @@ const TEAMS = [
   {id:'meth',      name:'Sullco MethMouths',         manager:'Owen Garritt'},
   {id:'sith',      name:'Simpson Sith',               manager:'Danny Sattler'},
   {id:'yourmom',   name:'Your Mom',                   manager:'Derek Baxter'},
-  {id:'thunder',   name:'Monti Thunderbolts',          manager:'Tom Campbell'},
+  {id:'thunder',   name:'Space Cadets',                manager:'Kris Cappiello'},
   {id:'cunt',      name:'California Un-Named Team',    manager:'Tavis Tucker'},
   {id:'murder',    name:'Redwood Murder',              manager:'Collin Wilson'},
   {id:'offboys',   name:'Off Boys',                    manager:"Kyle O'Connell"},
@@ -1105,7 +1105,7 @@ const KEEPERS = [
   {team:'Flint Tropics',           manager:'Stephen Davis',   y2023:'Saquon Barkley',       y2024:'Saquon Barkley',      y2025:'Josh Jacobs',           y2026:'Chase Brown'},
   {team:'Off Boys',                manager:"Kyle O'Connell",  y2023:'Tyreek Hill',          y2024:'Tyreek Hill',         y2025:'Jahmyr Gibbs',          y2026:'Puka Nacua'},
   {team:'Your Mom',                manager:'Derek Baxter',    y2023:'Chris Olave',          y2024:'Derrick Henry',       y2025:'Derrick Henry',         y2026:'Justin Jefferson'},
-  {team:'Monti Thunderbolts',      manager:'Tom Campbell',    y2023:'Breece Hall',          y2024:'Breece Hall',         y2025:'Brian Thomas Jr.',      y2026:'James Cook'},
+  {team:'Space Cadets',            manager:'Kris Cappiello',    y2023:'Breece Hall',          y2024:'Breece Hall',         y2025:'Brian Thomas Jr.',      y2026:'James Cook'},
   {team:'Simpson Sith',            manager:'Danny Sattler',   y2023:'Joe Mixon',            y2024:'Travis Etienne',      y2025:'Malik Nabers',          y2026:'Jaxon Smith-Njigba'}
 ];
 
@@ -1118,33 +1118,33 @@ const DRAFT_ORDER = [
   {pick:6,  team:'Eskimo Brothers',          manager:"Sean O'Connell",  keeper:'Brock Bowers'},
   {pick:7,  team:'Sullco MethMouths',        manager:'Owen Garritt',    keeper:'Amon-Ra St. Brown'},
   {pick:8,  team:'Redwood Murder',           manager:'Collin Wilson',   keeper:'Jonathan Taylor'},
-  {pick:9,  team:'Monti Thunderbolts',       manager:'Tom Campbell',    keeper:'James Cook'},
+  {pick:9,  team:'Space Cadets',             manager:'Kris Cappiello',    keeper:'James Cook'},
   {pick:10, team:'Turbulent Ticklesh!ts',    manager:'Tyler Shaver',    keeper:'Josh Allen'},
   {pick:11, team:'THE Barton Spartans',      manager:'Matt Kitson',     keeper:'Christian McCaffrey'},
   {pick:12, team:'California Un-Named Team', manager:'Tavis Tucker',    keeper:'Bijan Robinson'}
 ];
 
 const SCHEDULE = {
-  1: [['Redwood Murder','Eskimo Brothers'],['Flint Tropics','THE Barton Spartans'],['Turbulent Ticklesh!ts','Medford MountainMen'],['Sullco MethMouths','Simpson Sith'],['California Un-Named Team','Off Boys'],['Monti Thunderbolts','Your Mom']],
-  2: [['Off Boys','Medford MountainMen'],['Eskimo Brothers','Turbulent Ticklesh!ts'],['Flint Tropics','Your Mom'],['California Un-Named Team','Simpson Sith'],['Monti Thunderbolts','Redwood Murder'],['Sullco MethMouths','THE Barton Spartans']],
-  3: [['THE Barton Spartans','Your Mom'],['Simpson Sith','Eskimo Brothers'],['Turbulent Ticklesh!ts','Redwood Murder'],['Monti Thunderbolts','Off Boys'],['Medford MountainMen','Sullco MethMouths'],['California Un-Named Team','Flint Tropics']],
-  4: [['Medford MountainMen','THE Barton Spartans'],['Monti Thunderbolts','Sullco MethMouths'],['Off Boys','Redwood Murder'],['Your Mom','Simpson Sith'],['California Un-Named Team','Eskimo Brothers'],['Flint Tropics','Turbulent Ticklesh!ts']],
-  5: [['California Un-Named Team','Monti Thunderbolts'],['Simpson Sith','Redwood Murder'],['Flint Tropics','Sullco MethMouths'],['Eskimo Brothers','Turbulent Ticklesh!ts'],['Medford MountainMen','Your Mom'],['Off Boys','THE Barton Spartans']],
-  6: [['Sullco MethMouths','Off Boys'],['Monti Thunderbolts','THE Barton Spartans'],['Medford MountainMen','Redwood Murder'],['Eskimo Brothers','Your Mom'],['Turbulent Ticklesh!ts','California Un-Named Team'],['Flint Tropics','Simpson Sith']],
-  7: [['Off Boys','Eskimo Brothers'],['THE Barton Spartans','Turbulent Ticklesh!ts'],['Monti Thunderbolts','Simpson Sith'],['Your Mom','Sullco MethMouths'],['Redwood Murder','California Un-Named Team'],['Flint Tropics','Medford MountainMen']],
-  8: [['Redwood Murder','THE Barton Spartans'],['Flint Tropics','California Un-Named Team'],['Off Boys','Your Mom'],['Turbulent Ticklesh!ts','Monti Thunderbolts'],['Eskimo Brothers','Sullco MethMouths'],['Simpson Sith','Medford MountainMen']],
-  9: [['California Un-Named Team','Turbulent Ticklesh!ts'],['Medford MountainMen','Redwood Murder'],['THE Barton Spartans','Your Mom'],['Simpson Sith','Off Boys'],['Eskimo Brothers','Sullco MethMouths'],['Flint Tropics','Monti Thunderbolts']],
-  10: [['Off Boys','Medford MountainMen'],['Sullco MethMouths','Turbulent Ticklesh!ts'],['THE Barton Spartans','California Un-Named Team'],['Your Mom','Flint Tropics'],['Monti Thunderbolts','Eskimo Brothers'],['Redwood Murder','Simpson Sith']],
-  11: [['Your Mom','Monti Thunderbolts'],['Eskimo Brothers','Redwood Murder'],['Simpson Sith','Sullco MethMouths'],['California Un-Named Team','Off Boys'],['Turbulent Ticklesh!ts','Medford MountainMen'],['Flint Tropics','THE Barton Spartans']],
-  12: [['THE Barton Spartans','Medford MountainMen'],['Flint Tropics','Turbulent Ticklesh!ts'],['Redwood Murder','Off Boys'],['Your Mom','Simpson Sith'],['Eskimo Brothers','California Un-Named Team'],['Sullco MethMouths','Monti Thunderbolts']],
-  13: [['Monti Thunderbolts','Simpson Sith'],['THE Barton Spartans','Turbulent Ticklesh!ts'],['Flint Tropics','Medford MountainMen'],['Sullco MethMouths','Your Mom'],['Off Boys','Eskimo Brothers'],['California Un-Named Team','Redwood Murder']],
-  14: [['Flint Tropics','Sullco MethMouths'],['Monti Thunderbolts','Off Boys'],['California Un-Named Team','Turbulent Ticklesh!ts'],['Medford MountainMen','Redwood Murder'],['Simpson Sith','THE Barton Spartans'],['Your Mom','Eskimo Brothers']]
+  1: [['Redwood Murder','Eskimo Brothers'],['Flint Tropics','THE Barton Spartans'],['Turbulent Ticklesh!ts','Medford MountainMen'],['Sullco MethMouths','Simpson Sith'],['California Un-Named Team','Off Boys'],['Space Cadets','Your Mom']],
+  2: [['Off Boys','Medford MountainMen'],['Eskimo Brothers','Turbulent Ticklesh!ts'],['Flint Tropics','Your Mom'],['California Un-Named Team','Simpson Sith'],['Space Cadets','Redwood Murder'],['Sullco MethMouths','THE Barton Spartans']],
+  3: [['THE Barton Spartans','Your Mom'],['Simpson Sith','Eskimo Brothers'],['Turbulent Ticklesh!ts','Redwood Murder'],['Space Cadets','Off Boys'],['Medford MountainMen','Sullco MethMouths'],['California Un-Named Team','Flint Tropics']],
+  4: [['Medford MountainMen','THE Barton Spartans'],['Space Cadets','Sullco MethMouths'],['Off Boys','Redwood Murder'],['Your Mom','Simpson Sith'],['California Un-Named Team','Eskimo Brothers'],['Flint Tropics','Turbulent Ticklesh!ts']],
+  5: [['California Un-Named Team','Space Cadets'],['Simpson Sith','Redwood Murder'],['Flint Tropics','Sullco MethMouths'],['Eskimo Brothers','Turbulent Ticklesh!ts'],['Medford MountainMen','Your Mom'],['Off Boys','THE Barton Spartans']],
+  6: [['Sullco MethMouths','Off Boys'],['Space Cadets','THE Barton Spartans'],['Medford MountainMen','Redwood Murder'],['Eskimo Brothers','Your Mom'],['Turbulent Ticklesh!ts','California Un-Named Team'],['Flint Tropics','Simpson Sith']],
+  7: [['Off Boys','Eskimo Brothers'],['THE Barton Spartans','Turbulent Ticklesh!ts'],['Space Cadets','Simpson Sith'],['Your Mom','Sullco MethMouths'],['Redwood Murder','California Un-Named Team'],['Flint Tropics','Medford MountainMen']],
+  8: [['Redwood Murder','THE Barton Spartans'],['Flint Tropics','California Un-Named Team'],['Off Boys','Your Mom'],['Turbulent Ticklesh!ts','Space Cadets'],['Eskimo Brothers','Sullco MethMouths'],['Simpson Sith','Medford MountainMen']],
+  9: [['California Un-Named Team','Turbulent Ticklesh!ts'],['Medford MountainMen','Redwood Murder'],['THE Barton Spartans','Your Mom'],['Simpson Sith','Off Boys'],['Eskimo Brothers','Sullco MethMouths'],['Flint Tropics','Space Cadets']],
+  10: [['Off Boys','Medford MountainMen'],['Sullco MethMouths','Turbulent Ticklesh!ts'],['THE Barton Spartans','California Un-Named Team'],['Your Mom','Flint Tropics'],['Space Cadets','Eskimo Brothers'],['Redwood Murder','Simpson Sith']],
+  11: [['Your Mom','Space Cadets'],['Eskimo Brothers','Redwood Murder'],['Simpson Sith','Sullco MethMouths'],['California Un-Named Team','Off Boys'],['Turbulent Ticklesh!ts','Medford MountainMen'],['Flint Tropics','THE Barton Spartans']],
+  12: [['THE Barton Spartans','Medford MountainMen'],['Flint Tropics','Turbulent Ticklesh!ts'],['Redwood Murder','Off Boys'],['Your Mom','Simpson Sith'],['Eskimo Brothers','California Un-Named Team'],['Sullco MethMouths','Space Cadets']],
+  13: [['Space Cadets','Simpson Sith'],['THE Barton Spartans','Turbulent Ticklesh!ts'],['Flint Tropics','Medford MountainMen'],['Sullco MethMouths','Your Mom'],['Off Boys','Eskimo Brothers'],['California Un-Named Team','Redwood Murder']],
+  14: [['Flint Tropics','Sullco MethMouths'],['Space Cadets','Off Boys'],['California Un-Named Team','Turbulent Ticklesh!ts'],['Medford MountainMen','Redwood Murder'],['Simpson Sith','THE Barton Spartans'],['Your Mom','Eskimo Brothers']]
 };
 
 const MONEY_RULES = {weeklyHP:10, divisionWin:50, runnerUp:100, champion:800, goldenHP:10};
 
 const DEFAULT_DIVISIONS = {
-  'Division I':   ['Sullco MethMouths','Simpson Sith','Your Mom','Monti Thunderbolts'],
+  'Division I':   ['Sullco MethMouths','Simpson Sith','Your Mom','Space Cadets'],
   'Division II':  ['California Un-Named Team','Redwood Murder','Off Boys','Eskimo Brothers'],
   'Division III': ['Turbulent Ticklesh!ts','Flint Tropics','Medford MountainMen','THE Barton Spartans']
 };
@@ -1177,6 +1177,19 @@ function loadState() {
       if (!s.goldenHP) s.goldenHP = { team: '', score: 0, week: 0 };
       if (!s.postseason) s.postseason = { runnerUp: '', champion: '' };
       if (!s.weeks) s.weeks = {};
+      // Season XV roster migration: Tom retired; Kris and the Space Cadets returned.
+      Object.keys(s.divisions || {}).forEach(div => {
+        s.divisions[div] = (s.divisions[div] || []).map(name => name === 'Monti Thunderbolts' ? 'Space Cadets' : name);
+      });
+      if (s.postseason) {
+        if (s.postseason.runnerUp === 'Monti Thunderbolts') s.postseason.runnerUp = 'Space Cadets';
+        if (s.postseason.champion === 'Monti Thunderbolts') s.postseason.champion = 'Space Cadets';
+      }
+      if (s.divisionWinners) {
+        Object.keys(s.divisionWinners).forEach(div => {
+          if (s.divisionWinners[div] === 'Monti Thunderbolts') s.divisionWinners[div] = 'Space Cadets';
+        });
+      }
       return s;
     }
   } catch (e) { console.warn('Failed to load state', e); }
