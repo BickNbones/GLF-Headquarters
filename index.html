@@ -135,6 +135,37 @@ footer span{color:var(--gold);}
 
 .weekly-hub-connector{display:inline-block;margin-bottom:1.6rem;padding:.7rem 1.25rem;border-radius:4px;background:var(--gold);color:var(--navy);font-family:'Orbitron',monospace;font-size:.7rem;font-weight:900;letter-spacing:1px;text-decoration:none;text-transform:uppercase;box-shadow:0 6px 22px var(--gold-glow);transition:transform .2s,filter .2s}
 .weekly-hub-connector:hover{transform:translateY(-2px);filter:brightness(1.08)}
+  
+/* ===== Franchise Lore Cards ===== */
+.lore-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.lore-card {
+  background: var(--panel);
+  padding: 1rem 1.25rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+
+.lore-card h3 {
+  margin-top: 0;
+  margin-bottom: .5rem;
+  color: var(--gold);
+}
+
+.lore-card ul {
+  margin: 0;
+  padding-left: 1rem;
+}
+
+.lore-card li {
+  margin-bottom: .35rem;
+  color: var(--text-light);
+}
 
 </style>
 </head>
@@ -492,84 +523,103 @@ managers.forEach(m=>{
 });
 </script>
   <section id="franchise-lore" class="panel">
-  <h2>GNFL Franchise Lore</h2>
-  <p>
-    Every GNFL franchise carries its own mythology — eras of dominance, heartbreak,
-    rivalries, draft chaos, and unforgettable seasons buried in the archives. This
-    section captures the deeper stories behind each team.
+  <h2 style="text-align:center;margin-bottom:1rem;">GNFL Franchise Lore</h2>
+  <p style="text-align:center;color:var(--text-light);max-width:700px;margin:0 auto 2rem;">
+    The GNFL’s history is filled with rivalries, heartbreaks, miracle seasons, and forgotten classics.
+    These franchise lore cards highlight the defining stories behind each team.
   </p>
 
-  <!-- Barton Spartans -->
-  <h3>Barton Spartans</h3>
-  <ul>
-    <li><strong>Early Powerhouse:</strong> Finished top‑5 in consecutive seasons, establishing the GNFL’s first true dynasty arc.</li>
-    <li><strong>Ranking Controversy:</strong> In 2012, Spartans finished #1 despite Amish Rifle posting similar win totals — the league’s first “who really deserved it?” debate.</li>
-    <li><strong>Rivalry:</strong> Their clashes with Medford MountainMen formed the GNFL’s earliest heavyweight rivalry.</li>
-  </ul>
+  <div class="lore-grid">
+    <!-- Barton Spartans -->
+    <div class="lore-card">
+      <h3>Barton Spartans</h3>
+      <ul>
+        <li><strong>Early Powerhouse:</strong> Top‑5 finishes in consecutive seasons.</li>
+        <li><strong>Ranking Controversy:</strong> 2012 #1 finish sparked the league’s first debate.</li>
+        <li><strong>Rivalry:</strong> Heavyweight clashes with MountainMen.</li>
+      </ul>
+    </div>
 
-  <!-- Medford MountainMen -->
-  <h3>Medford MountainMen</h3>
-  <ul>
-    <li><strong>The First Juggernaut:</strong> A 9‑win season in 2013 marked the earliest example of GNFL dominance.</li>
-    <li><strong>Division Titan:</strong> MountainMen anchored the Central during its chaotic early era.</li>
-    <li><strong>Rivalry:</strong> Their battles with Dawgs of War defined the GNFL’s first “power collision.”</li>
-  </ul>
+    <!-- Medford MountainMen -->
+    <div class="lore-card">
+      <h3>Medford MountainMen</h3>
+      <ul>
+        <li><strong>First Juggernaut:</strong> 9‑win 2013 season.</li>
+        <li><strong>Division Titan:</strong> Anchored the chaotic Central.</li>
+        <li><strong>Rivalry:</strong> Power collisions with Dawgs of War.</li>
+      </ul>
+    </div>
 
-  <!-- Dawgs of War -->
-  <h3>Cleveland Dawgs of War</h3>
-  <ul>
-    <li><strong>Founding Father Franchise:</strong> Managed by David Wilson, one of the GNFL’s original cornerstone managers.</li>
-    <li><strong>Heavyweight Season:</strong> Posted a 9–4 record in 2013, matching MountainMen stride‑for‑stride.</li>
-    <li><strong>Father–Son Lore:</strong> The Dawgs vs Tyranny storyline is the GNFL’s longest‑running family rivalry.</li>
-  </ul>
+    <!-- Cleveland Dawgs of War -->
+    <div class="lore-card">
+      <h3>Cleveland Dawgs of War</h3>
+      <ul>
+        <li><strong>Founding Father Franchise:</strong> Led by David Wilson.</li>
+        <li><strong>Heavyweight Season:</strong> 9–4 in 2013.</li>
+        <li><strong>Family Lore:</strong> Dawgs vs Tyranny is the GNFL’s longest rivalry.</li>
+      </ul>
+    </div>
 
-  <!-- Off Boys -->
-  <h3>Off Boys</h3>
-  <ul>
-    <li><strong>Early Playoff Breakthrough:</strong> Their 2013 run marked the first mid‑tier team to break into the postseason.</li>
-    <li><strong>Chaos Engine:</strong> Off Boys were involved in multiple early upsets that shaped GNFL playoff seeding.</li>
-    <li><strong>Signature Win:</strong> Their narrow victories in 2013 are among the earliest “forgotten classics.”</li>
-  </ul>
+    <!-- Off Boys -->
+    <div class="lore-card">
+      <h3>Off Boys</h3>
+      <ul>
+        <li><strong>Playoff Breakthrough:</strong> First mid‑tier postseason run.</li>
+        <li><strong>Chaos Engine:</strong> Early upsets shaped playoff seeding.</li>
+        <li><strong>Signature Win:</strong> Narrow 2013 victories.</li>
+      </ul>
+    </div>
 
-  <!-- Amish Rifle -->
-  <h3>Team Amish Rifle</h3>
-  <ul>
-    <li><strong>Underrated Titan:</strong> Posted strong early records but was overshadowed by Spartans’ #1 finish.</li>
-    <li><strong>First True Underdog Story:</strong> Their 2012 season is the earliest example of a team outperforming expectations.</li>
-    <li><strong>Draft Lore:</strong> Amish Rifle is tied to one of the earliest draft steals in GNFL history.</li>
-  </ul>
+    <!-- Amish Rifle -->
+    <div class="lore-card">
+      <h3>Team Amish Rifle</h3>
+      <ul>
+        <li><strong>Underrated Titan:</strong> Strong early records.</li>
+        <li><strong>Underdog Story:</strong> Outperformed expectations in 2012.</li>
+        <li><strong>Draft Lore:</strong> Tied to an early draft steal.</li>
+      </ul>
+    </div>
 
-  <!-- mymagicjohnson -->
-  <h3>Team mymagicjohnson</h3>
-  <ul>
-    <li><strong>Earliest Disaster Season:</strong> A 2–11 record with a 0.1538 win percentage — the GNFL’s first “bottom‑of‑the‑barrel” campaign.</li>
-    <li><strong>Historical Importance:</strong> Their struggles helped define early GNFL parity rules.</li>
-    <li><strong>Trivia:</strong> Their season contains the earliest documented “lost by 30+” blowout.</li>
-  </ul>
+    <!-- mymagicjohnson -->
+    <div class="lore-card">
+      <h3>Team mymagicjohnson</h3>
+      <ul>
+        <li><strong>Disaster Season:</strong> 2–11 record, 0.1538 win rate.</li>
+        <li><strong>Historical Importance:</strong> Helped define parity rules.</li>
+        <li><strong>Trivia:</strong> Earliest 30+ point blowout loss.</li>
+      </ul>
+    </div>
 
-  <!-- Your Mom -->
-  <h3>Your Mom</h3>
-  <ul>
-    <li><strong>Modern Rivalry:</strong> Multiple close games with Space Cadets form one of the GNFL’s most active rivalries.</li>
-    <li><strong>Era Flex:</strong> Your Mom has competitive arcs in both early and modern GNFL eras.</li>
-    <li><strong>Signature Moment:</strong> Their first upset win is one of the GNFL’s earliest “forgotten classics.”</li>
-  </ul>
+    <!-- Your Mom -->
+    <div class="lore-card">
+      <h3>Your Mom</h3>
+      <ul>
+        <li><strong>Modern Rivalry:</strong> Tight games with Space Cadets.</li>
+        <li><strong>Era Flex:</strong> Competitive in early and modern eras.</li>
+        <li><strong>Signature Moment:</strong> Early upset win.</li>
+      </ul>
+    </div>
 
-  <!-- Space Cadets -->
-  <h3>Space Cadets</h3>
-  <ul>
-    <li><strong>Return of Kris:</strong> The Cadets’ revival marks one of the GNFL’s most important franchise comebacks.</li>
-    <li><strong>Rivalry:</strong> Their battles with Your Mom are consistently tight and often season‑defining.</li>
-    <li><strong>Franchise Lore:</strong> The Cadets’ early‑era disappearance and modern‑era return is unique in GNFL history.</li>
-  </ul>
+    <!-- Space Cadets -->
+    <div class="lore-card">
+      <h3>Space Cadets</h3>
+      <ul>
+        <li><strong>Return of Kris:</strong> Major franchise comeback.</li>
+        <li><strong>Rivalry:</strong> Season‑defining clashes with Your Mom.</li>
+        <li><strong>Franchise Lore:</strong> Unique disappearance and revival arc.</li>
+      </ul>
+    </div>
 
-  <!-- North Bay Tyranny -->
-  <h3>North Bay Tyranny</h3>
-  <ul>
-    <li><strong>Collin’s Franchise:</strong> One of the GNFL’s most storied manager arcs — from early struggles to modern stability.</li>
-    <li><strong>Father–Son Rivalry:</strong> Tyranny vs Dawgs of War is the GNFL’s longest‑running narrative thread.</li>
-    <li><strong>Signature Win:</strong> Your first documented victory is one of the GNFL’s earliest rivalry moments.</li>
-  </ul>
+    <!-- North Bay Tyranny -->
+    <div class="lore-card">
+      <h3>North Bay Tyranny</h3>
+      <ul>
+        <li><strong>Collin’s Franchise:</strong> One of the GNFL’s most storied arcs.</li>
+        <li><strong>Family Rivalry:</strong> Tyranny vs Dawgs of War.</li>
+        <li><strong>Signature Win:</strong> First documented victory is an early rivalry moment.</li>
+      </ul>
+    </div>
+  </div>
 </section>
 
 </body>
