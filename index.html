@@ -118,7 +118,25 @@ tbody td{padding:.75rem 1rem;}
 footer{position:relative;z-index:1;text-align:center;padding:2rem 2rem;border-top:1px solid rgba(245,159,11,.12);color:var(--muted);font-size:.75rem;}
 footer span{color:var(--gold);}
 @media(max-width:768px){.nav-links{display:none;}.hero-pills{gap:.6rem;}.pill{min-width:90px;padding:.8rem 1rem;}.pill-num{font-size:1.4rem;}section{padding:3rem 1rem;}.mem-box{padding:1.8rem 1.2rem;}}
-.weekly-hub-connector{display:inline-block;margin-bottom:1.6rem;padding:.7rem 1.25rem;border-radius:4px;background:var(--gold);color:var(--navy);font-family:'Orbitron',monospace;font-size:.7rem;font-weight:900;letter-spacing:1px;text-decoration:none;text-transform:uppercase}.league-facts-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:.75rem;margin:1.2rem 0;max-width:950px;width:100%}.league-fact,.div-leader,.medal-board,.history-wall{background:var(--navy2);border:1px solid rgba(245,159,11,.22);border-radius:8px;padding:1rem}.league-fact{text-align:center}.league-fact strong{display:block;color:var(--gold);font-family:'Orbitron',monospace;font-size:.82rem}.league-fact span,.era{font-size:.58rem;color:var(--muted);text-transform:uppercase;letter-spacing:1px}.addon-summary{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;margin-bottom:1rem}.div-leader b{display:block;margin:.4rem 0}.addon-tabs{display:flex;gap:.45rem;overflow-x:auto;margin-bottom:1rem}.addon-tab{flex:0 0 auto;background:transparent;border:1px solid rgba(255,255,255,.12);color:var(--muted);padding:.42rem .85rem;border-radius:3px;cursor:pointer}.addon-tab.active{border-color:var(--gold);color:var(--gold)}.addon-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.7rem}.addon-card{background:var(--navy2);border:1px solid rgba(255,255,255,.07);border-radius:7px;padding:.85rem}.addon-year{color:var(--gold);font-family:'Orbitron',monospace;font-size:.65rem}.addon-name{font-weight:700;margin:.2rem 0}.addon-team{font-size:.68rem;color:var(--muted)}.lore{background:linear-gradient(135deg,rgba(59,130,246,.08),rgba(245,159,11,.07));border:1px solid rgba(245,159,11,.28);border-radius:10px;padding:1.4rem;margin-bottom:1rem;color:var(--muted);line-height:1.7}.lore strong{color:var(--text)}.dawg-layout{display:grid;grid-template-columns:minmax(220px,.7fr) 2fr;gap:1rem}.medal-row{display:flex;justify-content:space-between;padding:.6rem 0;border-bottom:1px solid rgba(255,255,255,.06)}.medal-row strong{color:var(--gold)}.subhead{color:var(--gold);font-family:'Orbitron',monospace;font-size:.68rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:.8rem}@media(max-width:768px){.league-facts-grid{grid-template-columns:repeat(2,1fr)}.addon-summary,.dawg-layout{grid-template-columns:1fr}.addon-grid{grid-template-columns:1fr}}</style>
+
+/* DIVISION AWARDS ADD-ON — existing hub styles/functionality preserved */
+.div-award-summary{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;margin-bottom:1.25rem}
+.div-award-leader{background:var(--navy2);border:1px solid rgba(245,159,11,.22);border-radius:8px;padding:1rem}
+.div-award-leader span{font-family:'Orbitron',monospace;color:var(--gold);font-size:.62rem;letter-spacing:2px;text-transform:uppercase}
+.div-award-leader strong{display:block;margin:.45rem 0 .15rem;font-size:.9rem}.div-award-leader small{color:var(--muted)}
+.div-award-tabs{display:flex;gap:.45rem;overflow-x:auto;margin-bottom:1rem;padding-bottom:.35rem}
+.div-award-tab{flex:0 0 auto;background:transparent;border:1px solid rgba(255,255,255,.12);color:var(--muted);border-radius:3px;padding:.42rem .85rem;cursor:pointer;font:500 .72rem 'Inter',sans-serif}
+.div-award-tab.active,.div-award-tab:hover{border-color:var(--gold);color:var(--gold);background:rgba(245,159,11,.07)}
+.div-award-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(225px,1fr));gap:.75rem}
+.div-award-card{background:var(--navy2);border:1px solid rgba(255,255,255,.07);border-radius:8px;padding:1rem;display:grid;grid-template-columns:50px 1fr;gap:.75rem;align-items:center}
+.div-award-year{font-family:'Orbitron',monospace;color:var(--gold);font-size:.7rem}.div-award-name{font-weight:700;font-size:.86rem}.div-award-team{color:var(--muted);font-size:.68rem;margin-top:.15rem}.div-award-label{color:var(--muted);font-size:.57rem;letter-spacing:1px;text-transform:uppercase;margin-bottom:.15rem}
+@media(max-width:768px){.div-award-summary{grid-template-columns:1fr}.div-award-grid{grid-template-columns:1fr}}
+
+
+.weekly-hub-connector{display:inline-block;margin-bottom:1.6rem;padding:.7rem 1.25rem;border-radius:4px;background:var(--gold);color:var(--navy);font-family:'Orbitron',monospace;font-size:.7rem;font-weight:900;letter-spacing:1px;text-decoration:none;text-transform:uppercase;box-shadow:0 6px 22px var(--gold-glow);transition:transform .2s,filter .2s}
+.weekly-hub-connector:hover{transform:translateY(-2px);filter:brightness(1.08)}
+
+</style>
 </head>
 <body>
 
@@ -129,9 +147,7 @@ footer span{color:var(--gold);}
     <li><a href="#champions">Champions</a></li>
     <li><a href="#leaderboard">Standings</a></li>
     <li><a href="#bests">Records</a></li>
-    <li><a href="#lorebook">Lore</a></li>
     <li><a href="#division-awards">Divisions</a></li>
-    <li><a href="#dawg-bowl">Dawg Bowl</a></li>
     <li><a href="#managers">Managers</a></li>
     <li><a href="#memorial">Memorial</a></li>
   </ul>
@@ -139,8 +155,8 @@ footer span{color:var(--gold);}
 
 <!-- HERO -->
 <div class="hero">
-  <div class="hero-badge">Est. 2012 · Season XV · Gandorf Fantasy League</div>
-  <h1 class="hero-title">GANDORF<br>FANTASY LEAGUE</h1>
+  <div class="hero-badge">Est. 2012 · Season XIV · Santa Rosa, CA</div>
+  <h1 class="hero-title">GANDORF<br>NATIONAL FL</h1>
   <p class="hero-sub">Where Legends Are Made &amp; Kickers Are Drafted Too Early</p>
   <div class="hero-pills">
     <div class="pill"><span class="pill-num">14</span><span class="pill-label">Seasons</span></div>
@@ -149,8 +165,8 @@ footer span{color:var(--gold);}
     <div class="pill"><span class="pill-num">9</span><span class="pill-label">Champions</span></div>
     <div class="pill"><span class="pill-num">3</span><span class="pill-label">Dynasties</span></div>
   </div>
-  <a href="weekly.html" class="weekly-hub-connector">📅 Open Weekly Hub →</a><div class="league-facts-grid"><div class="league-fact"><strong>2012</strong><span>Established</span></div><div class="league-fact"><strong>Season XV</strong><span>Current Season</span></div><div class="league-fact"><strong>$100</strong><span>Buy-In</span></div><div class="league-fact"><strong>Rueben Bowl</strong><span>Championship</span></div><div class="league-fact"><strong>The Ring</strong><span>Champion Award</span></div></div><p class="hero-tagline">"Started as a group of friends doing fantasy football. Fourteen seasons later, it's the most competitive thing any of us do that we'd never admit to caring about."</p>
-  <div id="todayLore" class="hero-badge" style="margin-top:1rem;max-width:900px;"></div>
+  <a href="weekly.html" class="weekly-hub-connector">📅 Open Weekly Hub →</a>
+  <p class="hero-tagline">"Started as a group of friends doing fantasy football. Fourteen seasons later, it's the most competitive thing any of us do that we'd never admit to caring about."</p>
 </div>
 
 <div class="divider"></div>
@@ -200,15 +216,6 @@ footer span{color:var(--gold);}
 
 <div class="divider"></div>
 
-<!-- LEAGUE LORE -->
-<section id="lorebook">
-  <div class="sl">League Lore</div>
-  <div class="st">📖 The Stories People Still Bring Up</div>
-  <div class="bests-grid" id="loreGrid"></div>
-</section>
-
-<div class="divider"></div>
-
 <!-- ALL-TIME BESTS -->
 <section id="bests">
   <div class="sl">GFL Record Book</div>
@@ -218,7 +225,16 @@ footer span{color:var(--gold);}
 
 <div class="divider"></div>
 
-<!-- DIVISION AWARDS --><section id="division-awards"><div class="sl">Division Record Book</div><div class="st">🏅 Divisional Awards</div><div class="addon-summary"><div class="div-leader"><span class="era">East leader</span><b>Danny Sattler</b><small>5 titles</small></div><div class="div-leader"><span class="era">West leader</span><b>Tavis Tucker</b><small>4 titles</small></div><div class="div-leader"><span class="era">Central leader</span><b>Matt Kitson</b><small>4 titles</small></div></div><div class="addon-tabs" id="divisionTabs"></div><div class="addon-grid" id="divisionGrid"></div></section><div class="divider"></div><!-- DAWG BOWL --><section id="dawg-bowl"><div class="sl">Consolation Champions</div><div class="st">🐶 Dawg Bowl Record Book</div><div class="lore"><strong>Formerly the Gonzo Bowl.</strong> The consolation final was known as the Gonzo Bowl through 2024 and was renamed the Dawg Bowl in 2025 in honor of David Wilson, a decade-long GFL manager whose impact continues to be felt throughout the league. The winner receives a Dawg Medallion and, under the rule introduced in 2014, earns the first overall pick in the following season's draft.</div><div class="dawg-layout"><div class="medal-board"><div class="subhead">Medallion Leaderboard</div><div class="medal-row"><span>Matt Kitson</span><strong>4</strong></div><div class="medal-row"><span>Kris Cappiello</span><strong>3</strong></div><div class="medal-row"><span>David Wilson</span><strong>2</strong></div><div class="medal-row"><span>Kyle O&#x27;Connell</span><strong>2</strong></div><div class="medal-row"><span>Danny Sattler</span><strong>1</strong></div><div class="medal-row"><span>Doug Meyer</span><strong>1</strong></div><div class="medal-row"><span>Eric Hector</span><strong>1</strong></div></div><div class="history-wall"><div class="subhead">Year-by-Year Winners</div><div class="addon-grid"><article class="addon-card"><div class="addon-year">2025</div><div class="addon-name">Kyle O&#x27;Connell</div><span class="era">Dawg Bowl</span></article><article class="addon-card"><div class="addon-year">2024</div><div class="addon-name">Doug Meyer</div><span class="era">Gonzo Bowl</span></article><article class="addon-card"><div class="addon-year">2023</div><div class="addon-name">Matt Kitson</div><span class="era">Gonzo Bowl</span></article><article class="addon-card"><div class="addon-year">2022</div><div class="addon-name">David Wilson</div><span class="era">Gonzo Bowl</span></article><article class="addon-card"><div class="addon-year">2021</div><div class="addon-name">Kyle O&#x27;Connell</div><span class="era">Gonzo Bowl</span></article><article class="addon-card"><div class="addon-year">2020</div><div class="addon-name">Matt Kitson</div><span class="era">Gonzo Bowl</span></article><article class="addon-card"><div class="addon-year">2019</div><div class="addon-name">Kris Cappiello</div><span class="era">Gonzo Bowl</span></article><article class="addon-card"><div class="addon-year">2018</div><div class="addon-name">David Wilson</div><span class="era">Gonzo Bowl</span></article><article class="addon-card"><div class="addon-year">2017</div><div class="addon-name">Kris Cappiello</div><span class="era">Gonzo Bowl</span></article><article class="addon-card"><div class="addon-year">2016</div><div class="addon-name">Kris Cappiello</div><span class="era">Gonzo Bowl</span></article><article class="addon-card"><div class="addon-year">2015</div><div class="addon-name">Matt Kitson</div><span class="era">Gonzo Bowl</span></article><article class="addon-card"><div class="addon-year">2014</div><div class="addon-name">Danny Sattler</div><span class="era">Gonzo Bowl</span></article><article class="addon-card"><div class="addon-year">2013</div><div class="addon-name">Matt Kitson</div><span class="era">Gonzo Bowl</span></article><article class="addon-card"><div class="addon-year">2012</div><div class="addon-name">Eric Hector</div><span class="era">Gonzo Bowl</span></article></div></div></div></section><div class="divider"></div><!-- MANAGER DIRECTORY -->
+<!-- DIVISION AWARDS ADD-ON -->
+<section id="division-awards">
+  <div class="sl">Division Record Book</div>
+  <div class="st">🏅 Divisional Awards</div>
+  <div class="div-award-summary" id="divAwardSummary"></div>
+  <div class="div-award-tabs" id="divAwardTabs" aria-label="Division filters"></div>
+  <div class="div-award-grid" id="divAwardGrid"></div>
+</section>
+<div class="divider"></div>
+<!-- MANAGER DIRECTORY -->
 <section id="managers">
   <div class="sl">Full Roster</div>
   <div class="st">🎖️ Manager Directory</div>
@@ -243,7 +259,7 @@ footer span{color:var(--gold);}
     <div class="mem-years">GFL Manager · 2013–2022 · 10 Seasons · Cleveland Dawgs of War</div>
     <p class="mem-text">David Wilson was a GFL manager for a decade. He showed up every year, competed hard, and brought real heart to the league. He never won the championship — but in 2022, his final season, his son Collin did. Some legacies don't need a ring.</p>
     <blockquote class="mem-quote">"He didn't need a trophy. His legacy is already written in this league."</blockquote>
-    <a class="mem-btn" href="David_Wilson_GFL_Memorial_Guide.html">View David's Franchise Guide →</a>
+    <a class="mem-btn" href="https://stupendous-pegasus-04ed9e.netlify.app" target="_blank">View David's Franchise Guide →</a>
   </div>
 </section>
 
@@ -254,9 +270,9 @@ footer span{color:var(--gold);}
   <div class="sl">Site Architecture</div>
   <div class="st">🌐 How This Hub Connects</div>
   <div class="info-box">
-    <h3>📌 GitHub Pages Deployment</h3>
+    <h3>📌 Deploying the Hub — New Dedicated Site</h3>
     <ol>
-      <li>Upload <strong>index.html</strong> and <strong>weekly.html</strong> to the repository root</li>
+      <li>Go to <strong>app.netlify.com/drop</strong> (or netlify.com/drop)</li>
       <li>Drag <strong>gfl-hub-v4.html</strong> onto the drop zone — this creates a <em>brand new</em> project</li>
       <li>Rename it something memorable (e.g. <strong>gfl-headquarters</strong>)</li>
       <li>Your hub URL becomes <strong>gfl-headquarters.netlify.app</strong></li>
@@ -271,7 +287,7 @@ footer span{color:var(--gold);}
 </section>
 
 <footer>
-  <p>⚡ <span>GANDORF FANTASY LEAGUE</span> · Est. 2012 · Season XV</p>
+  <p>⚡ <span>GANDORF NATIONAL FOOTBALL LEAGUE</span> · Est. 2012 · Season XIV</p>
   <p style="margin-top:.4rem;opacity:.45;">GFL Headquarters — The Official Home of the League · Built with pride</p>
 </footer>
 
@@ -295,52 +311,30 @@ const champions = [
 ];
 
 const managers = [
-  {name:"Danny Sattler",emoji:"🎭",team:"NY Red Reapers",names:"Benton Hollow Blue → Simpson Sith → NY Red Reapers",seasons:14,w:106,l:78,t:0,champs:[],url:"Simpson_Sith_Franchise_Guide.html",status:"active"},
-  {name:"Tavis Tucker",emoji:"🔥",team:"CUNT / VaG",names:"CUNT / VaG",seasons:12,w:98,l:63,t:0,champs:[2014,2025],url:"tavis-tucker-gfl-franchise-guide.html",status:"active"},
-  {name:"Kyle O'Connell",emoji:"⚡",team:"Off Boys",names:"Off Boys",seasons:13,w:96,l:77,t:1,champs:[2018],url:"OffBoys_GFL_Franchise_Guide.html",status:"active"},
-  {name:"Tyler Shaver",emoji:"🐯",team:"Turbulent Ticklesh!ts",names:"Northern BTH Tigers → Turbulent Ticklesh!ts",seasons:7,w:54,l:42,t:0,champs:[2019,2020,2023],url:"Tyler_Shaver_GFL_Franchise_Guide.html",status:"active"},
-  {name:"Doug Meyer",emoji:"🏔️",team:"Medford MountainMen",names:"Medford MountainMen",seasons:13,w:87,l:87,t:0,champs:[2013,2016],url:"doug_meyer_mountainmen_gfl.html",status:"active"},
-  {name:"David Wilson",emoji:"🕊️",team:"Cleveland Dawgs of War",names:"Cleveland Dawgs of War",seasons:10,w:69,l:62,t:1,champs:[],url:"David_Wilson_GFL_Memorial_Guide.html",status:"memorial"},
-  {name:"Sean O'Connell",emoji:"🎯",team:"Eskimo Brothers",names:"Eskimo Brothers (joined 2023)",seasons:3,w:23,l:25,t:0,champs:[],url:"Sean_OConnell_GFL_Franchise_Guide.html",status:"active"},
-  {name:"Matt Kitson",emoji:"🔄",team:"Broadway Joe Biden",names:"Sark Manchez → Geno's Dentures → Mangold Digger → CTE Decisions! → Broadway Joe Biden → The Barton Spartans → 6+ names",seasons:13,w:82,l:91,t:1,champs:[],url:"matt-kitson-gfl-franchise-guide.html",status:"active"},
-  {name:"Derek Baxter",emoji:"🪖",team:"Netherite Warriors",names:"babyfacebuckeye → OH-IO → Terick Duggertuts → Netherite Warriors",seasons:13,w:81,l:93,t:0,champs:[2021],url:"derek-baxter-gfl-franchise-guide.html",status:"active"},
-  {name:"Tom Campbell",emoji:"⚔️",team:"Monti Thunderboltz",names:"Barton Spartans → Monti Thunderboltz",seasons:14,w:85,l:102,t:0,champs:[2012],url:"Tom_Campbell_GFL_Franchise_Guide.html",status:"active"},
-  {name:"Stephen Davis",emoji:"🗺️",team:"Flint Tropics",names:"Atlas X-Men → Flint Tropics",seasons:11,w:68,l:80,t:0,champs:[2015,2017],url:"Steve_Davis_GFL_Franchise_Guide.html",status:"active"},
-  {name:"Collin Wilson",emoji:"🌲",team:"Redwood Murders",names:"Tyranny → Trannys → Murder → Murders → Redwood Murders",seasons:14,w:89,l:108,t:2,champs:[2022],url:"Redwood_Murder_Franchise_Guide%20(2).html",status:"active"},
-  {name:"Owen Garritt",emoji:"🦁",team:"Sullco MethMouths",names:"Prison Purse → Sullco MethMouths",seasons:5,w:32,l:38,t:0,champs:[2024],url:"Owen_Garritt_GFL_Franchise_Guide.html",status:"active"},
-  {name:"Kris Cappiello",emoji:"🚀",team:"Space Cadets",names:"Space Cadets (never changed — 8 seasons)",seasons:8,w:43,l:61,t:0,champs:[],url:"Kris_Cappiello_GFL_Franchise_Guide.html",status:"retired"},
-  {name:"Josh Hickey",emoji:"👋",team:"Northern IceBacks",names:"Northern IceBacks",seasons:2,w:11,l:15,t:0,champs:[],url:null,status:"retired"},
-  {name:"Rob Olerich",emoji:"🐓",team:"Pennsyltucky Cocks N' Glocks",names:"Pennsyltucky Cocks N' Glocks",seasons:4,w:29,l:23,t:0,champs:[],url:null,status:"retired"},
-  {name:"Joe Meyer",emoji:"📊",team:"Team Average Joe's",names:"Team Average Joe's",seasons:1,w:7,l:6,t:0,champs:[],url:null,status:"retired"},
-  {name:"Mike Morgan",emoji:"🤠",team:"Team amish rifle",names:"Team amish rifle",seasons:1,w:9,l:4,t:0,champs:[],url:null,status:"retired"},
-  {name:"Eric Hector",emoji:"🏀",team:"Team mymagicjohnson",names:"Team mymagicjohnson",seasons:1,w:2,l:11,t:0,champs:[],url:null,status:"retired"},
-  {name:"Greg Brewer",emoji:"🍺",team:"Morgan Post",names:"Morgan Post",seasons:1,w:7,l:6,t:0,champs:[],url:null,status:"retired"},
-  {name:"Will O'Brien",emoji:"⛈️",team:"Storm'n Norman",names:"Storm'n Norman",seasons:1,w:4,l:9,t:0,champs:[],url:null,status:"retired"},
-  {name:"Aimee Baker",emoji:"🧇",team:"L'eggo My Eggo",names:"L'eggo My Eggo",seasons:1,w:3,l:10,t:0,champs:[],url:null,status:"retired"},
-  {name:"Jon Moffett",emoji:"💀",team:"ny heart eaters",names:"ny heart eaters",seasons:2,w:9,l:17,t:0,champs:[],url:null,status:"retired"}
+  {name:"Danny Sattler",  emoji:"🎭",team:"NY Red Reapers",    names:"Benton Hollow Blue → Simpson Sith → NY Red Reapers",      seasons:14,w:106,l:78, t:0,champs:[],          url:"https://magnificent-cobbler-b18290.netlify.app",status:"active"},
+  {name:"Tavis Tucker",   emoji:"🔥",team:"CUNT / VaG",        names:"CUNT / VaG",                                               seasons:12,w:98, l:63, t:0,champs:[2014,2025],  url:"https://elegant-cajeta-25ba3c.netlify.app",    status:"active"},
+  {name:"Kyle O'Connell", emoji:"⚡",team:"Off Boys",           names:"Off Boys",                                                  seasons:13,w:96, l:77, t:1,champs:[2018],       url:"https://boisterous-cobbler-31f2db.netlify.app",status:"active"},
+  {name:"Tyler Shaver",   emoji:"🐯",team:"Turbulent Ticklesh!ts",names:"Northern BTH Tigers → Turbulent Ticklesh!ts",           seasons:7, w:54, l:42, t:0,champs:[2019,2020,2023],url:"https://fluffy-lollipop-725930.netlify.app",  status:"active"},
+  {name:"Doug Meyer",     emoji:"🏔️",team:"Medford MountainMen",names:"Medford MountainMen",                                     seasons:13,w:87, l:87, t:0,champs:[2013,2016],  url:"https://darling-fairy-66c1e4.netlify.app",     status:"active"},
+  {name:"David Wilson",   emoji:"🕊️",team:"Cleveland Dawgs of War",names:"Cleveland Dawgs of War",                               seasons:10,w:69, l:62, t:1,champs:[],          url:"https://stupendous-pegasus-04ed9e.netlify.app",status:"memorial"},
+  {name:"Sean O'Connell", emoji:"🎯",team:"Eskimo Brothers",    names:"Eskimo Brothers (joined 2023)",                           seasons:3, w:23, l:25, t:0,champs:[],          url:"https://elegant-torte-3768d6.netlify.app",     status:"active"},
+  {name:"Matt Kitson",    emoji:"🔄",team:"Broadway Joe Biden", names:"Sark Manchez → Geno's Dentures → Mangold Digger → CTE Decisions! → Broadway Joe Biden → The Barton Spartans → 6+ names",       seasons:13,w:82, l:91, t:1,champs:[],          url:"https://stupendous-monstera-77f6c2.netlify.app",status:"active"},
+  {name:"Derek Baxter",   emoji:"🪖",team:"Netherite Warriors", names:"babyfacebuckeye → OH-IO → Terick Duggertuts → Netherite Warriors",seasons:13,w:81,l:93,t:0,champs:[2021],url:"https://earnest-selkie-56a887.netlify.app",     status:"active"},
+  {name:"Tom Campbell",   emoji:"⚔️",team:"Monti Thunderboltz",names:"Barton Spartans → Monti Thunderboltz",                    seasons:14,w:85, l:102,t:0,champs:[2012],       url:"https://reliable-swan-1ca5de.netlify.app",     status:"retired"},
+  {name:"Stephen Davis",  emoji:"🗺️",team:"Flint Tropics",     names:"Atlas X-Men → Flint Tropics",                            seasons:11,w:68, l:80, t:0,champs:[2015,2017],  url:"https://candid-faloodeh-fe3281.netlify.app",   status:"active"},
+  {name:"Collin Wilson",  emoji:"🌲",team:"Redwood Murders",    names:"Tyranny → Trannys → Murder → Murders → Redwood Murders",  seasons:14,w:89, l:108,t:2,champs:[2022],       url:"https://gorgeous-medovik-b8533a.netlify.app",  status:"active"},
+  {name:"Owen Garritt",   emoji:"🦁",team:"Sullco MethMouths",  names:"Prison Purse → Sullco MethMouths",                        seasons:5, w:32, l:38, t:0,champs:[2024],       url:"https://eclectic-douhua-6311e2.netlify.app",   status:"active"},
+  {name:"Kris Cappiello", emoji:"🚀",team:"Space Cadets",       names:"Space Cadets (never changed — 8 seasons; returned for Season XV)",               seasons:8, w:43, l:61, t:0,champs:[],          url:"https://soft-queijadas-37e357.netlify.app",    status:"active"},
+  {name:"Josh Hickey",    emoji:"👋",team:"Northern IceBacks",   names:"Northern IceBacks",                                      seasons:2, w:11, l:15, t:0,champs:[],          url:"#",                                            status:"retired"},
+  {name:"rob ohlerich",   emoji:"🐓",team:"Pennsyltucky Cocks N' Glocks",names:"Pennsyltucky Cocks N' Glocks",                    seasons:4, w:29, l:23, t:0,champs:[],          url:"#",                                            status:"retired"},
+  {name:"Joe Meyer",      emoji:"📊",team:"Team Average Joe's",   names:"Team Average Joe's",                                     seasons:1, w:7,  l:6,  t:0,champs:[],          url:"#",                                            status:"retired"},
+  {name:"mike morgan",    emoji:"🤠",team:"Team amish rifle",     names:"Team amish rifle",                                       seasons:1, w:9,  l:4,  t:0,champs:[],          url:"#",                                            status:"retired"},
+  {name:"Eric Hector",    emoji:"🏀",team:"Team mymagicjohnson",  names:"Team mymagicjohnson",                                    seasons:1, w:2,  l:11, t:0,champs:[],          url:"#",                                            status:"retired"},
+  {name:"Greg Brewer",    emoji:"🍺",team:"Morgan Post",          names:"Morgan Post",                                            seasons:1, w:7,  l:6,  t:0,champs:[],          url:"#",                                            status:"retired"},
+  {name:"Will O'Brien",   emoji:"⛈️",team:"Storm'n Norman",       names:"Storm'n Norman",                                         seasons:1, w:4,  l:9,  t:0,champs:[],          url:"#",                                            status:"retired"},
+  {name:"Aimee Baker",    emoji:"🧇",team:"L'eggo My Eggo",       names:"L'eggo My Eggo",                                         seasons:1, w:3,  l:10, t:0,champs:[],          url:"#",                                            status:"retired"},
+  {name:"Jon Moffett",    emoji:"💀",team:"ny heart eaters",      names:"ny heart eaters",                                        seasons:2, w:9,  l:17, t:0,champs:[],          url:"#",                                            status:"retired"},
 ];
-
-// ═══════════════ MANAGER DIRECTORY RENDERER ═══════════════
-function renderManagerDirectory() {
-  const list = document.getElementById("linkList");
-  list.innerHTML = "";
-
-  managers.forEach(m => {
-    const div = document.createElement("div");
-    div.className = "mgr-link";
-
-    div.innerHTML = `
-      <a href="${m.url}" class="mgr-entry">
-        ${m.emoji} ${m.name}
-      </a>
-    `;
-
-    list.appendChild(div);
-  });
-}
-
-renderManagerDirectory();
-
 
 const bests = [
   {icon:"👑",cat:"Most Championships",val:"3× Rings",who:"Tyler Shaver",sub:"2019, 2020, 2023 — the only 3-time champion in GFL history"},
@@ -351,12 +345,12 @@ const bests = [
   {icon:"🏈",cat:"Highest Career Peak PF",val:"1,653 pts",who:"Danny Sattler",sub:"2022 season — best ever for a non-champion season"},
   {icon:"📅",cat:"Best Single-Season Record",val:"12-1",who:"Doug Meyer",sub:"2018 — best regular-season record in GFL history"},
   {icon:"🔥",cat:"Best Regular Season (12W)",val:"12-2",who:"Danny Sattler",sub:"2022 — led the league in wins that year, still didn't win the chip"},
-  {icon:"🌅",cat:"Founding Members Still Active",val:"3 OGs",who:"Tom · Danny · Collin",sub:"All three have been in the GFL since Season 1 (2012)"},
+  {icon:"🌅",cat:"Founding Members Still Active",val:"2 OGs",who:"Danny · Collin",sub:"Both have been in the GFL since Season 1 (2012) and remain active after Tom Campbell retired"},
   {icon:"💀",cat:"Most All-Time Losses",val:"108 L",who:"Collin Wilson",sub:"14 seasons, 108 losses — the most in GFL history. And still got a ring in 2022. Redemption arc complete."},
   {icon:"🎭",cat:"Greatest Cinderella Story",val:"Last → Champ",who:"Owen Garritt",sub:"4-10, dead last (12th) in 2021 debut → 11-3, GFL Champion in 2024"},
   {icon:"⚡",cat:"Fastest Rise to Contention",val:"2-yr turnaround",who:"Owen Garritt",sub:"From worst record to championship in just 3 seasons"},
   {icon:"🥷",cat:"Boldest Name Theft",val:"Barton Spartans",who:"Matt Kitson",sub:"Stole Tom Campbell's original team name. Tom had to rebrand to Monti Thunderboltz."},
-  {icon:"🚀",cat:"Most Loyal to One Name",val:"8 Seasons",who:"Kris Cappiello",sub:"Space Cadets — never changed. Not once. Retired with that name."},
+  {icon:"🚀",cat:"Most Loyal to One Name",val:"8 Seasons",who:"Kris Cappiello",sub:"Space Cadets — never changed. Not once. Back for Season XV with the same name."},
   {icon:"📉",cat:"Worst Single Season",val:"1-12",who:"Tom Campbell (2017) & Kris (2014)",sub:"Both hit the floor hard — the GFL crater record, shared."},
   {icon:"🆕",cat:"Newest Manager",val:"2023",who:"Sean O'Connell",sub:"Joined as Eskimo Brothers — came in late, set the all-time scoring record by Year 2"},
   {icon:"💔",cat:"Most Heartbreaking Regular Season",val:"12-1, No Ring",who:"Doug Meyer",sub:"2018 — best regular season record in GFL history. Lost the championship to Kyle O'Connell who went 9-4. The injustice lives on."},
@@ -364,22 +358,6 @@ const bests = [
   {icon:"😤",cat:"Best Regular Season Without a Ring",val:"11-2, Still Lost",who:"Tavis Tucker",sub:"2019 — went 11-2, led the league in PF with 1,534 pts. Lost the championship to a first-year Tyler Shaver. Remains the greatest robbery in GFL history."},
   {icon:"🐓",cat:"Best Team Name in GFL History",val:"Cocks N' Glocks",who:"rob ohlerich",sub:"Pennsyltucky Cocks N' Glocks — a GFL legend from 2013–2016. Retired with the greatest team name the league has ever seen."},
   {icon:"👋",cat:"Shortest Career",val:"2 Seasons",who:"Josh Hickey",sub:"2017-2018. Runner-up in his first year (9-4), then went 2-11 in Year 2 and was never heard from again. A cautionary tale."},
-];
-
-
-const lore = [
-  {icon:"🚀",cat:"The Invader",val:"Tyler Shaver",who:"Champion in Year One",sub:"Joined the league. Won the league. Refused to elaborate."},
-  {icon:"📈",cat:"The No-Ring King",val:"Danny Sattler",who:"106 Career Wins",sub:"The all-time wins leader. Enough victories to fill a trophy case. The actual trophies remain harder to locate."},
-  {icon:"💔",cat:"Greatest Robbery",val:"2019 Tavis Tucker",who:"11-2 • Scoring Leader",sub:"One of the greatest regular seasons ever produced. Left without the ring."},
-  {icon:"🌲",cat:"Redemption Arc",val:"Collin Wilson",who:"2022 Champion",sub:"Years of rebuilding and near misses finally ended with a championship run."},
-  {icon:"⚡",cat:"The Architect",val:"Kyle O'Connell",who:"Off Boys",sub:"Never flashy. Usually dangerous. Especially in December."},
-  {icon:"🏔️",cat:"Transaction Legend",val:"Doug Meyer",who:"Medford MountainMen",sub:"Treats the waiver wire as a full-time occupation."},
-  {icon:"🥷",cat:"Identity Theft",val:"Barton Spartans",who:"League Controversy",sub:"Matt Kitson adopted the league's most historic franchise name. Tom Campbell evolved. Historians remain divided."},
-  {icon:"🎯",cat:"The Meteor",val:"Sean O'Connell",who:"1,702-Point Season",sub:"Arrived late and started breaking records almost immediately."},
-  {icon:"🐯",cat:"Playoff Assassin",val:"Tyler Shaver",who:"2023 • #4 Seed Champion",sub:"When the bracket starts, regular-season records stop mattering."},
-  {icon:"🕊️",cat:"League Legacy",val:"David Wilson",who:"2013-2022",sub:"Ten seasons and countless matchups. Proof that championships are not the only way to leave a lasting mark."},
-  {icon:"💀",cat:"Heartbreak Hall",val:"2022 Simpson Sith",who:"12-2 • 1,653 PF",sub:"One of the greatest teams ever assembled. No championship."},
-  {icon:"📉",cat:"The Doug Meyer Experience",val:"12-1, No Title",who:"2018 MountainMen",sub:"The greatest regular season record produced one important lesson: fantasy football does not care."}
 ];
 
 // ═══════════════ CHAMPIONS WALL ═══════════════
@@ -408,14 +386,14 @@ function renderTbl(data){
     const dots=m.champs.length?`<div class="dots">${m.champs.map(y=>`<div class="dot" title="${y}">${String(y).slice(2)}</div>`).join('')}</div>`:'<span style="color:var(--muted);font-size:.72rem">—</span>';
     b.innerHTML+=`<tr>
       <td><span class="rank ${rankClass}">${p>=0?i+1:'—'}</span></td>
-      <td>${m.url?`<a class="mgr-link" href="${m.url}">${m.emoji} ${m.name}</a>`:`<span class="mgr-link">${m.emoji} ${m.name}</span>`}</td>
+      <td><a class="mgr-link" href="${m.url}" target="_blank">${m.emoji} ${m.name}</a></td>
       <td>${badge}</td>
       <td>${m.seasons??'—'}</td>
       <td style="font-weight:600">${m.w??'—'}</td>
       <td style="color:var(--muted)">${m.l??'—'}</td>
       <td><div class="bar-wrap"><div class="bar-track"><div class="bar-fill" style="width:${barW}%;background:${barColor}"></div></div><span style="font-size:.78rem;font-weight:600;min-width:42px">${pStr}</span></div></td>
       <td>${dots}</td>
-      <td>${m.url?`<a href="${m.url}" style="color:var(--gold);font-size:.72rem;text-decoration:none">View →</a>`:`<span style="color:var(--muted);font-size:.72rem">No guide</span>`}</td>
+      <td><a href="${m.url}" target="_blank" style="color:var(--gold);font-size:.72rem;text-decoration:none">View →</a></td>
     </tr>`;
   });
 }
@@ -435,7 +413,7 @@ function sortTbl(col){
 
 // ═══════════════ CHART ═══════════════
 const chartMgrs=[...managers].filter(m=>m.w!==null&&m.seasons>=3).sort((a,b)=>pct(b)-pct(a));
-if (typeof Chart !== 'undefined') new Chart(document.getElementById('winChart'),{
+new Chart(document.getElementById('winChart'),{
   type:'bar',
   data:{
     labels:chartMgrs.map(m=>m.name),
@@ -466,11 +444,17 @@ bests.forEach(b=>{
   bg.appendChild(d);
 });
 
-// ═══════════════ LEAGUE LORE ═══════════════
-const loreGrid=document.getElementById('loreGrid');
-if(loreGrid){lore.forEach(l=>{const d=document.createElement('div');d.className='best-card';d.innerHTML=`<div class="best-icon">${l.icon}</div><div class="best-cat">${l.cat}</div><div class="best-val">${l.val}</div><div class="best-who">${l.who}</div><div class="best-sub">${l.sub}</div>`;loreGrid.appendChild(d);});}
 
-const divisionAwardsData=[{"name": "East", "awards": [{"year": 2012, "manager": "Mike Morgan", "team": "Amish Rifle"}, {"year": 2013, "manager": "Danny Sattler", "team": "Benton Hollow Blue"}, {"year": 2014, "manager": "Rob O.", "team": "Pensyltucky Cocks n' Glocks"}, {"year": 2015, "manager": "Tom Cambell", "team": "Barton Spartans"}, {"year": 2016, "manager": "Rob O.", "team": "Pensyltucky Cocks n' Glocks"}, {"year": 2017, "manager": "Danny Sattler", "team": "NY Red Reapers"}, {"year": 2018, "manager": "Tom Cambell", "team": "Barton Spartans"}, {"year": 2019, "manager": "Danny Sattler", "team": "NY Red Reapers"}, {"year": 2020, "manager": "Derek Baxter", "team": "OH-IO"}, {"year": 2021, "manager": "Derek Baxter", "team": "OH-IO"}, {"year": 2022, "manager": "Danny Sattler", "team": "Simpson Sith"}, {"year": 2023, "manager": "Danny Sattler", "team": "Simpson Sith"}, {"year": 2024, "manager": "Owen Garritt", "team": "Sullco Methmouths"}, {"year": 2025, "manager": "Tom Cambell", "team": "Monti Thunderbolts"}]}, {"name": "West", "awards": [{"year": 2012, "manager": "Joe Meyer", "team": "Average Joe's"}, {"year": 2013, "manager": "David Wilson", "team": "Cleveland Dawgs of War"}, {"year": 2014, "manager": "Tavis Tucker", "team": "California Un-Named Team"}, {"year": 2015, "manager": "Kyle O'Connell", "team": "Off Boys"}, {"year": 2016, "manager": "Collin Wilson", "team": "North Bay Tyranny"}, {"year": 2017, "manager": "Tavis Tucker", "team": "California Un-Named Team"}, {"year": 2018, "manager": "Kyle O'Connell", "team": "Off Boys"}, {"year": 2019, "manager": "Tavis Tucker", "team": "Virginia Gentiles"}, {"year": 2020, "manager": "Kyle O'Connell", "team": "Off Boys"}, {"year": 2021, "manager": "David Wilson", "team": "Cleveland Dawgs of War"}, {"year": 2022, "manager": "Collin Wilson", "team": "Redwood Murder"}, {"year": 2023, "manager": "Collin Wilson", "team": "Redwood Murder"}, {"year": 2024, "manager": "Sean O'Connell", "team": "Eskimo Brothers"}, {"year": 2025, "manager": "Tavis Tucker", "team": "California Un-Named Team"}]}, {"name": "Central", "awards": [{"year": 2012, "manager": "N/A", "team": ""}, {"year": 2013, "manager": "Doug Meyer", "team": "Medford Mountainmen"}, {"year": 2014, "manager": "Matt Kitson", "team": "Sark Manchez"}, {"year": 2015, "manager": "Stephen Davis", "team": "Atlas Xmen"}, {"year": 2016, "manager": "Doug Meyer", "team": "Medford Mountainmen"}, {"year": 2017, "manager": "Stephen Davis", "team": "Atlas Xmen"}, {"year": 2018, "manager": "Doug Meyer", "team": "Medford Mountainmen"}, {"year": 2019, "manager": "Tyler Shaver", "team": "Northern BTH Tigers"}, {"year": 2020, "manager": "Tyler Shaver", "team": "Northern BTH Tigers"}, {"year": 2021, "manager": "Matt Kitson", "team": "Broadway Joe Biden"}, {"year": 2022, "manager": "Tyler Shaver", "team": "Northern BTH Tigers"}, {"year": 2023, "manager": "Stephen Davis", "team": "Flint Tropics"}, {"year": 2024, "manager": "Matt Kitson", "team": "Barton Spartans"}, {"year": 2025, "manager": "Matt Kitson", "team": "Barton Spartans"}]}];const tabs=document.getElementById('divisionTabs');['All',...divisionAwardsData.map(d=>d.name)].forEach((n,i)=>{const b=document.createElement('button');b.className='addon-tab'+(i?'':' active');b.textContent=n;b.onclick=()=>renderDivisionHistory(n,b);tabs.appendChild(b)});function renderDivisionHistory(filter,btn){document.querySelectorAll('.addon-tab').forEach(b=>b.classList.remove('active'));btn.classList.add('active');const g=document.getElementById('divisionGrid');g.innerHTML='';divisionAwardsData.filter(d=>filter==='All'||d.name===filter).forEach(d=>[...d.awards].reverse().forEach(a=>g.innerHTML+=`<article class="addon-card"><div class="addon-year">${a.year} · ${d.name}</div><div class="addon-name">${a.manager}</div><div class="addon-team">${a.team}</div></article>`))}renderDivisionHistory('All',document.querySelector('.addon-tab'));
+// ═══════════════ DIVISION AWARDS ADD-ON ═══════════════
+const divisionAwardsData=[{"name": "East", "awards": [{"year": 2012, "manager": "Mike Morgan", "team": "Amish Rifle"}, {"year": 2013, "manager": "Danny Sattler", "team": "Benton Hollow Blue"}, {"year": 2014, "manager": "Rob O.", "team": "Pensyltucky Cocks n' Glocks"}, {"year": 2015, "manager": "Tom Cambell", "team": "Barton Spartans"}, {"year": 2016, "manager": "Rob O.", "team": "Pensyltucky Cocks n' Glocks"}, {"year": 2017, "manager": "Danny Sattler", "team": "NY Red Reapers"}, {"year": 2018, "manager": "Tom Cambell", "team": "Barton Spartans"}, {"year": 2019, "manager": "Danny Sattler", "team": "NY Red Reapers"}, {"year": 2020, "manager": "Derek Baxter", "team": "OH-IO"}, {"year": 2021, "manager": "Derek Baxter", "team": "OH-IO"}, {"year": 2022, "manager": "Danny Sattler", "team": "Simpson Sith"}, {"year": 2023, "manager": "Danny Sattler", "team": "Simpson Sith"}, {"year": 2024, "manager": "Owen Garritt", "team": "Sullco Methmouths"}, {"year": 2025, "manager": "Tom Cambell", "team": "Monti Thunderbolts"}]}, {"name": "West", "awards": [{"year": 2012, "manager": "Joe Meyer", "team": "Average Joe's"}, {"year": 2013, "manager": "David Wilson", "team": "Cleveland Dawgs of War"}, {"year": 2014, "manager": "Tavis Tucker", "team": "California Un-Named Team"}, {"year": 2015, "manager": "Kyle O'Connell", "team": "Off Boys"}, {"year": 2016, "manager": "Collin Wilson", "team": "North Bay Tyranny"}, {"year": 2017, "manager": "Tavis Tucker", "team": "California Un-Named Team"}, {"year": 2018, "manager": "Kyle O'Connell", "team": "Off Boys"}, {"year": 2019, "manager": "Tavis Tucker", "team": "Virginia Gentiles"}, {"year": 2020, "manager": "Kyle O'Connell", "team": "Off Boys"}, {"year": 2021, "manager": "David Wilson", "team": "Cleveland Dawgs of War"}, {"year": 2022, "manager": "Collin Wilson", "team": "Redwood Murder"}, {"year": 2023, "manager": "Collin Wilson", "team": "Redwood Murder"}, {"year": 2024, "manager": "Sean O'Connell", "team": "Eskimo Brothers"}, {"year": 2025, "manager": "Tavis Tucker", "team": "California Un-Named Team"}]}, {"name": "Central", "awards": [{"year": 2012, "manager": "N/A", "team": ""}, {"year": 2013, "manager": "Doug Meyer", "team": "Medford Mountainmen"}, {"year": 2014, "manager": "Matt Kitson", "team": "Sark Manchez"}, {"year": 2015, "manager": "Stephen Davis", "team": "Atlas Xmen"}, {"year": 2016, "manager": "Doug Meyer", "team": "Medford Mountainmen"}, {"year": 2017, "manager": "Stephen Davis", "team": "Atlas Xmen"}, {"year": 2018, "manager": "Doug Meyer", "team": "Medford Mountainmen"}, {"year": 2019, "manager": "Tyler Shaver", "team": "Northern BTH Tigers"}, {"year": 2020, "manager": "Tyler Shaver", "team": "Northern BTH Tigers"}, {"year": 2021, "manager": "Matt Kitson", "team": "Broadway Joe Biden"}, {"year": 2022, "manager": "Tyler Shaver", "team": "Northern BTH Tigers"}, {"year": 2023, "manager": "Stephen Davis", "team": "Flint Tropics"}, {"year": 2024, "manager": "Matt Kitson", "team": "Barton Spartans"}, {"year": 2025, "manager": "Matt Kitson", "team": "Barton Spartans"}]}];
+const divisionAwardsLeaders=[{"division": "East", "count": 5, "managers": ["Danny Sattler"]}, {"division": "West", "count": 4, "managers": ["Tavis Tucker"]}, {"division": "Central", "count": 4, "managers": ["Matt Kitson"]}];
+const divSummary=document.getElementById('divAwardSummary');
+divisionAwardsLeaders.forEach(x=>divSummary.innerHTML+=`<div class="div-award-leader"><span>${x.division} leader</span><strong>${x.managers.join(' & ')}</strong><small>${x.count} title${x.count===1?'':'s'}</small></div>`);
+const divTabs=document.getElementById('divAwardTabs');
+['All',...divisionAwardsData.map(x=>x.name)].forEach((name,i)=>{const b=document.createElement('button');b.className='div-award-tab'+(i===0?' active':'');b.textContent=name;b.onclick=()=>renderDivisionAwards(name,b);divTabs.appendChild(b)});
+function renderDivisionAwards(filter,button){document.querySelectorAll('.div-award-tab').forEach(b=>b.classList.remove('active'));button.classList.add('active');const grid=document.getElementById('divAwardGrid');grid.innerHTML='';divisionAwardsData.filter(d=>filter==='All'||d.name===filter).forEach(d=>[...d.awards].reverse().forEach(a=>grid.innerHTML+=`<article class="div-award-card"><div class="div-award-year">${a.year}</div><div><div class="div-award-label">${d.name} Division</div><div class="div-award-name">${a.manager}</div><div class="div-award-team">${a.team}</div></div></article>`))}
+renderDivisionAwards('All',document.querySelector('.div-award-tab'));
+
 // ═══════════════ MANAGER DIRECTORY ═══════════════
 function filterMgrs(f,btn){
   document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
@@ -478,8 +462,8 @@ function filterMgrs(f,btn){
   const g=document.getElementById('mgrGrid');
   g.innerHTML='';
   managers.filter(m=>f==='all'||m.status===f).forEach(m=>{
-    const d=document.createElement(m.url?'a':'div');
-    if(m.url) d.href=m.url;
+    const d=document.createElement('a');
+    d.href=m.url;d.target='_blank';
     d.className='mc'+(m.status==='memorial'?' mem':m.status==='retired'?' ret':'');
     d.innerHTML=`
       <div class="mc-top"><span class="mc-emoji">${m.emoji}</span>${m.status==='memorial'?'<span class="badge b-mem">Memorial</span>':m.status==='retired'?'<span class="badge b-ret">Retired</span>':'<span class="badge b-active">Active</span>'}</div>
@@ -499,27 +483,13 @@ filterMgrs('all',document.querySelector('.tab-btn'));
 
 // ═══════════════ LINK LIST ═══════════════
 const ll=document.getElementById('linkList');
-managers.filter(m=>m.url).forEach(m=>{
+managers.forEach(m=>{
   const a=document.createElement('a');
-  a.href=m.url;
+  a.href=m.url;a.target='_blank';
   a.style.cssText='color:var(--gold);font-size:.78rem;text-decoration:none;padding:.25rem 0;display:block;';
-  a.innerHTML=`${m.emoji} <strong style="color:var(--text)">${m.name}</strong> — View guide`;
+  a.innerHTML=`${m.emoji} <strong style="color:var(--text)">${m.name}</strong> — ${m.url.replace('https://','').replace('.netlify.app','')}`;
   ll.appendChild(a);
 });
-const loreMoments = [
-  "🏆 Tom Campbell was the league's first champion.",
-  "🚀 Tyler Shaver won a championship in his rookie season.",
-  "📈 Danny Sattler owns 106 career victories.",
-  "💔 Doug Meyer went 12-1 and still did not win the title.",
-  "🌲 Redwood Murder finally reached the summit in 2022.",
-  "⚡ Off Boys launched a championship era in 2018.",
-  "🎯 Sean O'Connell set the all-time scoring record.",
-  "🕊️ David Wilson's legacy still shapes the GFL.",
-  "🐯 A #4 seed won the championship in 2023.",
-  "🏔️ Doug Meyer is currently browsing waivers."
-];
-const loreBadge=document.getElementById('todayLore');
-if(loreBadge){loreBadge.textContent=loreMoments[Math.floor(Math.random()*loreMoments.length)];}
 </script>
 </body>
 </html>
