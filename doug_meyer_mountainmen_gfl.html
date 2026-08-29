@@ -1,926 +1,220 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="color-scheme" content="dark" />
-    <title>Doug Meyer — Medford MountainMen GFL Franchise Guide</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1/dist/chart.umd.min.js"></script>
-    <script src="https://unpkg.com/lucide@latest" defer></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              forest: { 950:'#0a160a', 900:'#0f2010', 800:'#162816', 700:'#1d3a1d', 600:'#243d24', 500:'#2d4a2d', 400:'#3a5c3a', 300:'#4a7a4a' },
-              pine: { 600:'#1f5a1f', 500:'#2d6a2d', 400:'#3a8a3a', 300:'#4ade80' },
-              stone: { 600:'#57534e', 500:'#78716c', 400:'#94a3b8', 300:'#d6d3d1' },
-              bark: { 800:'#1a0f07', 700:'#3d1e0f', 600:'#7c3a1e', 500:'#92400e', 400:'#b45309' },
-              campfire: { 500:'#f59e0b', 400:'#fbbf24', 300:'#fcd34d' },
-              cream: { 100:'#f5f0e8', 200:'#e8e0d0', 300:'#d4c8b8' },
-              card: { bg:'#111f11', border:'#2d4a2d' },
-              danger: { 400:'#ef4444', 500:'#dc2626' },
-              success: { 400:'#22c55e', 500:'#16a34a' }
-            },
-            fontFamily: {
-              display: ['Oswald', 'sans-serif'],
-              body: ['Inter', 'sans-serif']
-            }
-          }
-        }
-      };
-    </script>
-    <style>
-      :root {
-        --bg-primary: #0a160a;
-        --bg-card: #111f11;
-        --card-border: #2d4a2d;
-        --pine-green: #2d6a2d;
-        --pine-light: #4ade80;
-        --campfire: #f59e0b;
-        --cream: #f5f0e8;
-        --stone: #78716c;
-        --bark: #7c3a1e;
-        --danger: #ef4444;
-      }
-      * { box-sizing: border-box; margin: 0; padding: 0; }
-      html { scroll-behavior: smooth; }
-      body {
-        background: var(--bg-primary);
-        color: var(--cream);
-        font-family: 'Inter', sans-serif;
-        position: relative;
-        line-height: 1.6;
-      }
-      body::before {
-        content: '';
-        position: fixed;
-        inset: 0;
-        opacity: 0.035;
-        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-        pointer-events: none;
-        z-index: 0;
-      }
-      body > * { position: relative; z-index: 1; }
-
-      .nav-link { position: relative; transition: color 0.2s ease; }
-      .nav-link::after {
-        content: '';
-        position: absolute;
-        bottom: -4px; left: 0;
-        width: 0; height: 2px;
-        background: var(--campfire);
-        transition: width 0.3s ease;
-      }
-      .nav-link:hover::after, .nav-link.active::after { width: 100%; }
-      .nav-link.active { color: var(--campfire); }
-
-      .stat-card {
-        background: linear-gradient(135deg, #111f11 0%, #1d3a1d 100%);
-        border: 1px solid rgba(45, 106, 45, 0.3);
-        border-radius: 1rem;
-        transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
-      }
-      .stat-card:hover {
-        transform: translateY(-3px);
-        border-color: rgba(45, 106, 45, 0.6);
-        box-shadow: 0 8px 32px rgba(45, 106, 45, 0.12);
-      }
-
-      .trail-card {
-        background: linear-gradient(135deg, #1a0f07 0%, #2a1810 100%);
-        border: 1px solid rgba(124, 58, 30, 0.35);
-        border-radius: 1rem;
-        transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
-      }
-      .trail-card:hover {
-        transform: translateY(-3px);
-        border-color: rgba(124, 58, 30, 0.7);
-        box-shadow: 0 8px 24px rgba(124, 58, 30, 0.15);
-      }
-
-      .era-card {
-        background: #111f11;
-        border-radius: 1rem;
-        border: 1px solid rgba(45,74,45,0.25);
-        transition: transform 0.2s ease, border-color 0.2s ease;
-      }
-      .era-card:hover {
-        transform: translateY(-2px);
-        border-color: rgba(45,74,45,0.5);
-      }
-
-      .fire-card {
-        background: linear-gradient(135deg, #1a0f07 0%, #120a02 100%);
-        border: 1px solid rgba(245, 158, 11, 0.2);
-        border-left: 3px solid #f59e0b;
-        border-radius: 1rem;
-        transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
-      }
-      .fire-card:hover {
-        transform: translateY(-2px);
-        border-color: rgba(245, 158, 11, 0.5);
-        box-shadow: 0 4px 24px rgba(245, 158, 11, 0.08);
-      }
-
-      .chart-card {
-        background: #111f11;
-        border: 1px solid #2d4a2d;
-        border-radius: 1rem;
-      }
-
-      .table-row-champ { background: rgba(245, 158, 11, 0.08); border-left: 4px solid #f59e0b; }
-      .table-row-star { background: rgba(74, 222, 128, 0.07); border-left: 4px solid #4ade80; }
-      .table-row-bad { background: rgba(239, 68, 68, 0.07); }
-      .table-row-pending { opacity: 0.5; font-style: italic; }
-
-      .banner-gradient {
-        background: linear-gradient(135deg, #7c3a1e 0%, #92400e 15%, #b45309 30%, #f59e0b 50%, #b45309 70%, #92400e 85%, #7c3a1e 100%);
-        background-size: 200% 200%;
-        animation: shimmer 8s ease infinite;
-      }
-      @keyframes shimmer {
-        0%, 100% { background-position: 0% 50%; }
-        50% { background-position: 100% 50%; }
-      }
-
-      @keyframes grow-bar {
-        from { width: 0%; }
-      }
-      .legacy-bar {
-        animation: grow-bar 2s ease-out forwards;
-      }
-
-      ::-webkit-scrollbar { width: 8px; }
-      ::-webkit-scrollbar-track { background: #0a160a; }
-      ::-webkit-scrollbar-thumb { background: #2d4a2d; border-radius: 4px; }
-      ::-webkit-scrollbar-thumb:hover { background: #3a5c3a; }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="dark" />
+  <title>Doug Meyer | Medford MountainMen GFL Franchise Guide V2</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1/dist/chart.umd.min.js"></script>
+  <script src="https://unpkg.com/lucide@latest" defer></script>
+  <script>
+    tailwind.config = {
+      theme: { extend: {
+        colors: {
+          forest:{950:'#0a160a',900:'#0f2010',800:'#162816',700:'#1d3a1d',600:'#243d24',500:'#2d4a2d'},
+          pine:{500:'#2d6a2d',400:'#3a8a3a',300:'#4ade80'},
+          campfire:{500:'#f59e0b',400:'#fbbf24',300:'#fcd34d'},
+          cream:{100:'#f5f0e8',200:'#e8e0d0'},
+          stone:{500:'#78716c',400:'#94a3b8',300:'#d6d3d1'},
+          danger:{400:'#ef4444'}
+        },
+        fontFamily:{display:['Oswald','sans-serif'],body:['Inter','sans-serif']}
+      }}
+    }
+  </script>
+  <style>
+    :root{--bg:#0a160a;--card:#111f11;--border:#2d4a2d;--pine:#4ade80;--gold:#f59e0b;--cream:#f5f0e8;--muted:#94a3b8}
+    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:var(--bg);color:var(--cream);font-family:Inter,sans-serif;line-height:1.6}
+    body:before{content:'';position:fixed;inset:0;opacity:.035;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");pointer-events:none;z-index:0} body>*{position:relative;z-index:1}
+    .nav-link{position:relative;transition:.2s}.nav-link:after{content:'';position:absolute;left:0;bottom:-5px;height:2px;width:0;background:var(--gold);transition:.25s}.nav-link:hover:after,.nav-link.active:after{width:100%}.nav-link.active{color:var(--gold)}
+    .glass{background:linear-gradient(135deg,rgba(17,31,17,.96),rgba(29,58,29,.78));border:1px solid rgba(74,222,128,.14);box-shadow:0 18px 60px rgba(0,0,0,.2)}
+    .stat-card,.title-card,.lore-card,.myth-card,.chart-card,.legacy-card{border-radius:1rem;transition:transform .22s,border-color .22s,box-shadow .22s}
+    .stat-card{background:linear-gradient(135deg,#111f11,#1d3a1d);border:1px solid rgba(45,106,45,.3)}
+    .stat-card:hover,.title-card:hover,.lore-card:hover,.myth-card:hover{transform:translateY(-4px);border-color:rgba(245,158,11,.62);box-shadow:0 14px 35px rgba(0,0,0,.25),0 0 26px rgba(245,158,11,.08)}
+    .title-card{background:linear-gradient(150deg,#121d12,#172b17);border:1px solid rgba(74,222,128,.16);padding:1.4rem}
+    .lore-card{width:100%;background:linear-gradient(140deg,#111f11,#1b301b);border:1px solid rgba(74,222,128,.14);padding:1.5rem;text-align:left;cursor:pointer;color:inherit}
+    .lore-card[aria-expanded="true"]{border-color:rgba(245,158,11,.7);box-shadow:0 0 28px rgba(245,158,11,.08)}
+    .lore-panel{display:none;background:linear-gradient(135deg,#171208,#111f11);border:1px solid rgba(245,158,11,.2);border-left:4px solid var(--gold);border-radius:1rem;padding:1.5rem;animation:fadeUp .24s ease}.lore-panel.open{display:block}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+    .archetype{position:relative;overflow:hidden;background:radial-gradient(circle at 80% 0%,rgba(245,158,11,.15),transparent 32%),linear-gradient(135deg,#101d10,#192e19 55%,#171006);border:1px solid rgba(245,158,11,.28);border-radius:1.4rem}
+    .archetype:after{content:'⛰';position:absolute;right:-15px;bottom:-65px;font-size:190px;opacity:.045;filter:grayscale(1)}
+    .myth-card{background:#111f11;border:1px solid rgba(45,74,45,.45);padding:1.2rem;border-left:3px solid #f59e0b}
+    .timeline{position:relative}.timeline:before{content:'';position:absolute;left:15px;top:8px;bottom:8px;width:2px;background:linear-gradient(#f59e0b,#4ade80,#2d4a2d)}
+    .era{position:relative;padding-left:3.1rem;margin-bottom:2rem}.era-dot{position:absolute;left:7px;top:7px;width:18px;height:18px;border-radius:50%;background:#0a160a;border:4px solid #f59e0b;box-shadow:0 0 0 5px rgba(245,158,11,.08)}
+    .era-card{background:#111f11;border:1px solid rgba(45,74,45,.35);border-radius:1rem;padding:1.4rem}.era-card.ghost{border-color:rgba(148,163,184,.32);background:linear-gradient(135deg,#111f11,#14191a)}
+    .season-table tr{border-bottom:1px solid rgba(45,74,45,.22)}.champ-row{background:rgba(245,158,11,.07)}.ghost-row{background:rgba(148,163,184,.06)}
+    .chart-card{background:#111f11;border:1px solid #2d4a2d;padding:1.25rem}
+    .commentary{background:radial-gradient(circle at 0 0,rgba(74,222,128,.08),transparent 35%),#101b10;border:1px solid rgba(74,222,128,.18);border-radius:1.2rem}
+    .quote-mark{font-family:Georgia,serif;font-size:5rem;line-height:.6;color:rgba(245,158,11,.35)}
+    .legacy-bar{animation:grow 1.7s ease-out forwards}@keyframes grow{from{width:0}}
+    .legacy-card{background:linear-gradient(135deg,#111f11,#171208);border:1px solid rgba(245,158,11,.22)}
+    .badge{display:inline-flex;align-items:center;gap:.4rem;padding:.4rem .72rem;border-radius:999px;font:600 .72rem Oswald,sans-serif;letter-spacing:.08em;text-transform:uppercase}
+    ::-webkit-scrollbar{width:8px}::-webkit-scrollbar-track{background:#0a160a}::-webkit-scrollbar-thumb{background:#2d4a2d;border-radius:6px}
+  </style>
 </head>
-<body data-id="0" class="min-h-screen antialiased">
-    <app-icon data-id="1" hidden data-icon="mountain" data-palette="Green"></app-icon>
-
-    <!-- ========== STICKY NAV ========== -->
-    <header data-id="2" id="navbar-r4k2" class="fixed top-0 left-0 right-0 z-50 backdrop-blur-md border-b" style="background: rgba(10,22,10,0.92); border-color: #2d4a2d;">
-        <div data-id="3" id="nav-inner-m3p5" class="max-w-7xl mx-auto px-4 md:px-6 flex items-center justify-between h-14 md:h-16">
-            <div data-id="4" id="brand-w8q2" class="flex items-center gap-2">
-                <span data-id="5" class="text-xl">⛰️</span>
-                <span data-id="6" class="font-display text-lg md:text-xl font-bold tracking-wide text-campfire-500">MOUNTAIN MEN</span>
-                <span data-id="7" class="font-display text-sm md:text-base font-medium text-pine-300 tracking-wider">· GFL</span>
-            </div>
-            <nav data-id="8" id="desktop-nav-d4" class="hidden md:flex items-center gap-6">
-                <a data-id="9" id="nav-overview-e5" href="#home" class="nav-link text-sm font-medium text-cream-200 hover:text-campfire-400 active">Overview</a>
-                <a data-id="10" id="nav-seasons-f6" href="#seasons" class="nav-link text-sm font-medium text-cream-200 hover:text-campfire-400">Seasons</a>
-                <a data-id="11" id="nav-charts-g7" href="#charts" class="nav-link text-sm font-medium text-cream-200 hover:text-campfire-400">Charts</a>
-                <a data-id="12" id="nav-story-h8" href="#story" class="nav-link text-sm font-medium text-cream-200 hover:text-campfire-400">Story</a>
-                <a data-id="13" id="nav-legacy-i9" href="#legacy" class="nav-link text-sm font-medium text-cream-200 hover:text-campfire-400">Legacy</a>
-            </nav>
-            <button data-id="14" id="mobile-menu-btn-j0" class="md:hidden p-2 text-cream-200 hover:text-white" aria-label="Open menu">
-                <i data-id="15" data-lucide="menu" class="w-6 h-6"></i>
-            </button>
-        </div>
-    </header>
-
-    <!-- Mobile Menu -->
-    <nav data-id="16" id="mobile-menu-k1" class="hidden fixed inset-0 z-[60] flex-col items-center justify-center gap-8" style="background: rgba(10,22,10,0.98); backdrop-filter: blur(16px);">
-        <button data-id="17" id="mobile-close-l2" class="absolute top-4 right-4 p-2 text-cream-200 hover:text-white" aria-label="Close menu">
-            <i data-id="18" data-lucide="x" class="w-7 h-7"></i>
-        </button>
-        <a data-id="19" href="#home" class="mobile-nav-link font-display text-2xl font-semibold text-cream-200 hover:text-campfire-400 transition-colors">Overview</a>
-        <a data-id="20" href="#seasons" class="mobile-nav-link font-display text-2xl font-semibold text-cream-200 hover:text-campfire-400 transition-colors">Seasons</a>
-        <a data-id="21" href="#charts" class="mobile-nav-link font-display text-2xl font-semibold text-cream-200 hover:text-campfire-400 transition-colors">Charts</a>
-        <a data-id="22" href="#story" class="mobile-nav-link font-display text-2xl font-semibold text-cream-200 hover:text-campfire-400 transition-colors">Story</a>
-        <a data-id="23" href="#legacy" class="mobile-nav-link font-display text-2xl font-semibold text-cream-200 hover:text-campfire-400 transition-colors">Legacy</a>
+<body class="min-h-screen antialiased">
+<header class="fixed top-0 left-0 right-0 z-50 backdrop-blur-md border-b" style="background:rgba(10,22,10,.93);border-color:#2d4a2d">
+  <div class="max-w-7xl mx-auto px-4 md:px-6 flex items-center justify-between h-14 md:h-16">
+    <a href="#home" class="flex items-center gap-2 no-underline"><span class="text-xl">⛰️</span><span class="font-display text-lg md:text-xl font-bold tracking-wide text-campfire-500">MOUNTAINMEN</span><span class="font-display text-sm text-pine-300">· GFL</span></a>
+    <nav id="desktopNav" class="hidden lg:flex items-center gap-6">
+      <a class="nav-link text-sm text-cream-200" href="#identity">Identity</a><a class="nav-link text-sm text-cream-200" href="#lore">Lore</a><a class="nav-link text-sm text-cream-200" href="#resume">Resume</a><a class="nav-link text-sm text-cream-200" href="#history">History</a><a class="nav-link text-sm text-cream-200" href="#charts">Charts</a><a class="nav-link text-sm text-cream-200" href="#commentary">Commentary</a><a class="nav-link text-sm text-cream-200" href="#legacy">Legacy</a>
     </nav>
+    <button id="menuBtn" class="lg:hidden p-2" aria-label="Open menu"><i data-lucide="menu"></i></button>
+  </div>
+</header>
+<div id="mobileMenu" class="hidden fixed inset-0 z-[60] bg-[#071007]/95 backdrop-blur-xl items-center justify-center flex-col gap-7">
+  <button id="menuClose" class="absolute top-5 right-5 p-2" aria-label="Close menu"><i data-lucide="x"></i></button>
+  <a class="mobileLink font-display text-2xl" href="#identity">Identity</a><a class="mobileLink font-display text-2xl" href="#lore">Lore</a><a class="mobileLink font-display text-2xl" href="#resume">Resume</a><a class="mobileLink font-display text-2xl" href="#history">History</a><a class="mobileLink font-display text-2xl" href="#charts">Charts</a><a class="mobileLink font-display text-2xl" href="#commentary">Commentary</a><a class="mobileLink font-display text-2xl" href="#legacy">Legacy</a>
+</div>
 
-    <main data-id="24">
-        <!-- ========== HERO ========== -->
-        <section data-id="25" id="home" class="relative pt-24 pb-16 md:pt-32 md:pb-24 px-4 md:px-6 overflow-hidden" style="background: linear-gradient(to bottom, #0a160a 0%, #0f2010 40%, #162816 100%);">
-            <!-- Mountain Silhouette SVG -->
-            <div data-id="26" class="absolute bottom-0 left-0 right-0 pointer-events-none" style="z-index:0;">
-                <svg data-id="27" viewBox="0 0 1440 120" preserveAspectRatio="none" class="w-full" style="height:120px; display:block;">
-                    <path data-id="28" d="M0,120 L0,90 L60,70 L120,85 L200,50 L280,75 L360,35 L440,65 L500,25 L560,55 L640,15 L720,45 L780,20 L840,50 L920,10 L1000,40 L1060,18 L1120,48 L1200,30 L1280,60 L1360,38 L1440,70 L1440,120 Z" fill="#0f2010"/>
-                    <path data-id="29" d="M0,120 L0,95 L80,78 L160,90 L240,60 L320,80 L400,42 L480,68 L560,30 L640,58 L720,22 L800,52 L880,28 L960,55 L1040,18 L1120,50 L1200,35 L1280,65 L1360,45 L1440,80 L1440,120 Z" fill="#162816" opacity="0.85"/>
-                    <path data-id="30" d="M0,120 L0,100 L100,88 L200,98 L300,72 L400,90 L500,55 L600,78 L700,42 L800,68 L900,48 L1000,72 L1100,38 L1200,62 L1300,50 L1440,85 L1440,120 Z" fill="#1d3a1d" opacity="0.6"/>
-                </svg>
-            </div>
+<main>
+<section id="home" class="relative pt-28 pb-20 md:pt-36 md:pb-28 px-4 md:px-6 overflow-hidden" style="background:linear-gradient(to bottom,#081308,#0f2010 50%,#162816)">
+  <div class="absolute inset-0 pointer-events-none" style="background:radial-gradient(circle at 50% 25%,rgba(74,222,128,.07),transparent 32%)"></div>
+  <svg viewBox="0 0 1440 150" preserveAspectRatio="none" class="absolute bottom-0 left-0 w-full h-[130px] opacity-70"><path d="M0 150V112L90 80l70 24 95-55 100 48 90-64 95 49 110-72 98 55 90-44 100 58 90-54 100 58 95-38 117 66v89Z" fill="#102510"/><path d="M0 150v-25l110-31 95 23 110-44 110 45 105-57 110 51 110-67 100 61 115-54 90 56 110-44 125 71v45Z" fill="#1d3a1d" opacity=".75"/></svg>
+  <div class="relative max-w-5xl mx-auto text-center">
+    <p class="font-display uppercase tracking-[.24em] text-xs md:text-sm text-pine-300 mb-4">Gandorf National Football League · Franchise Guide V2</p>
+    <div class="flex justify-center mb-5"><span class="badge bg-campfire-500/10 text-campfire-400 border border-campfire-500/25">⛰️ Archetype · The Sleeping Giant</span></div>
+    <h1 class="font-display text-5xl sm:text-6xl md:text-8xl font-bold tracking-tight leading-[.96]">MEDFORD<br><span class="text-campfire-400">MOUNTAINMEN</span></h1>
+    <p class="mt-6 text-lg text-stone-400"><strong class="text-cream-100">Doug Meyer</strong> · 13-season franchise resume, 2013–2025</p>
+    <p class="max-w-2xl mx-auto mt-5 text-stone-400">Two championships. One unforgettable near-miss. A franchise whose earliest peaks still define every climb that followed.</p>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mt-10 max-w-3xl mx-auto">
+      <div class="stat-card p-4"><div class="text-2xl">🏆</div><div class="font-display text-3xl text-campfire-400 font-bold">2</div><div class="text-xs uppercase tracking-wider text-stone-400">Championships</div></div>
+      <div class="stat-card p-4"><div class="text-2xl">📊</div><div class="font-display text-3xl font-bold">87–87</div><div class="text-xs uppercase tracking-wider text-stone-400">Career Record</div></div>
+      <div class="stat-card p-4"><div class="text-2xl">👻</div><div class="font-display text-3xl text-pine-300 font-bold">12–1</div><div class="text-xs uppercase tracking-wider text-stone-400">2018</div></div>
+      <div class="stat-card p-4"><div class="text-2xl">🗓️</div><div class="font-display text-3xl font-bold">13</div><div class="text-xs uppercase tracking-wider text-stone-400">Seasons</div></div>
+    </div>
+  </div>
+</section>
 
-            <div data-id="31" id="hero-content-v2" class="relative z-10 max-w-5xl mx-auto text-center">
-                <p data-id="32" id="eyebrow-w3" class="text-xs md:text-sm font-semibold uppercase tracking-[0.2em] text-pine-300 mb-3 md:mb-4 font-display">Gandorf National Football League · Est. 2013</p>
-                <h1 data-id="33" id="hero-title-x4" class="font-display text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight leading-[1.05] mb-4 md:mb-6" style="color: #f5f0e8; text-shadow: 0 2px 20px rgba(0,0,0,0.8), 0 0 60px rgba(45,106,45,0.12);">
-                    MEDFORD<br data-id="34" class="sm:hidden" /> MOUNTAIN MEN
-                </h1>
-                <p data-id="35" id="hero-sub-y5" class="text-base md:text-lg text-stone-400 max-w-2xl mx-auto leading-relaxed font-body">
-                    <span data-id="36" class="text-cream-100 font-semibold">Doug Meyer</span> · 13 Seasons in the Wilderness
-                </p>
+<section id="identity" class="py-14 md:py-20 px-4 md:px-6">
+  <div class="max-w-6xl mx-auto">
+    <p class="font-display uppercase tracking-[.22em] text-xs text-campfire-400 mb-2">Franchise titles</p>
+    <h2 class="font-display text-3xl md:text-4xl font-bold mb-8">THE NAMES HISTORY GAVE THEM</h2>
+    <div class="grid md:grid-cols-3 gap-4">
+      <article class="title-card"><div class="text-3xl mb-3">🏔️</div><p class="text-xs uppercase tracking-widest text-pine-300 font-display">Legendary</p><h3 class="font-display text-2xl font-bold mt-1">The First Kings</h3><p class="text-stone-400 text-sm mt-2">Medford won the GFL's inaugural 2013 championship. The league's first summit belongs to the MountainMen.</p></article>
+      <article class="title-card"><div class="text-3xl mb-3">🔥</div><p class="text-xs uppercase tracking-widest text-campfire-400 font-display">Epic</p><h3 class="font-display text-2xl font-bold mt-1">The Lost Dynasty</h3><p class="text-stone-400 text-sm mt-2">Two championships established greatness. The 12–1 runner-up season in 2018 made the trophy case feel like it could have held even more.</p></article>
+      <article class="title-card"><div class="text-3xl mb-3">🌲</div><p class="text-xs uppercase tracking-widest text-stone-400 font-display">Enduring</p><h3 class="font-display text-2xl font-bold mt-1">Guardians of the Summit</h3><p class="text-stone-400 text-sm mt-2">The franchise keeps returning to the same image: climb, fall, return, and climb again.</p></article>
+    </div>
 
-                <div data-id="37" id="hero-stats-z6" class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 mt-10 md:mt-14 max-w-3xl mx-auto">
-                    <div data-id="38" class="stat-card p-4 md:p-5 text-center">
-                        <span data-id="39" class="text-2xl mb-2 block">🏆</span>
-                        <p data-id="40" class="text-2xl md:text-3xl font-display font-bold text-campfire-400 tabular-nums">2</p>
-                        <p data-id="41" class="text-xs font-medium uppercase tracking-wider text-stone-500 mt-1 font-display">Championships</p>
-                        <p data-id="42" class="text-xs text-pine-300 mt-0.5">2013 & 2016</p>
-                    </div>
-                    <div data-id="43" class="stat-card p-4 md:p-5 text-center">
-                        <span data-id="44" class="text-2xl mb-2 block">📊</span>
-                        <p data-id="45" class="text-2xl md:text-3xl font-display font-bold text-cream-100 tabular-nums">87-87</p>
-                        <p data-id="46" class="text-xs font-medium uppercase tracking-wider text-stone-500 mt-1 font-display">Career W-L</p>
-                        <p data-id="47" class="text-xs text-pine-300 mt-0.5">all 13 seasons</p>
-                    </div>
-                    <div data-id="48" class="stat-card p-4 md:p-5 text-center">
-                        <span data-id="49" class="text-2xl mb-2 block">🔥</span>
-                        <p data-id="50" class="text-2xl md:text-3xl font-display font-bold text-pine-300 tabular-nums">1,540.5</p>
-                        <p data-id="51" class="text-xs font-medium uppercase tracking-wider text-stone-500 mt-1 font-display">Season PF Record</p>
-                        <p data-id="52" class="text-xs text-pine-300 mt-0.5">2018</p>
-                    </div>
-                    <div data-id="53" class="stat-card p-4 md:p-5 text-center">
-                        <span data-id="54" class="text-2xl mb-2 block">📍</span>
-                        <p data-id="55" class="text-2xl md:text-3xl font-display font-bold text-cream-100 tabular-nums">7.0</p>
-                        <p data-id="56" class="text-xs font-medium uppercase tracking-wider text-stone-500 mt-1 font-display">Avg. Finish</p>
-                        <p data-id="57" class="text-xs text-pine-300 mt-0.5">per season</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <div class="archetype mt-8 p-7 md:p-10">
+      <div class="relative z-10 max-w-3xl">
+        <span class="badge bg-pine-300/10 text-pine-300 border border-pine-300/20">Franchise Archetype</span>
+        <h3 class="font-display text-4xl md:text-6xl font-bold mt-4 text-campfire-400">THE SLEEPING GIANT</h3>
+        <p class="font-display text-lg md:text-xl text-cream-200 mt-3">The past is too accomplished to ignore. The present is too uneven to assume.</p>
+        <p class="text-stone-400 mt-4">Medford's identity lives in the tension between proven championship pedigree and the long wait for a third title. That contradiction makes every revival feel plausible and every setback feel temporary.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-        <!-- ========== CHAMPIONSHIP BANNER ========== -->
-        <section data-id="58" id="champ-banner-e1" class="py-8 md:py-10 px-4 md:px-6">
-            <div data-id="59" id="banner-inner-f2" class="max-w-5xl mx-auto banner-gradient rounded-2xl p-6 md:p-10 text-center relative overflow-hidden">
-                <div data-id="60" class="absolute inset-0 bg-gradient-to-br from-transparent to-black/20 pointer-events-none"></div>
-                <div data-id="61" class="relative z-10">
-                    <div data-id="62" class="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8">
-                        <div data-id="63" class="text-center">
-                            <span data-id="64" class="text-3xl md:text-4xl block mb-1">🏆</span>
-                            <p data-id="65" class="font-display text-xl md:text-2xl font-bold" style="color:#0a0a0a;">2013</p>
-                            <p data-id="66" class="text-xs md:text-sm font-display tracking-wide font-semibold" style="color:#1a1000;">INAUGURAL GFL CHAMPION</p>
-                        </div>
-                        <span data-id="67" class="text-2xl md:text-3xl hidden md:block">🌲</span>
-                        <div data-id="68" class="text-center">
-                            <span data-id="69" class="text-3xl md:text-4xl block mb-1">🏆</span>
-                            <p data-id="70" class="font-display text-xl md:text-2xl font-bold" style="color:#0a0a0a;">2016</p>
-                            <p data-id="71" class="text-xs md:text-sm font-display tracking-wide font-semibold" style="color:#1a1000;">RETURNED TO GLORY</p>
-                        </div>
-                    </div>
-                    <p data-id="72" class="text-xs md:text-sm mt-4 font-display tracking-wider uppercase font-medium" style="color:#2a1500;">Three seasons apart — and both summits belong to Doug Meyer</p>
-                </div>
-            </div>
-        </section>
+<section id="lore" class="py-14 md:py-20 px-4 md:px-6 bg-[#0d190d]">
+  <div class="max-w-6xl mx-auto">
+    <p class="font-display uppercase tracking-[.22em] text-xs text-pine-300 mb-2">Interactive archive</p>
+    <h2 class="font-display text-3xl md:text-4xl font-bold">THE MOUNTAINMEN LORE VAULT</h2>
+    <p class="text-stone-400 mt-3 mb-8 max-w-3xl">These are the chapters that define the franchise, not a list of transactions or draft picks. Open a card to read the story.</p>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-4" id="loreButtons">
+      <button class="lore-card" aria-expanded="false" data-target="lore-first"><div class="text-3xl">🏔️</div><h3 class="font-display text-xl font-bold mt-3">The First Kings</h3><p class="text-xs text-stone-400 mt-2">Origin story</p></button>
+      <button class="lore-card" aria-expanded="false" data-target="lore-fall"><div class="text-3xl">🌧️</div><h3 class="font-display text-xl font-bold mt-3">The Fall</h3><p class="text-xs text-stone-400 mt-2">2014–2015</p></button>
+      <button class="lore-card" aria-expanded="false" data-target="lore-return"><div class="text-3xl">👑</div><h3 class="font-display text-xl font-bold mt-3">Return to Glory</h3><p class="text-xs text-stone-400 mt-2">2016</p></button>
+      <button class="lore-card" aria-expanded="false" data-target="lore-ghost"><div class="text-3xl">👻</div><h3 class="font-display text-xl font-bold mt-3">Ghost of 2018</h3><p class="text-xs text-stone-400 mt-2">The great what-if</p></button>
+      <button class="lore-card" aria-expanded="false" data-target="lore-climb"><div class="text-3xl">🌲</div><h3 class="font-display text-xl font-bold mt-3">The Long Climb</h3><p class="text-xs text-stone-400 mt-2">The unfinished chapter</p></button>
+    </div>
+    <div class="mt-5">
+      <article id="lore-first" class="lore-panel"><h3 class="font-display text-2xl text-campfire-400 font-bold">THE FIRST KINGS</h3><p class="text-stone-300 mt-3">Before the GFL had a mythology, Medford supplied its first champion. Doug Meyer took the MountainMen to the top in 2013 and secured something no future franchise can duplicate: being first. The title did more than start a trophy case. It made Medford part of the league's origin story.</p></article>
+      <article id="lore-fall" class="lore-panel"><h3 class="font-display text-2xl text-campfire-400 font-bold">THE FALL</h3><p class="text-stone-300 mt-3">The first championship did not become immediate domination. The following seasons sent Medford down the standings and turned the reigning champion into a reminder that elevation is temporary. That drop matters because it made what came next much bigger than a repeat.</p></article>
+      <article id="lore-return" class="lore-panel"><h3 class="font-display text-2xl text-campfire-400 font-bold">RETURN TO GLORY</h3><p class="text-stone-300 mt-3">The 2016 championship changed the meaning of 2013. One title can become a moment. A second title, three seasons later, made the first one impossible to dismiss as an accident. Medford had fallen, climbed again, and reached the summit twice.</p></article>
+      <article id="lore-ghost" class="lore-panel"><h3 class="font-display text-2xl text-campfire-400 font-bold">THE GHOST OF 2018</h3><p class="text-stone-300 mt-3">The MountainMen went 12–1 in 2018 and finished second after losing the championship to Off Boys. It was a season powerful enough to become a permanent argument: was Medford's greatest team actually the one that did not win a title? The missing ring is exactly what keeps the season alive.</p></article>
+      <article id="lore-climb" class="lore-panel"><h3 class="font-display text-2xl text-campfire-400 font-bold">THE LONG CLIMB</h3><p class="text-stone-300 mt-3">Since the second title, the MountainMen have lived with a standard set by their own past. There have been flashes, especially 2018 and a return to winning territory in 2022, but no third championship. Medford's modern story is not collapse. It is the burden of knowing the summit is real because the franchise has already stood there twice.</p></article>
+    </div>
+  </div>
+</section>
 
-        <!-- ========== SEASON-BY-SEASON TABLE ========== -->
-        <section data-id="73" id="seasons" class="py-12 md:py-20 px-4 md:px-6">
-            <div data-id="74" id="seasons-wrap-k7" class="max-w-6xl mx-auto">
-                <div data-id="75" class="flex items-center gap-3 mb-8">
-                    <span data-id="76" class="text-xl">⛰️</span>
-                    <h2 data-id="77" id="seasons-title-l8" class="font-display text-2xl md:text-3xl font-bold text-cream-100 tracking-tight">EVERY SUMMIT & VALLEY — SEASON LOG</h2>
-                </div>
-                <div data-id="78" id="table-wrap-m9" class="overflow-x-auto rounded-xl border" style="border-color:#2d4a2d; background:#111f11;">
-                    <table data-id="79" id="season-table-n0" class="w-full text-sm">
-                        <thead data-id="80">
-                            <tr data-id="81" class="text-left" style="background:#1d3a1d;">
-                                <th data-id="82" class="px-3 md:px-4 py-3 font-display font-semibold text-xs uppercase tracking-wider text-cream-200">Year</th>
-                                <th data-id="83" class="px-3 md:px-4 py-3 font-display font-semibold text-xs uppercase tracking-wider text-cream-200">Record</th>
-                                <th data-id="84" class="px-3 md:px-4 py-3 font-display font-semibold text-xs uppercase tracking-wider text-cream-200">Finish</th>
-                                <th data-id="85" class="px-3 md:px-4 py-3 font-display font-semibold text-xs uppercase tracking-wider text-cream-200 tabular-nums">PF</th>
-                                <th data-id="86" class="px-3 md:px-4 py-3 font-display font-semibold text-xs uppercase tracking-wider text-cream-200 tabular-nums">PA</th>
-                                <th data-id="87" class="px-3 md:px-4 py-3 font-display font-semibold text-xs uppercase tracking-wider text-cream-200 tabular-nums">Diff</th>
-                                <th data-id="88" class="px-3 md:px-4 py-3 font-display font-semibold text-xs uppercase tracking-wider text-cream-200">Moves</th>
-                                <th data-id="89" class="px-3 md:px-4 py-3 font-display font-semibold text-xs uppercase tracking-wider text-cream-200">Notes</th>
-                            </tr>
-                        </thead>
-                        <tbody data-id="90" id="season-tbody-o1"></tbody>
-                    </table>
-                </div>
-            </div>
-        </section>
+<section id="resume" class="py-14 md:py-20 px-4 md:px-6">
+  <div class="max-w-5xl mx-auto">
+    <p class="font-display uppercase tracking-[.22em] text-xs text-campfire-400 mb-2">Career resume</p><h2 class="font-display text-3xl md:text-4xl font-bold mb-8">THE NUMBERS THAT MATTER</h2>
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+      <div class="stat-card p-5"><p class="font-display text-3xl text-campfire-400 font-bold">2</p><p class="text-sm font-semibold">Championships</p><p class="text-xs text-stone-400 mt-1">2013, 2016</p></div>
+      <div class="stat-card p-5"><p class="font-display text-3xl font-bold">87–87</p><p class="text-sm font-semibold">Career Record</p><p class="text-xs text-stone-400 mt-1">13 seasons</p></div>
+      <div class="stat-card p-5"><p class="font-display text-3xl text-pine-300 font-bold">12–1</p><p class="text-sm font-semibold">Best Record</p><p class="text-xs text-stone-400 mt-1">2018</p></div>
+      <div class="stat-card p-5"><p class="font-display text-3xl text-pine-300 font-bold">1,540.5</p><p class="text-sm font-semibold">Best Regular-Season PF</p><p class="text-xs text-stone-400 mt-1">2018</p></div>
+      <div class="stat-card p-5"><p class="font-display text-3xl font-bold">7.0</p><p class="text-sm font-semibold">Avg. Finish</p><p class="text-xs text-stone-400 mt-1">Based on supplied guide data</p></div>
+      <div class="stat-card p-5"><p class="font-display text-3xl font-bold">13</p><p class="text-sm font-semibold">Seasons</p><p class="text-xs text-stone-400 mt-1">2013–2025</p></div>
+    </div>
+  </div>
+</section>
 
-        <!-- ========== CHARTS ========== -->
-        <section data-id="91" id="charts" class="py-12 md:py-20 px-4 md:px-6" style="background: rgba(17,31,17,0.5);">
-            <div data-id="92" id="charts-wrap-q3" class="max-w-6xl mx-auto">
-                <div data-id="93" class="flex items-center gap-3 mb-8">
-                    <span data-id="94" class="text-xl">📈</span>
-                    <h2 data-id="95" id="charts-title-r4" class="font-display text-2xl md:text-3xl font-bold text-cream-100 tracking-tight">READING THE ELEVATION — SEASON ANALYTICS</h2>
-                </div>
-                <div data-id="96" id="chart-a-card-s5" class="chart-card p-4 md:p-6 mb-4 md:mb-6">
-                    <h3 data-id="97" class="font-display text-lg font-semibold text-cream-200 mb-4">Points Scored vs Allowed</h3>
-                    <div data-id="98" class="relative h-64 md:h-80">
-                        <canvas data-id="99" id="chart-scoring-u7"></canvas>
-                    </div>
-                </div>
-                <div data-id="100" class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-                    <div data-id="101" id="chart-b-card-v8" class="chart-card p-4 md:p-6">
-                        <h3 data-id="102" class="font-display text-lg font-semibold text-cream-200 mb-4">Finish Position by Year</h3>
-                        <div data-id="103" class="relative h-64 md:h-72">
-                            <canvas data-id="104" id="chart-finish-x0"></canvas>
-                        </div>
-                    </div>
-                    <div data-id="105" id="chart-c-card-y1" class="chart-card p-4 md:p-6">
-                        <h3 data-id="106" class="font-display text-lg font-semibold text-cream-200 mb-4">Point Differential by Season</h3>
-                        <div data-id="107" class="relative h-64 md:h-72">
-                            <canvas data-id="108" id="chart-diff-a3"></canvas>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+<section id="history" class="py-14 md:py-20 px-4 md:px-6 bg-[#0d190d]">
+  <div class="max-w-6xl mx-auto">
+    <div class="grid lg:grid-cols-[.8fr_1.2fr] gap-10 lg:gap-14">
+      <div><p class="font-display uppercase tracking-[.22em] text-xs text-pine-300 mb-2">Era timeline</p><h2 class="font-display text-3xl md:text-4xl font-bold mb-8">THE CLIMB IN CHAPTERS</h2>
+        <div class="timeline">
+          <div class="era"><span class="era-dot"></span><div class="era-card"><span class="text-xs font-display text-campfire-400 tracking-widest">2013</span><h3 class="font-display text-xl font-bold mt-1">The First Summit</h3><p class="text-sm text-stone-400 mt-2">The inaugural title establishes the franchise immediately.</p></div></div>
+          <div class="era"><span class="era-dot" style="border-color:#78716c"></span><div class="era-card"><span class="text-xs font-display text-stone-400 tracking-widest">2014–2015</span><h3 class="font-display text-xl font-bold mt-1">Lost in the Woods</h3><p class="text-sm text-stone-400 mt-2">The champion falls back into the pack and loses its early altitude.</p></div></div>
+          <div class="era"><span class="era-dot"></span><div class="era-card"><span class="text-xs font-display text-campfire-400 tracking-widest">2016</span><h3 class="font-display text-xl font-bold mt-1">Return to Glory</h3><p class="text-sm text-stone-400 mt-2">A second title turns an early success into a lasting legacy.</p></div></div>
+          <div class="era"><span class="era-dot" style="border-color:#94a3b8"></span><div class="era-card ghost"><span class="text-xs font-display text-stone-400 tracking-widest">2018</span><h3 class="font-display text-xl font-bold mt-1">The Ghost Season</h3><p class="text-sm text-stone-400 mt-2">12–1, second place, no ring. The great unresolved MountainMen season.</p></div></div>
+          <div class="era"><span class="era-dot" style="border-color:#4ade80"></span><div class="era-card"><span class="text-xs font-display text-pine-300 tracking-widest">2019–2025</span><h3 class="font-display text-xl font-bold mt-1">The Long Climb</h3><p class="text-sm text-stone-400 mt-2">A third summit remains out of reach, keeping the franchise story unfinished.</p></div></div>
+        </div>
+      </div>
+      <div><p class="font-display uppercase tracking-[.22em] text-xs text-campfire-400 mb-2">Season ledger</p><h2 class="font-display text-3xl md:text-4xl font-bold mb-8">YEAR BY YEAR</h2>
+        <div class="overflow-x-auto rounded-2xl border border-forest-500 bg-[#111f11]"><table class="season-table w-full text-sm"><thead class="bg-[#1d3a1d]"><tr><th class="text-left px-4 py-3 font-display">YEAR</th><th class="text-left px-4 py-3 font-display">RECORD</th><th class="text-left px-4 py-3 font-display">FINISH</th><th class="text-right px-4 py-3 font-display">PF</th><th class="text-right px-4 py-3 font-display">DIFF</th></tr></thead><tbody id="seasonBody"></tbody></table></div>
+      </div>
+    </div>
+  </div>
+</section>
 
-        <!-- ========== CAREER STATS ========== -->
-        <section data-id="109" id="stats" class="py-12 md:py-20 px-4 md:px-6">
-            <div data-id="110" id="stats-wrap-c5" class="max-w-5xl mx-auto">
-                <div data-id="111" class="flex items-center gap-3 mb-8">
-                    <span data-id="112" class="text-xl">🥾</span>
-                    <h2 data-id="113" id="stats-title-d6" class="font-display text-2xl md:text-3xl font-bold text-cream-100 tracking-tight">TRAIL MARKERS — CAREER BENCHMARKS</h2>
-                </div>
-                <div data-id="114" id="trail-cards-e7" class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
-                    <div data-id="115" class="trail-card p-4 md:p-5 text-center">
-                        <span data-id="116" class="text-2xl mb-2 block">🏆</span>
-                        <p data-id="117" class="text-2xl md:text-3xl font-display font-bold text-campfire-400 tabular-nums">2</p>
-                        <p data-id="118" class="text-xs font-medium uppercase tracking-wider text-stone-400 mt-1 font-display">Championships</p>
-                        <p data-id="119" class="text-xs text-bark-400 mt-0.5">2013 & 2016</p>
-                    </div>
-                    <div data-id="120" class="trail-card p-4 md:p-5 text-center">
-                        <span data-id="121" class="text-2xl mb-2 block">⭐</span>
-                        <p data-id="122" class="text-2xl md:text-3xl font-display font-bold text-pine-300 tabular-nums">12-1-0</p>
-                        <p data-id="123" class="text-xs font-medium uppercase tracking-wider text-stone-400 mt-1 font-display">Best Season Record</p>
-                        <p data-id="124" class="text-xs text-bark-400 mt-0.5">2018 — best in GFL that year</p>
-                    </div>
-                    <div data-id="125" class="trail-card p-4 md:p-5 text-center">
-                        <span data-id="126" class="text-2xl mb-2 block">🔥</span>
-                        <p data-id="127" class="text-2xl md:text-3xl font-display font-bold text-campfire-400 tabular-nums">1,540.5</p>
-                        <p data-id="128" class="text-xs font-medium uppercase tracking-wider text-stone-400 mt-1 font-display">Season PF Record</p>
-                        <p data-id="129" class="text-xs text-bark-400 mt-0.5">2018</p>
-                    </div>
-                    <div data-id="130" class="trail-card p-4 md:p-5 text-center">
-                        <span data-id="131" class="text-2xl mb-2 block">📉</span>
-                        <p data-id="132" class="text-2xl md:text-3xl font-display font-bold text-danger-400 tabular-nums">4-9-0</p>
-                        <p data-id="133" class="text-xs font-medium uppercase tracking-wider text-stone-400 mt-1 font-display">Worst Season</p>
-                        <p data-id="134" class="text-xs text-bark-400 mt-0.5">2015 — 79 moves</p>
-                    </div>
-                    <div data-id="135" class="trail-card p-4 md:p-5 text-center">
-                        <span data-id="136" class="text-2xl mb-2 block">📊</span>
-                        <p data-id="137" class="text-2xl md:text-3xl font-display font-bold text-cream-100 tabular-nums">87-87</p>
-                        <p data-id="138" class="text-xs font-medium uppercase tracking-wider text-stone-400 mt-1 font-display">Career W-L</p>
-                        <p data-id="139" class="text-xs text-bark-400 mt-0.5">all 13 seasons</p>
-                    </div>
-                    <div data-id="140" class="trail-card p-4 md:p-5 text-center">
-                        <span data-id="141" class="text-2xl mb-2 block">🎯</span>
-                        <p data-id="142" class="text-2xl md:text-3xl font-display font-bold text-cream-100 tabular-nums">7.0</p>
-                        <p data-id="143" class="text-xs font-medium uppercase tracking-wider text-stone-400 mt-1 font-display">Avg. Finish</p>
-                        <p data-id="144" class="text-xs text-bark-400 mt-0.5">per season</p>
-                    </div>
-                    <div data-id="145" class="trail-card p-4 md:p-5 text-center">
-                        <span data-id="146" class="text-2xl mb-2 block">➕</span>
-                        <p data-id="147" class="text-2xl md:text-3xl font-display font-bold text-pine-300 tabular-nums">+476.1</p>
-                        <p data-id="148" class="text-xs font-medium uppercase tracking-wider text-stone-400 mt-1 font-display">Career Diff</p>
-                        <p data-id="149" class="text-xs text-bark-400 mt-0.5">all 13 seasons</p>
-                    </div>
-                    <div data-id="150" class="trail-card p-4 md:p-5 text-center">
-                        <span data-id="151" class="text-2xl mb-2 block">🗓️</span>
-                        <p data-id="152" class="text-2xl md:text-3xl font-display font-bold text-cream-100 tabular-nums">13</p>
-                        <p data-id="153" class="text-xs font-medium uppercase tracking-wider text-stone-400 mt-1 font-display">Seasons Played</p>
-                        <p data-id="154" class="text-xs text-bark-400 mt-0.5">2013–2025</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+<section id="charts" class="py-14 md:py-20 px-4 md:px-6">
+  <div class="max-w-6xl mx-auto"><p class="font-display uppercase tracking-[.22em] text-xs text-pine-300 mb-2">Performance profile</p><h2 class="font-display text-3xl md:text-4xl font-bold mb-8">THE ELEVATION MAP</h2>
+    <div class="chart-card mb-5"><h3 class="font-display text-lg font-semibold mb-4">Points For vs. Points Against</h3><div class="h-72 md:h-80"><canvas id="scoreChart"></canvas></div></div>
+    <div class="grid md:grid-cols-2 gap-5"><div class="chart-card"><h3 class="font-display text-lg font-semibold mb-4">Regular-Season Record by Year</h3><div class="h-64"><canvas id="winsChart"></canvas></div></div><div class="chart-card"><h3 class="font-display text-lg font-semibold mb-4">Point Differential</h3><div class="h-64"><canvas id="diffChart"></canvas></div></div></div>
+  </div>
+</section>
 
-        <!-- ========== THE STORY ========== -->
-        <section data-id="155" id="story" class="py-12 md:py-20 px-4 md:px-6" style="background: rgba(17,31,17,0.5);">
-            <div data-id="156" id="story-wrap-o7" class="max-w-4xl mx-auto">
-                <div data-id="157" class="flex items-center gap-3 mb-10">
-                    <i data-id="158" data-lucide="book-open" class="w-5 h-5 md:w-6 md:h-6 text-pine-300"></i>
-                    <h2 data-id="159" id="story-title-p8" class="font-display text-2xl md:text-3xl font-bold text-cream-100 tracking-tight">CHAPTERS ON THE TRAIL</h2>
-                </div>
+<section class="py-14 md:py-20 px-4 md:px-6 bg-[#0d190d]">
+  <div class="max-w-5xl mx-auto"><p class="font-display uppercase tracking-[.22em] text-xs text-campfire-400 mb-2">Franchise mythology</p><h2 class="font-display text-3xl md:text-4xl font-bold mb-8">WHAT THE LOGO MEANS</h2>
+    <div class="grid md:grid-cols-2 gap-4">
+      <div class="myth-card"><p class="text-xs font-display uppercase tracking-widest text-stone-400">Identity</p><h3 class="font-display text-2xl font-bold mt-1">Founding Power</h3></div>
+      <div class="myth-card"><p class="text-xs font-display uppercase tracking-widest text-stone-400">Reputation</p><h3 class="font-display text-2xl font-bold mt-1">Dangerous Long After the Peak</h3></div>
+      <div class="myth-card"><p class="text-xs font-display uppercase tracking-widest text-stone-400">Greatest What-If</p><h3 class="font-display text-2xl font-bold mt-1">The 2018 Season</h3></div>
+      <div class="myth-card"><p class="text-xs font-display uppercase tracking-widest text-stone-400">Fan Motto</p><h3 class="font-display text-2xl font-bold mt-1">The mountain still stands.</h3></div>
+    </div>
+  </div>
+</section>
 
-                <!-- Era 1 -->
-                <div data-id="160" id="era1-card-q9" class="era-card mb-5 md:mb-6 overflow-hidden" style="border-left: 4px solid #f59e0b;">
-                    <div data-id="161" class="p-5 md:p-8">
-                        <div data-id="162" class="flex items-center gap-3 mb-3">
-                            <span data-id="163" class="text-xs font-semibold uppercase tracking-widest text-campfire-400 bg-campfire-500/10 px-3 py-1 rounded-full font-display">2013 🏆</span>
-                        </div>
-                        <h3 data-id="164" class="font-display text-xl md:text-2xl font-bold text-cream-100 mb-3">Summit Year One</h3>
-                        <p data-id="165" class="text-sm md:text-base text-stone-400 leading-relaxed mb-5 font-body">
-                            In the very first season of the Gandorf National Football League, Doug Meyer's Medford MountainMen stood alone at the top. A 9-4-0 record, 1,473.5 points, and a +221.0 point differential. The inaugural GFL champion set the standard in year one.
-                        </p>
-                        <div data-id="166" class="flex flex-wrap gap-3 text-xs font-medium text-stone-500 font-display">
-                            <span data-id="167" class="bg-white/5 px-3 py-1.5 rounded-lg">9-4-0</span>
-                            <span data-id="168" class="bg-white/5 px-3 py-1.5 rounded-lg">1st Place</span>
-                            <span data-id="169" class="bg-white/5 px-3 py-1.5 rounded-lg">PF: 1,473.5</span>
-                            <span data-id="170" class="bg-white/5 px-3 py-1.5 rounded-lg">Diff: +221.0</span>
-                        </div>
-                    </div>
-                </div>
+<section id="commentary" class="py-14 md:py-20 px-4 md:px-6">
+  <div class="max-w-4xl mx-auto"><p class="font-display uppercase tracking-[.22em] text-xs text-pine-300 mb-2">Commentary</p><h2 class="font-display text-3xl md:text-4xl font-bold mb-8">COMMISSIONER'S NOTES</h2>
+    <article class="commentary p-7 md:p-10"><div class="quote-mark">“</div><p class="text-lg md:text-xl text-cream-200 leading-relaxed">Doug Meyer's resume refuses to settle into one easy verdict. Two championships demand respect. An 87–87 career record keeps the debate open. Then there is 2018: a 12–1 season that ended one win short of another title. The MountainMen are compelling because the numbers argue with each other. The franchise has already proven it can reach the summit, which makes every future climb feel like it could still become the next chapter.</p><div class="mt-7 pt-5 border-t border-forest-500/50 flex flex-wrap gap-2"><span class="badge bg-campfire-500/10 text-campfire-400">2× Champion</span><span class="badge bg-pine-300/10 text-pine-300">Founding Power</span><span class="badge bg-white/5 text-stone-300">Unfinished Legacy</span></div></article>
+  </div>
+</section>
 
-                <!-- Era 2 -->
-                <div data-id="171" id="era2-card-t2" class="era-card mb-5 md:mb-6 overflow-hidden" style="border-left: 4px solid #ef4444;">
-                    <div data-id="172" class="p-5 md:p-8">
-                        <div data-id="173" class="flex items-center gap-3 mb-3">
-                            <span data-id="174" class="text-xs font-semibold uppercase tracking-widest text-danger-400 bg-danger-400/10 px-3 py-1 rounded-full font-display">2014–2015</span>
-                        </div>
-                        <h3 data-id="175" class="font-display text-xl md:text-2xl font-bold text-cream-100 mb-3">Into the Woods</h3>
-                        <p data-id="176" class="text-sm md:text-base text-stone-400 leading-relaxed mb-5 font-body">
-                            While others claimed the mountain in 2014 and 2015, Doug was deep in the wilderness — falling to 11th before posting just 4 wins in 2015. Seventy-nine roster moves that year told the whole story — he was hunting every inch of the mountain for an edge and finding only more valley.
-                        </p>
-                        <div data-id="177" class="flex flex-wrap gap-3 text-xs font-medium text-stone-500 font-display">
-                            <span data-id="178" class="bg-white/5 px-3 py-1.5 rounded-lg">11-15-0 combined</span>
-                            <span data-id="179" class="bg-white/5 px-3 py-1.5 rounded-lg">11th & 8th</span>
-                            <span data-id="180" class="bg-white/5 px-3 py-1.5 rounded-lg">79 moves in 2015</span>
-                        </div>
-                    </div>
-                </div>
+<section id="legacy" class="py-14 md:py-20 px-4 md:px-6 bg-[#0d190d]">
+  <div class="max-w-4xl mx-auto"><p class="font-display uppercase tracking-[.22em] text-xs text-campfire-400 mb-2">Legacy</p><h2 class="font-display text-3xl md:text-4xl font-bold mb-8">WHERE DO THE MOUNTAINMEN STAND?</h2>
+    <div class="legacy-card p-7 md:p-10 text-center"><span class="badge bg-campfire-500/10 text-campfire-400 border border-campfire-500/20">GFL Great</span><div class="font-display text-6xl md:text-7xl font-bold mt-5">78<span class="text-2xl text-stone-400">/100</span></div><p class="text-stone-400 mt-3 max-w-2xl mx-auto">A founding champion with two titles, one legendary runner-up season, and a modern legacy defined by the search for one more summit.</p><div class="w-full h-7 rounded-full overflow-hidden bg-[#1a0f07] mt-7 text-left"><div class="legacy-bar h-full rounded-full relative" style="width:78%;background:linear-gradient(90deg,#2d6a2d,#4ade80 62%,#f59e0b)"><span class="absolute right-3 top-1/2 -translate-y-1/2 text-[#0a160a] font-display font-bold">78</span></div></div><div class="grid grid-cols-3 text-xs font-display uppercase tracking-wider text-stone-400 mt-3"><span class="text-left">Respected</span><span>Great</span><span class="text-right">Legendary</span></div></div>
+  </div>
+</section>
+</main>
+<footer class="py-9 px-4 border-t text-center bg-[#060d06] border-forest-500"><p class="font-display text-sm text-stone-400">⛰️ MEDFORD MOUNTAINMEN · GFL FRANCHISE GUIDE V2</p><p class="text-xs text-stone-500 mt-1">Doug Meyer · 2013–2025 · built from supplied league data</p></footer>
 
-                <!-- Era 3 -->
-                <div data-id="181" id="era3-card-w5" class="era-card mb-5 md:mb-6 overflow-hidden" style="border-left: 4px solid #f59e0b;">
-                    <div data-id="182" class="p-5 md:p-8">
-                        <div data-id="183" class="flex items-center gap-3 mb-3">
-                            <span data-id="184" class="text-xs font-semibold uppercase tracking-widest text-campfire-400 bg-campfire-500/10 px-3 py-1 rounded-full font-display">2016 🏆</span>
-                        </div>
-                        <h3 data-id="185" class="font-display text-xl md:text-2xl font-bold text-cream-100 mb-3">The Second Summit</h3>
-                        <p data-id="186" class="text-sm md:text-base text-stone-400 leading-relaxed mb-5 font-body">
-                            Three years after claiming the inaugural title, Doug climbed back to the top. A 10-3-0 season and his second GFL championship — proving the 2013 run was no fluke.
-                        </p>
-                        <div data-id="187" class="flex flex-wrap gap-3 text-xs font-medium text-stone-500 font-display">
-                            <span data-id="188" class="bg-white/5 px-3 py-1.5 rounded-lg">10-3-0</span>
-                            <span data-id="189" class="bg-white/5 px-3 py-1.5 rounded-lg">1st Place</span>
-                            <span data-id="190" class="bg-white/5 px-3 py-1.5 rounded-lg">PF: 1,411.0</span>
-                            <span data-id="191" class="bg-white/5 px-3 py-1.5 rounded-lg">Diff: +180.0</span>
-                        </div>
-                    </div>
-                </div>
+<script>
+const seasons=[
+{y:2013,r:'9-4',f:'1st 🏆',pf:1473.5,pa:1252.5,d:221,w:9},{y:2014,r:'7-6',f:'11th',pf:1245,pa:1126,d:119,w:7},{y:2015,r:'4-9',f:'8th',pf:1152,pa:1349,d:-197,w:4},{y:2016,r:'10-3',f:'1st 🏆',pf:1411,pa:1231,d:180,w:10},{y:2017,r:'6-7',f:'9th',pf:1234,pa:1298,d:-64,w:6},{y:2018,r:'12-1',f:'2nd',pf:1540.5,pa:1176,d:364.5,w:12},{y:2019,r:'6-7',f:'9th',pf:1344,pa:1292,d:52,w:6},{y:2020,r:'6-7',f:'8th',pf:1250,pa:1229.5,d:20.5,w:6},{y:2021,r:'6-8',f:'8th',pf:1376,pa:1413,d:-37,w:6},{y:2022,r:'8-6',f:'5th',pf:1502.22,pa:1423.64,d:78.58,w:8},{y:2023,r:'4-10',f:'12th',pf:1351.88,pa:1457.36,d:-105.48,w:4},{y:2024,r:'3-11',f:'11th seed',pf:1405.34,pa:1529.90,d:-124.56,w:3},{y:2025,r:'6-8',f:'11th',pf:1373.02,pa:1404.47,d:-31.45,w:6}
+];
+const body=document.getElementById('seasonBody'); seasons.forEach(s=>{const tr=document.createElement('tr');if(s.f.includes('🏆'))tr.className='champ-row';if(s.y===2018)tr.className='ghost-row';tr.innerHTML=`<td class="px-4 py-3 font-display font-semibold">${s.y}</td><td class="px-4 py-3">${s.r}</td><td class="px-4 py-3">${s.f}</td><td class="px-4 py-3 text-right text-pine-300">${s.pf.toLocaleString(undefined,{maximumFractionDigits:2})}</td><td class="px-4 py-3 text-right font-semibold ${s.d>=0?'text-green-400':'text-red-400'}">${s.d>=0?'+':''}${s.d.toFixed(1)}</td>`;body.appendChild(tr)});
 
-                <!-- Era 4 -->
-                <div data-id="192" id="era4-card-z8" class="era-card mb-5 md:mb-6 overflow-hidden" style="border-left: 4px solid #78716c;">
-                    <div data-id="193" class="p-5 md:p-8">
-                        <div data-id="194" class="flex items-center gap-3 mb-3">
-                            <span data-id="195" class="text-xs font-semibold uppercase tracking-widest text-stone-400 bg-stone-500/10 px-3 py-1 rounded-full font-display">2017–2021</span>
-                        </div>
-                        <h3 data-id="196" class="font-display text-xl md:text-2xl font-bold text-cream-100 mb-3">Five Years Without a Summit</h3>
-                        <p data-id="197" class="text-sm md:text-base text-stone-400 leading-relaxed mb-5 font-body">
-                            Five consecutive seasons finishing 8th or 9th. The lone exception was 2018 — a jaw-dropping 12-1-0 record, best in the entire GFL — but the playoff gods denied the ring. What followed was four seasons of grind: 6-7, 6-7, 6-8. Middling finishes for a man who had already stood twice at the top.
-                        </p>
-                        <div data-id="198" class="flex flex-wrap gap-3 text-xs font-medium text-stone-500 font-display">
-                            <span data-id="199" class="bg-white/5 px-3 py-1.5 rounded-lg">36-30-0 combined</span>
-                            <span data-id="200" class="bg-white/5 px-3 py-1.5 rounded-lg">Highlight: 2018 (12-1-0, 2nd)</span>
-                        </div>
-                    </div>
-                </div>
+document.querySelectorAll('.lore-card').forEach(btn=>btn.addEventListener('click',()=>{const id=btn.dataset.target;const panel=document.getElementById(id);const opening=!panel.classList.contains('open');document.querySelectorAll('.lore-panel').forEach(p=>p.classList.remove('open'));document.querySelectorAll('.lore-card').forEach(b=>b.setAttribute('aria-expanded','false'));if(opening){panel.classList.add('open');btn.setAttribute('aria-expanded','true');panel.scrollIntoView({behavior:'smooth',block:'nearest'})}}));
 
-                <!-- Era 5 -->
-                <div data-id="201" id="era5-card-c1" class="era-card mb-5 md:mb-6 overflow-hidden" style="border-left: 4px solid #2d6a2d;">
-                    <div data-id="202" class="p-5 md:p-8">
-                        <div data-id="203" class="flex items-center gap-3 mb-3">
-                            <span data-id="204" class="text-xs font-semibold uppercase tracking-widest text-pine-300 bg-pine-500/10 px-3 py-1 rounded-full font-display">2022–2025</span>
-                        </div>
-                        <h3 data-id="205" class="font-display text-xl md:text-2xl font-bold text-cream-100 mb-3">Chasing the Ridge</h3>
-                        <p data-id="206" class="text-sm md:text-base text-stone-400 leading-relaxed mb-5 font-body">
-                            A top-5 return in 2022 (8-6-0, 5th, 1,502 points) hinted at revival. Then came three straight tough seasons — 12th in 2023 (4-10-0), 6th in 2024 (3-11-0), and 11th in 2025 (6-8-0). The mountain is calling, but the summit has been elusive since 2016.
-                        </p>
-                        <div data-id="207" class="flex flex-wrap gap-3 text-xs font-medium text-stone-500 font-display">
-                            <span data-id="208" class="bg-white/5 px-3 py-1.5 rounded-lg">2022: 5th (8-6)</span>
-                            <span data-id="209" class="bg-white/5 px-3 py-1.5 rounded-lg">2023: 12th (4-10)</span>
-                            <span data-id="210" class="bg-white/5 px-3 py-1.5 rounded-lg">2024: 6th (3-11)</span>
-                            <span data-id="211" class="bg-white/5 px-3 py-1.5 rounded-lg">2025: 11th (6-8)</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+const menu=document.getElementById('mobileMenu');document.getElementById('menuBtn').onclick=()=>{menu.classList.remove('hidden');menu.classList.add('flex')};document.getElementById('menuClose').onclick=()=>{menu.classList.add('hidden');menu.classList.remove('flex')};document.querySelectorAll('.mobileLink').forEach(a=>a.onclick=()=>{menu.classList.add('hidden');menu.classList.remove('flex')});
 
-        <!-- ========== CAMPFIRE FACTS ========== -->
-        <section data-id="212" id="facts-sec-f4" class="py-12 md:py-20 px-4 md:px-6 relative overflow-hidden" style="background: linear-gradient(to top, rgba(180,83,9,0.15), transparent), #0a0f04;">
-            <div data-id="213" id="facts-wrap-g5" class="relative z-10 max-w-5xl mx-auto">
-                <div data-id="214" class="flex items-center gap-3 mb-8">
-                    <span data-id="215" class="text-xl">🔥</span>
-                    <h2 data-id="216" id="facts-title-h6" class="font-display text-2xl md:text-3xl font-bold text-cream-100 tracking-tight">STORIES AROUND THE FIRE</h2>
-                </div>
-                <div data-id="217" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                    <div data-id="218" class="fire-card p-5">
-                        <span data-id="219" class="text-2xl mb-3 block">🏆</span>
-                        <p data-id="220" class="text-sm text-cream-200 leading-relaxed font-body">One of a select few managers to win multiple GFL championships — 2013 and 2016, three seasons apart.</p>
-                    </div>
-                    <div data-id="221" class="fire-card p-5">
-                        <span data-id="222" class="text-2xl mb-3 block">📈</span>
-                        <p data-id="223" class="text-sm text-cream-200 leading-relaxed font-body">12-1-0 in 2018 — best single-season record in GFL history. Still no ring.</p>
-                    </div>
-                    <div data-id="224" class="fire-card p-5">
-                        <span data-id="225" class="text-2xl mb-3 block">⛰️</span>
-                        <p data-id="226" class="text-sm text-cream-200 leading-relaxed font-body">From 11th place (2014) to GFL champion (2016) — one of the greatest climbs in league history.</p>
-                    </div>
-                    <div data-id="227" class="fire-card p-5">
-                        <span data-id="228" class="text-2xl mb-3 block">🗺️</span>
-                        <p data-id="229" class="text-sm text-cream-200 leading-relaxed font-body">79 roster moves in 2015 — the most desperate season in MountainMen lore.</p>
-                    </div>
-                    <div data-id="230" class="fire-card p-5">
-                        <span data-id="231" class="text-2xl mb-3 block">⚡</span>
-                        <p data-id="232" class="text-sm text-cream-200 leading-relaxed font-body">2017→2018 scoring jump: +306.5 points in one offseason (+24.9%).</p>
-                    </div>
-                    <div data-id="233" class="fire-card p-5">
-                        <span data-id="234" class="text-2xl mb-3 block">🌲</span>
-                        <p data-id="235" class="text-sm text-cream-200 leading-relaxed font-body">Career differential: +476.1 pts across all 13 seasons — still above water despite recent valleys.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ========== LEGACY METER ========== -->
-        <section data-id="236" id="legacy" class="py-12 md:py-20 px-4 md:px-6">
-            <div data-id="237" id="legacy-wrap-p4" class="max-w-3xl mx-auto">
-                <div data-id="238" class="flex items-center gap-3 mb-8">
-                    <i data-id="239" data-lucide="award" class="w-5 h-5 md:w-6 md:h-6 text-campfire-400"></i>
-                    <h2 data-id="240" id="legacy-title-q5" class="font-display text-2xl md:text-3xl font-bold text-cream-100 tracking-tight">WHERE DOES HE STAND? — GFL LEGACY</h2>
-                </div>
-                <div data-id="241" id="legacy-card-r6" class="era-card p-6 md:p-8">
-                    <p data-id="242" class="font-display text-sm uppercase tracking-widest text-stone-400 mb-4 text-center">Doug Meyer — GFL Legacy Score</p>
-                    <div data-id="243" class="flex items-center justify-between mb-2">
-                        <span data-id="244" class="text-sm font-display text-stone-500 tabular-nums">0</span>
-                        <span data-id="245" class="text-sm font-display text-campfire-400 font-bold uppercase tracking-wider">100</span>
-                    </div>
-                    <div data-id="246" class="w-full h-7 rounded-full overflow-hidden" style="background: #1a0f07;">
-                        <div data-id="247" class="legacy-bar h-full rounded-full relative" style="width: 78%; background: linear-gradient(90deg, #2d6a2d 0%, #4ade80 60%, #f59e0b 100%);">
-                            <span data-id="248" class="absolute right-3 top-1/2 -translate-y-1/2 text-sm font-display font-bold" style="color:#0a160a;">78</span>
-                        </div>
-                    </div>
-                    <div data-id="249" class="flex flex-wrap items-center justify-center gap-3 mt-5">
-                        <span data-id="250" class="text-xs font-display font-semibold px-3 py-1.5 rounded-full" style="background: rgba(245,158,11,0.2); color: #fbbf24;">🏆 2x Champion</span>
-                        <span data-id="251" class="text-xs font-display font-semibold px-3 py-1.5 rounded-full" style="background: rgba(74,222,128,0.15); color: #4ade80;">⭐ 12-1-0 Season</span>
-                        <span data-id="252" class="text-xs font-display font-semibold px-3 py-1.5 rounded-full" style="background: rgba(120,113,108,0.2); color: #a8a29e;">📅 13 Seasons</span>
-                    </div>
-                    <p data-id="253" class="text-sm text-stone-400 mt-5 text-center font-body leading-relaxed">
-                        A founding legend with two GFL championships three years apart. The 12-1-0 season in 2018 that didn't get a ring. Doug Meyer stands among the GFL's all-time greats.
-                    </p>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- ========== FOOTER ========== -->
-    <footer data-id="254" id="footer-w1" class="py-8 border-t text-center" style="background: #060d06; border-color: #2d4a2d;">
-        <p data-id="255" class="text-sm text-stone-500 font-display mb-1">⛰️ MEDFORD MOUNTAIN MEN · GFL Franchise Record Book</p>
-        <p data-id="256" class="text-xs text-stone-500">Doug Meyer · 2013–2025 · Made by Copilot</p>
-    </footer>
-
-    <script>
-        // ===== LUCIDE ICONS =====
-        if (typeof lucide !== "undefined" && typeof lucide.createIcons === "function") {
-            lucide.createIcons();
-        }
-
-        // ===== MOBILE MENU =====
-        var mobileMenuBtn = document.getElementById('mobile-menu-btn-j0');
-        var mobileMenu = document.getElementById('mobile-menu-k1');
-        var mobileMenuClose = document.getElementById('mobile-close-l2');
-
-        if (mobileMenuBtn && mobileMenu && mobileMenuClose) {
-            mobileMenuBtn.addEventListener('click', function() {
-                mobileMenu.classList.remove('hidden');
-                mobileMenu.classList.add('flex');
-            });
-            mobileMenuClose.addEventListener('click', function() {
-                mobileMenu.classList.add('hidden');
-                mobileMenu.classList.remove('flex');
-            });
-            document.querySelectorAll('.mobile-nav-link').forEach(function(link) {
-                link.addEventListener('click', function() {
-                    mobileMenu.classList.add('hidden');
-                    mobileMenu.classList.remove('flex');
-                });
-            });
-        }
-
-        // ===== SEASON DATA =====
-        var seasons = [
-            { year:2013, rec:'9-4-0',  finish:1,  finishLabel:'1st 🏆', pf:1473.5,  pa:1252.5,  diff:221.0,   moves:32, notes:'Inaugural GFL champion — the summit', champ:true },
-            { year:2014, rec:'7-6-0',  finish:11, finishLabel:'11th',   pf:1245.0,  pa:1126.0,  diff:119.0,   moves:59, notes:'Defending champ falls — steep drop', champ:false },
-            { year:2015, rec:'4-9-0',  finish:8,  finishLabel:'8th',    pf:1152.0,  pa:1349.0,  diff:-197.0,  moves:79, notes:'Lost in the woods — 79 moves, -197 diff', champ:false },
-            { year:2016, rec:'10-3-0', finish:1,  finishLabel:'1st 🏆', pf:1411.0,  pa:1231.0,  diff:180.0,   moves:63, notes:'Redemption — 2nd ring claimed', champ:true },
-            { year:2017, rec:'6-7-0',  finish:9,  finishLabel:'9th',    pf:1234.0,  pa:1298.0,  diff:-64.0,   moves:66, notes:'Wandering season, no reward', champ:false },
-            { year:2018, rec:'12-1-0', finish:2,  finishLabel:'2nd ⭐',  pf:1540.5,  pa:1176.0,  diff:364.5,   moves:34, notes:'Best record in GFL — fell in playoffs', star:true },
-            { year:2019, rec:'6-7-0',  finish:9,  finishLabel:'9th',    pf:1344.0,  pa:1292.0,  diff:52.0,    moves:46, notes:'Middle of the mountain', champ:false },
-            { year:2020, rec:'6-7-0',  finish:8,  finishLabel:'8th',    pf:1250.0,  pa:1229.5,  diff:20.5,    moves:21, notes:'Surviving the pandemic season', champ:false },
-            { year:2021, rec:'6-8-0',  finish:8,  finishLabel:'8th',    pf:1376.0,  pa:1413.0,  diff:-37.0,   moves:41, notes:'Below the treeline', champ:false },
-            { year:2022, rec:'8-6-0',  finish:5,  finishLabel:'5th',    pf:1502.22, pa:1423.64, diff:78.58,   moves:37, notes:'Top-5 resurgence — 1,502 points', champ:false },
-            { year:2023, rec:'4-10-0', finish:12, finishLabel:'12th',   pf:1351.88, pa:1457.36, diff:-105.48, moves:50, notes:'12th place — toughest stretch begins', champ:false },
-            { year:2024, rec:'3-11-0', finish:6,  finishLabel:'6th',    pf:1405.34, pa:1529.90, diff:-124.56, moves:37, notes:'Roughest valley in years — 3-11', champ:false },
-            { year:2025, rec:'6-8-0',  finish:11, finishLabel:'11th',   pf:1373.02, pa:1404.47, diff:-31.45,  moves:null, notes:'Recent finish — rebuilding', champ:false }
-        ];
-
-        var tbody = document.getElementById('season-tbody-o1');
-        if (tbody) {
-            seasons.forEach(function(s, idx) {
-                var tr = document.createElement('tr');
-                var rowClass = '';
-
-                if (s.pending) {
-                    rowClass = 'table-row-pending';
-                } else if (s.champ) {
-                    rowClass = 'table-row-champ';
-                } else if (s.star) {
-                    rowClass = 'table-row-star';
-                } else if (s.diff !== null && s.diff < -100) {
-                    rowClass = 'table-row-bad';
-                } else {
-                    rowClass = idx % 2 === 0 ? '' : 'bg-[#0f1a0f]';
-                }
-
-                tr.className = rowClass + ' border-b border-forest-500/20 hover:bg-white/[0.03] transition-colors';
-
-                var pfStr = s.pf !== null ? s.pf.toLocaleString('en-US', {minimumFractionDigits:1, maximumFractionDigits:2}) : '—';
-                var paStr = s.pa !== null ? s.pa.toLocaleString('en-US', {minimumFractionDigits:1, maximumFractionDigits:2}) : '—';
-                var diffStr = '—';
-                var diffColor = 'text-stone-500';
-                if (s.diff !== null) {
-                    var sign = s.diff >= 0 ? '+' : '';
-                    diffStr = sign + s.diff.toFixed(1);
-                    diffColor = s.diff >= 0 ? 'text-green-400' : 'text-red-400';
-                }
-                var movesStr = s.moves !== null ? s.moves : '—';
-                var yearColor = s.pending ? 'text-stone-500' : 'text-cream-100';
-                var textColor = s.pending ? 'text-stone-500' : 'text-cream-200';
-
-                tr.innerHTML =
-                    '<td class="px-3 md:px-4 py-3 font-display font-semibold tabular-nums ' + yearColor + '">' + s.year + '</td>' +
-                    '<td class="px-3 md:px-4 py-3 font-semibold tabular-nums ' + textColor + '">' + s.rec + '</td>' +
-                    '<td class="px-3 md:px-4 py-3 font-semibold ' + textColor + ' whitespace-nowrap">' + s.finishLabel + '</td>' +
-                    '<td class="px-3 md:px-4 py-3 text-pine-300 tabular-nums font-medium">' + pfStr + '</td>' +
-                    '<td class="px-3 md:px-4 py-3 text-stone-400 tabular-nums">' + paStr + '</td>' +
-                    '<td class="px-3 md:px-4 py-3 font-semibold tabular-nums ' + diffColor + '">' + diffStr + '</td>' +
-                    '<td class="px-3 md:px-4 py-3 text-stone-400 tabular-nums">' + movesStr + '</td>' +
-                    '<td class="px-3 md:px-4 py-3 text-stone-400 text-xs max-w-xs">' + s.notes + '</td>';
-                tbody.appendChild(tr);
-            });
-        }
-
-        // ===== CHART DATA =====
-        var chartLabels = ['2013','2014','2015','2016','2017','2018','2019','2020','2021','2022','2023','2024','2025'];
-        var pfData =  [1473.5, 1245.0, 1152.0, 1411.0, 1234.0, 1540.5, 1344.0, 1250.0, 1376.0, 1502.22, 1351.88, 1405.34, 1373.02];
-        var paData =  [1252.5, 1126.0, 1349.0, 1231.0, 1298.0, 1176.0, 1292.0, 1229.5, 1413.0, 1423.64, 1457.36, 1529.90, 1404.47];
-        var finishData = [1, 11, 8, 1, 9, 2, 9, 8, 8, 5, 12, 6, 11];
-        var diffData = [221.0, 119.0, -197.0, 180.0, -64.0, 364.5, 52.0, 20.5, -37.0, 78.58, -105.48, -124.56, -31.45];
-
-        var chartDefaults = {
-            bg: '#0a160a',
-            grid: '#1f3a1f',
-            tick: '#94a3b8',
-            legend: '#f5f0e8'
-        };
-
-        // Chart A — PF vs PA (full width)
-        var ctxScoring = document.getElementById('chart-scoring-u7');
-        if (ctxScoring && typeof Chart !== 'undefined') {
-            new Chart(ctxScoring.getContext('2d'), {
-                type: 'line',
-                data: {
-                    labels: chartLabels,
-                    datasets: [
-                        {
-                            label: 'Points For (PF)',
-                            data: pfData,
-                            borderColor: '#4ade80',
-                            backgroundColor: 'rgba(74, 222, 128, 0.1)',
-                            borderWidth: 3,
-                            pointBackgroundColor: pfData.map(function(v) { return v === 1540.5 ? '#f59e0b' : '#4ade80'; }),
-                            pointRadius: pfData.map(function(v) { return v === 1540.5 ? 8 : 4; }),
-                            pointBorderWidth: pfData.map(function(v) { return v === 1540.5 ? 3 : 1; }),
-                            pointBorderColor: pfData.map(function(v) { return v === 1540.5 ? '#fff' : '#4ade80'; }),
-                            pointHoverRadius: 8,
-                            fill: true,
-                            tension: 0.3
-                        },
-                        {
-                            label: 'Points Against (PA)',
-                            data: paData,
-                            borderColor: '#f87171',
-                            backgroundColor: 'rgba(248, 113, 113, 0.05)',
-                            borderWidth: 2,
-                            borderDash: [6, 4],
-                            pointBackgroundColor: '#f87171',
-                            pointRadius: 4,
-                            pointHoverRadius: 7,
-                            fill: true,
-                            tension: 0.3
-                        }
-                    ]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        legend: {
-                            labels: { color: chartDefaults.legend, font: { family: 'Oswald', size: 12 }, boxWidth: 14, padding: 16 }
-                        },
-                        tooltip: {
-                            backgroundColor: '#111f11',
-                            titleColor: '#f5f0e8',
-                            bodyColor: '#94a3b8',
-                            borderColor: '#2d4a2d',
-                            borderWidth: 1,
-                            cornerRadius: 8,
-                            padding: 10,
-                            titleFont: { family: 'Oswald', weight: '600' },
-                            bodyFont: { family: 'Inter' },
-                            callbacks: {
-                                label: function(ctx) {
-                                    return ctx.dataset.label + ': ' + ctx.parsed.y.toLocaleString('en-US', {minimumFractionDigits:1});
-                                },
-                                afterLabel: function(ctx) {
-                                    if (ctx.datasetIndex === 0 && ctx.dataIndex === 5) return '⛰️ Peak MountainMen season';
-                                    return '';
-                                }
-                            }
-                        }
-                    },
-                    scales: {
-                        x: {
-                            ticks: { color: chartDefaults.tick, font: { family: 'Oswald', size: 12, weight: '500' } },
-                            grid: { color: chartDefaults.grid },
-                            border: { color: chartDefaults.grid }
-                        },
-                        y: {
-                            ticks: { color: chartDefaults.tick, font: { family: 'Oswald', size: 11 }, callback: function(v) { return v.toLocaleString(); } },
-                            grid: { color: chartDefaults.grid },
-                            border: { color: chartDefaults.grid },
-                            min: 900, max: 1700
-                        }
-                    }
-                }
-            });
-        }
-
-        // Chart B — Finish Position
-        var ctxFinish = document.getElementById('chart-finish-x0');
-        if (ctxFinish && typeof Chart !== 'undefined') {
-            var finishColors = finishData.map(function(v) {
-                if (v === 1) return '#f59e0b';
-                if (v >= 2 && v <= 5) return '#4ade80';
-                if (v >= 6 && v <= 9) return '#94a3b8';
-                return '#ef4444';
-            });
-            new Chart(ctxFinish.getContext('2d'), {
-                type: 'bar',
-                data: {
-                    labels: chartLabels,
-                    datasets: [{
-                        label: 'Finish Position',
-                        data: finishData,
-                        backgroundColor: finishColors,
-                        borderColor: finishColors,
-                        borderWidth: 0,
-                        borderRadius: 4,
-                        barPercentage: 0.6,
-                        categoryPercentage: 0.7
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        legend: { display: false },
-                        tooltip: {
-                            backgroundColor: '#111f11',
-                            titleColor: '#f5f0e8',
-                            bodyColor: '#94a3b8',
-                            borderColor: '#2d4a2d',
-                            borderWidth: 1,
-                            cornerRadius: 8,
-                            padding: 10,
-                            titleFont: { family: 'Oswald', weight: '600' },
-                            bodyFont: { family: 'Inter' },
-                            callbacks: {
-                                label: function(ctx) {
-                                    var v = ctx.parsed.y;
-                                    var s = v === 1 ? 'st' : v === 2 ? 'nd' : v === 3 ? 'rd' : 'th';
-                                    return v + s + ' Place';
-                                }
-                            }
-                        }
-                    },
-                    scales: {
-                        x: {
-                            ticks: { color: chartDefaults.tick, font: { family: 'Oswald', size: 11, weight: '500' } },
-                            grid: { display: false },
-                            border: { color: chartDefaults.grid }
-                        },
-                        y: {
-                            reverse: true,
-                            min: 1, max: 12,
-                            ticks: {
-                                color: chartDefaults.tick,
-                                font: { family: 'Oswald', size: 11 },
-                                stepSize: 1,
-                                callback: function(v) {
-                                    var s = v === 1 ? 'st' : v === 2 ? 'nd' : v === 3 ? 'rd' : 'th';
-                                    return v + s;
-                                }
-                            },
-                            grid: { color: chartDefaults.grid },
-                            border: { color: chartDefaults.grid }
-                        }
-                    }
-                }
-            });
-        }
-
-        // Chart C — Point Differential
-        var ctxDiff = document.getElementById('chart-diff-a3');
-        if (ctxDiff && typeof Chart !== 'undefined') {
-            var diffColors = diffData.map(function(v) { return v >= 0 ? '#4ade80' : '#ef4444'; });
-            new Chart(ctxDiff.getContext('2d'), {
-                type: 'bar',
-                data: {
-                    labels: chartLabels,
-                    datasets: [{
-                        label: 'Point Differential',
-                        data: diffData,
-                        backgroundColor: diffColors,
-                        borderColor: diffColors,
-                        borderWidth: 0,
-                        borderRadius: 4,
-                        barPercentage: 0.6,
-                        categoryPercentage: 0.7
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        legend: { display: false },
-                        tooltip: {
-                            backgroundColor: '#111f11',
-                            titleColor: '#f5f0e8',
-                            bodyColor: '#94a3b8',
-                            borderColor: '#2d4a2d',
-                            borderWidth: 1,
-                            cornerRadius: 8,
-                            padding: 10,
-                            titleFont: { family: 'Oswald', weight: '600' },
-                            bodyFont: { family: 'Inter' },
-                            callbacks: {
-                                label: function(ctx) {
-                                    var v = ctx.parsed.y;
-                                    var sg = v >= 0 ? '+' : '';
-                                    return sg + v.toFixed(1) + ' pts';
-                                }
-                            }
-                        }
-                    },
-                    scales: {
-                        x: {
-                            ticks: { color: chartDefaults.tick, font: { family: 'Oswald', size: 11, weight: '500' } },
-                            grid: { display: false },
-                            border: { color: chartDefaults.grid }
-                        },
-                        y: {
-                            ticks: {
-                                color: chartDefaults.tick,
-                                font: { family: 'Oswald', size: 11 },
-                                callback: function(v) {
-                                    var sg = v >= 0 ? '+' : '';
-                                    return sg + v;
-                                }
-                            },
-                            grid: {
-                                color: function(ctx) {
-                                    return ctx.tick.value === 0 ? 'rgba(245,240,232,0.3)' : chartDefaults.grid;
-                                },
-                                lineWidth: function(ctx) {
-                                    return ctx.tick.value === 0 ? 2 : 1;
-                                }
-                            },
-                            border: { color: chartDefaults.grid }
-                        }
-                    }
-                }
-            });
-        }
-
-        // ===== ACTIVE NAV ON SCROLL =====
-        var sectionIds = ['home', 'seasons', 'charts', 'story', 'legacy'];
-        var navLinks = document.querySelectorAll('#desktop-nav-d4 .nav-link');
-
-        function updateActiveNav() {
-            var scrollPos = window.scrollY + 100;
-            var current = 'home';
-            sectionIds.forEach(function(id) {
-                var el = document.getElementById(id);
-                if (el && el.offsetTop <= scrollPos) {
-                    current = id;
-                }
-            });
-            navLinks.forEach(function(link) {
-                var href = link.getAttribute('href');
-                if (href === '#' + current) {
-                    link.classList.add('active');
-                } else {
-                    link.classList.remove('active');
-                }
-            });
-        }
-
-        window.addEventListener('scroll', updateActiveNav, { passive: true });
-        updateActiveNav();
-    </script>
+window.addEventListener('load',()=>{if(window.lucide)lucide.createIcons()});
+const chartColor={grid:'#1f3a1f',tick:'#94a3b8',cream:'#f5f0e8'};Chart.defaults.color=chartColor.tick;Chart.defaults.font.family='Inter';
+const labels=seasons.map(s=>String(s.y));
+new Chart(document.getElementById('scoreChart'),{type:'line',data:{labels,datasets:[{label:'Points For',data:seasons.map(s=>s.pf),borderColor:'#4ade80',backgroundColor:'rgba(74,222,128,.08)',pointBackgroundColor:seasons.map(s=>s.y===2018?'#f59e0b':'#4ade80'),pointRadius:seasons.map(s=>s.y===2018?7:3),fill:true,tension:.3},{label:'Points Against',data:seasons.map(s=>s.pa),borderColor:'#f87171',borderDash:[6,4],pointRadius:3,tension:.3}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:chartColor.cream}}},scales:{x:{grid:{color:chartColor.grid}},y:{grid:{color:chartColor.grid}}}}});
+new Chart(document.getElementById('winsChart'),{type:'bar',data:{labels,datasets:[{data:seasons.map(s=>s.w),backgroundColor:seasons.map(s=>s.y===2013||s.y===2016?'#f59e0b':s.y===2018?'#94a3b8':'#4ade80'),borderRadius:4}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{grid:{display:false}},y:{beginAtZero:true,max:14,grid:{color:chartColor.grid}}}}});
+new Chart(document.getElementById('diffChart'),{type:'bar',data:{labels,datasets:[{data:seasons.map(s=>s.d),backgroundColor:seasons.map(s=>s.d>=0?'#4ade80':'#ef4444'),borderRadius:4}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{grid:{display:false}},y:{grid:{color:ctx=>ctx.tick.value===0?'rgba(245,240,232,.35)':chartColor.grid,lineWidth:ctx=>ctx.tick.value===0?2:1}}}}});
+const sections=['identity','lore','resume','history','charts','commentary','legacy'];const navs=document.querySelectorAll('#desktopNav .nav-link');function activeNav(){let cur='identity';const pos=scrollY+120;sections.forEach(id=>{const e=document.getElementById(id);if(e&&e.offsetTop<=pos)cur=id});navs.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+cur))}addEventListener('scroll',activeNav,{passive:true});activeNav();
+</script>
 </body>
 </html>
