@@ -1,335 +1,58 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>GFL Weekly Hub — Season XV</title>
-
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;600;700&display=swap" rel="stylesheet">
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>GFL Weekly Hub</title>
   <style>
-    :root {
-      --bg-body: #05050a;
-      --bg-header: #090910;
-      --bg-card: #0c0c16;
-      --border-card: rgba(245,166,35,0.35);
-      --text-main: #f5f5f5;
-      --text-muted: #a0a0c0;
-      --gold: #f5a623;
-      --navy: #050510;
-      --accent: #2ecc71;
-      --danger: #e74c3c;
-      --radius: 8px;
-      --shadow-card: 0 4px 18px rgba(0,0,0,0.6);
-      --font-heading: 'Barlow Condensed', sans-serif;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      padding: 0;
-      background: var(--bg-body);
-      color: var(--text-main);
-      font-family: var(--font-heading);
-    }
-
-    .top-bar {
-      background: var(--bg-header);
-      border-bottom: 1px solid rgba(245,166,35,0.35);
-      padding: 12px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .top-bar-title {
-      font-size: 1.4rem;
-      letter-spacing: 0.08rem;
-      text-transform: uppercase;
-    }
-
-    .return-btn {
-      display: inline-block;
-      padding: 10px 16px;
-      background: #090910;
-      color: #fff;
-      border-radius: 6px;
-      border: 1px solid rgba(245,166,35,0.6);
-      text-decoration: none;
-      font-size: 0.9rem;
-      letter-spacing: 0.06rem;
-      text-transform: uppercase;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.7);
-      transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
-    }
-
-    .return-btn:hover {
-      transform: translateY(-2px);
-      filter: brightness(1.08);
-      box-shadow: 0 6px 22px rgba(0,0,0,0.85);
-    }
-
-    .page-shell {
-      max-width: 1100px;
-      margin: 24px auto 40px;
-      padding: 0 16px;
-    }
-
-    .main-header {
-      margin-bottom: 18px;
-    }
-
-    .main-header h1 {
-      margin: 0;
-      font-size: 2.1rem;
-      letter-spacing: 0.12rem;
-      text-transform: uppercase;
-    }
-
-    .main-header span {
-      display: block;
-      margin-top: 4px;
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      letter-spacing: 0.08rem;
-    }
-
-    .week-pills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 20px;
-    }
-
-    .week-pill {
-      padding: 6px 12px;
-      border-radius: 999px;
-      border: 1px solid rgba(245,166,35,0.5);
-      background: rgba(245,166,35,0.12);
-      color: var(--text-main);
-      font-size: 0.85rem;
-      letter-spacing: 0.06rem;
-      text-transform: uppercase;
-      cursor: pointer;
-      transition: background 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
-    }
-
-    .week-pill:hover {
-      background: rgba(245,166,35,0.25);
-      transform: translateY(-1px);
-      box-shadow: 0 3px 12px rgba(0,0,0,0.7);
-    }
-
-    .week-pill.active {
-      background: var(--gold);
-      color: var(--navy);
-      box-shadow: 0 4px 16px rgba(0,0,0,0.85);
-    }
-
-    .grid-two {
-      display: grid;
-      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
-      gap: 18px;
-    }
-
-    .card {
-      background: var(--bg-card);
-      border-radius: var(--radius);
-      border: 1px solid var(--border-card);
-      box-shadow: var(--shadow-card);
-      padding: 16px 18px;
-    }
-
-    .card-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      margin-bottom: 10px;
-    }
-
-    .card-header h2 {
-      margin: 0;
-      font-size: 1.3rem;
-      letter-spacing: 0.08rem;
-      text-transform: uppercase;
-    }
-
-    .card-header span {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      letter-spacing: 0.06rem;
-      text-transform: uppercase;
-    }
-
-    .score-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 6px 0;
-      border-bottom: 1px solid rgba(245,166,35,0.18);
-      font-size: 0.95rem;
-    }
-
-    .score-row:last-child {
-      border-bottom: none;
-    }
-
-    .score-team {
-      letter-spacing: 0.04rem;
-    }
-
-    .score-input {
-      width: 70px;
-      padding: 4px 6px;
-      border-radius: 4px;
-      border: 1px solid rgba(245,166,35,0.4);
-      background: #05050a;
-      color: var(--text-main);
-      text-align: right;
-      font-size: 0.9rem;
-    }
-
-    .save-btn {
-      margin-top: 12px;
-      display: inline-block;
-      padding: 8px 14px;
-      border-radius: 6px;
-      border: 1px solid var(--gold);
-      background: var(--gold);
-      color: var(--navy);
-      font-size: 0.85rem;
-      letter-spacing: 0.06rem;
-      text-transform: uppercase;
-      cursor: pointer;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.8);
-      transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
-    }
-
-    .save-btn:hover {
-      transform: translateY(-1px);
-      filter: brightness(1.05);
-      box-shadow: 0 6px 20px rgba(0,0,0,0.9);
-    }
-
-    .awards-placeholder {
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      letter-spacing: 0.04rem;
-    }
-
-    @media (max-width: 800px) {
-      .grid-two {
-        grid-template-columns: minmax(0, 1fr);
-      }
-    }
+    body{margin:0;background:#05050a;color:#fff;font-family:Segoe UI,Arial,sans-serif;display:grid;place-items:center;min-height:100vh}
+    main{max-width:720px;padding:32px;border:1px solid #2a2a40;border-radius:12px;background:#0e0e1a;text-align:center}
+    h1{color:#f5a623} button{background:#f5a623;color:#05050a;border:0;border-radius:6px;padding:10px 18px;font-weight:700;cursor:pointer}
+    #status{color:#aaaac0;white-space:pre-wrap}.error{color:#ff8080}
   </style>
 </head>
-
 <body>
-  <div class="top-bar">
-    <div class="top-bar-title">GFL WEEKLY HUB</div>
-    <a href="https://bicknbones.github.io/GLF-Headquarters/" class="return-btn">⬅ Return to HQ</a>
-  </div>
+<main>
+  <h1>⚡ GFL WEEKLY HUB</h1>
+  <p id="status">Loading weekly.txt…</p>
+  <input id="pick" type="file" accept=".txt,text/plain" hidden>
+  <button id="choose" type="button" hidden>Select weekly.txt</button>
+</main>
+<script>
+(function(){
+  const status=document.getElementById('status');
+  const pick=document.getElementById('pick');
+  const choose=document.getElementById('choose');
 
-  <div class="page-shell">
-    <header class="main-header">
-      <h1>Season XV — 2026</h1>
-      <span>Calicoon, NY · Weekly Scores & Awards</span>
-    </header>
-
-    <div class="week-pills">
-      <button class="week-pill active">Week 1</button>
-      <button class="week-pill">Week 2</button>
-      <button class="week-pill">Week 3</button>
-      <button class="week-pill">Week 4</button>
-      <button class="week-pill">Week 5</button>
-      <button class="week-pill">Week 6</button>
-      <button class="week-pill">Week 7</button>
-      <button class="week-pill">Week 8</button>
-      <button class="week-pill">Week 9</button>
-      <button class="week-pill">Week 10</button>
-      <button class="week-pill">Week 11</button>
-      <button class="week-pill">Week 12</button>
-      <button class="week-pill">Week 13</button>
-      <button class="week-pill">Week 14</button>
-    </div>
-
-    <div class="grid-two">
-      <section class="card">
-        <div class="card-header">
-          <h2>Enter Week 1 Scores</h2>
-          <span>Manual entry · ESPN sync later</span>
-        </div>
-
-        <div class="score-row">
-          <div class="score-team">SULLCO METHMOUTHS</div>
-          <input class="score-input" type="number" step="0.01" value="0.00">
-        </div>
-        <div class="score-row">
-          <div class="score-team">SIMPSON SITH</div>
-          <input class="score-input" type="number" step="0.01" value="0.00">
-        </div>
-        <div class="score-row">
-          <div class="score-team">YOUR MOM</div>
-          <input class="score-input" type="number" step="0.01" value="0.00">
-        </div>
-        <div class="score-row">
-          <div class="score-team">SPACE CADETS</div>
-          <input class="score-input" type="number" step="0.01" value="0.00">
-        </div>
-        <div class="score-row">
-          <div class="score-team">CALIFORNIA UN-NAMED TEAM</div>
-          <input class="score-input" type="number" step="0.01" value="0.00">
-        </div>
-        <div class="score-row">
-          <div class="score-team">REDWOOD MURDER</div>
-          <input class="score-input" type="number" step="0.01" value="0.00">
-        </div>
-        <div class="score-row">
-          <div class="score-team">OFF BOYS</div>
-          <input class="score-input" type="number" step="0.01" value="0.00">
-        </div>
-        <div class="score-row">
-          <div class="score-team">ESKIMO BROTHERS</div>
-          <input class="score-input" type="number" step="0.01" value="0.00">
-        </div>
-        <div class="score-row">
-          <div class="score-team">TURBULENT TICKLESHITS</div>
-          <input class="score-input" type="number" step="0.01" value="0.00">
-        </div>
-        <div class="score-row">
-          <div class="score-team">FLINT TROPICS</div>
-          <input class="score-input" type="number" step="0.01" value="0.00">
-        </div>
-        <div class="score-row">
-          <div class="score-team">MEDFORD MOUNTAINMEN</div>
-          <input class="score-input" type="number" step="0.01" value="0.00">
-        </div>
-        <div class="score-row">
-          <div class="score-team">THE BARTON SPARTANS</div>
-          <input class="score-input" type="number" step="0.01" value="0.00">
-        </div>
-
-        <button class="save-btn">Save Week 1 Scores</button>
-      </section>
-
-      <section class="card">
-        <div class="card-header">
-          <h2>Week 1 Awards</h2>
-          <span>Populates after scores are saved</span>
-        </div>
-        <p class="awards-placeholder">
-          Save scores first to see awards. Once your Week 1 scores are locked in, this panel will show:
-          Highest Scorer, Lowest Scorer, Blowout of the Week, Nailbiter, and any custom GFL lore awards you define.
-        </p>
-      </section>
-    </div>
-  </div>
+  function decodeEscapedHtml(text){
+    let s=text.replace(/^\uFEFF/, '').trim();
+    // Remove the display-layer escaping found in the supplied weekly.txt.
+    s=s.replace(/\\([<>\[\]|*_])/g,'$1');
+    s=s.replace(/=\\>/g,'=>').replace(/\\</g,'<').replace(/\\>/g,'>');
+    return s;
+  }
+  function launch(text){
+    const html=decodeEscapedHtml(text);
+    if(!/^<!DOCTYPE html>|^<html/i.test(html)) throw new Error('The selected file does not begin with HTML markup.');
+    document.open(); document.write(html); document.close();
+  }
+  function manual(message){
+    status.textContent=message+'\nChoose the original weekly.txt file to open the restored hub.';
+    status.className='error'; choose.hidden=false;
+  }
+  choose.addEventListener('click',()=>pick.click());
+  pick.addEventListener('change',()=>{
+    const file=pick.files[0]; if(!file) return;
+    const reader=new FileReader();
+    reader.onload=()=>{try{launch(String(reader.result))}catch(e){manual(e.message)}};
+    reader.onerror=()=>manual('Could not read weekly.txt.');
+    reader.readAsText(file,'utf-8');
+  });
+  fetch('weekly.txt',{cache:'no-store'})
+    .then(r=>{if(!r.ok) throw new Error('weekly.txt was not found beside weekly.html.');return r.text()})
+    .then(launch)
+    .catch(e=>manual(e.message));
+})();
+</script>
 </body>
 </html>
