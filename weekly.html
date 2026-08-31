@@ -1803,273 +1803,116 @@ function renderDivisionsTab() {
   else renderEditDivisions();
 }
 
-/* ═══════════ MODULE 4: KEEPERS ═══════════ */
+<script>
+/* ========== MODULE 4: KEEPERS (Hybrid Rebuild — using #keeper-grid) ========== */
+
 let keeperYear = 'all';
 
-$('#keeper-year-pills').addEventListener('click', (e) => {
+/* Year pills */
+document.querySelector('#keeper-year-pills').addEventListener('click', (e) => {
   const btn = e.target.closest('.tab-btn');
   if (!btn) return;
+
   keeperYear = btn.dataset.year;
-  $$('#keeper-year-pills .tab-btn').forEach(b => b.classList.toggle('active', b.dataset.year === keeperYear));
+
+  document.querySelectorAll('#keeper-year-pills .tab-btn')
+    .forEach(b => b.classList.toggle('active', b.dataset.year === keeperYear));
+
   renderKeepersTab();
 });
 
+/* Calculate streaks */
 function getStreaks(k) {
-  const years = ['y2023', 'y2024', 'y2025', 'y2026'];
+  const years = ['y2023','y2024','y2025','y2026'];
   const streaks = [];
   let i = 0;
+
   while (i < years.length) {
     let j = i;
     const player = k[years[i]];
     while (j < years.length && k[years[j]] === player) j++;
+
     if (j - i >= 2) {
-      streaks.push({ player, start: 2023 + i, end: 2023 + j - 1, len: j - i });
+      streaks.push({
+        player,
+        start: 2023 + i,
+        end: 2023 + j - 1,
+        len: j - i
+      });
     }
     i = j;
   }
   return streaks;
 }
 
-function makeEligBadge(streak) {
+/* Build eligibility badge */
+function makeEligBadge(len) {
   const badge = document.createElement('div');
   badge.className = 'elig-badge';
-  if (streak === 1) {
+
+  if (len === 1) {
     badge.classList.add('elig-ok');
-    badge.textContent = '✅ ELIGIBLE · 1st yr';
-  } else if (streak === 2) {
+    badge.textContent = 'ELIGIBLE · 1st yr';
+  } else if (len === 2) {
     badge.classList.add('elig-notice');
-    badge.textContent = '⚠️ ON NOTICE · 2nd yr — blocked in 2027';
+    badge.textContent = 'ON NOTICE · 2nd yr — blocked in 2027';
   } else {
     badge.classList.add('elig-blocked');
-    badge.textContent = '🚫 INELIGIBLE · 3rd+ consecutive year!';
+    badge.textContent = 'BLOCKED · 3rd+ yr';
   }
+
   return badge;
 }
 
+/* Render keeper cards */
 function renderKeepersTab() {
-  const grid = $('#keeper-grid');
+  const grid = document.querySelector('#keeper-grid');
+  if (!grid) {
+    console.error("Missing #keeper-grid anchor — cannot render keepers.");
+    return;
+  }
+
   grid.innerHTML = '';
-  const allStreaks = [];
 
   KEEPERS.forEach(k => {
     const card = document.createElement('div');
     card.className = 'keeper-card';
+
+    /* Team */
     const teamDiv = document.createElement('div');
     teamDiv.className = 'keeper-team';
     teamDiv.textContent = k.team;
     card.appendChild(teamDiv);
 
+    /* Manager */
     const mgrDiv = document.createElement('div');
     mgrDiv.className = 'keeper-manager';
     mgrDiv.textContent = k.manager;
     card.appendChild(mgrDiv);
 
+    /* Years */
+    ['y2023','y2024','y2025','y2026'].forEach(year => {
+      const yr = document.createElement('div');
+      yr.className = 'keeper-year';
+      yr.textContent = k[year];
+      card.appendChild(yr);
+    });
+
+    /* Eligibility badge */
     const streaks = getStreaks(k);
-    streaks.forEach(s => allStreaks.push({ ...s, team: k.team }));
+    const badge = streaks.length > 0
+      ? makeEligBadge(streaks[0].len)
+      : makeEligBadge(1);
 
-    const years = [
-      { key: 'y2023', label: '2023' },
-      { key: 'y2024', label: '2024' },
-      { key: 'y2025', label: '2025' },
-      { key: 'y2026', label: '2026' }
-    ];
+    card.appendChild(badge);
 
-    if (keeperYear === 'all') {
-      years.forEach(y => {
-        const row = document.createElement('div');
-        row.className = 'keeper-row';
-        const yl = document.createElement('span');
-        yl.className = 'keeper-year' + (y.label === '2026' ? ' current' : '');
-        yl.textContent = y.label;
-        const pl = document.createElement('span');
-        pl.className = 'keeper-player';
-        pl.textContent = k[y.key];
-        row.appendChild(yl);
-        row.appendChild(pl);
-        const streak = streaks.find(s => {
-          const yr = parseInt(y.label);
-          return s.player === k[y.key] && yr >= s.start && yr <= s.end && yr === s.end;
-        });
-        if (streak) {
-          const badge = document.createElement('span');
-          badge.className = 'peat-badge';
-          badge.textContent = streak.len >= 3 ? '3-PEAT 🔁🔁' : '2-PEAT 🔁';
-          row.appendChild(badge);
-        }
-        card.appendChild(row);
-
-        // Show eligibility badge for 2026 row
-        if (y.key === 'y2026') {
-          const s2026 = getKeeperStreak(k, 'y2026');
-          card.appendChild(makeEligBadge(s2026));
-        }
-      });
-    } else {
-      const y = years.find(y => y.label === keeperYear);
-      if (y) {
-        const pl = document.createElement('div');
-        pl.className = 'keeper-player keeper-player-large';
-        pl.textContent = k[y.key];
-        pl.style.marginBottom = '4px';
-        card.appendChild(pl);
-        const yl = document.createElement('div');
-        yl.className = 'keeper-year' + (y.label === '2026' ? ' current' : '');
-        yl.textContent = y.label;
-        yl.style.width = 'auto';
-        card.appendChild(yl);
-        const streak = streaks.find(s => {
-          const yr = parseInt(y.label);
-          return s.player === k[y.key] && yr >= s.start && yr <= s.end && yr === s.end;
-        });
-        if (streak) {
-          const badge = document.createElement('span');
-          badge.className = 'peat-badge';
-          badge.style.marginTop = '6px';
-          badge.style.display = 'inline-block';
-          badge.textContent = streak.len >= 3 ? '3-PEAT 🔁🔁' : '2-PEAT 🔁';
-          card.appendChild(badge);
-        }
-        // Show eligibility badge for 2026 view
-        if (y.key === 'y2026') {
-          const s2026 = getKeeperStreak(k, 'y2026');
-          card.appendChild(makeEligBadge(s2026));
-        }
-      }
-    }
     grid.appendChild(card);
   });
-
-  // Loyalists
-  const loyGrid = $('#loyalist-grid');
-  loyGrid.innerHTML = '';
-  const uniqueStreaks = [];
-  const seen = new Set();
-  allStreaks.forEach(s => {
-    const key = s.player + s.team;
-    if (!seen.has(key)) { seen.add(key); uniqueStreaks.push(s); }
-  });
-  uniqueStreaks.sort((a, b) => b.len - a.len);
-  uniqueStreaks.forEach(s => {
-    const card = document.createElement('div');
-    card.className = 'loyalist-card';
-    card.innerHTML = `<div class="loy-player">${s.player}</div>
-      <div class="loy-info">${s.team} · ${s.start}–${s.end}</div>
-      <span class="peat-badge" style="background:rgba(5,5,10,0.3);color:#05050a;margin-top:4px;">${s.len >= 3 ? '3-PEAT 🔁🔁' : '2-PEAT 🔁'}</span>`;
-    loyGrid.appendChild(card);
-  });
-
-  // 2027 Keeper Planner
-  renderKeeperPlanner();
 }
 
-function renderKeeperPlanner() {
-  const c = $('#planner-rows');
-  c.innerHTML = '';
-
-  // Load saved 2027 picks
-  let saved2027 = {};
-  try {
-    const raw = localStorage.getItem('gfl2026_keepers2027');
-    if (raw) saved2027 = JSON.parse(raw);
-  } catch(e) {}
-
-  KEEPERS.forEach(k => {
-    const row = document.createElement('div');
-    row.className = 'planner-row';
-
-    const teamCol = document.createElement('div');
-    teamCol.innerHTML = `<div class="planner-team">${k.team}</div><div class="planner-manager">${k.manager}</div>`;
-
-    const currentCol = document.createElement('div');
-    currentCol.className = 'planner-current';
-    const streak2026 = getKeeperStreak(k, 'y2026');
-    currentCol.innerHTML = `<span style="color:var(--text-secondary);font-size:11px;font-family:var(--font-heading);letter-spacing:0.04em;">2026 KEEPER:</span><br>${k.y2026}`;
-
-    const inputCol = document.createElement('div');
-    const inp = document.createElement('input');
-    inp.type = 'text';
-    inp.className = 'planner-input';
-    inp.placeholder = 'Enter player name...';
-    inp.dataset.team = k.team;
-    inp.value = saved2027[k.team] || '';
-    inputCol.appendChild(inp);
-
-    const statusCol = document.createElement('div');
-    statusCol.className = 'planner-status';
-    const statusBadge = document.createElement('span');
-    statusBadge.className = 'elig-badge';
-    statusCol.appendChild(statusBadge);
-
-    function updateStatus() {
-      const val = inp.value.trim();
-      statusBadge.className = 'elig-badge';
-      if (!val) {
-        statusBadge.className = 'elig-badge';
-        statusBadge.style.background = 'rgba(136,136,160,0.15)';
-        statusBadge.style.color = 'var(--text-secondary)';
-        statusBadge.style.border = '1px solid var(--border-input)';
-        statusBadge.textContent = '— PENDING';
-      } else if (normalize(val) === normalize(k.y2026) && streak2026 >= 2) {
-        statusBadge.className = 'elig-badge elig-blocked';
-        statusBadge.style.background = '';
-        statusBadge.style.color = '';
-        statusBadge.style.border = '';
-        statusBadge.textContent = '🚫 BLOCKED — 3-peat rule';
-      } else {
-        statusBadge.className = 'elig-badge elig-ok';
-        statusBadge.style.background = '';
-        statusBadge.style.color = '';
-        statusBadge.style.border = '';
-        statusBadge.textContent = '✅ ELIGIBLE';
-      }
-      updateViolations();
-    }
-
-    inp.addEventListener('input', updateStatus);
-
-    row.appendChild(teamCol);
-    row.appendChild(currentCol);
-    row.appendChild(inputCol);
-    row.appendChild(statusCol);
-    c.appendChild(row);
-
-    updateStatus();
-  });
-}
-
-function updateViolations() {
-  const violations = [];
-  $$('#planner-rows .planner-row').forEach(row => {
-    const badge = row.querySelector('.elig-badge');
-    if (badge && badge.textContent.includes('BLOCKED')) {
-      const teamDiv = row.querySelector('.planner-team');
-      if (teamDiv) violations.push(teamDiv.textContent);
-    }
-  });
-  const banner = $('#planner-violations');
-  const list = $('#planner-violations-list');
-  if (violations.length > 0) {
-    banner.style.display = 'block';
-    list.innerHTML = violations.map(t => '🚫 ' + t + ' — proposed keeper violates 3-peat rule').join('<br>');
-  } else {
-    banner.style.display = 'none';
-  }
-}
-
-$('#btn-save-2027').addEventListener('click', () => {
-  const picks = {};
-  $$('#planner-rows input[type="text"]').forEach(inp => {
-    if (inp.value.trim()) {
-      picks[inp.dataset.team] = inp.value.trim();
-    }
-  });
-  try {
-    localStorage.setItem('gfl2026_keepers2027', JSON.stringify(picks));
-    alert('2027 keeper picks saved!');
-  } catch(e) {
-    alert('Failed to save.');
-  }
-});
+/* Auto-run */
+document.addEventListener('DOMContentLoaded', renderKeepersTab);
+</script>
 
 /* ═══════════ MODULE 5: DRAFT ═══════════ */
 function renderDraftTab() {
