@@ -1241,7 +1241,8 @@ function switchTab(tab) {
   if (tab === 'draft') renderDraftTab();
   if (tab === 'storyline') renderStorylineTab();
 }
-
+  
+<script>
 /* ═══════════ MODULE 1: AWARDS ═══════════ */
 let currentWeek = 1;
 
@@ -2185,6 +2186,7 @@ function generateFallbackStory(week, summary, tone) {
   story += '\n\n[Demo mode — AI generation unavailable. Enter scores and try again when connected.]';
   return story;
 }
+<script>
 
 /* ═══════════ EXPORT / IMPORT ═══════════ */
 $('#btn-export').addEventListener('click', () => {
