@@ -845,6 +845,13 @@ select option { background: var(--bg-input); color: #fff; }
 .text-win { color: var(--win); }
 .text-loss { color: var(--loss); }
 .fw { width: 100%; }
+
+.keeper-manager{color:#aaaac0;font-size:12px;}
+.keeper-card:has(.elig-ok){border-color:rgba(76,187,122,.42);} 
+.keeper-card:has(.elig-notice){border-color:rgba(245,166,35,.58);} 
+.keeper-card:has(.elig-blocked){border-color:rgba(224,85,85,.58);} 
+.keeper-card>.keeper-year{display:block;width:auto;padding:5px 0;border-bottom:1px solid rgba(30,30,48,.42);} 
+
 </style>
 </head>
 <body data-id="0" id="gfl-weekly-hub">
@@ -868,7 +875,7 @@ select option { background: var(--bg-input); color: #fff; }
   <button data-id="12" class="tab-btn active" data-tab="awards">📅 Awards</button>
   <button data-id="13" class="tab-btn" data-tab="money">💰 Money</button>
   <button data-id="14" class="tab-btn" data-tab="divisions">🏆 Divisions</button>
-  <button data-id="15" class="tab-btn" data-tab="keepers">🎴 Keepers</button>
+  <button data-id="15" class="tab-btn" data-tab="keepers">🎴 Keeper Tracker</button>
   <button data-id="16" class="tab-btn" data-tab="draft">📋 Draft</button>
   <button data-id="17" class="tab-btn" data-tab="storyline">📖 Storyline</button>
 </nav>
@@ -1007,20 +1014,7 @@ select option { background: var(--bg-input); color: #fff; }
     <div data-id="126" class="card-title">⭐ Multi-Year Loyalists</div>
     <div data-id="127" class="loyalist-grid" id="loyalist-grid"></div>
   </div>
-  <!-- 2027 Keeper Planner -->
-  <div data-id="128" class="card mt-24" id="keeper-planner-card">
-    <div data-id="129" class="card-title">📋 2027 Keeper Planner</div>
-    <div data-id="130" style="color:var(--text-secondary);font-size:13px;margin-bottom:16px;font-family:var(--font-heading);letter-spacing:0.04em;">
-      Rule: No player may be kept 3 consecutive seasons. Enter proposed 2027 keepers to validate eligibility.
-    </div>
-    <div data-id="131" id="planner-rows"></div>
-    <div data-id="132" id="planner-violations" class="violations-banner" style="display:none;">
-      <div data-id="133" class="viol-title">⚠️ Violations</div>
-      <div data-id="134" id="planner-violations-list"></div>
-    </div>
-    <button data-id="135" class="btn-primary mt-16" id="btn-save-2027">💾 Save 2027 Picks</button>
-  </div>
-</section>
+  </section>
 
 <section data-id="136" class="module" id="mod-draft">
   <div data-id="137" class="draft-title">2026 GFL Draft Order</div>
