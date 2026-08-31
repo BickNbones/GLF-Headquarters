@@ -1893,10 +1893,19 @@ function renderKeepersTab() {
     });
 
     /* Eligibility badge */
-    const streaks = getStreaks(k);
-    const badge = streaks.length > 0
-      ? makeEligBadge(streaks[0].len)
-      : makeEligBadge(1);
+    const currentPlayer = k.y2026;
+
+let streak = 1;
+
+if (k.y2025 === currentPlayer) {
+  streak++;
+
+  if (k.y2024 === currentPlayer) {
+    streak++;
+  }
+}
+
+const badge = makeEligBadge(streak);
 
     card.appendChild(badge);
 
