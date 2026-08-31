@@ -1079,34 +1079,35 @@ select option { background: var(--bg-input); color: #fff; }
 
 <script>
 /* ═══════════ EMBEDDED DATA ═══════════ */
+
 const TEAMS = [
-  {id:'meth',      name:'Sullco MethMouths',         manager:'Owen Garritt'},
-  {id:'sith',      name:'Simpson Sith',               manager:'Danny Sattler'},
-  {id:'yourmom',   name:'Your Mom',                   manager:'Derek Baxter'},
-  {id:'thunder',   name:'Space Cadets',          manager:'Kris Capiello'},
-  {id:'cunt',      name:'California Un-Named Team',    manager:'Tavis Tucker'},
-  {id:'murder',    name:'Redwood Murder',              manager:'Collin Wilson'},
-  {id:'offboys',   name:'Off Boys',                    manager:"Kyle O'Connell"},
-  {id:'eskimo',    name:'Eskimo Brothers',             manager:"Sean O'Connell"},
-  {id:'tickle',    name:'Turbulent Ticklesh!ts',       manager:'Tyler Shaver'},
-  {id:'tropics',   name:'Flint Tropics',               manager:'Stephen Davis'},
-  {id:'mountain',  name:'Medford MountainMen',         manager:'Doug Meyer'},
-  {id:'spartans',  name:'THE Barton Spartans',         manager:'Matt Kitson'}
+  { id:'meth',     name:'Sullco MethMouths',        manager:'Owen Garritt' },
+  { id:'sith',     name:'Simpson Sith',             manager:'Danny Sattler' },
+  { id:'yourmom',  name:'Your Mom',                 manager:'Derek Baxter' },
+  { id:'thunder',  name:'Space Cadets',             manager:'Kris Cappiello' },   // fixed spelling
+  { id:'cunt',     name:'California Un-Named Team', manager:'Tavis Tucker' },
+  { id:'murder',   name:'Redwood Murder',           manager:'Collin Wilson' },
+  { id:'offboys',  name:'Off Boys',                 manager:"Kyle O'Connell" },
+  { id:'eskimo',   name:'Eskimo Brothers',          manager:"Sean O'Connell" },
+  { id:'tickle',   name:'Turbulent Ticklesh!ts',    manager:'Tyler Shaver' },
+  { id:'tropics',  name:'Flint Tropics',            manager:'Stephen Davis' },
+  { id:'mountain', name:'Medford MountainMen',      manager:'Doug Meyer' },
+  { id:'spartans', name:'THE Barton Spartans',      manager:'Matt Kitson' }
 ];
 
 const KEEPERS = [
-  {team:'Sullco MethMouths',       manager:'Owen Garritt',    y2023:'Patrick Mahomes',      y2024:'Bijan Robinson',      y2025:'Bijan Robinson',       y2026:'Amon-Ra St. Brown'},
-  {team:'Redwood Murder',          manager:'Collin Wilson',   y2023:'Christian McCaffrey',  y2024:'Josh Allen',          y2025:'Josh Allen',            y2026:'Jonathan Taylor'},
-  {team:'Eskimo Brothers',         manager:"Sean O'Connell",  y2023:'Austin Ekeler',        y2024:"Ja'Marr Chase",       y2025:"Ja'Marr Chase",         y2026:'Brock Bowers'},
-  {team:'THE Barton Spartans',     manager:'Matt Kitson',     y2023:'Justin Herbert',       y2024:'A.J. Brown',          y2025:'Christian McCaffrey',   y2026:'Christian McCaffrey'},
-  {team:'Medford MountainMen',     manager:'Doug Meyer',      y2023:'Justin Jefferson',     y2024:'Justin Jefferson',    y2025:'Bucky Irving',          y2026:'Saquon Barkley'},
-  {team:'Turbulent Ticklesh!ts',   manager:'Tyler Shaver',    y2023:'Davante Adams',        y2024:'CeeDee Lamb',         y2025:'CeeDee Lamb',           y2026:'Josh Allen'},
-  {team:'California Un-Named Team',manager:'Tavis Tucker',    y2023:'Travis Kelce',         y2024:'Kyren Williams',      y2025:'Amon-Ra St. Brown',     y2026:'Bijan Robinson'},
-  {team:'Flint Tropics',           manager:'Stephen Davis',   y2023:'Saquon Barkley',       y2024:'Saquon Barkley',      y2025:'Josh Jacobs',           y2026:'Chase Brown'},
-  {team:'Off Boys',                manager:"Kyle O'Connell",  y2023:'Tyreek Hill',          y2024:'Tyreek Hill',         y2025:'Jahmyr Gibbs',          y2026:'Puka Nacua'},
-  {team:'Your Mom',                manager:'Derek Baxter',    y2023:'Chris Olave',          y2024:'Derrick Henry',       y2025:'Derrick Henry',         y2026:'Justin Jefferson'},
-  {team:'Space Cadets',      manager:'Kris Capiello',    y2023:'Breece Hall',          y2024:'Breece Hall',         y2025:'Brian Thomas Jr.',      y2026:'James Cook'},
-  {team:'Simpson Sith',            manager:'Danny Sattler',   y2023:'Joe Mixon',            y2024:'Travis Etienne',      y2025:'Malik Nabers',          y2026:'Jaxon Smith-Njigba'}
+  { team:'Sullco MethMouths',        manager:'Owen Garritt',    y2023:'Patrick Mahomes',      y2024:'Bijan Robinson',      y2025:'Bijan Robinson',       y2026:'Amon-Ra St. Brown' },
+  { team:'Redwood Murder',           manager:'Collin Wilson',   y2023:'Christian McCaffrey',  y2024:'Josh Allen',          y2025:'Josh Allen',            y2026:'Jonathan Taylor' },
+  { team:'Eskimo Brothers',          manager:"Sean O'Connell",  y2023:'Austin Ekeler',        y2024:"Ja'Marr Chase",       y2025:"Ja'Marr Chase",         y2026:'Brock Bowers' },
+  { team:'THE Barton Spartans',      manager:'Matt Kitson',     y2023:'Justin Herbert',       y2024:'A.J. Brown',          y2025:'Christian McCaffrey',   y2026:'Christian McCaffrey' },
+  { team:'Medford MountainMen',      manager:'Doug Meyer',      y2023:'Justin Jefferson',     y2024:'Justin Jefferson',    y2025:'Bucky Irving',          y2026:'Saquon Barkley' },
+  { team:'Turbulent Ticklesh!ts',    manager:'Tyler Shaver',    y2023:'Davante Adams',        y2024:'CeeDee Lamb',         y2025:'CeeDee Lamb',           y2026:'Josh Allen' },
+  { team:'California Un-Named Team', manager:'Tavis Tucker',    y2023:'Travis Kelce',         y2024:'Kyren Williams',      y2025:'Amon-Ra St. Brown',     y2026:'Bijan Robinson' },
+  { team:'Flint Tropics',            manager:'Stephen Davis',   y2023:'Saquon Barkley',       y2024:'Saquon Barkley',      y2025:'Josh Jacobs',           y2026:'Chase Brown' },
+  { team:'Off Boys',                 manager:"Kyle O'Connell",  y2023:'Tyreek Hill',          y2024:'Tyreek Hill',         y2025:'Jahmyr Gibbs',          y2026:'Puka Nacua' },
+  { team:'Your Mom',                 manager:'Derek Baxter',    y2023:'Chris Olave',          y2024:'Derrick Henry',       y2025:'Derrick Henry',         y2026:'Justin Jefferson' },
+  { team:'Space Cadets',             manager:'Kris Cappiello',  y2023:'Breece Hall',          y2024:'Breece Hall',         y2025:'Brian Thomas Jr.',      y2026:'James Cook' }, // fixed spelling
+  { team:'Simpson Sith',             manager:'Danny Sattler',   y2023:'Joe Mixon',            y2024:'Travis Etienne',      y2025:'Malik Nabers',          y2026:'Jaxon Smith-Njigba' }
 ];
 
 const DRAFT_ORDER = [
