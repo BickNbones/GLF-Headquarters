@@ -1,0 +1,78 @@
+{
+    "weeks":  {
+                  "1":  {
+                            "scores":  {
+                                           "mountain":  112.1,
+                                           "murder":  120.24,
+                                           "sith":  108.5,
+                                           "thunder":  79.76,
+                                           "tropics":  114.26,
+                                           "meth":  137.42,
+                                           "eskimo":  139.46,
+                                           "offboys":  119.72,
+                                           "tickle":  117.46,
+                                           "yourmom":  103.4,
+                                           "cunt":  110.96,
+                                           "spartans":  69.56
+                                       },
+                            "matchups":  [
+                                             [
+                                                 "mountain",
+                                                 "murder"
+                                             ],
+                                             [
+                                                 "sith",
+                                                 "thunder"
+                                             ],
+                                             [
+                                                 "tropics",
+                                                 "meth"
+                                             ],
+                                             [
+                                                 "eskimo",
+                                                 "offboys"
+                                             ],
+                                             [
+                                                 "tickle",
+                                                 "yourmom"
+                                             ],
+                                             [
+                                                 "cunt",
+                                                 "spartans"
+                                             ]
+                                         ]
+                        }
+              },
+    "postseason":  {
+                       "runnerUp":  "",
+                       "champion":  ""
+                   },
+    "divisions":  {
+                      "East":  [
+                                   "Sullco MethMouths",
+                                   "Simpson Sith",
+                                   "Your Mom",
+                                   "Space Cadets"
+                               ],
+                      "West":  [
+                                   "California Un-Named Team",
+                                   "Redwood Murder",
+                                   "Off Boys",
+                                   "Eskimo Brothers"
+                               ],
+                      "Central":  [
+                                      "Turbulent Ticklesh!ts",
+                                      "Flint Tropics",
+                                      "Medford MountainMen",
+                                      "THE Barton Spartans"
+                                  ]
+                  },
+    "draftRevealed":  [
+
+                      ],
+    "goldenHP":  {
+                     "team":  "eskimo",
+                     "score":  139.46,
+                     "week":  1
+                 }
+}
