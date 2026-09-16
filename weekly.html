@@ -852,6 +852,12 @@ select option { background: var(--bg-input); color: #fff; }
 .keeper-card:has(.elig-blocked){border-color:rgba(224,85,85,.58);} 
 .keeper-card>.keeper-year{display:block;width:auto;padding:5px 0;border-bottom:1px solid rgba(30,30,48,.42);} 
 
+
+/* GFL INSIDER */
+.insider-shell{max-width:1040px;margin:0 auto}.insider-hero{position:relative;overflow:hidden;border:1px solid rgba(245,166,35,.45);border-radius:12px;padding:34px 28px;margin-bottom:18px;background:radial-gradient(circle at 85% 20%,rgba(245,166,35,.22),transparent 30%),linear-gradient(135deg,#171326,#090910 66%)}
+.insider-kicker{font-family:var(--font-heading);color:var(--gold-light);font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase}.insider-headline{font-family:var(--font-heading);font-size:clamp(2rem,6vw,4rem);font-weight:800;line-height:.95;letter-spacing:.025em;text-transform:uppercase;max-width:760px;margin:10px 0 14px}.insider-deck{max-width:760px;color:#c8c8d8;font-size:1.05rem}.insider-grid{display:grid;grid-template-columns:minmax(0,1.65fr) minmax(260px,.85fr);gap:18px}.insider-copy p{margin:0 0 16px;color:#e7e7ef;line-height:1.82}.insider-copy h2,.insider-side h2{font-family:var(--font-heading);color:var(--gold);text-transform:uppercase;letter-spacing:.06em;margin:22px 0 10px}.insider-stat{border-left:3px solid var(--gold);padding:12px 14px;margin:14px 0;background:rgba(245,166,35,.06);border-radius:0 7px 7px 0}.insider-stat strong{display:block;font-family:var(--font-heading);font-size:1.15rem;text-transform:uppercase}.insider-list{list-style:none}.insider-list li{display:flex;gap:10px;padding:10px 0;border-bottom:1px solid var(--border-card)}.insider-rank{color:var(--gold);font-family:var(--font-heading);font-weight:800;min-width:22px}.insider-scoreboard{display:grid;gap:8px}.insider-game{display:flex;justify-content:space-between;gap:12px;padding:10px 12px;background:var(--bg-input);border:1px solid var(--border-card);border-radius:6px}.insider-game b{color:var(--gold)}.insider-note{margin-top:18px;padding:12px;text-align:center;color:var(--text-secondary);font-family:var(--font-heading);text-transform:uppercase;letter-spacing:.06em;font-size:11px;border-top:1px solid var(--border-card)}
+@media(max-width:800px){.insider-grid{grid-template-columns:1fr}.insider-hero{padding:26px 20px}.insider-headline{font-size:clamp(2rem,11vw,3rem)}}
+
 </style>
 </head>
 <body data-id="0" id="gfl-weekly-hub">
@@ -859,7 +865,7 @@ select option { background: var(--bg-input); color: #fff; }
 
 <div data-id="2" class="top-bar">
   <a data-id="3" href="index.html" class="bc">⚡ GFL HQ</a>
-  <div data-id="4" class="top-bar-actions">
+  <div data-id="4" class="top-bar-actions" hidden>
     <button data-id="5" class="btn-sm" id="btn-export">💾 Export</button>
     <button data-id="6" class="btn-sm" id="btn-import">📂 Import</button>
     <input data-id="7" type="file" id="import-file" accept=".json" style="display:none">
@@ -877,13 +883,13 @@ select option { background: var(--bg-input); color: #fff; }
   <button data-id="14" class="tab-btn" data-tab="divisions">🏆 Divisions</button>
   <button data-id="15" class="tab-btn" data-tab="keepers">🎴 Keeper Tracker</button>
   <button data-id="16" class="tab-btn" data-tab="draft">📋 Draft</button>
-  <button data-id="17" class="tab-btn" data-tab="storyline">📖 Storyline</button>
+  <button data-id="17" class="tab-btn" data-tab="storyline">📰 GFL Insider</button>
 </nav>
 
 <section data-id="18" class="module active" id="mod-awards">
   <div data-id="19" class="week-pills" id="week-pills"></div>
-  <div data-id="20" class="awards-grid">
-    <div data-id="21" class="card" id="scores-card">
+  <div data-id="20" class="awards-grid" style="grid-template-columns:1fr">
+    <div data-id="21" class="card" id="scores-card" hidden>
       <div data-id="22" class="card-title" id="scores-title">Enter Week 1 Scores</div>
       <div data-id="23" id="score-rows"></div>
       <div data-id="24" style="border-top:1px solid var(--border-card);margin:14px 0 10px;"></div>
@@ -936,7 +942,7 @@ select option { background: var(--bg-input); color: #fff; }
       </table>
     </div>
   </div>
-  <div data-id="62" class="money-cards">
+  <div data-id="62" class="money-cards" hidden>
     <div data-id="63" class="card">
       <div data-id="64" class="card-title">🏆 Postseason Results</div>
       <div data-id="65" style="margin-bottom:12px;">
@@ -964,7 +970,7 @@ select option { background: var(--bg-input); color: #fff; }
   <div data-id="80" class="div-toggle-bar" id="div-toggle-bar">
     <button data-id="81" class="tab-btn active" data-view="standings">Standings</button>
     <button data-id="82" class="tab-btn" data-view="h2h">H2H Matrix</button>
-    <button data-id="83" class="tab-btn" data-view="edit-div">Edit Divisions</button>
+    <button data-id="83" class="tab-btn" data-view="edit-div" hidden>Edit Divisions</button>
   </div>
   <div data-id="84" id="div-standings" class="div-view">
     <div data-id="85" class="div-cards" id="div-cards-container"></div>
@@ -984,7 +990,7 @@ select option { background: var(--bg-input); color: #fff; }
       <div data-id="102" class="h2h-container" id="h2h-container"></div>
     </div>
   </div>
-  <div data-id="103" id="div-edit" class="div-view" style="display:none;">
+  <div data-id="103" id="div-edit" class="div-view" style="display:none;" hidden>
     <div data-id="104" class="card">
       <div data-id="105" class="card-title">Edit Division Assignments</div>
       <div data-id="106" id="edit-div-rows"></div>
@@ -1019,7 +1025,7 @@ select option { background: var(--bg-input); color: #fff; }
 <section data-id="136" class="module" id="mod-draft">
   <div data-id="137" class="draft-title">2026 GFL Draft Order</div>
   <div data-id="138" class="draft-grid" id="draft-grid"></div>
-  <div data-id="139" class="draft-controls">
+  <div data-id="139" class="draft-controls" hidden>
     <button data-id="140" class="btn-primary" id="btn-reveal-next">▶ Reveal Next Pick</button>
     <button data-id="141" class="btn-secondary" id="btn-reveal-all">Reveal All</button>
     <button data-id="142" class="btn-secondary" id="btn-draft-reset">🔄 Reset</button>
@@ -1034,36 +1040,36 @@ select option { background: var(--bg-input); color: #fff; }
 </section>
 
 <section data-id="148" class="module" id="mod-storyline">
-  <div data-id="149" class="story-header">
-    <div data-id="150" class="story-title">📖 GFL Chronicles</div>
-    <div data-id="151" class="story-tagline">Where Legends Are Made &amp; Kickers Are Drafted Too Early · Est. 2012 · Calicoon, NY</div>
-  </div>
-  <div data-id="152" class="card">
-    <div data-id="153" class="flex-row mb-16" style="justify-content:center;">
-      <label data-id="154" class="bc text-muted" style="font-size:12px;">Week:</label>
-      <select data-id="155" id="story-week-sel" style="width:80px;"></select>
+  <div class="insider-shell" id="insider-content">
+    <div class="story-header">
+      <div class="story-title">📰 GFL Insider</div>
+      <div class="story-tagline" id="insider-tagline">Loading the latest league edition...</div>
     </div>
-    <div data-id="156" class="tone-pills mb-16" id="tone-pills">
-      <button data-id="157" class="tone-pill active" data-tone="dramatic">🎭 Dramatic</button>
-      <button data-id="158" class="tone-pill" data-tone="trash">😂 Trash Talk</button>
-      <button data-id="159" class="tone-pill" data-tone="espn">📰 ESPN Recap</button>
-      <button data-id="160" class="tone-pill" data-tone="hype">⚡ Hype Mode</button>
+    <article class="insider-hero">
+      <div class="insider-kicker" id="insider-kicker">GFL Weekly Cover Story</div>
+      <h1 class="insider-headline" id="insider-headline">Loading...</h1>
+      <p class="insider-deck" id="insider-deck"></p>
+    </article>
+    <div class="insider-grid">
+      <article class="card insider-copy">
+        <div class="card-title">Featured Story</div>
+        <div id="insider-story"></div>
+        <div id="insider-awards"></div>
+        <h2>Looking Ahead</h2>
+        <p id="insider-looking-ahead"></p>
+      </article>
+      <aside class="insider-side">
+        <div class="card">
+          <div class="card-title" id="power-title">Power Five</div>
+          <ol class="insider-list" id="insider-power"></ol>
+        </div>
+        <div class="card mt-16">
+          <div class="card-title">Final Scores</div>
+          <div class="insider-scoreboard" id="insider-scoreboard"></div>
+        </div>
+      </aside>
     </div>
-    <div data-id="161" class="flex-row mb-16" style="justify-content:center;">
-      <label data-id="162" class="lore-toggle">
-        <input data-id="163" type="checkbox" id="lore-checkbox" checked> 📜 Include League Lore
-      </label>
-    </div>
-    <div data-id="164" id="lore-preview" class="lore-preview">GFL Est. 2012 · Season XV · Calicoon, NY · 12 Managers</div>
-    <button data-id="165" class="btn-primary fw mt-16" id="btn-generate-chronicle">✨ Generate Chronicle</button>
-  </div>
-  <div data-id="166" class="chronicle-output" id="chronicle-output" style="display:none;">
-    <div data-id="167" class="chronicle-masthead">⚡ GFL Chronicles ⚡</div>
-    <div data-id="168" class="chronicle-text" id="chronicle-text"></div>
-    <div data-id="169" class="chronicle-actions">
-      <button data-id="170" class="btn-secondary" id="btn-copy-chronicle">📋 Copy Text</button>
-      <button data-id="171" class="btn-secondary" id="btn-regen-chronicle">🔄 Regenerate</button>
-    </div>
+    <div class="insider-note">Published from the commissioner workbook · Shared league edition</div>
   </div>
 </section>
 
@@ -1162,24 +1168,10 @@ function defaultState() {
   };
 }
 
-function loadState() {
-  try {
-    const raw = localStorage.getItem(STORAGE_KEY);
-    if (raw) {
-      const s = JSON.parse(raw);
-      if (!s.divisions) s.divisions = JSON.parse(JSON.stringify(DEFAULT_DIVISIONS));
-      if (!s.draftRevealed) s.draftRevealed = [];
-      if (!s.goldenHP) s.goldenHP = { team: '', score: 0, week: 0 };
-      if (!s.postseason) s.postseason = { runnerUp: '', champion: '' };
-      if (!s.weeks) s.weeks = {};
-      return s;
-    }
-  } catch (e) { console.warn('Failed to load state', e); }
-  return defaultState();
+function loadState() { return defaultState();
 }
 
-function saveState() {
-  try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); } catch (e) { console.warn('Save failed', e); }
+function saveState() { /* Public hub is read-only. */
 }
 
 let state = loadState();
@@ -2056,139 +2048,62 @@ $('#btn-draft-reset').addEventListener('click', () => {
   renderDraftTab();
 });
 
-/* ═══════════ MODULE 6: STORYLINE ═══════════ */
-let storyTone = 'dramatic';
-
-function renderStorylineTab() {
-  const sel = $('#story-week-sel');
-  if (sel.children.length === 0) {
-    for (let w = 1; w <= 14; w++) {
-      const opt = document.createElement('option');
-      opt.value = w;
-      opt.textContent = 'Week ' + w;
-      sel.appendChild(opt);
-    }
-  }
+/* ═══════════ MODULE 6: GFL INSIDER ═══════════ */
+function escapeHtml(value) {
+  return String(value ?? '').replace(/[&<>'"]/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[ch]));
 }
-
-$('#tone-pills').addEventListener('click', (e) => {
-  const btn = e.target.closest('.tone-pill');
-  if (!btn) return;
-  storyTone = btn.dataset.tone;
-  $$('#tone-pills .tone-pill').forEach(b => b.classList.toggle('active', b.dataset.tone === storyTone));
-});
-
-$('#lore-checkbox').addEventListener('change', () => {
-  $('#lore-preview').style.display = $('#lore-checkbox').checked ? 'block' : 'none';
-});
-
-$('#btn-generate-chronicle').addEventListener('click', generateChronicle);
-$('#btn-regen-chronicle').addEventListener('click', generateChronicle);
-$('#btn-copy-chronicle').addEventListener('click', () => {
-  const text = $('#chronicle-text').textContent;
-  navigator.clipboard.writeText(text).then(() => {
-    $('#btn-copy-chronicle').textContent = '✓ Copied!';
-    setTimeout(() => { $('#btn-copy-chronicle').textContent = '📋 Copy Text'; }, 2000);
-  }).catch(() => {});
-});
-
-async function generateChronicle() {
-  const week = parseInt($('#story-week-sel').value);
+function getLatestPublishedWeek() {
+  return Object.keys(state.weeks || {}).map(Number).filter(w => {
+    const wd = state.weeks[w];
+    return wd && wd.scores && wd.matchups && wd.matchups.length;
+  }).sort((a,b) => b-a)[0] || 0;
+}
+function getWeekAnalysis(week) {
   const wd = state.weeks[week];
-  const output = $('#chronicle-output');
-  const textEl = $('#chronicle-text');
-  output.style.display = 'block';
-
-  if (!wd || !wd.scores || Object.keys(wd.scores).length === 0 || !wd.matchups || wd.matchups.length === 0) {
-    textEl.textContent = 'No scores saved for Week ' + week + ' yet. Go to the Awards tab, enter scores, and save first.';
+  if (!wd) return null;
+  const games = (wd.matchups || []).map(([a,b]) => {
+    const sa=Number(wd.scores[a]), sb=Number(wd.scores[b]);
+    if (!Number.isFinite(sa) || !Number.isFinite(sb)) return null;
+    const winner=sa>=sb?a:b, loser=sa>=sb?b:a;
+    return {a,b,sa,sb,winner,loser,winnerScore:Math.max(sa,sb),loserScore:Math.min(sa,sb),margin:Math.abs(sa-sb)};
+  }).filter(Boolean);
+  if (!games.length) return null;
+  const ranking=Object.entries(wd.scores).map(([id,score])=>({id,score:Number(score)})).filter(x=>Number.isFinite(x.score)).sort((a,b)=>b.score-a.score);
+  const blowout=[...games].sort((a,b)=>b.margin-a.margin)[0];
+  const closest=[...games].sort((a,b)=>a.margin-b.margin)[0];
+  const toughLoss=[...games].sort((a,b)=>b.loserScore-a.loserScore)[0];
+  return {games,ranking,high:ranking[0],low:ranking[ranking.length-1],blowout,closest,toughLoss};
+}
+function renderStorylineTab() {
+  const week=getLatestPublishedWeek();
+  const a=getWeekAnalysis(week);
+  if (!a) {
+    $('#insider-tagline').textContent='No completed weeks published yet';
+    $('#insider-headline').textContent='The season is waiting';
+    $('#insider-deck').textContent='Completed matchups will appear here after the commissioner publishes league data.';
+    $('#insider-story').innerHTML='<p class="text-muted">No weekly results are available.</p>';
+    $('#insider-awards').innerHTML=''; $('#insider-power').innerHTML=''; $('#insider-scoreboard').innerHTML='';
+    $('#insider-looking-ahead').textContent='Check back after the next completed week is published.';
     return;
   }
-
-  const scores = wd.scores;
-  const matchups = wd.matchups;
-  let summary = 'Week ' + week + ' Results:\n';
-
-  let highTeam = '', highScore = -1, lowTeam = '', lowScore = Infinity;
-  let bigWinner = '', bigLoser = '', bigMargin = -1;
-  let closeWinner = '', closeLoser = '', closeMargin = Infinity;
-
-  Object.entries(scores).forEach(([id, s]) => {
-    if (s > highScore) { highScore = s; highTeam = id; }
-    if (s < lowScore) { lowScore = s; lowTeam = id; }
-  });
-
-  matchups.forEach(([a, b]) => {
-    const sa = scores[a] || 0, sb = scores[b] || 0;
-    const w = sa >= sb ? a : b;
-    const l = sa >= sb ? b : a;
-    const ws = Math.max(sa, sb), ls = Math.min(sa, sb);
-    const margin = Math.abs(sa - sb);
-    summary += teamNameById(w) + ' (' + ws.toFixed(2) + ') defeated ' + teamNameById(l) + ' (' + ls.toFixed(2) + ') by ' + margin.toFixed(2) + ' pts\n';
-    if (margin > bigMargin) { bigMargin = margin; bigWinner = w; bigLoser = l; }
-    if (margin < closeMargin) { closeMargin = margin; closeWinner = w; closeLoser = l; }
-  });
-
-  summary += '\nHigh Scorer: ' + teamNameById(highTeam) + ' with ' + highScore.toFixed(2) + ' pts';
-  summary += '\nLowest Scorer: ' + teamNameById(lowTeam) + ' with ' + lowScore.toFixed(2) + ' pts';
-  summary += '\nBiggest Blowout: ' + teamNameById(bigWinner) + ' over ' + teamNameById(bigLoser) + ' by ' + bigMargin.toFixed(2) + ' pts';
-  summary += '\nClosest Game: ' + teamNameById(closeWinner) + ' over ' + teamNameById(closeLoser) + ' by ' + closeMargin.toFixed(2) + ' pts';
-
-  const toneInstructions = {
-    dramatic: "You are a dramatic sports documentary narrator. Write an epic, cinematic narrative recap of this fantasy football week. Use vivid language, dramatic pauses, and heroic/tragic framing.",
-    trash: "Write brutal, funny trash talk between the GFL managers. The winners mock the losers mercilessly. Be savage but playful, use all-caps for emphasis, slang welcome.",
-    espn: "Write a professional ESPN-style fantasy football weekly recap with analysis, trends, and forward-looking commentary.",
-    hype: "Write the most electrifying, hype-man style recap imaginable. CAPS, exclamation points, energy through the roof. Make every result sound legendary."
-  };
-
-  let prompt = '';
-  if ($('#lore-checkbox').checked) {
-    prompt += 'Context: The Gandorf Fantasy League (GFL) has been running since 2012 in Calicoon, NY. This is Season XV. The league has 12 managers and a long history of trash talk, dynasty runs, and heartbreak. Treat it like a big deal.\n\n';
-  }
-  prompt += toneInstructions[storyTone] + '\n\n' + summary;
-
-  textEl.innerHTML = '<div class="chronicle-loading">⚡ Generating Week ' + week + ' Chronicle...</div>';
-  $('#btn-generate-chronicle').disabled = true;
-
-  try {
-    if (window.AppSDK && window.AppSDK.ai && window.AppSDK.ai.chat) {
-      const res = await AppSDK.ai.chat({
-        messages: [{ role: 'user', content: prompt }]
-      });
-      textEl.textContent = res.content;
-    } else {
-      textEl.textContent = generateFallbackStory(week, summary, storyTone);
-    }
-  } catch (e) {
-    textEl.textContent = generateFallbackStory(week, summary, storyTone);
-  }
-  $('#btn-generate-chronicle').disabled = false;
+  const highName=teamNameById(a.high.id), second=a.ranking[1], lowName=teamNameById(a.low.id);
+  $('#insider-tagline').textContent=`Week ${week} News · Results · Rankings · Season XV`;
+  $('#insider-kicker').textContent=`GFL Weekly Cover Story · Week ${week}`;
+  $('#insider-headline').textContent=`${highName} sets the Week ${week} pace`;
+  $('#insider-deck').textContent=`${highName} led the league with ${a.high.score.toFixed(2)} points as Week ${week} reshaped the Season XV standings.`;
+  const closeText=`${teamNameById(a.closest.winner)} survived ${teamNameById(a.closest.loser)} by ${a.closest.margin.toFixed(2)} points in the closest finish.`;
+  const blowText=`${teamNameById(a.blowout.winner)} delivered the widest victory, defeating ${teamNameById(a.blowout.loser)} by ${a.blowout.margin.toFixed(2)}.`;
+  const secondText=second ? `${teamNameById(second.id)} followed at ${second.score.toFixed(2)} points.` : '';
+  $('#insider-story').innerHTML=`<p>Week ${week} produced a clear scoring leader. <strong>${escapeHtml(highName)}</strong> posted ${a.high.score.toFixed(2)} points. ${escapeHtml(secondText)}</p><p>${escapeHtml(closeText)}</p><p>${escapeHtml(blowText)}</p>`;
+  $('#insider-awards').innerHTML=`
+    <div class="insider-stat"><strong>🏆 Team of the Week: ${escapeHtml(highName)}</strong>${a.high.score.toFixed(2)} points, the best total of Week ${week}.</div>
+    <div class="insider-stat"><strong>💔 Tough-Luck Team: ${escapeHtml(teamNameById(a.toughLoss.loser))}</strong>${a.toughLoss.loserScore.toFixed(2)} points in a loss to ${escapeHtml(teamNameById(a.toughLoss.winner))}.</div>
+    <div class="insider-stat"><strong>🚨 Low Score: ${escapeHtml(lowName)}</strong>${a.low.score.toFixed(2)} points.</div>`;
+  $('#power-title').textContent=`Week ${week} Power Five`;
+  $('#insider-power').innerHTML=a.ranking.slice(0,5).map((x,i)=>`<li><span class="insider-rank">${i+1}</span><span><strong>${escapeHtml(teamNameById(x.id))}</strong><br><span class="text-muted">${x.score.toFixed(2)} pts</span></span></li>`).join('');
+  $('#insider-scoreboard').innerHTML=a.games.sort((x,y)=>y.winnerScore-x.winnerScore).map(g=>`<div class="insider-game"><span><b>${escapeHtml(teamNameById(g.winner))}</b><br>${escapeHtml(teamNameById(g.loser))}</span><span><b>${g.winnerScore.toFixed(2)}</b><br>${g.loserScore.toFixed(2)}</span></div>`).join('');
+  $('#insider-looking-ahead').textContent=`Week ${week} is now in the books. The standings, high-point race, and division picture will update again when the next completed week is published.`;
 }
-
-function generateFallbackStory(week, summary, tone) {
-  const lines = summary.split('\n').filter(l => l.trim());
-  let story = '';
-  if (tone === 'dramatic') {
-    story = `WEEK ${week} — THE RECKONING\n\nThe lights dimmed. The crowd held its breath. And then... the scores dropped.\n\n`;
-    lines.forEach(l => { if (l.includes('defeated')) story += '» ' + l + '\n'; });
-    story += `\nSome rose. Some fell. But none were left unchanged. This is the GFL. This is where legends live and die.`;
-  } else if (tone === 'trash') {
-    story = `WEEK ${week} TRASH REPORT 🗑️\n\nALRIGHT LISTEN UP you beautiful degenerates—\n\n`;
-    lines.forEach(l => { if (l.includes('defeated')) story += '💀 ' + l.toUpperCase() + '\n'; });
-    story += `\nIF YOU LOST THIS WEEK, YOUR ROSTER IS LITERALLY A DUMPSTER FIRE. Do better.`;
-  } else if (tone === 'espn') {
-    story = `GFL Season XV — Week ${week} Recap\n\nIn a week filled with surprising performances and pivotal matchups, the GFL delivered once again.\n\n`;
-    lines.forEach(l => { if (l.includes('defeated') || l.includes('Scorer') || l.includes('Blowout') || l.includes('Closest')) story += l + '\n'; });
-    story += `\nLooking ahead, managers will need to make key adjustments as the playoff picture continues to take shape.`;
-  } else {
-    story = `⚡⚡⚡ WEEK ${week} IS ABSOLUTELY ELECTRIC ⚡⚡⚡\n\nLET'S GOOOOO! THE GFL JUST DELIVERED AN ABSOLUTE BANGER OF A WEEK!\n\n`;
-    lines.forEach(l => { if (l.includes('defeated')) story += '🔥 ' + l.toUpperCase() + '!!!\n'; });
-    story += `\nTHIS LEAGUE IS BUILT DIFFERENT!!! SEASON XV IS THE GREATEST SEASON IN GFL HISTORY!!!`;
-  }
-  story += '\n\n[Demo mode — AI generation unavailable. Enter scores and try again when connected.]';
-  return story;
-}
-
-
 /* ═══════════ EXPORT / IMPORT ═══════════ */
 $('#btn-export').addEventListener('click', () => {
   const data = JSON.stringify(state, null, 2);
@@ -2229,8 +2144,23 @@ $('#import-file').addEventListener('change', (e) => {
   e.target.value = '';
 });
 
-/* ═══════════ INIT ═══════════ */
-renderAwardsTab();
+/* ═══════════ INIT: SHARED PUBLISHED DATA ═══════════ */
+async function loadPublishedData() {
+  try {
+    const response = await fetch('gfl-data.json?v=' + Date.now(), {cache:'no-store'});
+    if (!response.ok) throw new Error('HTTP ' + response.status);
+    const published = await response.json();
+    state = Object.assign(defaultState(), published);
+    const publishedWeeks=Object.keys(state.weeks || {}).map(Number).sort((a,b)=>a-b);
+    currentWeek=publishedWeeks[publishedWeeks.length-1] || 1;
+    switchTab(currentTab);
+  } catch (error) {
+    console.error('Could not load gfl-data.json', error);
+    $('#awards-output').innerHTML='<p class="text-loss" style="text-align:center;padding:40px 0;">League data could not be loaded. Confirm that gfl-data.json is beside weekly.html.</p>';
+  }
+}
+loadPublishedData();
+
 </script>
 </body>
 </html>
