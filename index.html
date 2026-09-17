@@ -12,7 +12,7 @@
             --tungsten: #f7e7c1;
             --dark: #0a0a0a;
             --panel: rgba(15, 15, 15, 0.85);
-            --border: rgba(255, 255, 255, 0.06);
+            --border: rgba(255,255,255,0.06);
             --shadow: 0 12px 40px rgba(0,0,0,0.55);
         }
 
@@ -22,25 +22,14 @@
             color: var(--tungsten);
             font-family: "Georgia", serif;
             letter-spacing: 0.5px;
-            background-image: radial-gradient(circle at 50% 20%, rgba(255,255,255,0.05), transparent 70%);
         }
 
-        /* HERO */
         header {
             padding: 90px 20px 70px;
             text-align: center;
             background: linear-gradient(180deg, #1a1a1a 0%, #0a0a0a 70%);
             border-bottom: 1px solid var(--border);
             box-shadow: var(--shadow);
-            position: relative;
-        }
-
-        header::after {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(circle at center, rgba(255,255,255,0.08), transparent 60%);
-            pointer-events: none;
         }
 
         .hero-title {
@@ -49,7 +38,6 @@
             color: var(--gold);
             text-transform: uppercase;
             margin-bottom: 15px;
-            text-shadow: 0 0 25px rgba(212,175,55,0.35);
         }
 
         .hero-subtitle {
@@ -58,7 +46,6 @@
             margin-bottom: 50px;
         }
 
-        /* GRID */
         .card-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -68,7 +55,6 @@
             margin: auto;
         }
 
-        /* CARD */
         .card {
             background: var(--panel);
             border: 1px solid var(--border);
@@ -76,9 +62,7 @@
             padding: 30px;
             text-align: center;
             box-shadow: var(--shadow);
-            backdrop-filter: blur(4px);
             transition: 0.35s ease;
-            position: relative;
         }
 
         .card:hover {
@@ -95,7 +79,6 @@
             text-transform: uppercase;
         }
 
-        /* BUTTON */
         .button {
             display: inline-block;
             margin-top: 25px;
@@ -124,20 +107,10 @@
         }
     </style>
 
-    <!-- LEAGUE CONFIG -->
-    <script>
-        const LEAGUE_CONFIG = {
-            season: 15,
-            location: "Calicoon, NY",
-            dataFile: "gfl-data.json"
-        };
-    </script>
-
-    <!-- JSON LOADER -->
     <script>
         async function loadLeagueData() {
             try {
-                const response = await fetch(LEAGUE_CONFIG.dataFile);
+                const response = await fetch("gfl-data.json");
                 const data = await response.json();
 
                 document.getElementById("champion-card").innerHTML =
@@ -155,7 +128,7 @@
                      <p>Week ${data.currentWeek.week}</p>
                      <p>${data.currentWeek.summary}</p>`;
             } catch (err) {
-                console.error("Failed to load league data:", err);
+                console.error("JSON failed to load:", err);
             }
         }
 
@@ -165,75 +138,72 @@
 
 <body>
 
-    <!-- HERO -->
-    <header>
-        <div class="hero-title">Season XV</div>
-        <div class="hero-subtitle">Calicoon, New York</div>
-    </header>
+<header>
+    <div class="hero-title">Season XV</div>
+    <div class="hero-subtitle">Calicoon, New York</div>
+</header>
 
-    <!-- MAIN GRID -->
-    <section class="card-grid">
+<section class="card-grid">
 
-        <div class="card" id="champion-card">
-            <div class="card-title">Defending Champion</div>
-            <p>Loading...</p>
-        </div>
+    <div class="card" id="champion-card">
+        <div class="card-title">Defending Champion</div>
+        <p>Loading...</p>
+    </div>
 
-        <div class="card" id="golden-card">
-            <div class="card-title">Golden High Point</div>
-            <p>Loading...</p>
-        </div>
+    <div class="card" id="golden-card">
+        <div class="card-title">Golden High Point</div>
+        <p>Loading...</p>
+    </div>
 
-        <div class="card" id="currentweek-card">
-            <div class="card-title">Current Week</div>
-            <p>Loading...</p>
-        </div>
+    <div class="card" id="currentweek-card">
+        <div class="card-title">Current Week</div>
+        <p>Loading...</p>
+    </div>
 
-        <div class="card">
-            <div class="card-title">Weekly Hub</div>
-            <a class="button" href="weekly.html">Open Weekly Hub</a>
-        </div>
+    <div class="card">
+        <div class="card-title">Weekly Hub</div>
+        <a class="button" href="weekly.html">Open Weekly Hub</a>
+    </div>
 
-    </section>
+</section>
 
-    <!-- DIRECTORY GRID -->
-    <section class="card-grid">
+<section class="card-grid">
 
-        <div class="card">
-            <div class="card-title">Franchise Directory</div>
-            <a class="button" href="franchises.html">Open Directory</a>
-        </div>
+    <div class="card">
+        <div class="card-title">Franchise Directory</div>
+        <a class="button" href="franchises.html">Open Directory</a>
+    </div>
 
-        <div class="card">
-            <div class="card-title">Trophy Wall</div>
-            <a class="button" href="trophywall.html">View Awards</a>
-        </div>
+    <div class="card">
+        <div class="card-title">Trophy Wall</div>
+        <a class="button" href="trophywall.html">View Awards</a>
+    </div>
 
-        <div class="card">
-            <div class="card-title">Rankings</div>
-            <a class="button" href="rankings.html">View Rankings</a>
-        </div>
+    <div class="card">
+        <div class="card-title">Rankings</div>
+        <a class="button" href="rankings.html">View Rankings</a>
+    </div>
 
-        <div class="card">
-            <div class="card-title">Records</div>
-            <a class="button" href="records.html">View Records</a>
-        </div>
+    <div class="card">
+        <div class="card-title">Records</div>
+        <a class="button" href="records.html">View Records</a>
+    </div>
 
-        <div class="card">
-            <div class="card-title">Division Awards</div>
-            <a class="button" href="divisionawards.html">View Awards</a>
-        </div>
+    <div class="card">
+        <div class="card-title">Division Awards</div>
+        <a class="button" href="divisionawards.html">View Awards</a>
+    </div>
 
-        <div class="card">
-            <div class="card-title">Memorial</div>
-            <a class="button" href="memorial.html">View Memorial</a>
-        </div>
+    <div class="card">
+        <div class="card-title">Memorial</div>
+        <a class="button" href="memorial.html">View Memorial</a>
+    </div>
 
-    </section>
+</section>
 
-    <footer>
-        GLF Headquarters • Season XV
-    </footer>
+<footer>
+    GLF Headquarters • Season XV
+</footer>
 
 </body>
 </html>
