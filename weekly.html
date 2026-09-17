@@ -1164,7 +1164,9 @@ function defaultState() {
     postseason: { runnerUp: '', champion: '' },
     divisions: JSON.parse(JSON.stringify(DEFAULT_DIVISIONS)),
     draftRevealed: [],
-    goldenHP: { team: '', score: 0, week: 0 }
+    goldenHP: { team: '', score: 0, week: 0 },
+    schedule: {},
+    divisionWinners: {}
   };
 }
 
@@ -2074,6 +2076,29 @@ function getWeekAnalysis(week) {
   const toughLoss=[...games].sort((a,b)=>b.loserScore-a.loserScore)[0];
   return {games,ranking,high:ranking[0],low:ranking[ranking.length-1],blowout,closest,toughLoss};
 }
+function getTeamRecordsThroughWeek(lastWeek) {
+  const records={}; TEAMS.forEach(t=>records[t.id]={w:0,l:0,pf:0});
+  for(let w=1;w<=lastWeek;w++){
+    const wd=state.weeks[w]; if(!wd||!wd.scores||!wd.matchups) continue;
+    wd.matchups.forEach(([a,b])=>{const sa=Number(wd.scores[a]),sb=Number(wd.scores[b]); if(!Number.isFinite(sa)||!Number.isFinite(sb))return;
+      records[a].pf+=sa; records[b].pf+=sb; if(sa>sb){records[a].w++;records[b].l++;}else if(sb>sa){records[b].w++;records[a].l++;}
+    });
+  } return records;
+}
+function buildLookingAhead(completedWeek) {
+  const nextWeek=completedWeek+1, block=(state.schedule||{})[nextWeek];
+  if(!block||!Array.isArray(block.games)||!block.games.length) return `Week ${completedWeek} is now in the books. The standings, high-point race, and division picture will update when the next completed week is published.`;
+  const records=getTeamRecordsThroughWeek(completedWeek);
+  const games=block.games.map(g=>({home:g.home,away:g.away,note:(g.note||'').trim(),weight:(records[g.home]?.w||0)+(records[g.away]?.w||0),pf:(records[g.home]?.pf||0)+(records[g.away]?.pf||0)}));
+  const noted=games.filter(g=>g.note); const featured=(noted[0]||[...games].sort((a,b)=>b.weight-a.weight||b.pf-a.pf)[0]);
+  const matchup=`${teamNameById(featured.home)} vs. ${teamNameById(featured.away)}`;
+  let text=`Looking ahead to Week ${nextWeek}, ${matchup} takes center stage`;
+  if(featured.note) text+=` with the commissioner’s note: “${featured.note}.”`;
+  else text+=` as the strongest scheduled matchup based on the current records and points scored.`;
+  const extraNotes=noted.filter(g=>g!==featured).map(g=>`${teamNameById(g.home)} vs. ${teamNameById(g.away)}: ${g.note}`);
+  if(extraNotes.length) text+=` Also on the radar: ${extraNotes.join(' • ')}.`;
+  return text;
+}
 function renderStorylineTab() {
   const week=getLatestPublishedWeek();
   const a=getWeekAnalysis(week);
@@ -2102,7 +2127,7 @@ function renderStorylineTab() {
   $('#power-title').textContent=`Week ${week} Power Five`;
   $('#insider-power').innerHTML=a.ranking.slice(0,5).map((x,i)=>`<li><span class="insider-rank">${i+1}</span><span><strong>${escapeHtml(teamNameById(x.id))}</strong><br><span class="text-muted">${x.score.toFixed(2)} pts</span></span></li>`).join('');
   $('#insider-scoreboard').innerHTML=a.games.sort((x,y)=>y.winnerScore-x.winnerScore).map(g=>`<div class="insider-game"><span><b>${escapeHtml(teamNameById(g.winner))}</b><br>${escapeHtml(teamNameById(g.loser))}</span><span><b>${g.winnerScore.toFixed(2)}</b><br>${g.loserScore.toFixed(2)}</span></div>`).join('');
-  $('#insider-looking-ahead').textContent=`Week ${week} is now in the books. The standings, high-point race, and division picture will update again when the next completed week is published.`;
+  $('#insider-looking-ahead').textContent=buildLookingAhead(week);
 }
 /* ═══════════ EXPORT / IMPORT ═══════════ */
 $('#btn-export').addEventListener('click', () => {
