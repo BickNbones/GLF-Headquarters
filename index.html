@@ -5,7 +5,35 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>GFL Headquarters — Gandorf National Football League</title>
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js">
+// ===== HQ PORTAL: active franchise cards + read-only weekly snapshot =====
+(function(){
+  const featured=document.getElementById('featuredMgrGrid');
+  managers.filter(m=>m.status==='active').forEach(m=>{
+    const a=document.createElement('a');
+    a.className='featured-manager'; a.href=m.url; a.target='_blank'; a.rel='noopener';
+    a.innerHTML=`<div class="fm-top"><span class="fm-emoji">${m.emoji}</span><span class="badge b-active">Active</span></div><div class="fm-name">${m.name}</div><div class="fm-team">${m.team}</div><div class="fm-cta">OPEN FRANCHISE GUIDE →</div>`;
+    featured.appendChild(a);
+  });
+  const nameMap={meth:'Sullco MethMouths',sith:'Simpson Sith',yourmom:'Your Mom',thunder:'Space Cadets',cunt:'California Un-Named Team',murder:'Redwood Murder',offboys:'Off Boys',eskimo:'Eskimo Brothers',tickle:'Turbulent Ticklesh!ts',tropics:'Flint Tropics',mountain:'Medford MountainMen',spartans:'THE Barton Spartans'};
+  const set=(id,text)=>{const el=document.getElementById(id);if(el)el.textContent=text;};
+  fetch('gfl-data.json?v='+Date.now(),{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error(r.status);return r.json();}).then(data=>{
+    const weeks=Object.keys(data.weeks||{}).map(Number).filter(w=>data.weeks[w]&&data.weeks[w].scores&&Object.keys(data.weeks[w].scores).length).sort((a,b)=>a-b);
+    if(!weeks.length)throw new Error('No published weeks');
+    const wk=weeks[weeks.length-1], wd=data.weeks[wk], scores=wd.scores||{}, games=wd.matchups||[];
+    const ranked=Object.entries(scores).map(([id,score])=>({id,score:Number(score)})).filter(x=>Number.isFinite(x.score)).sort((a,b)=>b.score-a.score);
+    set('liveWeek','Latest published: Week '+wk);
+    if(ranked[0])set('liveHigh',(nameMap[ranked[0].id]||ranked[0].id)+' · '+ranked[0].score.toFixed(2));
+    const validGames=games.map(([a,b])=>({a,b,sa:Number(scores[a]),sb:Number(scores[b])})).filter(g=>Number.isFinite(g.sa)&&Number.isFinite(g.sb)).map(g=>({...g,margin:Math.abs(g.sa-g.sb)})).sort((a,b)=>a.margin-b.margin);
+    if(validGames[0])set('liveClose',(nameMap[validGames[0].a]||validGames[0].a)+' / '+(nameMap[validGames[0].b]||validGames[0].b)+' · '+validGames[0].margin.toFixed(2)); else set('liveClose','Open Weekly Hub');
+    const rec={}; Object.keys(nameMap).forEach(id=>rec[id]={w:0,pf:0});
+    weeks.forEach(w=>{const x=data.weeks[w]||{},s=x.scores||{};(x.matchups||[]).forEach(([a,b])=>{const sa=Number(s[a]),sb=Number(s[b]);if(!Number.isFinite(sa)||!Number.isFinite(sb))return;if(rec[a])rec[a].pf+=sa;if(rec[b])rec[b].pf+=sb;if(sa>sb&&rec[a])rec[a].w++;else if(sb>sa&&rec[b])rec[b].w++;});});
+    const leader=Object.entries(rec).sort((a,b)=>b[1].w-a[1].w||b[1].pf-a[1].pf)[0];
+    if(leader)set('liveLeader',(nameMap[leader[0]]||leader[0])+' · '+leader[1].w+' wins');
+  }).catch(()=>{set('liveWeek','Weekly Hub is available');set('liveHigh','Open for latest results');set('liveClose','Open for matchups');set('liveLeader','Open for standings');});
+})();
+
+</script>
 <style>
 :root{--gold:#F59E0B;--gold-dark:#D97706;--gold-glow:rgba(245,159,11,0.22);--navy:#080C14;--navy2:#0F172A;--navy3:#1E293B;--text:#F8FAFC;--muted:#94A3B8;--green:#22C55E;--blue:#3B82F6;}
 *{margin:0;padding:0;box-sizing:border-box;}
@@ -167,6 +195,23 @@ margin-bottom: .35rem;
 color: var(--text-light);
 }
 
+
+/* ===== HQ PORTAL + LIVE SEASON SNAPSHOT ===== */
+.portal-section{max-width:1200px;margin:0 auto;padding:0 2rem 4.5rem;position:relative;z-index:2}
+.portal-shell{background:linear-gradient(145deg,rgba(15,23,42,.96),rgba(8,12,20,.96));border:1px solid rgba(245,159,11,.28);border-radius:14px;padding:1.4rem;box-shadow:0 18px 50px rgba(0,0,0,.24)}
+.portal-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.85rem}
+.portal-card{display:flex;align-items:center;gap:.8rem;min-height:82px;padding:1rem;background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.08);border-radius:9px;color:var(--text);text-decoration:none;transition:transform .2s,border-color .2s,background .2s}
+.portal-card:hover{transform:translateY(-3px);border-color:var(--gold);background:rgba(245,159,11,.07)}
+.portal-icon{font-size:1.55rem}.portal-card strong{display:block;font-size:.82rem}.portal-card small{display:block;color:var(--muted);font-size:.66rem;margin-top:.15rem}
+.live-strip{display:grid;grid-template-columns:1.1fr repeat(3,1fr) auto;gap:.75rem;align-items:stretch;margin-bottom:1.1rem}
+.live-cell{background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.07);border-radius:8px;padding:.85rem 1rem;min-width:0}
+.live-cell .k{font-family:'Orbitron',monospace;color:var(--gold);font-size:.55rem;letter-spacing:1.5px;text-transform:uppercase}.live-cell .v{font-size:.83rem;font-weight:700;margin-top:.35rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.live-status{display:flex;align-items:center;gap:.5rem;color:var(--muted);font-size:.72rem}.live-dot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 10px rgba(34,197,94,.7)}
+.live-open{display:flex;align-items:center;justify-content:center;padding:.75rem 1rem;border-radius:8px;background:var(--gold);color:var(--navy);font-family:'Orbitron',monospace;font-size:.62rem;font-weight:900;text-decoration:none;text-align:center}
+.featured-franchises{max-width:1200px;margin:0 auto;padding:4.5rem 2rem 1rem;position:relative;z-index:1}.featured-head{display:flex;justify-content:space-between;align-items:end;gap:1rem;margin-bottom:1.2rem}.featured-head .st{margin-bottom:0}.featured-link{color:var(--gold);text-decoration:none;font-size:.72rem}
+.featured-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.85rem}.featured-manager{display:block;background:var(--navy2);border:1px solid rgba(245,159,11,.18);border-radius:9px;padding:1rem;text-decoration:none;transition:.2s}.featured-manager:hover{transform:translateY(-3px);border-color:var(--gold);box-shadow:0 8px 28px var(--gold-glow)}.featured-manager .fm-top{display:flex;justify-content:space-between;gap:.5rem}.featured-manager .fm-emoji{font-size:1.45rem}.featured-manager .fm-name{color:var(--text);font-weight:800;font-size:.88rem;margin-top:.55rem}.featured-manager .fm-team{color:var(--muted);font-size:.68rem;margin-top:.15rem}.featured-manager .fm-cta{color:var(--gold);font-size:.62rem;margin-top:.75rem;font-weight:700}
+@media(max-width:900px){.portal-grid,.featured-grid{grid-template-columns:repeat(2,1fr)}.live-strip{grid-template-columns:repeat(2,1fr)}.live-open{min-height:58px}}
+@media(max-width:560px){.portal-section,.featured-franchises{padding-left:1rem;padding-right:1rem}.portal-grid,.featured-grid,.live-strip{grid-template-columns:1fr}.featured-head{align-items:flex-start;flex-direction:column}}
+
 </style>
 </head>
 <body>
@@ -199,6 +244,28 @@ color: var(--text-light);
 <a href="weekly.html" class="weekly-hub-connector">📅 Open Weekly Hub →</a>
 <p class="hero-tagline">"Started as a group of friends doing fantasy football. Fourteen seasons later, it's the most competitive thing any of us do that we'd never admit to caring about."</p>
 </div>
+
+<section class="portal-section" aria-label="GFL headquarters navigation">
+<div class="portal-shell">
+<div class="live-strip" id="liveSeasonStrip" aria-live="polite">
+<div class="live-cell"><div class="live-status"><span class="live-dot"></span><span>SEASON XV LIVE</span></div><div class="v" id="liveWeek">Loading weekly data…</div></div>
+<div class="live-cell"><div class="k">High Score</div><div class="v" id="liveHigh">Loading…</div></div>
+<div class="live-cell"><div class="k">Closest Game</div><div class="v" id="liveClose">Loading…</div></div>
+<div class="live-cell"><div class="k">Standings Leader</div><div class="v" id="liveLeader">Loading…</div></div>
+<a class="live-open" href="weekly.html">OPEN WEEKLY HUB →</a>
+</div>
+<div class="sl">Quick Access</div><div class="st" style="margin-bottom:1.1rem">Explore GFL Headquarters</div>
+<div class="portal-grid">
+<a class="portal-card" href="#featured-franchises"><span class="portal-icon">🎖️</span><span><strong>Franchise Guides</strong><small>Meet every active manager</small></span></a>
+<a class="portal-card" href="#champions"><span class="portal-icon">🏆</span><span><strong>Trophy Wall</strong><small>All 14 champions</small></span></a>
+<a class="portal-card" href="#leaderboard"><span class="portal-icon">📊</span><span><strong>All-Time Standings</strong><small>Career wins and win rate</small></span></a>
+<a class="portal-card" href="#bests"><span class="portal-icon">⚡</span><span><strong>Record Book</strong><small>League highs and lore</small></span></a>
+<a class="portal-card" href="#division-awards"><span class="portal-icon">🏅</span><span><strong>Division Awards</strong><small>East, West and Central</small></span></a>
+<a class="portal-card" href="#managers"><span class="portal-icon">👥</span><span><strong>Full Directory</strong><small>Active, retired and memorial</small></span></a>
+<a class="portal-card" href="#memorial"><span class="portal-icon">🕊️</span><span><strong>Memorial</strong><small>David Wilson</small></span></a>
+<a class="portal-card" href="weekly.html"><span class="portal-icon">📅</span><span><strong>Weekly Hub</strong><small>Season XV live center</small></span></a>
+</div></div></section>
+<section class="featured-franchises" id="featured-franchises"><div class="featured-head"><div><div class="sl">Active Franchises</div><div class="st">Manager Franchise Guides</div></div><a class="featured-link" href="#managers">View full 23-manager directory ↓</a></div><div class="featured-grid" id="featuredMgrGrid"></div></section>
 
 <div class="divider"></div>
 
