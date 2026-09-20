@@ -1,601 +1,688 @@
 {
-    "weeks":  {
-                  "1":  {
-                            "scores":  {
-                                           "mountain":  112.1,
-                                           "murder":  120.24,
-                                           "sith":  108.5,
-                                           "thunder":  79.76,
-                                           "tropics":  114.26,
-                                           "meth":  137.42,
-                                           "eskimo":  139.46,
-                                           "offboys":  119.72,
-                                           "tickle":  117.46,
-                                           "yourmom":  103.4,
-                                           "cunt":  110.96,
-                                           "spartans":  69.56
-                                       },
-                            "matchups":  [
-                                             [
-                                                 "mountain",
-                                                 "murder"
-                                             ],
-                                             [
-                                                 "sith",
-                                                 "thunder"
-                                             ],
-                                             [
-                                                 "tropics",
-                                                 "meth"
-                                             ],
-                                             [
-                                                 "eskimo",
-                                                 "offboys"
-                                             ],
-                                             [
-                                                 "tickle",
-                                                 "yourmom"
-                                             ],
-                                             [
-                                                 "cunt",
-                                                 "spartans"
-                                             ]
-                                         ]
-                        }
-              },
-    "schedule":  {
-                     "1":  {
-                               "games":  [
-                                             {
-                                                 "home":  "mountain",
-                                                 "away":  "murder",
-                                                 "note":  ""
-                                             },
-                                             {
-                                                 "home":  "sith",
-                                                 "away":  "thunder",
-                                                 "note":  ""
-                                             },
-                                             {
-                                                 "home":  "tropics",
-                                                 "away":  "meth",
-                                                 "note":  ""
-                                             },
-                                             {
-                                                 "home":  "eskimo",
-                                                 "away":  "offboys",
-                                                 "note":  ""
-                                             },
-                                             {
-                                                 "home":  "tickle",
-                                                 "away":  "yourmom",
-                                                 "note":  ""
-                                             },
-                                             {
-                                                 "home":  "cunt",
-                                                 "away":  "spartans",
-                                                 "note":  ""
-                                             }
-                                         ],
-                               "notes":  [
-
-                                         ]
-                           },
-                     "2":  {
-                               "games":  [
-                                             {
-                                                 "home":  "mountain",
-                                                 "away":  "tickle",
-                                                 "note":  ""
-                                             },
-                                             {
-                                                 "home":  "sith",
-                                                 "away":  "tropics",
-                                                 "note":  ""
-                                             },
-                                             {
-                                                 "home":  "eskimo",
-                                                 "away":  "cunt",
-                                                 "note":  ""
-                                             },
-                                             {
-                                                 "home":  "murder",
-                                                 "away":  "thunder",
-                                                 "note":  ""
-                                             },
-                                             {
-                                                 "home":  "meth",
-                                                 "away":  "spartans",
-                                                 "note":  ""
-                                             },
-                                             {
-                                                 "home":  "offboys",
-                                                 "away":  "yourmom",
-                                                 "note":  ""
-                                             }
-                                         ],
-                               "notes":  [
-
-                                         ]
-                           },
-                     "3":  {
-                               "games":  [
-                                             {
-                                                 "home":  "sith",
-                                                 "away":  "meth",
-                                                 "note":  ""
-                                             },
-                                             {
-                                                 "home":  "spartans",
-                                                 "away":  "yourmom",
-                                                 "note":  ""
-                                             },
-                                             {
-                                                 "home":  "mountain",
-                                                 "away":  "cunt",
-                                                 "note":  ""
-                                             },
-                                             {
-                                                 "home":  "murder",
-                                                 "away":  "eskimo",
-                                                 "note":  ""
-                                             },
-                                             {
-                                                 "home":  "tickle",
-                                                 "away":  "offboys",
-                                                 "note":  ""
-                                             },
-                                             {
-                                                 "home":  "tropics",
-                                                 "away":  "thunder",
-                                                 "note":  ""
-                                             }
-                                         ],
-                               "notes":  [
-
-                                         ]
-                           },
-                     "4":  {
-                               "games":  [
-                                             {
-                                                 "home":  "yourmom",
-                                                 "away":  "murder",
-                                                 "note":  ""
-                                             },
-                                             {
-                                                 "home":  "thunder",
-                                                 "away":  "meth",
-                                                 "note":  ""
-                                             },
-                                             {
-                                                 "home":  "eskimo",
-                                                 "away":  "spartans",
-                                                 "note":  ""
-                                             },
-                                             {
-                                                 "home":  "tickle",
-                                                 "away":  "tropics",
-                                                 "note":  ""
-                                             },
-                                             {
-                                                 "home":  "offboys",
-                                                 "away":  "mountain",
-                                                 "note":  ""
-                                             },
-                                             {
-                                                 "home":  "cunt",
-                                                 "away":  "sith",
-                                                 "note":  ""
-                                             }
-                                         ],
-                               "notes":  [
-
-                                         ]
-                           },
-                     "5":  {
-                               "games":  [
-                                             {
-                                                 "home":  "thunder",
-                                                 "away":  "eskimo",
-                                                 "note":  ""
-                                             },
-                                             {
-                                                 "home":  "sith",
-                                                 "away":  "meth",
-                                                 "note":  ""
-                                             },
-                                             {
-                                                 "home":  "cunt",
-                                                 "away":  "yourmom",
-                                                 "note":  ""
-                                             },
-                                             {
-                                                 "home":  "tropics",
-                                                 "away":  "murder",
-                                                 "note":  ""
-                                             },
-                                             {
-                                                 "home":  "mountain",
-                                                 "away":  "tickle",
-                                                 "note":  ""
-                                             },
-                                             {
-                                                 "home":  "spartans",
-                                                 "away":  "offboys",
-                                                 "note":  ""
-                                             }
-                                         ],
-                               "notes":  [
-
-                                         ]
-                           },
-                     "6":  {
-                               "games":  [
-                                             {
-                                                 "home":  "offboys",
-                                                 "away":  "sith",
-                                                 "note":  ""
-                                             },
-                                             {
-                                                 "home":  "yourmom",
-                                                 "away":  "thunder",
-                                                 "note":  ""
-                                             },
-                                             {
-                                                 "home":  "eskimo",
-                                                 "away":  "tickle",
-                                                 "note":  ""
-                                             },
-                                             {
-                                                 "home":  "cunt",
-                                                 "away":  "tropics",
-                                                 "note":  ""
-                                             },
-                                             {
-                                                 "home":  "spartans",
-                                                 "away":  "mountain",
-                                                 "note":  ""
-                                             },
-                                             {
-                                                 "home":  "murder",
-                                                 "away":  "meth",
-                                                 "note":  ""
-                                             }
-                                         ],
-                               "notes":  [
-
-                                         ]
-                           },
-                     "7":  {
-                               "games":  [
-                                             {
-                                                 "home":  "sith",
-                                                 "away":  "eskimo",
-                                                 "note":  ""
-                                             },
-                                             {
-                                                 "home":  "offboys",
-                                                 "away":  "thunder",
-                                                 "note":  ""
-                                             },
-                                             {
-                                                 "home":  "tickle",
-                                                 "away":  "cunt",
-                                                 "note":  ""
-                                             },
-                                             {
-                                                 "home":  "meth",
-                                                 "away":  "yourmom",
-                                                 "note":  ""
-                                             },
-                                             {
-                                                 "home":  "spartans",
-                                                 "away":  "murder",
-                                                 "note":  ""
-                                             },
-                                             {
-                                                 "home":  "mountain",
-                                                 "away":  "tropics",
-                                                 "note":  ""
-                                             }
-                                         ],
-                               "notes":  [
-
-                                         ]
-                           },
-                     "8":  {
-                               "games":  [
-                                             {
-                                                 "home":  "murder",
-                                                 "away":  "offboys",
-                                                 "note":  ""
-                                             },
-                                             {
-                                                 "home":  "cunt",
-                                                 "away":  "meth",
-                                                 "note":  ""
-                                             },
-                                             {
-                                                 "home":  "sith",
-                                                 "away":  "mountain",
-                                                 "note":  ""
-                                             },
-                                             {
-                                                 "home":  "tickle",
-                                                 "away":  "tropics",
-                                                 "note":  ""
-                                             },
-                                             {
-                                                 "home":  "yourmom",
-                                                 "away":  "eskimo",
-                                                 "note":  ""
-                                             },
-                                             {
-                                                 "home":  "thunder",
-                                                 "away":  "spartans",
-                                                 "note":  "Gonzo/Dawg Medallion rivalry"
-                                             }
-                                         ],
-                               "notes":  [
-                                             "Gonzo/Dawg Medallion rivalry"
-                                         ]
-                           },
-                     "9":  {
-                               "games":  [
-                                             {
-                                                 "home":  "offboys",
-                                                 "away":  "meth",
-                                                 "note":  ""
-                                             },
-                                             {
-                                                 "home":  "sith",
-                                                 "away":  "murder",
-                                                 "note":  "Rivalry Original members"
-                                             },
-                                             {
-                                                 "home":  "tickle",
-                                                 "away":  "thunder",
-                                                 "note":  ""
-                                             },
-                                             {
-                                                 "home":  "mountain",
-                                                 "away":  "yourmom",
-                                                 "note":  ""
-                                             },
-                                             {
-                                                 "home":  "cunt",
-                                                 "away":  "eskimo",
-                                                 "note":  ""
-                                             },
-                                             {
-                                                 "home":  "spartans",
-                                                 "away":  "tropics",
-                                                 "note":  ""
-                                             }
-                                         ],
-                               "notes":  [
-                                             "Rivalry Original members"
-                                         ]
-                           },
-                     "10":  {
-                                "games":  [
-                                              {
-                                                  "home":  "eskimo",
-                                                  "away":  "offboys",
-                                                  "note":  ""
-                                              },
-                                              {
-                                                  "home":  "cunt",
-                                                  "away":  "murder",
-                                                  "note":  ""
-                                              },
-                                              {
-                                                  "home":  "meth",
-                                                  "away":  "tickle",
-                                                  "note":  ""
-                                              },
-                                              {
-                                                  "home":  "yourmom",
-                                                  "away":  "tropics",
-                                                  "note":  ""
-                                              },
-                                              {
-                                                  "home":  "thunder",
-                                                  "away":  "mountain",
-                                                  "note":  ""
-                                              },
-                                              {
-                                                  "home":  "sith",
-                                                  "away":  "spartans",
-                                                  "note":  ""
-                                              }
-                                          ],
-                                "notes":  [
-
-                                          ]
-                            },
-                     "11":  {
-                                "games":  [
-                                              {
-                                                  "home":  "offboys",
-                                                  "away":  "murder",
-                                                  "note":  ""
-                                              },
-                                              {
-                                                  "home":  "tickle",
-                                                  "away":  "spartans",
-                                                  "note":  ""
-                                              },
-                                              {
-                                                  "home":  "yourmom",
-                                                  "away":  "sith",
-                                                  "note":  ""
-                                              },
-                                              {
-                                                  "home":  "mountain",
-                                                  "away":  "meth",
-                                                  "note":  ""
-                                              },
-                                              {
-                                                  "home":  "thunder",
-                                                  "away":  "cunt",
-                                                  "note":  ""
-                                              },
-                                              {
-                                                  "home":  "eskimo",
-                                                  "away":  "tropics",
-                                                  "note":  ""
-                                              }
-                                          ],
-                                "notes":  [
-
-                                          ]
-                            },
-                     "12":  {
-                                "games":  [
-                                              {
-                                                  "home":  "tropics",
-                                                  "away":  "offboys",
-                                                  "note":  ""
-                                              },
-                                              {
-                                                  "home":  "spartans",
-                                                  "away":  "mountain",
-                                                  "note":  ""
-                                              },
-                                              {
-                                                  "home":  "sith",
-                                                  "away":  "tickle",
-                                                  "note":  ""
-                                              },
-                                              {
-                                                  "home":  "meth",
-                                                  "away":  "eskimo",
-                                                  "note":  ""
-                                              },
-                                              {
-                                                  "home":  "yourmom",
-                                                  "away":  "thunder",
-                                                  "note":  ""
-                                              },
-                                              {
-                                                  "home":  "murder",
-                                                  "away":  "cunt",
-                                                  "note":  ""
-                                              }
-                                          ],
-                                "notes":  [
-
-                                          ]
-                            },
-                     "13":  {
-                                "games":  [
-                                              {
-                                                  "home":  "tickle",
-                                                  "away":  "murder",
-                                                  "note":  ""
-                                              },
-                                              {
-                                                  "home":  "spartans",
-                                                  "away":  "tropics",
-                                                  "note":  ""
-                                              },
-                                              {
-                                                  "home":  "sith",
-                                                  "away":  "thunder",
-                                                  "note":  ""
-                                              },
-                                              {
-                                                  "home":  "mountain",
-                                                  "away":  "eskimo",
-                                                  "note":  ""
-                                              },
-                                              {
-                                                  "home":  "yourmom",
-                                                  "away":  "meth",
-                                                  "note":  ""
-                                              },
-                                              {
-                                                  "home":  "cunt",
-                                                  "away":  "offboys",
-                                                  "note":  ""
-                                              }
-                                          ],
-                                "notes":  [
-
-                                          ]
-                            },
-                     "14":  {
-                                "games":  [
-                                              {
-                                                  "home":  "tickle",
-                                                  "away":  "spartans",
-                                                  "note":  ""
-                                              },
-                                              {
-                                                  "home":  "mountain",
-                                                  "away":  "tropics",
-                                                  "note":  ""
-                                              },
-                                              {
-                                                  "home":  "yourmom",
-                                                  "away":  "sith",
-                                                  "note":  ""
-                                              },
-                                              {
-                                                  "home":  "eskimo",
-                                                  "away":  "murder",
-                                                  "note":  ""
-                                              },
-                                              {
-                                                  "home":  "meth",
-                                                  "away":  "thunder",
-                                                  "note":  ""
-                                              },
-                                              {
-                                                  "home":  "offboys",
-                                                  "away":  "cunt",
-                                                  "note":  ""
-                                              }
-                                          ],
-                                "notes":  [
-
-                                          ]
-                            }
-                 },
-    "postseason":  {
-                       "runnerUp":  "",
-                       "champion":  ""
-                   },
-    "divisions":  {
-                      "East":  [
-                                   "Sullco MethMouths",
-                                   "Simpson Sith",
-                                   "Your Mom",
-                                   "Space Cadets"
-                               ],
-                      "West":  [
-                                   "California Un-Named Team",
-                                   "Redwood Murder",
-                                   "Off Boys",
-                                   "Eskimo Brothers"
-                               ],
-                      "Central":  [
-                                      "Turbulent Ticklesh!ts",
-                                      "Flint Tropics",
-                                      "Medford MountainMen",
-                                      "THE Barton Spartans"
-                                  ]
-                  },
-    "divisionWinners":  {
-
-                        },
-    "draftRevealed":  [
-
-                      ],
-    "goldenHP":  {
-                     "team":  "eskimo",
-                     "score":  139.46,
-                     "week":  1
-                 }
+  "weeks": {
+    "1": {
+      "scores": {
+        "mountain": 112.1,
+        "murder": 120.24,
+        "sith": 108.5,
+        "thunder": 79.76,
+        "tropics": 114.26,
+        "meth": 137.42,
+        "eskimo": 139.46,
+        "offboys": 119.72,
+        "tickle": 117.46,
+        "yourmom": 103.4,
+        "cunt": 110.96,
+        "spartans": 69.56
+      },
+      "matchups": [
+        [
+          "mountain",
+          "murder"
+        ],
+        [
+          "sith",
+          "thunder"
+        ],
+        [
+          "tropics",
+          "meth"
+        ],
+        [
+          "eskimo",
+          "offboys"
+        ],
+        [
+          "tickle",
+          "yourmom"
+        ],
+        [
+          "cunt",
+          "spartans"
+        ]
+      ]
+    }
+  },
+  "schedule": {
+    "1": {
+      "games": [
+        {
+          "home": "mountain",
+          "away": "murder",
+          "note": ""
+        },
+        {
+          "home": "sith",
+          "away": "thunder",
+          "note": ""
+        },
+        {
+          "home": "tropics",
+          "away": "meth",
+          "note": ""
+        },
+        {
+          "home": "eskimo",
+          "away": "offboys",
+          "note": ""
+        },
+        {
+          "home": "tickle",
+          "away": "yourmom",
+          "note": ""
+        },
+        {
+          "home": "cunt",
+          "away": "spartans",
+          "note": ""
+        }
+      ],
+      "notes": []
+    },
+    "2": {
+      "games": [
+        {
+          "home": "mountain",
+          "away": "tickle",
+          "note": ""
+        },
+        {
+          "home": "sith",
+          "away": "tropics",
+          "note": ""
+        },
+        {
+          "home": "eskimo",
+          "away": "cunt",
+          "note": ""
+        },
+        {
+          "home": "murder",
+          "away": "thunder",
+          "note": ""
+        },
+        {
+          "home": "meth",
+          "away": "spartans",
+          "note": ""
+        },
+        {
+          "home": "offboys",
+          "away": "yourmom",
+          "note": ""
+        }
+      ],
+      "notes": []
+    },
+    "3": {
+      "games": [
+        {
+          "home": "sith",
+          "away": "meth",
+          "note": ""
+        },
+        {
+          "home": "spartans",
+          "away": "yourmom",
+          "note": ""
+        },
+        {
+          "home": "mountain",
+          "away": "cunt",
+          "note": ""
+        },
+        {
+          "home": "murder",
+          "away": "eskimo",
+          "note": ""
+        },
+        {
+          "home": "tickle",
+          "away": "offboys",
+          "note": ""
+        },
+        {
+          "home": "tropics",
+          "away": "thunder",
+          "note": ""
+        }
+      ],
+      "notes": []
+    },
+    "4": {
+      "games": [
+        {
+          "home": "yourmom",
+          "away": "murder",
+          "note": ""
+        },
+        {
+          "home": "thunder",
+          "away": "meth",
+          "note": ""
+        },
+        {
+          "home": "eskimo",
+          "away": "spartans",
+          "note": ""
+        },
+        {
+          "home": "tickle",
+          "away": "tropics",
+          "note": ""
+        },
+        {
+          "home": "offboys",
+          "away": "mountain",
+          "note": ""
+        },
+        {
+          "home": "cunt",
+          "away": "sith",
+          "note": ""
+        }
+      ],
+      "notes": []
+    },
+    "5": {
+      "games": [
+        {
+          "home": "thunder",
+          "away": "eskimo",
+          "note": ""
+        },
+        {
+          "home": "sith",
+          "away": "meth",
+          "note": ""
+        },
+        {
+          "home": "cunt",
+          "away": "yourmom",
+          "note": ""
+        },
+        {
+          "home": "tropics",
+          "away": "murder",
+          "note": ""
+        },
+        {
+          "home": "mountain",
+          "away": "tickle",
+          "note": ""
+        },
+        {
+          "home": "spartans",
+          "away": "offboys",
+          "note": ""
+        }
+      ],
+      "notes": []
+    },
+    "6": {
+      "games": [
+        {
+          "home": "offboys",
+          "away": "sith",
+          "note": ""
+        },
+        {
+          "home": "yourmom",
+          "away": "thunder",
+          "note": ""
+        },
+        {
+          "home": "eskimo",
+          "away": "tickle",
+          "note": ""
+        },
+        {
+          "home": "cunt",
+          "away": "tropics",
+          "note": ""
+        },
+        {
+          "home": "spartans",
+          "away": "mountain",
+          "note": ""
+        },
+        {
+          "home": "murder",
+          "away": "meth",
+          "note": ""
+        }
+      ],
+      "notes": []
+    },
+    "7": {
+      "games": [
+        {
+          "home": "sith",
+          "away": "eskimo",
+          "note": ""
+        },
+        {
+          "home": "offboys",
+          "away": "thunder",
+          "note": ""
+        },
+        {
+          "home": "tickle",
+          "away": "cunt",
+          "note": ""
+        },
+        {
+          "home": "meth",
+          "away": "yourmom",
+          "note": ""
+        },
+        {
+          "home": "spartans",
+          "away": "murder",
+          "note": ""
+        },
+        {
+          "home": "mountain",
+          "away": "tropics",
+          "note": ""
+        }
+      ],
+      "notes": []
+    },
+    "8": {
+      "games": [
+        {
+          "home": "murder",
+          "away": "offboys",
+          "note": ""
+        },
+        {
+          "home": "cunt",
+          "away": "meth",
+          "note": ""
+        },
+        {
+          "home": "sith",
+          "away": "mountain",
+          "note": ""
+        },
+        {
+          "home": "tickle",
+          "away": "tropics",
+          "note": ""
+        },
+        {
+          "home": "yourmom",
+          "away": "eskimo",
+          "note": ""
+        },
+        {
+          "home": "thunder",
+          "away": "spartans",
+          "note": "Gonzo/Dawg Medallion rivalry"
+        }
+      ],
+      "notes": [
+        "Gonzo/Dawg Medallion rivalry"
+      ]
+    },
+    "9": {
+      "games": [
+        {
+          "home": "offboys",
+          "away": "meth",
+          "note": ""
+        },
+        {
+          "home": "sith",
+          "away": "murder",
+          "note": "Rivalry Original members"
+        },
+        {
+          "home": "tickle",
+          "away": "thunder",
+          "note": ""
+        },
+        {
+          "home": "mountain",
+          "away": "yourmom",
+          "note": ""
+        },
+        {
+          "home": "cunt",
+          "away": "eskimo",
+          "note": ""
+        },
+        {
+          "home": "spartans",
+          "away": "tropics",
+          "note": ""
+        }
+      ],
+      "notes": [
+        "Rivalry Original members"
+      ]
+    },
+    "10": {
+      "games": [
+        {
+          "home": "eskimo",
+          "away": "offboys",
+          "note": ""
+        },
+        {
+          "home": "cunt",
+          "away": "murder",
+          "note": ""
+        },
+        {
+          "home": "meth",
+          "away": "tickle",
+          "note": ""
+        },
+        {
+          "home": "yourmom",
+          "away": "tropics",
+          "note": ""
+        },
+        {
+          "home": "thunder",
+          "away": "mountain",
+          "note": ""
+        },
+        {
+          "home": "sith",
+          "away": "spartans",
+          "note": ""
+        }
+      ],
+      "notes": []
+    },
+    "11": {
+      "games": [
+        {
+          "home": "offboys",
+          "away": "murder",
+          "note": ""
+        },
+        {
+          "home": "tickle",
+          "away": "spartans",
+          "note": ""
+        },
+        {
+          "home": "yourmom",
+          "away": "sith",
+          "note": ""
+        },
+        {
+          "home": "mountain",
+          "away": "meth",
+          "note": ""
+        },
+        {
+          "home": "thunder",
+          "away": "cunt",
+          "note": ""
+        },
+        {
+          "home": "eskimo",
+          "away": "tropics",
+          "note": ""
+        }
+      ],
+      "notes": []
+    },
+    "12": {
+      "games": [
+        {
+          "home": "tropics",
+          "away": "offboys",
+          "note": ""
+        },
+        {
+          "home": "spartans",
+          "away": "mountain",
+          "note": ""
+        },
+        {
+          "home": "sith",
+          "away": "tickle",
+          "note": ""
+        },
+        {
+          "home": "meth",
+          "away": "eskimo",
+          "note": ""
+        },
+        {
+          "home": "yourmom",
+          "away": "thunder",
+          "note": ""
+        },
+        {
+          "home": "murder",
+          "away": "cunt",
+          "note": ""
+        }
+      ],
+      "notes": []
+    },
+    "13": {
+      "games": [
+        {
+          "home": "tickle",
+          "away": "murder",
+          "note": ""
+        },
+        {
+          "home": "spartans",
+          "away": "tropics",
+          "note": ""
+        },
+        {
+          "home": "sith",
+          "away": "thunder",
+          "note": ""
+        },
+        {
+          "home": "mountain",
+          "away": "eskimo",
+          "note": ""
+        },
+        {
+          "home": "yourmom",
+          "away": "meth",
+          "note": ""
+        },
+        {
+          "home": "cunt",
+          "away": "offboys",
+          "note": ""
+        }
+      ],
+      "notes": []
+    },
+    "14": {
+      "games": [
+        {
+          "home": "tickle",
+          "away": "spartans",
+          "note": ""
+        },
+        {
+          "home": "mountain",
+          "away": "tropics",
+          "note": ""
+        },
+        {
+          "home": "yourmom",
+          "away": "sith",
+          "note": ""
+        },
+        {
+          "home": "eskimo",
+          "away": "murder",
+          "note": ""
+        },
+        {
+          "home": "meth",
+          "away": "thunder",
+          "note": ""
+        },
+        {
+          "home": "offboys",
+          "away": "cunt",
+          "note": ""
+        }
+      ],
+      "notes": []
+    }
+  },
+  "postseason": {
+    "runnerUp": "",
+    "champion": ""
+  },
+  "divisions": {
+    "East": [
+      "Sullco MethMouths",
+      "Simpson Sith",
+      "Your Mom",
+      "Space Cadets"
+    ],
+    "West": [
+      "California Un-Named Team",
+      "Redwood Murder",
+      "Off Boys",
+      "Eskimo Brothers"
+    ],
+    "Central": [
+      "Turbulent Ticklesh!ts",
+      "Flint Tropics",
+      "Medford MountainMen",
+      "THE Barton Spartans"
+    ]
+  },
+  "divisionWinners": {},
+  "draftRevealed": [],
+  "goldenHP": {
+    "team": "eskimo",
+    "score": 139.46,
+    "week": 1
+  },
+  "insider": {
+    "edition": {
+      "week": 1,
+      "label": "Week 1",
+      "status": "published"
+    },
+    "headline": "A Season of Returns, Rematches, and Realignment",
+    "summary": "Week 1 opened with a rematch of last season's championship game between THE Barton Spartans and California Un-Named Team, the return of the Space Cadets after a five-year hiatus, and the beginning of the final season under the league's current division alignment.",
+    "storylines": [
+      {
+        "id": "championship-rematch",
+        "title": "Last Year's Championship Matchup Returns",
+        "text": "THE Barton Spartans and California Un-Named Team met again after facing each other in last year's championship game. California Un-Named Team won the Week 1 matchup 110.96 to 69.56.",
+        "teams": [
+          "cunt",
+          "spartans"
+        ],
+        "week": 1,
+        "tags": [
+          "championship-rematch",
+          "league-history"
+        ]
+      },
+      {
+        "id": "space-cadets-return",
+        "title": "Space Cadets Return After Five-Year Hiatus",
+        "text": "The Space Cadets represent the return of a past owner after a five-year hiatus, beginning a new chapter for the franchise.",
+        "teams": [
+          "thunder"
+        ],
+        "week": 1,
+        "tags": [
+          "return",
+          "franchise-history"
+        ]
+      },
+      {
+        "id": "division-realignment",
+        "title": "Final Season of the Current Division Alignment",
+        "text": "This will be the final season with the current East, West, and Central division placements. Teams will be rearranged into new divisions after the season for the first time in many years.",
+        "teams": [],
+        "week": 1,
+        "tags": [
+          "divisions",
+          "realignment",
+          "league-history"
+        ]
+      }
+    ],
+    "weekRecap": {
+      "week": 1,
+      "highScore": {
+        "team": "eskimo",
+        "score": 139.46,
+        "opponent": "offboys"
+      },
+      "closestGame": {
+        "winner": "murder",
+        "loser": "mountain",
+        "winnerScore": 120.24,
+        "loserScore": 112.1,
+        "margin": 8.14
+      },
+      "results": [
+        {
+          "winner": "murder",
+          "loser": "mountain",
+          "winnerScore": 120.24,
+          "loserScore": 112.1
+        },
+        {
+          "winner": "sith",
+          "loser": "thunder",
+          "winnerScore": 108.5,
+          "loserScore": 79.76
+        },
+        {
+          "winner": "meth",
+          "loser": "tropics",
+          "winnerScore": 137.42,
+          "loserScore": 114.26
+        },
+        {
+          "winner": "eskimo",
+          "loser": "offboys",
+          "winnerScore": 139.46,
+          "loserScore": 119.72
+        },
+        {
+          "winner": "tickle",
+          "loser": "yourmom",
+          "winnerScore": 117.46,
+          "loserScore": 103.4
+        },
+        {
+          "winner": "cunt",
+          "loser": "spartans",
+          "winnerScore": 110.96,
+          "loserScore": 69.56
+        }
+      ]
+    },
+    "awardsContext": {
+      "goldenHighPoint": {
+        "team": "eskimo",
+        "score": 139.46,
+        "week": 1
+      },
+      "notes": [
+        "California Un-Named Team defeated THE Barton Spartans in a rematch of last year's championship game.",
+        "Space Cadets returned with a past owner after a five-year hiatus.",
+        "This is the final season under the current division alignment."
+      ]
+    }
+  }
 }
