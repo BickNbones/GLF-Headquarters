@@ -1,0 +1,1589 @@
+{
+  "meta": {
+    "league": "Gandorf National Football League",
+    "abbreviation": "GFL",
+    "founded": 2012,
+    "currentSeason": 15,
+    "location": "Santa Rosa, CA"
+  },
+  "settings": {
+    "minGamesForLeaderboard": 25,
+    "minSeasonsForEraLeaders": 3,
+    "minGamesForRecords": 10,
+    "weeklyHubUrl": "weekly.html",
+    "showIneligibleLeaderboard": true
+  },
+  "champions": [
+    {
+      "year": 2012,
+      "manager": "Tom Campbell",
+      "team": "Barton Spartans"
+    },
+    {
+      "year": 2013,
+      "manager": "Doug Meyer",
+      "team": "Medford MountainMen"
+    },
+    {
+      "year": 2014,
+      "manager": "Tavis Tucker",
+      "team": "CUNT / VaG"
+    },
+    {
+      "year": 2015,
+      "manager": "Stephen Davis",
+      "team": "Atlas X-Men"
+    },
+    {
+      "year": 2016,
+      "manager": "Doug Meyer",
+      "team": "Medford MountainMen"
+    },
+    {
+      "year": 2017,
+      "manager": "Stephen Davis",
+      "team": "Atlas X-Men"
+    },
+    {
+      "year": 2018,
+      "manager": "Kyle O'Connell",
+      "team": "Off Boys"
+    },
+    {
+      "year": 2019,
+      "manager": "Tyler Shaver",
+      "team": "Northern BTH Tigers"
+    },
+    {
+      "year": 2020,
+      "manager": "Tyler Shaver",
+      "team": "Northern BTH Tigers"
+    },
+    {
+      "year": 2021,
+      "manager": "Derek Baxter",
+      "team": "OH-IO"
+    },
+    {
+      "year": 2022,
+      "manager": "Collin Wilson",
+      "team": "Redwood Murders"
+    },
+    {
+      "year": 2023,
+      "manager": "Tyler Shaver",
+      "team": "Turbulent Ticklesh!ts"
+    },
+    {
+      "year": 2024,
+      "manager": "Owen Garritt",
+      "team": "Sullco MethMouths"
+    },
+    {
+      "year": 2025,
+      "manager": "Tavis Tucker",
+      "team": "CUNT / VaG"
+    }
+  ],
+  "managers": [
+    {
+      "id": "danny-sattler",
+      "name": "Danny Sattler",
+      "status": "active",
+      "team": "NY Red Reapers",
+      "emoji": "🎭",
+      "seasons": 14,
+      "wins": 106,
+      "losses": 78,
+      "ties": 0,
+      "gamesPlayed": 184,
+      "winPercentage": 0.5761,
+      "leaderboardEligible": true,
+      "championships": [],
+      "guideUrl": "=G2+H2+I2",
+      "nameHistory": [
+        "Benton Hollow Blue",
+        "Simpson Sith",
+        "NY Red Reapers"
+      ],
+      "featured": true,
+      "displayOrder": 999,
+      "notes": ""
+    },
+    {
+      "id": "tavis-tucker",
+      "name": "Tavis Tucker",
+      "status": "active",
+      "team": "CUNT / VaG",
+      "emoji": "🔥",
+      "seasons": 12,
+      "wins": 98,
+      "losses": 63,
+      "ties": 0,
+      "gamesPlayed": 161,
+      "winPercentage": 0.6087,
+      "leaderboardEligible": true,
+      "championships": [
+        2014,
+        2025
+      ],
+      "guideUrl": "=G3+H3+I3",
+      "nameHistory": [
+        "CUNT / VaG"
+      ],
+      "featured": false,
+      "displayOrder": 999,
+      "notes": ""
+    },
+    {
+      "id": "kyle-o-connell",
+      "name": "Kyle O'Connell",
+      "status": "active",
+      "team": "Off Boys",
+      "emoji": "⚡",
+      "seasons": 13,
+      "wins": 96,
+      "losses": 77,
+      "ties": 1,
+      "gamesPlayed": 174,
+      "winPercentage": 0.5517,
+      "leaderboardEligible": true,
+      "championships": [
+        2018
+      ],
+      "guideUrl": "=G4+H4+I4",
+      "nameHistory": [
+        "Off Boys"
+      ],
+      "featured": false,
+      "displayOrder": 999,
+      "notes": ""
+    },
+    {
+      "id": "tyler-shaver",
+      "name": "Tyler Shaver",
+      "status": "active",
+      "team": "Turbulent Ticklesh!ts",
+      "emoji": "🐯",
+      "seasons": 7,
+      "wins": 54,
+      "losses": 42,
+      "ties": 0,
+      "gamesPlayed": 96,
+      "winPercentage": 0.5625,
+      "leaderboardEligible": true,
+      "championships": [
+        2019,
+        2020,
+        2023
+      ],
+      "guideUrl": "=G5+H5+I5",
+      "nameHistory": [
+        "Northern BTH Tigers",
+        "Turbulent Ticklesh!ts"
+      ],
+      "featured": false,
+      "displayOrder": 999,
+      "notes": ""
+    },
+    {
+      "id": "doug-meyer",
+      "name": "Doug Meyer",
+      "status": "active",
+      "team": "Medford MountainMen",
+      "emoji": "🏔️",
+      "seasons": 13,
+      "wins": 87,
+      "losses": 87,
+      "ties": 0,
+      "gamesPlayed": 174,
+      "winPercentage": 0.5,
+      "leaderboardEligible": true,
+      "championships": [
+        2013,
+        2016
+      ],
+      "guideUrl": "=G6+H6+I6",
+      "nameHistory": [
+        "Medford MountainMen"
+      ],
+      "featured": false,
+      "displayOrder": 999,
+      "notes": ""
+    },
+    {
+      "id": "david-wilson",
+      "name": "David Wilson",
+      "status": "memorial",
+      "team": "Cleveland Dawgs of War",
+      "emoji": "🕊️",
+      "seasons": 10,
+      "wins": 69,
+      "losses": 62,
+      "ties": 1,
+      "gamesPlayed": 132,
+      "winPercentage": 0.5227,
+      "leaderboardEligible": true,
+      "championships": [],
+      "guideUrl": "=G7+H7+I7",
+      "nameHistory": [
+        "Cleveland Dawgs of War"
+      ],
+      "featured": false,
+      "displayOrder": 999,
+      "notes": ""
+    },
+    {
+      "id": "sean-o-connell",
+      "name": "Sean O'Connell",
+      "status": "active",
+      "team": "Eskimo Brothers",
+      "emoji": "🎯",
+      "seasons": 3,
+      "wins": 23,
+      "losses": 25,
+      "ties": 0,
+      "gamesPlayed": 48,
+      "winPercentage": 0.4792,
+      "leaderboardEligible": true,
+      "championships": [],
+      "guideUrl": "=G8+H8+I8",
+      "nameHistory": [
+        "Eskimo Brothers (joined 2023)"
+      ],
+      "featured": false,
+      "displayOrder": 999,
+      "notes": ""
+    },
+    {
+      "id": "matt-kitson",
+      "name": "Matt Kitson",
+      "status": "active",
+      "team": "Broadway Joe Biden",
+      "emoji": "🔄",
+      "seasons": 13,
+      "wins": 82,
+      "losses": 91,
+      "ties": 1,
+      "gamesPlayed": 174,
+      "winPercentage": 0.4713,
+      "leaderboardEligible": true,
+      "championships": [],
+      "guideUrl": "=G9+H9+I9",
+      "nameHistory": [
+        "Sark Manchez",
+        "Geno's Dentures",
+        "Mangold Digger",
+        "CTE Decisions!",
+        "Broadway Joe Biden",
+        "The Barton Spartans",
+        "6+ names"
+      ],
+      "featured": false,
+      "displayOrder": 999,
+      "notes": ""
+    },
+    {
+      "id": "derek-baxter",
+      "name": "Derek Baxter",
+      "status": "active",
+      "team": "Netherite Warriors",
+      "emoji": "🪖",
+      "seasons": 13,
+      "wins": 81,
+      "losses": 93,
+      "ties": 0,
+      "gamesPlayed": 174,
+      "winPercentage": 0.4655,
+      "leaderboardEligible": true,
+      "championships": [
+        2021
+      ],
+      "guideUrl": "=G10+H10+I10",
+      "nameHistory": [
+        "babyfacebuckeye",
+        "OH-IO",
+        "Terick Duggertuts",
+        "Netherite Warriors"
+      ],
+      "featured": false,
+      "displayOrder": 999,
+      "notes": ""
+    },
+    {
+      "id": "tom-campbell",
+      "name": "Tom Campbell",
+      "status": "retired",
+      "team": "Monti Thunderboltz",
+      "emoji": "⚔️",
+      "seasons": 14,
+      "wins": 85,
+      "losses": 102,
+      "ties": 0,
+      "gamesPlayed": 187,
+      "winPercentage": 0.4545,
+      "leaderboardEligible": true,
+      "championships": [
+        2012
+      ],
+      "guideUrl": "=G11+H11+I11",
+      "nameHistory": [
+        "Barton Spartans",
+        "Monti Thunderboltz"
+      ],
+      "featured": false,
+      "displayOrder": 999,
+      "notes": ""
+    },
+    {
+      "id": "stephen-davis",
+      "name": "Stephen Davis",
+      "status": "active",
+      "team": "Flint Tropics",
+      "emoji": "🗺️",
+      "seasons": 11,
+      "wins": 68,
+      "losses": 80,
+      "ties": 0,
+      "gamesPlayed": 148,
+      "winPercentage": 0.4595,
+      "leaderboardEligible": true,
+      "championships": [
+        2015,
+        2017
+      ],
+      "guideUrl": "=G12+H12+I12",
+      "nameHistory": [
+        "Atlas X-Men",
+        "Flint Tropics"
+      ],
+      "featured": false,
+      "displayOrder": 999,
+      "notes": ""
+    },
+    {
+      "id": "collin-wilson",
+      "name": "Collin Wilson",
+      "status": "active",
+      "team": "Redwood Murders",
+      "emoji": "🌲",
+      "seasons": 14,
+      "wins": 89,
+      "losses": 108,
+      "ties": 2,
+      "gamesPlayed": 199,
+      "winPercentage": 0.4472,
+      "leaderboardEligible": true,
+      "championships": [
+        2022
+      ],
+      "guideUrl": "=G13+H13+I13",
+      "nameHistory": [
+        "Tyranny",
+        "Trannys",
+        "Murder",
+        "Murders",
+        "Redwood Murders"
+      ],
+      "featured": false,
+      "displayOrder": 999,
+      "notes": ""
+    },
+    {
+      "id": "owen-garritt",
+      "name": "Owen Garritt",
+      "status": "active",
+      "team": "Sullco MethMouths",
+      "emoji": "🦁",
+      "seasons": 5,
+      "wins": 32,
+      "losses": 38,
+      "ties": 0,
+      "gamesPlayed": 70,
+      "winPercentage": 0.4571,
+      "leaderboardEligible": true,
+      "championships": [
+        2024
+      ],
+      "guideUrl": "=G14+H14+I14",
+      "nameHistory": [
+        "Prison Purse",
+        "Sullco MethMouths"
+      ],
+      "featured": false,
+      "displayOrder": 999,
+      "notes": ""
+    },
+    {
+      "id": "kris-cappiello",
+      "name": "Kris Cappiello",
+      "status": "active",
+      "team": "Space Cadets",
+      "emoji": "🚀",
+      "seasons": 8,
+      "wins": 43,
+      "losses": 61,
+      "ties": 0,
+      "gamesPlayed": 104,
+      "winPercentage": 0.4135,
+      "leaderboardEligible": true,
+      "championships": [],
+      "guideUrl": "=G15+H15+I15",
+      "nameHistory": [
+        "Space Cadets (never changed — 8 seasons; returned for Season XV)"
+      ],
+      "featured": false,
+      "displayOrder": 999,
+      "notes": ""
+    },
+    {
+      "id": "josh-hickey",
+      "name": "Josh Hickey",
+      "status": "retired",
+      "team": "Northern IceBacks",
+      "emoji": "👋",
+      "seasons": 2,
+      "wins": 11,
+      "losses": 15,
+      "ties": 0,
+      "gamesPlayed": 26,
+      "winPercentage": 0.4231,
+      "leaderboardEligible": true,
+      "championships": [],
+      "guideUrl": "=G16+H16+I16",
+      "nameHistory": [
+        "Northern IceBacks"
+      ],
+      "featured": false,
+      "displayOrder": 999,
+      "notes": ""
+    },
+    {
+      "id": "rob-ohlerich",
+      "name": "Rob Ohlerich",
+      "status": "retired",
+      "team": "Pennsyltucky Cocks N' Glocks",
+      "emoji": "🐓",
+      "seasons": 4,
+      "wins": 29,
+      "losses": 23,
+      "ties": 0,
+      "gamesPlayed": 52,
+      "winPercentage": 0.5577,
+      "leaderboardEligible": true,
+      "championships": [],
+      "guideUrl": "=G17+H17+I17",
+      "nameHistory": [
+        "Pennsyltucky Cocks N' Glocks"
+      ],
+      "featured": false,
+      "displayOrder": 999,
+      "notes": ""
+    },
+    {
+      "id": "joe-meyer",
+      "name": "Joe Meyer",
+      "status": "retired",
+      "team": "Team Average Joe's",
+      "emoji": "📊",
+      "seasons": 1,
+      "wins": 7,
+      "losses": 6,
+      "ties": 0,
+      "gamesPlayed": 13,
+      "winPercentage": 0.5385,
+      "leaderboardEligible": false,
+      "championships": [],
+      "guideUrl": "=G18+H18+I18",
+      "nameHistory": [
+        "Team Average Joe's"
+      ],
+      "featured": false,
+      "displayOrder": 999,
+      "notes": ""
+    },
+    {
+      "id": "mike-morgan",
+      "name": "Mike Morgan",
+      "status": "retired",
+      "team": "Team amish rifle",
+      "emoji": "🤠",
+      "seasons": 1,
+      "wins": 9,
+      "losses": 4,
+      "ties": 0,
+      "gamesPlayed": 13,
+      "winPercentage": 0.6923,
+      "leaderboardEligible": false,
+      "championships": [],
+      "guideUrl": "=G19+H19+I19",
+      "nameHistory": [
+        "Team amish rifle"
+      ],
+      "featured": false,
+      "displayOrder": 999,
+      "notes": ""
+    },
+    {
+      "id": "eric-hector",
+      "name": "Eric Hector",
+      "status": "retired",
+      "team": "Team mymagicjohnson",
+      "emoji": "🏀",
+      "seasons": 1,
+      "wins": 2,
+      "losses": 11,
+      "ties": 0,
+      "gamesPlayed": 13,
+      "winPercentage": 0.1538,
+      "leaderboardEligible": false,
+      "championships": [],
+      "guideUrl": "=G20+H20+I20",
+      "nameHistory": [
+        "Team mymagicjohnson"
+      ],
+      "featured": false,
+      "displayOrder": 999,
+      "notes": ""
+    },
+    {
+      "id": "greg-brewer",
+      "name": "Greg Brewer",
+      "status": "retired",
+      "team": "Morgan Post",
+      "emoji": "🍺",
+      "seasons": 1,
+      "wins": 7,
+      "losses": 6,
+      "ties": 0,
+      "gamesPlayed": 13,
+      "winPercentage": 0.5385,
+      "leaderboardEligible": false,
+      "championships": [],
+      "guideUrl": "=G21+H21+I21",
+      "nameHistory": [
+        "Morgan Post"
+      ],
+      "featured": false,
+      "displayOrder": 999,
+      "notes": ""
+    },
+    {
+      "id": "will-o-brien",
+      "name": "Will O'Brien",
+      "status": "retired",
+      "team": "Storm'n Norman",
+      "emoji": "⛈️",
+      "seasons": 1,
+      "wins": 4,
+      "losses": 9,
+      "ties": 0,
+      "gamesPlayed": 13,
+      "winPercentage": 0.3077,
+      "leaderboardEligible": false,
+      "championships": [],
+      "guideUrl": "=G22+H22+I22",
+      "nameHistory": [
+        "Storm'n Norman"
+      ],
+      "featured": false,
+      "displayOrder": 999,
+      "notes": ""
+    },
+    {
+      "id": "aimee-baker",
+      "name": "Aimee Baker",
+      "status": "retired",
+      "team": "L'eggo My Eggo",
+      "emoji": "🧇",
+      "seasons": 1,
+      "wins": 3,
+      "losses": 10,
+      "ties": 0,
+      "gamesPlayed": 13,
+      "winPercentage": 0.2308,
+      "leaderboardEligible": false,
+      "championships": [],
+      "guideUrl": "=G23+H23+I23",
+      "nameHistory": [
+        "L'eggo My Eggo"
+      ],
+      "featured": false,
+      "displayOrder": 999,
+      "notes": ""
+    },
+    {
+      "id": "jon-moffett",
+      "name": "Jon Moffett",
+      "status": "retired",
+      "team": "NY Heart Eaters",
+      "emoji": "💀",
+      "seasons": 2,
+      "wins": 9,
+      "losses": 17,
+      "ties": 0,
+      "gamesPlayed": 26,
+      "winPercentage": 0.3462,
+      "leaderboardEligible": true,
+      "championships": [],
+      "guideUrl": "=G24+H24+I24",
+      "nameHistory": [
+        "ny heart eaters"
+      ],
+      "featured": false,
+      "displayOrder": 999,
+      "notes": ""
+    }
+  ],
+  "seasonResults": [
+    {
+      "year": 2012,
+      "managerId": "tom-campbell",
+      "manager": "Tom Campbel",
+      "team": "Barton Spartans",
+      "wins": "8",
+      "losses": "5",
+      "ties": "0",
+      "pointsFor": "1369",
+      "regularSeasonFinish": "2",
+      "playoffFinish": "Champion",
+      "division": "Unified",
+      "notes": "8 Team League"
+    },
+    {
+      "year": 2012,
+      "managerId": "collin-wilson",
+      "manager": "Collin Wilson",
+      "team": "Topaz Lake Tyranny",
+      "wins": "8",
+      "losses": "5",
+      "ties": "0",
+      "pointsFor": "1267",
+      "regularSeasonFinish": "3",
+      "playoffFinish": "Runner Up",
+      "division": "Unified",
+      "notes": "8 Team League"
+    },
+    {
+      "year": 2012,
+      "managerId": "joe-meyer",
+      "manager": "Joe Meyer",
+      "team": "Average Joe's",
+      "wins": "7",
+      "losses": "6",
+      "ties": "0",
+      "pointsFor": "1218",
+      "regularSeasonFinish": "4",
+      "playoffFinish": "Eliminated",
+      "division": "Unified",
+      "notes": "8 Team League"
+    },
+    {
+      "year": 2012,
+      "managerId": "mike-morgan",
+      "manager": "Mike Morgan",
+      "team": "Amish Rifle",
+      "wins": "9",
+      "losses": "4",
+      "ties": "0",
+      "pointsFor": "1148",
+      "regularSeasonFinish": "1",
+      "playoffFinish": "Eliminated",
+      "division": "Unified",
+      "notes": "8 Team League"
+    },
+    {
+      "year": 2012,
+      "managerId": "eric-hector",
+      "manager": "Eric Hector",
+      "team": "My Magic Johnson",
+      "wins": "2",
+      "losses": "11",
+      "ties": "0",
+      "pointsFor": "986",
+      "regularSeasonFinish": "8",
+      "playoffFinish": "N/A",
+      "division": "Unified",
+      "notes": "8 Team League"
+    },
+    {
+      "year": 2012,
+      "managerId": "danny-sattler",
+      "manager": "Danny Sattler",
+      "team": "Bentono Hollow Blue",
+      "wins": "7",
+      "losses": "6",
+      "ties": "0",
+      "pointsFor": "1289",
+      "regularSeasonFinish": "5",
+      "playoffFinish": "N/A",
+      "division": "Unified",
+      "notes": "8 Team League"
+    },
+    {
+      "year": 2012,
+      "managerId": "greg-brewer",
+      "manager": "Greg Brewer",
+      "team": "Morgan Post",
+      "wins": "7",
+      "losses": "6",
+      "ties": "0",
+      "pointsFor": "1197",
+      "regularSeasonFinish": "6",
+      "playoffFinish": "N/A",
+      "division": "Unified",
+      "notes": "8 Team League"
+    },
+    {
+      "year": 2012,
+      "managerId": "will-obrien",
+      "manager": "Will O'Brien",
+      "team": "Storm'n Norman",
+      "wins": "4",
+      "losses": "9",
+      "ties": "0",
+      "pointsFor": "985",
+      "regularSeasonFinish": "7",
+      "playoffFinish": "N/A",
+      "division": "Unified",
+      "notes": "8 Team League"
+    },
+    {
+      "year": 2013,
+      "managerId": "doug-meyer",
+      "manager": "Doug Meyer",
+      "team": "Medford Mountainmen",
+      "wins": "9",
+      "losses": "4",
+      "ties": "0",
+      "pointsFor": "1473.5",
+      "regularSeasonFinish": "1",
+      "playoffFinish": "Champion",
+      "division": "West",
+      "notes": "12 Team Expansion"
+    },
+    {
+      "year": 2013,
+      "managerId": "david-wilson",
+      "manager": "David Wilson",
+      "team": "Cleveland Dawgs of War",
+      "wins": "9",
+      "losses": "4",
+      "ties": "0",
+      "pointsFor": "1349.5",
+      "regularSeasonFinish": "2",
+      "playoffFinish": "Runner Up",
+      "division": "Central",
+      "notes": "12 Team Expansion"
+    },
+    {
+      "year": 2013,
+      "managerId": "derek-baxter",
+      "manager": "Derek Baxter",
+      "team": "Babyface Buckeye",
+      "wins": "7",
+      "losses": "6",
+      "ties": "0",
+      "pointsFor": "1321.5",
+      "regularSeasonFinish": "4",
+      "playoffFinish": "2nd Round",
+      "division": "East",
+      "notes": "12 Team Expansion"
+    },
+    {
+      "year": 2013,
+      "managerId": "danny-sattler",
+      "manager": "Danny Sattler",
+      "team": "Bentono Hollow Blue",
+      "wins": "9",
+      "losses": "4",
+      "ties": "0",
+      "pointsFor": "1344.5",
+      "regularSeasonFinish": "3",
+      "playoffFinish": "2nd Round",
+      "division": "East",
+      "notes": "Original Member"
+    },
+    {
+      "year": 2013,
+      "managerId": "kyle-oconnell",
+      "manager": "Kyle O'Connell",
+      "team": "Off Boys",
+      "wins": "7",
+      "losses": "6",
+      "ties": "0",
+      "pointsFor": "1384.5",
+      "regularSeasonFinish": "5",
+      "playoffFinish": "1st Round",
+      "division": "West",
+      "notes": "12 Team Expansion"
+    },
+    {
+      "year": 2013,
+      "managerId": "matt-kitson",
+      "manager": "Matt Kitson",
+      "team": "Sark Manchez",
+      "wins": "4",
+      "losses": "9",
+      "ties": "0",
+      "pointsFor": "1218.5",
+      "regularSeasonFinish": "10",
+      "playoffFinish": "N/A",
+      "division": "West",
+      "notes": "12 Team Expansion"
+    },
+    {
+      "year": 2013,
+      "managerId": "kris-cappiello",
+      "manager": "Kris Cappiello",
+      "team": "Space Cadets",
+      "wins": "7",
+      "losses": "6",
+      "ties": "0",
+      "pointsFor": "1233.5",
+      "regularSeasonFinish": "6",
+      "playoffFinish": "N/A",
+      "division": "Central",
+      "notes": "12 Team Expansion"
+    },
+    {
+      "year": 2013,
+      "managerId": "jon-moffett",
+      "manager": "Jon Moffett",
+      "team": "NY Heart Eaters",
+      "wins": "6",
+      "losses": "7",
+      "ties": "0",
+      "pointsFor": "1284.5",
+      "regularSeasonFinish": "8",
+      "playoffFinish": "N/A",
+      "division": "Central",
+      "notes": "12 Team Expansion"
+    },
+    {
+      "year": 2013,
+      "managerId": "rob-ohlerich",
+      "manager": "Rob Ohlerich",
+      "team": "Pennsyltucky Cocks'n'Glocks",
+      "wins": "6",
+      "losses": "7",
+      "ties": "0",
+      "pointsFor": "1310",
+      "regularSeasonFinish": "9",
+      "playoffFinish": "N/A",
+      "division": "East",
+      "notes": "Original Member"
+    },
+    {
+      "year": 2013,
+      "managerId": "collin-wilson",
+      "manager": "Collin Wilson",
+      "team": "Tremper Trannys",
+      "wins": "7",
+      "losses": "6",
+      "ties": "0",
+      "pointsFor": "1269.5",
+      "regularSeasonFinish": "7",
+      "playoffFinish": "N/A",
+      "division": "Central",
+      "notes": "Original Member"
+    },
+    {
+      "year": 2013,
+      "managerId": "tom-campbell",
+      "manager": "Tom Campbel",
+      "team": "Barton Spartans",
+      "wins": "4",
+      "losses": "9",
+      "ties": "0",
+      "pointsFor": "1226",
+      "regularSeasonFinish": "11",
+      "playoffFinish": "N/A",
+      "division": "East",
+      "notes": "12 Team Expansion"
+    },
+    {
+      "year": 2013,
+      "managerId": "aimee-baker",
+      "manager": "Aimee Baker",
+      "team": "L'eggo My Eggo",
+      "wins": "3",
+      "losses": "10",
+      "ties": "0",
+      "pointsFor": "1134.5",
+      "regularSeasonFinish": "12",
+      "playoffFinish": "N/A",
+      "division": "West",
+      "notes": "12 Team Expansion"
+    },
+    {
+      "year": 2014,
+      "managerId": "",
+      "manager": "",
+      "team": "",
+      "wins": "",
+      "losses": "",
+      "ties": "",
+      "pointsFor": "",
+      "regularSeasonFinish": "",
+      "playoffFinish": "",
+      "division": "",
+      "notes": ""
+    }
+  ],
+  "divisionAwards": [
+    {
+      "division": "East",
+      "year": 2012,
+      "manager": "Mike Morgan",
+      "team": "Amish Rifle"
+    },
+    {
+      "division": "East",
+      "year": 2013,
+      "manager": "Danny Sattler",
+      "team": "Benton Hollow Blue"
+    },
+    {
+      "division": "East",
+      "year": 2014,
+      "manager": "Rob O.",
+      "team": "Pensyltucky Cocks n' Glocks"
+    },
+    {
+      "division": "East",
+      "year": 2015,
+      "manager": "Tom Cambell",
+      "team": "Barton Spartans"
+    },
+    {
+      "division": "East",
+      "year": 2016,
+      "manager": "Rob O.",
+      "team": "Pensyltucky Cocks n' Glocks"
+    },
+    {
+      "division": "East",
+      "year": 2017,
+      "manager": "Danny Sattler",
+      "team": "NY Red Reapers"
+    },
+    {
+      "division": "East",
+      "year": 2018,
+      "manager": "Tom Cambell",
+      "team": "Barton Spartans"
+    },
+    {
+      "division": "East",
+      "year": 2019,
+      "manager": "Danny Sattler",
+      "team": "NY Red Reapers"
+    },
+    {
+      "division": "East",
+      "year": 2020,
+      "manager": "Derek Baxter",
+      "team": "OH-IO"
+    },
+    {
+      "division": "East",
+      "year": 2021,
+      "manager": "Derek Baxter",
+      "team": "OH-IO"
+    },
+    {
+      "division": "East",
+      "year": 2022,
+      "manager": "Danny Sattler",
+      "team": "Simpson Sith"
+    },
+    {
+      "division": "East",
+      "year": 2023,
+      "manager": "Danny Sattler",
+      "team": "Simpson Sith"
+    },
+    {
+      "division": "East",
+      "year": 2024,
+      "manager": "Owen Garritt",
+      "team": "Sullco Methmouths"
+    },
+    {
+      "division": "East",
+      "year": 2025,
+      "manager": "Tom Cambell",
+      "team": "Monti Thunderbolts"
+    },
+    {
+      "division": "West",
+      "year": 2012,
+      "manager": "Joe Meyer",
+      "team": "Average Joe's"
+    },
+    {
+      "division": "West",
+      "year": 2013,
+      "manager": "David Wilson",
+      "team": "Cleveland Dawgs of War"
+    },
+    {
+      "division": "West",
+      "year": 2014,
+      "manager": "Tavis Tucker",
+      "team": "California Un-Named Team"
+    },
+    {
+      "division": "West",
+      "year": 2015,
+      "manager": "Kyle O'Connell",
+      "team": "Off Boys"
+    },
+    {
+      "division": "West",
+      "year": 2016,
+      "manager": "Collin Wilson",
+      "team": "North Bay Tyranny"
+    },
+    {
+      "division": "West",
+      "year": 2017,
+      "manager": "Tavis Tucker",
+      "team": "California Un-Named Team"
+    },
+    {
+      "division": "West",
+      "year": 2018,
+      "manager": "Kyle O'Connell",
+      "team": "Off Boys"
+    },
+    {
+      "division": "West",
+      "year": 2019,
+      "manager": "Tavis Tucker",
+      "team": "Virginia Gentiles"
+    },
+    {
+      "division": "West",
+      "year": 2020,
+      "manager": "Kyle O'Connell",
+      "team": "Off Boys"
+    },
+    {
+      "division": "West",
+      "year": 2021,
+      "manager": "David Wilson",
+      "team": "Cleveland Dawgs of War"
+    },
+    {
+      "division": "West",
+      "year": 2022,
+      "manager": "Collin Wilson",
+      "team": "Redwood Murder"
+    },
+    {
+      "division": "West",
+      "year": 2023,
+      "manager": "Collin Wilson",
+      "team": "Redwood Murder"
+    },
+    {
+      "division": "West",
+      "year": 2024,
+      "manager": "Sean O'Connell",
+      "team": "Eskimo Brothers"
+    },
+    {
+      "division": "West",
+      "year": 2025,
+      "manager": "Tavis Tucker",
+      "team": "California Un-Named Team"
+    },
+    {
+      "division": "Central",
+      "year": 2012,
+      "manager": "N/A",
+      "team": ""
+    },
+    {
+      "division": "Central",
+      "year": 2013,
+      "manager": "Doug Meyer",
+      "team": "Medford Mountainmen"
+    },
+    {
+      "division": "Central",
+      "year": 2014,
+      "manager": "Matt Kitson",
+      "team": "Sark Manchez"
+    },
+    {
+      "division": "Central",
+      "year": 2015,
+      "manager": "Stephen Davis",
+      "team": "Atlas Xmen"
+    },
+    {
+      "division": "Central",
+      "year": 2016,
+      "manager": "Doug Meyer",
+      "team": "Medford Mountainmen"
+    },
+    {
+      "division": "Central",
+      "year": 2017,
+      "manager": "Stephen Davis",
+      "team": "Atlas Xmen"
+    },
+    {
+      "division": "Central",
+      "year": 2018,
+      "manager": "Doug Meyer",
+      "team": "Medford Mountainmen"
+    },
+    {
+      "division": "Central",
+      "year": 2019,
+      "manager": "Tyler Shaver",
+      "team": "Northern BTH Tigers"
+    },
+    {
+      "division": "Central",
+      "year": 2020,
+      "manager": "Tyler Shaver",
+      "team": "Northern BTH Tigers"
+    },
+    {
+      "division": "Central",
+      "year": 2021,
+      "manager": "Matt Kitson",
+      "team": "Broadway Joe Biden"
+    },
+    {
+      "division": "Central",
+      "year": 2022,
+      "manager": "Tyler Shaver",
+      "team": "Northern BTH Tigers"
+    },
+    {
+      "division": "Central",
+      "year": 2023,
+      "manager": "Stephen Davis",
+      "team": "Flint Tropics"
+    },
+    {
+      "division": "Central",
+      "year": 2024,
+      "manager": "Matt Kitson",
+      "team": "Barton Spartans"
+    },
+    {
+      "division": "Central",
+      "year": 2025,
+      "manager": "Matt Kitson",
+      "team": "Barton Spartans"
+    }
+  ],
+  "records": [
+    {
+      "category": "Most Championships",
+      "value": "3× Rings",
+      "holder": "Tyler Shaver",
+      "description": "2019, 2020, 2023 — the only 3-time champion in GFL history"
+    },
+    {
+      "category": "Only Back-to-Back Champ",
+      "value": "2019 & 2020",
+      "holder": "Tyler Shaver",
+      "description": "Won back-to-back. Nobody else has ever repeated. Not once."
+    },
+    {
+      "category": "All-Time Wins Leader",
+      "value": "106 Wins",
+      "holder": "Danny Sattler",
+      "description": "14 seasons, never won a ring — the most decorated non-champion in GFL history"
+    },
+    {
+      "category": "Best Career Win %",
+      "value": "60.9%",
+      "holder": "Tavis Tucker",
+      "description": "98-63 over 12 seasons — best among managers with 10+ seasons"
+    },
+    {
+      "category": "Highest Single-Season PF",
+      "value": "1,702 pts",
+      "holder": "Sean O'Connell",
+      "description": "Set the all-time GFL scoring record in only his 2nd season (2024)"
+    },
+    {
+      "category": "Best Single-Season Record",
+      "value": "12-1",
+      "holder": "Doug Meyer",
+      "description": "2018 — best regular-season record in GFL history"
+    },
+    {
+      "category": "Best Regular Season (12W)",
+      "value": "12-2",
+      "holder": "Danny Sattler",
+      "description": "2022 — led the league in wins that year, still didn't win the chip"
+    },
+    {
+      "category": "Founding Members Still Active",
+      "value": "2 OGs",
+      "holder": "Danny · Collin",
+      "description": "Both have been in the GFL since Season 1 (2012) and remain active after Tom Campbell retired"
+    },
+    {
+      "category": "Most All-Time Losses",
+      "value": "108 L",
+      "holder": "Collin Wilson",
+      "description": "14 seasons, 108 losses — the most in GFL history. And still got a ring in 2022. Redemption arc complete."
+    },
+    {
+      "category": "Greatest Cinderella Story",
+      "value": "Last → Champ",
+      "holder": "Owen Garritt",
+      "description": "4-10, dead last (12th) in 2021 debut → 11-3, GFL Champion in 2024"
+    },
+    {
+      "category": "Fastest Rise to Contention",
+      "value": "2-yr turnaround",
+      "holder": "Owen Garritt",
+      "description": "From worst record to championship in just 3 seasons"
+    },
+    {
+      "category": "Boldest Name Theft",
+      "value": "Barton Spartans",
+      "holder": "Matt Kitson",
+      "description": "Stole Tom Campbell's original team name. Tom had to rebrand to Monti Thunderboltz."
+    },
+    {
+      "category": "Most Loyal to One Name",
+      "value": "8 Seasons",
+      "holder": "Kris Cappiello",
+      "description": "Space Cadets — never changed. Not once. Back for Season XV with the same name."
+    },
+    {
+      "category": "Worst Single Season",
+      "value": "1-12",
+      "holder": "Tom Campbell (2017) & Kris (2014)",
+      "description": "Both hit the floor hard — the GFL crater record, shared."
+    },
+    {
+      "category": "Newest Manager",
+      "value": "2023",
+      "holder": "Sean O'Connell",
+      "description": "Joined as Eskimo Brothers — came in late, set the all-time scoring record by Year 2"
+    },
+    {
+      "category": "Most Heartbreaking Regular Season",
+      "value": "12-1, No Ring",
+      "holder": "Doug Meyer",
+      "description": "2018 — best regular season record in GFL history. Lost the championship to Kyle O'Connell who went 9-4. The injustice lives on."
+    },
+    {
+      "category": "Champion in Rookie Season",
+      "value": "Year 1 → 🏆",
+      "holder": "Tyler Shaver",
+      "description": "2019 — walked into the GFL and won the championship in his very first season. Never been done before or since."
+    },
+    {
+      "category": "Best Regular Season Without a Ring",
+      "value": "11-2, Still Lost",
+      "holder": "Tavis Tucker",
+      "description": "2019 — went 11-2, led the league in PF with 1,534 pts. Lost the championship to a first-year Tyler Shaver. Remains the greatest robbery in GFL history."
+    },
+    {
+      "category": "Best Team Name in GFL History",
+      "value": "Cocks N' Glocks",
+      "holder": "rob ohlerich",
+      "description": "Pennsyltucky Cocks N' Glocks — a GFL legend from 2013–2016. Retired with the greatest team name the league has ever seen."
+    },
+    {
+      "category": "Shortest Career",
+      "value": "2 Seasons",
+      "holder": "Josh Hickey",
+      "description": "2017-2018. Runner-up in his first year (9-4), then went 2-11 in Year 2 and was never heard from again. A cautionary tale."
+    }
+  ],
+  "lore": [
+    {
+      "franchise": "Barton Spartans",
+      "title": "Early Powerhouse",
+      "text": "Top‑5 finishes in consecutive seasons."
+    },
+    {
+      "franchise": "Barton Spartans",
+      "title": "Ranking Controversy",
+      "text": "2012 #1 finish sparked the league’s first debate."
+    },
+    {
+      "franchise": "Barton Spartans",
+      "title": "Rivalry",
+      "text": "Heavyweight clashes with MountainMen."
+    },
+    {
+      "franchise": "Medford MountainMen",
+      "title": "First Juggernaut",
+      "text": "9‑win 2013 season."
+    },
+    {
+      "franchise": "Medford MountainMen",
+      "title": "Division Titan",
+      "text": "Anchored the chaotic Central."
+    },
+    {
+      "franchise": "Medford MountainMen",
+      "title": "Rivalry",
+      "text": "Power collisions with Dawgs of War."
+    },
+    {
+      "franchise": "Cleveland Dawgs of War",
+      "title": "Founding Father Franchise",
+      "text": "Led by David Wilson."
+    },
+    {
+      "franchise": "Cleveland Dawgs of War",
+      "title": "Heavyweight Season",
+      "text": "9–4 in 2013."
+    },
+    {
+      "franchise": "Cleveland Dawgs of War",
+      "title": "Family Lore",
+      "text": "Dawgs vs Tyranny is the GNFL’s longest rivalry."
+    },
+    {
+      "franchise": "Off Boys",
+      "title": "Playoff Breakthrough",
+      "text": "First mid‑tier postseason run."
+    },
+    {
+      "franchise": "Off Boys",
+      "title": "Chaos Engine",
+      "text": "Early upsets shaped playoff seeding."
+    },
+    {
+      "franchise": "Off Boys",
+      "title": "Signature Win",
+      "text": "Narrow 2013 victories."
+    },
+    {
+      "franchise": "Team Amish Rifle",
+      "title": "Underrated Titan",
+      "text": "Strong early records."
+    },
+    {
+      "franchise": "Team Amish Rifle",
+      "title": "Underdog Story",
+      "text": "Outperformed expectations in 2012."
+    },
+    {
+      "franchise": "Team Amish Rifle",
+      "title": "Draft Lore",
+      "text": "Tied to an early draft steal."
+    },
+    {
+      "franchise": "Team mymagicjohnson",
+      "title": "Disaster Season",
+      "text": "2–11 record, 0.1538 win rate."
+    },
+    {
+      "franchise": "Team mymagicjohnson",
+      "title": "Historical Importance",
+      "text": "Helped define parity rules."
+    },
+    {
+      "franchise": "Team mymagicjohnson",
+      "title": "Trivia",
+      "text": "Earliest 30+ point blowout loss."
+    },
+    {
+      "franchise": "Your Mom",
+      "title": "Modern Rivalry",
+      "text": "Tight games with Space Cadets."
+    },
+    {
+      "franchise": "Your Mom",
+      "title": "Era Flex",
+      "text": "Competitive in early and modern eras."
+    },
+    {
+      "franchise": "Your Mom",
+      "title": "Signature Moment",
+      "text": "Early upset win."
+    },
+    {
+      "franchise": "Space Cadets",
+      "title": "Return of Kris",
+      "text": "Major franchise comeback."
+    },
+    {
+      "franchise": "Space Cadets",
+      "title": "Rivalry",
+      "text": "Season‑defining clashes with Your Mom."
+    },
+    {
+      "franchise": "Space Cadets",
+      "title": "Franchise Lore",
+      "text": "Unique disappearance and revival arc."
+    },
+    {
+      "franchise": "North Bay Tyranny",
+      "title": "Collin’s Franchise",
+      "text": "One of the GNFL’s most storied arcs."
+    },
+    {
+      "franchise": "North Bay Tyranny",
+      "title": "Family Rivalry",
+      "text": "Tyranny vs Dawgs of War."
+    },
+    {
+      "franchise": "North Bay Tyranny",
+      "title": "Signature Win",
+      "text": "First documented victory is an early rivalry moment."
+    }
+  ],
+  "franchiseGuides": [
+    {
+      "manager": "Danny Sattler",
+      "team": "NY Red Reapers",
+      "url": "https://magnificent-cobbler-b18290.netlify.app",
+      "status": "available"
+    },
+    {
+      "manager": "Tavis Tucker",
+      "team": "CUNT / VaG",
+      "url": "https://elegant-cajeta-25ba3c.netlify.app",
+      "status": "available"
+    },
+    {
+      "manager": "Kyle O'Connell",
+      "team": "Off Boys",
+      "url": "https://boisterous-cobbler-31f2db.netlify.app",
+      "status": "available"
+    },
+    {
+      "manager": "Tyler Shaver",
+      "team": "Turbulent Ticklesh!ts",
+      "url": "https://fluffy-lollipop-725930.netlify.app",
+      "status": "available"
+    },
+    {
+      "manager": "Doug Meyer",
+      "team": "Medford MountainMen",
+      "url": "https://darling-fairy-66c1e4.netlify.app",
+      "status": "available"
+    },
+    {
+      "manager": "David Wilson",
+      "team": "Cleveland Dawgs of War",
+      "url": "https://stupendous-pegasus-04ed9e.netlify.app",
+      "status": "available"
+    },
+    {
+      "manager": "Sean O'Connell",
+      "team": "Eskimo Brothers",
+      "url": "https://elegant-torte-3768d6.netlify.app",
+      "status": "available"
+    },
+    {
+      "manager": "Matt Kitson",
+      "team": "Broadway Joe Biden",
+      "url": "https://stupendous-monstera-77f6c2.netlify.app",
+      "status": "available"
+    },
+    {
+      "manager": "Derek Baxter",
+      "team": "Netherite Warriors",
+      "url": "https://earnest-selkie-56a887.netlify.app",
+      "status": "available"
+    },
+    {
+      "manager": "Tom Campbell",
+      "team": "Monti Thunderboltz",
+      "url": "https://reliable-swan-1ca5de.netlify.app",
+      "status": "available"
+    },
+    {
+      "manager": "Stephen Davis",
+      "team": "Flint Tropics",
+      "url": "https://candid-faloodeh-fe3281.netlify.app",
+      "status": "available"
+    },
+    {
+      "manager": "Collin Wilson",
+      "team": "Redwood Murders",
+      "url": "https://gorgeous-medovik-b8533a.netlify.app",
+      "status": "available"
+    },
+    {
+      "manager": "Owen Garritt",
+      "team": "Sullco MethMouths",
+      "url": "https://eclectic-douhua-6311e2.netlify.app",
+      "status": "available"
+    },
+    {
+      "manager": "Kris Cappiello",
+      "team": "Space Cadets",
+      "url": "https://soft-queijadas-37e357.netlify.app",
+      "status": "available"
+    },
+    {
+      "manager": "Josh Hickey",
+      "team": "Northern IceBacks",
+      "url": "#",
+      "status": "unavailable"
+    },
+    {
+      "manager": "Rob Ohlerich",
+      "team": "Pennsyltucky Cocks N' Glocks",
+      "url": "#",
+      "status": "unavailable"
+    },
+    {
+      "manager": "Joe Meyer",
+      "team": "Team Average Joe's",
+      "url": "#",
+      "status": "unavailable"
+    },
+    {
+      "manager": "Mike Morgan",
+      "team": "Team amish rifle",
+      "url": "#",
+      "status": "unavailable"
+    },
+    {
+      "manager": "Eric Hector",
+      "team": "Team mymagicjohnson",
+      "url": "#",
+      "status": "unavailable"
+    },
+    {
+      "manager": "Greg Brewer",
+      "team": "Morgan Post",
+      "url": "#",
+      "status": "unavailable"
+    },
+    {
+      "manager": "Will O'Brien",
+      "team": "Storm'n Norman",
+      "url": "#",
+      "status": "unavailable"
+    },
+    {
+      "manager": "Aimee Baker",
+      "team": "L'eggo My Eggo",
+      "url": "#",
+      "status": "unavailable"
+    },
+    {
+      "manager": "Jon Moffett",
+      "team": "NY Heart Eaters",
+      "url": "#",
+      "status": "unavailable"
+    }
+  ],
+  "rivalries": [],
+  "milestones": []
+}
