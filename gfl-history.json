@@ -101,20 +101,15 @@
       "winPercentage": 0.5668,
       "leaderboardEligible": true,
       "championships": [],
-      "guideUrl": "https://magnificent-cobbler-b18290.netlify.app",
+      "guideUrl": "=G2+H2+I2",
       "nameHistory": [
         "Benton Hollow Blue",
         "Simpson Sith",
         "NY Red Reapers"
       ],
       "featured": true,
-      "displayOrder": 1,
-      "notes": "",
-      "postseason": {
-        "playoffAppearances": 7,
-        "finalsAppearances": 0,
-        "runnerUpFinishes": 0
-      }
+      "displayOrder": 999,
+      "notes": ""
     },
     {
       "id": "tavis-tucker",
@@ -133,18 +128,13 @@
         2014,
         2025
       ],
-      "guideUrl": "https://elegant-cajeta-25ba3c.netlify.app",
+      "guideUrl": "=G3+H3+I3",
       "nameHistory": [
         "CUNT / VaG"
       ],
-      "featured": true,
-      "displayOrder": 2,
-      "notes": "",
-      "postseason": {
-        "playoffAppearances": 9,
-        "finalsAppearances": 3,
-        "runnerUpFinishes": 1
-      }
+      "featured": false,
+      "displayOrder": 999,
+      "notes": ""
     },
     {
       "id": "kyle-o-connell",
@@ -162,18 +152,13 @@
       "championships": [
         2018
       ],
-      "guideUrl": "https://boisterous-cobbler-31f2db.netlify.app",
+      "guideUrl": "=G4+H4+I4",
       "nameHistory": [
         "Off Boys"
       ],
-      "featured": true,
-      "displayOrder": 3,
-      "notes": "",
-      "postseason": {
-        "playoffAppearances": 7,
-        "finalsAppearances": 2,
-        "runnerUpFinishes": 1
-      }
+      "featured": false,
+      "displayOrder": 999,
+      "notes": ""
     },
     {
       "id": "tyler-shaver",
@@ -193,19 +178,14 @@
         2020,
         2023
       ],
-      "guideUrl": "https://fluffy-lollipop-725930.netlify.app",
+      "guideUrl": "=G5+H5+I5",
       "nameHistory": [
         "Northern BTH Tigers",
         "Turbulent Ticklesh!ts"
       ],
-      "featured": true,
-      "displayOrder": 4,
-      "notes": "",
-      "postseason": {
-        "playoffAppearances": 5,
-        "finalsAppearances": 3,
-        "runnerUpFinishes": 0
-      }
+      "featured": false,
+      "displayOrder": 999,
+      "notes": ""
     },
     {
       "id": "doug-meyer",
@@ -224,18 +204,13 @@
         2013,
         2016
       ],
-      "guideUrl": "https://darling-fairy-66c1e4.netlify.app",
+      "guideUrl": "=G6+H6+I6",
       "nameHistory": [
         "Medford MountainMen"
       ],
-      "featured": true,
-      "displayOrder": 5,
-      "notes": "",
-      "postseason": {
-        "playoffAppearances": 4,
-        "finalsAppearances": 3,
-        "runnerUpFinishes": 1
-      }
+      "featured": false,
+      "displayOrder": 999,
+      "notes": ""
     },
     {
       "id": "david-wilson",
@@ -251,18 +226,13 @@
       "winPercentage": 0.5227,
       "leaderboardEligible": true,
       "championships": [],
-      "guideUrl": "https://stupendous-pegasus-04ed9e.netlify.app",
+      "guideUrl": "=G7+H7+I7",
       "nameHistory": [
         "Cleveland Dawgs of War"
       ],
       "featured": false,
-      "displayOrder": 6,
-      "notes": "",
-      "postseason": {
-        "playoffAppearances": 4,
-        "finalsAppearances": 2,
-        "runnerUpFinishes": 2
-      }
+      "displayOrder": 999,
+      "notes": ""
     },
     {
       "id": "sean-o-connell",
@@ -278,18 +248,13 @@
       "winPercentage": 0.5476,
       "leaderboardEligible": true,
       "championships": [],
-      "guideUrl": "https://elegant-torte-3768d6.netlify.app",
+      "guideUrl": "=G8+H8+I8",
       "nameHistory": [
         "Eskimo Brothers (joined 2023)"
       ],
-      "featured": true,
-      "displayOrder": 7,
-      "notes": "",
-      "postseason": {
-        "playoffAppearances": 1,
-        "finalsAppearances": 1,
-        "runnerUpFinishes": 1
-      }
+      "featured": false,
+      "displayOrder": 999,
+      "notes": ""
     },
     {
       "id": "matt-kitson",
@@ -305,7 +270,7 @@
       "winPercentage": 0.4713,
       "leaderboardEligible": true,
       "championships": [],
-      "guideUrl": "https://stupendous-monstera-77f6c2.netlify.app",
+      "guideUrl": "=G9+H9+I9",
       "nameHistory": [
         "Sark Manchez",
         "Geno's Dentures",
@@ -315,14 +280,9 @@
         "The Barton Spartans",
         "6+ names"
       ],
-      "featured": true,
-      "displayOrder": 8,
-      "notes": "",
-      "postseason": {
-        "playoffAppearances": 4,
-        "finalsAppearances": 2,
-        "runnerUpFinishes": 2
-      }
+      "featured": false,
+      "displayOrder": 999,
+      "notes": ""
     },
     {
       "id": "derek-baxter",
@@ -340,21 +300,16 @@
       "championships": [
         2021
       ],
-      "guideUrl": "https://earnest-selkie-56a887.netlify.app",
+      "guideUrl": "=G10+H10+I10",
       "nameHistory": [
         "babyfacebuckeye",
         "OH-IO",
         "Terick Duggertuts",
         "Netherite Warriors"
       ],
-      "featured": true,
-      "displayOrder": 9,
-      "notes": "",
-      "postseason": {
-        "playoffAppearances": 4,
-        "finalsAppearances": 2,
-        "runnerUpFinishes": 1
-      }
+      "featured": false,
+      "displayOrder": 999,
+      "notes": ""
     },
     {
       "id": "tom-campbell",
@@ -372,19 +327,14 @@
       "championships": [
         2012
       ],
-      "guideUrl": "https://reliable-swan-1ca5de.netlify.app",
+      "guideUrl": "=G11+H11+I11",
       "nameHistory": [
         "Barton Spartans",
         "Monti Thunderboltz"
       ],
       "featured": false,
-      "displayOrder": 10,
-      "notes": "",
-      "postseason": {
-        "playoffAppearances": 7,
-        "finalsAppearances": 3,
-        "runnerUpFinishes": 2
-      }
+      "displayOrder": 999,
+      "notes": ""
     },
     {
       "id": "stephen-davis",
@@ -403,19 +353,14 @@
         2015,
         2017
       ],
-      "guideUrl": "https://candid-faloodeh-fe3281.netlify.app",
+      "guideUrl": "=G12+H12+I12",
       "nameHistory": [
         "Atlas X-Men",
         "Flint Tropics"
       ],
-      "featured": true,
-      "displayOrder": 11,
-      "notes": "",
-      "postseason": {
-        "playoffAppearances": 3,
-        "finalsAppearances": 2,
-        "runnerUpFinishes": 0
-      }
+      "featured": false,
+      "displayOrder": 999,
+      "notes": ""
     },
     {
       "id": "collin-wilson",
@@ -433,7 +378,7 @@
       "championships": [
         2022
       ],
-      "guideUrl": "https://gorgeous-medovik-b8533a.netlify.app",
+      "guideUrl": "=G13+H13+I13",
       "nameHistory": [
         "Tyranny",
         "Trannys",
@@ -441,14 +386,9 @@
         "Murders",
         "Redwood Murders"
       ],
-      "featured": true,
-      "displayOrder": 12,
-      "notes": "",
-      "postseason": {
-        "playoffAppearances": 5,
-        "finalsAppearances": 3,
-        "runnerUpFinishes": 2
-      }
+      "featured": false,
+      "displayOrder": 999,
+      "notes": ""
     },
     {
       "id": "owen-garritt",
@@ -466,19 +406,14 @@
       "championships": [
         2024
       ],
-      "guideUrl": "https://eclectic-douhua-6311e2.netlify.app",
+      "guideUrl": "=G14+H14+I14",
       "nameHistory": [
         "Prison Purse",
         "Sullco MethMouths"
       ],
-      "featured": true,
-      "displayOrder": 13,
-      "notes": "",
-      "postseason": {
-        "playoffAppearances": 1,
-        "finalsAppearances": 1,
-        "runnerUpFinishes": 0
-      }
+      "featured": false,
+      "displayOrder": 999,
+      "notes": ""
     },
     {
       "id": "kris-cappiello",
@@ -494,18 +429,13 @@
       "winPercentage": 0.4135,
       "leaderboardEligible": true,
       "championships": [],
-      "guideUrl": "https://soft-queijadas-37e357.netlify.app",
+      "guideUrl": "=G15+H15+I15",
       "nameHistory": [
         "Space Cadets (never changed — 8 seasons; returned for Season XV)"
       ],
-      "featured": true,
-      "displayOrder": 14,
-      "notes": "",
-      "postseason": {
-        "playoffAppearances": 2,
-        "finalsAppearances": 0,
-        "runnerUpFinishes": 0
-      }
+      "featured": false,
+      "displayOrder": 999,
+      "notes": ""
     },
     {
       "id": "josh-hickey",
@@ -521,18 +451,13 @@
       "winPercentage": 0.4231,
       "leaderboardEligible": true,
       "championships": [],
-      "guideUrl": "#",
+      "guideUrl": "=G16+H16+I16",
       "nameHistory": [
         "Northern IceBacks"
       ],
       "featured": false,
-      "displayOrder": 15,
-      "notes": "",
-      "postseason": {
-        "playoffAppearances": 1,
-        "finalsAppearances": 1,
-        "runnerUpFinishes": 1
-      }
+      "displayOrder": 999,
+      "notes": ""
     },
     {
       "id": "rob-ohlerich",
@@ -548,18 +473,13 @@
       "winPercentage": 0.5577,
       "leaderboardEligible": true,
       "championships": [],
-      "guideUrl": "#",
+      "guideUrl": "=G17+H17+I17",
       "nameHistory": [
         "Pennsyltucky Cocks N' Glocks"
       ],
       "featured": false,
-      "displayOrder": 16,
-      "notes": "",
-      "postseason": {
-        "playoffAppearances": 2,
-        "finalsAppearances": 0,
-        "runnerUpFinishes": 0
-      }
+      "displayOrder": 999,
+      "notes": ""
     },
     {
       "id": "joe-meyer",
@@ -575,18 +495,13 @@
       "winPercentage": 0.5385,
       "leaderboardEligible": false,
       "championships": [],
-      "guideUrl": "#",
+      "guideUrl": "=G18+H18+I18",
       "nameHistory": [
         "Team Average Joe's"
       ],
       "featured": false,
-      "displayOrder": 17,
-      "notes": "",
-      "postseason": {
-        "playoffAppearances": 1,
-        "finalsAppearances": 0,
-        "runnerUpFinishes": 0
-      }
+      "displayOrder": 999,
+      "notes": ""
     },
     {
       "id": "mike-morgan",
@@ -602,18 +517,13 @@
       "winPercentage": 0.6923,
       "leaderboardEligible": false,
       "championships": [],
-      "guideUrl": "#",
+      "guideUrl": "=G19+H19+I19",
       "nameHistory": [
         "Team amish rifle"
       ],
       "featured": false,
-      "displayOrder": 18,
-      "notes": "",
-      "postseason": {
-        "playoffAppearances": 1,
-        "finalsAppearances": 0,
-        "runnerUpFinishes": 0
-      }
+      "displayOrder": 999,
+      "notes": ""
     },
     {
       "id": "eric-hector",
@@ -629,18 +539,13 @@
       "winPercentage": 0.1538,
       "leaderboardEligible": false,
       "championships": [],
-      "guideUrl": "#",
+      "guideUrl": "=G20+H20+I20",
       "nameHistory": [
         "Team mymagicjohnson"
       ],
       "featured": false,
-      "displayOrder": 19,
-      "notes": "",
-      "postseason": {
-        "playoffAppearances": 0,
-        "finalsAppearances": 0,
-        "runnerUpFinishes": 0
-      }
+      "displayOrder": 999,
+      "notes": ""
     },
     {
       "id": "greg-brewer",
@@ -656,18 +561,13 @@
       "winPercentage": 0.5385,
       "leaderboardEligible": false,
       "championships": [],
-      "guideUrl": "#",
+      "guideUrl": "=G21+H21+I21",
       "nameHistory": [
         "Morgan Post"
       ],
       "featured": false,
-      "displayOrder": 20,
-      "notes": "",
-      "postseason": {
-        "playoffAppearances": 0,
-        "finalsAppearances": 0,
-        "runnerUpFinishes": 0
-      }
+      "displayOrder": 999,
+      "notes": ""
     },
     {
       "id": "will-o-brien",
@@ -683,18 +583,13 @@
       "winPercentage": 0.3077,
       "leaderboardEligible": false,
       "championships": [],
-      "guideUrl": "#",
+      "guideUrl": "=G22+H22+I22",
       "nameHistory": [
         "Storm'n Norman"
       ],
       "featured": false,
-      "displayOrder": 21,
-      "notes": "",
-      "postseason": {
-        "playoffAppearances": 0,
-        "finalsAppearances": 0,
-        "runnerUpFinishes": 0
-      }
+      "displayOrder": 999,
+      "notes": ""
     },
     {
       "id": "aimee-baker",
@@ -710,18 +605,13 @@
       "winPercentage": 0.2308,
       "leaderboardEligible": false,
       "championships": [],
-      "guideUrl": "#",
+      "guideUrl": "=G23+H23+I23",
       "nameHistory": [
         "L'eggo My Eggo"
       ],
       "featured": false,
-      "displayOrder": 22,
-      "notes": "",
-      "postseason": {
-        "playoffAppearances": 0,
-        "finalsAppearances": 0,
-        "runnerUpFinishes": 0
-      }
+      "displayOrder": 999,
+      "notes": ""
     },
     {
       "id": "jon-moffett",
@@ -737,35 +627,16 @@
       "winPercentage": 0.3462,
       "leaderboardEligible": true,
       "championships": [],
-      "guideUrl": "#",
+      "guideUrl": "=G24+H24+I24",
       "nameHistory": [
         "ny heart eaters"
       ],
       "featured": false,
-      "displayOrder": 23,
-      "notes": "",
-      "postseason": {
-        "playoffAppearances": 0,
-        "finalsAppearances": 0,
-        "runnerUpFinishes": 0
-      }
+      "displayOrder": 999,
+      "notes": ""
     }
   ],
   "seasonResults": [
-    {
-      "year": 2012,
-      "managerId": "mike-morgan",
-      "manager": "Mike Morgan",
-      "team": "Amish Rifle",
-      "wins": 9,
-      "losses": 4,
-      "ties": 0,
-      "pointsFor": 1148.0,
-      "regularSeasonFinish": 1,
-      "playoffFinish": "1st Round",
-      "division": "Unified",
-      "notes": "8 Team League"
-    },
     {
       "year": 2012,
       "managerId": "tom-campbell",
@@ -775,7 +646,7 @@
       "losses": 5,
       "ties": 0,
       "pointsFor": 1369.0,
-      "regularSeasonFinish": 2,
+      "regularSeasonFinish": "2",
       "playoffFinish": "Champion",
       "division": "Unified",
       "notes": "8 Team League"
@@ -789,7 +660,7 @@
       "losses": 5,
       "ties": 0,
       "pointsFor": 1267.0,
-      "regularSeasonFinish": 3,
+      "regularSeasonFinish": "3",
       "playoffFinish": "Runner Up",
       "division": "Unified",
       "notes": "8 Team League"
@@ -803,8 +674,36 @@
       "losses": 6,
       "ties": 0,
       "pointsFor": 1218.0,
-      "regularSeasonFinish": 4,
+      "regularSeasonFinish": "4",
       "playoffFinish": "1st Round",
+      "division": "Unified",
+      "notes": "8 Team League"
+    },
+    {
+      "year": 2012,
+      "managerId": "mike-morgan",
+      "manager": "Mike Morgan",
+      "team": "Amish Rifle",
+      "wins": 9,
+      "losses": 4,
+      "ties": 0,
+      "pointsFor": 1148.0,
+      "regularSeasonFinish": "1",
+      "playoffFinish": "1st Round",
+      "division": "Unified",
+      "notes": "8 Team League"
+    },
+    {
+      "year": 2012,
+      "managerId": "eric-hector",
+      "manager": "Eric Hector",
+      "team": "My Magic Johnson",
+      "wins": 2,
+      "losses": 11,
+      "ties": 0,
+      "pointsFor": 986.0,
+      "regularSeasonFinish": "8",
+      "playoffFinish": "Eliminated",
       "division": "Unified",
       "notes": "8 Team League"
     },
@@ -817,7 +716,7 @@
       "losses": 6,
       "ties": 0,
       "pointsFor": 1289.0,
-      "regularSeasonFinish": 5,
+      "regularSeasonFinish": "5",
       "playoffFinish": "Eliminated",
       "division": "Unified",
       "notes": "8 Team League"
@@ -831,7 +730,7 @@
       "losses": 6,
       "ties": 0,
       "pointsFor": 1197.0,
-      "regularSeasonFinish": 6,
+      "regularSeasonFinish": "6",
       "playoffFinish": "Eliminated",
       "division": "Unified",
       "notes": "8 Team League"
@@ -845,21 +744,7 @@
       "losses": 9,
       "ties": 0,
       "pointsFor": 985.0,
-      "regularSeasonFinish": 7,
-      "playoffFinish": "Eliminated",
-      "division": "Unified",
-      "notes": "8 Team League"
-    },
-    {
-      "year": 2012,
-      "managerId": "eric-hector",
-      "manager": "Eric Hector",
-      "team": "My Magic Johnson",
-      "wins": 2,
-      "losses": 11,
-      "ties": 0,
-      "pointsFor": 986.0,
-      "regularSeasonFinish": 8,
+      "regularSeasonFinish": "7",
       "playoffFinish": "Eliminated",
       "division": "Unified",
       "notes": "8 Team League"
@@ -873,7 +758,7 @@
       "losses": 4,
       "ties": 0,
       "pointsFor": 1473.5,
-      "regularSeasonFinish": 1,
+      "regularSeasonFinish": "1",
       "playoffFinish": "Champion",
       "division": "West",
       "notes": "12 Team Expansion"
@@ -887,9 +772,23 @@
       "losses": 4,
       "ties": 0,
       "pointsFor": 1349.5,
-      "regularSeasonFinish": 2,
+      "regularSeasonFinish": "2",
       "playoffFinish": "Runner Up",
       "division": "Central",
+      "notes": "12 Team Expansion"
+    },
+    {
+      "year": 2013,
+      "managerId": "derek-baxter",
+      "manager": "Derek Baxter",
+      "team": "Babyface Buckeye",
+      "wins": 7,
+      "losses": 6,
+      "ties": 0,
+      "pointsFor": 1321.5,
+      "regularSeasonFinish": "4",
+      "playoffFinish": "2nd Round",
+      "division": "East",
       "notes": "12 Team Expansion"
     },
     {
@@ -901,24 +800,10 @@
       "losses": 4,
       "ties": 0,
       "pointsFor": 1344.5,
-      "regularSeasonFinish": 3,
+      "regularSeasonFinish": "3",
       "playoffFinish": "2nd Round",
       "division": "East",
       "notes": "Original Member"
-    },
-    {
-      "year": 2013,
-      "managerId": "derek-baxter",
-      "manager": "Derek Baxter",
-      "team": "Babyface Buckeye",
-      "wins": 7,
-      "losses": 6,
-      "ties": 0,
-      "pointsFor": 1321.5,
-      "regularSeasonFinish": 4,
-      "playoffFinish": "2nd Round",
-      "division": "East",
-      "notes": "12 Team Expansion"
     },
     {
       "year": 2013,
@@ -929,8 +814,22 @@
       "losses": 6,
       "ties": 0,
       "pointsFor": 1384.5,
-      "regularSeasonFinish": 5,
+      "regularSeasonFinish": "5",
       "playoffFinish": "1st Round",
+      "division": "West",
+      "notes": "12 Team Expansion"
+    },
+    {
+      "year": 2013,
+      "managerId": "matt-kitson",
+      "manager": "Matt Kitson",
+      "team": "Sark Manchez",
+      "wins": 4,
+      "losses": 9,
+      "ties": 0,
+      "pointsFor": 1218.5,
+      "regularSeasonFinish": "10",
+      "playoffFinish": "Eliminated",
       "division": "West",
       "notes": "12 Team Expansion"
     },
@@ -943,24 +842,10 @@
       "losses": 6,
       "ties": 0,
       "pointsFor": 1233.5,
-      "regularSeasonFinish": 6,
+      "regularSeasonFinish": "6",
       "playoffFinish": "Eliminated",
       "division": "Central",
       "notes": "12 Team Expansion"
-    },
-    {
-      "year": 2013,
-      "managerId": "collin-wilson",
-      "manager": "Collin Wilson",
-      "team": "Tremper Trannys",
-      "wins": 7,
-      "losses": 6,
-      "ties": 0,
-      "pointsFor": 1269.5,
-      "regularSeasonFinish": 7,
-      "playoffFinish": "Eliminated",
-      "division": "Central",
-      "notes": "Original Member"
     },
     {
       "year": 2013,
@@ -971,7 +856,7 @@
       "losses": 7,
       "ties": 0,
       "pointsFor": 1284.5,
-      "regularSeasonFinish": 8,
+      "regularSeasonFinish": "8",
       "playoffFinish": "Eliminated",
       "division": "Central",
       "notes": "12 Team Expansion"
@@ -985,24 +870,24 @@
       "losses": 7,
       "ties": 0,
       "pointsFor": 1310.0,
-      "regularSeasonFinish": 9,
+      "regularSeasonFinish": "9",
       "playoffFinish": "Eliminated",
       "division": "East",
       "notes": "Original Member"
     },
     {
       "year": 2013,
-      "managerId": "matt-kitson",
-      "manager": "Matt Kitson",
-      "team": "Sark Manchez",
-      "wins": 4,
-      "losses": 9,
+      "managerId": "collin-wilson",
+      "manager": "Collin Wilson",
+      "team": "Tremper Trannys",
+      "wins": 7,
+      "losses": 6,
       "ties": 0,
-      "pointsFor": 1218.5,
-      "regularSeasonFinish": 10,
+      "pointsFor": 1269.5,
+      "regularSeasonFinish": "7",
       "playoffFinish": "Eliminated",
-      "division": "West",
-      "notes": "12 Team Expansion"
+      "division": "Central",
+      "notes": "Original Member"
     },
     {
       "year": 2013,
@@ -1013,7 +898,7 @@
       "losses": 9,
       "ties": 0,
       "pointsFor": 1226.0,
-      "regularSeasonFinish": 11,
+      "regularSeasonFinish": "11",
       "playoffFinish": "Eliminated",
       "division": "East",
       "notes": "12 Team Expansion"
@@ -1027,7 +912,7 @@
       "losses": 10,
       "ties": 0,
       "pointsFor": 1134.5,
-      "regularSeasonFinish": 12,
+      "regularSeasonFinish": "12",
       "playoffFinish": "Eliminated",
       "division": "West",
       "notes": "12 Team Expansion"
@@ -1041,9 +926,23 @@
       "losses": 2,
       "ties": 0,
       "pointsFor": 1590.5,
-      "regularSeasonFinish": 1,
+      "regularSeasonFinish": "1",
       "playoffFinish": "Champion",
       "division": "West",
+      "notes": ""
+    },
+    {
+      "year": 2014,
+      "managerId": "matt-kitson",
+      "manager": "Matt Kitson",
+      "team": "Sark Manchez",
+      "wins": 8,
+      "losses": 5,
+      "ties": 0,
+      "pointsFor": 1298.5,
+      "regularSeasonFinish": "4",
+      "playoffFinish": "Runner Up",
+      "division": "Central",
       "notes": ""
     },
     {
@@ -1055,7 +954,7 @@
       "losses": 4,
       "ties": 0,
       "pointsFor": 1379.0,
-      "regularSeasonFinish": 2,
+      "regularSeasonFinish": "2",
       "playoffFinish": "2nd Round",
       "division": "East",
       "notes": ""
@@ -1069,23 +968,9 @@
       "losses": 4,
       "ties": 0,
       "pointsFor": 1316.0,
-      "regularSeasonFinish": 3,
+      "regularSeasonFinish": "3",
       "playoffFinish": "2nd Round",
       "division": "West",
-      "notes": ""
-    },
-    {
-      "year": 2014,
-      "managerId": "matt-kitson",
-      "manager": "Matt Kitson",
-      "team": "Sark Manchez",
-      "wins": 8,
-      "losses": 5,
-      "ties": 0,
-      "pointsFor": 1298.5,
-      "regularSeasonFinish": 4,
-      "playoffFinish": "Runner Up",
-      "division": "Central",
       "notes": ""
     },
     {
@@ -1097,7 +982,7 @@
       "losses": 6,
       "ties": 0,
       "pointsFor": 1468.5,
-      "regularSeasonFinish": 5,
+      "regularSeasonFinish": "5",
       "playoffFinish": "Eliminated",
       "division": "East",
       "notes": ""
@@ -1111,23 +996,23 @@
       "losses": 6,
       "ties": 0,
       "pointsFor": 1307.5,
-      "regularSeasonFinish": 6,
+      "regularSeasonFinish": "6",
       "playoffFinish": "Eliminated",
       "division": "East",
       "notes": ""
     },
     {
       "year": 2014,
-      "managerId": "doug-meyer",
-      "manager": "Doug Meyer",
-      "team": "Medford Mountainmen",
-      "wins": 7,
-      "losses": 6,
+      "managerId": "derek-baxter",
+      "manager": "Derek Baxter",
+      "team": "Babyface Buckeye",
+      "wins": 5,
+      "losses": 8,
       "ties": 0,
-      "pointsFor": 1245.0,
-      "regularSeasonFinish": 7,
+      "pointsFor": 1205.5,
+      "regularSeasonFinish": "10",
       "playoffFinish": "Eliminated",
-      "division": "Central",
+      "division": "East",
       "notes": ""
     },
     {
@@ -1139,7 +1024,7 @@
       "losses": 7,
       "ties": 0,
       "pointsFor": 1197.5,
-      "regularSeasonFinish": 8,
+      "regularSeasonFinish": "8",
       "playoffFinish": "Eliminated",
       "division": "West",
       "notes": ""
@@ -1153,23 +1038,9 @@
       "losses": 8,
       "ties": 0,
       "pointsFor": 1240.0,
-      "regularSeasonFinish": 9,
+      "regularSeasonFinish": "9",
       "playoffFinish": "Eliminated",
       "division": "West",
-      "notes": ""
-    },
-    {
-      "year": 2014,
-      "managerId": "derek-baxter",
-      "manager": "Derek Baxter",
-      "team": "Babyface Buckeye",
-      "wins": 5,
-      "losses": 8,
-      "ties": 0,
-      "pointsFor": 1205.5,
-      "regularSeasonFinish": 10,
-      "playoffFinish": "Eliminated",
-      "division": "East",
       "notes": ""
     },
     {
@@ -1181,7 +1052,21 @@
       "losses": 10,
       "ties": 0,
       "pointsFor": 1208.5,
-      "regularSeasonFinish": 11,
+      "regularSeasonFinish": "11",
+      "playoffFinish": "Eliminated",
+      "division": "Central",
+      "notes": ""
+    },
+    {
+      "year": 2014,
+      "managerId": "doug-meyer",
+      "manager": "Doug Meyer",
+      "team": "Medford Mountainmen",
+      "wins": 7,
+      "losses": 6,
+      "ties": 0,
+      "pointsFor": 1245.0,
+      "regularSeasonFinish": "7",
       "playoffFinish": "Eliminated",
       "division": "Central",
       "notes": ""
@@ -1195,7 +1080,7 @@
       "losses": 12,
       "ties": 0,
       "pointsFor": 1147.5,
-      "regularSeasonFinish": 12,
+      "regularSeasonFinish": "12",
       "playoffFinish": "Eliminated",
       "division": "Central",
       "notes": ""
@@ -1209,9 +1094,23 @@
       "losses": 3,
       "ties": 0,
       "pointsFor": 1405.0,
-      "regularSeasonFinish": 1,
+      "regularSeasonFinish": "1",
       "playoffFinish": "Champion",
       "division": "Central",
+      "notes": ""
+    },
+    {
+      "year": 2015,
+      "managerId": "tom-campbell",
+      "manager": "Tom Campbel",
+      "team": "Barton Spartans",
+      "wins": 7,
+      "losses": 6,
+      "ties": 0,
+      "pointsFor": 1283.5,
+      "regularSeasonFinish": "5",
+      "playoffFinish": "Runner Up",
+      "division": "East",
       "notes": ""
     },
     {
@@ -1223,7 +1122,7 @@
       "losses": 3,
       "ties": 0,
       "pointsFor": 1326.0,
-      "regularSeasonFinish": 2,
+      "regularSeasonFinish": "2",
       "playoffFinish": "2nd Round",
       "division": "West",
       "notes": ""
@@ -1237,7 +1136,7 @@
       "losses": 6,
       "ties": 0,
       "pointsFor": 1476.0,
-      "regularSeasonFinish": 3,
+      "regularSeasonFinish": "3",
       "playoffFinish": "2nd Round",
       "division": "Central",
       "notes": ""
@@ -1251,23 +1150,51 @@
       "losses": 6,
       "ties": 0,
       "pointsFor": 1343.0,
-      "regularSeasonFinish": 4,
+      "regularSeasonFinish": "4",
       "playoffFinish": "1st Round",
       "division": "West",
       "notes": ""
     },
     {
       "year": 2015,
-      "managerId": "tom-campbell",
-      "manager": "Tom Campbel",
-      "team": "Barton Spartans",
-      "wins": 7,
-      "losses": 6,
+      "managerId": "matt-kitson",
+      "manager": "Matt Kitson",
+      "team": "Geno's Dentures",
+      "wins": 4,
+      "losses": 9,
       "ties": 0,
-      "pointsFor": 1283.5,
-      "regularSeasonFinish": 5,
-      "playoffFinish": "Runner Up",
-      "division": "East",
+      "pointsFor": 1188.5,
+      "regularSeasonFinish": "10",
+      "playoffFinish": "Eliminated",
+      "division": "Central",
+      "notes": ""
+    },
+    {
+      "year": 2015,
+      "managerId": "david-wilson",
+      "manager": "David Wilson",
+      "team": "Cleveland Dawgs of War",
+      "wins": 6,
+      "losses": 7,
+      "ties": 0,
+      "pointsFor": 1291.0,
+      "regularSeasonFinish": "8",
+      "playoffFinish": "Eliminated",
+      "division": "West",
+      "notes": ""
+    },
+    {
+      "year": 2015,
+      "managerId": "doug-meyer",
+      "manager": "Doug Meyer",
+      "team": "Medford Mountainmen",
+      "wins": 4,
+      "losses": 9,
+      "ties": 0,
+      "pointsFor": 1152.0,
+      "regularSeasonFinish": "12",
+      "playoffFinish": "Eliminated",
+      "division": "Central",
       "notes": ""
     },
     {
@@ -1279,7 +1206,7 @@
       "losses": 6,
       "ties": 0,
       "pointsFor": 1251.5,
-      "regularSeasonFinish": 6,
+      "regularSeasonFinish": "6",
       "playoffFinish": "Eliminated",
       "division": "West",
       "notes": ""
@@ -1293,51 +1220,9 @@
       "losses": 7,
       "ties": 0,
       "pointsFor": 1424.0,
-      "regularSeasonFinish": 7,
+      "regularSeasonFinish": "7",
       "playoffFinish": "Eliminated",
       "division": "East",
-      "notes": ""
-    },
-    {
-      "year": 2015,
-      "managerId": "david-wilson",
-      "manager": "David Wilson",
-      "team": "Cleveland Dawgs of War",
-      "wins": 6,
-      "losses": 7,
-      "ties": 0,
-      "pointsFor": 1291.0,
-      "regularSeasonFinish": 8,
-      "playoffFinish": "Eliminated",
-      "division": "West",
-      "notes": ""
-    },
-    {
-      "year": 2015,
-      "managerId": "derek-baxter",
-      "manager": "Derek Baxter",
-      "team": "Babyface Buckeye",
-      "wins": 6,
-      "losses": 7,
-      "ties": 0,
-      "pointsFor": 1243.5,
-      "regularSeasonFinish": 9,
-      "playoffFinish": "Eliminated",
-      "division": "Central",
-      "notes": ""
-    },
-    {
-      "year": 2015,
-      "managerId": "matt-kitson",
-      "manager": "Matt Kitson",
-      "team": "Geno's Dentures",
-      "wins": 4,
-      "losses": 9,
-      "ties": 0,
-      "pointsFor": 1188.5,
-      "regularSeasonFinish": 10,
-      "playoffFinish": "Eliminated",
-      "division": "Central",
       "notes": ""
     },
     {
@@ -1349,37 +1234,23 @@
       "losses": 9,
       "ties": 0,
       "pointsFor": 1171.5,
-      "regularSeasonFinish": 11,
+      "regularSeasonFinish": "11",
       "playoffFinish": "Eliminated",
       "division": "East",
       "notes": ""
     },
     {
       "year": 2015,
-      "managerId": "doug-meyer",
-      "manager": "Doug Meyer",
-      "team": "Medford Mountainmen",
-      "wins": 4,
-      "losses": 9,
+      "managerId": "derek-baxter",
+      "manager": "Derek Baxter",
+      "team": "Babyface Buckeye",
+      "wins": 6,
+      "losses": 7,
       "ties": 0,
-      "pointsFor": 1152.0,
-      "regularSeasonFinish": 12,
+      "pointsFor": 1243.5,
+      "regularSeasonFinish": "9",
       "playoffFinish": "Eliminated",
       "division": "Central",
-      "notes": ""
-    },
-    {
-      "year": 2016,
-      "managerId": "rob-ohlerich",
-      "manager": "Rob Ohlerich",
-      "team": "Pennsyltucky Cocks'n'Glocks",
-      "wins": 10,
-      "losses": 3,
-      "ties": 0,
-      "pointsFor": 1440.5,
-      "regularSeasonFinish": 1,
-      "playoffFinish": "2nd Round",
-      "division": "East",
       "notes": ""
     },
     {
@@ -1391,23 +1262,9 @@
       "losses": 3,
       "ties": 0,
       "pointsFor": 1411.0,
-      "regularSeasonFinish": 2,
+      "regularSeasonFinish": "2",
       "playoffFinish": "Champion",
       "division": "Central",
-      "notes": ""
-    },
-    {
-      "year": 2016,
-      "managerId": "collin-wilson",
-      "manager": "Collin Wilson",
-      "team": "North Bay Tyranny",
-      "wins": 9,
-      "losses": 4,
-      "ties": 0,
-      "pointsFor": 1328.5,
-      "regularSeasonFinish": 3,
-      "playoffFinish": "2nd Round",
-      "division": "West",
       "notes": ""
     },
     {
@@ -1419,9 +1276,37 @@
       "losses": 5,
       "ties": 0,
       "pointsFor": 1349.5,
-      "regularSeasonFinish": 4,
+      "regularSeasonFinish": "4",
       "playoffFinish": "Runner Up",
       "division": "East",
+      "notes": ""
+    },
+    {
+      "year": 2016,
+      "managerId": "rob-ohlerich",
+      "manager": "Rob Ohlerich",
+      "team": "Pennsyltucky Cocks'n'Glocks",
+      "wins": 10,
+      "losses": 3,
+      "ties": 0,
+      "pointsFor": 1440.5,
+      "regularSeasonFinish": "1",
+      "playoffFinish": "2nd Round",
+      "division": "East",
+      "notes": ""
+    },
+    {
+      "year": 2016,
+      "managerId": "collin-wilson",
+      "manager": "Collin Wilson",
+      "team": "North Bay Tyranny",
+      "wins": 9,
+      "losses": 4,
+      "ties": 0,
+      "pointsFor": 1328.5,
+      "regularSeasonFinish": "3",
+      "playoffFinish": "2nd Round",
+      "division": "West",
       "notes": ""
     },
     {
@@ -1433,21 +1318,21 @@
       "losses": 6,
       "ties": 0,
       "pointsFor": 1433.0,
-      "regularSeasonFinish": 5,
+      "regularSeasonFinish": "5",
       "playoffFinish": "1st Round",
       "division": "West",
       "notes": ""
     },
     {
       "year": 2016,
-      "managerId": "matt-kitson",
-      "manager": "Matt Kitson",
-      "team": "Mangold Digger",
-      "wins": 7,
-      "losses": 6,
+      "managerId": "kris-cappiello",
+      "manager": "Kris Cappiello",
+      "team": "Space Cadets",
+      "wins": 4,
+      "losses": 9,
       "ties": 0,
-      "pointsFor": 1322.0,
-      "regularSeasonFinish": 6,
+      "pointsFor": 1156.0,
+      "regularSeasonFinish": "11",
       "playoffFinish": "Eliminated",
       "division": "Central",
       "notes": ""
@@ -1461,7 +1346,21 @@
       "losses": 7,
       "ties": 0,
       "pointsFor": 1252.0,
-      "regularSeasonFinish": 7,
+      "regularSeasonFinish": "7",
+      "playoffFinish": "Eliminated",
+      "division": "West",
+      "notes": ""
+    },
+    {
+      "year": 2016,
+      "managerId": "kyle-o-connell",
+      "manager": "Kyle O'Connell",
+      "team": "Off Boys",
+      "wins": 4,
+      "losses": 9,
+      "ties": 0,
+      "pointsFor": 1292.0,
+      "regularSeasonFinish": "9",
       "playoffFinish": "Eliminated",
       "division": "West",
       "notes": ""
@@ -1475,23 +1374,23 @@
       "losses": 8,
       "ties": 0,
       "pointsFor": 1242.0,
-      "regularSeasonFinish": 8,
+      "regularSeasonFinish": "8",
       "playoffFinish": "Eliminated",
       "division": "East",
       "notes": ""
     },
     {
       "year": 2016,
-      "managerId": "kyle-o-connell",
-      "manager": "Kyle O'Connell",
-      "team": "Off Boys",
-      "wins": 4,
-      "losses": 9,
+      "managerId": "matt-kitson",
+      "manager": "Matt Kitson",
+      "team": "Mangold Digger",
+      "wins": 7,
+      "losses": 6,
       "ties": 0,
-      "pointsFor": 1292.0,
-      "regularSeasonFinish": 9,
+      "pointsFor": 1322.0,
+      "regularSeasonFinish": "6",
       "playoffFinish": "Eliminated",
-      "division": "West",
+      "division": "Central",
       "notes": ""
     },
     {
@@ -1503,21 +1402,7 @@
       "losses": 9,
       "ties": 0,
       "pointsFor": 1209.0,
-      "regularSeasonFinish": 10,
-      "playoffFinish": "Eliminated",
-      "division": "Central",
-      "notes": ""
-    },
-    {
-      "year": 2016,
-      "managerId": "kris-cappiello",
-      "manager": "Kris Cappiello",
-      "team": "Space Cadets",
-      "wins": 4,
-      "losses": 9,
-      "ties": 0,
-      "pointsFor": 1156.0,
-      "regularSeasonFinish": 11,
+      "regularSeasonFinish": "10",
       "playoffFinish": "Eliminated",
       "division": "Central",
       "notes": ""
@@ -1531,22 +1416,8 @@
       "losses": 9,
       "ties": 0,
       "pointsFor": 1058.0,
-      "regularSeasonFinish": 12,
+      "regularSeasonFinish": "12",
       "playoffFinish": "Eliminated",
-      "division": "East",
-      "notes": ""
-    },
-    {
-      "year": 2017,
-      "managerId": "danny-sattler",
-      "manager": "Danny Sattler",
-      "team": "NY Red Reapers",
-      "wins": 10,
-      "losses": 3,
-      "ties": 0,
-      "pointsFor": 1354.0,
-      "regularSeasonFinish": 1,
-      "playoffFinish": "2nd Round",
       "division": "East",
       "notes": ""
     },
@@ -1559,7 +1430,7 @@
       "losses": 4,
       "ties": 0,
       "pointsFor": 1500.0,
-      "regularSeasonFinish": 2,
+      "regularSeasonFinish": "2",
       "playoffFinish": "Champion",
       "division": "Central",
       "notes": ""
@@ -1573,9 +1444,23 @@
       "losses": 4,
       "ties": 0,
       "pointsFor": 1298.0,
-      "regularSeasonFinish": 3,
+      "regularSeasonFinish": "3",
       "playoffFinish": "Runner Up",
       "division": "Central",
+      "notes": ""
+    },
+    {
+      "year": 2017,
+      "managerId": "danny-sattler",
+      "manager": "Danny Sattler",
+      "team": "NY Red Reapers",
+      "wins": 10,
+      "losses": 3,
+      "ties": 0,
+      "pointsFor": 1354.0,
+      "regularSeasonFinish": "1",
+      "playoffFinish": "2nd Round",
+      "division": "East",
       "notes": ""
     },
     {
@@ -1587,7 +1472,7 @@
       "losses": 4,
       "ties": 0,
       "pointsFor": 1297.0,
-      "regularSeasonFinish": 4,
+      "regularSeasonFinish": "4",
       "playoffFinish": "2nd Round",
       "division": "West",
       "notes": ""
@@ -1601,7 +1486,7 @@
       "losses": 6,
       "ties": 0,
       "pointsFor": 1262.0,
-      "regularSeasonFinish": 5,
+      "regularSeasonFinish": "5",
       "playoffFinish": "1st Round",
       "division": "East",
       "notes": ""
@@ -1615,35 +1500,21 @@
       "losses": 7,
       "ties": 0,
       "pointsFor": 1266.5,
-      "regularSeasonFinish": 6,
+      "regularSeasonFinish": "6",
       "playoffFinish": "Eliminated",
       "division": "Central",
       "notes": ""
     },
     {
       "year": 2017,
-      "managerId": "doug-meyer",
-      "manager": "Doug Meyer",
-      "team": "Medford Mountainmen",
-      "wins": 6,
-      "losses": 7,
+      "managerId": "david-wilson",
+      "manager": "David Wilson",
+      "team": "Cleveland Dawgs of War",
+      "wins": 5,
+      "losses": 8,
       "ties": 0,
-      "pointsFor": 1234.0,
-      "regularSeasonFinish": 7,
-      "playoffFinish": "Eliminated",
-      "division": "Central",
-      "notes": ""
-    },
-    {
-      "year": 2017,
-      "managerId": "collin-wilson",
-      "manager": "Collin Wilson",
-      "team": "North Bay Tyranny",
-      "wins": 6,
-      "losses": 7,
-      "ties": 0,
-      "pointsFor": 1092.0,
-      "regularSeasonFinish": 8,
+      "pointsFor": 1107.5,
+      "regularSeasonFinish": "11",
       "playoffFinish": "Eliminated",
       "division": "West",
       "notes": ""
@@ -1657,9 +1528,37 @@
       "losses": 8,
       "ties": 0,
       "pointsFor": 1189.5,
-      "regularSeasonFinish": 9,
+      "regularSeasonFinish": "9",
       "playoffFinish": "Eliminated",
       "division": "Central",
+      "notes": ""
+    },
+    {
+      "year": 2017,
+      "managerId": "doug-meyer",
+      "manager": "Doug Meyer",
+      "team": "Medford Mountainmen",
+      "wins": 6,
+      "losses": 7,
+      "ties": 0,
+      "pointsFor": 1234.0,
+      "regularSeasonFinish": "7",
+      "playoffFinish": "Eliminated",
+      "division": "Central",
+      "notes": ""
+    },
+    {
+      "year": 2017,
+      "managerId": "collin-wilson",
+      "manager": "Collin Wilson",
+      "team": "North Bay Tyranny",
+      "wins": 6,
+      "losses": 7,
+      "ties": 0,
+      "pointsFor": 1092.0,
+      "regularSeasonFinish": "8",
+      "playoffFinish": "Eliminated",
+      "division": "West",
       "notes": ""
     },
     {
@@ -1671,21 +1570,7 @@
       "losses": 8,
       "ties": 0,
       "pointsFor": 1129.0,
-      "regularSeasonFinish": 10,
-      "playoffFinish": "Eliminated",
-      "division": "West",
-      "notes": ""
-    },
-    {
-      "year": 2017,
-      "managerId": "david-wilson",
-      "manager": "David Wilson",
-      "team": "Cleveland Dawgs of War",
-      "wins": 5,
-      "losses": 8,
-      "ties": 0,
-      "pointsFor": 1107.5,
-      "regularSeasonFinish": 11,
+      "regularSeasonFinish": "10",
       "playoffFinish": "Eliminated",
       "division": "West",
       "notes": ""
@@ -1699,9 +1584,23 @@
       "losses": 12,
       "ties": 0,
       "pointsFor": 1054.5,
-      "regularSeasonFinish": 12,
+      "regularSeasonFinish": "12",
       "playoffFinish": "Eliminated",
       "division": "East",
+      "notes": ""
+    },
+    {
+      "year": 2018,
+      "managerId": "kyle-o-connell",
+      "manager": "Kyle O'Connell",
+      "team": "Off Boys",
+      "wins": 9,
+      "losses": 4,
+      "ties": 0,
+      "pointsFor": 1386.0,
+      "regularSeasonFinish": "3",
+      "playoffFinish": "Champion",
+      "division": "West",
       "notes": ""
     },
     {
@@ -1713,7 +1612,7 @@
       "losses": 1,
       "ties": 0,
       "pointsFor": 1540.5,
-      "regularSeasonFinish": 1,
+      "regularSeasonFinish": "1",
       "playoffFinish": "Runner Up",
       "division": "Central",
       "notes": ""
@@ -1727,37 +1626,9 @@
       "losses": 4,
       "ties": 0,
       "pointsFor": 1532.0,
-      "regularSeasonFinish": 2,
+      "regularSeasonFinish": "2",
       "playoffFinish": "2nd Round",
       "division": "East",
-      "notes": ""
-    },
-    {
-      "year": 2018,
-      "managerId": "kyle-o-connell",
-      "manager": "Kyle O'Connell",
-      "team": "Off Boys",
-      "wins": 9,
-      "losses": 4,
-      "ties": 0,
-      "pointsFor": 1386.0,
-      "regularSeasonFinish": 3,
-      "playoffFinish": "Champion",
-      "division": "West",
-      "notes": ""
-    },
-    {
-      "year": 2018,
-      "managerId": "tavis-tucker",
-      "manager": "Tavis Tucker",
-      "team": "California Un-Named Team",
-      "wins": 8,
-      "losses": 5,
-      "ties": 0,
-      "pointsFor": 1331.5,
-      "regularSeasonFinish": 4,
-      "playoffFinish": "1st Round",
-      "division": "West",
       "notes": ""
     },
     {
@@ -1769,9 +1640,23 @@
       "losses": 6,
       "ties": 0,
       "pointsFor": 1438.5,
-      "regularSeasonFinish": 5,
+      "regularSeasonFinish": "5",
       "playoffFinish": "2nd Round",
       "division": "Central",
+      "notes": ""
+    },
+    {
+      "year": 2018,
+      "managerId": "tavis-tucker",
+      "manager": "Tavis Tucker",
+      "team": "California Un-Named Team",
+      "wins": 8,
+      "losses": 5,
+      "ties": 0,
+      "pointsFor": 1331.5,
+      "regularSeasonFinish": "4",
+      "playoffFinish": "1st Round",
+      "division": "West",
       "notes": ""
     },
     {
@@ -1783,23 +1668,9 @@
       "losses": 6,
       "ties": 0,
       "pointsFor": 1388.0,
-      "regularSeasonFinish": 6,
+      "regularSeasonFinish": "6",
       "playoffFinish": "Eliminated",
       "division": "West",
-      "notes": ""
-    },
-    {
-      "year": 2018,
-      "managerId": "matt-kitson",
-      "manager": "Matt Kitson",
-      "team": "CTE Decisions!",
-      "wins": 6,
-      "losses": 7,
-      "ties": 0,
-      "pointsFor": 1421.0,
-      "regularSeasonFinish": 7,
-      "playoffFinish": "Eliminated",
-      "division": "Central",
       "notes": ""
     },
     {
@@ -1811,51 +1682,23 @@
       "losses": 7,
       "ties": 0,
       "pointsFor": 1330.5,
-      "regularSeasonFinish": 8,
+      "regularSeasonFinish": "8",
       "playoffFinish": "Eliminated",
       "division": "East",
       "notes": ""
     },
     {
       "year": 2018,
-      "managerId": "stephen-davis",
-      "manager": "Steve Davis",
-      "team": "Atlas X-Men",
-      "wins": 5,
-      "losses": 8,
+      "managerId": "matt-kitson",
+      "manager": "Matt Kitson",
+      "team": "CTE Decisions!",
+      "wins": 6,
+      "losses": 7,
       "ties": 0,
-      "pointsFor": 1356.0,
-      "regularSeasonFinish": 9,
+      "pointsFor": 1421.0,
+      "regularSeasonFinish": "7",
       "playoffFinish": "Eliminated",
       "division": "Central",
-      "notes": ""
-    },
-    {
-      "year": 2018,
-      "managerId": "derek-baxter",
-      "manager": "Derek Baxter",
-      "team": "Babyface Buckeye",
-      "wins": 5,
-      "losses": 8,
-      "ties": 0,
-      "pointsFor": 1116.5,
-      "regularSeasonFinish": 10,
-      "playoffFinish": "Eliminated",
-      "division": "East",
-      "notes": ""
-    },
-    {
-      "year": 2018,
-      "managerId": "collin-wilson",
-      "manager": "Collin Wilson",
-      "team": "North Bay Tyranny",
-      "wins": 2,
-      "losses": 11,
-      "ties": 0,
-      "pointsFor": 1198.0,
-      "regularSeasonFinish": 11,
-      "playoffFinish": "Eliminated",
-      "division": "West",
       "notes": ""
     },
     {
@@ -1867,8 +1710,64 @@
       "losses": 11,
       "ties": 0,
       "pointsFor": 1084.0,
-      "regularSeasonFinish": 12,
+      "regularSeasonFinish": "12",
       "playoffFinish": "Eliminated",
+      "division": "Central",
+      "notes": ""
+    },
+    {
+      "year": 2018,
+      "managerId": "stephen-davis",
+      "manager": "Steve Davis",
+      "team": "Atlas X-Men",
+      "wins": 5,
+      "losses": 8,
+      "ties": 0,
+      "pointsFor": 1356.0,
+      "regularSeasonFinish": "9",
+      "playoffFinish": "Eliminated",
+      "division": "Central",
+      "notes": ""
+    },
+    {
+      "year": 2018,
+      "managerId": "collin-wilson",
+      "manager": "Collin Wilson",
+      "team": "North Bay Tyranny",
+      "wins": 2,
+      "losses": 11,
+      "ties": 0,
+      "pointsFor": 1198.0,
+      "regularSeasonFinish": "11",
+      "playoffFinish": "Eliminated",
+      "division": "West",
+      "notes": ""
+    },
+    {
+      "year": 2018,
+      "managerId": "derek-baxter",
+      "manager": "Derek Baxter",
+      "team": "Babyface Buckeye",
+      "wins": 5,
+      "losses": 8,
+      "ties": 0,
+      "pointsFor": 1116.5,
+      "regularSeasonFinish": "10",
+      "playoffFinish": "Eliminated",
+      "division": "East",
+      "notes": ""
+    },
+    {
+      "year": 2019,
+      "managerId": "tyler-shaver",
+      "manager": "Tyler Shaver",
+      "team": "Northern BTH Tigers",
+      "wins": 9,
+      "losses": 4,
+      "ties": 0,
+      "pointsFor": 1427.0,
+      "regularSeasonFinish": "2",
+      "playoffFinish": "Champion",
       "division": "Central",
       "notes": ""
     },
@@ -1881,37 +1780,9 @@
       "losses": 2,
       "ties": 0,
       "pointsFor": 1534.5,
-      "regularSeasonFinish": 1,
+      "regularSeasonFinish": "1",
       "playoffFinish": "Runner Up",
       "division": "West",
-      "notes": ""
-    },
-    {
-      "year": 2019,
-      "managerId": "tyler-shaver",
-      "manager": "Tyler Shaver",
-      "team": "Northern BTH Tigers",
-      "wins": 9,
-      "losses": 4,
-      "ties": 0,
-      "pointsFor": 1427.0,
-      "regularSeasonFinish": 2,
-      "playoffFinish": "Champion",
-      "division": "Central",
-      "notes": ""
-    },
-    {
-      "year": 2019,
-      "managerId": "danny-sattler",
-      "manager": "Danny Sattler",
-      "team": "NY Red Reapers",
-      "wins": 7,
-      "losses": 6,
-      "ties": 0,
-      "pointsFor": 1242.5,
-      "regularSeasonFinish": 3,
-      "playoffFinish": "2nd Round",
-      "division": "East",
       "notes": ""
     },
     {
@@ -1923,9 +1794,23 @@
       "losses": 5,
       "ties": 1,
       "pointsFor": 1361.5,
-      "regularSeasonFinish": 4,
+      "regularSeasonFinish": "4",
       "playoffFinish": "2nd Round",
       "division": "West",
+      "notes": ""
+    },
+    {
+      "year": 2019,
+      "managerId": "danny-sattler",
+      "manager": "Danny Sattler",
+      "team": "NY Red Reapers",
+      "wins": 7,
+      "losses": 6,
+      "ties": 0,
+      "pointsFor": 1242.5,
+      "regularSeasonFinish": "3",
+      "playoffFinish": "2nd Round",
+      "division": "East",
       "notes": ""
     },
     {
@@ -1937,7 +1822,7 @@
       "losses": 5,
       "ties": 0,
       "pointsFor": 1356.5,
-      "regularSeasonFinish": 5,
+      "regularSeasonFinish": "5",
       "playoffFinish": "1st Round",
       "division": "West",
       "notes": ""
@@ -1951,35 +1836,7 @@
       "losses": 7,
       "ties": 0,
       "pointsFor": 1319.0,
-      "regularSeasonFinish": 6,
-      "playoffFinish": "Eliminated",
-      "division": "Central",
-      "notes": ""
-    },
-    {
-      "year": 2019,
-      "managerId": "doug-meyer",
-      "manager": "Doug Meyer",
-      "team": "Medford Mountainmen",
-      "wins": 6,
-      "losses": 7,
-      "ties": 0,
-      "pointsFor": 1344.0,
-      "regularSeasonFinish": 7,
-      "playoffFinish": "Eliminated",
-      "division": "East",
-      "notes": ""
-    },
-    {
-      "year": 2019,
-      "managerId": "derek-baxter",
-      "manager": "Derek Baxter",
-      "team": "Babyface Buckeye",
-      "wins": 6,
-      "losses": 7,
-      "ties": 0,
-      "pointsFor": 1252.0,
-      "regularSeasonFinish": 8,
+      "regularSeasonFinish": "6",
       "playoffFinish": "Eliminated",
       "division": "Central",
       "notes": ""
@@ -1993,9 +1850,37 @@
       "losses": 7,
       "ties": 1,
       "pointsFor": 1320.5,
-      "regularSeasonFinish": 9,
+      "regularSeasonFinish": "9",
       "playoffFinish": "Eliminated",
       "division": "West",
+      "notes": ""
+    },
+    {
+      "year": 2019,
+      "managerId": "derek-baxter",
+      "manager": "Derek Baxter",
+      "team": "Babyface Buckeye",
+      "wins": 6,
+      "losses": 7,
+      "ties": 0,
+      "pointsFor": 1252.0,
+      "regularSeasonFinish": "8",
+      "playoffFinish": "Eliminated",
+      "division": "Central",
+      "notes": ""
+    },
+    {
+      "year": 2019,
+      "managerId": "doug-meyer",
+      "manager": "Doug Meyer",
+      "team": "Medford Mountainmen",
+      "wins": 6,
+      "losses": 7,
+      "ties": 0,
+      "pointsFor": 1344.0,
+      "regularSeasonFinish": "7",
+      "playoffFinish": "Eliminated",
+      "division": "East",
       "notes": ""
     },
     {
@@ -2007,7 +1892,7 @@
       "losses": 8,
       "ties": 0,
       "pointsFor": 1250.5,
-      "regularSeasonFinish": 10,
+      "regularSeasonFinish": "10",
       "playoffFinish": "Eliminated",
       "division": "Central",
       "notes": ""
@@ -2021,7 +1906,7 @@
       "losses": 9,
       "ties": 0,
       "pointsFor": 1280.5,
-      "regularSeasonFinish": 11,
+      "regularSeasonFinish": "11",
       "playoffFinish": "Eliminated",
       "division": "Central",
       "notes": ""
@@ -2035,23 +1920,9 @@
       "losses": 10,
       "ties": 0,
       "pointsFor": 1159.0,
-      "regularSeasonFinish": 12,
+      "regularSeasonFinish": "12",
       "playoffFinish": "Eliminated",
       "division": "East",
-      "notes": ""
-    },
-    {
-      "year": 2020,
-      "managerId": "kyle-o-connell",
-      "manager": "Kyle O'Connell",
-      "team": "Off Boys",
-      "wins": 9,
-      "losses": 4,
-      "ties": 0,
-      "pointsFor": 1388.5,
-      "regularSeasonFinish": 1,
-      "playoffFinish": "2nd Round",
-      "division": "West",
       "notes": ""
     },
     {
@@ -2063,7 +1934,7 @@
       "losses": 4,
       "ties": 0,
       "pointsFor": 1303.5,
-      "regularSeasonFinish": 2,
+      "regularSeasonFinish": "2",
       "playoffFinish": "Champion",
       "division": "Central",
       "notes": ""
@@ -2077,8 +1948,36 @@
       "losses": 5,
       "ties": 0,
       "pointsFor": 1491.5,
-      "regularSeasonFinish": 3,
+      "regularSeasonFinish": "3",
       "playoffFinish": "Runner Up",
+      "division": "East",
+      "notes": ""
+    },
+    {
+      "year": 2020,
+      "managerId": "kyle-o-connell",
+      "manager": "Kyle O'Connell",
+      "team": "Off Boys",
+      "wins": 9,
+      "losses": 4,
+      "ties": 0,
+      "pointsFor": 1388.5,
+      "regularSeasonFinish": "1",
+      "playoffFinish": "2nd Round",
+      "division": "West",
+      "notes": ""
+    },
+    {
+      "year": 2020,
+      "managerId": "tom-campbell",
+      "manager": "Tom Campbel",
+      "team": "Barton Spartans",
+      "wins": 8,
+      "losses": 5,
+      "ties": 0,
+      "pointsFor": 1314.0,
+      "regularSeasonFinish": "5",
+      "playoffFinish": "2nd Round",
       "division": "East",
       "notes": ""
     },
@@ -2091,22 +1990,8 @@
       "losses": 5,
       "ties": 0,
       "pointsFor": 1418.5,
-      "regularSeasonFinish": 4,
+      "regularSeasonFinish": "4",
       "playoffFinish": "1st Round",
-      "division": "East",
-      "notes": ""
-    },
-    {
-      "year": 2020,
-      "managerId": "tom-campbell",
-      "manager": "Tom Campbel",
-      "team": "Barton Spartans",
-      "wins": 8,
-      "losses": 5,
-      "ties": 0,
-      "pointsFor": 1314.0,
-      "regularSeasonFinish": 5,
-      "playoffFinish": "2nd Round",
       "division": "East",
       "notes": ""
     },
@@ -2119,7 +2004,7 @@
       "losses": 5,
       "ties": 1,
       "pointsFor": 1280.5,
-      "regularSeasonFinish": 6,
+      "regularSeasonFinish": "6",
       "playoffFinish": "Eliminated",
       "division": "Central",
       "notes": ""
@@ -2133,21 +2018,7 @@
       "losses": 6,
       "ties": 0,
       "pointsFor": 1216.5,
-      "regularSeasonFinish": 7,
-      "playoffFinish": "Eliminated",
-      "division": "West",
-      "notes": ""
-    },
-    {
-      "year": 2020,
-      "managerId": "david-wilson",
-      "manager": "David Wilson",
-      "team": "Cleveland Dawgs of War",
-      "wins": 6,
-      "losses": 7,
-      "ties": 0,
-      "pointsFor": 1391.5,
-      "regularSeasonFinish": 8,
+      "regularSeasonFinish": "7",
       "playoffFinish": "Eliminated",
       "division": "West",
       "notes": ""
@@ -2161,21 +2032,7 @@
       "losses": 7,
       "ties": 0,
       "pointsFor": 1250.0,
-      "regularSeasonFinish": 9,
-      "playoffFinish": "Eliminated",
-      "division": "Central",
-      "notes": ""
-    },
-    {
-      "year": 2020,
-      "managerId": "kris-cappiello",
-      "manager": "Kris Cappiello",
-      "team": "Space Cadets",
-      "wins": 5,
-      "losses": 8,
-      "ties": 0,
-      "pointsFor": 1187.5,
-      "regularSeasonFinish": 10,
+      "regularSeasonFinish": "9",
       "playoffFinish": "Eliminated",
       "division": "Central",
       "notes": ""
@@ -2189,9 +2046,23 @@
       "losses": 10,
       "ties": 1,
       "pointsFor": 1146.0,
-      "regularSeasonFinish": 11,
+      "regularSeasonFinish": "11",
       "playoffFinish": "Eliminated",
       "division": "West",
+      "notes": ""
+    },
+    {
+      "year": 2020,
+      "managerId": "kris-cappiello",
+      "manager": "Kris Cappiello",
+      "team": "Space Cadets",
+      "wins": 5,
+      "losses": 8,
+      "ties": 0,
+      "pointsFor": 1187.5,
+      "regularSeasonFinish": "10",
+      "playoffFinish": "Eliminated",
+      "division": "Central",
       "notes": ""
     },
     {
@@ -2203,9 +2074,23 @@
       "losses": 11,
       "ties": 0,
       "pointsFor": 1168.5,
-      "regularSeasonFinish": 12,
+      "regularSeasonFinish": "12",
       "playoffFinish": "Eliminated",
       "division": "Central",
+      "notes": ""
+    },
+    {
+      "year": 2020,
+      "managerId": "david-wilson",
+      "manager": "David Wilson",
+      "team": "Cleveland Dawgs of War",
+      "wins": 6,
+      "losses": 7,
+      "ties": 0,
+      "pointsFor": 1391.5,
+      "regularSeasonFinish": "8",
+      "playoffFinish": "Eliminated",
+      "division": "West",
       "notes": ""
     },
     {
@@ -2217,22 +2102,8 @@
       "losses": 3,
       "ties": 0,
       "pointsFor": 1533.0,
-      "regularSeasonFinish": 1,
+      "regularSeasonFinish": "1",
       "playoffFinish": "Champion",
-      "division": "East",
-      "notes": ""
-    },
-    {
-      "year": 2021,
-      "managerId": "danny-sattler",
-      "manager": "Danny Sattler",
-      "team": "Simpson Sith",
-      "wins": 10,
-      "losses": 3,
-      "ties": 1,
-      "pointsFor": 1544.0,
-      "regularSeasonFinish": 2,
-      "playoffFinish": "2nd Round",
       "division": "East",
       "notes": ""
     },
@@ -2245,22 +2116,8 @@
       "losses": 6,
       "ties": 0,
       "pointsFor": 1500.0,
-      "regularSeasonFinish": 3,
+      "regularSeasonFinish": "3",
       "playoffFinish": "Runner Up",
-      "division": "West",
-      "notes": ""
-    },
-    {
-      "year": 2021,
-      "managerId": "tavis-tucker",
-      "manager": "Tavis Tucker",
-      "team": "California Un-Named Team",
-      "wins": 8,
-      "losses": 6,
-      "ties": 0,
-      "pointsFor": 1400.0,
-      "regularSeasonFinish": 4,
-      "playoffFinish": "1st Round",
       "division": "West",
       "notes": ""
     },
@@ -2273,36 +2130,36 @@
       "losses": 7,
       "ties": 0,
       "pointsFor": 1496.5,
-      "regularSeasonFinish": 5,
+      "regularSeasonFinish": "5",
       "playoffFinish": "2nd Round",
       "division": "Central",
       "notes": ""
     },
     {
       "year": 2021,
-      "managerId": "stephen-davis",
-      "manager": "Steve Davis",
-      "team": "Atlas X-Men",
-      "wins": 7,
-      "losses": 7,
-      "ties": 0,
-      "pointsFor": 1476.5,
-      "regularSeasonFinish": 6,
-      "playoffFinish": "Eliminated",
-      "division": "Central",
+      "managerId": "danny-sattler",
+      "manager": "Danny Sattler",
+      "team": "Simpson Sith",
+      "wins": 10,
+      "losses": 3,
+      "ties": 1,
+      "pointsFor": 1544.0,
+      "regularSeasonFinish": "2",
+      "playoffFinish": "2nd Round",
+      "division": "East",
       "notes": ""
     },
     {
       "year": 2021,
-      "managerId": "collin-wilson",
-      "manager": "Collin Wilson",
-      "team": "Redwood Murder",
-      "wins": 7,
-      "losses": 7,
+      "managerId": "tavis-tucker",
+      "manager": "Tavis Tucker",
+      "team": "California Un-Named Team",
+      "wins": 8,
+      "losses": 6,
       "ties": 0,
-      "pointsFor": 1338.0,
-      "regularSeasonFinish": 7,
-      "playoffFinish": "Eliminated",
+      "pointsFor": 1400.0,
+      "regularSeasonFinish": "4",
+      "playoffFinish": "1st Round",
       "division": "West",
       "notes": ""
     },
@@ -2315,7 +2172,21 @@
       "losses": 7,
       "ties": 1,
       "pointsFor": 1509.0,
-      "regularSeasonFinish": 8,
+      "regularSeasonFinish": "8",
+      "playoffFinish": "Eliminated",
+      "division": "West",
+      "notes": ""
+    },
+    {
+      "year": 2021,
+      "managerId": "collin-wilson",
+      "manager": "Collin Wilson",
+      "team": "Redwood Murder",
+      "wins": 7,
+      "losses": 7,
+      "ties": 0,
+      "pointsFor": 1338.0,
+      "regularSeasonFinish": "7",
       "playoffFinish": "Eliminated",
       "division": "West",
       "notes": ""
@@ -2329,7 +2200,21 @@
       "losses": 8,
       "ties": 0,
       "pointsFor": 1376.0,
-      "regularSeasonFinish": 9,
+      "regularSeasonFinish": "9",
+      "playoffFinish": "Eliminated",
+      "division": "Central",
+      "notes": ""
+    },
+    {
+      "year": 2021,
+      "managerId": "stephen-davis",
+      "manager": "Steve Davis",
+      "team": "Atlas X-Men",
+      "wins": 7,
+      "losses": 7,
+      "ties": 0,
+      "pointsFor": 1476.5,
+      "regularSeasonFinish": "6",
       "playoffFinish": "Eliminated",
       "division": "Central",
       "notes": ""
@@ -2343,7 +2228,7 @@
       "losses": 9,
       "ties": 0,
       "pointsFor": 1271.0,
-      "regularSeasonFinish": 10,
+      "regularSeasonFinish": "10",
       "playoffFinish": "Eliminated",
       "division": "Central",
       "notes": ""
@@ -2357,7 +2242,7 @@
       "losses": 10,
       "ties": 0,
       "pointsFor": 1278.0,
-      "regularSeasonFinish": 11,
+      "regularSeasonFinish": "11",
       "playoffFinish": "Eliminated",
       "division": "East",
       "notes": ""
@@ -2371,9 +2256,37 @@
       "losses": 10,
       "ties": 0,
       "pointsFor": 1222.0,
-      "regularSeasonFinish": 12,
+      "regularSeasonFinish": "12",
       "playoffFinish": "Eliminated",
       "division": "East",
+      "notes": ""
+    },
+    {
+      "year": 2022,
+      "managerId": "collin-wilson",
+      "manager": "Collin Wilson",
+      "team": "Redwood Murder",
+      "wins": 9,
+      "losses": 5,
+      "ties": 0,
+      "pointsFor": 1600.4,
+      "regularSeasonFinish": "3",
+      "playoffFinish": "Champion",
+      "division": "West",
+      "notes": ""
+    },
+    {
+      "year": 2022,
+      "managerId": "kyle-o-connell",
+      "manager": "Kyle O'Connell",
+      "team": "Off Boys",
+      "wins": 8,
+      "losses": 6,
+      "ties": 0,
+      "pointsFor": 1413.34,
+      "regularSeasonFinish": "5",
+      "playoffFinish": "Runner Up",
+      "division": "West",
       "notes": ""
     },
     {
@@ -2385,7 +2298,7 @@
       "losses": 2,
       "ties": 0,
       "pointsFor": 1653.16,
-      "regularSeasonFinish": 1,
+      "regularSeasonFinish": "1",
       "playoffFinish": "2nd Round",
       "division": "East",
       "notes": ""
@@ -2399,23 +2312,9 @@
       "losses": 4,
       "ties": 0,
       "pointsFor": 1539.28,
-      "regularSeasonFinish": 2,
+      "regularSeasonFinish": "2",
       "playoffFinish": "2nd Round",
       "division": "Central",
-      "notes": ""
-    },
-    {
-      "year": 2022,
-      "managerId": "collin-wilson",
-      "manager": "Collin Wilson",
-      "team": "Redwood Murder",
-      "wins": 9,
-      "losses": 5,
-      "ties": 0,
-      "pointsFor": 1600.4,
-      "regularSeasonFinish": 3,
-      "playoffFinish": "Champion",
-      "division": "West",
       "notes": ""
     },
     {
@@ -2427,23 +2326,9 @@
       "losses": 6,
       "ties": 0,
       "pointsFor": 1502.22,
-      "regularSeasonFinish": 4,
+      "regularSeasonFinish": "4",
       "playoffFinish": "1st Round",
       "division": "Central",
-      "notes": ""
-    },
-    {
-      "year": 2022,
-      "managerId": "kyle-o-connell",
-      "manager": "Kyle O'Connell",
-      "team": "Off Boys",
-      "wins": 8,
-      "losses": 6,
-      "ties": 0,
-      "pointsFor": 1413.34,
-      "regularSeasonFinish": 5,
-      "playoffFinish": "Runner Up",
-      "division": "West",
       "notes": ""
     },
     {
@@ -2455,7 +2340,7 @@
       "losses": 8,
       "ties": 0,
       "pointsFor": 1481.82,
-      "regularSeasonFinish": 6,
+      "regularSeasonFinish": "6",
       "playoffFinish": "Eliminated",
       "division": "West",
       "notes": ""
@@ -2469,7 +2354,7 @@
       "losses": 8,
       "ties": 0,
       "pointsFor": 1436.76,
-      "regularSeasonFinish": 7,
+      "regularSeasonFinish": "7",
       "playoffFinish": "Eliminated",
       "division": "West",
       "notes": ""
@@ -2483,7 +2368,7 @@
       "losses": 8,
       "ties": 0,
       "pointsFor": 1354.0,
-      "regularSeasonFinish": 8,
+      "regularSeasonFinish": "8",
       "playoffFinish": "Eliminated",
       "division": "Central",
       "notes": ""
@@ -2497,7 +2382,7 @@
       "losses": 8,
       "ties": 0,
       "pointsFor": 1387.48,
-      "regularSeasonFinish": 9,
+      "regularSeasonFinish": "9",
       "playoffFinish": "Eliminated",
       "division": "East",
       "notes": ""
@@ -2511,7 +2396,7 @@
       "losses": 10,
       "ties": 0,
       "pointsFor": 1287.74,
-      "regularSeasonFinish": 10,
+      "regularSeasonFinish": "10",
       "playoffFinish": "Eliminated",
       "division": "East",
       "notes": ""
@@ -2525,7 +2410,7 @@
       "losses": 10,
       "ties": 0,
       "pointsFor": 1348.84,
-      "regularSeasonFinish": 11,
+      "regularSeasonFinish": "11",
       "playoffFinish": "Eliminated",
       "division": "Central",
       "notes": ""
@@ -2539,64 +2424,8 @@
       "losses": 10,
       "ties": 0,
       "pointsFor": 1337.1,
-      "regularSeasonFinish": 12,
+      "regularSeasonFinish": "12",
       "playoffFinish": "Eliminated",
-      "division": "East",
-      "notes": ""
-    },
-    {
-      "year": 2023,
-      "managerId": "stephen-davis",
-      "manager": "Steve Davis",
-      "team": "Flint Tropics",
-      "wins": 11,
-      "losses": 3,
-      "ties": 0,
-      "pointsFor": 1471.12,
-      "regularSeasonFinish": 1,
-      "playoffFinish": "2nd Round",
-      "division": "Central",
-      "notes": ""
-    },
-    {
-      "year": 2023,
-      "managerId": "danny-sattler",
-      "manager": "Danny Sattler",
-      "team": "Simpson Sith",
-      "wins": 10,
-      "losses": 4,
-      "ties": 0,
-      "pointsFor": 1511.94,
-      "regularSeasonFinish": 2,
-      "playoffFinish": "2nd Round",
-      "division": "East",
-      "notes": ""
-    },
-    {
-      "year": 2023,
-      "managerId": "collin-wilson",
-      "manager": "Collin Wilson",
-      "team": "Redwood Murder",
-      "wins": 9,
-      "losses": 5,
-      "ties": 0,
-      "pointsFor": 1555.22,
-      "regularSeasonFinish": 3,
-      "playoffFinish": "Runner Up",
-      "division": "West",
-      "notes": ""
-    },
-    {
-      "year": 2023,
-      "managerId": "tom-campbell",
-      "manager": "Tom Campbel",
-      "team": "Monti Thunderbolts",
-      "wins": 8,
-      "losses": 6,
-      "ties": 0,
-      "pointsFor": 1599.04,
-      "regularSeasonFinish": 4,
-      "playoffFinish": "1st Round",
       "division": "East",
       "notes": ""
     },
@@ -2609,37 +2438,65 @@
       "losses": 6,
       "ties": 0,
       "pointsFor": 1467.74,
-      "regularSeasonFinish": 5,
+      "regularSeasonFinish": "5",
       "playoffFinish": "Champion",
       "division": "Central",
       "notes": ""
     },
     {
       "year": 2023,
-      "managerId": "tavis-tucker",
-      "manager": "Tavis Tucker",
-      "team": "California Un-Named Team",
-      "wins": 7,
-      "losses": 7,
+      "managerId": "collin-wilson",
+      "manager": "Collin Wilson",
+      "team": "Redwood Murder",
+      "wins": 9,
+      "losses": 5,
       "ties": 0,
-      "pointsFor": 1471.62,
-      "regularSeasonFinish": 6,
-      "playoffFinish": "Eliminated",
+      "pointsFor": 1555.22,
+      "regularSeasonFinish": "3",
+      "playoffFinish": "Runner Up",
       "division": "West",
       "notes": ""
     },
     {
       "year": 2023,
-      "managerId": "kyle-o-connell",
-      "manager": "Kyle O'Connell",
-      "team": "Off Boys",
-      "wins": 7,
-      "losses": 7,
+      "managerId": "danny-sattler",
+      "manager": "Danny Sattler",
+      "team": "Simpson Sith",
+      "wins": 10,
+      "losses": 4,
       "ties": 0,
-      "pointsFor": 1331.66,
-      "regularSeasonFinish": 7,
-      "playoffFinish": "Eliminated",
-      "division": "West",
+      "pointsFor": 1511.94,
+      "regularSeasonFinish": "2",
+      "playoffFinish": "2nd Round",
+      "division": "East",
+      "notes": ""
+    },
+    {
+      "year": 2023,
+      "managerId": "stephen-davis",
+      "manager": "Steve Davis",
+      "team": "Flint Tropics",
+      "wins": 11,
+      "losses": 3,
+      "ties": 0,
+      "pointsFor": 1471.12,
+      "regularSeasonFinish": "1",
+      "playoffFinish": "2nd Round",
+      "division": "Central",
+      "notes": ""
+    },
+    {
+      "year": 2023,
+      "managerId": "tom-campbell",
+      "manager": "Tom Campbel",
+      "team": "Monti Thunderbolts",
+      "wins": 8,
+      "losses": 6,
+      "ties": 0,
+      "pointsFor": 1599.04,
+      "regularSeasonFinish": "4",
+      "playoffFinish": "1st Round",
+      "division": "East",
       "notes": ""
     },
     {
@@ -2651,37 +2508,9 @@
       "losses": 8,
       "ties": 0,
       "pointsFor": 1472.78,
-      "regularSeasonFinish": 8,
+      "regularSeasonFinish": "8",
       "playoffFinish": "Eliminated",
       "division": "Central",
-      "notes": ""
-    },
-    {
-      "year": 2023,
-      "managerId": "owen-garritt",
-      "manager": "Owen Garritt",
-      "team": "Sulco Methmouths",
-      "wins": 5,
-      "losses": 9,
-      "ties": 0,
-      "pointsFor": 1384.48,
-      "regularSeasonFinish": 9,
-      "playoffFinish": "Eliminated",
-      "division": "East",
-      "notes": ""
-    },
-    {
-      "year": 2023,
-      "managerId": "sean-o-connell",
-      "manager": "Sean O'Connell",
-      "team": "Eskimo Brothers",
-      "wins": 5,
-      "losses": 9,
-      "ties": 0,
-      "pointsFor": 1353.5,
-      "regularSeasonFinish": 10,
-      "playoffFinish": "Eliminated",
-      "division": "West",
       "notes": ""
     },
     {
@@ -2693,9 +2522,65 @@
       "losses": 10,
       "ties": 0,
       "pointsFor": 1376.42,
-      "regularSeasonFinish": 11,
+      "regularSeasonFinish": "11",
       "playoffFinish": "Eliminated",
       "division": "East",
+      "notes": ""
+    },
+    {
+      "year": 2023,
+      "managerId": "tavis-tucker",
+      "manager": "Tavis Tucker",
+      "team": "California Un-Named Team",
+      "wins": 7,
+      "losses": 7,
+      "ties": 0,
+      "pointsFor": 1471.62,
+      "regularSeasonFinish": "6",
+      "playoffFinish": "Eliminated",
+      "division": "West",
+      "notes": ""
+    },
+    {
+      "year": 2023,
+      "managerId": "sean-o-connell",
+      "manager": "Sean O'Connell",
+      "team": "Eskimo Brothers",
+      "wins": 5,
+      "losses": 9,
+      "ties": 0,
+      "pointsFor": 1353.5,
+      "regularSeasonFinish": "10",
+      "playoffFinish": "Eliminated",
+      "division": "West",
+      "notes": ""
+    },
+    {
+      "year": 2023,
+      "managerId": "owen-garritt",
+      "manager": "Owen Garritt",
+      "team": "Sulco Methmouths",
+      "wins": 5,
+      "losses": 9,
+      "ties": 0,
+      "pointsFor": 1384.48,
+      "regularSeasonFinish": "9",
+      "playoffFinish": "Eliminated",
+      "division": "East",
+      "notes": ""
+    },
+    {
+      "year": 2023,
+      "managerId": "kyle-o-connell",
+      "manager": "Kyle O'Connell",
+      "team": "Off Boys",
+      "wins": 7,
+      "losses": 7,
+      "ties": 0,
+      "pointsFor": 1331.66,
+      "regularSeasonFinish": "7",
+      "playoffFinish": "Eliminated",
+      "division": "West",
       "notes": ""
     },
     {
@@ -2707,23 +2592,9 @@
       "losses": 10,
       "ties": 0,
       "pointsFor": 1351.88,
-      "regularSeasonFinish": 12,
+      "regularSeasonFinish": "12",
       "playoffFinish": "Eliminated",
       "division": "Central",
-      "notes": ""
-    },
-    {
-      "year": 2024,
-      "managerId": "sean-o-connell",
-      "manager": "Sean O'Connell",
-      "team": "Eskimo Brothers",
-      "wins": 11,
-      "losses": 3,
-      "ties": 0,
-      "pointsFor": 1702.32,
-      "regularSeasonFinish": 1,
-      "playoffFinish": "Runner Up",
-      "division": "West",
       "notes": ""
     },
     {
@@ -2735,22 +2606,22 @@
       "losses": 3,
       "ties": 0,
       "pointsFor": 1655.96,
-      "regularSeasonFinish": 2,
+      "regularSeasonFinish": "2",
       "playoffFinish": "Champion",
       "division": "East",
       "notes": ""
     },
     {
       "year": 2024,
-      "managerId": "kyle-o-connell",
-      "manager": "Kyle O'Connell",
-      "team": "Off Boys",
-      "wins": 10,
-      "losses": 4,
+      "managerId": "sean-o-connell",
+      "manager": "Sean O'Connell",
+      "team": "Eskimo Brothers",
+      "wins": 11,
+      "losses": 3,
       "ties": 0,
-      "pointsFor": 1606.18,
-      "regularSeasonFinish": 3,
-      "playoffFinish": "1st Round",
+      "pointsFor": 1702.32,
+      "regularSeasonFinish": "1",
+      "playoffFinish": "Runner Up",
       "division": "West",
       "notes": ""
     },
@@ -2763,7 +2634,7 @@
       "losses": 5,
       "ties": 0,
       "pointsFor": 1557.7,
-      "regularSeasonFinish": 4,
+      "regularSeasonFinish": "4",
       "playoffFinish": "2nd Round",
       "division": "West",
       "notes": ""
@@ -2777,78 +2648,22 @@
       "losses": 6,
       "ties": 0,
       "pointsFor": 1417.44,
-      "regularSeasonFinish": 5,
+      "regularSeasonFinish": "5",
       "playoffFinish": "2nd Round",
       "division": "Central",
       "notes": ""
     },
     {
       "year": 2024,
-      "managerId": "tom-campbell",
-      "manager": "Tom Campbel",
-      "team": "Monti Thunderbolts",
-      "wins": 7,
-      "losses": 7,
+      "managerId": "kyle-o-connell",
+      "manager": "Kyle O'Connell",
+      "team": "Off Boys",
+      "wins": 10,
+      "losses": 4,
       "ties": 0,
-      "pointsFor": 1429.7,
-      "regularSeasonFinish": 7,
-      "playoffFinish": "Eliminated",
-      "division": "East",
-      "notes": ""
-    },
-    {
-      "year": 2024,
-      "managerId": "derek-baxter",
-      "manager": "Derek Baxter",
-      "team": "Terick Duggertuts",
-      "wins": 7,
-      "losses": 7,
-      "ties": 0,
-      "pointsFor": 1447.4,
-      "regularSeasonFinish": 8,
-      "playoffFinish": "Eliminated",
-      "division": "East",
-      "notes": ""
-    },
-    {
-      "year": 2024,
-      "managerId": "stephen-davis",
-      "manager": "Steve Davis",
-      "team": "Flint Tropics",
-      "wins": 6,
-      "losses": 8,
-      "ties": 0,
-      "pointsFor": 1414.98,
-      "regularSeasonFinish": 9,
-      "playoffFinish": "Eliminated",
-      "division": "Central",
-      "notes": ""
-    },
-    {
-      "year": 2024,
-      "managerId": "tyler-shaver",
-      "manager": "Tyler Shaver",
-      "team": "Turbulent Tickleshits",
-      "wins": 5,
-      "losses": 9,
-      "ties": 0,
-      "pointsFor": 1447.04,
-      "regularSeasonFinish": 10,
-      "playoffFinish": "Eliminated",
-      "division": "Central",
-      "notes": ""
-    },
-    {
-      "year": 2024,
-      "managerId": "collin-wilson",
-      "manager": "Collin Wilson",
-      "team": "Redwood Murder",
-      "wins": 4,
-      "losses": 10,
-      "ties": 0,
-      "pointsFor": 1458.78,
-      "regularSeasonFinish": 11,
-      "playoffFinish": "Eliminated",
+      "pointsFor": 1606.18,
+      "regularSeasonFinish": "3",
+      "playoffFinish": "1st Round",
       "division": "West",
       "notes": ""
     },
@@ -2861,9 +2676,79 @@
       "losses": 11,
       "ties": 0,
       "pointsFor": 1405.34,
-      "regularSeasonFinish": 11,
+      "regularSeasonFinish": "11",
       "playoffFinish": "Eliminated",
       "division": "Central",
+      "notes": ""
+    },
+    {
+      "year": 2024,
+      "managerId": "tom-campbell",
+      "manager": "Tom Campbel",
+      "team": "Monti Thunderbolts",
+      "wins": 7,
+      "losses": 7,
+      "ties": 0,
+      "pointsFor": 1429.7,
+      "regularSeasonFinish": "7",
+      "playoffFinish": "Eliminated",
+      "division": "East",
+      "notes": ""
+    },
+    {
+      "year": 2024,
+      "managerId": "tyler-shaver",
+      "manager": "Tyler Shaver",
+      "team": "Turbulent Tickleshits",
+      "wins": 5,
+      "losses": 9,
+      "ties": 0,
+      "pointsFor": 1447.04,
+      "regularSeasonFinish": "10",
+      "playoffFinish": "Eliminated",
+      "division": "Central",
+      "notes": ""
+    },
+    {
+      "year": 2024,
+      "managerId": "stephen-davis",
+      "manager": "Steve Davis",
+      "team": "Flint Tropics",
+      "wins": 6,
+      "losses": 8,
+      "ties": 0,
+      "pointsFor": 1414.98,
+      "regularSeasonFinish": "9",
+      "playoffFinish": "Eliminated",
+      "division": "Central",
+      "notes": ""
+    },
+    {
+      "year": 2024,
+      "managerId": "derek-baxter",
+      "manager": "Derek Baxter",
+      "team": "Terick Duggertuts",
+      "wins": 7,
+      "losses": 7,
+      "ties": 0,
+      "pointsFor": 1447.4,
+      "regularSeasonFinish": "8",
+      "playoffFinish": "Eliminated",
+      "division": "East",
+      "notes": ""
+    },
+    {
+      "year": 2024,
+      "managerId": "collin-wilson",
+      "manager": "Collin Wilson",
+      "team": "Redwood Murder",
+      "wins": 4,
+      "losses": 10,
+      "ties": 0,
+      "pointsFor": 1458.78,
+      "regularSeasonFinish": "11",
+      "playoffFinish": "Eliminated",
+      "division": "West",
       "notes": ""
     },
     {
@@ -2875,23 +2760,9 @@
       "losses": 11,
       "ties": 0,
       "pointsFor": 1275.36,
-      "regularSeasonFinish": 12,
+      "regularSeasonFinish": "12",
       "playoffFinish": "Eliminated",
       "division": "East",
-      "notes": ""
-    },
-    {
-      "year": 2025,
-      "managerId": "matt-kitson",
-      "manager": "Matt Kitson",
-      "team": "The Barton Spartans",
-      "wins": 10,
-      "losses": 4,
-      "ties": 0,
-      "pointsFor": 1590.26,
-      "regularSeasonFinish": 1,
-      "playoffFinish": "Runner Up",
-      "division": "Central",
       "notes": ""
     },
     {
@@ -2903,9 +2774,37 @@
       "losses": 6,
       "ties": 0,
       "pointsFor": 1558.87,
-      "regularSeasonFinish": 2,
+      "regularSeasonFinish": "2",
       "playoffFinish": "Champion",
       "division": "West",
+      "notes": ""
+    },
+    {
+      "year": 2025,
+      "managerId": "matt-kitson",
+      "manager": "Matt Kitson",
+      "team": "The Barton Spartans",
+      "wins": 10,
+      "losses": 4,
+      "ties": 0,
+      "pointsFor": 1590.26,
+      "regularSeasonFinish": "1",
+      "playoffFinish": "Runner Up",
+      "division": "Central",
+      "notes": ""
+    },
+    {
+      "year": 2025,
+      "managerId": "tom-campbell",
+      "manager": "Tom Campbel",
+      "team": "Monti Thunderbolts",
+      "wins": 7,
+      "losses": 7,
+      "ties": 0,
+      "pointsFor": 1464.66,
+      "regularSeasonFinish": "5",
+      "playoffFinish": "2nd Round",
+      "division": "East",
       "notes": ""
     },
     {
@@ -2917,7 +2816,7 @@
       "losses": 6,
       "ties": 0,
       "pointsFor": 1462.88,
-      "regularSeasonFinish": 3,
+      "regularSeasonFinish": "3",
       "playoffFinish": "2nd Round",
       "division": "Central",
       "notes": ""
@@ -2931,23 +2830,9 @@
       "losses": 6,
       "ties": 0,
       "pointsFor": 1439.1,
-      "regularSeasonFinish": 4,
+      "regularSeasonFinish": "4",
       "playoffFinish": "1st Round",
       "division": "West",
-      "notes": ""
-    },
-    {
-      "year": 2025,
-      "managerId": "tom-campbell",
-      "manager": "Tom Campbel",
-      "team": "Monti Thunderbolts",
-      "wins": 7,
-      "losses": 7,
-      "ties": 0,
-      "pointsFor": 1464.66,
-      "regularSeasonFinish": 5,
-      "playoffFinish": "2nd Round",
-      "division": "East",
       "notes": ""
     },
     {
@@ -2959,7 +2844,7 @@
       "losses": 7,
       "ties": 0,
       "pointsFor": 1544.54,
-      "regularSeasonFinish": 6,
+      "regularSeasonFinish": "6",
       "playoffFinish": "Eliminated",
       "division": "West",
       "notes": ""
@@ -2973,7 +2858,7 @@
       "losses": 7,
       "ties": 0,
       "pointsFor": 1380.76,
-      "regularSeasonFinish": 7,
+      "regularSeasonFinish": "7",
       "playoffFinish": "Eliminated",
       "division": "West",
       "notes": ""
@@ -2987,49 +2872,7 @@
       "losses": 8,
       "ties": 0,
       "pointsFor": 1379.18,
-      "regularSeasonFinish": 8,
-      "playoffFinish": "Eliminated",
-      "division": "East",
-      "notes": ""
-    },
-    {
-      "year": 2025,
-      "managerId": "danny-sattler",
-      "manager": "Danny Sattler",
-      "team": "Simpson Sith",
-      "wins": 6,
-      "losses": 8,
-      "ties": 0,
-      "pointsFor": 1424.6,
-      "regularSeasonFinish": 9,
-      "playoffFinish": "Eliminated",
-      "division": "East",
-      "notes": ""
-    },
-    {
-      "year": 2025,
-      "managerId": "doug-meyer",
-      "manager": "Doug Meyer",
-      "team": "Medford Mountainmen",
-      "wins": 6,
-      "losses": 8,
-      "ties": 0,
-      "pointsFor": 1373.02,
-      "regularSeasonFinish": 10,
-      "playoffFinish": "Eliminated",
-      "division": "Central",
-      "notes": ""
-    },
-    {
-      "year": 2025,
-      "managerId": "derek-baxter",
-      "manager": "Derek Baxter",
-      "team": "Netherite Warriors",
-      "wins": 6,
-      "losses": 8,
-      "ties": 0,
-      "pointsFor": 1307.44,
-      "regularSeasonFinish": 11,
+      "regularSeasonFinish": "8",
       "playoffFinish": "Eliminated",
       "division": "East",
       "notes": ""
@@ -3043,9 +2886,51 @@
       "losses": 9,
       "ties": 0,
       "pointsFor": 1246.02,
-      "regularSeasonFinish": 12,
+      "regularSeasonFinish": "12",
       "playoffFinish": "Eliminated",
       "division": "Central",
+      "notes": ""
+    },
+    {
+      "year": 2025,
+      "managerId": "derek-baxter",
+      "manager": "Derek Baxter",
+      "team": "Netherite Warriors",
+      "wins": 6,
+      "losses": 8,
+      "ties": 0,
+      "pointsFor": 1307.44,
+      "regularSeasonFinish": "11",
+      "playoffFinish": "Eliminated",
+      "division": "East",
+      "notes": ""
+    },
+    {
+      "year": 2025,
+      "managerId": "doug-meyer",
+      "manager": "Doug Meyer",
+      "team": "Medford Mountainmen",
+      "wins": 6,
+      "losses": 8,
+      "ties": 0,
+      "pointsFor": 1373.02,
+      "regularSeasonFinish": "10",
+      "playoffFinish": "Eliminated",
+      "division": "Central",
+      "notes": ""
+    },
+    {
+      "year": 2025,
+      "managerId": "danny-sattler",
+      "manager": "Danny Sattler",
+      "team": "Simpson Sith",
+      "wins": 6,
+      "losses": 8,
+      "ties": 0,
+      "pointsFor": 1424.6,
+      "regularSeasonFinish": "9",
+      "playoffFinish": "Eliminated",
+      "division": "East",
       "notes": ""
     }
   ],
@@ -3308,121 +3193,99 @@
       "category": "Most Championships",
       "value": "3× Rings",
       "holder": "Tyler Shaver",
-      "description": "2019, 2020, 2023 — the only 3-time champion in GFL history"
-    },
-    {
-      "category": "Only Back-to-Back Champ",
-      "value": "2019 & 2020",
-      "holder": "Tyler Shaver",
-      "description": "Won back-to-back. Nobody else has ever repeated. Not once."
+      "description": "2019, 2020, 2023",
+      "type": "statistical"
     },
     {
       "category": "All-Time Wins Leader",
       "value": "106 Wins",
       "holder": "Danny Sattler",
-      "description": "14 seasons, never won a ring — the most decorated non-champion in GFL history"
+      "description": "106-80-1 over 14 seasons",
+      "type": "statistical"
     },
     {
       "category": "Best Career Win %",
       "value": "60.9%",
       "holder": "Tavis Tucker",
-      "description": "98-63 over 12 seasons — best among managers with 10+ seasons"
+      "description": "Minimum 25 career games",
+      "type": "statistical"
+    },
+    {
+      "category": "Most All-Time Losses",
+      "value": "102 Losses",
+      "holder": "Tom Campbell",
+      "description": "85-102-0 over 14 seasons",
+      "type": "statistical"
     },
     {
       "category": "Highest Single-Season PF",
-      "value": "1,702 pts",
+      "value": "1,702.32 pts",
       "holder": "Sean O'Connell",
-      "description": "Set the all-time GFL scoring record in only his 2nd season (2024)"
+      "description": "2024 with Eskimo Brothers",
+      "type": "statistical"
     },
     {
       "category": "Best Single-Season Record",
       "value": "12-1",
       "holder": "Doug Meyer",
-      "description": "2018 — best regular-season record in GFL history"
+      "description": "2018 regular season",
+      "type": "statistical"
     },
     {
-      "category": "Best Regular Season (12W)",
-      "value": "12-2",
-      "holder": "Danny Sattler",
-      "description": "2022 — led the league in wins that year, still didn't win the chip"
+      "category": "Worst Single Season",
+      "value": "1-12",
+      "holder": "Kris Cappiello",
+      "description": "2014 regular season",
+      "type": "statistical"
     },
     {
-      "category": "Founding Members Still Active",
-      "value": "2 OGs",
-      "holder": "Danny · Collin",
-      "description": "Both have been in the GFL since Season 1 (2012) and remain active after Tom Campbell retired"
-    },
-    {
-      "category": "Most All-Time Losses",
-      "value": "108 L",
-      "holder": "Collin Wilson",
-      "description": "14 seasons, 108 losses — the most in GFL history. And still got a ring in 2022. Redemption arc complete."
+      "category": "Best Regular Season Without a Ring",
+      "value": "12-1",
+      "holder": "Doug Meyer",
+      "description": "2018, finished Runner Up",
+      "type": "statistical"
     },
     {
       "category": "Greatest Cinderella Story",
       "value": "Last → Champ",
       "holder": "Owen Garritt",
-      "description": "4-10, dead last (12th) in 2021 debut → 11-3, GFL Champion in 2024"
+      "description": "4-10, dead last (12th) in 2021 debut → 11-3, GFL Champion in 2024",
+      "type": "legacy"
     },
     {
       "category": "Fastest Rise to Contention",
       "value": "2-yr turnaround",
       "holder": "Owen Garritt",
-      "description": "From worst record to championship in just 3 seasons"
+      "description": "From worst record to championship in just 3 seasons",
+      "type": "legacy"
     },
     {
       "category": "Boldest Name Theft",
       "value": "Barton Spartans",
       "holder": "Matt Kitson",
-      "description": "Stole Tom Campbell's original team name. Tom had to rebrand to Monti Thunderboltz."
+      "description": "Stole Tom Campbell's original team name. Tom had to rebrand to Monti Thunderboltz.",
+      "type": "legacy"
     },
     {
       "category": "Most Loyal to One Name",
       "value": "8 Seasons",
       "holder": "Kris Cappiello",
-      "description": "Space Cadets — never changed. Not once. Back for Season XV with the same name."
-    },
-    {
-      "category": "Worst Single Season",
-      "value": "1-12",
-      "holder": "Tom Campbell (2017) & Kris (2014)",
-      "description": "Both hit the floor hard — the GFL crater record, shared."
-    },
-    {
-      "category": "Newest Manager",
-      "value": "2023",
-      "holder": "Sean O'Connell",
-      "description": "Joined as Eskimo Brothers — came in late, set the all-time scoring record by Year 2"
+      "description": "Space Cadets — never changed. Not once. Back for Season XV with the same name.",
+      "type": "legacy"
     },
     {
       "category": "Most Heartbreaking Regular Season",
       "value": "12-1, No Ring",
       "holder": "Doug Meyer",
-      "description": "2018 — best regular season record in GFL history. Lost the championship to Kyle O'Connell who went 9-4. The injustice lives on."
-    },
-    {
-      "category": "Champion in Rookie Season",
-      "value": "Year 1 → 🏆",
-      "holder": "Tyler Shaver",
-      "description": "2019 — walked into the GFL and won the championship in his very first season. Never been done before or since."
-    },
-    {
-      "category": "Best Regular Season Without a Ring",
-      "value": "11-2, Still Lost",
-      "holder": "Tavis Tucker",
-      "description": "2019 — went 11-2, led the league in PF with 1,534 pts. Lost the championship to a first-year Tyler Shaver. Remains the greatest robbery in GFL history."
+      "description": "2018 — best regular season record in GFL history. Lost the championship to Kyle O'Connell who went 9-4. The injustice lives on.",
+      "type": "legacy"
     },
     {
       "category": "Best Team Name in GFL History",
       "value": "Cocks N' Glocks",
       "holder": "rob ohlerich",
-      "description": "Pennsyltucky Cocks N' Glocks — a GFL legend from 2013–2016. Retired with the greatest team name the league has ever seen."
-    },
-    {
-      "category": "Shortest Career",
-      "value": "2 Seasons",
-      "holder": "Josh Hickey",
-      "description": "2017-2018. Runner-up in his first year (9-4), then went 2-11 in Year 2 and was never heard from again. A cautionary tale."
+      "description": "Pennsyltucky Cocks N' Glocks — a GFL legend from 2013–2016. Retired with the greatest team name the league has ever seen.",
+      "type": "legacy"
     }
   ],
   "lore": [
