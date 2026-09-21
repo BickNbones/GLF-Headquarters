@@ -5,7 +5,8 @@
     "founded": 2012,
     "currentSeason": 15,
     "location": "Santa Rosa, CA",
-    "statisticsSource": "Season Results"
+    "statisticsSource": "Season Results",
+    "loreSource": "Generated from manager and season history"
   },
   "settings": {
     "minGamesForLeaderboard": 25,
@@ -3290,139 +3291,188 @@
   ],
   "lore": [
     {
-      "franchise": "Barton Spartans",
-      "title": "Early Powerhouse",
-      "text": "Top‑5 finishes in consecutive seasons."
+      "franchise": "NY Red Reapers",
+      "title": "The Winningest Pursuit",
+      "text": "Danny Sattler compiled a 106-80-1 record across 14 seasons. The career stands first in league history in regular-season victories, with the championship pursuit still defining the story. The strongest regular-season record was 12-2 in 2022, while the scoring peak was 1,653.16 points in 2022.",
+      "managerId": "danny-sattler",
+      "manager": "Danny Sattler",
+      "source": "generated"
     },
     {
-      "franchise": "Barton Spartans",
-      "title": "Ranking Controversy",
-      "text": "2012 #1 finish sparked the league’s first debate."
-    },
-    {
-      "franchise": "Barton Spartans",
-      "title": "Rivalry",
-      "text": "Heavyweight clashes with MountainMen."
-    },
-    {
-      "franchise": "Medford MountainMen",
-      "title": "First Juggernaut",
-      "text": "9‑win 2013 season."
-    },
-    {
-      "franchise": "Medford MountainMen",
-      "title": "Division Titan",
-      "text": "Anchored the chaotic Central."
-    },
-    {
-      "franchise": "Medford MountainMen",
-      "title": "Rivalry",
-      "text": "Power collisions with Dawgs of War."
-    },
-    {
-      "franchise": "Cleveland Dawgs of War",
-      "title": "Founding Father Franchise",
-      "text": "Led by David Wilson."
-    },
-    {
-      "franchise": "Cleveland Dawgs of War",
-      "title": "Heavyweight Season",
-      "text": "9–4 in 2013."
-    },
-    {
-      "franchise": "Cleveland Dawgs of War",
-      "title": "Family Lore",
-      "text": "Dawgs vs Tyranny is the GNFL’s longest rivalry."
+      "franchise": "CUNT / VaG",
+      "title": "The Two-Time Champion",
+      "text": "Tavis Tucker compiled a 98-63 record across 12 seasons. The championship years of 2014, 2025 secure a permanent place on the GFL trophy wall. The strongest regular-season record was 11-2 in 2014, while the scoring peak was 1,590.50 points in 2014. The résumé includes 3 championship-game appearances.",
+      "managerId": "tavis-tucker",
+      "manager": "Tavis Tucker",
+      "source": "generated"
     },
     {
       "franchise": "Off Boys",
-      "title": "Playoff Breakthrough",
-      "text": "First mid‑tier postseason run."
+      "title": "The Champion’s Legacy",
+      "text": "Kyle O'Connell compiled a 96-77-1 record across 13 seasons. The championship years of 2018 secure a permanent place on the GFL trophy wall. The strongest regular-season record was 10-3 in 2015, while the scoring peak was 1,606.18 points in 2024. The résumé includes 2 championship-game appearances.",
+      "managerId": "kyle-o-connell",
+      "manager": "Kyle O'Connell",
+      "source": "generated"
     },
     {
-      "franchise": "Off Boys",
-      "title": "Chaos Engine",
-      "text": "Early upsets shaped playoff seeding."
+      "franchise": "Turbulent Ticklesh!ts",
+      "title": "The Dynasty Standard",
+      "text": "Tyler Shaver compiled a 54-42 record across 7 seasons. The championship years of 2019, 2020, 2023 secure a permanent place on the GFL trophy wall. The strongest regular-season record was 10-4 in 2022, while the scoring peak was 1,539.28 points in 2022. The résumé includes 3 championship-game appearances.",
+      "managerId": "tyler-shaver",
+      "manager": "Tyler Shaver",
+      "source": "generated"
     },
     {
-      "franchise": "Off Boys",
-      "title": "Signature Win",
-      "text": "Narrow 2013 victories."
+      "franchise": "Medford MountainMen",
+      "title": "The Two-Time Champion",
+      "text": "Doug Meyer compiled a 87-87 record across 13 seasons. The championship years of 2013, 2016 secure a permanent place on the GFL trophy wall. The strongest regular-season record was 12-1 in 2018, while the scoring peak was 1,540.50 points in 2018. The résumé includes 3 championship-game appearances.",
+      "managerId": "doug-meyer",
+      "manager": "Doug Meyer",
+      "source": "generated"
     },
     {
-      "franchise": "Team Amish Rifle",
-      "title": "Underrated Titan",
-      "text": "Strong early records."
+      "franchise": "Cleveland Dawgs of War",
+      "title": "A Lasting League Legacy",
+      "text": "David Wilson compiled a 69-62-1 record across 10 seasons. Among qualified managers, the career ranks 7th in winning percentage. The strongest regular-season record was 9-4 in 2013, while the scoring peak was 1,500.00 points in 2021. The résumé includes 2 championship-game appearances.",
+      "managerId": "david-wilson",
+      "manager": "David Wilson",
+      "source": "generated"
     },
     {
-      "franchise": "Team Amish Rifle",
-      "title": "Underdog Story",
-      "text": "Outperformed expectations in 2012."
+      "franchise": "Eskimo Brothers",
+      "title": "The Continuing Chase",
+      "text": "Sean O'Connell compiled a 23-19 record across 3 seasons. Among qualified managers, the career ranks 6th in winning percentage. The strongest regular-season record was 11-3 in 2024, while the scoring peak was 1,702.32 points in 2024. The résumé includes 1 championship-game appearance.",
+      "managerId": "sean-o-connell",
+      "manager": "Sean O'Connell",
+      "source": "generated"
     },
     {
-      "franchise": "Team Amish Rifle",
-      "title": "Draft Lore",
-      "text": "Tied to an early draft steal."
+      "franchise": "Broadway Joe Biden",
+      "title": "The Continuing Chase",
+      "text": "Matt Kitson compiled a 82-91-1 record across 13 seasons. Among qualified managers, the career ranks 9th in winning percentage. The strongest regular-season record was 10-4 in 2025, while the scoring peak was 1,590.26 points in 2025. The résumé includes 2 championship-game appearances.",
+      "managerId": "matt-kitson",
+      "manager": "Matt Kitson",
+      "source": "generated"
     },
     {
-      "franchise": "Team mymagicjohnson",
-      "title": "Disaster Season",
-      "text": "2–11 record, 0.1538 win rate."
+      "franchise": "Netherite Warriors",
+      "title": "The Champion’s Legacy",
+      "text": "Derek Baxter compiled a 80-94 record across 13 seasons. The championship years of 2021 secure a permanent place on the GFL trophy wall. The strongest regular-season record was 11-3 in 2021, while the scoring peak was 1,533.00 points in 2021. The résumé includes 2 championship-game appearances.",
+      "managerId": "derek-baxter",
+      "manager": "Derek Baxter",
+      "source": "generated"
     },
     {
-      "franchise": "Team mymagicjohnson",
-      "title": "Historical Importance",
-      "text": "Helped define parity rules."
+      "franchise": "Monti Thunderboltz",
+      "title": "The Champion’s Legacy",
+      "text": "Tom Campbell compiled a 85-102 record across 14 seasons. The championship years of 2012 secure a permanent place on the GFL trophy wall. The strongest regular-season record was 9-4 in 2018, while the scoring peak was 1,599.04 points in 2023. The résumé includes 3 championship-game appearances.",
+      "managerId": "tom-campbell",
+      "manager": "Tom Campbell",
+      "source": "generated"
     },
     {
-      "franchise": "Team mymagicjohnson",
-      "title": "Trivia",
-      "text": "Earliest 30+ point blowout loss."
+      "franchise": "Flint Tropics",
+      "title": "The Two-Time Champion",
+      "text": "Stephen Davis compiled a 68-80 record across 11 seasons. The championship years of 2015, 2017 secure a permanent place on the GFL trophy wall. The strongest regular-season record was 11-3 in 2023, while the scoring peak was 1,500.00 points in 2017. The résumé includes 2 championship-game appearances.",
+      "managerId": "stephen-davis",
+      "manager": "Stephen Davis",
+      "source": "generated"
     },
     {
-      "franchise": "Your Mom",
-      "title": "Modern Rivalry",
-      "text": "Tight games with Space Cadets."
+      "franchise": "Redwood Murders",
+      "title": "The Champion’s Legacy",
+      "text": "Collin Wilson compiled a 88-97-2 record across 14 seasons. The championship years of 2022 secure a permanent place on the GFL trophy wall. The strongest regular-season record was 9-4 in 2016, while the scoring peak was 1,600.40 points in 2022. The résumé includes 3 championship-game appearances.",
+      "managerId": "collin-wilson",
+      "manager": "Collin Wilson",
+      "source": "generated"
     },
     {
-      "franchise": "Your Mom",
-      "title": "Era Flex",
-      "text": "Competitive in early and modern eras."
-    },
-    {
-      "franchise": "Your Mom",
-      "title": "Signature Moment",
-      "text": "Early upset win."
+      "franchise": "Sullco MethMouths",
+      "title": "The Champion’s Legacy",
+      "text": "Owen Garritt compiled a 32-38 record across 5 seasons. The championship years of 2024 secure a permanent place on the GFL trophy wall. The strongest regular-season record was 11-3 in 2024, while the scoring peak was 1,655.96 points in 2024. The résumé includes 1 championship-game appearance.",
+      "managerId": "owen-garritt",
+      "manager": "Owen Garritt",
+      "source": "generated"
     },
     {
       "franchise": "Space Cadets",
-      "title": "Return of Kris",
-      "text": "Major franchise comeback."
+      "title": "The Continuing Chase",
+      "text": "Kris Cappiello compiled a 43-61 record across 8 seasons. Among qualified managers, the career ranks 16th in winning percentage. The strongest regular-season record was 7-6 in 2013, while the scoring peak was 1,476.00 points in 2015.",
+      "managerId": "kris-cappiello",
+      "manager": "Kris Cappiello",
+      "source": "generated"
     },
     {
-      "franchise": "Space Cadets",
-      "title": "Rivalry",
-      "text": "Season‑defining clashes with Your Mom."
+      "franchise": "Northern IceBacks",
+      "title": "A Chapter of GFL History",
+      "text": "Josh Hickey compiled a 11-15 record across 2 seasons. Among qualified managers, the career ranks 15th in winning percentage. The strongest regular-season record was 9-4 in 2017, while the scoring peak was 1,298.00 points in 2017. The résumé includes 1 championship-game appearance.",
+      "managerId": "josh-hickey",
+      "manager": "Josh Hickey",
+      "source": "generated"
     },
     {
-      "franchise": "Space Cadets",
-      "title": "Franchise Lore",
-      "text": "Unique disappearance and revival arc."
+      "franchise": "Pennsyltucky Cocks N' Glocks",
+      "title": "A Chapter of GFL History",
+      "text": "Rob Ohlerich compiled a 29-23 record across 4 seasons. Among qualified managers, the career ranks 4th in winning percentage. The strongest regular-season record was 10-3 in 2016, while the scoring peak was 1,440.50 points in 2016.",
+      "managerId": "rob-ohlerich",
+      "manager": "Rob Ohlerich",
+      "source": "generated"
     },
     {
-      "franchise": "North Bay Tyranny",
-      "title": "Collin’s Franchise",
-      "text": "One of the GNFL’s most storied arcs."
+      "franchise": "Team Average Joe's",
+      "title": "A Chapter of GFL History",
+      "text": "Joe Meyer compiled a 7-6 record across 1 seasons. The strongest regular-season record was 7-6 in 2012, while the scoring peak was 1,218.00 points in 2012.",
+      "managerId": "joe-meyer",
+      "manager": "Joe Meyer",
+      "source": "generated"
     },
     {
-      "franchise": "North Bay Tyranny",
-      "title": "Family Rivalry",
-      "text": "Tyranny vs Dawgs of War."
+      "franchise": "Team amish rifle",
+      "title": "A Chapter of GFL History",
+      "text": "Mike Morgan compiled a 9-4 record across 1 seasons. The strongest regular-season record was 9-4 in 2012, while the scoring peak was 1,148.00 points in 2012.",
+      "managerId": "mike-morgan",
+      "manager": "Mike Morgan",
+      "source": "generated"
     },
     {
-      "franchise": "North Bay Tyranny",
-      "title": "Signature Win",
-      "text": "First documented victory is an early rivalry moment."
+      "franchise": "Team mymagicjohnson",
+      "title": "A Chapter of GFL History",
+      "text": "Eric Hector compiled a 2-11 record across 1 seasons. The strongest regular-season record was 2-11 in 2012, while the scoring peak was 986.00 points in 2012.",
+      "managerId": "eric-hector",
+      "manager": "Eric Hector",
+      "source": "generated"
+    },
+    {
+      "franchise": "Morgan Post",
+      "title": "A Chapter of GFL History",
+      "text": "Greg Brewer compiled a 7-6 record across 1 seasons. The strongest regular-season record was 7-6 in 2012, while the scoring peak was 1,197.00 points in 2012.",
+      "managerId": "greg-brewer",
+      "manager": "Greg Brewer",
+      "source": "generated"
+    },
+    {
+      "franchise": "Storm'n Norman",
+      "title": "A Chapter of GFL History",
+      "text": "Will O'Brien compiled a 4-9 record across 1 seasons. The strongest regular-season record was 4-9 in 2012, while the scoring peak was 985.00 points in 2012.",
+      "managerId": "will-o-brien",
+      "manager": "Will O'Brien",
+      "source": "generated"
+    },
+    {
+      "franchise": "L'eggo My Eggo",
+      "title": "A Chapter of GFL History",
+      "text": "Aimee Baker compiled a 3-10 record across 1 seasons. The strongest regular-season record was 3-10 in 2013, while the scoring peak was 1,134.50 points in 2013.",
+      "managerId": "aimee-baker",
+      "manager": "Aimee Baker",
+      "source": "generated"
+    },
+    {
+      "franchise": "NY Heart Eaters",
+      "title": "A Chapter of GFL History",
+      "text": "Jon Moffett compiled a 9-17 record across 2 seasons. Among qualified managers, the career ranks 17th in winning percentage. The strongest regular-season record was 6-7 in 2013, while the scoring peak was 1,284.50 points in 2013.",
+      "managerId": "jon-moffett",
+      "manager": "Jon Moffett",
+      "source": "generated"
     }
   ],
   "franchiseGuides": [
@@ -3612,6 +3662,398 @@
       "description": "Space Cadets could no longer sit back and watch their place in history crumble, a return was due.",
       "category": "New Additions",
       "displayOrder": 1
+    }
+  ],
+  "legacyLore": [
+    {
+      "franchise": "Barton Spartans",
+      "title": "Early Powerhouse",
+      "text": "Top‑5 finishes in consecutive seasons."
+    },
+    {
+      "franchise": "Barton Spartans",
+      "title": "Ranking Controversy",
+      "text": "2012 #1 finish sparked the league’s first debate."
+    },
+    {
+      "franchise": "Barton Spartans",
+      "title": "Rivalry",
+      "text": "Heavyweight clashes with MountainMen."
+    },
+    {
+      "franchise": "Medford MountainMen",
+      "title": "First Juggernaut",
+      "text": "9‑win 2013 season."
+    },
+    {
+      "franchise": "Medford MountainMen",
+      "title": "Division Titan",
+      "text": "Anchored the chaotic Central."
+    },
+    {
+      "franchise": "Medford MountainMen",
+      "title": "Rivalry",
+      "text": "Power collisions with Dawgs of War."
+    },
+    {
+      "franchise": "Cleveland Dawgs of War",
+      "title": "Founding Father Franchise",
+      "text": "Led by David Wilson."
+    },
+    {
+      "franchise": "Cleveland Dawgs of War",
+      "title": "Heavyweight Season",
+      "text": "9–4 in 2013."
+    },
+    {
+      "franchise": "Cleveland Dawgs of War",
+      "title": "Family Lore",
+      "text": "Dawgs vs Tyranny is the GNFL’s longest rivalry."
+    },
+    {
+      "franchise": "Off Boys",
+      "title": "Playoff Breakthrough",
+      "text": "First mid‑tier postseason run."
+    },
+    {
+      "franchise": "Off Boys",
+      "title": "Chaos Engine",
+      "text": "Early upsets shaped playoff seeding."
+    },
+    {
+      "franchise": "Off Boys",
+      "title": "Signature Win",
+      "text": "Narrow 2013 victories."
+    },
+    {
+      "franchise": "Team Amish Rifle",
+      "title": "Underrated Titan",
+      "text": "Strong early records."
+    },
+    {
+      "franchise": "Team Amish Rifle",
+      "title": "Underdog Story",
+      "text": "Outperformed expectations in 2012."
+    },
+    {
+      "franchise": "Team Amish Rifle",
+      "title": "Draft Lore",
+      "text": "Tied to an early draft steal."
+    },
+    {
+      "franchise": "Team mymagicjohnson",
+      "title": "Disaster Season",
+      "text": "2–11 record, 0.1538 win rate."
+    },
+    {
+      "franchise": "Team mymagicjohnson",
+      "title": "Historical Importance",
+      "text": "Helped define parity rules."
+    },
+    {
+      "franchise": "Team mymagicjohnson",
+      "title": "Trivia",
+      "text": "Earliest 30+ point blowout loss."
+    },
+    {
+      "franchise": "Your Mom",
+      "title": "Modern Rivalry",
+      "text": "Tight games with Space Cadets."
+    },
+    {
+      "franchise": "Your Mom",
+      "title": "Era Flex",
+      "text": "Competitive in early and modern eras."
+    },
+    {
+      "franchise": "Your Mom",
+      "title": "Signature Moment",
+      "text": "Early upset win."
+    },
+    {
+      "franchise": "Space Cadets",
+      "title": "Return of Kris",
+      "text": "Major franchise comeback."
+    },
+    {
+      "franchise": "Space Cadets",
+      "title": "Rivalry",
+      "text": "Season‑defining clashes with Your Mom."
+    },
+    {
+      "franchise": "Space Cadets",
+      "title": "Franchise Lore",
+      "text": "Unique disappearance and revival arc."
+    },
+    {
+      "franchise": "North Bay Tyranny",
+      "title": "Collin’s Franchise",
+      "text": "One of the GNFL’s most storied arcs."
+    },
+    {
+      "franchise": "North Bay Tyranny",
+      "title": "Family Rivalry",
+      "text": "Tyranny vs Dawgs of War."
+    },
+    {
+      "franchise": "North Bay Tyranny",
+      "title": "Signature Win",
+      "text": "First documented victory is an early rivalry moment."
+    }
+  ],
+  "generatedLore": [
+    {
+      "managerId": "danny-sattler",
+      "manager": "Danny Sattler",
+      "franchise": "NY Red Reapers",
+      "title": "The Winningest Pursuit",
+      "text": "Danny Sattler compiled a 106-80-1 record across 14 seasons. The career stands first in league history in regular-season victories, with the championship pursuit still defining the story. The strongest regular-season record was 12-2 in 2022, while the scoring peak was 1,653.16 points in 2022.",
+      "status": "active",
+      "championships": [],
+      "source": "generated"
+    },
+    {
+      "managerId": "tavis-tucker",
+      "manager": "Tavis Tucker",
+      "franchise": "CUNT / VaG",
+      "title": "The Two-Time Champion",
+      "text": "Tavis Tucker compiled a 98-63 record across 12 seasons. The championship years of 2014, 2025 secure a permanent place on the GFL trophy wall. The strongest regular-season record was 11-2 in 2014, while the scoring peak was 1,590.50 points in 2014. The résumé includes 3 championship-game appearances.",
+      "status": "active",
+      "championships": [
+        2014,
+        2025
+      ],
+      "source": "generated"
+    },
+    {
+      "managerId": "kyle-o-connell",
+      "manager": "Kyle O'Connell",
+      "franchise": "Off Boys",
+      "title": "The Champion’s Legacy",
+      "text": "Kyle O'Connell compiled a 96-77-1 record across 13 seasons. The championship years of 2018 secure a permanent place on the GFL trophy wall. The strongest regular-season record was 10-3 in 2015, while the scoring peak was 1,606.18 points in 2024. The résumé includes 2 championship-game appearances.",
+      "status": "active",
+      "championships": [
+        2018
+      ],
+      "source": "generated"
+    },
+    {
+      "managerId": "tyler-shaver",
+      "manager": "Tyler Shaver",
+      "franchise": "Turbulent Ticklesh!ts",
+      "title": "The Dynasty Standard",
+      "text": "Tyler Shaver compiled a 54-42 record across 7 seasons. The championship years of 2019, 2020, 2023 secure a permanent place on the GFL trophy wall. The strongest regular-season record was 10-4 in 2022, while the scoring peak was 1,539.28 points in 2022. The résumé includes 3 championship-game appearances.",
+      "status": "active",
+      "championships": [
+        2019,
+        2020,
+        2023
+      ],
+      "source": "generated"
+    },
+    {
+      "managerId": "doug-meyer",
+      "manager": "Doug Meyer",
+      "franchise": "Medford MountainMen",
+      "title": "The Two-Time Champion",
+      "text": "Doug Meyer compiled a 87-87 record across 13 seasons. The championship years of 2013, 2016 secure a permanent place on the GFL trophy wall. The strongest regular-season record was 12-1 in 2018, while the scoring peak was 1,540.50 points in 2018. The résumé includes 3 championship-game appearances.",
+      "status": "active",
+      "championships": [
+        2013,
+        2016
+      ],
+      "source": "generated"
+    },
+    {
+      "managerId": "david-wilson",
+      "manager": "David Wilson",
+      "franchise": "Cleveland Dawgs of War",
+      "title": "A Lasting League Legacy",
+      "text": "David Wilson compiled a 69-62-1 record across 10 seasons. Among qualified managers, the career ranks 7th in winning percentage. The strongest regular-season record was 9-4 in 2013, while the scoring peak was 1,500.00 points in 2021. The résumé includes 2 championship-game appearances.",
+      "status": "memorial",
+      "championships": [],
+      "source": "generated"
+    },
+    {
+      "managerId": "sean-o-connell",
+      "manager": "Sean O'Connell",
+      "franchise": "Eskimo Brothers",
+      "title": "The Continuing Chase",
+      "text": "Sean O'Connell compiled a 23-19 record across 3 seasons. Among qualified managers, the career ranks 6th in winning percentage. The strongest regular-season record was 11-3 in 2024, while the scoring peak was 1,702.32 points in 2024. The résumé includes 1 championship-game appearance.",
+      "status": "active",
+      "championships": [],
+      "source": "generated"
+    },
+    {
+      "managerId": "matt-kitson",
+      "manager": "Matt Kitson",
+      "franchise": "Broadway Joe Biden",
+      "title": "The Continuing Chase",
+      "text": "Matt Kitson compiled a 82-91-1 record across 13 seasons. Among qualified managers, the career ranks 9th in winning percentage. The strongest regular-season record was 10-4 in 2025, while the scoring peak was 1,590.26 points in 2025. The résumé includes 2 championship-game appearances.",
+      "status": "active",
+      "championships": [],
+      "source": "generated"
+    },
+    {
+      "managerId": "derek-baxter",
+      "manager": "Derek Baxter",
+      "franchise": "Netherite Warriors",
+      "title": "The Champion’s Legacy",
+      "text": "Derek Baxter compiled a 80-94 record across 13 seasons. The championship years of 2021 secure a permanent place on the GFL trophy wall. The strongest regular-season record was 11-3 in 2021, while the scoring peak was 1,533.00 points in 2021. The résumé includes 2 championship-game appearances.",
+      "status": "active",
+      "championships": [
+        2021
+      ],
+      "source": "generated"
+    },
+    {
+      "managerId": "tom-campbell",
+      "manager": "Tom Campbell",
+      "franchise": "Monti Thunderboltz",
+      "title": "The Champion’s Legacy",
+      "text": "Tom Campbell compiled a 85-102 record across 14 seasons. The championship years of 2012 secure a permanent place on the GFL trophy wall. The strongest regular-season record was 9-4 in 2018, while the scoring peak was 1,599.04 points in 2023. The résumé includes 3 championship-game appearances.",
+      "status": "retired",
+      "championships": [
+        2012
+      ],
+      "source": "generated"
+    },
+    {
+      "managerId": "stephen-davis",
+      "manager": "Stephen Davis",
+      "franchise": "Flint Tropics",
+      "title": "The Two-Time Champion",
+      "text": "Stephen Davis compiled a 68-80 record across 11 seasons. The championship years of 2015, 2017 secure a permanent place on the GFL trophy wall. The strongest regular-season record was 11-3 in 2023, while the scoring peak was 1,500.00 points in 2017. The résumé includes 2 championship-game appearances.",
+      "status": "active",
+      "championships": [
+        2015,
+        2017
+      ],
+      "source": "generated"
+    },
+    {
+      "managerId": "collin-wilson",
+      "manager": "Collin Wilson",
+      "franchise": "Redwood Murders",
+      "title": "The Champion’s Legacy",
+      "text": "Collin Wilson compiled a 88-97-2 record across 14 seasons. The championship years of 2022 secure a permanent place on the GFL trophy wall. The strongest regular-season record was 9-4 in 2016, while the scoring peak was 1,600.40 points in 2022. The résumé includes 3 championship-game appearances.",
+      "status": "active",
+      "championships": [
+        2022
+      ],
+      "source": "generated"
+    },
+    {
+      "managerId": "owen-garritt",
+      "manager": "Owen Garritt",
+      "franchise": "Sullco MethMouths",
+      "title": "The Champion’s Legacy",
+      "text": "Owen Garritt compiled a 32-38 record across 5 seasons. The championship years of 2024 secure a permanent place on the GFL trophy wall. The strongest regular-season record was 11-3 in 2024, while the scoring peak was 1,655.96 points in 2024. The résumé includes 1 championship-game appearance.",
+      "status": "active",
+      "championships": [
+        2024
+      ],
+      "source": "generated"
+    },
+    {
+      "managerId": "kris-cappiello",
+      "manager": "Kris Cappiello",
+      "franchise": "Space Cadets",
+      "title": "The Continuing Chase",
+      "text": "Kris Cappiello compiled a 43-61 record across 8 seasons. Among qualified managers, the career ranks 16th in winning percentage. The strongest regular-season record was 7-6 in 2013, while the scoring peak was 1,476.00 points in 2015.",
+      "status": "active",
+      "championships": [],
+      "source": "generated"
+    },
+    {
+      "managerId": "josh-hickey",
+      "manager": "Josh Hickey",
+      "franchise": "Northern IceBacks",
+      "title": "A Chapter of GFL History",
+      "text": "Josh Hickey compiled a 11-15 record across 2 seasons. Among qualified managers, the career ranks 15th in winning percentage. The strongest regular-season record was 9-4 in 2017, while the scoring peak was 1,298.00 points in 2017. The résumé includes 1 championship-game appearance.",
+      "status": "retired",
+      "championships": [],
+      "source": "generated"
+    },
+    {
+      "managerId": "rob-ohlerich",
+      "manager": "Rob Ohlerich",
+      "franchise": "Pennsyltucky Cocks N' Glocks",
+      "title": "A Chapter of GFL History",
+      "text": "Rob Ohlerich compiled a 29-23 record across 4 seasons. Among qualified managers, the career ranks 4th in winning percentage. The strongest regular-season record was 10-3 in 2016, while the scoring peak was 1,440.50 points in 2016.",
+      "status": "retired",
+      "championships": [],
+      "source": "generated"
+    },
+    {
+      "managerId": "joe-meyer",
+      "manager": "Joe Meyer",
+      "franchise": "Team Average Joe's",
+      "title": "A Chapter of GFL History",
+      "text": "Joe Meyer compiled a 7-6 record across 1 seasons. The strongest regular-season record was 7-6 in 2012, while the scoring peak was 1,218.00 points in 2012.",
+      "status": "retired",
+      "championships": [],
+      "source": "generated"
+    },
+    {
+      "managerId": "mike-morgan",
+      "manager": "Mike Morgan",
+      "franchise": "Team amish rifle",
+      "title": "A Chapter of GFL History",
+      "text": "Mike Morgan compiled a 9-4 record across 1 seasons. The strongest regular-season record was 9-4 in 2012, while the scoring peak was 1,148.00 points in 2012.",
+      "status": "retired",
+      "championships": [],
+      "source": "generated"
+    },
+    {
+      "managerId": "eric-hector",
+      "manager": "Eric Hector",
+      "franchise": "Team mymagicjohnson",
+      "title": "A Chapter of GFL History",
+      "text": "Eric Hector compiled a 2-11 record across 1 seasons. The strongest regular-season record was 2-11 in 2012, while the scoring peak was 986.00 points in 2012.",
+      "status": "retired",
+      "championships": [],
+      "source": "generated"
+    },
+    {
+      "managerId": "greg-brewer",
+      "manager": "Greg Brewer",
+      "franchise": "Morgan Post",
+      "title": "A Chapter of GFL History",
+      "text": "Greg Brewer compiled a 7-6 record across 1 seasons. The strongest regular-season record was 7-6 in 2012, while the scoring peak was 1,197.00 points in 2012.",
+      "status": "retired",
+      "championships": [],
+      "source": "generated"
+    },
+    {
+      "managerId": "will-o-brien",
+      "manager": "Will O'Brien",
+      "franchise": "Storm'n Norman",
+      "title": "A Chapter of GFL History",
+      "text": "Will O'Brien compiled a 4-9 record across 1 seasons. The strongest regular-season record was 4-9 in 2012, while the scoring peak was 985.00 points in 2012.",
+      "status": "retired",
+      "championships": [],
+      "source": "generated"
+    },
+    {
+      "managerId": "aimee-baker",
+      "manager": "Aimee Baker",
+      "franchise": "L'eggo My Eggo",
+      "title": "A Chapter of GFL History",
+      "text": "Aimee Baker compiled a 3-10 record across 1 seasons. The strongest regular-season record was 3-10 in 2013, while the scoring peak was 1,134.50 points in 2013.",
+      "status": "retired",
+      "championships": [],
+      "source": "generated"
+    },
+    {
+      "managerId": "jon-moffett",
+      "manager": "Jon Moffett",
+      "franchise": "NY Heart Eaters",
+      "title": "A Chapter of GFL History",
+      "text": "Jon Moffett compiled a 9-17 record across 2 seasons. Among qualified managers, the career ranks 17th in winning percentage. The strongest regular-season record was 6-7 in 2013, while the scoring peak was 1,284.50 points in 2013.",
+      "status": "retired",
+      "championships": [],
+      "source": "generated"
     }
   ]
 }
