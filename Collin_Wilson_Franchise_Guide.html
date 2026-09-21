@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="color-scheme" content="dark" />
-  <title>Redwood Murder — Franchise Visual Guide</title>
+  <title>Redwood Murder — Franchise Visual Guide V3</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -861,5 +861,127 @@
       if (el) navObserver.observe(el);
     });
   </script>
+
+<style>
+  #v3-status{position:fixed;right:14px;bottom:14px;z-index:80;max-width:360px;padding:10px 14px;border-radius:10px;background:#15151b;border:1px solid rgba(192,57,43,.55);color:#e8e8ee;font:12px/1.4 Inter,sans-serif;box-shadow:0 10px 30px rgba(0,0,0,.45)}
+  #v3-status.ok{border-color:rgba(46,204,113,.45);color:#2ecc71} #v3-status.error{border-color:#e74c3c;color:#fff}
+</style>
+<div id="v3-status">Loading Redwood history…</div>
+<script>
+(() => {
+  const MANAGER_ID = 'collin-wilson';
+  const statusEl = document.getElementById('v3-status');
+  const PA_SUPPLEMENT = {2022:1591.5, 2023:1378.64, 2024:1553.64, 2025:1468.52};
+  const byDataId = id => document.querySelector(`[data-id="${id}"]`);
+  const esc = value => String(value ?? '').replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[ch]));
+  const record = s => `${s.wins}-${s.losses}${s.ties ? '-' + s.ties : ''}`;
+  const finishText = n => n === 1 ? '1st' : n === 2 ? '2nd' : n === 3 ? '3rd' : `${n}th`;
+  const isFinal = s => ['champion','runner up','runner-up'].includes(String(s.playoffFinish).toLowerCase());
+  const eraFor = s => s.year <= 2020 ? 'tyranny' : 'murder';
+
+  async function loadHistory(){
+    const candidates = ['gfl-history.json','../gfl-history.json','/gfl-history.json'];
+    let lastError;
+    for(const url of candidates){
+      try{
+        const response = await fetch(url,{cache:'no-store'});
+        if(!response.ok) throw new Error(`${response.status} ${response.statusText}`);
+        return await response.json();
+      }catch(error){ lastError = error; }
+    }
+    throw lastError || new Error('gfl-history.json could not be loaded');
+  }
+
+  function setText(id, value){ const el=byDataId(id); if(el){ el.removeAttribute('data-count'); el.removeAttribute('data-count-text'); el.removeAttribute('data-count-pct'); el.textContent=value; } }
+
+  function updateHero(manager, seasons){
+    const years=seasons.map(x=>x.year).sort((a,b)=>a-b);
+    setText(29, `Franchise Visual Guide · ${years[0]}–${years[years.length-1]}`);
+    setText(31, `${manager.seasons} Seasons`);
+    setText(32, `${manager.wins}-${manager.losses}-${manager.ties} Record`);
+    setText(34, `${manager.championships.length}×`);
+    const runners=seasons.filter(s=>String(s.playoffFinish).toLowerCase().includes('runner')).length;
+    setText(36, `${runners}×`);
+    setText(43, manager.seasons); setText(46, `${manager.wins}-${manager.losses}-${manager.ties}`);
+    setText(49, `${(manager.winPercentage*100).toFixed(1)}%`); setText(52, manager.championships.length);
+    setText(54, manager.championships.length ? `(${manager.championships.join(', ')})` : '(—)');
+    setText(56, runners); setText(58, runners ? `(${seasons.filter(s=>String(s.playoffFinish).toLowerCase().includes('runner')).map(s=>s.year).join(', ')})` : '(—)');
+    const bestFinish=Math.min(...seasons.map(s=>s.regularSeasonFinish));
+    setText(60, finishText(bestFinish));
+    setText(62, `(${seasons.filter(s=>s.regularSeasonFinish===bestFinish).map(s=>s.year).join(', ')})`);
+    setText(194, `The best and worst of ${manager.seasons} seasons`);
+    setText(246, `Est. ${years[0]} · ${manager.seasons} Seasons of Tyranny and Murder`);
+  }
+
+  function updateEraCards(seasons){
+    const groups={tyranny:seasons.filter(s=>eraFor(s)==='tyranny'),murder:seasons.filter(s=>eraFor(s)==='murder')};
+    const eraRecord = list => ({w:list.reduce((a,x)=>a+x.wins,0),l:list.reduce((a,x)=>a+x.losses,0),t:list.reduce((a,x)=>a+x.ties,0),avg:list.reduce((a,x)=>a+x.regularSeasonFinish,0)/list.length});
+    const names = list => [...new Set(list.map(x=>x.team))];
+    const paint=(id,list,color,title,description)=>{
+      const r=eraRecord(list), el=byDataId(id); if(!el)return;
+      const finals=list.filter(isFinal);
+      el.innerHTML=`<div class="flex items-center gap-3 mb-4"><span class="font-display text-2xl md:text-3xl tracking-wider" style="color:${color}">${title}</span><span class="text-xs px-2 py-1 rounded bg-bg-600 text-txt-300">${list[0].year}–${list[list.length-1].year}</span></div><p class="text-sm text-txt-300 mb-3">${description}</p><div class="flex flex-wrap gap-2 mb-4">${names(list).map(n=>`<span class="text-xs px-2 py-1 rounded bg-bg-600 text-txt-300">${esc(n)}</span>`).join('')}</div><div class="grid grid-cols-2 gap-4 text-center"><div><p class="text-xl font-bold tabular-nums" style="color:${color}">${r.w}-${r.l}-${r.t}</p><p class="text-xs text-txt-400 uppercase tracking-wider">Era Record</p></div><div><p class="text-xl font-bold tabular-nums" style="color:${color}">${r.avg.toFixed(1)}</p><p class="text-xs text-txt-400 uppercase tracking-wider">Avg Finish</p></div></div>${finals.length?`<div class="flex flex-wrap gap-2 mt-4">${finals.map(x=>`<span class="text-xs px-3 py-1 rounded-full ${String(x.playoffFinish).toLowerCase()==='champion'?'bg-gold-400/20 text-gold-400':'bg-silver-500/20 text-silver-400'} font-semibold">${String(x.playoffFinish).toLowerCase()==='champion'?'🏆':'🥈'} ${esc(x.playoffFinish)} ${x.year}</span>`).join('')}</div>`:''}`;
+    };
+    paint(73,groups.tyranny,'#3498db','THE TYRANNY ERA','The original franchise era, defined by movement, reinvention, and a long pursuit of the summit.');
+    paint(92,groups.murder,'#e74c3c','THE MURDER ERA','The Redwood identity brought a championship breakthrough and the franchise’s strongest modern run.');
+  }
+
+  function buildTimeline(seasons){
+    const dots=document.getElementById('timeline-dots-t1'), labels=document.getElementById('timeline-labels-t2');
+    if(!dots||!labels)return; dots.innerHTML=''; labels.innerHTML='';
+    seasons.forEach(s=>{ const a=document.createElement('a'); a.href=`#season-${s.year}`; a.className='era-dot flex-shrink-0'; const final=String(s.playoffFinish).toLowerCase(); a.style.backgroundColor=final==='champion'?'#f0c040':final.includes('runner')?'#a0a8b8':eraFor(s)==='tyranny'?'#2980b9':'#c0392b'; a.title=`${s.year} — ${s.team}`; dots.appendChild(a); const l=document.createElement('span'); l.textContent=String(s.year).slice(-2); l.className='flex-shrink-0 text-center'; l.style.width='14px'; labels.appendChild(l); });
+  }
+
+  function buildSeasonCards(seasons){
+    const grid=document.getElementById('season-grid-sg01'); if(!grid)return; grid.innerHTML='';
+    seasons.forEach(s=>{ const era=eraFor(s), final=String(s.playoffFinish).toLowerCase(); const card=document.createElement('div'); card.className='season-card bg-bg-700 rounded-xl overflow-hidden relative'; card.id=`season-${s.year}`; card.dataset.era=era; card.dataset.winning=s.wins>s.losses; card.dataset.playoff=final!=='eliminated'; const ribbon=final==='champion'?'<div class="ribbon ribbon-gold">Champion</div>':final.includes('runner')?'<div class="ribbon ribbon-silver">Runner-Up</div>':''; card.innerHTML=`<div style="height:4px;background:${era==='tyranny'?'#2980b9':'#c0392b'}"></div>${ribbon}<div class="p-4"><p class="font-display text-3xl text-txt-100 tracking-wider">${s.year}</p><p class="text-xs text-txt-400 italic mb-3">${esc(s.team)}</p><div class="flex items-center justify-between mb-2"><span class="text-lg font-bold text-txt-100 tabular-nums">${record(s)}</span><span class="finish-badge finish-${Math.min(s.regularSeasonFinish,11)}">${finishText(s.regularSeasonFinish)}</span></div><div class="grid grid-cols-2 gap-2 text-xs text-txt-300"><div>PF: <span class="text-txt-200 font-medium tabular-nums">${s.pointsFor.toLocaleString(undefined,{minimumFractionDigits:1,maximumFractionDigits:2})}</span></div><div>Playoffs: <span class="text-txt-200 font-medium">${esc(s.playoffFinish)}</span></div></div></div>`; grid.appendChild(card); });
+  }
+
+  function buildIdentity(seasons){
+    const grid=document.getElementById('identity-grid-ig01'); if(!grid)return; grid.innerHTML='';
+    const groups=[]; seasons.forEach(s=>{ const last=groups[groups.length-1]; if(last&&last.name===s.team&&last.end===s.year-1){last.end=s.year;last.rows.push(s);}else groups.push({name:s.team,start:s.year,end:s.year,rows:[s]}); });
+    groups.forEach(g=>{ const w=g.rows.reduce((a,x)=>a+x.wins,0),l=g.rows.reduce((a,x)=>a+x.losses,0),t=g.rows.reduce((a,x)=>a+x.ties,0),best=Math.min(...g.rows.map(x=>x.regularSeasonFinish)), murder=g.start>=2021; const card=document.createElement('div'); card.className='bg-bg-700 rounded-xl p-5 border-l-4'; card.style.borderLeftColor=murder?'#c0392b':'#2980b9'; card.innerHTML=`<p class="font-display text-xl tracking-wider" style="color:${murder?'#e74c3c':'#3498db'}">${esc(g.name)}</p><p class="text-xs text-txt-400 mt-1">${g.start===g.end?g.start:`${g.start}–${g.end}`} · ${g.rows.length} season${g.rows.length===1?'':'s'}</p><div class="flex items-center justify-between mt-4"><div><p class="text-xs text-txt-400 uppercase tracking-wider">Record</p><p class="text-sm font-bold text-txt-100">${w}-${l}-${t}</p></div><div class="text-right"><p class="text-xs text-txt-400 uppercase tracking-wider">Best Finish</p><p class="text-sm font-bold text-txt-100">${finishText(best)}</p></div></div>`; grid.appendChild(card); });
+  }
+
+  function buildSpotlights(seasons){
+    const grid=byDataId(146); if(!grid)return; const finals=seasons.filter(isFinal); grid.innerHTML=finals.map(s=>{ const champ=String(s.playoffFinish).toLowerCase()==='champion'; return `<div class="${champ?'champ-card-gold':'champ-card-silver'} rounded-xl p-6 md:p-8 relative overflow-hidden"><span class="inline-block px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider ${champ?'bg-gold-400/20 text-gold-400':'bg-silver-500/20 text-silver-400'} mb-4">${esc(s.playoffFinish)}</span><h3 class="font-display text-4xl md:text-5xl ${champ?'text-gold-400':'text-silver-400'} tracking-wider">${s.year}</h3><p class="font-display text-xl text-txt-200 tracking-wider mt-1">${champ?'THE CHAMPIONSHIP':'THE RUNNER-UP'}</p><div class="grid grid-cols-2 gap-4 mt-6"><div><p class="text-sm text-txt-400">Record</p><p class="text-lg font-bold text-txt-100">${record(s)}</p></div><div><p class="text-sm text-txt-400">Regular Finish</p><p class="text-lg font-bold ${champ?'text-gold-400':'text-silver-400'}">${finishText(s.regularSeasonFinish)}</p></div><div><p class="text-sm text-txt-400">Points For</p><p class="text-lg font-bold text-txt-100">${s.pointsFor.toLocaleString()}</p></div><div><p class="text-sm text-txt-400">Division</p><p class="text-lg font-bold text-txt-100">${esc(s.division)}</p></div></div></div>`; }).join('');
+  }
+
+  function updateHighLow(seasons){
+    const maxWins=Math.max(...seasons.map(s=>s.wins)), minWins=Math.min(...seasons.map(s=>s.wins)), bestFinish=Math.min(...seasons.map(s=>s.regularSeasonFinish)), worstFinish=Math.max(...seasons.map(s=>s.regularSeasonFinish));
+    const highPF=Math.max(...seasons.map(s=>s.pointsFor)), lowPF=Math.min(...seasons.map(s=>s.pointsFor)), maxLoss=Math.max(...seasons.map(s=>s.losses));
+    const yrs=(key,val)=>seasons.filter(s=>s[key]===val).map(s=>s.year).join(', ');
+    setText(202,`${maxWins} (${yrs('wins',maxWins)})`); setText(206,`${finishText(bestFinish)} (${yrs('regularSeasonFinish',bestFinish)})`); setText(210,`${highPF.toLocaleString()} (${yrs('pointsFor',highPF)})`);
+    const bestPct=maxBy(seasons,s=>s.wins/(s.wins+s.losses+s.ties)); setText(218,`${(bestPct.wins/(bestPct.wins+bestPct.losses+bestPct.ties)*100).toFixed(1)}% (${bestPct.year}: ${record(bestPct)})`);
+    setText(226,`${minWins} (${yrs('wins',minWins)})`); setText(230,`${finishText(worstFinish)} (${yrs('regularSeasonFinish',worstFinish)})`); setText(234,`${lowPF.toLocaleString()} (${yrs('pointsFor',lowPF)})`); setText(242,`${maxLoss} (${yrs('losses',maxLoss)})`);
+    byDataId(212)?.classList.add('hidden'); byDataId(236)?.classList.add('hidden');
+  }
+  function maxBy(list,fn){return list.reduce((best,x)=>fn(x)>fn(best)?x:best,list[0]);}
+
+  function buildCharts(seasons){
+    ['chart-winloss-c1','chart-points-c2','chart-finish-c3'].forEach(id=>{const old=Chart.getChart(id);if(old)old.destroy();});
+    new Chart(document.getElementById('chart-winloss-c1'),{type:'bar',data:{labels:seasons.map(s=>s.year),datasets:[{label:'Wins',data:seasons.map(s=>s.wins),backgroundColor:'#c0392b'},{label:'Losses',data:seasons.map(s=>s.losses),backgroundColor:'#2980b9'},{label:'Ties',data:seasons.map(s=>s.ties),backgroundColor:'#f0c040'}]},options:{responsive:true,maintainAspectRatio:false,scales:{y:{beginAtZero:true}}}});
+    const recent=seasons.filter(s=>PA_SUPPLEMENT[s.year]);
+    new Chart(document.getElementById('chart-points-c2'),{type:'line',data:{labels:seasons.map(s=>s.year),datasets:[{label:'Points For',data:seasons.map(s=>s.pointsFor),borderColor:'#e74c3c',backgroundColor:'rgba(231,76,60,.1)',fill:true,tension:.3},{label:'Points Against (available years)',data:seasons.map(s=>PA_SUPPLEMENT[s.year]??null),borderColor:'#2980b9',borderDash:[6,3],tension:.3}]},options:{responsive:true,maintainAspectRatio:false}});
+    new Chart(document.getElementById('chart-finish-c3'),{type:'line',data:{labels:seasons.map(s=>s.year),datasets:[{label:'Regular Season Finish',data:seasons.map(s=>s.regularSeasonFinish),borderColor:'#c0392b',pointBackgroundColor:seasons.map(s=>String(s.playoffFinish).toLowerCase()==='champion'?'#f0c040':'#e74c3c'),pointRadius:6,tension:.2}]},options:{responsive:true,maintainAspectRatio:false,scales:{y:{reverse:true,min:1,max:12,ticks:{stepSize:1}}}}});
+  }
+
+  function addLegacy(history){
+    const lore=(history.generatedLore||[]).find(x=>x.managerId===MANAGER_ID); if(!lore)return;
+    const section=document.createElement('section'); section.className='section-reveal visible py-16 px-4 md:px-6 bg-bg-800'; section.id='legacy'; section.innerHTML=`<div class="max-w-4xl mx-auto text-center"><h2 class="font-display text-3xl md:text-4xl text-txt-100 tracking-[0.15em] uppercase mb-8 section-header">${esc(lore.title)}</h2><p class="text-txt-300 leading-8 text-base md:text-lg mt-8">${esc(lore.text)}</p></div>`; document.getElementById('highs-lows').before(section);
+  }
+
+  async function init(){
+    try{
+      const history=await loadHistory(); const manager=history.managers.find(m=>m.id===MANAGER_ID); if(!manager)throw new Error(`Manager ${MANAGER_ID} not found`);
+      const seasons=history.seasonResults.filter(s=>s.managerId===MANAGER_ID).sort((a,b)=>a.year-b.year).map(s=>({...s,pointsFor:Number(s.pointsFor||0),wins:Number(s.wins||0),losses:Number(s.losses||0),ties:Number(s.ties||0),regularSeasonFinish:Number(s.regularSeasonFinish||0)}));
+      updateHero(manager,seasons); updateEraCards(seasons); buildTimeline(seasons); buildSeasonCards(seasons); buildIdentity(seasons); buildSpotlights(seasons); updateHighLow(seasons); buildCharts(seasons); addLegacy(history); forceAllSectionsVisible();
+      statusEl.textContent='Live from gfl-history.json'; statusEl.className='ok'; setTimeout(()=>statusEl.remove(),2200);
+    }catch(error){ statusEl.textContent=`Redwood V3 could not load gfl-history.json: ${error.message}`; statusEl.className='error'; console.error(error); }
+  }
+  window.addEventListener('load',()=>setTimeout(init,50));
+})();
+</script>
+
 </body>
 </html>
