@@ -858,6 +858,10 @@ select option { background: var(--bg-input); color: #fff; }
 .insider-kicker{font-family:var(--font-heading);color:var(--gold-light);font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase}.insider-headline{font-family:var(--font-heading);font-size:clamp(2rem,6vw,4rem);font-weight:800;line-height:.95;letter-spacing:.025em;text-transform:uppercase;max-width:760px;margin:10px 0 14px}.insider-deck{max-width:760px;color:#c8c8d8;font-size:1.05rem}.insider-grid{display:grid;grid-template-columns:minmax(0,1.65fr) minmax(260px,.85fr);gap:18px}.insider-copy p{margin:0 0 16px;color:#e7e7ef;line-height:1.82}.insider-copy h2,.insider-side h2{font-family:var(--font-heading);color:var(--gold);text-transform:uppercase;letter-spacing:.06em;margin:22px 0 10px}.insider-stat{border-left:3px solid var(--gold);padding:12px 14px;margin:14px 0;background:rgba(245,166,35,.06);border-radius:0 7px 7px 0}.insider-stat strong{display:block;font-family:var(--font-heading);font-size:1.15rem;text-transform:uppercase}.insider-list{list-style:none}.insider-list li{display:flex;gap:10px;padding:10px 0;border-bottom:1px solid var(--border-card)}.insider-rank{color:var(--gold);font-family:var(--font-heading);font-weight:800;min-width:22px}.insider-scoreboard{display:grid;gap:8px}.insider-game{display:flex;justify-content:space-between;gap:12px;padding:10px 12px;background:var(--bg-input);border:1px solid var(--border-card);border-radius:6px}.insider-game b{color:var(--gold)}.insider-note{margin-top:18px;padding:12px;text-align:center;color:var(--text-secondary);font-family:var(--font-heading);text-transform:uppercase;letter-spacing:.06em;font-size:11px;border-top:1px solid var(--border-card)}
 @media(max-width:800px){.insider-grid{grid-template-columns:1fr}.insider-hero{padding:26px 20px}.insider-headline{font-size:clamp(2rem,11vw,3rem)}}
 
+
+/* COMMISSIONER-SUPPLIED INSIDER ADDITIONS */
+.insider-extra{margin-top:18px;display:grid;gap:16px}.insider-extra-card{background:linear-gradient(135deg,rgba(245,166,35,.09),rgba(14,14,26,.96));border:1px solid rgba(245,166,35,.35);border-radius:var(--radius);padding:18px}.insider-extra-card h2{margin:0 0 8px}.insider-extra-card p{margin:0;color:#e7e7ef;line-height:1.75}.insider-storylines{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}.insider-storyline{background:var(--bg-input);border:1px solid var(--border-card);border-radius:7px;padding:14px}.insider-storyline h3{font-family:var(--font-heading);color:var(--gold-light);text-transform:uppercase;letter-spacing:.04em;font-size:1rem;margin:0 0 6px}.insider-storyline p{font-size:.93rem;line-height:1.6;color:#d7d7e2}.insider-context-list{margin:8px 0 0 18px;color:#e7e7ef}.insider-context-list li{margin:7px 0;line-height:1.55}
+
 </style>
 </head>
 <body data-id="0" id="gfl-weekly-hub">
@@ -1068,6 +1072,20 @@ select option { background: var(--bg-input); color: #fff; }
           <div class="insider-scoreboard" id="insider-scoreboard"></div>
         </div>
       </aside>
+    </div>
+    <div class="insider-extra" id="insider-extra" hidden>
+      <section class="insider-extra-card" id="insider-lead-card" hidden>
+        <h2 id="insider-lead-title"></h2><p id="insider-lead-text"></p>
+      </section>
+      <section class="insider-extra-card" id="insider-commissioner-card" hidden>
+        <h2 id="insider-commissioner-title"></h2><p id="insider-commissioner-text"></p>
+      </section>
+      <section class="insider-extra-card" id="insider-storylines-card" hidden>
+        <h2>More From Around the GFL</h2><div class="insider-storylines" id="insider-storylines"></div>
+      </section>
+      <section class="insider-extra-card" id="insider-context-card" hidden>
+        <h2>League Context</h2><ul class="insider-context-list" id="insider-context"></ul>
+      </section>
     </div>
     <div class="insider-note">Published from the commissioner workbook · Shared league edition</div>
   </div>
@@ -2099,6 +2117,40 @@ function buildLookingAhead(completedWeek) {
   if(extraNotes.length) text+=` Also on the radar: ${extraNotes.join(' • ')}.`;
   return text;
 }
+function renderAuthoredInsider(week) {
+  const extra=$('#insider-extra');
+  const content=state.insider;
+  if(!extra) return;
+  extra.hidden=true;
+  ['#insider-lead-card','#insider-commissioner-card','#insider-storylines-card','#insider-context-card'].forEach(sel=>{const el=$(sel);if(el)el.hidden=true;});
+  if(!content) return;
+  const editionWeek=Number(content.edition?.week||content.week||0);
+  if(editionWeek && editionWeek!==Number(week)) return;
+  let shown=false;
+  if(content.leadStory?.title || content.leadStory?.text){
+    $('#insider-lead-title').textContent=content.leadStory.title||'Featured League Story';
+    $('#insider-lead-text').textContent=content.leadStory.text||'';
+    $('#insider-lead-card').hidden=false; shown=true;
+  }
+  if(content.commissionerCorner?.title || content.commissionerCorner?.text){
+    $('#insider-commissioner-title').textContent=content.commissionerCorner.title||"Commissioner's Corner";
+    $('#insider-commissioner-text').textContent=content.commissionerCorner.text||'';
+    $('#insider-commissioner-card').hidden=false; shown=true;
+  }
+  const stories=Array.isArray(content.storylines)?content.storylines:[];
+  if(stories.length){
+    $('#insider-storylines').innerHTML=stories.map(st=>`<article class="insider-storyline"><h3>${escapeHtml(st.title||'League Note')}</h3><p>${escapeHtml(st.text||'')}</p></article>`).join('');
+    $('#insider-storylines-card').hidden=false; shown=true;
+  }
+  const context=Array.isArray(content.historicalContext)?content.historicalContext:[];
+  if(context.length){
+    $('#insider-context').innerHTML=context.map(item=>`<li><strong>${escapeHtml(item.title||'Context')}:</strong> ${escapeHtml(item.text||'')}</li>`).join('');
+    $('#insider-context-card').hidden=false; shown=true;
+  }
+  if(content.headline) $('#insider-headline').textContent=content.headline;
+  if(content.dek||content.summary) $('#insider-deck').textContent=content.dek||content.summary;
+  extra.hidden=!shown;
+}
 function renderStorylineTab() {
   const week=getLatestPublishedWeek();
   const a=getWeekAnalysis(week);
@@ -2128,6 +2180,7 @@ function renderStorylineTab() {
   $('#insider-power').innerHTML=a.ranking.slice(0,5).map((x,i)=>`<li><span class="insider-rank">${i+1}</span><span><strong>${escapeHtml(teamNameById(x.id))}</strong><br><span class="text-muted">${x.score.toFixed(2)} pts</span></span></li>`).join('');
   $('#insider-scoreboard').innerHTML=a.games.sort((x,y)=>y.winnerScore-x.winnerScore).map(g=>`<div class="insider-game"><span><b>${escapeHtml(teamNameById(g.winner))}</b><br>${escapeHtml(teamNameById(g.loser))}</span><span><b>${g.winnerScore.toFixed(2)}</b><br>${g.loserScore.toFixed(2)}</span></div>`).join('');
   $('#insider-looking-ahead').textContent=buildLookingAhead(week);
+  renderAuthoredInsider(week);
 }
 /* ═══════════ EXPORT / IMPORT ═══════════ */
 $('#btn-export').addEventListener('click', () => {

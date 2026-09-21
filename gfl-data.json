@@ -577,230 +577,33 @@
       "label": "Week 1",
       "status": "published"
     },
-    "headline": "Returns, Rematches, and Realignment Open the Season",
-    "dek": "Week 1 brought back a past owner, revisited last season's title matchup, and started the final season under the current division map.",
+    "headline": "Returns, Rematches, and Realignment Open Season XV",
+    "dek": "Week 1 brought back a past owner, revisited last season's championship matchup, and began the final season under the current division alignment.",
     "leadStory": {
       "title": "California Wins the Championship Rematch",
-      "text": "California Un-Named Team defeated THE Barton Spartans 110.96 to 69.56 in a Week 1 rematch of last season's championship game.",
-      "teams": [
-        "cunt",
-        "spartans"
-      ],
-      "result": {
-        "winner": "cunt",
-        "loser": "spartans",
-        "winnerScore": 110.96,
-        "loserScore": 69.56,
-        "margin": 41.4
-      }
+      "text": "California Un-Named Team defeated THE Barton Spartans 110.96 to 69.56 in a Week 1 rematch of last season's championship game."
     },
     "commissionerCorner": {
       "title": "The End of an Era for the Current Divisions",
-      "text": "This is the final season of the current East, West, and Central placements. The league will rearrange teams into new divisions after the season for the first time in many years."
+      "text": "This is the final season of the current East, West, and Central placements. Teams will be rearranged into new divisions after the season for the first time in many years."
     },
     "storylines": [
       {
         "id": "space-cadets-return",
         "title": "Space Cadets Return After Five Years",
-        "text": "Space Cadets mark the return of a past owner after a five-year hiatus, beginning a new chapter for the franchise.",
-        "teams": [
-          "thunder"
-        ],
-        "tags": [
-          "return",
-          "franchise-history"
-        ]
+        "text": "Space Cadets mark the return of a past owner after a five-year hiatus, bringing a familiar franchise back to the GFL."
       },
       {
         "id": "championship-rematch",
         "title": "Last Season's Finalists Meet Again",
-        "text": "THE Barton Spartans and California Un-Named Team opened the season against each other after meeting in last season’s championship game.",
-        "teams": [
-          "cunt",
-          "spartans"
-        ],
-        "tags": [
-          "championship-rematch",
-          "league-history"
-        ]
+        "text": "THE Barton Spartans and California Un-Named Team opened Season XV against each other after meeting in last season's championship game."
       },
       {
         "id": "division-realignment",
         "title": "Final Season of the Current Alignment",
-        "text": "The current division placements will be retired after this season and teams will be placed into new divisions.",
-        "teams": [],
-        "tags": [
-          "divisions",
-          "realignment",
-          "league-history"
-        ]
+        "text": "The current division placements will be retired after this season and teams will be placed into new divisions."
       }
     ],
-    "weekRecap": {
-      "week": 1,
-      "results": [
-        {
-          "winner": "murder",
-          "loser": "mountain",
-          "winnerScore": 120.24,
-          "loserScore": 112.1,
-          "margin": 8.14,
-          "combinedScore": 232.34
-        },
-        {
-          "winner": "sith",
-          "loser": "thunder",
-          "winnerScore": 108.5,
-          "loserScore": 79.76,
-          "margin": 28.74,
-          "combinedScore": 188.26
-        },
-        {
-          "winner": "meth",
-          "loser": "tropics",
-          "winnerScore": 137.42,
-          "loserScore": 114.26,
-          "margin": 23.16,
-          "combinedScore": 251.68
-        },
-        {
-          "winner": "eskimo",
-          "loser": "offboys",
-          "winnerScore": 139.46,
-          "loserScore": 119.72,
-          "margin": 19.74,
-          "combinedScore": 259.18
-        },
-        {
-          "winner": "tickle",
-          "loser": "yourmom",
-          "winnerScore": 117.46,
-          "loserScore": 103.4,
-          "margin": 14.06,
-          "combinedScore": 220.86
-        },
-        {
-          "winner": "cunt",
-          "loser": "spartans",
-          "winnerScore": 110.96,
-          "loserScore": 69.56,
-          "margin": 41.4,
-          "combinedScore": 180.52
-        }
-      ],
-      "scoreboardRank": [
-        {
-          "rank": 1,
-          "team": "eskimo",
-          "score": 139.46
-        },
-        {
-          "rank": 2,
-          "team": "meth",
-          "score": 137.42
-        },
-        {
-          "rank": 3,
-          "team": "murder",
-          "score": 120.24
-        },
-        {
-          "rank": 4,
-          "team": "offboys",
-          "score": 119.72
-        },
-        {
-          "rank": 5,
-          "team": "tickle",
-          "score": 117.46
-        },
-        {
-          "rank": 6,
-          "team": "tropics",
-          "score": 114.26
-        },
-        {
-          "rank": 7,
-          "team": "mountain",
-          "score": 112.1
-        },
-        {
-          "rank": 8,
-          "team": "cunt",
-          "score": 110.96
-        },
-        {
-          "rank": 9,
-          "team": "sith",
-          "score": 108.5
-        },
-        {
-          "rank": 10,
-          "team": "yourmom",
-          "score": 103.4
-        },
-        {
-          "rank": 11,
-          "team": "thunder",
-          "score": 79.76
-        },
-        {
-          "rank": 12,
-          "team": "spartans",
-          "score": 69.56
-        }
-      ],
-      "leagueAverage": 111.07,
-      "topHalfCutoff": 114.26
-    },
-    "awards": {
-      "goldenHighPoint": {
-        "team": "eskimo",
-        "score": 139.46,
-        "opponent": "offboys",
-        "title": "Golden High Point"
-      },
-      "gameOfTheWeek": {
-        "winner": "murder",
-        "loser": "mountain",
-        "winnerScore": 120.24,
-        "loserScore": 112.1,
-        "margin": 8.14,
-        "combinedScore": 232.34,
-        "title": "Game of the Week",
-        "reason": "Closest Week 1 matchup at a 8.14-point margin."
-      },
-      "biggestWin": {
-        "winner": "cunt",
-        "loser": "spartans",
-        "winnerScore": 110.96,
-        "loserScore": 69.56,
-        "margin": 41.4,
-        "combinedScore": 180.52,
-        "title": "Biggest Win",
-        "reason": "Largest Week 1 margin at 41.40 points."
-      },
-      "shootout": {
-        "winner": "eskimo",
-        "loser": "offboys",
-        "winnerScore": 139.46,
-        "loserScore": 119.72,
-        "margin": 19.74,
-        "combinedScore": 259.18,
-        "title": "Highest-Scoring Matchup",
-        "reason": "The teams combined for 259.18 points."
-      },
-      "silverScore": {
-        "team": "meth",
-        "score": 137.42,
-        "title": "Second-Highest Score"
-      },
-      "bronzeScore": {
-        "team": "murder",
-        "score": 120.24,
-        "title": "Third-Highest Score"
-      }
-    },
     "historicalContext": [
       {
         "title": "Championship Rematch",
@@ -814,16 +617,6 @@
         "title": "Division Realignment Ahead",
         "text": "This is the last season of the current division placements before teams are rearranged."
       }
-    ],
-    "display": {
-      "showInsider": true,
-      "showAwards": true,
-      "showPlayoffPulse": false,
-      "showPowerRankings": false
-    },
-    "sourceNotes": [
-      "Original scores and matchups came from the uploaded Week 1 JSON.",
-      "Narrative context came from the commissioner notes and supplied Week 1 box-score screenshots."
     ]
   }
 }
