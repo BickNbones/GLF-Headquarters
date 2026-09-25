@@ -134,6 +134,12 @@
     .name-history { font-size: .74rem; color: var(--muted); }
     .museum-note { margin: -.7rem 0 1.4rem; color: var(--muted); }
     .score { color: var(--gold); font-size: 1.8rem; font-weight: 800; }
+    .museum-subsection { margin-top: 3rem; }
+    .era { padding: .7rem 0; border-top: 1px solid #ffffff12; }
+    .era:first-of-type { border-top: 0; }
+    .era-years { color: var(--gold); font-size: .72rem; text-transform: uppercase; letter-spacing: 1px; }
+    .legend-meta { display: flex; gap: .7rem; flex-wrap: wrap; margin-top: .55rem; color: var(--muted); font-size: .78rem; }
+    .mini-rank { color: var(--gold); font-weight: 800; }
     footer { text-align: center; color: var(--muted); padding: 2rem; border-top: 1px solid #ffffff12; }
 
     @media (max-width: 850px) {
@@ -211,6 +217,41 @@
           </thead>
           <tbody id="prestigeRows"></tbody>
         </table>
+      </div>
+
+      <div class="museum-subsection">
+        <div class="eyebrow">Debate Desk</div>
+        <h2>🔥 Museum Insights</h2>
+        <div class="grid" id="museumInsightsGrid"></div>
+      </div>
+
+      <div class="museum-subsection">
+        <div class="eyebrow">Hall of Fame Monitor</div>
+        <h2>🏆 The Ballot</h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>#</th><th>Manager</th><th>Score</th><th>Tier</th><th>Titles</th><th>Wins</th><th>Seasons</th></tr></thead>
+            <tbody id="hallRows"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="museum-subsection">
+        <div class="eyebrow">Player Museum</div>
+        <h2>⭐ GFL Legends Gallery</h2>
+        <div class="grid" id="legendsGrid"></div>
+      </div>
+
+      <div class="museum-subsection">
+        <div class="eyebrow">Retired Identities</div>
+        <h2>☠ Franchise Graveyard</h2>
+        <div class="grid" id="graveyardGrid"></div>
+      </div>
+
+      <div class="museum-subsection">
+        <div class="eyebrow">Manager Evolution</div>
+        <h2>🧬 Franchise Eras</h2>
+        <div class="grid" id="erasGrid"></div>
       </div>
     </section>
 
@@ -447,6 +488,59 @@
             <td>${entry.seasons}</td>
           </tr>
         `).join('');
+
+      const managerArchive = museum.allTimeManagers || [];
+      const activeNames = new Set(managerArchive.filter(item => item.activeThroughLatestExport).map(item => item.manager.toLowerCase()));
+      const bestActive = (museum.prestigeRankings || []).find(item => activeNames.has(String(item.manager).toLowerCase()));
+      const bestWithoutTitle = (museum.prestigeRankings || []).find(item => item.championships === 0);
+      const unlucky = [...managerArchive].sort((a, b) =>
+        ((b.runnerUps || 0) + (b.estimatedPlayoffAppearances || 0) - (b.championships || 0) * 2) -
+        ((a.runnerUps || 0) + (a.estimatedPlayoffAppearances || 0) - (a.championships || 0) * 2)
+      )[0];
+
+      $('#museumInsightsGrid').innerHTML = `
+        <article class="card"><div class="eyebrow">GOAT Tracker</div><h3>${esc(prestigeLeader?.manager || 'N/A')}</h3><div class="score">${prestigeLeader?.score ?? '--'}</div><p class="muted">Current prestige leader</p></article>
+        <article class="card"><div class="eyebrow">Best Active Resume</div><h3>${esc(bestActive?.manager || 'N/A')}</h3><div class="score">${bestActive?.score ?? '--'}</div><p class="muted">Highest-ranked manager active through the latest export</p></article>
+        <article class="card"><div class="eyebrow">Best Without a Ring</div><h3>${esc(bestWithoutTitle?.manager || 'N/A')}</h3><div class="score">#${bestWithoutTitle?.rank ?? '--'}</div><p class="muted">Highest prestige rank without a championship</p></article>
+        <article class="card"><div class="eyebrow">Hard-Luck Resume</div><h3>${esc(unlucky?.manager || 'N/A')}</h3><div class="score">${unlucky?.runnerUps ?? 0}</div><p class="muted">Runner-up finishes · ${unlucky?.estimatedPlayoffAppearances ?? 0} estimated playoff appearances</p></article>
+      `;
+
+      $('#hallRows').innerHTML = (museum.hallOfFameMonitor || []).slice(0, 25).map(entry => `
+        <tr><td>${entry.rank}</td><td><b>${esc(entry.manager)}</b></td><td>${entry.score}</td><td>${esc(entry.tier)}</td><td>${entry.championships}</td><td>${entry.wins}</td><td>${entry.seasons}</td></tr>
+      `).join('');
+
+      $('#legendsGrid').innerHTML = (featured.mostAppearingPlayers || []).slice(0, 24).map(player => `
+        <article class="card">
+          <div class="eyebrow"><span class="mini-rank">#${player.rank}</span> · ${esc(player.primaryPosition || 'Player')}</div>
+          <h3>${esc(player.player)}</h3>
+          <div class="score">${player.seasonsAppeared}</div>
+          <p class="muted">Seasons represented</p>
+          <div class="legend-meta"><span>${player.rosterAppearances} roster appearances</span><span>${player.franchises} managers</span><span>${player.championshipRosterAppearances} title rosters</span></div>
+        </article>
+      `).join('');
+
+      $('#graveyardGrid').innerHTML = (museum.retiredNames || []).slice(0, 24).map(identity => `
+        <article class="card">
+          <div class="eyebrow">${identity.firstSeason}-${identity.lastSeason}</div>
+          <h3>${esc(identity.name)}</h3>
+          <p>${esc(identity.owner)}</p>
+          <p class="muted">${identity.seasons} season${identity.seasons === 1 ? '' : 's'} · Best finish: ${identity.bestFinish ?? 'N/A'} · ${identity.record?.wins ?? 0}-${identity.record?.losses ?? 0}${identity.record?.ties ? '-' + identity.record.ties : ''}</p>
+        </article>
+      `).join('');
+
+      $('#erasGrid').innerHTML = (museum.franchiseEras || []).map(franchise => `
+        <article class="card">
+          <div class="eyebrow">Franchise Timeline</div>
+          <h3>${esc(franchise.manager)}</h3>
+          ${(franchise.eras || []).map(era => `
+            <div class="era">
+              <div class="era-years">${era.from}-${era.current ? 'Present' : era.to}</div>
+              <b>${esc(era.name)}</b>
+              <p class="muted">${era.record?.wins ?? 0}-${era.record?.losses ?? 0}${era.record?.ties ? '-' + era.record.ties : ''} · Best finish: ${era.bestFinish ?? 'N/A'}</p>
+            </div>
+          `).join('')}
+        </article>
+      `).join('');
     }
 
     boot();
