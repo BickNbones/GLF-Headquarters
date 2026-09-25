@@ -1,14 +1,455 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>GFL Headquarters</title><style>
-:root{--gold:#f59e0b;--navy:#080c14;--panel:#0f172a;--panel2:#111c31;--text:#f8fafc;--muted:#94a3b8;--green:#22c55e;--blue:#3b82f6}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 50% 0,#16213a 0,var(--navy) 38%);color:var(--text);font:15px/1.55 Inter,system-ui,sans-serif}a{color:inherit}nav{position:sticky;top:0;z-index:10;display:flex;justify-content:space-between;align-items:center;padding:.9rem 4vw;background:#080c14ed;border-bottom:1px solid #f59e0b55;backdrop-filter:blur(12px)}nav strong{color:var(--gold);letter-spacing:2px}.links{display:flex;gap:1rem}.links a{text-decoration:none;color:var(--muted);font-size:.8rem}.hero{padding:7rem 4vw 5rem;text-align:center}.hero h1{font-size:clamp(2.8rem,8vw,6.5rem);line-height:.9;margin:.6rem 0;color:var(--gold);letter-spacing:-3px}.eyebrow{color:var(--gold);text-transform:uppercase;letter-spacing:3px;font-size:.7rem}.sub{color:var(--muted)}.pills,.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1rem}.pills{max-width:800px;margin:2rem auto}.pill,.card,.panel{background:linear-gradient(145deg,var(--panel),var(--panel2));border:1px solid #ffffff12;border-radius:12px;padding:1rem}.pill b{display:block;color:var(--gold);font-size:1.8rem}.button{display:inline-block;background:var(--gold);color:var(--navy);padding:.75rem 1.1rem;border-radius:7px;text-decoration:none;font-weight:800}main{max-width:1200px;margin:auto;padding:0 4vw 5rem}section{padding:3.5rem 0;border-top:1px solid #f59e0b33}h2{margin:.2rem 0 1.4rem;font-size:clamp(1.4rem,3vw,2rem)}.card h3,.card p{margin:.25rem 0}.muted{color:var(--muted)}.champ{text-align:center}.champ b{color:var(--gold)}.filters{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1rem}button{background:transparent;color:var(--muted);border:1px solid #ffffff22;border-radius:5px;padding:.45rem .8rem;cursor:pointer}button.active,button:hover{color:var(--gold);border-color:var(--gold)}table{width:100%;border-collapse:collapse}.table-wrap{overflow:auto}.table-wrap th,.table-wrap td{padding:.75rem;border-bottom:1px solid #ffffff12;text-align:left;white-space:nowrap}.table-wrap th{color:var(--gold);font-size:.72rem;text-transform:uppercase}.tag{font-size:.65rem;padding:.15rem .4rem;border-radius:4px;border:1px solid}.active{color:var(--green)}.retired{color:var(--muted)}.memorial{color:#93c5fd}.ineligible{opacity:.55}.notice{padding:1rem;border:1px solid #f59e0b66;background:#f59e0b12;border-radius:8px}.name-history{font-size:.74rem;color:var(--muted)}footer{text-align:center;color:var(--muted);padding:2rem;border-top:1px solid #ffffff12}@media(max-width:700px){.links{display:none}.hero{padding-top:5rem}}
-</style></head><body><nav><strong>⚡ GFL HQ</strong><div class="links"><a href="#champions">Champions</a><a href="#leaders">Leaders</a><a href="#records">Records</a><a seumMuseum</a><a href="#awards">Divisions</a><a href="#managers">Managers</a></div></nav><header class="hero"><div class="eyebrow" id="leagueLine">GFL Headquarters</div><h1>GANDORF<br>NATIONAL FL</h1><p class="sub">Historical headquarters powered by one Excel source of truth.</p><div class="pills" id="summary"></div><a class="button" id="weeklyLink" href="weekly.html">Open Weekly Hub →</a></header><main><div id="error" class="notice" hidden></div><section id="champions"><div class="eyebrow">Hall of Champions</div><h2>🏆 Trophy Wall</h2><div class="grid" id="champGrid"></div></section><section id="leaders"><div class="eyebrow">Qualified Career Rankings</div><h2>📊 All-Time Leaders</h2><p class="muted" id="eligibilityText"></p><div class="table-wrap"><table><thead><tr><th>#</th><th>Manager</th><th>Record</th><th>Games</th><th>Win %</th><th>Rings</th><th>Status</th></tr></thead><tbody id="leaderRows"></tbody></table></div></section><section id="records"><div class="eyebrow">League Record Book</div><h2>⚡ All-Time Bests</h2><div class="grid" id="recordGrid"></div></section><section id="awards"><div class="eyebrow">Division Record Book</div><h2>🏅 Division Awards</h2><div class="filters" id="awardFilters"></div><div class="grid" id="awardGrid"></div></section><section id="managers"><div class="eyebrow">Full Directory</div><h2>🎖️ Managers</h2><div class="filters" id="managerFilters"></div><div class="grid" id="managerGrid"></div></section><section id="lore"><div class="eyebrow">Franchise Archive</div><h2>📚 Lore</h2><div class="grid" id="loreGrid"></div></section></main><footer>GFL Headquarters · Historical site only · Weekly Hub remains independent</footer><script>
-const $=s=>document.querySelector(s), esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]));
-function filterButtons(root,items,onClick){root.innerHTML='';items.forEach((x,i)=>{const b=document.createElement('button');b.textContent=x;b.className=i?'':'active';b.onclick=()=>{[...root.children].forEach(y=>y.classList.remove('active'));b.classList.add('active');onClick(x)};root.appendChild(b)})}
-async function boot(){try{const r=await fetch('gfl-history.json',{cache:'no-store'});if(!r.ok)throw Error('HTTP '+r.status);const d=await r.json();render(d)}catch(e){$('#error').hidden=false;$('#error').innerHTML='<b>HQ data could not load.</b> Put <code>gfl-history.json</code> in the same deployed folder as <code>index.html</code>. Opening the HTML directly from your computer may block fetch; preview through a web server or deploy it.'}}
-function render(d){const m=d.managers||[],c=d.champions||[],min=d.settings?.minGamesForLeaderboard??25;$('#leagueLine').textContent=`${d.meta?.league||'GFL'} · Est. ${d.meta?.founded||2012} · Season ${d.meta?.currentSeason||''}`;$('#weeklyLink').href=d.settings?.weeklyHubUrl||'weekly.html';const counts={active:m.filter(x=>x.status==='active').length,champions:new Set(c.map(x=>x.manager)).size};$('#summary').innerHTML=[['Seasons',c.length],['Managers',m.length],['Active',counts.active],['Champions',counts.champions]].map(x=>`<div class="pill"><b>${x[1]}</b>${x[0]}</div>`).join('');$('#champGrid').innerHTML=[...c].reverse().map(x=>`<article class="card champ"><b>${x.year}</b><h3>🏆 ${esc(x.manager)}</h3><p class="muted">${esc(x.team)}</p></article>`).join('');
-const eligible=m.filter(x=>x.gamesPlayed>=min).sort((a,b)=>b.winPercentage-a.winPercentage||b.wins-a.wins);$('#eligibilityText').textContent=`Rankings require at least ${min} career games. Managers below the threshold remain visible in the directory.`;$('#leaderRows').innerHTML=eligible.map((x,i)=>`<tr><td>${i+1}</td><td>${x.emoji||''} <b>${esc(x.name)}</b></td><td>${x.wins}-${x.losses}${x.ties?'-'+x.ties:''}</td><td>${x.gamesPlayed}</td><td>${(x.winPercentage*100).toFixed(1)}%</td><td>${x.championships.length}</td><td><span class="tag ${x.status}">${esc(x.status)}</span></td></tr>`).join('');
-$('#recordGrid').innerHTML=(d.records||[]).map(x=>`<article class="card"><div class="eyebrow">${esc(x.category)}</div><h3>${esc(x.value)}</h3><b>${esc(x.holder)}</b><p class="muted">${esc(x.description)}</p></article>`).join('');
-const awards=d.divisionAwards||[],divs=['All',...new Set(awards.map(x=>x.division))];function drawAwards(f){$('#awardGrid').innerHTML=awards.filter(x=>f==='All'||x.division===f).sort((a,b)=>b.year-a.year).map(x=>`<article class="card"><div class="eyebrow">${esc(x.division)} · ${x.year}</div><h3>${esc(x.manager)}</h3><p class="muted">${esc(x.team)}</p></article>`).join('')}filterButtons($('#awardFilters'),divs,drawAwards);drawAwards('All');
-function drawManagers(f){$('#managerGrid').innerHTML=m.filter(x=>f==='All'||x.status===f).map(x=>`<article class="card ${x.leaderboardEligible?'':'ineligible'}"><div><span style="font-size:1.4rem">${x.emoji||''}</span> <span class="tag ${x.status}">${esc(x.status)}</span></div><h3>${esc(x.name)}</h3><p>${esc(x.team)}</p><p class="muted"><b>${x.wins}-${x.losses}${x.ties?'-'+x.ties:''}</b> · ${x.seasons} seasons · ${x.gamesPlayed} games</p><p class="name-history">${(x.nameHistory||[]).map(esc).join(' → ')}</p>${x.guideUrl&&x.guideUrl!=='#'?`<a href="${esc(x.guideUrl)}" target="_blank" rel="noopener">Open guide →</a>`:''}</article>`).join('')}filterButtons($('#managerFilters'),['All','active','retired','memorial'],drawManagers);drawManagers('All');
-const grouped={};(d.lore||[]).forEach(x=>(grouped[x.franchise]??=[]).push(x));$('#loreGrid').innerHTML=Object.entries(grouped).map(([fr,items])=>`<article class="card"><h3>${esc(fr)}</h3>${items.map(x=>`<p><b>${esc(x.title)}:</b> <span class="muted">${esc(x.text)}</span></p>`).join('')}</article>`).join('')}
-boot();
-</script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GFL Headquarters</title>
+  <style>
+    :root {
+      --gold: #f59e0b;
+      --navy: #080c14;
+      --panel: #0f172a;
+      --panel2: #111c31;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --green: #22c55e;
+      --blue: #3b82f6;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: radial-gradient(circle at 50% 0, #16213a 0, var(--navy) 38%);
+      color: var(--text);
+      font: 15px/1.55 Inter, system-ui, sans-serif;
+    }
+
+    a { color: inherit; }
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: .9rem 4vw;
+      background: #080c14ed;
+      border-bottom: 1px solid #f59e0b55;
+      backdrop-filter: blur(12px);
+    }
+
+    nav strong { color: var(--gold); letter-spacing: 2px; }
+    .links { display: flex; gap: 1rem; }
+    .links a { text-decoration: none; color: var(--muted); font-size: .8rem; }
+    .links a:hover { color: var(--gold); }
+
+    .hero { padding: 7rem 4vw 5rem; text-align: center; }
+    .hero h1 {
+      font-size: clamp(2.8rem, 8vw, 6.5rem);
+      line-height: .9;
+      margin: .6rem 0;
+      color: var(--gold);
+      letter-spacing: -3px;
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: .7rem;
+    }
+
+    .sub, .muted { color: var(--muted); }
+    .pills, .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 1rem;
+    }
+
+    .pills { max-width: 800px; margin: 2rem auto; }
+    .pill, .card, .panel {
+      background: linear-gradient(145deg, var(--panel), var(--panel2));
+      border: 1px solid #ffffff12;
+      border-radius: 12px;
+      padding: 1rem;
+    }
+
+    .pill b { display: block; color: var(--gold); font-size: 1.8rem; }
+    .button {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--navy);
+      padding: .75rem 1.1rem;
+      border-radius: 7px;
+      text-decoration: none;
+      font-weight: 800;
+    }
+
+    main { max-width: 1200px; margin: auto; padding: 0 4vw 5rem; }
+    section { padding: 3.5rem 0; border-top: 1px solid #f59e0b33; }
+    h2 { margin: .2rem 0 1.4rem; font-size: clamp(1.4rem, 3vw, 2rem); }
+    .card h3, .card p { margin: .25rem 0; }
+    .champ { text-align: center; }
+    .champ b { color: var(--gold); }
+    .filters { display: flex; gap: .5rem; flex-wrap: wrap; margin-bottom: 1rem; }
+
+    button {
+      background: transparent;
+      color: var(--muted);
+      border: 1px solid #ffffff22;
+      border-radius: 5px;
+      padding: .45rem .8rem;
+      cursor: pointer;
+    }
+
+    button.active, button:hover { color: var(--gold); border-color: var(--gold); }
+    table { width: 100%; border-collapse: collapse; }
+    .table-wrap { overflow: auto; }
+    .table-wrap th, .table-wrap td {
+      padding: .75rem;
+      border-bottom: 1px solid #ffffff12;
+      text-align: left;
+      white-space: nowrap;
+    }
+
+    .table-wrap th {
+      color: var(--gold);
+      font-size: .72rem;
+      text-transform: uppercase;
+    }
+
+    .tag { font-size: .65rem; padding: .15rem .4rem; border-radius: 4px; border: 1px solid; }
+    .active { color: var(--green); }
+    .retired { color: var(--muted); }
+    .memorial { color: #93c5fd; }
+    .ineligible { opacity: .55; }
+    .notice {
+      padding: 1rem;
+      border: 1px solid #f59e0b66;
+      background: #f59e0b12;
+      border-radius: 8px;
+    }
+
+    .name-history { font-size: .74rem; color: var(--muted); }
+    .museum-note { margin: -.7rem 0 1.4rem; color: var(--muted); }
+    .score { color: var(--gold); font-size: 1.8rem; font-weight: 800; }
+    footer { text-align: center; color: var(--muted); padding: 2rem; border-top: 1px solid #ffffff12; }
+
+    @media (max-width: 850px) {
+      .links { display: none; }
+      .hero { padding-top: 5rem; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <strong>⚡ GFL HQ</strong>
+    <div class="links">
+      <a href="#champions">Champions</a>
+      <a href="#leaders">Leaders</a>
+      <a href="#records">Records</a>
+      <a href="#museum">Museum</a>
+      <a href="#awards">Divisions</a>
+      <a href="#managers">Managers</a>
+      <a href="#lore">Lore</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="eyebrow" id="leagueLine">GFL Headquarters</div>
+    <h1>GANDORF<br>NATIONAL FL</h1>
+    <p class="sub">Historical headquarters powered by one Excel source of truth.</p>
+    <div class="pills" id="summary"></div>
+    <a class="button" id="weeklyLink" href="weekly.html">Open Weekly Hub →</a>
+  </header>
+
+  <main>
+    <div id="error" class="notice" hidden></div>
+
+    <section id="champions">
+      <div class="eyebrow">Hall of Champions</div>
+      <h2>🏆 Trophy Wall</h2>
+      <div class="grid" id="champGrid"></div>
+    </section>
+
+    <section id="leaders">
+      <div class="eyebrow">Qualified Career Rankings</div>
+      <h2>📊 All-Time Leaders</h2>
+      <p class="muted" id="eligibilityText"></p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>#</th><th>Manager</th><th>Record</th><th>Games</th><th>Win %</th><th>Rings</th><th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="leaderRows"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="records">
+      <div class="eyebrow">League Record Book</div>
+      <h2>⚡ All-Time Bests</h2>
+      <div class="grid" id="recordGrid"></div>
+    </section>
+
+    <section id="museum">
+      <div class="eyebrow">Historical Museum</div>
+      <h2>🏛 GFL Museum</h2>
+      <p class="museum-note" id="museumNote">Loading the expanded ESPN history archive...</p>
+      <div class="grid" id="museumGrid"></div>
+
+      <h2 style="margin-top:2.5rem">👑 Franchise Prestige Rankings</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>#</th><th>Manager</th><th>Score</th><th>Titles</th><th>Runner-Ups</th><th>Wins</th><th>Win %</th><th>Seasons</th>
+            </tr>
+          </thead>
+          <tbody id="prestigeRows"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="awards">
+      <div class="eyebrow">Division Record Book</div>
+      <h2>🏅 Division Awards</h2>
+      <div class="filters" id="awardFilters"></div>
+      <div class="grid" id="awardGrid"></div>
+    </section>
+
+    <section id="managers">
+      <div class="eyebrow">Full Directory</div>
+      <h2>🎖️ Managers</h2>
+      <div class="filters" id="managerFilters"></div>
+      <div class="grid" id="managerGrid"></div>
+    </section>
+
+    <section id="lore">
+      <div class="eyebrow">Franchise Archive</div>
+      <h2>📚 Lore</h2>
+      <div class="grid" id="loreGrid"></div>
+    </section>
+  </main>
+
+  <footer>GFL Headquarters · Historical site only · Weekly Hub remains independent</footer>
+
+  <script>
+    const $ = selector => document.querySelector(selector);
+    const esc = value => String(value ?? '').replace(/[&<>"']/g, character => ({
+      '&': '&amp;',
+      '<': '&lt;',
+      '>': '&gt;',
+      '"': '&quot;',
+      "'": '&#039;'
+    })[character]);
+
+    function filterButtons(root, items, onClick) {
+      root.innerHTML = '';
+      items.forEach((item, index) => {
+        const button = document.createElement('button');
+        button.textContent = item;
+        button.className = index ? '' : 'active';
+        button.onclick = () => {
+          [...root.children].forEach(child => child.classList.remove('active'));
+          button.classList.add('active');
+          onClick(item);
+        };
+        root.appendChild(button);
+      });
+    }
+
+    async function fetchJson(fileName, required = true) {
+      const response = await fetch(fileName, { cache: 'no-store' });
+      if (!response.ok) {
+        if (required) throw new Error(`${fileName}: HTTP ${response.status}`);
+        return null;
+      }
+      return response.json();
+    }
+
+    async function boot() {
+      try {
+        const [history, museumFile] = await Promise.all([
+          fetchJson('gfl-history.json', true),
+          fetchJson('museum-data.json', false).catch(() => null)
+        ]);
+
+        render(history, museumFile?.museum || {});
+      } catch (error) {
+        $('#error').hidden = false;
+        $('#error').innerHTML = '<b>HQ data could not load.</b> Put <code>gfl-history.json</code>, <code>museum-data.json</code>, and <code>index.html</code> in the same deployed folder. The Weekly Hub remains separate.';
+        console.error(error);
+      }
+    }
+
+    function render(history, museum) {
+      const managers = history.managers || [];
+      const champions = history.champions || [];
+      const minimumGames = history.settings?.minGamesForLeaderboard ?? 25;
+
+      $('#leagueLine').textContent = `${history.meta?.league || 'GFL'} · Est. ${history.meta?.founded || 2012} · Season ${history.meta?.currentSeason || ''}`;
+      $('#weeklyLink').href = history.settings?.weeklyHubUrl || 'weekly.html';
+
+      const counts = {
+        active: managers.filter(manager => manager.status === 'active').length,
+        champions: new Set(champions.map(champion => champion.manager)).size
+      };
+
+      $('#summary').innerHTML = [
+        ['Seasons', champions.length],
+        ['Managers', managers.length],
+        ['Active', counts.active],
+        ['Champions', counts.champions]
+      ].map(item => `<div class="pill"><b>${item[1]}</b>${item[0]}</div>`).join('');
+
+      $('#champGrid').innerHTML = [...champions].reverse().map(champion => `
+        <article class="card champ">
+          <b>${champion.year}</b>
+          <h3>🏆 ${esc(champion.manager)}</h3>
+          <p class="muted">${esc(champion.team)}</p>
+        </article>
+      `).join('');
+
+      const eligible = managers
+        .filter(manager => manager.gamesPlayed >= minimumGames)
+        .sort((a, b) => b.winPercentage - a.winPercentage || b.wins - a.wins);
+
+      $('#eligibilityText').textContent = `Rankings require at least ${minimumGames} career games. Managers below the threshold remain visible in the directory.`;
+      $('#leaderRows').innerHTML = eligible.map((manager, index) => `
+        <tr>
+          <td>${index + 1}</td>
+          <td>${manager.emoji || ''} <b>${esc(manager.name)}</b></td>
+          <td>${manager.wins}-${manager.losses}${manager.ties ? '-' + manager.ties : ''}</td>
+          <td>${manager.gamesPlayed}</td>
+          <td>${(manager.winPercentage * 100).toFixed(1)}%</td>
+          <td>${(manager.championships || []).length}</td>
+          <td><span class="tag ${esc(manager.status)}">${esc(manager.status)}</span></td>
+        </tr>
+      `).join('');
+
+      $('#recordGrid').innerHTML = (history.records || []).map(record => `
+        <article class="card">
+          <div class="eyebrow">${esc(record.category)}</div>
+          <h3>${esc(record.value)}</h3>
+          <b>${esc(record.holder)}</b>
+          <p class="muted">${esc(record.description)}</p>
+        </article>
+      `).join('');
+
+      renderMuseum(museum);
+
+      const awards = history.divisionAwards || [];
+      const divisions = ['All', ...new Set(awards.map(award => award.division))];
+
+      function drawAwards(filter) {
+        $('#awardGrid').innerHTML = awards
+          .filter(award => filter === 'All' || award.division === filter)
+          .sort((a, b) => b.year - a.year)
+          .map(award => `
+            <article class="card">
+              <div class="eyebrow">${esc(award.division)} · ${award.year}</div>
+              <h3>${esc(award.manager)}</h3>
+              <p class="muted">${esc(award.team)}</p>
+            </article>
+          `).join('');
+      }
+
+      filterButtons($('#awardFilters'), divisions, drawAwards);
+      drawAwards('All');
+
+      function drawManagers(filter) {
+        $('#managerGrid').innerHTML = managers
+          .filter(manager => filter === 'All' || manager.status === filter)
+          .map(manager => `
+            <article class="card ${manager.leaderboardEligible ? '' : 'ineligible'}">
+              <div>
+                <span style="font-size:1.4rem">${manager.emoji || ''}</span>
+                <span class="tag ${esc(manager.status)}">${esc(manager.status)}</span>
+              </div>
+              <h3>${esc(manager.name)}</h3>
+              <p>${esc(manager.team)}</p>
+              <p class="muted"><b>${manager.wins}-${manager.losses}${manager.ties ? '-' + manager.ties : ''}</b> · ${manager.seasons} seasons · ${manager.gamesPlayed} games</p>
+              <p class="name-history">${(manager.nameHistory || []).map(esc).join(' → ')}</p>
+              ${manager.guideUrl && manager.guideUrl !== '#' ? `<a href="${esc(manager.guideUrl)}" target="_blank" rel="noopener">Open guide →</a>` : ''}
+            </article>
+          `).join('');
+      }
+
+      filterButtons($('#managerFilters'), ['All', 'active', 'retired', 'memorial'], drawManagers);
+      drawManagers('All');
+
+      const groupedLore = {};
+      (history.lore || []).forEach(item => (groupedLore[item.franchise] ??= []).push(item));
+      $('#loreGrid').innerHTML = Object.entries(groupedLore).map(([franchise, items]) => `
+        <article class="card">
+          <h3>${esc(franchise)}</h3>
+          ${items.map(item => `<p><b>${esc(item.title)}:</b> <span class="muted">${esc(item.text)}</span></p>`).join('')}
+        </article>
+      `).join('');
+    }
+
+    function renderMuseum(museum) {
+      const featured = museum.featured || {};
+      const hallLeader = museum.hallOfFameMonitor?.[0];
+      const prestigeLeader = museum.prestigeRankings?.[0];
+      const topLegend = featured.mostAppearingPlayers?.[0];
+      const museumAvailable = Object.keys(museum).length > 0;
+
+      $('#museumNote').textContent = museumAvailable
+        ? `${museum.meta?.seasonCount || 0} seasons · ${museum.summary?.uniquePlayers || 0} players · ${museum.summary?.retiredIdentities || 0} retired identities`
+        : 'Museum data is unavailable. Add museum-data.json beside index.html to activate this section.';
+
+      $('#museumGrid').innerHTML = `
+        <article class="card">
+          <div class="eyebrow">Hall of Fame Leader</div>
+          <h3>${esc(hallLeader?.manager || 'N/A')}</h3>
+          <div class="score">${hallLeader?.score ?? '--'}</div>
+          <p class="muted">${esc(hallLeader?.tier || 'Museum data unavailable')}</p>
+        </article>
+
+        <article class="card">
+          <div class="eyebrow">Prestige Leader</div>
+          <h3>${esc(prestigeLeader?.manager || 'N/A')}</h3>
+          <div class="score">${prestigeLeader?.score ?? '--'}</div>
+          <p class="muted">${prestigeLeader?.championships ?? 0} titles · ${prestigeLeader?.wins ?? 0} wins</p>
+        </article>
+
+        <article class="card">
+          <div class="eyebrow">Top GFL Legend</div>
+          <h3>${esc(topLegend?.player || 'N/A')}</h3>
+          <div class="score">${topLegend?.seasonsAppeared ?? 0}</div>
+          <p class="muted">Seasons appeared · ${topLegend?.franchises ?? 0} managers</p>
+        </article>
+
+        <article class="card">
+          <div class="eyebrow">Retired Identities</div>
+          <h3>Franchise Graveyard</h3>
+          <div class="score">${museum.retiredNames?.length ?? 0}</div>
+          <p class="muted">Historical team-name eras</p>
+        </article>
+      `;
+
+      $('#prestigeRows').innerHTML = (museum.prestigeRankings || [])
+        .slice(0, 25)
+        .map(entry => `
+          <tr>
+            <td>${entry.rank}</td>
+            <td><b>${esc(entry.manager)}</b></td>
+            <td>${entry.score}</td>
+            <td>${entry.championships}</td>
+            <td>${entry.runnerUps}</td>
+            <td>${entry.wins}</td>
+            <td>${(entry.winPercentage * 100).toFixed(1)}%</td>
+            <td>${entry.seasons}</td>
+          </tr>
+        `).join('');
+    }
+
+    boot();
+  </script>
+</body>
+</html>
