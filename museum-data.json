@@ -1,13 +1,15 @@
 {
   "museum": {
     "meta": {
-      "source": "GFL_ESPN_History_Export.xlsx",
-      "schemaVersion": "1.0",
+      "league": "GFL",
+      "leagueId": 336234,
+      "generatedFrom": "GFL_ESPN_History_Export.xlsx",
       "firstSeason": 2012,
-      "lastSeason": 2026,
-      "uniquePlayerCount": 752,
-      "playerTeamSeasonRecords": 2830,
-      "note": "Roster analytics are based on player-team-season presence in the supplied export; no weekly fantasy point totals were available."
+      "latestSeasonInExport": 2025,
+      "seasonCount": 14,
+      "teamSeasonCount": 164,
+      "rosterEntryCount": 2635,
+      "weeklyHubTouched": false
     },
     "methodology": {
       "importantLimitations": [
@@ -21059,6 +21061,15 @@
           "rank": 171
         }
       ]
+    },
+    "advancedMeta": {
+      "source": "GFL_ESPN_History_Export.xlsx",
+      "schemaVersion": "1.0",
+      "firstSeason": 2012,
+      "lastSeason": 2025,
+      "uniquePlayerCount": 752,
+      "playerTeamSeasonRecords": 2635,
+      "note": "Roster analytics are based on player-team-season presence in the supplied export; no weekly fantasy point totals were available."
     },
     "playerHallOfFame": [
       {

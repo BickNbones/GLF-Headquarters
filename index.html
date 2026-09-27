@@ -243,6 +243,21 @@
       </div>
 
       <div class="museum-subsection">
+        <div class="eyebrow">Advanced Player Analytics</div>
+        <h2>🏛️ GFL Player Hall of Fame</h2>
+        <div class="grid" id="playerHallGrid"></div>
+      </div>
+      <div class="museum-subsection">
+        <div class="eyebrow">Franchise Cornerstones</div>
+        <h2>🗿 Manager Mount Rushmores</h2>
+        <div class="grid" id="rushmoreGrid"></div>
+      </div>
+      <div class="museum-subsection">
+        <div class="eyebrow">Player Movement</div>
+        <h2>🔒 Loyalty & Mercenaries</h2>
+        <div class="grid" id="loyaltyGrid"></div>
+      </div>
+      <div class="museum-subsection">
         <div class="eyebrow">Retired Identities</div>
         <h2>☠ Franchise Graveyard</h2>
         <div class="grid" id="graveyardGrid"></div>
@@ -519,6 +534,30 @@
         </article>
       `).join('');
 
+      const playerHall = museum.playerHallOfFame || [];
+      $('#playerHallGrid').innerHTML = playerHall.slice(0, 24).map(player => `
+        <article class="card">
+          <div class="eyebrow"><span class="mini-rank">#${player.legacyRank}</span> · ${esc(player.position || 'Player')}</div>
+          <h3>${esc(player.player)}</h3>
+          <div class="score">${player.gflLegacyScore}</div>
+          <p class="muted">GFL Legacy Score</p>
+          <div class="legend-meta"><span>${player.seasonsAppeared} seasons</span><span>${player.uniqueManagers} managers</span><span>${player.championshipRosterAppearances} title rosters</span><span>${player.topFourRosterAppearances} top-four rosters</span></div>
+        </article>
+      `).join('');
+      $('#rushmoreGrid').innerHTML = (museum.managerPlayerProfiles || []).map(profile => `
+        <article class="card">
+          <div class="eyebrow">${esc(profile.manager)}</div>
+          <h3>${esc(profile.franchisePlayer?.player || 'N/A')}</h3>
+          <p class="muted">Franchise Player · ${profile.franchisePlayer?.seasonsTogether || 0} seasons together</p>
+          ${(profile.mountRushmore || []).map((player, index) => `<p><b>${index + 1}. ${esc(player.player)}</b> <span class="muted">· ${player.seasonsTogether} seasons · ${player.championshipsTogether} titles</span></p>`).join('')}
+        </article>
+      `).join('');
+      const loyal = museum.leaderboards?.mostLoyal || [];
+      const mercenaries = museum.leaderboards?.mercenaries || [];
+      $('#loyaltyGrid').innerHTML = `
+        <article class="card"><div class="eyebrow">Most Loyal</div>${loyal.slice(0, 12).map((player, index) => `<p><b>${index + 1}. ${esc(player.player)}</b><br><span class="muted">${esc(player.mostCommonManager)} · ${player.loyaltyScore}% loyalty · ${player.seasonsAppeared} seasons</span></p>`).join('')}</article>
+        <article class="card"><div class="eyebrow">Most Traveled</div>${mercenaries.slice(0, 12).map((player, index) => `<p><b>${index + 1}. ${esc(player.player)}</b><br><span class="muted">${player.uniqueManagers} managers · ${player.seasonsAppeared} seasons</span></p>`).join('')}</article>
+      `;
       $('#graveyardGrid').innerHTML = (museum.retiredNames || []).slice(0, 24).map(identity => `
         <article class="card">
           <div class="eyebrow">${identity.firstSeason}-${identity.lastSeason}</div>
