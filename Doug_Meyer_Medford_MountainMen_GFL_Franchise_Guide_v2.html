@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="dark" />
+  <title>Doug Meyer | Medford MountainMen GFL Franchise Guide V2</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1/dist/chart.umd.min.js"></script>
+  <script src="https://unpkg.com/lucide@latest" defer></script>
+  <script>
+    tailwind.config = {
+      theme: { extend: {
+        colors: {
+          forest:{950:'#0a160a',900:'#0f2010',800:'#162816',700:'#1d3a1d',600:'#243d24',500:'#2d4a2d'},
+          pine:{500:'#2d6a2d',400:'#3a8a3a',300:'#4ade80'},
+          campfire:{500:'#f59e0b',400:'#fbbf24',300:'#fcd34d'},
+          cream:{100:'#f5f0e8',200:'#e8e0d0'},
+          stone:{500:'#78716c',400:'#94a3b8',300:'#d6d3d1'},
+          danger:{400:'#ef4444'}
+        },
+        fontFamily:{display:['Oswald','sans-serif'],body:['Inter','sans-serif']}
+      }}
+    }
+  </script>
+  <style>
+    :root{--bg:#0a160a;--card:#111f11;--border:#2d4a2d;--pine:#4ade80;--gold:#f59e0b;--cream:#f5f0e8;--muted:#94a3b8}
+    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:var(--bg);color:var(--cream);font-family:Inter,sans-serif;line-height:1.6}
+    body:before{content:'';position:fixed;inset:0;opacity:.035;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");pointer-events:none;z-index:0} body>*{position:relative;z-index:1}
+    .nav-link{position:relative;transition:.2s}.nav-link:after{content:'';position:absolute;left:0;bottom:-5px;height:2px;width:0;background:var(--gold);transition:.25s}.nav-link:hover:after,.nav-link.active:after{width:100%}.nav-link.active{color:var(--gold)}
+    .glass{background:linear-gradient(135deg,rgba(17,31,17,.96),rgba(29,58,29,.78));border:1px solid rgba(74,222,128,.14);box-shadow:0 18px 60px rgba(0,0,0,.2)}
+    .stat-card,.title-card,.lore-card,.myth-card,.chart-card,.legacy-card{border-radius:1rem;transition:transform .22s,border-color .22s,box-shadow .22s}
+    .stat-card{background:linear-gradient(135deg,#111f11,#1d3a1d);border:1px solid rgba(45,106,45,.3)}
+    .stat-card:hover,.title-card:hover,.lore-card:hover,.myth-card:hover{transform:translateY(-4px);border-color:rgba(245,158,11,.62);box-shadow:0 14px 35px rgba(0,0,0,.25),0 0 26px rgba(245,158,11,.08)}
+    .title-card{background:linear-gradient(150deg,#121d12,#172b17);border:1px solid rgba(74,222,128,.16);padding:1.4rem}
+    .lore-card{width:100%;background:linear-gradient(140deg,#111f11,#1b301b);border:1px solid rgba(74,222,128,.14);padding:1.5rem;text-align:left;cursor:pointer;color:inherit}
+    .lore-card[aria-expanded="true"]{border-color:rgba(245,158,11,.7);box-shadow:0 0 28px rgba(245,158,11,.08)}
+    .lore-panel{display:none;background:linear-gradient(135deg,#171208,#111f11);border:1px solid rgba(245,158,11,.2);border-left:4px solid var(--gold);border-radius:1rem;padding:1.5rem;animation:fadeUp .24s ease}.lore-panel.open{display:block}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+    .archetype{position:relative;overflow:hidden;background:radial-gradient(circle at 80% 0%,rgba(245,158,11,.15),transparent 32%),linear-gradient(135deg,#101d10,#192e19 55%,#171006);border:1px solid rgba(245,158,11,.28);border-radius:1.4rem}
+    .archetype:after{content:'⛰';position:absolute;right:-15px;bottom:-65px;font-size:190px;opacity:.045;filter:grayscale(1)}
+    .myth-card{background:#111f11;border:1px solid rgba(45,74,45,.45);padding:1.2rem;border-left:3px solid #f59e0b}
+    .timeline{position:relative}.timeline:before{content:'';position:absolute;left:15px;top:8px;bottom:8px;width:2px;background:linear-gradient(#f59e0b,#4ade80,#2d4a2d)}
+    .era{position:relative;padding-left:3.1rem;margin-bottom:2rem}.era-dot{position:absolute;left:7px;top:7px;width:18px;height:18px;border-radius:50%;background:#0a160a;border:4px solid #f59e0b;box-shadow:0 0 0 5px rgba(245,158,11,.08)}
+    .era-card{background:#111f11;border:1px solid rgba(45,74,45,.35);border-radius:1rem;padding:1.4rem}.era-card.ghost{border-color:rgba(148,163,184,.32);background:linear-gradient(135deg,#111f11,#14191a)}
+    .season-table tr{border-bottom:1px solid rgba(45,74,45,.22)}.champ-row{background:rgba(245,158,11,.07)}.ghost-row{background:rgba(148,163,184,.06)}
+    .chart-card{background:#111f11;border:1px solid #2d4a2d;padding:1.25rem}
+    .commentary{background:radial-gradient(circle at 0 0,rgba(74,222,128,.08),transparent 35%),#101b10;border:1px solid rgba(74,222,128,.18);border-radius:1.2rem}
+    .quote-mark{font-family:Georgia,serif;font-size:5rem;line-height:.6;color:rgba(245,158,11,.35)}
+    .legacy-bar{animation:grow 1.7s ease-out forwards}@keyframes grow{from{width:0}}
+    .legacy-card{background:linear-gradient(135deg,#111f11,#171208);border:1px solid rgba(245,158,11,.22)}
+    .badge{display:inline-flex;align-items:center;gap:.4rem;padding:.4rem .72rem;border-radius:999px;font:600 .72rem Oswald,sans-serif;letter-spacing:.08em;text-transform:uppercase}
+    ::-webkit-scrollbar{width:8px}::-webkit-scrollbar-track{background:#0a160a}::-webkit-scrollbar-thumb{background:#2d4a2d;border-radius:6px}
+  </style>
+</head>
+<body class="min-h-screen antialiased" data-manager-id="doug-meyer">
+<header class="fixed top-0 left-0 right-0 z-50 backdrop-blur-md border-b" style="background:rgba(10,22,10,.93);border-color:#2d4a2d">
+  <div class="max-w-7xl mx-auto px-4 md:px-6 flex items-center justify-between h-14 md:h-16">
+    <a href="#home" class="flex items-center gap-2 no-underline"><span class="text-xl">⛰️</span><span class="font-display text-lg md:text-xl font-bold tracking-wide text-campfire-500">MOUNTAINMEN</span><span class="font-display text-sm text-pine-300">· GFL</span></a>
+    <nav id="desktopNav" class="hidden lg:flex items-center gap-6">
+      <a class="nav-link text-sm text-cream-200" href="#identity">Identity</a><a class="nav-link text-sm text-cream-200" href="#lore">Lore</a><a class="nav-link text-sm text-cream-200" href="#resume">Resume</a><a class="nav-link text-sm text-cream-200" href="#history">History</a><a class="nav-link text-sm text-cream-200" href="#charts">Charts</a><a class="nav-link text-sm text-cream-200" href="#commentary">Commentary</a><a class="nav-link text-sm text-cream-200" href="#legacy">Legacy</a>
+    </nav>
+    <button id="menuBtn" class="lg:hidden p-2" aria-label="Open menu"><i data-lucide="menu"></i></button>
+  </div>
+</header>
+<div id="mobileMenu" class="hidden fixed inset-0 z-[60] bg-[#071007]/95 backdrop-blur-xl items-center justify-center flex-col gap-7">
+  <button id="menuClose" class="absolute top-5 right-5 p-2" aria-label="Close menu"><i data-lucide="x"></i></button>
+  <a class="mobileLink font-display text-2xl" href="#identity">Identity</a><a class="mobileLink font-display text-2xl" href="#lore">Lore</a><a class="mobileLink font-display text-2xl" href="#resume">Resume</a><a class="mobileLink font-display text-2xl" href="#history">History</a><a class="mobileLink font-display text-2xl" href="#charts">Charts</a><a class="mobileLink font-display text-2xl" href="#commentary">Commentary</a><a class="mobileLink font-display text-2xl" href="#legacy">Legacy</a>
+</div>
+
+<main>
+<section id="home" class="relative pt-28 pb-20 md:pt-36 md:pb-28 px-4 md:px-6 overflow-hidden" style="background:linear-gradient(to bottom,#081308,#0f2010 50%,#162816)">
+  <div class="absolute inset-0 pointer-events-none" style="background:radial-gradient(circle at 50% 25%,rgba(74,222,128,.07),transparent 32%)"></div>
+  <svg viewBox="0 0 1440 150" preserveAspectRatio="none" class="absolute bottom-0 left-0 w-full h-[130px] opacity-70"><path d="M0 150V112L90 80l70 24 95-55 100 48 90-64 95 49 110-72 98 55 90-44 100 58 90-54 100 58 95-38 117 66v89Z" fill="#102510"/><path d="M0 150v-25l110-31 95 23 110-44 110 45 105-57 110 51 110-67 100 61 115-54 90 56 110-44 125 71v45Z" fill="#1d3a1d" opacity=".75"/></svg>
+  <div class="relative max-w-5xl mx-auto text-center">
+    <p class="font-display uppercase tracking-[.24em] text-xs md:text-sm text-pine-300 mb-4">Gandorf National Football League · Franchise Guide V2</p>
+    <div class="flex justify-center mb-5"><span class="badge bg-campfire-500/10 text-campfire-400 border border-campfire-500/25">⛰️ Archetype · The Sleeping Giant</span></div>
+    <h1 class="font-display text-5xl sm:text-6xl md:text-8xl font-bold tracking-tight leading-[.96]">MEDFORD<br><span class="text-campfire-400">MOUNTAINMEN</span></h1>
+    <p class="mt-6 text-lg text-stone-400"><strong class="text-cream-100">Doug Meyer</strong> · 13-season franchise resume, 2013–2025</p>
+    <p class="max-w-2xl mx-auto mt-5 text-stone-400">Two championships. One unforgettable near-miss. A franchise whose earliest peaks still define every climb that followed.</p>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mt-10 max-w-3xl mx-auto">
+      <div class="stat-card p-4"><div class="text-2xl">🏆</div><div class="font-display text-3xl text-campfire-400 font-bold">2</div><div class="text-xs uppercase tracking-wider text-stone-400">Championships</div></div>
+      <div class="stat-card p-4"><div class="text-2xl">📊</div><div class="font-display text-3xl font-bold">87–87</div><div class="text-xs uppercase tracking-wider text-stone-400">Career Record</div></div>
+      <div class="stat-card p-4"><div class="text-2xl">👻</div><div class="font-display text-3xl text-pine-300 font-bold">12–1</div><div class="text-xs uppercase tracking-wider text-stone-400">2018</div></div>
+      <div class="stat-card p-4"><div class="text-2xl">🗓️</div><div class="font-display text-3xl font-bold">13</div><div class="text-xs uppercase tracking-wider text-stone-400">Seasons</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="identity" class="py-14 md:py-20 px-4 md:px-6">
+  <div class="max-w-6xl mx-auto">
+    <p class="font-display uppercase tracking-[.22em] text-xs text-campfire-400 mb-2">Franchise titles</p>
+    <h2 class="font-display text-3xl md:text-4xl font-bold mb-8">THE NAMES HISTORY GAVE THEM</h2>
+    <div class="grid md:grid-cols-3 gap-4">
+      <article class="title-card"><div class="text-3xl mb-3">🏔️</div><p class="text-xs uppercase tracking-widest text-pine-300 font-display">Legendary</p><h3 class="font-display text-2xl font-bold mt-1">The First Kings</h3><p class="text-stone-400 text-sm mt-2">Medford won the GFL's inaugural 2013 championship. The league's first summit belongs to the MountainMen.</p></article>
+      <article class="title-card"><div class="text-3xl mb-3">🔥</div><p class="text-xs uppercase tracking-widest text-campfire-400 font-display">Epic</p><h3 class="font-display text-2xl font-bold mt-1">The Lost Dynasty</h3><p class="text-stone-400 text-sm mt-2">Two championships established greatness. The 12–1 runner-up season in 2018 made the trophy case feel like it could have held even more.</p></article>
+      <article class="title-card"><div class="text-3xl mb-3">🌲</div><p class="text-xs uppercase tracking-widest text-stone-400 font-display">Enduring</p><h3 class="font-display text-2xl font-bold mt-1">Guardians of the Summit</h3><p class="text-stone-400 text-sm mt-2">The franchise keeps returning to the same image: climb, fall, return, and climb again.</p></article>
+    </div>
+
+    <div class="archetype mt-8 p-7 md:p-10">
+      <div class="relative z-10 max-w-3xl">
+        <span class="badge bg-pine-300/10 text-pine-300 border border-pine-300/20">Franchise Archetype</span>
+        <h3 class="font-display text-4xl md:text-6xl font-bold mt-4 text-campfire-400">THE SLEEPING GIANT</h3>
+        <p class="font-display text-lg md:text-xl text-cream-200 mt-3">The past is too accomplished to ignore. The present is too uneven to assume.</p>
+        <p class="text-stone-400 mt-4">Medford's identity lives in the tension between proven championship pedigree and the long wait for a third title. That contradiction makes every revival feel plausible and every setback feel temporary.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="lore" class="py-14 md:py-20 px-4 md:px-6 bg-[#0d190d]">
+  <div class="max-w-6xl mx-auto">
+    <p class="font-display uppercase tracking-[.22em] text-xs text-pine-300 mb-2">Interactive archive</p>
+    <h2 class="font-display text-3xl md:text-4xl font-bold">THE MOUNTAINMEN LORE VAULT</h2>
+    <p class="text-stone-400 mt-3 mb-8 max-w-3xl">These are the chapters that define the franchise, not a list of transactions or draft picks. Open a card to read the story.</p>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-4" id="loreButtons">
+      <button class="lore-card" aria-expanded="false" data-target="lore-first"><div class="text-3xl">🏔️</div><h3 class="font-display text-xl font-bold mt-3">The First Kings</h3><p class="text-xs text-stone-400 mt-2">Origin story</p></button>
+      <button class="lore-card" aria-expanded="false" data-target="lore-fall"><div class="text-3xl">🌧️</div><h3 class="font-display text-xl font-bold mt-3">The Fall</h3><p class="text-xs text-stone-400 mt-2">2014–2015</p></button>
+      <button class="lore-card" aria-expanded="false" data-target="lore-return"><div class="text-3xl">👑</div><h3 class="font-display text-xl font-bold mt-3">Return to Glory</h3><p class="text-xs text-stone-400 mt-2">2016</p></button>
+      <button class="lore-card" aria-expanded="false" data-target="lore-ghost"><div class="text-3xl">👻</div><h3 class="font-display text-xl font-bold mt-3">Ghost of 2018</h3><p class="text-xs text-stone-400 mt-2">The great what-if</p></button>
+      <button class="lore-card" aria-expanded="false" data-target="lore-climb"><div class="text-3xl">🌲</div><h3 class="font-display text-xl font-bold mt-3">The Long Climb</h3><p class="text-xs text-stone-400 mt-2">The unfinished chapter</p></button>
+    </div>
+    <div class="mt-5">
+      <article id="lore-first" class="lore-panel"><h3 class="font-display text-2xl text-campfire-400 font-bold">THE FIRST KINGS</h3><p class="text-stone-300 mt-3">Before the GFL had a mythology, Medford supplied its first champion. Doug Meyer took the MountainMen to the top in 2013 and secured something no future franchise can duplicate: being first. The title did more than start a trophy case. It made Medford part of the league's origin story.</p></article>
+      <article id="lore-fall" class="lore-panel"><h3 class="font-display text-2xl text-campfire-400 font-bold">THE FALL</h3><p class="text-stone-300 mt-3">The first championship did not become immediate domination. The following seasons sent Medford down the standings and turned the reigning champion into a reminder that elevation is temporary. That drop matters because it made what came next much bigger than a repeat.</p></article>
+      <article id="lore-return" class="lore-panel"><h3 class="font-display text-2xl text-campfire-400 font-bold">RETURN TO GLORY</h3><p class="text-stone-300 mt-3">The 2016 championship changed the meaning of 2013. One title can become a moment. A second title, three seasons later, made the first one impossible to dismiss as an accident. Medford had fallen, climbed again, and reached the summit twice.</p></article>
+      <article id="lore-ghost" class="lore-panel"><h3 class="font-display text-2xl text-campfire-400 font-bold">THE GHOST OF 2018</h3><p class="text-stone-300 mt-3">The MountainMen went 12–1 in 2018 and finished second after losing the championship to Off Boys. It was a season powerful enough to become a permanent argument: was Medford's greatest team actually the one that did not win a title? The missing ring is exactly what keeps the season alive.</p></article>
+      <article id="lore-climb" class="lore-panel"><h3 class="font-display text-2xl text-campfire-400 font-bold">THE LONG CLIMB</h3><p class="text-stone-300 mt-3">Since the second title, the MountainMen have lived with a standard set by their own past. There have been flashes, especially 2018 and a return to winning territory in 2022, but no third championship. Medford's modern story is not collapse. It is the burden of knowing the summit is real because the franchise has already stood there twice.</p></article>
+    </div>
+  </div>
+</section>
+
+<section id="resume" class="py-14 md:py-20 px-4 md:px-6">
+  <div class="max-w-5xl mx-auto">
+    <p class="font-display uppercase tracking-[.22em] text-xs text-campfire-400 mb-2">Career resume</p><h2 class="font-display text-3xl md:text-4xl font-bold mb-8">THE NUMBERS THAT MATTER</h2>
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+      <div class="stat-card p-5"><p class="font-display text-3xl text-campfire-400 font-bold">2</p><p class="text-sm font-semibold">Championships</p><p class="text-xs text-stone-400 mt-1">2013, 2016</p></div>
+      <div class="stat-card p-5"><p class="font-display text-3xl font-bold">87–87</p><p class="text-sm font-semibold">Career Record</p><p class="text-xs text-stone-400 mt-1">13 seasons</p></div>
+      <div class="stat-card p-5"><p class="font-display text-3xl text-pine-300 font-bold">12–1</p><p class="text-sm font-semibold">Best Record</p><p class="text-xs text-stone-400 mt-1">2018</p></div>
+      <div class="stat-card p-5"><p class="font-display text-3xl text-pine-300 font-bold">1,540.5</p><p class="text-sm font-semibold">Best Regular-Season PF</p><p class="text-xs text-stone-400 mt-1">2018</p></div>
+      <div class="stat-card p-5"><p class="font-display text-3xl font-bold">7.0</p><p class="text-sm font-semibold">Avg. Finish</p><p class="text-xs text-stone-400 mt-1">Based on supplied guide data</p></div>
+      <div class="stat-card p-5"><p class="font-display text-3xl font-bold">13</p><p class="text-sm font-semibold">Seasons</p><p class="text-xs text-stone-400 mt-1">2013–2025</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="history" class="py-14 md:py-20 px-4 md:px-6 bg-[#0d190d]">
+  <div class="max-w-6xl mx-auto">
+    <div class="grid lg:grid-cols-[.8fr_1.2fr] gap-10 lg:gap-14">
+      <div><p class="font-display uppercase tracking-[.22em] text-xs text-pine-300 mb-2">Era timeline</p><h2 class="font-display text-3xl md:text-4xl font-bold mb-8">THE CLIMB IN CHAPTERS</h2>
+        <div class="timeline">
+          <div class="era"><span class="era-dot"></span><div class="era-card"><span class="text-xs font-display text-campfire-400 tracking-widest">2013</span><h3 class="font-display text-xl font-bold mt-1">The First Summit</h3><p class="text-sm text-stone-400 mt-2">The inaugural title establishes the franchise immediately.</p></div></div>
+          <div class="era"><span class="era-dot" style="border-color:#78716c"></span><div class="era-card"><span class="text-xs font-display text-stone-400 tracking-widest">2014–2015</span><h3 class="font-display text-xl font-bold mt-1">Lost in the Woods</h3><p class="text-sm text-stone-400 mt-2">The champion falls back into the pack and loses its early altitude.</p></div></div>
+          <div class="era"><span class="era-dot"></span><div class="era-card"><span class="text-xs font-display text-campfire-400 tracking-widest">2016</span><h3 class="font-display text-xl font-bold mt-1">Return to Glory</h3><p class="text-sm text-stone-400 mt-2">A second title turns an early success into a lasting legacy.</p></div></div>
+          <div class="era"><span class="era-dot" style="border-color:#94a3b8"></span><div class="era-card ghost"><span class="text-xs font-display text-stone-400 tracking-widest">2018</span><h3 class="font-display text-xl font-bold mt-1">The Ghost Season</h3><p class="text-sm text-stone-400 mt-2">12–1, second place, no ring. The great unresolved MountainMen season.</p></div></div>
+          <div class="era"><span class="era-dot" style="border-color:#4ade80"></span><div class="era-card"><span class="text-xs font-display text-pine-300 tracking-widest">2019–2025</span><h3 class="font-display text-xl font-bold mt-1">The Long Climb</h3><p class="text-sm text-stone-400 mt-2">A third summit remains out of reach, keeping the franchise story unfinished.</p></div></div>
+        </div>
+      </div>
+      <div><p class="font-display uppercase tracking-[.22em] text-xs text-campfire-400 mb-2">Season ledger</p><h2 class="font-display text-3xl md:text-4xl font-bold mb-8">YEAR BY YEAR</h2>
+        <div class="overflow-x-auto rounded-2xl border border-forest-500 bg-[#111f11]"><table class="season-table w-full text-sm"><thead class="bg-[#1d3a1d]"><tr><th class="text-left px-4 py-3 font-display">YEAR</th><th class="text-left px-4 py-3 font-display">RECORD</th><th class="text-left px-4 py-3 font-display">FINISH</th><th class="text-right px-4 py-3 font-display">PF</th><th class="text-right px-4 py-3 font-display">DIFF</th></tr></thead><tbody id="seasonBody"></tbody></table></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="charts" class="py-14 md:py-20 px-4 md:px-6">
+  <div class="max-w-6xl mx-auto"><p class="font-display uppercase tracking-[.22em] text-xs text-pine-300 mb-2">Performance profile</p><h2 class="font-display text-3xl md:text-4xl font-bold mb-8">THE ELEVATION MAP</h2>
+    <div class="chart-card mb-5"><h3 class="font-display text-lg font-semibold mb-4">Points For vs. Points Against</h3><div class="h-72 md:h-80"><canvas id="scoreChart"></canvas></div></div>
+    <div class="grid md:grid-cols-2 gap-5"><div class="chart-card"><h3 class="font-display text-lg font-semibold mb-4">Regular-Season Record by Year</h3><div class="h-64"><canvas id="winsChart"></canvas></div></div><div class="chart-card"><h3 class="font-display text-lg font-semibold mb-4">Point Differential</h3><div class="h-64"><canvas id="diffChart"></canvas></div></div></div>
+  </div>
+</section>
+
+<section class="py-14 md:py-20 px-4 md:px-6 bg-[#0d190d]">
+  <div class="max-w-5xl mx-auto"><p class="font-display uppercase tracking-[.22em] text-xs text-campfire-400 mb-2">Franchise mythology</p><h2 class="font-display text-3xl md:text-4xl font-bold mb-8">WHAT THE LOGO MEANS</h2>
+    <div class="grid md:grid-cols-2 gap-4">
+      <div class="myth-card"><p class="text-xs font-display uppercase tracking-widest text-stone-400">Identity</p><h3 class="font-display text-2xl font-bold mt-1">Founding Power</h3></div>
+      <div class="myth-card"><p class="text-xs font-display uppercase tracking-widest text-stone-400">Reputation</p><h3 class="font-display text-2xl font-bold mt-1">Dangerous Long After the Peak</h3></div>
+      <div class="myth-card"><p class="text-xs font-display uppercase tracking-widest text-stone-400">Greatest What-If</p><h3 class="font-display text-2xl font-bold mt-1">The 2018 Season</h3></div>
+      <div class="myth-card"><p class="text-xs font-display uppercase tracking-widest text-stone-400">Fan Motto</p><h3 class="font-display text-2xl font-bold mt-1">The mountain still stands.</h3></div>
+    </div>
+  </div>
+</section>
+
+<section id="commentary" class="py-14 md:py-20 px-4 md:px-6">
+  <div class="max-w-4xl mx-auto"><p class="font-display uppercase tracking-[.22em] text-xs text-pine-300 mb-2">Commentary</p><h2 class="font-display text-3xl md:text-4xl font-bold mb-8">COMMISSIONER'S NOTES</h2>
+    <article class="commentary p-7 md:p-10"><div class="quote-mark">“</div><p class="text-lg md:text-xl text-cream-200 leading-relaxed">Doug Meyer's resume refuses to settle into one easy verdict. Two championships demand respect. An 87–87 career record keeps the debate open. Then there is 2018: a 12–1 season that ended one win short of another title. The MountainMen are compelling because the numbers argue with each other. The franchise has already proven it can reach the summit, which makes every future climb feel like it could still become the next chapter.</p><div class="mt-7 pt-5 border-t border-forest-500/50 flex flex-wrap gap-2"><span class="badge bg-campfire-500/10 text-campfire-400">2× Champion</span><span class="badge bg-pine-300/10 text-pine-300">Founding Power</span><span class="badge bg-white/5 text-stone-300">Unfinished Legacy</span></div></article>
+  </div>
+</section>
+
+<section id="legacy" class="py-14 md:py-20 px-4 md:px-6 bg-[#0d190d]">
+  <div class="max-w-4xl mx-auto"><p class="font-display uppercase tracking-[.22em] text-xs text-campfire-400 mb-2">Legacy</p><h2 class="font-display text-3xl md:text-4xl font-bold mb-8">WHERE DO THE MOUNTAINMEN STAND?</h2>
+    <div class="legacy-card p-7 md:p-10 text-center"><span class="badge bg-campfire-500/10 text-campfire-400 border border-campfire-500/20">GFL Great</span><div class="font-display text-6xl md:text-7xl font-bold mt-5">78<span class="text-2xl text-stone-400">/100</span></div><p class="text-stone-400 mt-3 max-w-2xl mx-auto">A founding champion with two titles, one legendary runner-up season, and a modern legacy defined by the search for one more summit.</p><div class="w-full h-7 rounded-full overflow-hidden bg-[#1a0f07] mt-7 text-left"><div class="legacy-bar h-full rounded-full relative" style="width:78%;background:linear-gradient(90deg,#2d6a2d,#4ade80 62%,#f59e0b)"><span class="absolute right-3 top-1/2 -translate-y-1/2 text-[#0a160a] font-display font-bold">78</span></div></div><div class="grid grid-cols-3 text-xs font-display uppercase tracking-wider text-stone-400 mt-3"><span class="text-left">Respected</span><span>Great</span><span class="text-right">Legendary</span></div></div>
+  </div>
+</section>
+</main>
+<footer class="py-9 px-4 border-t text-center bg-[#060d06] border-forest-500"><p class="font-display text-sm text-stone-400">⛰️ MEDFORD MOUNTAINMEN · GFL FRANCHISE GUIDE V2</p><p class="text-xs text-stone-500 mt-1">Doug Meyer · 2013–2025 · built from supplied league data</p></footer>
+
+<script>
+const seasons=[
+{y:2013,r:'9-4',f:'1st 🏆',pf:1473.5,pa:1252.5,d:221,w:9},{y:2014,r:'7-6',f:'11th',pf:1245,pa:1126,d:119,w:7},{y:2015,r:'4-9',f:'8th',pf:1152,pa:1349,d:-197,w:4},{y:2016,r:'10-3',f:'1st 🏆',pf:1411,pa:1231,d:180,w:10},{y:2017,r:'6-7',f:'9th',pf:1234,pa:1298,d:-64,w:6},{y:2018,r:'12-1',f:'2nd',pf:1540.5,pa:1176,d:364.5,w:12},{y:2019,r:'6-7',f:'9th',pf:1344,pa:1292,d:52,w:6},{y:2020,r:'6-7',f:'8th',pf:1250,pa:1229.5,d:20.5,w:6},{y:2021,r:'6-8',f:'8th',pf:1376,pa:1413,d:-37,w:6},{y:2022,r:'8-6',f:'5th',pf:1502.22,pa:1423.64,d:78.58,w:8},{y:2023,r:'4-10',f:'12th',pf:1351.88,pa:1457.36,d:-105.48,w:4},{y:2024,r:'3-11',f:'11th seed',pf:1405.34,pa:1529.90,d:-124.56,w:3},{y:2025,r:'6-8',f:'11th',pf:1373.02,pa:1404.47,d:-31.45,w:6}
+];
+const body=document.getElementById('seasonBody'); seasons.forEach(s=>{const tr=document.createElement('tr');if(s.f.includes('🏆'))tr.className='champ-row';if(s.y===2018)tr.className='ghost-row';tr.innerHTML=`<td class="px-4 py-3 font-display font-semibold">${s.y}</td><td class="px-4 py-3">${s.r}</td><td class="px-4 py-3">${s.f}</td><td class="px-4 py-3 text-right text-pine-300">${s.pf.toLocaleString(undefined,{maximumFractionDigits:2})}</td><td class="px-4 py-3 text-right font-semibold ${s.d>=0?'text-green-400':'text-red-400'}">${s.d>=0?'+':''}${s.d.toFixed(1)}</td>`;body.appendChild(tr)});
+
+document.querySelectorAll('.lore-card').forEach(btn=>btn.addEventListener('click',()=>{const id=btn.dataset.target;const panel=document.getElementById(id);const opening=!panel.classList.contains('open');document.querySelectorAll('.lore-panel').forEach(p=>p.classList.remove('open'));document.querySelectorAll('.lore-card').forEach(b=>b.setAttribute('aria-expanded','false'));if(opening){panel.classList.add('open');btn.setAttribute('aria-expanded','true');panel.scrollIntoView({behavior:'smooth',block:'nearest'})}}));
+
+const menu=document.getElementById('mobileMenu');document.getElementById('menuBtn').onclick=()=>{menu.classList.remove('hidden');menu.classList.add('flex')};document.getElementById('menuClose').onclick=()=>{menu.classList.add('hidden');menu.classList.remove('flex')};document.querySelectorAll('.mobileLink').forEach(a=>a.onclick=()=>{menu.classList.add('hidden');menu.classList.remove('flex')});
+
+window.addEventListener('load',()=>{if(window.lucide)lucide.createIcons()});
+const chartColor={grid:'#1f3a1f',tick:'#94a3b8',cream:'#f5f0e8'};Chart.defaults.color=chartColor.tick;Chart.defaults.font.family='Inter';
+const labels=seasons.map(s=>String(s.y));
+new Chart(document.getElementById('scoreChart'),{type:'line',data:{labels,datasets:[{label:'Points For',data:seasons.map(s=>s.pf),borderColor:'#4ade80',backgroundColor:'rgba(74,222,128,.08)',pointBackgroundColor:seasons.map(s=>s.y===2018?'#f59e0b':'#4ade80'),pointRadius:seasons.map(s=>s.y===2018?7:3),fill:true,tension:.3},{label:'Points Against',data:seasons.map(s=>s.pa),borderColor:'#f87171',borderDash:[6,4],pointRadius:3,tension:.3}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:chartColor.cream}}},scales:{x:{grid:{color:chartColor.grid}},y:{grid:{color:chartColor.grid}}}}});
+new Chart(document.getElementById('winsChart'),{type:'bar',data:{labels,datasets:[{data:seasons.map(s=>s.w),backgroundColor:seasons.map(s=>s.y===2013||s.y===2016?'#f59e0b':s.y===2018?'#94a3b8':'#4ade80'),borderRadius:4}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{grid:{display:false}},y:{beginAtZero:true,max:14,grid:{color:chartColor.grid}}}}});
+new Chart(document.getElementById('diffChart'),{type:'bar',data:{labels,datasets:[{data:seasons.map(s=>s.d),backgroundColor:seasons.map(s=>s.d>=0?'#4ade80':'#ef4444'),borderRadius:4}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{grid:{display:false}},y:{grid:{color:ctx=>ctx.tick.value===0?'rgba(245,240,232,.35)':chartColor.grid,lineWidth:ctx=>ctx.tick.value===0?2:1}}}}});
+const sections=['identity','lore','resume','history','charts','commentary','legacy'];const navs=document.querySelectorAll('#desktopNav .nav-link');function activeNav(){let cur='identity';const pos=scrollY+120;sections.forEach(id=>{const e=document.getElementById(id);if(e&&e.offsetTop<=pos)cur=id});navs.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+cur))}addEventListener('scroll',activeNav,{passive:true});activeNav();
+</script>
+<script src="gfl-guide-live.js"></script>
+</body>
+</html>
