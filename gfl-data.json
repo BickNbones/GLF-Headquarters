@@ -125,6 +125,48 @@
           "thunder"
         ]
       ]
+    },
+    "4": {
+      "scores": {
+        "yourmom": 84.38,
+        "murder": 112.48,
+        "thunder": 89.78,
+        "meth": 105.22,
+        "eskimo": 123.34,
+        "spartans": 97.9,
+        "tickle": 156.32,
+        "tropics": 112.8,
+        "offboys": 131.16,
+        "mountain": 58.08,
+        "cunt": 137.22,
+        "sith": 111.3
+      },
+      "matchups": [
+        [
+          "yourmom",
+          "murder"
+        ],
+        [
+          "thunder",
+          "meth"
+        ],
+        [
+          "eskimo",
+          "spartans"
+        ],
+        [
+          "tickle",
+          "tropics"
+        ],
+        [
+          "offboys",
+          "mountain"
+        ],
+        [
+          "cunt",
+          "sith"
+        ]
+      ]
     }
   },
   "schedule": {
@@ -267,10 +309,12 @@
         {
           "home": "cunt",
           "away": "sith",
-          "note": ""
+          "note": "game of the week"
         }
       ],
-      "notes": []
+      "notes": [
+        "game of the week"
+      ]
     },
     "5": {
       "games": [
@@ -655,125 +699,115 @@
   "draftRevealed": [],
   "goldenHP": {
     "team": "tickle",
-    "score": 142.32,
-    "week": 2
+    "score": 156.32,
+    "week": 4
   },
   "weeklyExtras": {
-    "week": 3,
-    "tagline": "Week 3 News · Results · Notes · Season XV",
-    "kicker": "GFL Weekly Cover Story · Week 3",
-    "headline": "Two perfect starts. One crowded chase.",
-    "deck": "Simpson Sith and California Un-Named Team moved to 3-0, while Off Boys stole the weekly scoring crown by just 0.40 points.",
+    "week": 4,
+    "tagline": "Week 4 News · Results · Rankings · Schedule Intelligence",
+    "kicker": "GFL Weekly Cover Story · Week 4",
+    "headline": "Ticklesh!ts detonates, the West tightens, and four weeks finally reveal the contenders",
+    "deck": "A 156.32-point eruption reset the Golden High Point, while schedule strength and all-play performance expose which records are sturdy and which may be living dangerously.",
     "story": [
-      "Simpson Sith survived the commissioner-noted East Coast slugfest, beating Sullco MethMouths 117.40-109.08. The Sith remain unbeaten and lead the league with 357.06 points through three weeks.",
-      "California Un-Named Team also reached 3-0 after a 110.88-93.58 win over Medford MountainMen. The league now has two perfect teams entering Week 4.",
-      "Off Boys posted 125.04, edging Space Cadets' 124.64 by only 0.40 for Week 3 high points. Space Cadets still secured the first win since returning to the league.",
-      "Redwood Murder fell 95.74-83.06 to Eskimo Brothers, while Flint Tropics and Medford MountainMen remain winless despite Flint scoring 318.96 points over three weeks."
+      "Turbulent Ticklesh!ts delivered the defining score of Week 4, crushing the slate with 156.32 points and establishing the season’s new Golden High Point. The total was 19.10 points clear of the week’s runner-up, California Un-Named Team, and pushed Ticklesh!ts to 522.76 points through four weeks, the most in the GFL.",
+      "The standings are beginning to separate from the underlying performance. California Un-Named Team and Sullco MethMouths both sit at 3-1, but the scoring race says Ticklesh!ts has been the league’s most dangerous weekly ceiling. Meanwhile, Off Boys has quietly stacked 462.08 points and owns a 3-1 record after a 73.08-point demolition of Medford MountainMen.",
+      "Schedule context matters. Medford MountainMen has faced the strongest slate so far by opponent winning percentage (0.750), while Turbulent Ticklesh!ts has drawn the lightest (0.188). That does not erase wins or losses, but it gives the early records a better frame.",
+      "The all-play lens adds another warning label: Flint Tropics has an estimated 0.57 wins based on how often its weekly scores would have beaten the rest of the league, compared with 0 actual wins. On the other side, California Un-Named Team sits furthest above its all-play expectation."
     ],
     "awards": [
       {
-        "emoji": "🏆",
-        "title": "Team of the Week",
-        "team": "Off Boys",
-        "detail": "125.04 points, only 0.40 ahead of Space Cadets."
-      },
-      {
-        "emoji": "🎯",
-        "title": "Closest Finish",
-        "team": "Simpson Sith def. Sullco MethMouths",
-        "detail": "117.40-109.08, a 8.32-point margin."
+        "emoji": "🔥",
+        "title": "Statement of the Week",
+        "team": "Turbulent Ticklesh!ts",
+        "detail": "156.32 points, the best score of Week 4 and the best GFL score of the season."
       },
       {
         "emoji": "💥",
-        "title": "Statement Win",
-        "team": "Space Cadets def. Flint Tropics",
-        "detail": "A 25.56-point victory, widest of Week 3."
+        "title": "Biggest Blowout",
+        "team": "Off Boys",
+        "detail": "Defeated Medford MountainMen by 73.08 points, the widest margin of the week."
       },
       {
-        "emoji": "🚀",
-        "title": "Return Signal",
-        "team": "Space Cadets",
-        "detail": "The workbook note marks this as the first win since returning to the league."
+        "emoji": "🎯",
+        "title": "Closest Game",
+        "team": "Sullco MethMouths",
+        "detail": "Beat Space Cadets by 15.44 points. Even the closest Week 4 game was not especially close."
+      },
+      {
+        "emoji": "📈",
+        "title": "Scoring King Through Four",
+        "team": "Turbulent Ticklesh!ts",
+        "detail": "522.76 total points, an average of 130.69 per week."
       }
     ],
-    "powerTitle": "Power Five After Week 3",
+    "tidbits": [
+      "Medford MountainMen owns the toughest completed schedule by opponent winning percentage at 0.750.",
+      "Turbulent Ticklesh!ts has faced the lightest completed schedule at 0.188.",
+      "Week 4 produced three scores above 130 and two below 90, a slate defined by separation rather than suspense.",
+      "Turbulent Ticklesh!ts has two weekly high-point wins in four weeks and now holds the Golden High Point.",
+      "Medford MountainMen has allowed 504.60 points through four weeks, the most in the league."
+    ],
+    "powerTitle": "Week 4 Power Five · Record + Scoring Form",
     "power": [
       {
-        "team": "Simpson Sith",
-        "detail": "3-0 · 357.06 PF"
-      },
-      {
         "team": "California Un-Named Team",
-        "detail": "3-0 · 321.72 PF"
-      },
-      {
-        "team": "Sullco MethMouths",
-        "detail": "2-1 · 368.18 PF"
+        "detail": "4-0 · 458.94 PF · all-play 27-17"
       },
       {
         "team": "Turbulent Ticklesh!ts",
-        "detail": "2-1 · 366.44 PF"
+        "detail": "3-1 · 522.76 PF · all-play 35-9"
+      },
+      {
+        "team": "Sullco MethMouths",
+        "detail": "3-1 · 473.40 PF · all-play 30-14"
+      },
+      {
+        "team": "Simpson Sith",
+        "detail": "3-1 · 468.36 PF · all-play 27-17"
       },
       {
         "team": "Eskimo Brothers",
-        "detail": "2-1 · 328.08 PF"
+        "detail": "3-1 · 451.42 PF · all-play 24-20"
       }
     ],
     "scoreboard": [
       {
-        "winner": "Simpson Sith",
-        "loser": "Sullco MethMouths",
-        "winnerScore": 117.4,
-        "loserScore": 109.08,
-        "margin": 8.320000000000007
-      },
-      {
-        "winner": "THE Barton Spartans",
-        "loser": "Your Mom",
-        "winnerScore": 101.64,
-        "loserScore": 83.5,
-        "margin": 18.14
+        "winner": "Turbulent Ticklesh!ts",
+        "loser": "Flint Tropics",
+        "winnerScore": 156.32,
+        "loserScore": 112.8
       },
       {
         "winner": "California Un-Named Team",
-        "loser": "Medford MountainMen",
-        "winnerScore": 110.88,
-        "loserScore": 93.58,
-        "margin": 17.299999999999997
-      },
-      {
-        "winner": "Eskimo Brothers",
-        "loser": "Redwood Murder",
-        "winnerScore": 95.74,
-        "loserScore": 83.06,
-        "margin": 12.679999999999993
+        "loser": "Simpson Sith",
+        "winnerScore": 137.22,
+        "loserScore": 111.3
       },
       {
         "winner": "Off Boys",
-        "loser": "Turbulent Ticklesh!ts",
-        "winnerScore": 125.04,
-        "loserScore": 106.66,
-        "margin": 18.38000000000001
+        "loser": "Medford MountainMen",
+        "winnerScore": 131.16,
+        "loserScore": 58.08
       },
       {
-        "winner": "Space Cadets",
-        "loser": "Flint Tropics",
-        "winnerScore": 124.64,
-        "loserScore": 99.08,
-        "margin": 25.560000000000002
+        "winner": "Eskimo Brothers",
+        "loser": "THE Barton Spartans",
+        "winnerScore": 123.34,
+        "loserScore": 97.9
+      },
+      {
+        "winner": "Redwood Murder",
+        "loser": "Your Mom",
+        "winnerScore": 112.48,
+        "loserScore": 84.38
+      },
+      {
+        "winner": "Sullco MethMouths",
+        "loser": "Space Cadets",
+        "winnerScore": 105.22,
+        "loserScore": 89.78
       }
     ],
-    "lookingAhead": "Week 4 puts Redwood Murder against Your Mom, Space Cadets against Sullco MethMouths, Eskimo Brothers against THE Barton Spartans, Turbulent Ticklesh!ts against Flint Tropics, Off Boys against Medford MountainMen, and California Un-Named Team against Simpson Sith. The final matchup guarantees that only one of the two current 3-0 teams can leave Week 4 unbeaten.",
-    "tidbits": [
-      "Sullco MethMouths leads the league in total points with 368.18, despite sitting at 2-1.",
-      "Turbulent Ticklesh!ts is second in total points at 366.44 and owns the season-high weekly score of 142.32.",
-      "Redwood Murder is 2-1 with only a 2.14-point scoring differential.",
-      "Flint Tropics is 0-3 despite scoring 318.96, more than five teams."
-    ],
-    "sourceNotes": [
-      "East coast slug fest",
-      "high points by less than one point!",
-      "First win since return to League!"
-    ]
+    "lookingAhead": "Week 5 brings two immediate measuring sticks. Simpson Sith and Sullco MethMouths meet in a 3-1 showdown, while Medford MountainMen gets a rematch with the league’s hottest scoring team, Turbulent Ticklesh!ts. Space Cadets versus Eskimo Brothers is a pressure game for two 2-2 teams trying to avoid falling below .500, and Flint Tropics versus Redwood Murder gives both clubs a chance to stabilize before the middle of the season."
   }
 }
