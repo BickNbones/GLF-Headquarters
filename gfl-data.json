@@ -704,37 +704,37 @@
   },
   "weeklyExtras": {
     "week": 4,
-    "tagline": "Week 4 News · Results · Rankings · Schedule Intelligence",
-    "kicker": "GFL Weekly Cover Story · Week 4",
+    "tagline": "Week 4 News \u00b7 Results \u00b7 Rankings \u00b7 Schedule Intelligence",
+    "kicker": "GFL Weekly Cover Story \u00b7 Week 4",
     "headline": "Ticklesh!ts detonates, the West tightens, and four weeks finally reveal the contenders",
     "deck": "A 156.32-point eruption reset the Golden High Point, while schedule strength and all-play performance expose which records are sturdy and which may be living dangerously.",
     "story": [
-      "Turbulent Ticklesh!ts delivered the defining score of Week 4, crushing the slate with 156.32 points and establishing the season’s new Golden High Point. The total was 19.10 points clear of the week’s runner-up, California Un-Named Team, and pushed Ticklesh!ts to 522.76 points through four weeks, the most in the GFL.",
-      "The standings are beginning to separate from the underlying performance. California Un-Named Team and Sullco MethMouths both sit at 3-1, but the scoring race says Ticklesh!ts has been the league’s most dangerous weekly ceiling. Meanwhile, Off Boys has quietly stacked 462.08 points and owns a 3-1 record after a 73.08-point demolition of Medford MountainMen.",
+      "Turbulent Ticklesh!ts delivered the defining score of Week 4, crushing the slate with 156.32 points and establishing the season\u2019s new Golden High Point. The total was 19.10 points clear of the week\u2019s runner-up, California Un-Named Team, and pushed Ticklesh!ts to 522.76 points through four weeks, the most in the GFL.",
+      "The standings are beginning to separate from the underlying performance. California Un-Named Team remains the league's lone undefeated team at 4-0, while Sullco MethMouths sits among a strong group of 3-1 contenders. The scoring race still says Ticklesh!ts has been the league's most dangerous weekly ceiling. Meanwhile, Off Boys has quietly stacked 462.08 points and remains a contender despite a 2-2 record.",
       "Schedule context matters. Medford MountainMen has faced the strongest slate so far by opponent winning percentage (0.750), while Turbulent Ticklesh!ts has drawn the lightest (0.188). That does not erase wins or losses, but it gives the early records a better frame.",
       "The all-play lens adds another warning label: Flint Tropics has an estimated 0.57 wins based on how often its weekly scores would have beaten the rest of the league, compared with 0 actual wins. On the other side, California Un-Named Team sits furthest above its all-play expectation."
     ],
     "awards": [
       {
-        "emoji": "🔥",
+        "emoji": "\ud83d\udd25",
         "title": "Statement of the Week",
         "team": "Turbulent Ticklesh!ts",
         "detail": "156.32 points, the best score of Week 4 and the best GFL score of the season."
       },
       {
-        "emoji": "💥",
+        "emoji": "\ud83d\udca5",
         "title": "Biggest Blowout",
         "team": "Off Boys",
         "detail": "Defeated Medford MountainMen by 73.08 points, the widest margin of the week."
       },
       {
-        "emoji": "🎯",
+        "emoji": "\ud83c\udfaf",
         "title": "Closest Game",
         "team": "Sullco MethMouths",
         "detail": "Beat Space Cadets by 15.44 points. Even the closest Week 4 game was not especially close."
       },
       {
-        "emoji": "📈",
+        "emoji": "\ud83d\udcc8",
         "title": "Scoring King Through Four",
         "team": "Turbulent Ticklesh!ts",
         "detail": "522.76 total points, an average of 130.69 per week."
@@ -747,55 +747,55 @@
       "Turbulent Ticklesh!ts has two weekly high-point wins in four weeks and now holds the Golden High Point.",
       "Medford MountainMen has allowed 504.60 points through four weeks, the most in the league."
     ],
-    "powerTitle": "Week 4 Power Rankings · All 12 Teams",
+    "powerTitle": "Week 4 Power Rankings \u00b7 All 12 Teams",
     "power": [
       {
         "team": "California Un-Named Team",
-        "detail": "4-0 · 458.94 PF · all-play 27-17 ★ TOP FIVE"
+        "detail": "4-0 \u00b7 458.94 PF \u00b7 all-play 27-17 \u2605 TOP FIVE"
       },
       {
         "team": "Turbulent Ticklesh!ts",
-        "detail": "3-1 · 522.76 PF · all-play 35-9 ★ TOP FIVE"
+        "detail": "3-1 \u00b7 522.76 PF \u00b7 all-play 35-9 \u2605 TOP FIVE"
       },
       {
         "team": "Sullco MethMouths",
-        "detail": "3-1 · 473.40 PF · all-play 30-14 ★ TOP FIVE"
+        "detail": "3-1 \u00b7 473.40 PF \u00b7 all-play 30-14 \u2605 TOP FIVE"
       },
       {
         "team": "Simpson Sith",
-        "detail": "3-1 · 468.36 PF · all-play 27-17 ★ TOP FIVE"
+        "detail": "3-1 \u00b7 468.36 PF \u00b7 all-play 27-17 \u2605 TOP FIVE"
       },
       {
         "team": "Eskimo Brothers",
-        "detail": "3-1 · 451.42 PF · all-play 24-20 ★ TOP FIVE"
+        "detail": "3-1 \u00b7 451.42 PF \u00b7 all-play 24-20 \u2605 TOP FIVE"
       },
       {
         "team": "Redwood Murder",
-        "detail": "3-1 · 420.96 PF · all-play 22-22"
+        "detail": "3-1 \u00b7 420.96 PF \u00b7 all-play 22-22"
       },
       {
         "team": "Off Boys",
-        "detail": "2-2 · 462.08 PF · all-play 29-15"
+        "detail": "2-2 \u00b7 462.08 PF \u00b7 all-play 29-15"
       },
       {
         "team": "Flint Tropics",
-        "detail": "0-4 · 431.76 PF · all-play 25-19"
+        "detail": "0-4 \u00b7 431.76 PF \u00b7 all-play 25-19"
       },
       {
         "team": "Space Cadets",
-        "detail": "1-3 · 392.68 PF · all-play 17-27"
+        "detail": "1-3 \u00b7 392.68 PF \u00b7 all-play 17-27"
       },
       {
         "team": "THE Barton Spartans",
-        "detail": "1-3 · 372.24 PF · all-play 14-30"
+        "detail": "1-3 \u00b7 372.24 PF \u00b7 all-play 14-30"
       },
       {
         "team": "Your Mom",
-        "detail": "1-3 · 365.76 PF · all-play 7-37"
+        "detail": "1-3 \u00b7 365.76 PF \u00b7 all-play 7-37"
       },
       {
         "team": "Medford MountainMen",
-        "detail": "0-4 · 331.86 PF · all-play 7-37"
+        "detail": "0-4 \u00b7 331.86 PF \u00b7 all-play 7-37"
       }
     ],
     "scoreboard": [
@@ -836,6 +836,6 @@
         "loserScore": 89.78
       }
     ],
-    "lookingAhead": "Week 5 brings two immediate measuring sticks. Simpson Sith and Sullco MethMouths meet in a 3-1 showdown, while Medford MountainMen gets a rematch with the league’s hottest scoring team, Turbulent Ticklesh!ts. Space Cadets versus Eskimo Brothers is a pressure game for two 2-2 teams trying to avoid falling below .500, and Flint Tropics versus Redwood Murder gives both clubs a chance to stabilize before the middle of the season."
+    "lookingAhead": "Week 5 brings two immediate measuring sticks. Simpson Sith and Sullco MethMouths meet in a 3-1 showdown, while Medford MountainMen gets a rematch with the league\u2019s hottest scoring team, Turbulent Ticklesh!ts. Space Cadets versus Eskimo Brothers is a pressure game for two 2-2 teams trying to avoid falling below .500, and Flint Tropics versus Redwood Murder gives both clubs a chance to stabilize before the middle of the season."
   }
 }
