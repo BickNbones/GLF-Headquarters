@@ -167,6 +167,48 @@
           "sith"
         ]
       ]
+    },
+    "5": {
+      "scores": {
+        "thunder": 80.54,
+        "eskimo": 94.08,
+        "sith": 116.94,
+        "meth": 139.16,
+        "cunt": 94.2,
+        "yourmom": 135.12,
+        "tropics": 90.42,
+        "murder": 109.24,
+        "mountain": 105.32,
+        "tickle": 92.9,
+        "spartans": 121.96,
+        "offboys": 145.9
+      },
+      "matchups": [
+        [
+          "thunder",
+          "eskimo"
+        ],
+        [
+          "sith",
+          "meth"
+        ],
+        [
+          "cunt",
+          "yourmom"
+        ],
+        [
+          "tropics",
+          "murder"
+        ],
+        [
+          "mountain",
+          "tickle"
+        ],
+        [
+          "spartans",
+          "offboys"
+        ]
+      ]
     }
   },
   "schedule": {
@@ -703,139 +745,139 @@
     "week": 4
   },
   "weeklyExtras": {
-    "week": 4,
-    "tagline": "Week 4 News \u00b7 Results \u00b7 Rankings \u00b7 Schedule Intelligence",
-    "kicker": "GFL Weekly Cover Story \u00b7 Week 4",
-    "headline": "Ticklesh!ts detonates, the West tightens, and four weeks finally reveal the contenders",
-    "deck": "A 156.32-point eruption reset the Golden High Point, while schedule strength and all-play performance expose which records are sturdy and which may be living dangerously.",
+    "week": 5,
+    "tagline": "Week 5 News · Results · Rankings · Player Factors",
+    "kicker": "GFL Weekly Cover Story · Week 5",
+    "headline": "Off Boys owns the week, while four teams crowd the top at 4-1",
+    "deck": "Off Boys posted a Week 5-best 145.90, Sullco MethMouths climbed into the 4-1 pack, and the player leaderboard helps explain the week’s biggest swings without replacing the official GFL team totals.",
     "story": [
-      "Turbulent Ticklesh!ts delivered the defining score of Week 4, crushing the slate with 156.32 points and establishing the season\u2019s new Golden High Point. The total was 19.10 points clear of the week\u2019s runner-up, California Un-Named Team, and pushed Ticklesh!ts to 522.76 points through four weeks, the most in the GFL.",
-      "The standings are beginning to separate from the underlying performance. California Un-Named Team remains the league's lone undefeated team at 4-0, while Sullco MethMouths sits among a strong group of 3-1 contenders. The scoring race still says Ticklesh!ts has been the league's most dangerous weekly ceiling. Meanwhile, Off Boys has quietly stacked 462.08 points and remains a contender despite a 2-2 record.",
-      "Schedule context matters. Medford MountainMen has faced the strongest slate so far by opponent winning percentage (0.750), while Turbulent Ticklesh!ts has drawn the lightest (0.188). That does not erase wins or losses, but it gives the early records a better frame.",
-      "The all-play lens adds another warning label: Flint Tropics has an estimated 0.57 wins based on how often its weekly scores would have beaten the rest of the league, compared with 0 actual wins. On the other side, California Un-Named Team sits furthest above its all-play expectation."
+      "Off Boys delivered the top GFL score of Week 5 at 145.90 and beat THE Barton Spartans by 23.94. That moved Off Boys to 3-2, not undefeated, and gave the club three straight wins after an 0-2 start.",
+      "The standings now feature four teams at 4-1: Sullco MethMouths, Redwood Murder, Eskimo Brothers, and California Un-Named Team. Their paths differ. Sullco led the four in points through five weeks at 612.56, while California Un-Named Team remains 4-1 despite a Week 5 loss to Your Mom.",
+      "Player factors added useful context this week. Drake Maye topped the pasted ESPN Week 5 leaderboard at 39.46 for Sullco MethMouths, while Off Boys had four listed players at 16.00 or better, led by Jahmyr Gibbs at 35.20 and Puka Nacua at 29.20.",
+      "Medford MountainMen also placed six players in the pasted top 50, including Christian Watson at 29.30 and Parker Washington at 27.40. The team scored 105.32 and earned its first win, showing why individual leaderboard strength should be treated as context rather than a substitute for final lineup totals."
     ],
     "awards": [
       {
-        "emoji": "\ud83d\udd25",
-        "title": "Statement of the Week",
-        "team": "Turbulent Ticklesh!ts",
-        "detail": "156.32 points, the best score of Week 4 and the best GFL score of the season."
-      },
-      {
-        "emoji": "\ud83d\udca5",
-        "title": "Biggest Blowout",
+        "emoji": "🔥",
+        "title": "Team of the Week",
         "team": "Off Boys",
-        "detail": "Defeated Medford MountainMen by 73.08 points, the widest margin of the week."
+        "detail": "145.90 points, the highest GFL score of Week 5."
       },
       {
-        "emoji": "\ud83c\udfaf",
+        "emoji": "💥",
+        "title": "Biggest Blowout",
+        "team": "Your Mom",
+        "detail": "Defeated California Un-Named Team 135.12 to 94.20, a 40.92-point margin."
+      },
+      {
+        "emoji": "🎯",
         "title": "Closest Game",
-        "team": "Sullco MethMouths",
-        "detail": "Beat Space Cadets by 15.44 points. Even the closest Week 4 game was not especially close."
+        "team": "Eskimo Brothers",
+        "detail": "Defeated Space Cadets 94.08 to 80.54, a 13.54-point margin."
       },
       {
-        "emoji": "\ud83d\udcc8",
-        "title": "Scoring King Through Four",
-        "team": "Turbulent Ticklesh!ts",
-        "detail": "522.76 total points, an average of 130.69 per week."
+        "emoji": "⭐",
+        "title": "Player Factor",
+        "team": "Sullco MethMouths",
+        "detail": "Drake Maye led the pasted Week 5 player leaderboard with 39.46 points."
       }
     ],
     "tidbits": [
-      "Medford MountainMen owns the toughest completed schedule by opponent winning percentage at 0.750.",
-      "Turbulent Ticklesh!ts has faced the lightest completed schedule at 0.188.",
-      "Week 4 produced three scores above 130 and two below 90, a slate defined by separation rather than suspense.",
-      "Turbulent Ticklesh!ts has two weekly high-point wins in four weeks and now holds the Golden High Point.",
-      "Medford MountainMen has allowed 504.60 points through four weeks, the most in the league."
+      "Four teams are tied at 4-1 after Week 5: Sullco MethMouths, Redwood Murder, Eskimo Brothers, and California Un-Named Team.",
+      "Off Boys has won three straight after opening 0-2.",
+      "Your Mom scored 135.12, the second-highest GFL total of Week 5, and improved to 2-3.",
+      "Medford MountainMen beat Turbulent Ticklesh!ts 105.32 to 92.90 despite Ticklesh!ts entering the week as the season scoring leader.",
+      "Golden High Point remains Turbulent Ticklesh!ts at 156.32 from Week 4."
     ],
-    "powerTitle": "Week 4 Power Rankings \u00b7 All 12 Teams",
+    "powerTitle": "Week 5 Power Rankings · All 12 Teams",
     "power": [
       {
-        "team": "California Un-Named Team",
-        "detail": "4-0 \u00b7 458.94 PF \u00b7 all-play 27-17 \u2605 TOP FIVE"
-      },
-      {
-        "team": "Turbulent Ticklesh!ts",
-        "detail": "3-1 \u00b7 522.76 PF \u00b7 all-play 35-9 \u2605 TOP FIVE"
-      },
-      {
         "team": "Sullco MethMouths",
-        "detail": "3-1 \u00b7 473.40 PF \u00b7 all-play 30-14 \u2605 TOP FIVE"
+        "detail": "4-1 · 612.56 PF · all-play 40-15 ★ TOP FIVE · Drake Maye led the pasted Week 5 player leaderboard with 39.46 points; Derrick Henry added 20.50 and Brock Purdy 16.16."
       },
       {
-        "team": "Simpson Sith",
-        "detail": "3-1 \u00b7 468.36 PF \u00b7 all-play 27-17 \u2605 TOP FIVE"
-      },
-      {
-        "team": "Eskimo Brothers",
-        "detail": "3-1 \u00b7 451.42 PF \u00b7 all-play 24-20 \u2605 TOP FIVE"
+        "team": "California Un-Named Team",
+        "detail": "4-1 · 553.14 PF · all-play 31-24 ★ TOP FIVE · Joe Burrow scored 24.60 and Sam LaPorta 17.90."
       },
       {
         "team": "Redwood Murder",
-        "detail": "3-1 \u00b7 420.96 PF \u00b7 all-play 22-22"
+        "detail": "4-1 · 530.20 PF · all-play 28-27 ★ TOP FIVE · Jared Goff scored 28.94, Malik Nabers 24.04, Matthew Golden 17.30, and Trey McBride 17.20."
+      },
+      {
+        "team": "Eskimo Brothers",
+        "detail": "4-1 · 545.50 PF · all-play 27-28 ★ TOP FIVE · Jacoby Brissett scored 24.78, Brock Bowers 19.60, and Rhamondre Stevenson 16.70."
       },
       {
         "team": "Off Boys",
-        "detail": "2-2 \u00b7 462.08 PF \u00b7 all-play 29-15"
+        "detail": "3-2 · 607.98 PF · all-play 40-15 ★ TOP FIVE · Jahmyr Gibbs scored 35.20, Puka Nacua 29.20, Mike Evans 22.80, and Aaron Jones Sr. 16.00 on the pasted leaderboard."
       },
       {
-        "team": "Flint Tropics",
-        "detail": "0-4 \u00b7 431.76 PF \u00b7 all-play 25-19"
+        "team": "Turbulent Ticklesh!ts",
+        "detail": "3-2 · 615.66 PF · all-play 37-18 · Josh Allen scored 30.50 and Kyren Williams 16.60."
       },
       {
-        "team": "Space Cadets",
-        "detail": "1-3 \u00b7 392.68 PF \u00b7 all-play 17-27"
-      },
-      {
-        "team": "THE Barton Spartans",
-        "detail": "1-3 \u00b7 372.24 PF \u00b7 all-play 14-30"
+        "team": "Simpson Sith",
+        "detail": "3-2 · 585.30 PF · all-play 34-21 · Isaiah Likely scored 26.90, C.J. Stroud 20.94, Jaxon Smith-Njigba 20.50, and Garrett Wilson 20.30."
       },
       {
         "team": "Your Mom",
-        "detail": "1-3 \u00b7 365.76 PF \u00b7 all-play 7-37"
+        "detail": "2-3 · 500.88 PF · all-play 16-39 · Jaylen Warren scored 33.80 and Justin Jefferson 15.80 on the pasted leaderboard."
+      },
+      {
+        "team": "THE Barton Spartans",
+        "detail": "1-4 · 494.20 PF · all-play 22-33 · Jayden Daniels scored 32.26, George Pickens 23.50, and Christian McCaffrey 16.60."
+      },
+      {
+        "team": "Space Cadets",
+        "detail": "1-4 · 473.22 PF · all-play 17-38 · James Cook III scored 22.30, Tyler Warren 18.10, and Drake London 15.30."
       },
       {
         "team": "Medford MountainMen",
-        "detail": "0-4 \u00b7 331.86 PF \u00b7 all-play 7-37"
+        "detail": "1-4 · 437.18 PF · all-play 12-43 · Christian Watson scored 29.30, Parker Washington 27.40, Trevor Lawrence 21.74, Kyler Murray 18.88, Braelon Allen 18.26, and Ja’Marr Chase 17.10."
+      },
+      {
+        "team": "Flint Tropics",
+        "detail": "0-5 · 522.18 PF · all-play 26-29 · Bucky Irving scored 30.50, Davante Adams 19.90, and MarShawn Lloyd 16.20."
       }
     ],
     "scoreboard": [
       {
-        "winner": "Turbulent Ticklesh!ts",
-        "loser": "Flint Tropics",
-        "winnerScore": 156.32,
-        "loserScore": 112.8
-      },
-      {
-        "winner": "California Un-Named Team",
-        "loser": "Simpson Sith",
-        "winnerScore": 137.22,
-        "loserScore": 111.3
-      },
-      {
         "winner": "Off Boys",
-        "loser": "Medford MountainMen",
-        "winnerScore": 131.16,
-        "loserScore": 58.08
-      },
-      {
-        "winner": "Eskimo Brothers",
         "loser": "THE Barton Spartans",
-        "winnerScore": 123.34,
-        "loserScore": 97.9
-      },
-      {
-        "winner": "Redwood Murder",
-        "loser": "Your Mom",
-        "winnerScore": 112.48,
-        "loserScore": 84.38
+        "winnerScore": 145.9,
+        "loserScore": 121.96
       },
       {
         "winner": "Sullco MethMouths",
+        "loser": "Simpson Sith",
+        "winnerScore": 139.16,
+        "loserScore": 116.94
+      },
+      {
+        "winner": "Your Mom",
+        "loser": "California Un-Named Team",
+        "winnerScore": 135.12,
+        "loserScore": 94.2
+      },
+      {
+        "winner": "Redwood Murder",
+        "loser": "Flint Tropics",
+        "winnerScore": 109.24,
+        "loserScore": 90.42
+      },
+      {
+        "winner": "Medford MountainMen",
+        "loser": "Turbulent Ticklesh!ts",
+        "winnerScore": 105.32,
+        "loserScore": 92.9
+      },
+      {
+        "winner": "Eskimo Brothers",
         "loser": "Space Cadets",
-        "winnerScore": 105.22,
-        "loserScore": 89.78
+        "winnerScore": 94.08,
+        "loserScore": 80.54
       }
     ],
-    "lookingAhead": "Week 5 brings two immediate measuring sticks. Simpson Sith and Sullco MethMouths meet in a 3-1 showdown, while Medford MountainMen gets a rematch with the league\u2019s hottest scoring team, Turbulent Ticklesh!ts. Space Cadets versus Eskimo Brothers is a pressure game for two 2-2 teams trying to avoid falling below .500, and Flint Tropics versus Redwood Murder gives both clubs a chance to stabilize before the middle of the season."
+    "lookingAhead": "Week 6 is led by Redwood Murder versus Sullco MethMouths, a meeting of 4-1 teams. Off Boys faces Simpson Sith with both clubs at 3-2, while California Un-Named Team looks to rebound against Flint Tropics."
   }
 }
