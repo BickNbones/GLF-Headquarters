@@ -209,508 +209,48 @@
           "offboys"
         ]
       ]
-    }
-  },
-  "schedule": {
-    "1": {
-      "games": [
-        {
-          "home": "mountain",
-          "away": "murder",
-          "note": ""
-        },
-        {
-          "home": "sith",
-          "away": "thunder",
-          "note": ""
-        },
-        {
-          "home": "tropics",
-          "away": "meth",
-          "note": ""
-        },
-        {
-          "home": "eskimo",
-          "away": "offboys",
-          "note": ""
-        },
-        {
-          "home": "tickle",
-          "away": "yourmom",
-          "note": ""
-        },
-        {
-          "home": "cunt",
-          "away": "spartans",
-          "note": ""
-        }
-      ],
-      "notes": []
-    },
-    "2": {
-      "games": [
-        {
-          "home": "mountain",
-          "away": "tickle",
-          "note": ""
-        },
-        {
-          "home": "sith",
-          "away": "tropics",
-          "note": ""
-        },
-        {
-          "home": "eskimo",
-          "away": "cunt",
-          "note": ""
-        },
-        {
-          "home": "murder",
-          "away": "thunder",
-          "note": ""
-        },
-        {
-          "home": "meth",
-          "away": "spartans",
-          "note": ""
-        },
-        {
-          "home": "offboys",
-          "away": "yourmom",
-          "note": ""
-        }
-      ],
-      "notes": []
-    },
-    "3": {
-      "games": [
-        {
-          "home": "sith",
-          "away": "meth",
-          "note": "East coast slug fest"
-        },
-        {
-          "home": "spartans",
-          "away": "yourmom",
-          "note": ""
-        },
-        {
-          "home": "mountain",
-          "away": "cunt",
-          "note": ""
-        },
-        {
-          "home": "murder",
-          "away": "eskimo",
-          "note": ""
-        },
-        {
-          "home": "tickle",
-          "away": "offboys",
-          "note": "high points by less than one point!"
-        },
-        {
-          "home": "tropics",
-          "away": "thunder",
-          "note": "First win since return to League!"
-        }
-      ],
-      "notes": [
-        "East coast slug fest",
-        "high points by less than one point!",
-        "First win since return to League!"
-      ]
-    },
-    "4": {
-      "games": [
-        {
-          "home": "yourmom",
-          "away": "murder",
-          "note": ""
-        },
-        {
-          "home": "thunder",
-          "away": "meth",
-          "note": ""
-        },
-        {
-          "home": "eskimo",
-          "away": "spartans",
-          "note": ""
-        },
-        {
-          "home": "tickle",
-          "away": "tropics",
-          "note": ""
-        },
-        {
-          "home": "offboys",
-          "away": "mountain",
-          "note": ""
-        },
-        {
-          "home": "cunt",
-          "away": "sith",
-          "note": "game of the week"
-        }
-      ],
-      "notes": [
-        "game of the week"
-      ]
-    },
-    "5": {
-      "games": [
-        {
-          "home": "thunder",
-          "away": "eskimo",
-          "note": ""
-        },
-        {
-          "home": "sith",
-          "away": "meth",
-          "note": ""
-        },
-        {
-          "home": "cunt",
-          "away": "yourmom",
-          "note": ""
-        },
-        {
-          "home": "tropics",
-          "away": "murder",
-          "note": ""
-        },
-        {
-          "home": "mountain",
-          "away": "tickle",
-          "note": ""
-        },
-        {
-          "home": "spartans",
-          "away": "offboys",
-          "note": ""
-        }
-      ],
-      "notes": []
     },
     "6": {
-      "games": [
-        {
-          "home": "offboys",
-          "away": "sith",
-          "note": ""
-        },
-        {
-          "home": "yourmom",
-          "away": "thunder",
-          "note": ""
-        },
-        {
-          "home": "eskimo",
-          "away": "tickle",
-          "note": ""
-        },
-        {
-          "home": "cunt",
-          "away": "tropics",
-          "note": ""
-        },
-        {
-          "home": "spartans",
-          "away": "mountain",
-          "note": ""
-        },
-        {
-          "home": "murder",
-          "away": "meth",
-          "note": ""
-        }
-      ],
-      "notes": []
-    },
-    "7": {
-      "games": [
-        {
-          "home": "sith",
-          "away": "eskimo",
-          "note": ""
-        },
-        {
-          "home": "offboys",
-          "away": "thunder",
-          "note": ""
-        },
-        {
-          "home": "tickle",
-          "away": "cunt",
-          "note": ""
-        },
-        {
-          "home": "meth",
-          "away": "yourmom",
-          "note": ""
-        },
-        {
-          "home": "spartans",
-          "away": "murder",
-          "note": ""
-        },
-        {
-          "home": "mountain",
-          "away": "tropics",
-          "note": ""
-        }
-      ],
-      "notes": []
-    },
-    "8": {
-      "games": [
-        {
-          "home": "murder",
-          "away": "offboys",
-          "note": ""
-        },
-        {
-          "home": "cunt",
-          "away": "meth",
-          "note": ""
-        },
-        {
-          "home": "sith",
-          "away": "mountain",
-          "note": ""
-        },
-        {
-          "home": "tickle",
-          "away": "tropics",
-          "note": ""
-        },
-        {
-          "home": "yourmom",
-          "away": "eskimo",
-          "note": ""
-        },
-        {
-          "home": "thunder",
-          "away": "spartans",
-          "note": "Gonzo/Dawg Medallion rivalry"
-        }
-      ],
-      "notes": [
-        "Gonzo/Dawg Medallion rivalry"
+      "scores": {
+        "offboys": 87.44,
+        "sith": 89.22,
+        "yourmom": 109.74,
+        "thunder": 107.96,
+        "eskimo": 86.38,
+        "tickle": 113.6,
+        "cunt": 66.92,
+        "tropics": 64.12,
+        "spartans": 114.1,
+        "mountain": 87.24,
+        "murder": 100.28,
+        "meth": 92.9
+      },
+      "matchups": [
+        [
+          "offboys",
+          "sith"
+        ],
+        [
+          "yourmom",
+          "thunder"
+        ],
+        [
+          "eskimo",
+          "tickle"
+        ],
+        [
+          "cunt",
+          "tropics"
+        ],
+        [
+          "spartans",
+          "mountain"
+        ],
+        [
+          "murder",
+          "meth"
+        ]
       ]
-    },
-    "9": {
-      "games": [
-        {
-          "home": "offboys",
-          "away": "meth",
-          "note": ""
-        },
-        {
-          "home": "sith",
-          "away": "murder",
-          "note": "Rivalry Original members"
-        },
-        {
-          "home": "tickle",
-          "away": "thunder",
-          "note": ""
-        },
-        {
-          "home": "mountain",
-          "away": "yourmom",
-          "note": ""
-        },
-        {
-          "home": "cunt",
-          "away": "eskimo",
-          "note": ""
-        },
-        {
-          "home": "spartans",
-          "away": "tropics",
-          "note": ""
-        }
-      ],
-      "notes": [
-        "Rivalry Original members"
-      ]
-    },
-    "10": {
-      "games": [
-        {
-          "home": "eskimo",
-          "away": "offboys",
-          "note": ""
-        },
-        {
-          "home": "cunt",
-          "away": "murder",
-          "note": ""
-        },
-        {
-          "home": "meth",
-          "away": "tickle",
-          "note": ""
-        },
-        {
-          "home": "yourmom",
-          "away": "tropics",
-          "note": ""
-        },
-        {
-          "home": "thunder",
-          "away": "mountain",
-          "note": ""
-        },
-        {
-          "home": "sith",
-          "away": "spartans",
-          "note": ""
-        }
-      ],
-      "notes": []
-    },
-    "11": {
-      "games": [
-        {
-          "home": "offboys",
-          "away": "murder",
-          "note": ""
-        },
-        {
-          "home": "tickle",
-          "away": "spartans",
-          "note": ""
-        },
-        {
-          "home": "yourmom",
-          "away": "sith",
-          "note": ""
-        },
-        {
-          "home": "mountain",
-          "away": "meth",
-          "note": ""
-        },
-        {
-          "home": "thunder",
-          "away": "cunt",
-          "note": ""
-        },
-        {
-          "home": "eskimo",
-          "away": "tropics",
-          "note": ""
-        }
-      ],
-      "notes": []
-    },
-    "12": {
-      "games": [
-        {
-          "home": "tropics",
-          "away": "offboys",
-          "note": ""
-        },
-        {
-          "home": "spartans",
-          "away": "mountain",
-          "note": ""
-        },
-        {
-          "home": "sith",
-          "away": "tickle",
-          "note": ""
-        },
-        {
-          "home": "meth",
-          "away": "eskimo",
-          "note": ""
-        },
-        {
-          "home": "yourmom",
-          "away": "thunder",
-          "note": ""
-        },
-        {
-          "home": "murder",
-          "away": "cunt",
-          "note": ""
-        }
-      ],
-      "notes": []
-    },
-    "13": {
-      "games": [
-        {
-          "home": "tickle",
-          "away": "murder",
-          "note": ""
-        },
-        {
-          "home": "spartans",
-          "away": "tropics",
-          "note": ""
-        },
-        {
-          "home": "sith",
-          "away": "thunder",
-          "note": ""
-        },
-        {
-          "home": "mountain",
-          "away": "eskimo",
-          "note": ""
-        },
-        {
-          "home": "yourmom",
-          "away": "meth",
-          "note": ""
-        },
-        {
-          "home": "cunt",
-          "away": "offboys",
-          "note": ""
-        }
-      ],
-      "notes": []
-    },
-    "14": {
-      "games": [
-        {
-          "home": "tickle",
-          "away": "spartans",
-          "note": ""
-        },
-        {
-          "home": "mountain",
-          "away": "tropics",
-          "note": ""
-        },
-        {
-          "home": "yourmom",
-          "away": "sith",
-          "note": ""
-        },
-        {
-          "home": "eskimo",
-          "away": "murder",
-          "note": ""
-        },
-        {
-          "home": "meth",
-          "away": "thunder",
-          "note": ""
-        },
-        {
-          "home": "offboys",
-          "away": "cunt",
-          "note": ""
-        }
-      ],
-      "notes": []
     }
   },
   "postseason": {
@@ -737,147 +277,126 @@
       "THE Barton Spartans"
     ]
   },
-  "divisionWinners": {},
-  "draftRevealed": [],
+  "draftRevealed": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+  ],
   "goldenHP": {
     "team": "tickle",
     "score": 156.32,
     "week": 4
   },
+  "schedule": {},
+  "divisionWinners": {},
   "weeklyExtras": {
-    "week": 5,
-    "tagline": "Week 5 News · Results · Rankings · Player Factors",
-    "kicker": "GFL Weekly Cover Story · Week 5",
-    "headline": "Off Boys owns the week, while four teams crowd the top at 4-1",
-    "deck": "Off Boys posted a Week 5-best 145.90, Sullco MethMouths climbed into the 4-1 pack, and the player leaderboard helps explain the week’s biggest swings without replacing the official GFL team totals.",
+    "week": 6,
+    "tagline": "Week 6 News \u00b7 Contenders \u00b7 Chaos \u00b7 The Season Tightens",
+    "kicker": "GFL Insider \u00b7 Week 6",
+    "headline": "THE MIDDLE OF THE SEASON JUST GOT MEAN",
+    "deck": "Two teams sit at 5-1, four more are 4-2, and Week 6 delivered everything from a 1.78-point escape to a 66.92-64.12 rock fight. The runway to the postseason is getting crowded.",
     "story": [
-      "Off Boys delivered the top GFL score of Week 5 at 145.90 and beat THE Barton Spartans by 23.94. That moved Off Boys to 3-2, not undefeated, and gave the club three straight wins after an 0-2 start.",
-      "The standings now feature four teams at 4-1: Sullco MethMouths, Redwood Murder, Eskimo Brothers, and California Un-Named Team. Their paths differ. Sullco led the four in points through five weeks at 612.56, while California Un-Named Team remains 4-1 despite a Week 5 loss to Your Mom.",
-      "Player factors added useful context this week. Drake Maye topped the pasted ESPN Week 5 leaderboard at 39.46 for Sullco MethMouths, while Off Boys had four listed players at 16.00 or better, led by Jahmyr Gibbs at 35.20 and Puka Nacua at 29.20.",
-      "Medford MountainMen also placed six players in the pasted top 50, including Christian Watson at 29.30 and Parker Washington at 27.40. The team scored 105.32 and earned its first win, showing why individual leaderboard strength should be treated as context rather than a substitute for final lineup totals."
+      "Redwood Murder and California Un-Named Team leave Week 6 with matching 5-1 records, but the pack is stacked directly behind them. Turbulent Ticklesh!ts, Sullco MethMouths, Simpson Sith and Eskimo Brothers are all 4-2. Nobody at the top has earned breathing room.",
+      "THE Barton Spartans authored the week\u2019s biggest scoring jolt at 114.10, while Turbulent Ticklesh!ts landed only half a point behind at 113.60. Your Mom survived Space Cadets 109.74-107.96 in the closest game of the week, the kind of result that begins to feel enormous once the standings compress.",
+      "And then there was California Un-Named Team versus Flint Tropics: 66.92-64.12. California escaped with the win and moved to 5-1 despite finishing next-to-last in Week 6 scoring. Flint dropped to 0-6 despite coming within 2.80 points of knocking off one of the league leaders. Fantasy football has a sick sense of humor.",
+      "Underneath the records, Turbulent Ticklesh!ts and Sullco MethMouths continue to look dangerous. Through six completed weeks they own the two best all-play marks at 47-19 and 46-20, respectively. Off Boys sits only 3-3 head-to-head but carries a 44-22 all-play record, making them the kind of .500 team nobody should mistake for harmless."
     ],
     "awards": [
       {
-        "emoji": "🔥",
-        "title": "Team of the Week",
-        "team": "Off Boys",
-        "detail": "145.90 points, the highest GFL score of Week 5."
+        "emoji": "\ud83c\udfc6",
+        "title": "High Point",
+        "team": "THE Barton Spartans",
+        "detail": "114.10 points, Week 6\u2019s top score."
       },
       {
-        "emoji": "💥",
-        "title": "Biggest Blowout",
+        "emoji": "\ud83c\udfaf",
+        "title": "Escape Artist",
         "team": "Your Mom",
-        "detail": "Defeated California Un-Named Team 135.12 to 94.20, a 40.92-point margin."
+        "detail": "Beat Space Cadets 109.74-107.96 by just 1.78 points."
       },
       {
-        "emoji": "🎯",
-        "title": "Closest Game",
-        "team": "Eskimo Brothers",
-        "detail": "Defeated Space Cadets 94.08 to 80.54, a 13.54-point margin."
-      },
-      {
-        "emoji": "⭐",
-        "title": "Player Factor",
-        "team": "Sullco MethMouths",
-        "detail": "Drake Maye led the pasted Week 5 player leaderboard with 39.46 points."
+        "emoji": "\ud83e\uddf1",
+        "title": "Rock Fight Survivor",
+        "team": "California Un-Named Team",
+        "detail": "Won 66.92-64.12 and somehow walked away 5-1."
       }
     ],
     "tidbits": [
-      "Four teams are tied at 4-1 after Week 5: Sullco MethMouths, Redwood Murder, Eskimo Brothers, and California Un-Named Team.",
-      "Off Boys has won three straight after opening 0-2.",
-      "Your Mom scored 135.12, the second-highest GFL total of Week 5, and improved to 2-3.",
-      "Medford MountainMen beat Turbulent Ticklesh!ts 105.32 to 92.90 despite Ticklesh!ts entering the week as the season scoring leader.",
-      "Golden High Point remains Turbulent Ticklesh!ts at 156.32 from Week 4."
+      "Redwood Murder is 5-1 with 630.48 PF after beating Sullco MethMouths 100.28-92.90.",
+      "Turbulent Ticklesh!ts leads the league in PF through six weeks at 729.26 and owns a 47-19 all-play mark.",
+      "Off Boys is 3-3 despite 695.42 PF and a 44-22 all-play record.",
+      "Flint Tropics remains winless at 0-6 after losing by only 2.80 points in Week 6."
     ],
-    "powerTitle": "Week 5 Power Rankings · All 12 Teams",
+    "powerTitle": "Week 6 Power Five",
     "power": [
       {
-        "team": "Sullco MethMouths",
-        "detail": "4-1 · 612.56 PF · all-play 40-15 ★ TOP FIVE · Drake Maye led the pasted Week 5 player leaderboard with 39.46 points; Derrick Henry added 20.50 and Brock Purdy 16.16."
+        "team": "Redwood Murder",
+        "detail": "5-1 \u00b7 630.48 PF \u00b7 all-play 35-31"
       },
       {
         "team": "California Un-Named Team",
-        "detail": "4-1 · 553.14 PF · all-play 31-24 ★ TOP FIVE · Joe Burrow scored 24.60 and Sam LaPorta 17.90."
-      },
-      {
-        "team": "Redwood Murder",
-        "detail": "4-1 · 530.20 PF · all-play 28-27 ★ TOP FIVE · Jared Goff scored 28.94, Malik Nabers 24.04, Matthew Golden 17.30, and Trey McBride 17.20."
-      },
-      {
-        "team": "Eskimo Brothers",
-        "detail": "4-1 · 545.50 PF · all-play 27-28 ★ TOP FIVE · Jacoby Brissett scored 24.78, Brock Bowers 19.60, and Rhamondre Stevenson 16.70."
-      },
-      {
-        "team": "Off Boys",
-        "detail": "3-2 · 607.98 PF · all-play 40-15 ★ TOP FIVE · Jahmyr Gibbs scored 35.20, Puka Nacua 29.20, Mike Evans 22.80, and Aaron Jones Sr. 16.00 on the pasted leaderboard."
+        "detail": "5-1 \u00b7 620.06 PF \u00b7 all-play 32-34"
       },
       {
         "team": "Turbulent Ticklesh!ts",
-        "detail": "3-2 · 615.66 PF · all-play 37-18 · Josh Allen scored 30.50 and Kyren Williams 16.60."
+        "detail": "4-2 \u00b7 729.26 PF \u00b7 all-play 47-19"
+      },
+      {
+        "team": "Sullco MethMouths",
+        "detail": "4-2 \u00b7 705.46 PF \u00b7 all-play 46-20"
       },
       {
         "team": "Simpson Sith",
-        "detail": "3-2 · 585.30 PF · all-play 34-21 · Isaiah Likely scored 26.90, C.J. Stroud 20.94, Jaxon Smith-Njigba 20.50, and Garrett Wilson 20.30."
-      },
-      {
-        "team": "Your Mom",
-        "detail": "2-3 · 500.88 PF · all-play 16-39 · Jaylen Warren scored 33.80 and Justin Jefferson 15.80 on the pasted leaderboard."
-      },
-      {
-        "team": "THE Barton Spartans",
-        "detail": "1-4 · 494.20 PF · all-play 22-33 · Jayden Daniels scored 32.26, George Pickens 23.50, and Christian McCaffrey 16.60."
-      },
-      {
-        "team": "Space Cadets",
-        "detail": "1-4 · 473.22 PF · all-play 17-38 · James Cook III scored 22.30, Tyler Warren 18.10, and Drake London 15.30."
-      },
-      {
-        "team": "Medford MountainMen",
-        "detail": "1-4 · 437.18 PF · all-play 12-43 · Christian Watson scored 29.30, Parker Washington 27.40, Trevor Lawrence 21.74, Kyler Murray 18.88, Braelon Allen 18.26, and Ja’Marr Chase 17.10."
-      },
-      {
-        "team": "Flint Tropics",
-        "detail": "0-5 · 522.18 PF · all-play 26-29 · Bucky Irving scored 30.50, Davante Adams 19.90, and MarShawn Lloyd 16.20."
+        "detail": "4-2 \u00b7 674.52 PF \u00b7 all-play 39-27"
       }
     ],
     "scoreboard": [
       {
-        "winner": "Off Boys",
-        "loser": "THE Barton Spartans",
-        "winnerScore": 145.9,
-        "loserScore": 121.96
-      },
-      {
-        "winner": "Sullco MethMouths",
-        "loser": "Simpson Sith",
-        "winnerScore": 139.16,
-        "loserScore": 116.94
+        "winner": "Simpson Sith",
+        "winnerScore": 89.22,
+        "loser": "Off Boys",
+        "loserScore": 87.44
       },
       {
         "winner": "Your Mom",
-        "loser": "California Un-Named Team",
-        "winnerScore": 135.12,
-        "loserScore": 94.2
+        "winnerScore": 109.74,
+        "loser": "Space Cadets",
+        "loserScore": 107.96
+      },
+      {
+        "winner": "Turbulent Ticklesh!ts",
+        "winnerScore": 113.6,
+        "loser": "Eskimo Brothers",
+        "loserScore": 86.38
+      },
+      {
+        "winner": "California Un-Named Team",
+        "winnerScore": 66.92,
+        "loser": "Flint Tropics",
+        "loserScore": 64.12
+      },
+      {
+        "winner": "THE Barton Spartans",
+        "winnerScore": 114.1,
+        "loser": "Medford MountainMen",
+        "loserScore": 87.24
       },
       {
         "winner": "Redwood Murder",
-        "loser": "Flint Tropics",
-        "winnerScore": 109.24,
-        "loserScore": 90.42
-      },
-      {
-        "winner": "Medford MountainMen",
-        "loser": "Turbulent Ticklesh!ts",
-        "winnerScore": 105.32,
+        "winnerScore": 100.28,
+        "loser": "Sullco MethMouths",
         "loserScore": 92.9
-      },
-      {
-        "winner": "Eskimo Brothers",
-        "loser": "Space Cadets",
-        "winnerScore": 94.08,
-        "loserScore": 80.54
       }
     ],
-    "lookingAhead": "Week 6 is led by Redwood Murder versus Sullco MethMouths, a meeting of 4-1 teams. Off Boys faces Simpson Sith with both clubs at 3-2, while California Un-Named Team looks to rebound against Flint Tropics."
+    "lookingAhead": "Week 7 brings Simpson Sith vs. Eskimo Brothers, Off Boys vs. Space Cadets, Turbulent Ticklesh!ts vs. California Un-Named Team, Sullco MethMouths vs. Your Mom, THE Barton Spartans vs. Redwood Murder, and Medford MountainMen vs. Flint Tropics. With six teams at 4-2 or better, every stumble at the top now creates an opening."
   }
 }
