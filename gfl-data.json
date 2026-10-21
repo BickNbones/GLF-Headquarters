@@ -300,63 +300,292 @@
   "divisionWinners": {},
   "weeklyExtras": {
     "week": 6,
-    "tagline": "Week 6 News \u00b7 Contenders \u00b7 Chaos \u00b7 The Season Tightens",
+    "tagline": "Week 6 News \u00b7 Full-League Rankings \u00b7 Luck Gaps \u00b7 Pressure Rising",
     "kicker": "GFL Insider \u00b7 Week 6",
-    "headline": "THE MIDDLE OF THE SEASON JUST GOT MEAN",
-    "deck": "Two teams sit at 5-1, four more are 4-2, and Week 6 delivered everything from a 1.78-point escape to a 66.92-64.12 rock fight. The runway to the postseason is getting crowded.",
+    "headline": "THE STANDINGS AND THE NUMBERS HAVE STOPPED AGREEING",
+    "deck": "California is 5-1 with a losing all-play record. Off Boys is 3-3 with the third-best all-play mark. Week 6 did not clarify the league. It exposed the fault lines.",
     "story": [
-      "Redwood Murder and California Un-Named Team leave Week 6 with matching 5-1 records, but the pack is stacked directly behind them. Turbulent Ticklesh!ts, Sullco MethMouths, Simpson Sith and Eskimo Brothers are all 4-2. Nobody at the top has earned breathing room.",
-      "THE Barton Spartans authored the week\u2019s biggest scoring jolt at 114.10, while Turbulent Ticklesh!ts landed only half a point behind at 113.60. Your Mom survived Space Cadets 109.74-107.96 in the closest game of the week, the kind of result that begins to feel enormous once the standings compress.",
-      "And then there was California Un-Named Team versus Flint Tropics: 66.92-64.12. California escaped with the win and moved to 5-1 despite finishing next-to-last in Week 6 scoring. Flint dropped to 0-6 despite coming within 2.80 points of knocking off one of the league leaders. Fantasy football has a sick sense of humor.",
-      "Underneath the records, Turbulent Ticklesh!ts and Sullco MethMouths continue to look dangerous. Through six completed weeks they own the two best all-play marks at 47-19 and 46-20, respectively. Off Boys sits only 3-3 head-to-head but carries a 44-22 all-play record, making them the kind of .500 team nobody should mistake for harmless."
+      "Redwood Murder and California Un-Named Team share the league\u2019s best record at 5-1, but they arrived there by very different statistical roads. Redwood owns a 35-31 all-play mark. California is 32-34, meaning its weekly scores would have lost more often than won against the full league field despite five head-to-head victories.",
+      "The strongest underlying profiles belong to Turbulent Ticklesh!ts and Sullco MethMouths. They rank first and second in both total points and all-play performance, yet both trail the 5-1 leaders at 4-2. Their records are good. Their weekly strength has been even better.",
+      "No team has a larger standings-to-performance disconnect than Off Boys. At 3-3, Off Boys sits seventh in the official league order, but ranks third in points scored and third in all-play at 44-22. The record says bubble team. The full-season scoring says contender.",
+      "Week 6 itself was a contradiction. THE Barton Spartans led the league with only 114.10 points, California won a 66.92-64.12 grinder, and Your Mom escaped Space Cadets by 1.78. Low scoring compressed the field and made every lineup failure more expensive."
     ],
     "awards": [
       {
         "emoji": "\ud83c\udfc6",
-        "title": "High Point",
+        "title": "Week 6 Scoring Crown",
         "team": "THE Barton Spartans",
-        "detail": "114.10 points, Week 6\u2019s top score."
+        "detail": "114.10 points, the highest total in a suppressed scoring week."
+      },
+      {
+        "emoji": "\ud83d\udcc9",
+        "title": "Record vs. Reality",
+        "team": "California Un-Named Team",
+        "detail": "5-1 in head-to-head play but 32-34 in all-play, the sharpest warning sign among the leaders."
+      },
+      {
+        "emoji": "\ud83d\udcc8",
+        "title": "Better Than the Record",
+        "team": "Off Boys",
+        "detail": "3-3 officially, but #3 in PF and #3 in all-play performance."
       },
       {
         "emoji": "\ud83c\udfaf",
-        "title": "Escape Artist",
+        "title": "Narrow Escape",
         "team": "Your Mom",
-        "detail": "Beat Space Cadets 109.74-107.96 by just 1.78 points."
-      },
-      {
-        "emoji": "\ud83e\uddf1",
-        "title": "Rock Fight Survivor",
-        "team": "California Un-Named Team",
-        "detail": "Won 66.92-64.12 and somehow walked away 5-1."
+        "detail": "A 109.74-107.96 win over Space Cadets, decided by 1.78 points."
       }
     ],
     "tidbits": [
-      "Redwood Murder is 5-1 with 630.48 PF after beating Sullco MethMouths 100.28-92.90.",
-      "Turbulent Ticklesh!ts leads the league in PF through six weeks at 729.26 and owns a 47-19 all-play mark.",
-      "Off Boys is 3-3 despite 695.42 PF and a 44-22 all-play record.",
-      "Flint Tropics remains winless at 0-6 after losing by only 2.80 points in Week 6."
+      "Turbulent Ticklesh!ts is #1 in PF and #1 in all-play, but tied for third by record at 4-2.",
+      "California Un-Named Team is #2 in the official standings but #7 in PF and #7 in all-play.",
+      "Off Boys is #7 in the standings while ranking #3 in both PF and all-play.",
+      "Flint Tropics is 0-6, but its 26-40 all-play mark ranks ahead of two teams with victories.",
+      "THE Barton Spartans sits exactly even in all-play at 33-33 through six weeks."
     ],
-    "powerTitle": "Week 6 Power Five",
+    "powerTitle": "Week 6 Full League Rankings \u00b7 All 12 Teams",
     "power": [
       {
         "team": "Redwood Murder",
-        "detail": "5-1 \u00b7 630.48 PF \u00b7 all-play 35-31"
+        "rank": 1,
+        "record": "5-1",
+        "pf": 630.48,
+        "pfRank": 6,
+        "allPlay": "35-31",
+        "allPlayRank": 5,
+        "detail": "League #1 \u00b7 5-1 \u00b7 630.48 PF (#6) \u00b7 all-play 35-31 (#5)"
       },
       {
         "team": "California Un-Named Team",
-        "detail": "5-1 \u00b7 620.06 PF \u00b7 all-play 32-34"
+        "rank": 2,
+        "record": "5-1",
+        "pf": 620.06,
+        "pfRank": 7,
+        "allPlay": "32-34",
+        "allPlayRank": 7,
+        "detail": "League #2 \u00b7 5-1 \u00b7 620.06 PF (#7) \u00b7 all-play 32-34 (#7)"
       },
       {
         "team": "Turbulent Ticklesh!ts",
-        "detail": "4-2 \u00b7 729.26 PF \u00b7 all-play 47-19"
+        "rank": 3,
+        "record": "4-2",
+        "pf": 729.26,
+        "pfRank": 1,
+        "allPlay": "47-19",
+        "allPlayRank": 1,
+        "detail": "League #3 \u00b7 4-2 \u00b7 729.26 PF (#1) \u00b7 all-play 47-19 (#1)"
       },
       {
         "team": "Sullco MethMouths",
-        "detail": "4-2 \u00b7 705.46 PF \u00b7 all-play 46-20"
+        "rank": 4,
+        "record": "4-2",
+        "pf": 705.46,
+        "pfRank": 2,
+        "allPlay": "46-20",
+        "allPlayRank": 2,
+        "detail": "League #4 \u00b7 4-2 \u00b7 705.46 PF (#2) \u00b7 all-play 46-20 (#2)"
       },
       {
         "team": "Simpson Sith",
-        "detail": "4-2 \u00b7 674.52 PF \u00b7 all-play 39-27"
+        "rank": 5,
+        "record": "4-2",
+        "pf": 674.52,
+        "pfRank": 4,
+        "allPlay": "39-27",
+        "allPlayRank": 4,
+        "detail": "League #5 \u00b7 4-2 \u00b7 674.52 PF (#4) \u00b7 all-play 39-27 (#4)"
+      },
+      {
+        "team": "Eskimo Brothers",
+        "rank": 6,
+        "record": "4-2",
+        "pf": 631.88,
+        "pfRank": 5,
+        "allPlay": "29-37",
+        "allPlayRank": 8,
+        "detail": "League #6 \u00b7 4-2 \u00b7 631.88 PF (#5) \u00b7 all-play 29-37 (#8)"
+      },
+      {
+        "team": "Off Boys",
+        "rank": 7,
+        "record": "3-3",
+        "pf": 695.42,
+        "pfRank": 3,
+        "allPlay": "44-22",
+        "allPlayRank": 3,
+        "detail": "League #7 \u00b7 3-3 \u00b7 695.42 PF (#3) \u00b7 all-play 44-22 (#3)"
+      },
+      {
+        "team": "Your Mom",
+        "rank": 8,
+        "record": "3-3",
+        "pf": 610.62,
+        "pfRank": 8,
+        "allPlay": "25-41",
+        "allPlayRank": 10,
+        "detail": "League #8 \u00b7 3-3 \u00b7 610.62 PF (#8) \u00b7 all-play 25-41 (#10)"
+      },
+      {
+        "team": "THE Barton Spartans",
+        "rank": 9,
+        "record": "2-4",
+        "pf": 608.3,
+        "pfRank": 9,
+        "allPlay": "33-33",
+        "allPlayRank": 6,
+        "detail": "League #9 \u00b7 2-4 \u00b7 608.30 PF (#9) \u00b7 all-play 33-33 (#6)"
+      },
+      {
+        "team": "Space Cadets",
+        "rank": 10,
+        "record": "1-5",
+        "pf": 581.18,
+        "pfRank": 11,
+        "allPlay": "25-41",
+        "allPlayRank": 11,
+        "detail": "League #10 \u00b7 1-5 \u00b7 581.18 PF (#11) \u00b7 all-play 25-41 (#11)"
+      },
+      {
+        "team": "Medford MountainMen",
+        "rank": 11,
+        "record": "1-5",
+        "pf": 524.42,
+        "pfRank": 12,
+        "allPlay": "15-51",
+        "allPlayRank": 12,
+        "detail": "League #11 \u00b7 1-5 \u00b7 524.42 PF (#12) \u00b7 all-play 15-51 (#12)"
+      },
+      {
+        "team": "Flint Tropics",
+        "rank": 12,
+        "record": "0-6",
+        "pf": 586.3,
+        "pfRank": 10,
+        "allPlay": "26-40",
+        "allPlayRank": 9,
+        "detail": "League #12 \u00b7 0-6 \u00b7 586.30 PF (#10) \u00b7 all-play 26-40 (#9)"
+      }
+    ],
+    "fullRankings": [
+      {
+        "team": "Redwood Murder",
+        "rank": 1,
+        "record": "5-1",
+        "pf": 630.48,
+        "pfRank": 6,
+        "allPlay": "35-31",
+        "allPlayRank": 5,
+        "detail": "League #1 \u00b7 5-1 \u00b7 630.48 PF (#6) \u00b7 all-play 35-31 (#5)"
+      },
+      {
+        "team": "California Un-Named Team",
+        "rank": 2,
+        "record": "5-1",
+        "pf": 620.06,
+        "pfRank": 7,
+        "allPlay": "32-34",
+        "allPlayRank": 7,
+        "detail": "League #2 \u00b7 5-1 \u00b7 620.06 PF (#7) \u00b7 all-play 32-34 (#7)"
+      },
+      {
+        "team": "Turbulent Ticklesh!ts",
+        "rank": 3,
+        "record": "4-2",
+        "pf": 729.26,
+        "pfRank": 1,
+        "allPlay": "47-19",
+        "allPlayRank": 1,
+        "detail": "League #3 \u00b7 4-2 \u00b7 729.26 PF (#1) \u00b7 all-play 47-19 (#1)"
+      },
+      {
+        "team": "Sullco MethMouths",
+        "rank": 4,
+        "record": "4-2",
+        "pf": 705.46,
+        "pfRank": 2,
+        "allPlay": "46-20",
+        "allPlayRank": 2,
+        "detail": "League #4 \u00b7 4-2 \u00b7 705.46 PF (#2) \u00b7 all-play 46-20 (#2)"
+      },
+      {
+        "team": "Simpson Sith",
+        "rank": 5,
+        "record": "4-2",
+        "pf": 674.52,
+        "pfRank": 4,
+        "allPlay": "39-27",
+        "allPlayRank": 4,
+        "detail": "League #5 \u00b7 4-2 \u00b7 674.52 PF (#4) \u00b7 all-play 39-27 (#4)"
+      },
+      {
+        "team": "Eskimo Brothers",
+        "rank": 6,
+        "record": "4-2",
+        "pf": 631.88,
+        "pfRank": 5,
+        "allPlay": "29-37",
+        "allPlayRank": 8,
+        "detail": "League #6 \u00b7 4-2 \u00b7 631.88 PF (#5) \u00b7 all-play 29-37 (#8)"
+      },
+      {
+        "team": "Off Boys",
+        "rank": 7,
+        "record": "3-3",
+        "pf": 695.42,
+        "pfRank": 3,
+        "allPlay": "44-22",
+        "allPlayRank": 3,
+        "detail": "League #7 \u00b7 3-3 \u00b7 695.42 PF (#3) \u00b7 all-play 44-22 (#3)"
+      },
+      {
+        "team": "Your Mom",
+        "rank": 8,
+        "record": "3-3",
+        "pf": 610.62,
+        "pfRank": 8,
+        "allPlay": "25-41",
+        "allPlayRank": 10,
+        "detail": "League #8 \u00b7 3-3 \u00b7 610.62 PF (#8) \u00b7 all-play 25-41 (#10)"
+      },
+      {
+        "team": "THE Barton Spartans",
+        "rank": 9,
+        "record": "2-4",
+        "pf": 608.3,
+        "pfRank": 9,
+        "allPlay": "33-33",
+        "allPlayRank": 6,
+        "detail": "League #9 \u00b7 2-4 \u00b7 608.30 PF (#9) \u00b7 all-play 33-33 (#6)"
+      },
+      {
+        "team": "Space Cadets",
+        "rank": 10,
+        "record": "1-5",
+        "pf": 581.18,
+        "pfRank": 11,
+        "allPlay": "25-41",
+        "allPlayRank": 11,
+        "detail": "League #10 \u00b7 1-5 \u00b7 581.18 PF (#11) \u00b7 all-play 25-41 (#11)"
+      },
+      {
+        "team": "Medford MountainMen",
+        "rank": 11,
+        "record": "1-5",
+        "pf": 524.42,
+        "pfRank": 12,
+        "allPlay": "15-51",
+        "allPlayRank": 12,
+        "detail": "League #11 \u00b7 1-5 \u00b7 524.42 PF (#12) \u00b7 all-play 15-51 (#12)"
+      },
+      {
+        "team": "Flint Tropics",
+        "rank": 12,
+        "record": "0-6",
+        "pf": 586.3,
+        "pfRank": 10,
+        "allPlay": "26-40",
+        "allPlayRank": 9,
+        "detail": "League #12 \u00b7 0-6 \u00b7 586.30 PF (#10) \u00b7 all-play 26-40 (#9)"
       }
     ],
     "scoreboard": [
@@ -397,6 +626,6 @@
         "loserScore": 92.9
       }
     ],
-    "lookingAhead": "Week 7 brings Simpson Sith vs. Eskimo Brothers, Off Boys vs. Space Cadets, Turbulent Ticklesh!ts vs. California Un-Named Team, Sullco MethMouths vs. Your Mom, THE Barton Spartans vs. Redwood Murder, and Medford MountainMen vs. Flint Tropics. With six teams at 4-2 or better, every stumble at the top now creates an opening."
+    "lookingAhead": "Week 7 immediately tests the fault lines. Turbulent Ticklesh!ts, the league\u2019s strongest statistical team, faces 5-1 California Un-Named Team. THE Barton Spartans gets 5-1 Redwood Murder after taking the Week 6 scoring crown, while Off Boys tries to convert its top-three underlying profile into a winning record against Space Cadets."
   }
 }
