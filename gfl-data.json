@@ -844,7 +844,7 @@
       "The top of the standings now contains two 6-1 teams, but the underlying profiles are wildly different. Redwood Murder is 6-1 with the league’s fifth-best all-play record at 42-35. California Un-Named Team is also 6-1, yet sits eighth in all-play at 35-42 and eighth in total points. California has converted about 3.18 all-play expected wins into six actual wins, the largest positive record gap in the league.",
       "Sullco MethMouths may be the most complete team behind the leaders. At 5-2, Sullco ranks first in total points with 809.40 and first in all-play at 52-25. Turbulent Ticklesh!ts remains second in both categories, but a 68.08-point collapse dropped Ticklesh!ts to 4-3. The league’s two strongest scoring profiles now sit third and fifth in the official standings.",
       "The other side of schedule fortune is brutal. Flint Tropics is 1-6 despite ranking seventh in PF and seventh in all-play; its opponents have scored 838.00 points. Medford MountainMen has faced 846.32 points, the league’s highest total. Both teams have taken punishment far beyond what their own records alone reveal.",
-      "Player impact sharpened every result. Tony Pollard’s 35.0-point eruption powered Redwood, Joe Burrow’s 28.88 nearly stole the East matchup for Your Mom, and Drake Maye’s 27.44 could not save Medford from Flint’s balanced attack. Eskimo Brothers won with three top performers at 18-plus, while Space Cadets upset Off Boys behind three players above 20."
+      "The week was defined by separation and reversal. Eskimo Brothers and Flint Tropics finished first and second in scoring, Space Cadets delivered the third-highest total to upset Off Boys, and the league’s second-ranked season-long scoring team finished last for the week. At this stage of the season, one extreme result can reorder an entire division race."
     ],
     "awards": [
       {
@@ -870,12 +870,6 @@
         "title": "Schedule Fortune",
         "team": "California Un-Named Team",
         "detail": "6-1 despite ranking #8 in PF and #8 in all-play performance."
-      },
-      {
-        "emoji": "💣",
-        "title": "Player Detonation",
-        "team": "Redwood Murder",
-        "detail": "T. Pollard delivered 35.0 points, the largest listed individual total of Week 7."
       }
     ],
     "tidbits": [
@@ -886,7 +880,8 @@
       "Redwood Murder has the steadiest scoring profile among the contenders, with a 10.80-point standard deviation across seven weeks.",
       "Your Mom leads the league over the last three weeks at 115.27 points per game, even after the narrow Week 7 loss.",
       "Space Cadets earned its second victory with 118.82, its second-best score of the season.",
-      "Week 7 produced a 2.98-point East showdown, but the other five games were decided by at least 22.42 points."
+      "Week 7 produced a 2.98-point East showdown, but the other five games were decided by at least 22.42 points.",
+      "The gap between Week 7’s highest and lowest team score was 68.24 points, almost exactly half of Eskimo Brothers’ winning total."
     ],
     "powerTitle": "Week 7 Full League Rankings · All 12 Teams",
     "power": [
@@ -1203,134 +1198,6 @@
         "luckDelta": -1.09,
         "last3Average": 101.62,
         "detail": "1-6 · 636.72 PF (#12) · all-play 23-54 (#12)"
-      }
-    ],
-    "topPerformers": [
-      {
-        "matchup": "Simpson Sith vs. Eskimo Brothers",
-        "teams": [
-          {
-            "team": "Simpson Sith",
-            "players": [
-              "C. McCaffrey — 19.0",
-              "B. Corum — 16.6",
-              "G. Pickens — 13.7"
-            ]
-          },
-          {
-            "team": "Eskimo Brothers",
-            "players": [
-              "Q. Judkins — 22.9",
-              "T. McBride — 22.1",
-              "J. Goff — 18.02"
-            ]
-          }
-        ]
-      },
-      {
-        "matchup": "Off Boys vs. Space Cadets",
-        "teams": [
-          {
-            "team": "Off Boys",
-            "players": [
-              "J. Smith-Njigba — 26.8",
-              "C. Skattebo — 18.6",
-              "C. Stroud — 16.52"
-            ]
-          },
-          {
-            "team": "Space Cadets",
-            "players": [
-              "Z. Flowers — 23.7",
-              "L. Burden III — 21.7",
-              "M. Penix Jr. — 20.42"
-            ]
-          }
-        ]
-      },
-      {
-        "matchup": "Turbulent Ticklesh!ts vs. California Un-Named Team",
-        "teams": [
-          {
-            "team": "Turbulent Ticklesh!ts",
-            "players": [
-              "T. Tucker — 18.8",
-              "P. Nacua — 17.8",
-              "J. Gibbs — 14.8"
-            ]
-          },
-          {
-            "team": "California Un-Named Team",
-            "players": [
-              "T. Higgins — 23.8",
-              "E. Wilson — 18.0",
-              "D. London — 16.1"
-            ]
-          }
-        ]
-      },
-      {
-        "matchup": "Sullco MethMouths vs. Your Mom",
-        "teams": [
-          {
-            "team": "Sullco MethMouths",
-            "players": [
-              "G. Smith — 23.48",
-              "K. Williams — 17.1",
-              "K. Walker III — 7.7"
-            ]
-          },
-          {
-            "team": "Your Mom",
-            "players": [
-              "J. Burrow — 28.88",
-              "B. Robinson — 14.7",
-              "W. Reichard — 12.0"
-            ]
-          }
-        ]
-      },
-      {
-        "matchup": "Medford MountainMen vs. Flint Tropics",
-        "teams": [
-          {
-            "team": "Medford MountainMen",
-            "players": [
-              "D. Maye — 27.44",
-              "J. Williams — 21.5",
-              "A. St. Brown — 19.7"
-            ]
-          },
-          {
-            "team": "Flint Tropics",
-            "players": [
-              "D. Swift — 17.0",
-              "J. Love — 16.96",
-              "O. Gordon II — 16.8"
-            ]
-          }
-        ]
-      },
-      {
-        "matchup": "THE Barton Spartans vs. Redwood Murder",
-        "teams": [
-          {
-            "team": "THE Barton Spartans",
-            "players": [
-              "TB D/ST — 26.0",
-              "B. Allen — 16.4",
-              "J. Chase — 14.7"
-            ]
-          },
-          {
-            "team": "Redwood Murder",
-            "players": [
-              "T. Pollard — 35.0",
-              "B. Irving — 23.5",
-              "C. Williams — 22.12"
-            ]
-          }
-        ]
       }
     ],
     "scoreboard": [
