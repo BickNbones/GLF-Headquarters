@@ -842,9 +842,9 @@
     "story": [
       "Week 7 redrew the map. Eskimo Brothers posted 136.32 to take the weekly high point and move to 5-2, while Flint Tropics erupted for 134.72 to secure its first victory. Flint did not merely escape the basement. It finished second in the entire league for the week and beat Medford MountainMen despite Medford scoring 112.30, the fourth-best total on the slate.",
       "The top of the standings now contains two 6-1 teams, but the underlying profiles are wildly different. Redwood Murder is 6-1 with the league’s fifth-best all-play record at 42-35. California Un-Named Team is also 6-1, yet sits eighth in all-play at 35-42 and eighth in total points. California has converted about 3.18 all-play expected wins into six actual wins, the largest positive record gap in the league.",
-      "Sullco MethMouths may be the most complete team behind the leaders. At 5-2, Sullco ranks first in total points with 809.40 and first in all-play at 52-25. Turbulent Ticklesh!ts remains second in both categories, but a 68.08-point collapse dropped Ticklesh!ts to 4-3. The league’s two strongest scoring profiles now sit third and fifth in the official standings.",
-      "The other side of schedule fortune is brutal. Flint Tropics is 1-6 despite ranking seventh in PF and seventh in all-play; its opponents have scored 838.00 points. Medford MountainMen has faced 846.32 points, the league’s highest total. Both teams have taken punishment far beyond what their own records alone reveal.",
-      "The week was defined by separation and reversal. Eskimo Brothers and Flint Tropics finished first and second in scoring, Space Cadets delivered the third-highest total to upset Off Boys, and the league’s second-ranked season-long scoring team finished last for the week. At this stage of the season, one extreme result can reorder an entire division race."
+      "The standings continue to disagree with the underlying numbers. Redwood is 7-1 but ranks eighth in PF and sixth in all-play. California is 6-2 while ranking ninth in PF and tenth in all-play. Off Boys fell to 3-5 despite remaining fifth in PF and fourth in all-play. The difference between schedule outcomes and weekly strength is no longer a small-sample curiosity.",
+      "Your Mom may be the hottest team outside the top tier. A 123.22 win over Eskimo Brothers gives Your Mom a 111.31-point average over the last three weeks. The record is 4-4, but the Week 8 victory has kept the East chase alive behind Sullco.",
+      "THE Barton Spartans suffered the week’s harshest collapse. A 57.38-point rivalry loss to Space Cadets was the lowest score of Week 8 and the lowest team score recorded through eight completed weeks, narrowly below Medford MountainMen’s 58.08 in Week 4."
     ],
     "awards": [
       {
@@ -869,19 +869,18 @@
         "emoji": "🪙",
         "title": "Schedule Fortune",
         "team": "California Un-Named Team",
-        "detail": "6-1 despite ranking #8 in PF and #8 in all-play performance."
+        "detail": "A 111.31-point average across Weeks 6-8, capped by 123.22 in Week 8."
       }
     ],
     "tidbits": [
-      "California Un-Named Team owns the largest positive gap between actual wins and all-play expected wins: 6 actual versus 3.18 expected.",
-      "Flint Tropics owns the largest negative gap: 1 actual win versus 3.27 all-play expected wins.",
-      "Sullco MethMouths is the only team ranked #1 in both PF and all-play, and now sits 5-2 after surviving Your Mom by 2.98.",
-      "Off Boys is 3-4 despite ranking #3 in PF and #3 in all-play; the schedule has converted a top-three profile into a losing record.",
-      "Redwood Murder has the steadiest scoring profile among the contenders, with a 10.80-point standard deviation across seven weeks.",
-      "Your Mom leads the league over the last three weeks at 115.27 points per game, even after the narrow Week 7 loss.",
-      "Space Cadets earned its second victory with 118.82, its second-best score of the season.",
-      "Week 7 produced a 2.98-point East showdown, but the other five games were decided by at least 22.42 points.",
-      "The gap between Week 7’s highest and lowest team score was 68.24 points, almost exactly half of Eskimo Brothers’ winning total."
+      "Redwood Murder is 7-1 despite finishing ninth in Week 8 scoring; the league leader has now won with 100.28, 107.92, and 94.24 in consecutive weeks.",
+      "Turbulent Ticklesh!ts leads the league in both PF (924.80) and all-play (58-30), yet sits fourth in the official standings at 5-3.",
+      "Sullco MethMouths ranks second in both PF (911.26) and all-play (57-31) while sitting one game behind Redwood in the overall standings.",
+      "Turbulent Ticklesh!ts owns the widest week-to-week rebound of the season: 68.08 in Week 7 to 127.46 in Week 8, a 59.38-point jump.",
+      "Off Boys is 3-5 but ranks #5 in PF and #4 in all-play. Its all-play expected-win mark is 4.27, more than one win above its actual record.",
+      "California Un-Named Team is 6-2 with a 37-51 all-play record, the only current six-win team below .500 against the full weekly field.",
+      "Flint Tropics is 1-7 despite ranking #6 in PF and #7 in all-play; opponents have scored 965.46 points against Flint through eight weeks.",
+      "Week 8’s three highest scores were Turbulent Ticklesh!ts (127.46), Your Mom (123.22), and Medford MountainMen (121.00)."
     ],
     "powerTitle": "Week 7 Full League Rankings · All 12 Teams",
     "power": [
