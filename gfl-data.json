@@ -877,70 +877,228 @@
   },
   "weeklyExtras": {
     "week": 8,
-    "tagline": "Week 8 News · Deep History · Player Fingerprints · Week 9 Preview",
-    "kicker": "GFL Insider · Week 8 Rebuilt",
-    "headline": "THE STANDINGS SAY ONE THING. EIGHT WEEKS OF EVIDENCE SAY ANOTHER.",
-    "deck": "Redwood reached 7-1, Ticklesh!ts reclaimed the scoring throne, Medford landed a season-saving upset, and the league's deepest weekly archive now shows exactly which players, patterns, and schedule breaks built the race.",
+    "tagline": "Week 8 News · Division Wars · Bad Luck · Big Names · Week 9 Smoke",
+    "kicker": "GFL Insider · Week 8",
+    "headline": "THE WILD WEST HAS A KING. THE EAST HAS BEASTS. THE CENTRAL HAS CHAOS.",
+    "deck": "Redwood keeps stacking wins without blowing anybody away, Sullco grabbed the East by the throat, Ticklesh!ts came roaring back from the dead, and Flint somehow turned another winning-caliber score into another loss. Eight weeks in, the standings are telling only half the story.",
     "story": [
-      "Week 8 widened the gap between record and performance. Redwood Murder improved to 7-1 with a 94.24-87.06 win over Off Boys, but finished ninth on the weekly scoring slate. Turbulent Ticklesh!ts scored 127.46, led the week, and reclaimed the league lead in both total points and all-play performance. The official standings still belong to Redwood; the underlying scoring profile belongs to Ticklesh!ts.",
-      "The Central delivered the week's three highest scores. Ticklesh!ts finished first, Medford MountainMen scored 121.00 to upset Simpson Sith, and Flint Tropics posted 118.08 in a loss. Flint's season remains the league's sharpest record-versus-performance contradiction: 1-7 despite ranking sixth in points and sitting exactly 44-44 in all-play through eight weeks.",
-      "The new player layer explains how these teams keep getting there. Josh Allen and Kenneth Walker III have each appeared among the Ticklesh!ts' ESPN-listed Top 3 performers at least five times, while Off Boys has been even more concentrated around Jahmyr Gibbs, who has appeared six times. Simpson Sith has the clearest single-player fingerprint: Jaxon Smith-Njigba has appeared in the team's Top 3 in seven of eight weeks.",
-      "Your Mom continued the league's strongest recent scoring run with 123.22 against Eskimo Brothers. The roster's weekly production has repeatedly flowed through Jaylen Warren and D'Andre Swift, each with four Top-3 appearances. Medford's late surge has a similar shape: Trevor Lawrence has appeared five times, while Ja'Marr Chase and Braelon Allen have each appeared four times.",
-      "The week also carried historical weight. Simpson Sith and Redwood are managed by Danny Sattler and Collin Wilson, the two founding managers identified in the league record book as still active. Their Week 9 meeting is therefore more than a 4-4 team meeting a 7-1 team; it is another chapter between the GFL's remaining original members."
+      "Redwood Murder is sitting on top of the GFL at 7-1, but this is no spotless empire. Redwood survived Off Boys 94.24-87.06 while finishing ninth in Week 8 scoring. That has become the Redwood trick: stay alive, let the other guy blink, and walk out with the win. The Murder is #8 in points and #6 in all-play, yet nobody has been better at turning ordinary Sundays into victories. Call it luck if you want. At 7-1, Collin can call it first place.",
+      "Out East, the MethMouths are starting to look less like a contender and more like the division's resident monster. Sullco dropped California 101.86-93.48 to reach 6-2, with a season profile that backs up the record: #2 in scoring and #2 in all-play. Behind Owen, things are getting feral. Simpson Sith and Your Mom are both 4-4, and Your Mom just hung 123.22 on Eskimo Brothers. The Beasts of the East have six weeks left to start eating each other.",
+      "Then there is the Central, where normal football apparently goes to die. One week after collapsing to 68.08, Turbulent Ticklesh!ts detonated for 127.46, the Week 8 high, and moved to 5-3. Medford shocked Simpson Sith with 121.00. Flint scored 118.08, the third-highest total of the entire league, and lost anyway. The Central produced the week's three biggest scores, yet two of those teams entered the week buried near the bottom of the standings. Chaos is not a side effect there. It is the division identity.",
+      "The player trail makes the personalities even clearer. Jaxon Smith-Njigba has landed in Simpson Sith's ESPN-listed Top 3 in seven of eight weeks, the same frequency Joe Burrow has carried California's weekly leaderboard. Jahmyr Gibbs has been an Off Boys Top-3 fixture six times. James Cook III has done it six times for Space Cadets, Christian McCaffrey six times for Barton, and Kenneth Walker III six times for Ticklesh!ts. These are not just good players. Through eight weeks, they are the fingerprints their teams keep leaving at the scene.",
+      "And then there is Flint. Stephen Davis is 1-7 with the #6 scoring offense and a perfectly even 44-44 all-play record. That is not a normal last-place team; it is a team that keeps arriving at the casino with a decent hand and watching the dealer pull twenty-one. Week 8 was the cleanest example yet: 118.08 points, third-best in the league, zero wins added to the standings. If regression ever comes to collect its debt, Flint would like the address."
     ],
     "awards": [
       {
         "emoji": "🔥",
-        "title": "Statement of the Week",
+        "title": "Back From the Dead",
         "team": "Turbulent Ticklesh!ts",
-        "detail": "127.46 points, the Week 8 high score and a 59.38-point rebound from Week 7."
+        "detail": "From 68.08 in Week 7 to a league-best 127.46 in Week 8, a 59.38-point resurrection. Tyler went from the basement to the penthouse in seven days."
       },
       {
         "emoji": "⛰️",
-        "title": "Season-Saving Shock",
+        "title": "Mountain Warning",
         "team": "Medford MountainMen",
-        "detail": "Beat Simpson Sith 121.00-110.00 with the week's second-highest score."
+        "detail": "121.00 points and an upset of Simpson Sith. The 2-6 record still looks ugly, but 106.85 per game over the last three says Doug is no longer an easy out."
       },
       {
         "emoji": "💔",
-        "title": "Tough-Luck Loss",
+        "title": "Cruel and Unusual Punishment",
         "team": "Flint Tropics",
-        "detail": "Scored 118.08, third-best in the league, and still fell to 1-7."
+        "detail": "118.08 was the third-best score of Week 8 and bought Stephen absolutely nothing. At 1-7 with the #6 PF profile, the Tropics remain the league’s patron saint of bad timing."
       },
       {
         "emoji": "🚀",
-        "title": "Rivalry Wipeout",
+        "title": "Medallion Massacre",
         "team": "Space Cadets",
-        "detail": "Won the Gonzo/Dawg Medallion matchup 97.30-57.38, the week's largest margin."
+        "detail": "97.30-57.38 over Barton in the Gonzo/Dawg Medallion game. The 39.92-point margin was Week 8’s widest, and Kris did it without even reaching 100."
       },
       {
         "emoji": "🧬",
-        "title": "Player Fingerprint",
+        "title": "The Sith Signature",
         "team": "Simpson Sith",
-        "detail": "Jaxon Smith-Njigba has appeared in the ESPN-listed team Top 3 in seven of eight weeks."
+        "detail": "Jaxon Smith-Njigba has appeared in Danny’s ESPN-listed Top 3 in seven of eight weeks. If Simpson Sith has a calling card this season, JSN keeps signing it."
       }
     ],
     "tidbits": [
-      "Redwood Murder is 7-1 despite ranking #8 in PF and #6 in all-play through Week 8.",
-      "Turbulent Ticklesh!ts ranks #1 in PF and #1 in all-play at 5-3.",
-      "Flint Tropics is 1-7 despite ranking #6 in PF and owning a 44-44 all-play record.",
-      "Off Boys is 3-5 despite ranking #5 in PF and #4 in all-play.",
-      "Jaxon Smith-Njigba has made Simpson Sith's displayed Top 3 seven times; Joe Burrow has done the same for California.",
-      "Jahmyr Gibbs has appeared in the Off Boys Top 3 six times, while James Cook III has appeared six times for Space Cadets.",
-      "Christian McCaffrey has appeared in THE Barton Spartans' displayed Top 3 six times; Week 8 was the first week he did not appear.",
-      "Week 8's top three scores all came from Central teams: Ticklesh!ts, Medford, and Flint.",
-      "THE Barton Spartans' 57.38 is the lowest team score through eight weeks, narrowly below Medford's 58.08 in Week 4.",
-      "The GFL history archive identifies Tavis Tucker as the best career win-percentage manager among the established long-term group, while Danny Sattler owns the all-time wins record."
+      "Redwood is 7-1 with only the #8 scoring total and #6 all-play record. That is less steamroller than escape artist, but seven escapes still count as seven wins.",
+      "Ticklesh!ts owns the league’s #1 PF and #1 all-play marks at 5-3. If the standings are the résumé, Tyler’s underlying numbers are the glowing recommendation letter.",
+      "California is 6-2 while sitting #9 in PF and #10 in all-play. Tavis has banked the wins, but the West is getting dangerous if the scoring does not wake back up.",
+      "Off Boys is 3-5 despite ranking #5 in PF and #4 in all-play. Kyle’s record says fringe team; the weekly field says this is exactly the kind of team nobody wants catching a break.",
+      "Flint is 1-7 with the #6 PF total and a 44-44 all-play record. The Tropics are not being beaten like a 1-7 team; they are losing like one anyway.",
+      "Jaxon Smith-Njigba and Joe Burrow have each appeared in their team’s ESPN-listed Top 3 seven times in eight weeks. Simpson and California have different records, but both have a very obvious engine.",
+      "Jahmyr Gibbs has six Top-3 appearances for Off Boys. Kyle may be 3-5, but Gibbs keeps giving the offense a pulse even when the standings refuse to cooperate.",
+      "Christian McCaffrey has six Top-3 appearances for Barton, but Week 8 ended without him among the displayed three as the Spartans cratered to 57.38. When the franchise centerpiece disappears from the weekly leaderboard, Barton has very little room for error.",
+      "Week 8’s three highest scores belonged to Ticklesh!ts, Medford, and Flint. Welcome to the Central: one division leader, two losing records, and all of the week’s heavy artillery.",
+      "Barton’s 57.38 is the lowest score through eight weeks, slipping below Medford’s 58.08 in Week 4. Matt did not just lose the Medallion; he left his name on the wrong side of the season record book."
     ],
-    "playoffTitle": "Playoff Pressure After Week 8",
+    "playoffTitle": "Six Weeks Left · Nobody Gets Comfortable",
     "playoffInsights": [
-      "East: Sullco MethMouths leads at 6-2. Simpson Sith and Your Mom are 4-4, while Space Cadets is 3-5.",
-      "West: Redwood leads at 7-1, California follows at 6-2, and Eskimo Brothers stands 5-3. Off Boys' 3-5 record understates a top-five scoring and all-play profile.",
-      "Central: Ticklesh!ts leads at 5-3 and owns the league's strongest PF/all-play profile. Medford, Flint, and Barton remain behind by record, but Central supplied all three Week 8 scoring leaders.",
-      "No team is labeled clinched or eliminated here. These are current positions and performance profiles only."
+      "East — Sullco is 6-2 with the scoring muscle to match. Simpson and Your Mom sit at 4-4, and Your Mom is heating up. Owen has the lead, but this division has teeth behind him.",
+      "West — Redwood’s 7-1 record owns the headline, California sits one game back at 6-2, and Eskimo Brothers lurks at 5-3. The Wild West is officially a three-horse race, with Off Boys carrying spoiler numbers that look much better than 3-5.",
+      "Central — Ticklesh!ts leads at 5-3 and owns the strongest underlying profile in the league. Medford and Flint are miles behind in the standings but just supplied two of Week 8’s top three scores. Nothing about this division is behaving politely.",
+      "Nobody gets a fake clinch or elimination label here. There are six regular-season games left, which means the math still has room for somebody to make this weird."
     ],
-    "powerTitle": "Week 8 Full League Rankings · Corrected",
+    "powerTitle": "Week 8 Full League Rankings · All 12 Teams",
     "power": [
+      {
+        "team": "Redwood Murder",
+        "rank": 1,
+        "record": "7-1",
+        "pf": 832.64,
+        "pfRank": 8,
+        "allPlay": "45-43",
+        "allPlayRank": 6,
+        "expectedWins": 4.09,
+        "luckDelta": 2.91,
+        "last3Average": 100.81,
+        "detail": "7-1 · 832.64 PF (#8) · all-play 45-43 (#6)"
+      },
+      {
+        "team": "Sullco MethMouths",
+        "rank": 2,
+        "record": "6-2",
+        "pf": 911.26,
+        "pfRank": 2,
+        "allPlay": "57-31",
+        "allPlayRank": 2,
+        "expectedWins": 5.18,
+        "luckDelta": 0.82,
+        "last3Average": 99.57,
+        "detail": "6-2 · 911.26 PF (#2) · all-play 57-31 (#2)"
+      },
+      {
+        "team": "California Un-Named Team",
+        "rank": 3,
+        "record": "6-2",
+        "pf": 806.32,
+        "pfRank": 9,
+        "allPlay": "37-51",
+        "allPlayRank": 10,
+        "expectedWins": 3.36,
+        "luckDelta": 2.64,
+        "last3Average": 84.39,
+        "detail": "6-2 · 806.32 PF (#9) · all-play 37-51 (#10)"
+      },
+      {
+        "team": "Turbulent Ticklesh!ts",
+        "rank": 4,
+        "record": "5-3",
+        "pf": 924.8,
+        "pfRank": 1,
+        "allPlay": "58-30",
+        "allPlayRank": 1,
+        "expectedWins": 5.27,
+        "luckDelta": -0.27,
+        "last3Average": 103.05,
+        "detail": "5-3 · 924.80 PF (#1) · all-play 58-30 (#1)"
+      },
+      {
+        "team": "Eskimo Brothers",
+        "rank": 5,
+        "record": "5-3",
+        "pf": 877.6,
+        "pfRank": 4,
+        "allPlay": "46-42",
+        "allPlayRank": 5,
+        "expectedWins": 4.18,
+        "luckDelta": 0.82,
+        "last3Average": 110.7,
+        "detail": "5-3 · 877.60 PF (#4) · all-play 46-42 (#5)"
+      },
+      {
+        "team": "Simpson Sith",
+        "rank": 6,
+        "record": "4-4",
+        "pf": 885.54,
+        "pfRank": 3,
+        "allPlay": "51-37",
+        "allPlayRank": 3,
+        "expectedWins": 4.64,
+        "luckDelta": -0.64,
+        "last3Average": 100.08,
+        "detail": "4-4 · 885.54 PF (#3) · all-play 51-37 (#3)"
+      },
+      {
+        "team": "Your Mom",
+        "rank": 7,
+        "record": "4-4",
+        "pf": 834.8,
+        "pfRank": 7,
+        "allPlay": "39-49",
+        "allPlayRank": 8,
+        "expectedWins": 3.55,
+        "luckDelta": 0.45,
+        "last3Average": 111.31,
+        "detail": "4-4 · 834.80 PF (#7) · all-play 39-49 (#8)"
+      },
+      {
+        "team": "Off Boys",
+        "rank": 8,
+        "record": "3-5",
+        "pf": 873.1,
+        "pfRank": 5,
+        "allPlay": "47-41",
+        "allPlayRank": 4,
+        "expectedWins": 4.27,
+        "luckDelta": -1.27,
+        "last3Average": 88.37,
+        "detail": "3-5 · 873.10 PF (#5) · all-play 47-41 (#4)"
+      },
+      {
+        "team": "Space Cadets",
+        "rank": 9,
+        "record": "3-5",
+        "pf": 797.3,
+        "pfRank": 10,
+        "allPlay": "38-50",
+        "allPlayRank": 9,
+        "expectedWins": 3.45,
+        "luckDelta": -0.45,
+        "last3Average": 108.03,
+        "detail": "3-5 · 797.30 PF (#10) · all-play 38-50 (#9)"
+      },
+      {
+        "team": "Medford MountainMen",
+        "rank": 10,
+        "record": "2-6",
+        "pf": 757.72,
+        "pfRank": 11,
+        "allPlay": "32-56",
+        "allPlayRank": 12,
+        "expectedWins": 2.91,
+        "luckDelta": -0.91,
+        "last3Average": 106.85,
+        "detail": "2-6 · 757.72 PF (#11) · all-play 32-56 (#12)"
+      },
+      {
+        "team": "THE Barton Spartans",
+        "rank": 11,
+        "record": "2-6",
+        "pf": 751.48,
+        "pfRank": 12,
+        "allPlay": "34-54",
+        "allPlayRank": 11,
+        "expectedWins": 3.09,
+        "luckDelta": -1.09,
+        "last3Average": 85.76,
+        "detail": "2-6 · 751.48 PF (#12) · all-play 34-54 (#11)"
+      },
+      {
+        "team": "Flint Tropics",
+        "rank": 12,
+        "record": "1-7",
+        "pf": 839.1,
+        "pfRank": 6,
+        "allPlay": "44-44",
+        "allPlayRank": 7,
+        "expectedWins": 4.0,
+        "luckDelta": -3.0,
+        "last3Average": 105.64,
+        "detail": "1-7 · 839.10 PF (#6) · all-play 44-44 (#7)"
+      }
+    ],
+    "fullRankings": [
       {
         "team": "Redwood Murder",
         "rank": 1,
@@ -1136,164 +1294,6 @@
         "loserScore": 57.38
       }
     ],
-    "lookingAhead": "Off Boys vs. Sullco MethMouths — Off Boys brings a stronger profile than its 3-5 record suggests into a matchup with the 6-2 East leader. Sullco has the better record; Off Boys enters with top-five PF and all-play marks. Simpson Sith vs. Redwood Murder — The league schedule explicitly marks this as an Original Members rivalry. Danny Sattler and Collin Wilson are the two founding managers still active, and Simpson's #3 PF/#3 all-play profile makes this a dangerous test for 7-1 Redwood. Turbulent Ticklesh!ts vs. Space Cadets — Ticklesh!ts owns the league's #1 PF and #1 all-play profile. Space Cadets has won two of its last three and just delivered the largest victory of Week 8. Medford MountainMen vs. Your Mom — Medford just posted 121.00, while Your Mom has averaged 111.31 over the last three weeks in the current Insider calculations. Both arrive with more recent scoring strength than their records advertise. California Un-Named Team vs. Eskimo Brothers — California is 6-2 despite ranking #9 in PF and #10 in all-play. Eskimo Brothers is 5-3 with the stronger scoring profile, so this result can materially tighten the West race. THE Barton Spartans vs. Flint Tropics — Barton enters off the league's lowest score through eight weeks. Flint enters 1-7 despite a mid-table scoring profile. One team needs stabilization; the other needs results to finally match performance.",
-    "fullRankings": [
-      {
-        "team": "Redwood Murder",
-        "rank": 1,
-        "record": "7-1",
-        "pf": 832.64,
-        "pfRank": 8,
-        "allPlay": "45-43",
-        "allPlayRank": 6,
-        "expectedWins": 4.09,
-        "luckDelta": 2.91,
-        "last3Average": 100.81,
-        "detail": "7-1 · 832.64 PF (#8) · all-play 45-43 (#6)"
-      },
-      {
-        "team": "Sullco MethMouths",
-        "rank": 2,
-        "record": "6-2",
-        "pf": 911.26,
-        "pfRank": 2,
-        "allPlay": "57-31",
-        "allPlayRank": 2,
-        "expectedWins": 5.18,
-        "luckDelta": 0.82,
-        "last3Average": 99.57,
-        "detail": "6-2 · 911.26 PF (#2) · all-play 57-31 (#2)"
-      },
-      {
-        "team": "California Un-Named Team",
-        "rank": 3,
-        "record": "6-2",
-        "pf": 806.32,
-        "pfRank": 9,
-        "allPlay": "37-51",
-        "allPlayRank": 10,
-        "expectedWins": 3.36,
-        "luckDelta": 2.64,
-        "last3Average": 84.39,
-        "detail": "6-2 · 806.32 PF (#9) · all-play 37-51 (#10)"
-      },
-      {
-        "team": "Turbulent Ticklesh!ts",
-        "rank": 4,
-        "record": "5-3",
-        "pf": 924.8,
-        "pfRank": 1,
-        "allPlay": "58-30",
-        "allPlayRank": 1,
-        "expectedWins": 5.27,
-        "luckDelta": -0.27,
-        "last3Average": 103.05,
-        "detail": "5-3 · 924.80 PF (#1) · all-play 58-30 (#1)"
-      },
-      {
-        "team": "Eskimo Brothers",
-        "rank": 5,
-        "record": "5-3",
-        "pf": 877.6,
-        "pfRank": 4,
-        "allPlay": "46-42",
-        "allPlayRank": 5,
-        "expectedWins": 4.18,
-        "luckDelta": 0.82,
-        "last3Average": 110.7,
-        "detail": "5-3 · 877.60 PF (#4) · all-play 46-42 (#5)"
-      },
-      {
-        "team": "Simpson Sith",
-        "rank": 6,
-        "record": "4-4",
-        "pf": 885.54,
-        "pfRank": 3,
-        "allPlay": "51-37",
-        "allPlayRank": 3,
-        "expectedWins": 4.64,
-        "luckDelta": -0.64,
-        "last3Average": 100.08,
-        "detail": "4-4 · 885.54 PF (#3) · all-play 51-37 (#3)"
-      },
-      {
-        "team": "Your Mom",
-        "rank": 7,
-        "record": "4-4",
-        "pf": 834.8,
-        "pfRank": 7,
-        "allPlay": "39-49",
-        "allPlayRank": 8,
-        "expectedWins": 3.55,
-        "luckDelta": 0.45,
-        "last3Average": 111.31,
-        "detail": "4-4 · 834.80 PF (#7) · all-play 39-49 (#8)"
-      },
-      {
-        "team": "Off Boys",
-        "rank": 8,
-        "record": "3-5",
-        "pf": 873.1,
-        "pfRank": 5,
-        "allPlay": "47-41",
-        "allPlayRank": 4,
-        "expectedWins": 4.27,
-        "luckDelta": -1.27,
-        "last3Average": 88.37,
-        "detail": "3-5 · 873.10 PF (#5) · all-play 47-41 (#4)"
-      },
-      {
-        "team": "Space Cadets",
-        "rank": 9,
-        "record": "3-5",
-        "pf": 797.3,
-        "pfRank": 10,
-        "allPlay": "38-50",
-        "allPlayRank": 9,
-        "expectedWins": 3.45,
-        "luckDelta": -0.45,
-        "last3Average": 108.03,
-        "detail": "3-5 · 797.30 PF (#10) · all-play 38-50 (#9)"
-      },
-      {
-        "team": "Medford MountainMen",
-        "rank": 10,
-        "record": "2-6",
-        "pf": 757.72,
-        "pfRank": 11,
-        "allPlay": "32-56",
-        "allPlayRank": 12,
-        "expectedWins": 2.91,
-        "luckDelta": -0.91,
-        "last3Average": 106.85,
-        "detail": "2-6 · 757.72 PF (#11) · all-play 32-56 (#12)"
-      },
-      {
-        "team": "THE Barton Spartans",
-        "rank": 11,
-        "record": "2-6",
-        "pf": 751.48,
-        "pfRank": 12,
-        "allPlay": "34-54",
-        "allPlayRank": 11,
-        "expectedWins": 3.09,
-        "luckDelta": -1.09,
-        "last3Average": 85.76,
-        "detail": "2-6 · 751.48 PF (#12) · all-play 34-54 (#11)"
-      },
-      {
-        "team": "Flint Tropics",
-        "rank": 12,
-        "record": "1-7",
-        "pf": 839.1,
-        "pfRank": 6,
-        "allPlay": "44-44",
-        "allPlayRank": 7,
-        "expectedWins": 4.0,
-        "luckDelta": -3.0,
-        "last3Average": 105.64,
-        "detail": "1-7 · 839.10 PF (#6) · all-play 44-44 (#7)"
-      }
-    ]
+    "lookingAhead": "WEEK 9: SIX GAMES, SIX DIFFERENT KINDS OF TROUBLE. Off Boys vs. Sullco MethMouths — The 3-5 team with #5 PF and #4 all-play gets a shot at the 6-2 Beast of the East. If Kyle wants the standings to start respecting the numbers, beating Owen would be a loud way to ask. Simpson Sith vs. Redwood Murder — The Original Members game. Danny owns the league’s all-time wins record; Collin brings the 7-1 record and the league’s best escape act. Simpson’s #3 PF/#3 all-play profile says this is anything but a friendly reunion. Turbulent Ticklesh!ts vs. Space Cadets — Tyler brings the league’s #1 PF/#1 all-play machine; Kris brings a two-wins-in-three-weeks surge and a freshly polished Gonzo/Dawg Medallion. Ceiling meets momentum. Medford MountainMen vs. Your Mom — Two teams whose recent scoring looks far nastier than their records. Medford just dropped 121.00; Your Mom carries a 111.31 last-three average. Somebody’s heater survives. California Un-Named Team vs. Eskimo Brothers — Here comes the West knife fight. California has the 6-2 record, Sean has the stronger scoring profile, and one result could turn Redwood’s comfortable-looking lead into a much noisier neighborhood. THE Barton Spartans vs. Flint Tropics — The Desperation Bowl. Barton comes off the season’s lowest score; Flint comes off yet another good score with nothing to show for it. Somebody gets relief. Somebody gets a longer week."
   }
 }
